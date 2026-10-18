@@ -1,0 +1,32 @@
+---
+title: "Identify - Skill Information"
+description: "BRAIN documentation node for the identify skill: coverage-driven interviewing that fills and deepens the Profile facets with validated frameworks, provenance-marked inferences, and approval-gated writes."
+status: "active"
+tags: ["system", "information"]
+aliases: ["/identify", "identify skill"]
+keywords: ["profile interview", "fill out my profile", "get to know me", "coverage", "big five", "schwartz values", "mcadams life story", "unconfirmed"]
+created: 2026-07-03
+updated: 2026-07-03
+type: "information"
+folder: "system"
+layer: 4
+policy: false
+version: "01.00.00"
+author: "Tanner Golden"
+path: "BRAIN/System/Skills/.unpackaged/identify/Identify.md"
+id: "sy-skill-identify"
+---
+
+# 🪪 identify - Information Guide
+
+## What this skill does
+
+Identify populates and deepens the `Profile/` facets by interviewing the user about themselves instead of waiting for hand-edits. It reads `brain.command profile coverage` to find the thinnest facet, runs a short mixed-delivery interview built on validated frameworks (Big Five and HEXACO for Personality, Schwartz values and Moral Foundations for Values, McAdams life-story prompts for Biography, the assistant custom-instruction schema for Working Style), and delivers a reviewed proposal batch the user approves line by line before anything is written. Self-reported facts land unmarked; every inference carries the full provenance marker and stays `unconfirmed` until approved; skips and refusals are never recorded anywhere.
+
+## How it fits the architecture
+
+`metadata.team` names **Research & Development (R&D)** (`Ventures/Agent Resources (AR)/Research & Development (R&D)/`), the home of the embodied lead: the skill runs as Adeline, the UX and Design Research Lead, whose interview craft (instrument design, non-leading questions, observed versus stated versus assumed evidence discipline) is the skill's spine. Two seats are dispatched cross-home, the research skill's Marian convention: Calvin the Writer (`Inbox/Faculties/Editorial/Writer.md`) composes the batch in the Founder's voice, and Sterling the Standards Reviewer (`Inbox/Faculties/Research/Standards Reviewer.md`) audits it blind against Article IV with BLOCK, REVISE, or CLEAR verdicts. The engine side is the read-only `profile coverage` subcommand in `System/brain.command`, which scores every facet with a dual net (a frozen scaffold fingerprint plus a placeholder grammar) and names the next target.
+
+## Design basis
+
+The interviewing doctrine, per-facet question maps with item banks, provenance contract, and roster contract live in this skill's `references/`. The governing law is Article IV as hosted in `Profile/Profile.md` (4.1 read-only by default, 4.2 flagged inferences, 4.3 no speculation) plus Constitution 4.4 (sensitive-category discretion) and Constitution 2.7 (Memory and Profile never overlap). The provenance marker grammar restates `Profile/Profile.md` exactly; the facet science follows the frameworks named in the facet files themselves (BFI-2 facets, HEXACO Honesty-Humility, Schwartz's four higher-order value families, Self-Determination Theory, Moral Foundations, VIA strengths, Erikson life stage, McAdams narrative identity).

@@ -1,0 +1,34 @@
+{
+  "skill": "board",
+  "note": "The write-gate in data form. The board skill is the sole writer; this matrix gates the pen. AR composes; the skill writes the autonomous items and escalates the founder_gated items. See references/write-gate.md.",
+  "autonomous": [
+    "draft or update internal venture context files (Overview, Goals, Strategy, Log, and the department .md files)",
+    "compose models, plans, SOPs, drafts, memos, and analyses as returned content",
+    "append a decision or a completed deliverable to Log.md",
+    "file a decision memo to Administration/Decisions.md",
+    "update the venture stage in Overview.md when the real signals warrant"
+  ],
+  "founder_gated": [
+    "move, send, commit, or convert money or any financial asset",
+    "sign, send, or agree to a contract, terms, or legal commitment",
+    "publish or send any external communication (press, a customer email, a public post)",
+    "delete or overwrite a file you did not just create",
+    "change equity, the cap table, or ownership",
+    "create or delete a top-level folder",
+    "any irreversible external action"
+  ],
+  "backup_required_before": "editing any existing venture or vault file (python3 System/brain.command backup <path>)",
+  "founder_gated_note": "The first five founder_gated items are the red categories named in references/write-gate.md; the last two (creating or deleting a top-level folder, and any irreversible external action) are the BRAIN structural boundary and the catch-all, so the list is seven by design, not a five-vs-seven mismatch.",
+  "by_stage": {
+    "found": {"rule": "protect runway; nearly every consequential or unbudgeted action escalates to the Founder"},
+    "scale": {"rule": "within the approved budget line the owning chief decides; unbudgeted or irreversible escalates"},
+    "maintain": {"rule": "within plan the function decides; cross-horizon reallocation or anything touching the core escalates"}
+  },
+  "thresholds": {
+    "note": "Concrete autonomous ceilings are Founder-set per venture; a seed startup and a scaled company carry very different numbers. Set them here when a venture is founded. Until a number is set, treat every spend, hire, and external action as Founder-gated (the safe default). The by_stage entries are the posture; these are the numbers.",
+    "found":    {"autonomous_spend_ceiling": "Founder-set (default 0: every spend escalates)", "autonomous_hires": 0},
+    "scale":    {"autonomous_spend_ceiling": "Founder-set, in-budget only", "autonomous_hires": "Founder-set, within the approved headcount plan"},
+    "maintain": {"autonomous_spend_ceiling": "Founder-set, in-plan only", "autonomous_hires": "Founder-set, within the approved headcount plan"}
+  },
+  "decider": {"reversible_and_in_mandate": "CEO", "irreversible_or_major": "Founder"}
+}

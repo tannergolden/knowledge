@@ -1,0 +1,26 @@
+{
+  "skill": "visualize",
+  "note": "Light trigger check set: should-trigger phrasings and near-miss negatives that must route elsewhere. Used by the description trigger check.",
+  "should_trigger": [
+    "chart this revenue data",
+    "make a bar chart of these numbers",
+    "graph the sales trend over the year",
+    "draw a flowchart of the onboarding process",
+    "diagram our system architecture",
+    "show this as a timeline",
+    "turn this table into a chart",
+    "build me an interactive dashboard for these metrics",
+    "visualize how these parts connect",
+    "make an explanatory illustration of how the cache works",
+    "plot these two variables against each other",
+    "map out the decision logic"
+  ],
+  "near_miss": [
+    {"query": "write me an email summarizing these results", "route": "editorial"},
+    {"query": "add a mermaid diagram inside this note I'm editing", "route": "editorial"},
+    {"query": "research the best charting libraries", "route": "research"},
+    {"query": "build a skill that makes charts", "route": "develop"},
+    {"query": "analyze this dataset and tell me what it means", "route": "data analysis, not a visual"},
+    {"query": "design a production dashboard web app with a backend", "route": "develop / Development team"}
+  ]
+}

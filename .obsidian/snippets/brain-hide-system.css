@@ -1,0 +1,13 @@
+/* BRAIN - hide engine-managed (system band) properties in the Obsidian editor.
+   Display-only: every field stays in each file's YAML and is required by brain.command.
+   See Instructions.md Section 8.8. */
+.metadata-property[data-property-key="type"],
+.metadata-property[data-property-key="folder"],
+.metadata-property[data-property-key="layer"],
+.metadata-property[data-property-key="policy"],
+.metadata-property[data-property-key="version"],
+.metadata-property[data-property-key="author"],
+.metadata-property[data-property-key="path"],
+.metadata-property[data-property-key="id"] {
+  display: none;
+}

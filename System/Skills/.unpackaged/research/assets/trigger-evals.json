@@ -1,0 +1,29 @@
+{
+  "skill": "research",
+  "description": "Trigger evaluation set for the research skill: queries that SHOULD activate it and near-miss negatives that should NOT. Used by the develop trigger smoke test and by `develop optimize`.",
+  "should_trigger": [
+    "research the current state of solid-state batteries",
+    "look into whether GLP-1 drugs reduce cardiovascular risk",
+    "/research how do the major LLM providers price prompt caching",
+    "dig into the EU AI Act timeline and what it requires",
+    "find out about recent advances in perovskite solar cells",
+    "what is the current state of fusion startup funding",
+    "get me sources on the health effects of microplastics",
+    "I need to decide between two vendors, can you research them",
+    "is the claim that creatine helps cognition actually supported",
+    "compare the evidence for and against four-day work weeks"
+  ],
+  "should_not_trigger": [
+    "write me a short story about a lighthouse keeper",
+    "what is 17 times 24",
+    "refactor this function to use async await",
+    "explain how a bicycle derailleur works",
+    "draft a thank-you email to my landlord",
+    "what is the capital of Australia",
+    "fix the bug in my Python script",
+    "summarize the file I just pasted",
+    "set a reminder for my dentist appointment tomorrow",
+    "translate this paragraph into Spanish"
+  ],
+  "notes": "Near-misses are deliberately adjacent: established-knowledge questions (capital, arithmetic, how a mechanism works) are NOT research because no multi-source gathering is needed; creative, coding, and clerical tasks are out of scope. A borderline case like 'explain how X works' triggers only when X is contested or post-cutoff."
+}

@@ -1,0 +1,8 @@
+{
+  "openBehavior": "file:Information",
+  "showUnsupportedFiles": true,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "showInlineTitle": true
+}

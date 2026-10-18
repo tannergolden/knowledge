@@ -1,0 +1,13 @@
+{
+  "cssTheme": "",
+  "accentColor": "",
+  "theme": "obsidian",
+  "showRibbon": true,
+  "nativeMenus": true,
+  "translucency": true,
+  "showViewHeader": true,
+  "baseFontSizeAction": false,
+  "enabledCssSnippets": [
+    "brain-hide-system"
+  ]
+}

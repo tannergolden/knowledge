@@ -145,3 +145,65 @@ coverage/
 _site/
 .jekyll-cache/
 .jekyll-metadata
+
+# --- BRAIN Vault ---
+# Carried over from the vault's own .gitignore. Machine-local churn, derived
+# indexes, snapshots, and trash stay out; the knowledge, engine, and config stay
+# in. Rules the sections above already cover are not repeated.
+
+# Undownloaded iCloud placeholders (never commit a dataless stub)
+*.icloud
+
+# Obsidian: drop only volatile UI state and caches; keep config, themes, plugins
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Soft-deleted files (Constitution 3.1 trash stage) and local snapshots
+.trash/
+System/.backups/
+System/Backups/
+
+# Generated index, logs, and sync state (rebuilt by `brain.command health`).
+# Keep the folder doc (Data.md) and the committed catalog roll-up (catalog.ndjson).
+System/Data/*
+!System/Data/Data.md
+!System/Data/catalog.ndjson
+
+# Offline knowledge bases (ZIM files in Library/Reference & Encyclopedia/):
+# large, re-downloadable Kiwix binaries, rehydrated by `brain.command kb refresh`.
+*.zim
+*.zim.tmp
+*.zim.part
+*.zim.aria2
+
+# Claude Code local state: personal overrides and anything machine-local or
+# secret the harness may write into the project .claude/ folder.
+.claude/settings.local.json
+.claude/*.local.json
+.claude/.credentials.json
+
+# Engine atomic-write temp files (a crash mid-write can strand one)
+*.tmp~
+
+# macOS AppleDouble resource forks and volume metadata
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.DocumentRevisions-V100
+.TemporaryItems
+.Trashes
+.fseventsd
+.apdisk
+.VolumeIcon.icns
+
+# Windows metadata, so the vault stays clean if opened on Windows
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor scratch and merge leftovers
+.#*
+*.orig
+*.bak

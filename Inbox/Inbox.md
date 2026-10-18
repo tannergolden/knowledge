@@ -1,0 +1,252 @@
+---
+title: "Inbox - Staging Area"
+description: "Drop any unsorted file here. The AI analyzes, proposes a destination, enriches with frontmatter or macOS metadata, and asks for sorting confirmation. Held sub-homes (Reports, Visuals, and the standing teams) live here but are never sorted."
+status: "active"
+tags: ["inbox", "information", "timeless"]
+aliases: []
+keywords: ["staging area", "drop files", "unsorted", "sorting protocol", "pdf cleanup", "file triage", "where to put files", "hold folder"]
+created: 2026-05-18
+updated: 2026-06-28
+type: "information"
+folder: "inbox"
+layer: 1
+policy: false
+version: "01.09.00"
+author: "Tanner Golden"
+path: "BRAIN/Inbox/Inbox.md"
+id: "in-inbox"
+---
+
+# Inbox
+
+A staging area for any file you want the AI to sort into the BRAIN. Drop files here freely. Any format, any topic, organized or not. The AI handles the rest.
+
+## What `Inbox/` Is (a meta-zone, not just an inbox)
+
+`Inbox/` is a small **meta-zone**, not a single pure inbox. It holds five things kept deliberately distinct - the pattern Johnny.Decimal uses for its `00-09` area, where an inbox and an archive coexist as siblings:
+
+1. **The inbox proper** - loose files dropped at `Inbox/` root, plus the sort protocol below. This is the only transient part: it is processed to empty.
+2. **`Reports/`** - the held reports library (`Inbox/Reports/Reports.md`): the finished research and discovery reports, fully indexed and **excluded from the sort sweep**; held here, not sorted into the BRAIN, and good for up to three months before they must be re-verified.
+3. **`Visuals/`** - the held visuals library (`Inbox/Visuals/Visuals.md`): the finished charts, diagrams, dashboards, and illustrations from the visualize skill, fully indexed and **excluded from the sort sweep**; held here as archival artifacts, not sorted into the BRAIN, and kept until superseded.
+4. **`Ideas/`** - the held idea pool (`Inbox/Ideas/Ideas.md`): the living library of idea records the Discovery team generates, dispatched by the discover skill, fully indexed and **excluded from the sort sweep**; held here by lifecycle status (raw, shortlisted, developed, promoted, parked, killed), not sorted into the BRAIN, with killed ideas kept so the team never re-treads a dead end.
+5. **`Faculties/`** - the standing-teams home (`Inbox/Faculties/Faculties.md`): the five cognitive teams Research, Discovery, Development, Editorial, and Design with their agents, fully indexed and **excluded from the sort sweep**; their finished work sorts outward to its real home.
+
+`Reports/`, `Visuals/`, `Ideas/`, and `Faculties/` are therefore **distinct, engine-enforced lists that live at the inbox path - not contents of the inbox.** "Process the inbox to empty," and any "is the inbox empty?" check, apply only to the loose files at the root; they never count `Reports/`, `Visuals/`, `Ideas/`, or `Faculties/`. This is a deliberate, documented exception to the inbox-is-transient rule.
+
+## What Happens When You Drop a File Here
+
+1. At the next session start, the AI detects new files in this folder
+2. If any are PDFs, the AI asks whether to run cleanup (removes piracy watermarks, malicious links, shadow library branding) or trust the source
+3. The AI analyzes each file and determines where it should go in the BRAIN
+4. The AI proposes both a destination and (if needed) a clean filename, then asks you to confirm
+5. After confirmation, the AI applies required frontmatter (for text files) or writes tags directly to macOS metadata (for binary files) before moving anything
+
+**Nothing gets moved without your approval.**
+
+## What Belongs in the Inbox
+
+The Inbox is designed for things that already have a place in the BRAIN but need to be filed:
+
+- Documents, notes, articles you want to keep as reference
+- Personal media, photos, audio, video that fits an existing folder
+- Project files, drafts, exports
+- Anything you'd otherwise have to manually categorize
+
+## What Doesn't Belong
+
+Some files are better deleted or kept somewhere else entirely:
+
+- Random downloads, accidentally dropped files, temporary work files
+- System junk (`.DS_Store`, `.cache`, etc.). The AI ignores these automatically.
+- Executables, archives, or installers. Not reference material.
+- Anything you wouldn't want a portable knowledge layer to carry around forever
+
+If you drop one of these and the AI sees no good home, it'll ask whether to delete it or return it to a location of your choice.
+
+## The `Reports/` Subfolder
+
+`Inbox/Reports/` is the held library for finished research and discovery reports. The Research team and the Discovery team file their reports here. See [[Inbox/Reports/Reports|Reports.md]] for the held-not-sorted rule, the three-month freshness rule (a report older than three months must be verified before it is reused), and the index rule (`Reports.md` is the one hub that wikilinks every report; no other file links to one). Like the team homes, it is fully linted, synced, and indexed, and excluded only from the session-start sort sweep.
+
+## The `Visuals/` Subfolder
+
+`Inbox/Visuals/` is the held library for finished visuals from the `visualize` skill: standalone charts, diagrams, dashboards, interactive widgets, and explanatory illustration filed by the Design team. See [[Inbox/Visuals/Visuals|Visuals.md]] for the held-not-sorted rule, the archival retention (a saved visual is a snapshot kept until superseded, carrying the date of its underlying data rather than a fixed expiry), and the index rule (`Visuals.md` is the one hub that wikilinks every held visual; no other file links to one). Like `Reports/`, it is fully linted, synced, and indexed, and excluded only from the session-start sort sweep. Most visuals render inline and are never saved; only one the Founder asks to keep is filed here or in a named home.
+
+## The `Ideas/` Subfolder
+
+`Inbox/Ideas/` is the held idea pool for the `discover` skill: the living library of idea records the Discovery team generates and ranks. See [[Inbox/Ideas/Ideas|Ideas.md]] for the held-not-sorted rule, the living-pool retention (ideas persist by lifecycle status, and killed and parked ideas are kept so the team dedups against them and never re-treads a dead end), and the leaf rule (an idea record links to nothing; the pool is found by search and by status, not by an index of links). The idea schema and the ICE, Elo, RICE, lifecycle, and lineage rules are the Discovery team's method, in `Inbox/Faculties/Discovery/Discovery.md`. Like `Reports/`, it is fully linted, synced, and indexed, and excluded only from the session-start sort sweep.
+
+## The `Faculties/` Subfolder
+
+`Inbox/Faculties/` is the home for the BRAIN's five standing functional teams, the **Faculties**: Research (evidence), Discovery (ideas), Development (building), Editorial (writing), and Design (visuals). It is a multi-team home, the same shape Agent Resources (AR) uses, and the personal-work counterpart to AR's venture workforce. See [[Inbox/Faculties/Faculties|Faculties.md]] for the rosters, each team's standard, the skill that dispatches it, and the federation with AR. Like `Reports/`, it is a permanent home, fully linted, synced, and indexed, and excluded only from the session-start sort sweep. The teams keep no library of their own here: a finished report, build, or piece of writing sorts outward to its real home.
+
+## Bulk Drops
+
+You can drop dozens or hundreds of files at once. When more than 5 files are detected, the AI switches to a table-format confirmation so the proposed sort stays readable. You can approve all, approve some, or redirect individual files in your response.
+
+## The Sorting Protocol (Canonical)
+
+This is the complete, authoritative sorting protocol. Instructions Section 7 carries only the always-on essentials and points here.
+
+The `Inbox/` folder is a staging area where the user can drop any file (organized or not, any format) for the AI to process and route into the correct part of the BRAIN.
+
+### 1. Detection
+
+At every session initialization, automatically check whether `Inbox/` contains any sortable files. If it does, proceed to analysis before doing anything else.
+
+**What counts as a sortable file:**
+
+Detection scans only files that are eligible for sorting. The following are excluded:
+
+- [[Inbox/Inbox|Inbox/Inbox.md]] (permanent fixture, never sorted)
+- Hidden files and directories (any name starting with `.`, including `.DS_Store`, `.gitkeep`, `.localized`)
+- `Inbox/Backups/` and any timestamped backup subfolders inside it (pre-cleanup snapshots)
+- The `Inbox/Reports/` subfolder and everything inside it (the held reports library; see "The `Reports/` Subfolder" above). It stays linted, synced, and indexed; it is excluded from sort-detection only.
+- The `Inbox/Visuals/` subfolder and everything inside it (the held visuals library; see "The `Visuals/` Subfolder" above). It stays linted, synced, and indexed; it is excluded from sort-detection only.
+- The `Inbox/Ideas/` subfolder and everything inside it (the held idea pool; see "The `Ideas/` Subfolder" above). It stays linted, synced, and indexed; it is excluded from sort-detection only.
+- The `Inbox/Faculties/` subfolder and everything inside it (the standing-teams home, holding Research, Discovery, Development, Editorial, and Design; see "The `Faculties/` Subfolder" above). It stays linted, synced, and indexed; it is excluded from sort-detection only.
+- Files modified within the last 30 seconds (may still be syncing or copying; recheck after a short wait)
+
+If no eligible files remain after these exclusions, treat the Inbox as empty and continue with the session.
+
+### 2. The Held Sub-Homes (Not Sorted)
+
+`Inbox/` holds four permanent sub-homes that are never sorted: `Reports/` (the held research and discovery reports), `Visuals/` (the held visuals from the visualize skill), `Ideas/` (the held idea pool from the discover skill), and `Faculties/` (the five standing teams, each its own roster of agents). The engine excludes all four from sort-detection, so their contents are never scanned, surfaced, or proposed for routing at session start. They are not invisible: they stay fully linted, synced, and indexed like any other vault content. Only the loose files at the `Inbox/` root are subject to the sorting protocol below.
+
+### 3. PDF Pre-Processing
+
+PDFs from external sources frequently contain piracy watermarks, shadow library branding (Z-Library, OceanofPDF, Anna's Archive), and malicious link annotations. These must be cleaned before the file enters the BRAIN.
+
+**Before running cleanup, the AI asks the user:**
+
+> *"I see [N] PDF(s) in the Inbox. Should I run cleanup (recommended for external downloads) or skip it (if these are from a trusted source like a publisher, personal scan, or official download)?"*
+
+If the user confirms cleanup or doesn't answer clearly, proceed with cleanup. If the user explicitly trusts the source, skip directly to analysis (step 4).
+
+**To run cleanup**, the AI performs it directly with whatever PDF tooling its environment provides (e.g., PyMuPDF via a short Python script, or the host platform's PDF tools). There is no bundled cleanup script. The rules below are the contract any cleanup must honor:
+
+- **Back up first, always.** Before modifying anything, copy the original PDFs into a timestamped subfolder under `Inbox/Backups/` (hyphenated timestamp, Article 2.6).
+- Remove clickable link annotations pointing to shadow library domains (z-library, OceanofPDF, Anna's Archive, and the like)
+- Erase watermark text baked into page content streams
+- Delete an entire page only when it is clearly a shadow library advertisement and nothing else. Never touch pages with real content, blank pages, image-only pages, or internal PDF links.
+- If the environment has no PDF tooling at all, skip cleanup, tell the user, and route the files unmodified or leave them at the `Inbox/` root at the user's choice.
+
+After cleanup completes, proceed to step 4 to analyze and route the files.
+
+### 4. User Confirmation
+
+Analyze each eligible file and determine both its destination and (if appropriate) a cleaner filename. Then present the proposed sort to the user for confirmation. **Combine renaming and routing into one decision** so the user confirms both in a single response.
+
+**Up to 5 files (inline format):**
+
+> *"I found [N] file(s) in the Inbox. Here's where I'd route them:*
+> *- `original-name.pdf` → rename to `Clean Name.pdf` → `Library/Life & Practice/Health & Wellness/`*
+> *- `notes.md` → `Memory/Log.md` (append)*
+>
+> *Want me to sort them now?"*
+
+**More than 5 files (table format):**
+
+| Original Name | Proposed New Name | Destination |
+|---|---|---|
+| ... | ... | ... |
+
+**Partial confirmation is supported.** The user may approve some files and decline or redirect others. Possible responses include:
+
+- "Sort all of them"
+- "Skip [filename(s)]"
+- "Send [filename] to [different path] instead"
+- "Sort everything except [filename(s)]"
+
+Do not move any file without explicit approval for that file.
+
+### 5. Pre-Sorting Enrichment
+
+**No file may be moved from `Inbox/` to its destination in a raw, un-enriched state.** Before moving any file, apply the appropriate enrichment.
+
+**Order of operations:**
+
+1. Apply the rename (if a rename was approved in step 4)
+2. For files destined for `Library/`, assess freshness lifespan per Constitution Article 6.2. If ephemeral (<5 years), redirect to `Projects/`, `Ventures/`, `Memory/`, or deletion with user confirmation. Do not file ephemeral content in the Library.
+3. Enrich with frontmatter (text/markdown) or xattr tags (binary). For Library files, include the freshness tag (`timeless`, `enduring`, or `current`).
+4. Move to destination
+
+**Filename hygiene (check before enrichment):**
+
+If the incoming filename is messy, hard to parse, uses underscores as word separators, or contains garbled characters or excessive punctuation, the rename should already have been proposed in the confirmation step (step 4). Underscores are never used as word separators. Use spaces or hyphens.
+
+Examples: `my_report_v2_FINAL(1).pdf` → `My Report.pdf`, `export_2024_03_07.csv` → `Export 2024-03-07.csv`.
+
+**Text / Markdown files:**
+
+- Add the standardized YAML frontmatter block (Instructions Section 8) before moving
+- Fill in `title`, `description`, `path`, `folder`, `type`, `tags`, `policy`, `created`, and `updated`
+
+**Binary / Non-Editable files (images, PDFs, audio, video, scripts, etc.):**
+
+These cannot embed frontmatter, so their tags are written directly to macOS Finder metadata (`com.apple.metadata:_kMDItemUserTags`) via xattr.
+
+Apply the closed-vocabulary tags that fit (Article VII):
+
+- **Folder tag**: matches the destination Layer 1 folder (`knowledge`, `ventures`, `projects`, etc.)
+- **Freshness**: for Library assets, apply `timeless`, `enduring`, or `current`
+- **Sensitivity**: apply `sensitive` if the file contains personal, private, or identifying information
+
+(The `policy` flag is a markdown frontmatter field and does not apply to binary assets.)
+
+For binary assets destined for `Library/`, apply the `reference` File Role tag (Constitution 7.3) along with the Folder and Freshness tags. For binary assets going elsewhere, no File Role value fits; skip the role tag for those.
+
+`brain.command sync` covers binaries automatically: it infers tags from location (the Layer-1 folder tag, plus `script` for executables and `reference` for binaries in `Library/`) and writes them via xattr. After sorting a binary into place, run `sync` and the tagging is handled. Apply additional tags (e.g. `sensitive`, a freshness tag) manually via xattr when they apply, since those cannot be inferred from location.
+
+### 6. Ambiguous File Handling
+
+If a file's contents do not clearly match one specific folder, assign it to the closest, most appropriate existing folder based on subject matter. Then log the reasoning in `Memory/Log.md` so the user can review the decision later. Do not embed routing notes in the file's frontmatter.
+
+**Log entry format:**
+
+```
+### [Date] - Sort routing: [filename]
+
+**Routed to:** [destination path]
+**Why:** [brief explanation of the ambiguity and why this folder was chosen]
+**Alternatives considered:** [folders that were close but not chosen]
+```
+
+These entries are governed by the `Memory/Log.md` retention policy under the "Inbox sort routing notes" row.
+
+### 7. Duplicate Filename Handling
+
+If a file being sorted from `Inbox/` would collide with an existing file at the destination, **stop and ask the user** before resolving. Present the options:
+
+- **Rename the incoming file** (AI proposes a non-colliding name)
+- **Overwrite the existing file** (destructive, confirm twice)
+- **Skip this file** (leave it in `Inbox/` for later handling)
+- **Keep both** (AI appends a suffix to one of them)
+
+Do not silently pick an option. Wait for the user's choice.
+
+### 8. Files That Don't Belong in BRAIN
+
+Some files dropped into the Inbox don't belong anywhere in the BRAIN: random junk, accidental drops, screenshots from another context, temporary files.
+
+When the AI's analysis finds no reasonable destination, ask the user:
+
+> *"`[filename]` doesn't seem to fit anywhere in the BRAIN. Should I delete it, move it back out of the Inbox to a location you specify, or leave it at the `Inbox/` root for you to decide later?"*
+
+Never delete a file from the Inbox without explicit user confirmation (Constitution Article 3.1). Leaving it at the `Inbox/` root is the safe default if the user doesn't respond.
+
+### 9. Dynamic Subfolder Creation
+
+If no existing folder is a reasonable fit for a file, you may request permission to create a new subfolder:
+
+> *"I couldn't find a good match for [filename]. I'd suggest creating a new subfolder at [proposed path]. Is that okay?"*
+
+**Strict constraint:** You may never create or propose a new folder at Layer 0 (root) or Layer 1. Layer 2 folders require explicit user confirmation before creation (Constitution Article 2.2). For the Inbox sorting protocol specifically, proposed new folders must be Layer 3 or deeper unless the user explicitly directs a Layer 2 creation.
+
+### 10. Routing System Assets (Skills, Utilities)
+
+Some Inbox items are system assets rather than personal content. Route them into the `System/` subfolders defined in Section 5:
+
+- **Skill directories** (a folder containing `SKILL.md` and its supporting files) → `System/Skills/`, preserved as a folder, never flattened. Subagents live inside the skill's own `agents/` folder.
+- **General prompt snippets, workflows, or loose templates** → `System/Utilities/`
+
+Follow the standard sorting protocol: confirm the move, fully move the item out of `Inbox/` so no duplicate is left behind, and apply naming hygiene - strictly no underscores anywhere in the file or folder name (Constitution Article 2.6); use kebab-case, spaces, or PascalCase. Skill directories keep the external `SKILL.md` format and are exempt from BRAIN frontmatter (Section 8 does not apply to them); utility `.md` files take standard BRAIN frontmatter.

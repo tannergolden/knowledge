@@ -1,0 +1,33 @@
+{
+  "skill": "board",
+  "note": "Mode-tagged should-trigger phrasings and near-miss negatives that must route elsewhere. Used by the description trigger check across all five modes.",
+  "should_trigger": [
+    {"q": "found a company for my new idea", "mode": "found"},
+    {"q": "start a new venture in the BRAIN", "mode": "found"},
+    {"q": "we have an idea for X, help me stand it up", "mode": "found"},
+    {"q": "incorporate the business", "mode": "found"},
+    {"q": "set our strategy for next year", "mode": "strategize"},
+    {"q": "refresh the OKRs for this quarter", "mode": "strategize"},
+    {"q": "what is our north star metric", "mode": "strategize"},
+    {"q": "should we enter the enterprise market", "mode": "strategize"},
+    {"q": "should I launch the product now or wait", "mode": "decide"},
+    {"q": "which of these two vendors should we choose", "mode": "decide"},
+    {"q": "go or no-go on the acquisition", "mode": "decide"},
+    {"q": "build the financial model for the venture", "mode": "operate"},
+    {"q": "draft the brand guide", "mode": "operate"},
+    {"q": "write the onboarding SOP", "mode": "operate"},
+    {"q": "run the venture this week", "mode": "operate"},
+    {"q": "how is the company doing", "mode": "review"},
+    {"q": "run the quarterly business review", "mode": "review"},
+    {"q": "keep the venture context current", "mode": "review"}
+  ],
+  "near_miss": [
+    {"q": "brainstorm ways to grow the audience", "route": "discover"},
+    {"q": "what are my options for monetizing this", "route": "discover"},
+    {"q": "research the market size for this product", "route": "research"},
+    {"q": "what is a weighted decision matrix", "route": "a definition, not a run"},
+    {"q": "build me a skill that runs companies", "route": "develop"},
+    {"q": "write a standalone blog post", "route": "editorial (board may dispatch it inside operate, but a lone post is editorial)"},
+    {"q": "make a chart of our revenue", "route": "visualize"}
+  ]
+}

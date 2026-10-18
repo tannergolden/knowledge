@@ -1,0 +1,79 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": true,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "[\"folder\": Profile]",
+      "color": {
+        "a": 1,
+        "rgb": 2785279
+      }
+    },
+    {
+      "query": "[\"folder\": Inbox]",
+      "color": {
+        "a": 1,
+        "rgb": 16763965
+      }
+    },
+    {
+      "query": "[\"folder\": Library]",
+      "color": {
+        "a": 1,
+        "rgb": 6674488
+      }
+    },
+    {
+      "query": "[\"folder\": Memory]",
+      "color": {
+        "a": 1,
+        "rgb": 13331686
+      }
+    },
+    {
+      "query": "[\"folder\": Projects]",
+      "color": {
+        "a": 1,
+        "rgb": 16735062
+      }
+    },
+    {
+      "query": "[\"folder\": Ventures]",
+      "color": {
+        "a": 1,
+        "rgb": 16752430
+      }
+    },
+    {
+      "query": "[\"folder\": System]",
+      "color": {
+        "a": 1,
+        "rgb": 10921638
+      }
+    },
+    {
+      "query": "[\"layer\": 0]",
+      "color": {
+        "a": 1,
+        "rgb": 16777215
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 2.50065972222222,
+  "lineSizeMultiplier": 2.50065972222222,
+  "collapse-forces": false,
+  "centerStrength": 0.497222222222222,
+  "repelStrength": 12,
+  "linkStrength": 1,
+  "linkDistance": 50,
+  "scale": 0.39436197446762633,
+  "close": false
+}

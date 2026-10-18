@@ -1,0 +1,26 @@
+{
+  "skill": "develop",
+  "note": "develop's own trigger fixture: queries that should invoke develop and near-miss negatives that should not. Used by the light trigger check and, at Publish, the full smoke test. Activation is proven by observing a Skill tool-use event in the run (a brain.command / harness concern), never by a description read alone. This file is the worked example every skill carries; near-misses are genuine adjacents, not obviously irrelevant queries.",
+  "cases": [
+    {"id": "t01", "should_trigger": true,  "prompt": "build me a skill that turns meeting notes into action items"},
+    {"id": "t02", "should_trigger": true,  "prompt": "create an agent that reviews pull requests for security issues"},
+    {"id": "t03", "should_trigger": true,  "prompt": "make a team of agents for competitive analysis"},
+    {"id": "t04", "should_trigger": true,  "prompt": "turn this workflow into a reusable skill"},
+    {"id": "t05", "should_trigger": true,  "prompt": "the markdown skill keeps dropping the frontmatter, fix what it got wrong"},
+    {"id": "t06", "should_trigger": true,  "prompt": "improve the research skill so it triggers more reliably"},
+    {"id": "t07", "should_trigger": true,  "prompt": "scaffold a new skill called invoice-parser"},
+    {"id": "t08", "should_trigger": true,  "prompt": "I need a subagent that fact-checks claims against sources"},
+    {"id": "t09", "should_trigger": true,  "prompt": "make the develop skill self-improve after that mistake"},
+    {"id": "t10", "should_trigger": true,  "prompt": "get the board skill ready to share with someone else"},
+    {"id": "t11", "should_trigger": true,  "prompt": "build an agent team for due-diligence on an acquisition"},
+    {"id": "t12", "should_trigger": true,  "prompt": "add a new mode to the identify skill"},
+    {"id": "n01", "should_trigger": false, "prompt": "research the best local-first sync engines"},
+    {"id": "n02", "should_trigger": false, "prompt": "write a markdown doc explaining our API"},
+    {"id": "n03", "should_trigger": false, "prompt": "validate the develop skill against the spec"},
+    {"id": "n04", "should_trigger": false, "prompt": "zip the develop skill into a .skill file"},
+    {"id": "n05", "should_trigger": false, "prompt": "what skills do I have installed right now?"},
+    {"id": "n06", "should_trigger": false, "prompt": "make a diagram of the agent library architecture"},
+    {"id": "n07", "should_trigger": false, "prompt": "build a financial model for the new venture"},
+    {"id": "n08", "should_trigger": false, "prompt": "create a new note in my Library about spaced repetition"}
+  ]
+}
