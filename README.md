@@ -482,8 +482,8 @@ instead. 🏷️ Cut Release stays: any repository released by tag can adopt it.
 | [`.devcontainer/`](.devcontainer/README.md) | The language-neutral development container this repository ships, and how to give it the toolchain your project needs.                 |
 | [`.github/`](.github/)                      | CODEOWNERS, Dependabot, release notes config, the parity contract, scripts and workflows - logged below                                |
 | [`.vscode/`](.vscode/README.md)             | The VS Code settings and extension recommendations this repository shares, and why every other file in this folder stays out of git.   |
-| [`assets/`](assets/README.md)               | Where this project keeps what presents it: four folders to start, a name ready for every other kind, and the rules every file follows. |
-| [`docs/`](docs/README.md)                   | Where this project keeps its own documents, and where the engineering standards it follows actually live.                              |
+| [`.assets/`](.assets/README.md)             | Where this project keeps what presents it: four folders to start, a name ready for every other kind, and the rules every file follows. |
+| [`.docs/`](.docs/README.md)                 | Where this project keeps its own documents, and where the engineering standards it follows actually live.                              |
 | [`.editorconfig`](.editorconfig)            | Editor defaults every editor honours: UTF-8, LF, a final newline, and indentation per language                                         |
 | [`.env.example`](.env.example)              | Environment variable template for this project.                                                                                        |
 | [`.gitattributes`](.gitattributes)          | Git attributes - line endings, diffs, and what counts as binary                                                                        |
@@ -657,7 +657,7 @@ in the [Standards Index](https://github.com/tannergolden/standards/blob/Developm
 Follow it **by link**. A standard copied into your repository is a standard that
 starts going stale the moment you paste it.
 
-The one exception is [`docs/templates/`](docs/templates/README.md),
+The one exception is [`.docs/templates/`](.docs/templates/README.md),
 which is meant to be copied: those are fill-in documents that become _your_
 project's decisions. A fill-in document's destination mirrors its path minus
 `templates/`, and where you put it is yours to choose.

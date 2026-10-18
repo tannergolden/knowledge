@@ -113,3 +113,5 @@
 
 # --- Your rules ---------------------------------------------------------------
 # keep mine: /.gitignore
+# docs/ lives at .docs/ here, hidden, so the template's visible copy stays out.
+!/docs/**
