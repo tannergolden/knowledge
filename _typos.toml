@@ -1,0 +1,18 @@
+# --- Vault Spell-Check Words ---
+#
+# Words the shared standards config does not know but this vault spells
+# correctly. `typos` finds this file on its own and adds it to the shared
+# config that the Check Spelling job passes with --config, so both lists apply.
+#
+# Additive, like the shared list: add the term rather than reword the sentence.
+#
+# ---
+
+[default.extend-words]
+clen = "clen" # System/brain.command: a content-length variable
+Damon = "Damon" # the Devil's Advocate agent's name, Inbox/Faculties/Research/
+Extraversion = "Extraversion" # the Big Five domain, Profile/Personality.md
+mis = "mis" # the prefix in hyphenated words: mis-fires, mis-called
+nd = "nd" # the ordinal suffix in System/brain.command: 2nd
+referers = "referers" # System/brain.command: a list of referring files
+UNIO = "UNIO" # typos splits "UNIONs" (a verb in a comment) into UNIO and Ns
