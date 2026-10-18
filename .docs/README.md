@@ -103,7 +103,7 @@ seeded folder does, and update it in the same change that adds a file.
 
 - [Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md) - every canonical guide
 - [Template catalogue](templates/README.md) - what each seed document is for
-- [Repository README](../README.md) - setup, and how to configure CI
+- [Repository README](../.github/README.md) - what this vault is and how it is governed
 
 ---
 
