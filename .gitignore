@@ -159,6 +159,14 @@ _site/
 .obsidian/workspace-mobile.json
 .obsidian/cache
 
+# Obsidian community plugins and themes are third-party releases that Obsidian
+# reinstalls from its catalog, so their code stays out. Each plugin's settings
+# (data.json) and the list of enabled plugins (community-plugins.json) stay in.
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/manifest.json
+.obsidian/plugins/*/styles.css
+.obsidian/themes/
+
 # Soft-deleted files (Constitution 3.1 trash stage) and local snapshots
 .trash/
 System/.backups/
