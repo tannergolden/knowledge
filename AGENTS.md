@@ -6,12 +6,11 @@ tags: ["root", "guide", "timeless"]
 aliases: ["AGENTS"]
 keywords: ["entry point", "ai agent onboarding", "orientation", "interop standard", "startup checklist", "how to begin", "agent instructions"]
 created: 2026-06-10
-updated: 2026-07-04
+updated: 2026-10-19
 type: "guide"
 folder: "root"
 layer: 0
 policy: false
-version: "02.01.02"
 author: "Tanner Golden"
 path: "BRAIN/AGENTS.md"
 id: "ro-agents"
@@ -30,7 +29,7 @@ This folder is a **BRAIN**: a portable, file-based personal context and memory s
 flowchart LR
     A([Agent lands in the BRAIN]) --> B["Step 1: Read Constitution.md<br/>non-negotiable governance"]
     B --> C["Step 2: Read Instructions.md<br/>the operating manual"]
-    C --> D["Step 3: Run the startup checklist<br/>brain.command startup (Section 9)"]
+    C --> D["Step 3: Run the startup checklist<br/>Instructions Section 9"]
     D --> E{Inbox has files?}
     E -- yes --> F[Sort per Section 7 first]
     E -- no --> G([Ready to work])
@@ -39,14 +38,14 @@ flowchart LR
 
 1. **Read `Constitution.md`** first. It is the non-negotiable governance layer and it wins every conflict.
 2. **Read [[Instructions|Instructions.md]]** next. It is the operating manual: structure, navigation, protocols, and the frontmatter schema.
-3. **Run the startup checklist** in [[Instructions|Instructions.md]] Section 9: the four `startup`-tagged files plus the Inbox check. `python3 System/brain.command startup` runs it in one call, in cache-optimal order.
+3. **Run the startup checklist** in [[Instructions|Instructions.md]] Section 9: the four `startup`-tagged files plus the Inbox check. In Claude Code, the SessionStart hook lists them for you to Read.
 
 ## Hard boundaries
 
 > [!warning] Do not cross these without explicit confirmation
 > - Never create, rename, or delete top-level folders (Constitution Article II).
 > - Never delete any file without explicit user confirmation (Article 3.1).
-> - Back up any file before editing it (Instructions Section 10) - a `.backups/` snapshot when the vault is local-only, or a commit when a git remote is reachable (the engine skips the snapshot in that mode) - and log core-file changes to `System/changelog.md` (Article 3.6).
+> - Changes are commits: git history is the backup and the change record (Instructions Section 10, Articles 3.1 and 3.6). Commit before a risky edit.
 > - Every markdown file carries the YAML frontmatter schema in Instructions Section 8, with tags drawn only from the closed vocabulary in Article VII.
 
 > [!tip] Skills are meant to fire
@@ -54,17 +53,15 @@ flowchart LR
 
 ## Tooling
 
-Maintenance runs through one self-locating CLI:
+The vault's checks and generators are scripts in `.github/scripts/`, run from the vault root:
 
 ```bash
-python3 System/brain.command startup         # the whole startup checklist in one call
-python3 System/brain.command health          # lint + links + stale + index + error log
-python3 System/brain.command load "task"     # ranked, token-budgeted context set
-python3 System/brain.command search "term"   # full-text search
-python3 System/brain.command backup <path>   # protocol-named pre-edit snapshot
+python3 .github/scripts/check-vault.py      # every check CI runs: notes, links, skills, agents, personal data, generated parts
+python3 .github/scripts/update-vault.py     # redraw everything generated: memory tiers, link blocks, catalogs, skill archives
+python3 .github/scripts/lint-notes.py FILE  # one note against the frontmatter schema
 ```
 
-The situation-to-command playbook is [[Instructions|Instructions.md]] Section 4.4. Run `python3 System/brain.command` with no arguments for the full menu.
+In Claude Code the hooks run them for you: the session start lists what to read, every note you write is checked, and the end of a turn redraws what is generated. The situation-to-script table is [[Instructions|Instructions.md]] Section 4.4.
 
 ## Scope of this file
 

@@ -197,7 +197,7 @@ Record to `Log.md`; any executed financing is a confirmed red action, logged wit
 
 When the gates have cleared and the venture has a working motion (and funded or bootstrapped runway), the venture has left **FOUND**. The chair:
 
-- [ ] **Advances the operating stage** on the record toward SCALE when the signals warrant it (lifecycle.md, stage detection): a documented, repeatable, instrumented motion is the seam-breaker, not the round name. Update `Overview.md` and append to `Log.md` (green, autonomous; back up first).
+- [ ] **Advances the operating stage** on the record toward SCALE when the signals warrant it (lifecycle.md, stage detection): a documented, repeatable, instrumented motion is the seam-breaker, not the round name. Update `Overview.md` and append to `Log.md` (green, autonomous; commit the prior state first).
 - [ ] **Confirms both founding clocks are honored**: 83(b) filed within 30 days (closed, not pending), QSBS issuance date and 5-year maturity recorded and tracked by the CFO.
 - [ ] **Hands off to strategize** to set the next stage's OKRs against the new motion (the SCALE-stage dominant question becomes: *is the founder the bottleneck, and is each channel actually efficient?*).
 - [ ] **Files the founding record**: `Strategy.md` (thesis), the cap-table model, the entity pack, and the decision log of every gate, so the next run is not blind.

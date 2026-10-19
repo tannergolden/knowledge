@@ -11,7 +11,6 @@ type: "template"
 folder: "memory"
 layer: 2
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Memory/.template/Event.md"
 id: "me-event"

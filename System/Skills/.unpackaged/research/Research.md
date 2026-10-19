@@ -11,7 +11,6 @@ type: "information"
 folder: "system"
 layer: 4
 policy: false
-version: "01.05.00"
 author: "Tanner Golden"
 path: "BRAIN/System/Skills/.unpackaged/research/Research.md"
 id: "sy-skill-research"

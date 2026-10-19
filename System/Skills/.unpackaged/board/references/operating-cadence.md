@@ -69,7 +69,7 @@ The grading-and-reset loop, the most consequential of the four. It does two dist
 
 **Inputs:** `Goals.md` (the closing OKRs and the annual objectives above them), `Strategy.md` (the thesis the OKRs serve), `Financials.md` (the trend and the budget to recalibrate), `Metrics.md`, the three monthlies. This is a deeper run: convene the relevant chiefs for their function's OKRs, BI for the numbers, the chair (CEO) holding the stage and strategy fit, the verifier on the grades (a function does not grade its own OKR unchecked; see `verification.md`).
 
-**Outputs:** the QBR narrative (the six-pager, below) filed to `Administration/`; the **regraded closing OKRs and the new quarter's OKRs written into `Goals.md`**; a stage advance written to `Overview.md` if the QBR carried it (a gated change, confirm per `write-gate.md`); a dated `Log.md` entry recording the grade and the reset. This is the loop that most changes the venture's files, so the backup-before-write and sole-writer rules are load-bearing here.
+**Outputs:** the QBR narrative (the six-pager, below) filed to `Administration/`; the **regraded closing OKRs and the new quarter's OKRs written into `Goals.md`**; a stage advance written to `Overview.md` if the QBR carried it (a gated change, confirm per `write-gate.md`); a dated `Log.md` entry recording the grade and the reset. This is the loop that most changes the venture's files, so the commit-before-write and sole-writer rules are load-bearing here.
 
 ## Loop 4: Annual planning
 

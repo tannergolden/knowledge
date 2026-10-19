@@ -5,7 +5,7 @@ license: proprietary
 allowed-tools: Read, Write, Bash, Glob, Grep, Task
 metadata:
   team: Design
-  version: "01.04.00"
+  version: "01.04.01"
   id: "sy-skill-visualize-spec"
   author: "Tanner Golden"
   status: "active"
@@ -57,7 +57,7 @@ The threshold is lowered, not removed. The team's one standard still governs: a 
 
 ## Conformance with the live BRAIN
 
-**Preflight (before any vault write).** A visual saved into the vault is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of the folder written into, back up before editing an existing file, reference vault files by plain path, and treat `brain.command lint` as the exit gate. A visual rendered only in chat is a leaving artifact, governed by its destination rather than the vault preflight (Article IX rule 9.7); integrity and accessibility still apply.
+**Preflight (before any vault write).** A visual saved into the vault is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of the folder written into, commit an existing file's last state before editing it, reference vault files by plain path, and treat `lint-notes.py` as the exit gate. A visual rendered only in chat is a leaving artifact, governed by its destination rather than the vault preflight (Article IX rule 9.7); integrity and accessibility still apply.
 
 **Read before acting.** Before saving into a folder, read its namesake so the artifact fits its home; when filing into the held visuals library, add the visual's entry to the `Inbox/Visuals/Visuals.md` index in the same edit (the one-hub rule). After a substantial visual, **offer** (never silently) to save it, to a named home or to the held visuals library at `Inbox/Visuals/`, or to fold a note into `Memory/`. Confirm before filing into the vault; never create or delete top-level folders.
 

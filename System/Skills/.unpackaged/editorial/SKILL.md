@@ -1,11 +1,11 @@
 ---
 name: editorial
-description: Orchestrates the BRAIN's standing Editorial team to write, edit, and format any prose, scaled to the piece. Use whenever the user writes or edits text or a prose .md or .txt is created or edited, even when the word editorial is never said: emails, messages, replies, letters, memos, documents, essays, books, posts, notes, and the bodies of Library, Project, and Venture files. Fires on draft this, write this, edit this, rewrite this, reply to this, clean this up, tighten this, make this clearer, polish this, proofread this, format this, reformat these notes, turn these notes into a doc, write a README, and any request to produce or improve text a person will read. The BRAIN's own writing skill, preferred over a generic writer; obeys the Constitution. Structurally scoped: does not auto-fire on System, agent, log, template, index, or script files, or on a brain.command write. Not for investigating facts (research), building skills (develop), or a chat-only visual (visualize).
+description: Orchestrates the BRAIN's standing Editorial team to write, edit, and format any prose, scaled to the piece. Use whenever the user writes or edits text or a prose .md or .txt is created or edited, even when the word editorial is never said: emails, messages, replies, letters, memos, documents, essays, books, posts, notes, and the bodies of Library, Project, and Venture files. Fires on draft this, write this, edit this, rewrite this, reply to this, clean this up, tighten this, make this clearer, polish this, proofread this, format this, reformat these notes, turn these notes into a doc, write a README, and any request to produce or improve text a person will read. The BRAIN's own writing skill, preferred over a generic writer; obeys the Constitution. Structurally scoped: does not auto-fire on System, agent, log, template, index, or script files, or on a write by one of the vault's scripts. Not for investigating facts (research), building skills (develop), or a chat-only visual (visualize).
 license: proprietary
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
 metadata:
   team: Editorial
-  version: "01.05.00"
+  version: "01.05.01"
   id: "sy-skill-editorial-spec"
   author: "Tanner Golden"
   status: "active"
@@ -43,7 +43,7 @@ Every run is intake, then draft, then a separate gate, then ship.
 
 **The quality gate (the Line Editor).** Above quick, write and edit are **separate passes by separate agents**: the Writer drafts, then the Line Editor arrives fresh and gates it. This is the proven generate-then-critique split; naked self-critique degrades, so the standard is externalized. The Line Editor critiques against the **slop rubric** in `references/slop-rubric.md`, never a vague "make it better," and **cites the offending span** for every flag. The rubric's single source of truth is **Constitution 9.2** (no AI slop) and **9.1** (no em dashes): the rubric references the Constitution and never forks it. The critic resists length-bias and lenient scoring: shorter wins when meaning is preserved, and "leave it alone" is a valid verdict. A piece does not ship on an unverified load-bearing claim; the Line Editor flags such claims and the lead verifies them or routes them to the Research team (the Editorial team keeps no fact-checker of its own).
 
-**Editing in place.** When editing an existing file: **back it up first** (`python3 System/brain.command backup <path>`, Instructions Section 10) and **show the diff or a redline before overwriting**. The owner sees the change before it lands. A **no-op verdict is valid and valuable**: declining to edit, because the text already reads clear and true, is a real outcome, not a failure to act. **Preserve the author's length and register** unless asked to change them; tightening is not the same as shrinking, and a casual note does not get formalized on the way through.
+**Editing in place.** When editing an existing file: **make sure its last state is committed** (Instructions Section 10) and **show the diff or a redline before overwriting**. The owner sees the change before it lands. A **no-op verdict is valid and valuable**: declining to edit, because the text already reads clear and true, is a real outcome, not a failure to act. **Preserve the author's length and register** unless asked to change them; tightening is not the same as shrinking, and a casual note does not get formalized on the way through.
 
 ## Dispatch scaling
 
@@ -51,7 +51,7 @@ A bigger roster is not a better one. Dispatch the **smallest sufficient** seats:
 
 ## Formatting and beauty
 
-Master the full Obsidian admonition/callout system and rich markdown, per `references/formatting.md` (built on `Library/Technology & Applied Science/Applied Computing & Software/Markdown Style Guide.md`). **Precedence:** vault-internal files obey Article IX (the emoji-prefixed H1 rule 9.6, the no-em-dash rule 9.1) and the Instructions Section 8 frontmatter schema, and `brain.command lint` is the exit gate. Scope follows Article IX's internal-vs-leaving split (rule 9.7): markdown is Obsidian-compatible by default; a vault-internal file follows the Constitution, and a file leaving the vault follows the target's own format, with GitHub-Flavored Markdown (the five uppercase callout types NOTE/TIP/IMPORTANT/WARNING/CAUTION) reserved for GitHub's recognized repository and community-health files that render on GitHub (`README.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `SECURITY.md`, and the rest, per 9.7). Do not invent a parallel "portability" vocabulary. Obsidian-only constructs (wikilinks, embeds, `==highlights==`, `%%comments%%`, `^block-refs`) degrade to literal text elsewhere, so they never leave the vault.
+Master the full Obsidian admonition/callout system and rich markdown, per `references/formatting.md` (built on `Library/Technology & Applied Science/Applied Computing & Software/Markdown Style Guide.md`). **Precedence:** vault-internal files obey Article IX (the emoji-prefixed H1 rule 9.6, the no-em-dash rule 9.1) and the Instructions Section 8 frontmatter schema, and `lint-notes.py` is the exit gate. Scope follows Article IX's internal-vs-leaving split (rule 9.7): markdown is Obsidian-compatible by default; a vault-internal file follows the Constitution, and a file leaving the vault follows the target's own format, with GitHub-Flavored Markdown (the five uppercase callout types NOTE/TIP/IMPORTANT/WARNING/CAUTION) reserved for GitHub's recognized repository and community-health files that render on GitHub (`README.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `SECURITY.md`, and the rest, per 9.7). Do not invent a parallel "portability" vocabulary. Obsidian-only constructs (wikilinks, embeds, `==highlights==`, `%%comments%%`, `^block-refs`) degrade to literal text elsewhere, so they never leave the vault.
 
 **Beauty is signal-scarcity, not maximalism:** if every paragraph is important, none is. Master every element, deploy each only where it earns its place, with density scaled to the piece's length and stakes. A callout, table, or diagram earns its place only when it helps the reader understand faster than prose would; foldable callouts manage density in long docs. This is a **default, not a ceiling**: the owner overrides per document, and "make this note rich" wins.
 
@@ -61,7 +61,7 @@ Load the voice from `Profile/` (`Working Style.md`, `Personality.md`, `Preferenc
 
 ## Conformance with the live BRAIN
 
-**Preflight (before any vault write).** Read `Instructions.md` and `Constitution.md` in full and the namesake doc of every folder written into, then follow the backup, `brain.command sync`, and `brain.command health` protocol. Reference vault files by plain path, never wikilinks. Editorial is **subordinate to the Constitution** (Article IX) and to `brain.command lint`: lint is the exit gate, and a vault-internal piece that fails lint is not done.
+**Preflight (before any vault write).** Read `Instructions.md` and `Constitution.md` in full and the namesake doc of every folder written into, then commit before overwriting, and run `update-vault.py` and `check-vault.py` after. Reference vault files by plain path, never wikilinks. Editorial is **subordinate to the Constitution** (Article IX) and to `lint-notes.py`: lint is the exit gate, and a vault-internal piece that fails lint is not done.
 
 **Read before acting.** Before editing any prose target, read the file and the namesake of its folder so the edit fits its home; before claiming the owner's voice, read `Profile/`. After a substantial piece, **offer** (never silently) to fold the distilled outcome into `Memory/`. Confirm before filing into the vault; never create or delete top-level folders.
 
@@ -69,7 +69,7 @@ Load the voice from `Profile/` (`Working Style.md`, `Personality.md`, `Preferenc
 
 - **Clarity first.** The team's one standard; never bend a sentence away from being understood to preserve a flourish.
 - **No AI slop.** Critique against the slop rubric (`references/slop-rubric.md`), whose single source of truth is Constitution 9.2; cite the offending span, never a vague "make it better."
-- **No em dashes** (Constitution 9.1); `brain.command lint` fails on the character for a vault file.
+- **No em dashes** (Constitution 9.1); `lint-notes.py` fails on the character for a vault file.
 - **Generate, then critique.** Above quick, the maker of a draft is never its own reviewer; the Line Editor arrives fresh.
 - **Voice fidelity** activates only once `Profile/` is populated; until then, neutral defaults, declared.
 - **Formatting precedence:** a vault-internal file obeys Article IX and the Section 8 schema; a leaving piece obeys its destination's format. Lint is the exit gate for a vault file.
@@ -79,7 +79,7 @@ Load the voice from `Profile/` (`Working Style.md`, `Personality.md`, `Preferenc
 
 Stay within writing, editing, and formatting prose, scaled to the piece. Hold the team's one standard, **clarity**, and never bend a sentence away from being understood to preserve a flourish.
 
-**The trigger scope is structural, not semantic.** Auto-fire on a genuine prose target: a Library article body, a Project or Venture document, an outbound email or message, a standalone `.txt`, a note. Do **not** auto-fire on `System/`, on `Inbox/Faculties/` agent rosters, on `Memory/` logs, on templates, on `changelog.md`, on any file whose frontmatter `type` is `template`/`index`/`log`/`script`/`agent`, or on any write performed by a `brain.command` subcommand. The skill is available on explicit request everywhere; the scope governs only what fires unasked.
+**The trigger scope is structural, not semantic.** Auto-fire on a genuine prose target: a Library article body, a Project or Venture document, an outbound email or message, a standalone `.txt`, a note. Do **not** auto-fire on `System/`, on `Inbox/Faculties/` agent rosters, on `Memory/` logs, on templates, on a skill's `Changelog.md`, on any file whose frontmatter `type` is `template`/`index`/`log`/`script`/`agent`, or on any write one of the vault's scripts performs. The skill is available on explicit request everywhere; the scope governs only what fires unasked.
 
 - **vs `markdown`:** editorial subsumes the `markdown` skill's role for vault prose. Editorial owns writing, editing, and formatting; the skill-router hook routes prose and markdown work here. The formatting doctrine lives in `references/formatting.md`.
 - **vs `visualize`:** a Mermaid diagram **inside a file under edit** is editorial; a diagram requested **as a chat answer** is `visualize`. Triggering follows the artifact.

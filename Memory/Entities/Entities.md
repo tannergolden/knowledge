@@ -6,7 +6,7 @@ tags: ["memory", "information", "timeless"]
 aliases: []
 keywords: ["semantic memory", "entities", "people organizations places", "personal orbit", "durable facts", "index and entry", "who and what"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 2
@@ -42,6 +42,6 @@ An entity earns a file when it has a **real relationship** or **recurs**. A name
 
 Facts here change slowly but they do change. Each fact carries bitemporal provenance in the entry body (`As of:` when it became true, `Recorded:` when the BRAIN learned it), and when a fact changes the entry is **superseded, not silently rewritten** (Memory.md). A person who moves keeps their old address as superseded history; the new one becomes current.
 
-## Engine-owned writes
+## Writing entries
 
-Entries are scaffolded through the engine, never hand-created: `memory add person|organization|place "Name"` stamps the frontmatter, applies the right template, and registers the entry in the collection index. The AI supplies content and judgment; it never hand-edits an index table.
+Copy the right template from `Memory/.template/` (Person, Organization or Place) into the collection's folder as `<Name>.md`, and follow its instantiation note: the real `type`, `path`, `id` and dates. `.github/scripts/update-vault.py` then lists it in the collection's index; the AI never hand-edits an index block.

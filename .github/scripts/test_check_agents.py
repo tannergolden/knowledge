@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+"""Tests for check-agents.py, the agent library check.
+
+WHY THIS EXISTS. An agent is addressed by its spoken name and a team is
+dispatched by its roster, so a duplicate name, a roster naming a missing
+agent, or a lead holding labor tools breaks dispatch quietly. Each test builds
+a small library in a throwaway vault, breaks one rule, and runs the real
+script; the last runs it, read only, on the library this repository holds.
+
+Run it:
+
+    python3 .github/scripts/test_check_agents.py
+"""
+
+from __future__ import annotations
+
+import pathlib
+import sys
+import unittest
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import fixtures  # noqa: E402
+
+SCRIPT = 'check-agents.py'
+STAR = '★'
+LEAD = f'{STAR} Research Lead'
+TEAM = 'Inbox/Faculties/Research'
+SECTIONS = ('Identity', 'Role & Objective', 'Inputs', 'Method', 'Output contract', 'Examples', 'Boundaries',
+            'Recovery', 'Non-negotiables')
+
+
+def spec(title: str) -> str:
+    body = [f'# {title}', '', '## Identity', '', '- **Name:** x', '- **Persona:** x', '- **Voice:** x', '']
+    for section in SECTIONS[1:]:
+        body += [f'## {section}', '', 'x', '']
+    return '\n'.join(body)
+
+
+class TestCheckAgents(unittest.TestCase):
+    def setUp(self) -> None:
+        self.vault = fixtures.Vault()
+        self.vault.note('Inbox/Faculties/Faculties.md')
+        self.roster()
+        self.agent(LEAD, name='Beatrice', tools='Read, Grep, Glob, Task')
+        self.agent('Fact-Checker', name='Felix', tools='Read, Grep, Glob, WebSearch')
+
+    def tearDown(self) -> None:
+        self.vault.cleanup()
+
+    def roster(self, members: list[str] | None = None, lead: str = LEAD, **fields: object) -> None:
+        self.vault.note(f'{TEAM}/Research.md', members=members or [LEAD, 'Fact-Checker'], lead=lead, **fields)
+
+    def agent(self, role: str, folder: str = TEAM, body: str | None = None, **fields: object) -> None:
+        self.vault.note(f'{folder}/{role}.md', body=body if body is not None else spec(role),
+                        type='agent', tags=['inbox', 'agent'], **fields)
+
+    def assert_flags(self, needle: str) -> None:
+        result = self.vault.run(SCRIPT)
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn(needle, result.stdout)
+
+    def test_a_valid_library_passes(self) -> None:
+        result = self.vault.run(SCRIPT)
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn('2 agents and 1 rosters pass across 1 homes.', result.stdout)
+
+    def test_the_title_is_the_file_name(self) -> None:
+        self.agent('Fact-Checker', name='Felix', tools='Read', title='Checker')
+        self.assert_flags("title 'Checker' differs from the file name")
+
+    def test_a_spoken_name_and_a_description(self) -> None:
+        self.agent('Fact-Checker', tools='Read', name=None, description=None)
+        result = self.vault.run(SCRIPT)
+        self.assertIn('no name (the spoken name)', result.stdout)
+        self.assertIn('no description (the routing key)', result.stdout)
+
+    def test_the_nine_sections(self) -> None:
+        self.agent('Fact-Checker', name='Felix', tools='Read', body='# Fact-Checker\n\n## Identity\n')
+        self.assert_flags('no ## Method section')
+
+    def test_a_lead_holds_exactly_the_orchestration_tools(self) -> None:
+        self.agent(LEAD, name='Beatrice', tools='Read, Grep, Glob, Task, Write')
+        self.assert_flags('a lead holds exactly Glob, Grep, Read, Task')
+
+    def test_a_specialist_never_writes(self) -> None:
+        self.agent('Fact-Checker', name='Felix', tools='Read, Edit')
+        self.assert_flags('holds neither Write nor Edit')
+
+    def test_the_librarian_may_labor(self) -> None:
+        self.vault.note('Library/Library.md', members=[f'{STAR} Librarian'], lead=f'{STAR} Librarian')
+        self.agent(f'{STAR} Librarian', folder='Library', name='Marian',
+                   tools='Read, Grep, Glob, Write, Edit, Bash, Task')
+        result = self.vault.run(SCRIPT)
+        self.assertEqual(result.returncode, 0, result.stdout)
+
+    def test_the_roster_rules(self) -> None:
+        self.roster(members=[LEAD, 'Fact-Checker', 'Ghost'])
+        self.assert_flags("member 'Ghost' is no agent's title")
+        self.roster(lead='Fact-Checker')
+        result = self.vault.run(SCRIPT)
+        self.assertIn('does not start with the star', result.stdout)
+        self.assertIn("names 'Fact-Checker'", result.stdout)
+
+    def test_every_agent_is_a_member(self) -> None:
+        self.agent('Statistician', name='Stella', tools='Read')
+        self.assert_flags("'Statistician' is not one of")
+
+    def test_names_are_unique_across_homes(self) -> None:
+        self.vault.note('Library/Library.md', members=[f'{STAR} Librarian'], lead=f'{STAR} Librarian')
+        self.agent(f'{STAR} Librarian', folder='Library', name='Felix',
+                   tools='Read, Grep, Glob, Write, Edit, Bash, Task')
+        self.assert_flags("the spoken name 'felix' is also used by")
+
+    def test_naming_one_agent(self) -> None:
+        self.assertEqual(self.vault.run(SCRIPT, 'Felix').returncode, 0)
+        self.assertEqual(self.vault.run(SCRIPT, 'Nobody').returncode, 2)
+
+    def test_the_real_library_passes(self) -> None:
+        result = fixtures.subprocess.run([sys.executable, str(fixtures.SCRIPTS / SCRIPT)],
+                                         capture_output=True, text=True, check=False)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+
+if __name__ == '__main__':
+    unittest.main()

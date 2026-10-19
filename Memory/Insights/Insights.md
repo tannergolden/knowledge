@@ -57,6 +57,6 @@ Reflection runs on the periodic consolidation pass, and whenever the summed impo
 
 ## Entries
 
-<!-- brain:collection-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:collection-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _No insights recorded yet._
 <!-- /brain:collection-entries -->

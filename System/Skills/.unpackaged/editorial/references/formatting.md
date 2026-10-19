@@ -18,9 +18,9 @@ when and why to use it.
 ## Precedence (read first)
 
 > [!warning] The Constitution outranks this file
-> A **vault-internal** file obeys **Constitution Article IX** and the **Instructions Section 8** frontmatter schema, and `brain.command lint` is the **exit gate**. Specifically: rule 9.7 (only Obsidian-compatible markdown by default, with GitHub-Flavored Markdown reserved for a repo-front-page file like a `README.md`), rule 9.6 (every BRAIN markdown file's single H1 begins with one leading emoji, then a space, then the title; the YAML `title` stays plain), rule 9.1 (no em dash, U+2014), and the two-band frontmatter schema on every file. A piece that fails lint is not done, no matter how it reads.
+> A **vault-internal** file obeys **Constitution Article IX** and the **Instructions Section 8** frontmatter schema, and `lint-notes.py` is the **exit gate**. Specifically: rule 9.7 (only Obsidian-compatible markdown by default, with GitHub-Flavored Markdown reserved for a repo-front-page file like a `README.md`), rule 9.6 (every BRAIN markdown file's single H1 begins with one leading emoji, then a space, then the title; the YAML `title` stays plain), rule 9.1 (no em dash, U+2014), and the two-band frontmatter schema on every file. A piece that fails lint is not done, no matter how it reads.
 
-The order, hardest first: the Constitution, then `brain.command lint`, then the Markdown Style Guide, then this file, then the owner's per-document override (which can raise density but never break a hard rule).
+The order, hardest first: the Constitution, then `lint-notes.py`, then the Markdown Style Guide, then this file, then the owner's per-document override (which can raise density but never break a hard rule).
 
 ## Scope - internal vs leaving the vault
 
@@ -88,4 +88,4 @@ This is a **default, not a ceiling.** The owner overrides per document: "make th
 
 ## The exit gate
 
-For any vault-internal file: after formatting, run `python3 System/brain.command lint` and clear every error. Confirm the single emoji-prefixed H1 (9.6), zero em dashes (9.1), and the full two-band frontmatter (Section 8). The piece is done when it reads clear, sounds true, and lints clean.
+For any vault-internal file: after formatting, run `python3 .github/scripts/lint-notes.py` and clear every error. Confirm the single emoji-prefixed H1 (9.6), zero em dashes (9.1), and the full two-band frontmatter (Section 8). The piece is done when it reads clear, sounds true, and lints clean.

@@ -69,15 +69,15 @@ A drift-prone standing line, re-verified on use:
 
 ## The query guarantee
 
-Because the tokens are fixed, the layer stays queryable, and the skill's exit state must satisfy it: after a run, `python3 System/brain.command search unconfirmed` returns every pending proposal the run wrote, and nothing that was approved and shortened. `search "confidence: low"` surfaces the weakest inferences for a later re-check. A proposal the user did not approve is either dropped or left carrying `unconfirmed`; it is never quietly promoted by removing the flag without approval.
+Because the tokens are fixed, the layer stays queryable, and the skill's exit state must satisfy it: after a run, a search for `unconfirmed` returns every pending proposal the run wrote, and nothing that was approved and shortened. A search for `confidence: low` surfaces the weakest inferences for a later re-check. A proposal the user did not approve is either dropped or left carrying `unconfirmed`; it is never quietly promoted by removing the flag without approval.
 
 ## The Memory boundary (Constitution 2.7)
 
 Memory-shaped facts never land in `Profile/`, in any marker state. A person, an event, a date, or a decision is a **Memory promotion**, not a Profile diff:
 
-- A named person the user leans on -> `memory add person`, never a name written into Relationships.
-- A dated happening the run surfaced -> `remember`, never an event line in Biography.
-- A decision the user reports -> `memory add decision`.
+- A named person the user leans on -> a person entry in `Memory/Entities/People/`, never a name written into Relationships.
+- A dated happening the run surfaced -> a `Memory/Log.md` entry, never an event line in Biography.
+- A decision the user reports -> a decision record in `Memory/Decisions/`.
 
 `Profile/` keeps only the user-fact phrasing (the relational style, the durable arc), and the record itself lives in Memory. A fact about the user lives in exactly one place, and that place is `Profile/`; the who, what, when, and which-decision lives in exactly one place, and that place is Memory. The two never carry parallel copies (Constitution 2.7). Sensitive-category discretion (Constitution 4.4) governs both: record the minimum needed to be considerate, never a full account.
 

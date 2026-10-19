@@ -12,15 +12,14 @@ type: "log"
 tags: ["system", "log"]
 status: "active"
 policy: false
-version: "01.04.00"
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-10-19
 ---
 # visualize Changelog
 
 ## Current Version
 
-**`01.04.00`**
+**`01.04.01`**
 
 Semantic versioning, `MAJOR.MINOR.PATCH`, two-digit zero-padded segments. This value matches `metadata.version` in `SKILL.md`. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -65,6 +64,10 @@ Saved visuals now file to the held visuals library at `Inbox/Visuals/` by defaul
 ## Patch Updates
 
 > Fixes and clarifications. Most recent 4 entries.
+
+### `01.04.01` - 2026-10-19
+
+Moved the preflight off the retired engine: an existing file's last state is committed before an edit, and `.github/scripts/lint-notes.py` is the exit gate. The archive now carries the Design team, vendored when it is built.
 
 ### `01.03.01` - 2026-06-28
 

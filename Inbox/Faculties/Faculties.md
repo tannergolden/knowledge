@@ -44,4 +44,4 @@ The Faculties and Agent Resources (AR) are **one logical agent library** with on
 
 ## Held, not sorted
 
-`Inbox/Faculties/` is a permanent held sub-home of the Inbox, like `Inbox/Reports/`: fully linted, synced, and indexed, but never scanned or sorted by the session-start Inbox sweep. Only loose files at the `Inbox/` root are sorted. The teams' finished work, a report, a build, a piece of writing, is delivered to its real home elsewhere in the BRAIN, never kept here.
+`Inbox/Faculties/` is a permanent held sub-home of the Inbox, like `Inbox/Reports/`: fully linted and cataloged, but never scanned or sorted by the session-start Inbox sweep. Only loose files at the `Inbox/` root are sorted. The teams' finished work, a report, a build, a piece of writing, is delivered to its real home elsewhere in the BRAIN, never kept here.

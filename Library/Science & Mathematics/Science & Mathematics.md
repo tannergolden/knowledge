@@ -34,7 +34,7 @@ The formal and natural sciences and how scientific knowledge is made. Applied sc
 | Environmental Science | Climate, ecosystems, and environmental systems as natural science |
 | Philosophy & Method of Science | Scientific method, and the philosophy and history of science |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Science & Mathematics/Astronomy & Space/Astronomy & Space|Astronomy & Space]]
 - [[Library/Science & Mathematics/Biology & Life Sciences/Biology & Life Sciences|Biology & Life Sciences]]
 - [[Library/Science & Mathematics/Chemistry/Chemistry|Chemistry]]

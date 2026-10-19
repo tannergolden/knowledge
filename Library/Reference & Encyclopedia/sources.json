@@ -4,7 +4,7 @@
       "name": "wikipedia-simple",
       "prefix": "wikipedia_en_simple_all_nopic",
       "base": "https://lb.download.kiwix.org/zim/wikipedia/",
-      "enabled": true,
+      "enabled": false,
       "note": "Simple English Wikipedia, full text, no images (~940 MB). Small pipeline-test source."
     },
     {

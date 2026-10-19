@@ -13,7 +13,7 @@
 
 ## Coverage gaps
 
-From `profile coverage "[Facet]" --json` and reading the facet file:
+From `profile-coverage.py "[Facet]" --json` and reading the facet file:
 
 - **Thin or template-empty sections:** [list the sections the coverage report flags]
 - **Existing `unconfirmed` markers in this facet:** [list them, or "none" - these seed the confirm-pass items]

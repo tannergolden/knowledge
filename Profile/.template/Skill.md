@@ -6,12 +6,11 @@ tags: ["profile", "template"]
 aliases: []
 keywords: ["skill", "competence", "expertise", "proficiency", "ability", "template"]
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-10-19
 type: "template"
 folder: "profile"
 layer: 2
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Profile/.template/Skill.md"
 id: "id-skill"
@@ -20,7 +19,7 @@ id: "id-skill"
 # 🛠️ [Skill]
 
 <!--
-FILING INSTRUCTIONS (the engine does this for you: `brain.command profile add skill "Title"`) (one area of genuine depth):
+FILING INSTRUCTIONS (copy this file to Profile/Skills/<Title>.md, then) (one area of genuine depth):
 - Save as Profile/Skills/[Skill].md. Casual interests are Preferences, not Skills.
 - Frontmatter: type "self"; tags ["profile","self","sensitive", + freshness "enduring"]; remove "template" tag and "version".
 - Set "path" and a stable "id" (id-<slug>); give the H1 a fitting emoji. NO wikilinks - plain paths only.

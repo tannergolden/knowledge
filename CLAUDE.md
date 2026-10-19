@@ -11,7 +11,6 @@ type: "guide"
 folder: "root"
 layer: 0
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/CLAUDE.md"
 id: "ro-claude"

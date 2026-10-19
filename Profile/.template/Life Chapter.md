@@ -11,7 +11,6 @@ type: "template"
 folder: "profile"
 layer: 2
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Profile/.template/Life Chapter.md"
 id: "id-life-chapter"

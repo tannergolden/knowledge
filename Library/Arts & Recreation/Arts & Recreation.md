@@ -35,7 +35,7 @@ What people create as art and how they play. Literature and writing go to Langua
 | Games & Play | Games, video games, puzzles, and game design |
 | Recreation & Leisure | Outdoor recreation, leisure, and play in general |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Arts & Recreation/Architecture/Architecture|Architecture]]
 - [[Library/Arts & Recreation/Crafts & Applied Arts/Crafts & Applied Arts|Crafts & Applied Arts]]
 - [[Library/Arts & Recreation/Design/Design|Design]]

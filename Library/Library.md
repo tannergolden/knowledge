@@ -8,12 +8,11 @@ keywords: ["universal classification", "ten classes", "routing table", "boundary
 members: ["★ Librarian"]
 lead: ★ Librarian
 created: 2026-06-18
-updated: 2026-06-28
+updated: 2026-10-19
 type: "information"
 folder: "library"
 layer: 1
 policy: false
-version: "01.01.03"
 author: "Tanner Golden"
 path: "BRAIN/Library/Library.md"
 id: "li-library"
@@ -27,9 +26,9 @@ id: "li-library"
 
 ## Quick reference
 
-To file something: (1) pick the **one** class it most belongs to; (2) pick a division; (3) catalog it (frontmatter, plus a catalog card if it is an external source); (4) shelve it and run `brain.command sync`. For a hard call, use the **Classification rules**, then the **Boundary rulings** and **Worked examples** below. Weed with freshness plus **MUSTIE**.
+To file something: (1) pick the **one** class it most belongs to; (2) pick a division; (3) catalog it (frontmatter, plus a catalog card if it is an external source); (4) shelve it; the Claude Code hook checks its frontmatter as it is written. For a hard call, use the **Classification rules**, then the **Boundary rulings** and **Worked examples** below. Weed with freshness plus **MUSTIE**.
 
-The ten classes: **Information & Computing · Philosophy & Mind · Religion & Spirituality · Society & Social Sciences · Science & Mathematics · Technology & Applied Science · Arts & Recreation · Language & Literature · History & Geography · Life & Practice.** Each is a subfolder with its own namesake doc; the full division map is the "The ten classes" section below, and live listings come from `brain.command db` (`db search folder=library`).
+The ten classes: **Information & Computing · Philosophy & Mind · Religion & Spirituality · Society & Social Sciences · Science & Mathematics · Technology & Applied Science · Arts & Recreation · Language & Literature · History & Geography · Life & Practice.** Each is a subfolder with its own namesake doc; the full division map is the "The ten classes" section below, and live listings come from the catalog (`System/Data/catalog.ndjson`, its `library` records).
 
 ## How this Library works
 
@@ -41,7 +40,7 @@ The ten classes: **Information & Computing · Philosophy & Mind · Religion & Sp
 
 The Library is kept by a single resident **Librarian** ([[★ Librarian]], Marian) who lives here at the Library's root and runs the whole collection single-handed, modeled on the one-person librarian. Unlike the Faculties (the Founder's cognitive teams) or Agent Resources (the venture workforce), the Library needs no team: cataloging, curation, and reference are one coherent stewardship role, done by one mind in one pass, with no independent-verification split to staff.
 
-The Librarian acquires, classifies, catalogs, curates, weeds, preserves, and serves every holding, to one overriding standard: **every holding earns its place**. The collection is judged by what it excludes as much as what it serves, and findability is the purpose that curation serves. By demand the Librarian also does deep per-class subject work, a link and authority-control integrity pass (via `brain.command health`), and a Conspectus-style depth assessment per class; a genuinely contested class, weed, or tier goes to the Founder.
+The Librarian acquires, classifies, catalogs, curates, weeds, preserves, and serves every holding, to one overriding standard: **every holding earns its place**. The collection is judged by what it excludes as much as what it serves, and findability is the purpose that curation serves. By demand the Librarian also does deep per-class subject work, a link and authority-control integrity pass (via `.github/scripts/check-vault.py`), and a Conspectus-style depth assessment per class; a genuinely contested class, weed, or tier goes to the Founder.
 
 Boundaries: the Research team (`Inbox/Faculties/Research/`) gathers evidence and files reports to `Inbox/Reports/`, and the single handoff is the promotion of a finding into a `Library/` doc; the Librarian owns the durable collection here and commissions the Research team to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the Librarian makes the authoritative tier and class assignment at catalog time.
 
@@ -66,7 +65,7 @@ A universal, discipline-first scheme, deliberately de-biased (one neutral class 
 | [[Library/History & Geography/History & Geography\|History & Geography]] | History, biography, geography, area studies, travel, archaeology |
 | [[Library/Life & Practice/Life & Practice\|Life & Practice]] | General practical knowledge: health, food, home, money, work, relationships, self-development |
 
-Beyond the ten classes, [[Library/Reference & Encyclopedia/Reference & Encyclopedia|Reference & Encyclopedia]] is a special-purpose folder rather than a class: it stores offline reference works (Wikipedia and other Kiwix knowledge bases) as read-only ZIM files, searched with `brain.command kb`. The works it holds span every class, so it is the store, not a shelf.
+Beyond the ten classes, [[Library/Reference & Encyclopedia/Reference & Encyclopedia|Reference & Encyclopedia]] is a special-purpose folder rather than a class: it stores offline reference works (Wikipedia and other Kiwix knowledge bases) as read-only ZIM files, searched with `.github/scripts/knowledge-base.py`. The works it holds span every class, so it is the store, not a shelf.
 
 ## Classification rules
 
@@ -155,9 +154,9 @@ Every holding carries a catalog record, with no new brain-wide frontmatter field
 
 ## Acquisition, weeding, and finding aids
 
-- **Acquisition:** material lands in `Inbox/`, is appraised against the 6.2 freshness floor, classified into one class and division, cataloged, and shelved; run `brain.command sync` after.
-- **Weeding:** the 6.2 freshness model plus **MUSTIE** - weed what is **M**isleading, **U**gly or superseded, **S**uperseded, **T**rivial, **I**rrelevant, or available **E**lsewhere. Soft-remove to `.trash/` first (Constitution 3.1).
-- **Finding aids:** each class doc is a finding aid (scope, divisions, "class here / not here", see-also, cross-walk); the generated catalog view (OPAC) is `brain.command db` - `db search folder=library` queries the local FTS index, and `catalog.ndjson` is the committed roll-up.
+- **Acquisition:** material lands in `Inbox/`, is appraised against the 6.2 freshness floor, classified into one class and division, cataloged, and shelved.
+- **Weeding:** the 6.2 freshness model plus **MUSTIE** - weed what is **M**isleading, **U**gly or superseded, **S**uperseded, **T**rivial, **I**rrelevant, or available **E**lsewhere. Remove a weeded item only with the Founder's confirmation, as a `git rm` that history keeps (Constitution 3.1).
+- **Finding aids:** each class doc is a finding aid (scope, divisions, "class here / not here", see-also, cross-walk); the generated catalog view (OPAC) is `System/Data/catalog.ndjson`, one record per note, drawn by `update-vault.py`; filter its `library` records.
 
 ## Engine-agnostic and vector-ready
 

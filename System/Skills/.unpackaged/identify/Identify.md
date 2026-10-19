@@ -6,12 +6,11 @@ tags: ["system", "information"]
 aliases: ["/identify", "identify skill"]
 keywords: ["profile interview", "fill out my profile", "get to know me", "coverage", "big five", "schwartz values", "mcadams life story", "unconfirmed"]
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-10-19
 type: "information"
 folder: "system"
 layer: 4
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/System/Skills/.unpackaged/identify/Identify.md"
 id: "sy-skill-identify"
@@ -21,11 +20,11 @@ id: "sy-skill-identify"
 
 ## What this skill does
 
-Identify populates and deepens the `Profile/` facets by interviewing the user about themselves instead of waiting for hand-edits. It reads `brain.command profile coverage` to find the thinnest facet, runs a short mixed-delivery interview built on validated frameworks (Big Five and HEXACO for Personality, Schwartz values and Moral Foundations for Values, McAdams life-story prompts for Biography, the assistant custom-instruction schema for Working Style), and delivers a reviewed proposal batch the user approves line by line before anything is written. Self-reported facts land unmarked; every inference carries the full provenance marker and stays `unconfirmed` until approved; skips and refusals are never recorded anywhere.
+Identify populates and deepens the `Profile/` facets by interviewing the user about themselves instead of waiting for hand-edits. It reads `.github/scripts/profile-coverage.py` to find the thinnest facet, runs a short mixed-delivery interview built on validated frameworks (Big Five and HEXACO for Personality, Schwartz values and Moral Foundations for Values, McAdams life-story prompts for Biography, the assistant custom-instruction schema for Working Style), and delivers a reviewed proposal batch the user approves line by line before anything is written. Self-reported facts land unmarked; every inference carries the full provenance marker and stays `unconfirmed` until approved; skips and refusals are never recorded anywhere.
 
 ## How it fits the architecture
 
-`metadata.team` names **Research & Development (R&D)** (`Ventures/Agent Resources (AR)/Research & Development (R&D)/`), the home of the embodied lead: the skill runs as Adeline, the UX and Design Research Lead, whose interview craft (instrument design, non-leading questions, observed versus stated versus assumed evidence discipline) is the skill's spine. Two seats are dispatched cross-home, the research skill's Marian convention: Calvin the Writer (`Inbox/Faculties/Editorial/Writer.md`) composes the batch in the Founder's voice, and Sterling the Standards Reviewer (`Inbox/Faculties/Research/Standards Reviewer.md`) audits it blind against Article IV with BLOCK, REVISE, or CLEAR verdicts. The engine side is the read-only `profile coverage` subcommand in `System/brain.command`, which scores every facet with a dual net (a frozen scaffold fingerprint plus a placeholder grammar) and names the next target.
+`metadata.team` names **Research & Development (R&D)** (`Ventures/Agent Resources (AR)/Research & Development (R&D)/`), the home of the embodied lead: the skill runs as Adeline, the UX and Design Research Lead, whose interview craft (instrument design, non-leading questions, observed versus stated versus assumed evidence discipline) is the skill's spine. Two seats are dispatched cross-home, the research skill's Marian convention: Calvin the Writer (`Inbox/Faculties/Editorial/Writer.md`) composes the batch in the Founder's voice, and Sterling the Standards Reviewer (`Inbox/Faculties/Research/Standards Reviewer.md`) audits it blind against Article IV with BLOCK, REVISE, or CLEAR verdicts. The scoring side is the read-only `.github/scripts/profile-coverage.py`, which scores every facet with a dual net (a frozen scaffold fingerprint plus a placeholder grammar) and names the next target.
 
 ## Design basis
 

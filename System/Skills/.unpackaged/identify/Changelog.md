@@ -6,12 +6,11 @@ tags: ["system", "log"]
 aliases: []
 keywords: ["version history", "release notes", "identify changes", "revision log"]
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-10-19
 type: "log"
 folder: "system"
 layer: 4
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/System/Skills/.unpackaged/identify/Changelog.md"
 id: "sy-skill-identify-changelog"
@@ -20,7 +19,7 @@ id: "sy-skill-identify-changelog"
 
 ## Current Version
 
-**`01.00.00`**
+**`01.00.01`**
 
 Semantic versioning, `MAJOR.MINOR.PATCH`, two-digit zero-padded segments. This value matches `metadata.version` in `SKILL.md`. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -52,4 +51,7 @@ _None yet._
 
 > Fixes and clarifications. Most recent 4 entries.
 
-_None yet._
+### `01.00.01` - 2026-10-19
+
+Rewired the pipeline to the vault's scripts: `.github/scripts/profile-coverage.py` picks the target facet, a new entry is copied from its `Profile/.template/` file, Memory promotions are written in their destination's format, and `update-vault.py` and `lint-notes.py` close every run. The archive now carries its team, vendored when it is built.
+

@@ -36,7 +36,7 @@ The record is the company's memory between runs. A stale `Overview`, `Goals`, or
 
 **Findings (one line each):** `[file/field] - [what is stale] - [owner to refresh] - [refresh now (autonomous) | route to strategize | confirm with Founder]`
 
-A staleness finding inside the green lane (an internal `Overview`/`Goals`/`Log` refresh) the skill may write **now**, backing up the file first; record it in `Log.md` (`write-gate.md`). A finding that changes the thesis or the OKR set routes to a `strategize` run rather than being patched here.
+A staleness finding inside the green lane (an internal `Overview`/`Goals`/`Log` refresh) the skill may write **now**, with the file's last state committed first; record it in `Log.md` (`write-gate.md`). A finding that changes the thesis or the OKR set routes to a `strategize` run rather than being patched here.
 
 ## Scan 2 - Stage check (does the declared stage match the signals)
 
@@ -54,7 +54,7 @@ The declared stage string is a claim; the signals are the measurement (`lifecycl
 
 - **Declared:** [stage string]  **Detected:** [FOUND / SCALE / MAINTAIN]
 - [ ] **Agree.** Proceed and note the agreement with the date.
-- [ ] **Disagree.** Trust the **signals** over the label (`lifecycle.md`, reconciliation rule). State the discrepancy plainly. Run the venture at the **detected** stage. Update the `Overview.md` stage with the evidence (autonomous, internal field, backed up first) and append the advance to `Log.md`. A review run that finds a venture has outgrown its label is the moment to **advance the stage on the record**.
+- [ ] **Disagree.** Trust the **signals** over the label (`lifecycle.md`, reconciliation rule). State the discrepancy plainly. Run the venture at the **detected** stage. Update the `Overview.md` stage with the evidence (autonomous, internal field, its prior state committed) and append the advance to `Log.md`. A review run that finds a venture has outgrown its label is the moment to **advance the stage on the record**.
 - [ ] **Thin or contradictory signals on a consequential gap.** Do not guess silently. Ask **one** framing question (SKILL.md, 1 to 3 framing questions when underspecified) before running the wrong playbook.
 
 **Why the stage matters here:** the wrong stage runs the wrong everything. Scan 3's deliverable expectations, the metrics that count as load-bearing, the cadence that defines "stale" in Scan 1, and the chaos-versus-bureaucracy axis in Scan 4 are all keyed to the operating stage. Get this scan right first; the other three inherit it.
@@ -130,7 +130,7 @@ Bureaucracy-side signals (too much structure for the stage):
 
 The health check produces findings; the **skill** persists them, and only inside the lanes `write-gate.md` allows. The chair holds the four scans; the skill alone writes.
 
-- **Autonomous (green), backed up first:** refreshing `Overview.md`, `Goals.md`, or `Log.md` (Scan 1 staleness fixes), advancing the `Overview.md` stage with its evidence (Scan 2 reconciliation), and the standing `Log.md` append that records this health check ran, what it found, and what it routed. Backup before editing any existing file (`python3 System/brain.command backup <path>`); a `Log.md` append still snapshots first.
+- **Autonomous (green), prior state committed first:** refreshing `Overview.md`, `Goals.md`, or `Log.md` (Scan 1 staleness fixes), advancing the `Overview.md` stage with its evidence (Scan 2 reconciliation), and the standing `Log.md` append that records this health check ran, what it found, and what it routed. Commit an existing file's last state before editing it; git history is the backup, a `Log.md` append included.
 - **Routed, not written here:** every missing or stale **deliverable** (Scan 3) becomes its own `operate` run, every thesis or OKR drift becomes a `strategize` run, and every structural balance call (Scan 4) becomes a `decide` run. The health check names the gap, the owner, and the route; it does not produce the artifact in place. A producer never verifies its own work, and consequential output is verified by the Head of Quality before the skill persists it (`verification.md`).
 - **Hard-gated (red), the Founder confirms:** nothing in a health check moves money, sends an external communication, signs a contract, deletes a file, or changes equity. If a corrective implies one of those, the health check **stages** it and the skill waits for the Founder (`write-gate.md`). A "yes" from the CEO seat is advice, not authorization.
 

@@ -10,7 +10,7 @@
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PROJECT_DIR}/System/brain.command\" startup --manifest"
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.github/scripts/session-hooks.py\" start"
           },
           {
             "type": "command",
@@ -27,7 +27,7 @@
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PROJECT_DIR}/System/brain.command\" startup --manifest"
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.github/scripts/session-hooks.py\" start"
           },
           {
             "type": "command",
@@ -44,7 +44,7 @@
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PROJECT_DIR}/System/brain.command\" startup --manifest"
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.github/scripts/session-hooks.py\" start"
           },
           {
             "type": "command",
@@ -61,7 +61,7 @@
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PROJECT_DIR}/System/brain.command\" startup --manifest"
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.github/scripts/session-hooks.py\" start"
           },
           {
             "type": "command",
@@ -86,8 +86,7 @@
         "hooks": [
           {
             "type": "command",
-            "statusMessage": "BRAIN lint",
-            "command": "python3 -c 'import json,sys,os,subprocess; d=json.loads(sys.stdin.read() or \"{}\"); f=(d.get(\"tool_input\") or {}).get(\"file_path\") or \"\"; sys.exit(0) if not (f.endswith(\".md\") and os.path.abspath(f).startswith(os.path.abspath(sys.argv[1]))) else None; r=subprocess.run([\"python3\",os.path.join(sys.argv[1],\"System\",\"brain.command\"),\"lint\",f],capture_output=True,text=True); print(json.dumps({\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"brain.command lint flagged \"+f+\": \"+(r.stdout or \"\")+(r.stderr or \"\")}})) if r.returncode!=0 else None' \"${CLAUDE_PROJECT_DIR}\" 2>/dev/null || true"
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.github/scripts/session-hooks.py\" after-edit"
           }
         ]
       }
@@ -97,8 +96,7 @@
         "hooks": [
           {
             "type": "command",
-            "statusMessage": "BRAIN checkpoint",
-            "command": "python3 -c 'import json,sys; from pathlib import Path; b=Path(sys.argv[1]); skip={\".git\",\".trash\",\".obsidian\",\".claude\",\".backups\"}; mani=b/\"System\"/\"Data\"/\"manifest.json\"; newest=max((p.stat().st_mtime for p in b.rglob(\"*.md\") if not (set(p.relative_to(b).parts) & skip)), default=0.0); mt=(mani.stat().st_mtime if mani.exists() else 0.0); print(json.dumps({\"systemMessage\":\"BRAIN reminder: vault .md files changed since the last index build. Run python3 System/brain.command health and update Memory before finishing. If anything went wrong this session (a correction, a missed step, a skill mis-fire, an ambiguous rule), capture it with python3 System/brain.command friction so the reflection loop can learn from it.\"})) if newest>mt+1 else None' \"${CLAUDE_PROJECT_DIR}\" 2>/dev/null || true"
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.github/scripts/session-hooks.py\" stop"
           }
         ]
       }

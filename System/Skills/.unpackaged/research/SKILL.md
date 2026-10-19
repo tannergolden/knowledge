@@ -5,7 +5,7 @@ license: proprietary
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch, Task
 metadata:
   team: Research
-  version: "01.05.00"
+  version: "01.05.01"
   id: "sy-skill-research-spec"
   author: "Tanner Golden"
   status: "active"
@@ -37,7 +37,7 @@ Every run is the same shape, scaled by tier: frame, ground locally, fan out, ver
 
 1. **Frame.** The lead reads the real question and, when scope, timeframe, region, or decision context is missing where it matters, asks 2-3 clarifying questions first, then chooses and **announces the tier**.
 2. **Step 0, dedup and freshness.** On every non-quick run the Knowledge Manager checks `Inbox/Reports/` for an existing report that still holds, so the team never re-runs work that already exists.
-3. **Ground locally, then escalate (the retrieval order).** Before any web run, dispatch the **Librarian** (Marian, homed in `Library/`) to search the vault's `Library/` notes and the offline knowledge bases (`brain.command kb search` to find an article, then `kb read` to fetch and read its body, across `Library/Reference & Encyclopedia/`). She returns what the local tiers hold, cited, with the gaps named. A settled, non-time-sensitive question the Library and the knowledge bases fully answer is synthesized from there, with no web run. This is Instructions Section 4.5: vault, then knowledge bases, then the web; time-sensitive or "latest" questions skip to the web, and questions about the user stop at the vault.
+3. **Ground locally, then escalate (the retrieval order).** Before any web run, dispatch the **Librarian** (Marian, homed in `Library/`) to search the vault's `Library/` notes and the offline knowledge bases (`knowledge-base.py search` to find an article, then `knowledge-base.py read` to fetch and read its body, across `Library/Reference & Encyclopedia/`). She returns what the local tiers hold, cited, with the gaps named. A settled, non-time-sensitive question the Library and the knowledge bases fully answer is synthesized from there, with no web run. This is Instructions Section 4.5: vault, then knowledge bases, then the web; time-sensitive or "latest" questions skip to the web, and questions about the user stop at the vault.
 4. **Decompose into lanes.** The lead splits what is left, the gaps the local tiers could not close and anything needing current sources, into MECE lanes by dimension (not by source type), one self-contained brief per lane.
 5. **Fan out.** The All-Source Analysts run in parallel, each on its own brief, each returning its artifact; subagents never spawn subagents.
 6. **Verify blind.** The lead writes `draft.md`, then dispatches the Fact-Checker and the Devil's Advocate in one message, blind to each other, on the draft. One verify-and-critique round.
@@ -53,18 +53,18 @@ Most runs use the **core**: the lead (who frames, decomposes, dispatches, and sy
 - **Statistician** - when load-bearing numbers carry the conclusion.
 - **Editor** - only when a report file ships.
 - **Knowledge Manager** - the Step-0 dedup and freshness check (below).
-- **Librarian** (Marian) - the local-grounding step on every non-quick run: searches the curated `Library/` notes and the offline knowledge bases (`kb search` across `Library/Reference & Encyclopedia/`) before any web run, per the Section 4.5 retrieval order. Homed in `Library/` and referenced cross-home, not a Research-team seat.
+- **Librarian** (Marian) - the local-grounding step on every non-quick run: searches the curated `Library/` notes and the offline knowledge bases (`knowledge-base.py search` across `Library/Reference & Encyclopedia/`) before any web run, per the Section 4.5 retrieval order. Homed in `Library/` and referenced cross-home, not a Research-team seat.
 - **Standards Reviewer** - sensitive or external-facing output; fired only on its trigger.
 
 Every dispatch is a self-contained brief (objective, inputs, output contract, tools, boundaries) per `references/dispatch.md`. Every agent returns its artifact in its template shape and persists nothing; the lead alone writes `draft.md`, the blind-review target.
 
 ## Output and freshness (`references/reporting.md`)
 
-Deliver a **cited chat synthesis by default, findings first**. File a report only on request (the owner keeps the inbox lean). When filed, the report goes to **`Inbox/Reports/`** (not `Inbox/Faculties/Research/`, which holds the team), good for a flat **three months** before it must be re-verified (reuse is review). Reports are working artifacts: the only link to one is its entry in the `Inbox/Reports/Reports.md` index (the one hub; no other file links to a report), they are also found by `brain.command search`, and a finding that must outlive its report is **promoted into the durable layer** (a `Library/` doc, a folder namesake, the Constitution or Instructions, a skill's `references/`). When filing, add the report's entry to the index in the same edit; make the promote step explicit before filing. When the local-grounding step found no curated `Library/` note on a durable topic, offer to promote the synthesis into one for the Librarian to catalog, so the next run answers locally.
+Deliver a **cited chat synthesis by default, findings first**. File a report only on request (the owner keeps the inbox lean). When filed, the report goes to **`Inbox/Reports/`** (not `Inbox/Faculties/Research/`, which holds the team), good for a flat **three months** before it must be re-verified (reuse is review). Reports are working artifacts: the only link to one is its entry in the `Inbox/Reports/Reports.md` index (the one hub; no other file links to a report), they are also found by searching, and a finding that must outlive its report is **promoted into the durable layer** (a `Library/` doc, a folder namesake, the Constitution or Instructions, a skill's `references/`). When filing, add the report's entry to the index in the same edit; make the promote step explicit before filing. When the local-grounding step found no curated `Library/` note on a durable topic, offer to promote the synthesis into one for the Librarian to catalog, so the next run answers locally.
 
 ## BRAIN preflight and the standing contract
 
-Before any vault write: read `Instructions.md` and `Constitution.md` in full and the namesake doc of every folder written into, then follow the backup, `brain.command sync`, and `brain.command health` protocol. Reference vault files by plain path, never wikilinks (the one exception is the `Inbox/Reports/Reports.md` report index, whose entries are wikilinks by design). Run the Knowledge Manager **Step-0** dedup and freshness check first on every non-quick run (the protocol is in `references/reporting.md`). After a substantial run, offer (never silently) to fold the distilled outcome into Memory.
+Before any vault write: read `Instructions.md` and `Constitution.md` in full and the namesake doc of every folder written into, then commit before overwriting, and run `update-vault.py` and `check-vault.py` after. Reference vault files by plain path, never wikilinks (the one exception is the `Inbox/Reports/Reports.md` report index, whose entries are wikilinks by design). Run the Knowledge Manager **Step-0** dedup and freshness check first on every non-quick run (the protocol is in `references/reporting.md`). After a substantial run, offer (never silently) to fold the distilled outcome into Memory.
 
 ## The doctrine that never bends (`references/methodology.md`)
 

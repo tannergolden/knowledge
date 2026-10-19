@@ -14,11 +14,8 @@ The single most important rule: **no secret is ever stored as a value in this va
 
 This is machine enforced:
 
-- `python3 System/brain.command secrets` scans all tracked text for cloud keys, tokens, private-key blocks, SSNs, and card numbers.
-- A **pre-push git hook** runs that scan and blocks any push that would ship a secret.
-- The scan also runs inside `python3 System/brain.command health` as a standing check.
-
-Wire the hooks on a fresh clone with `python3 System/brain.command install-hooks`.
+- The **secret scan** in `checks.yml` (gitleaks) checks the whole history for cloud keys, tokens, and private-key blocks on every push and pull request.
+- `python3 .github/scripts/scan-pii.py` checks every tracked file for Social Security and card numbers; the vault's CI runs it too, through `check-vault.py`.
 
 ## Reporting a vulnerability
 

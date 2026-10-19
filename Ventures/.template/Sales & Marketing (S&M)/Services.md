@@ -11,7 +11,6 @@ type: "template"
 folder: "ventures"
 layer: 3
 policy: true
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Ventures/[Company]/Sales & Marketing (S&M)/Services.md"
 id: "ve-services"

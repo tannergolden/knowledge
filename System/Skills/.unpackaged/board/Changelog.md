@@ -12,15 +12,14 @@ type: "log"
 tags: ["system", "log"]
 status: "active"
 policy: false
-version: "02.01.00"
 created: 2026-06-29
-updated: 2026-07-02
+updated: 2026-10-19
 ---
 # board Changelog
 
 ## Current Version
 
-**`02.01.00`**
+**`02.01.01`**
 
 Semantic versioning, `MAJOR.MINOR.PATCH`, two-digit zero-padded segments. This value matches `metadata.version` in `SKILL.md`. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -60,7 +59,9 @@ _None yet._
 
 > Fixes and clarifications. Most recent 4 entries.
 
-_None yet._
+### `02.01.01` - 2026-10-19
+
+Moved the write gate and the preflight off the retired engine: an existing file's last state is committed before an edit (git history is the backup, so the snapshot step is gone), the dedup check is a vault search, and every write ends with `.github/scripts/update-vault.py` and `check-vault.py` instead of `sync` and `health`. The archive now carries the Administration team, vendored when it is built.
 
 <!-- This is a BRAIN documentation node: it carries the BRAIN global frontmatter schema
      above (Instructions Section 8), not the Agent Skills schema. -->

@@ -11,7 +11,6 @@ type: "information"
 folder: "root"
 layer: 0
 policy: false
-version: "01.00.01"
 author: "Tanner Golden"
 path: "BRAIN/Information.md"
 id: "ro-information"

@@ -6,7 +6,7 @@ tags: ["profile", "self", "sensitive", "enduring"]
 aliases: ["Principles", "Ethics", "What Matters"]
 keywords: ["core values", "ethics", "morals", "purpose", "what matters", "philosophy", "orientations", "motivation", "role models", "beliefs"]
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-10-19
 type: "self"
 folder: "profile"
 layer: 2
@@ -84,8 +84,8 @@ The things the user actively opposes.
 
 ## Beliefs
 
-Each substantial belief (religious, political, philosophical) is its own `sensitive` entry. Add one with `profile add belief "Title"`; the list below is engine-maintained.
+Each substantial belief (religious, political, philosophical) is its own `sensitive` entry. Add one by copying `Profile/.template/Belief.md` here as `<Title>.md`; `update-vault.py` keeps the list below.
 
-<!-- brain:profile-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:profile-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _None recorded yet._
 <!-- /brain:profile-entries -->

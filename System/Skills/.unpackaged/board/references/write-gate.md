@@ -8,13 +8,13 @@ This gate is the operate-and-maintain twin of the decision-escalation gate in `r
 
 ## The two lanes
 
-**AUTONOMOUS (green) - the skill writes, then logs.** Internal, reversible, recoverable-from-backup work product into the venture's own folder. The skill writes it without pausing, provided the four green preconditions below all hold. This is the default lane for an operate run's deliverable and for the routine `Log`/`Goals`/`Overview` upkeep a review run produces.
+**AUTONOMOUS (green) - the skill writes, then logs.** Internal, reversible work product into the venture's own folder, recoverable from git history. The skill writes it without pausing, provided the four green preconditions below all hold. This is the default lane for an operate run's deliverable and for the routine `Log`/`Goals`/`Overview` upkeep a review run produces.
 
 **HARD-GATED (red) - the skill stops and asks.** Irreversible, external, or value-moving actions. The skill does not take them. It frames the action, states what it will do, and waits for the Founder's explicit confirmation. No tier, no stage, and no chief's sign-off substitutes for the Founder here. A "yes" from the CEO seat is advice, not authorization.
 
 When an item could read either way, it is **red**. The gate fails safe.
 
-## Green - autonomous, with backup
+## Green - autonomous, from a committed state
 
 The skill may write these into `Ventures/<Venture>/` without asking, once the green preconditions hold:
 
@@ -29,7 +29,7 @@ The skill may write these into `Ventures/<Venture>/` without asking, once the gr
 ### The four green preconditions (all must hold)
 
 1. **Internal and reversible.** The write lands inside this one venture's folder and an edit or a restore can fully undo it. If it touches money, an external party, the cap table, or another venture, it is not green.
-2. **Backed up first.** Before editing any existing file, snapshot it: `python3 System/brain.command backup <path>` (Instructions Section 10). A new file needs no backup; an overwrite always does. No backup, no write.
+2. **Committed first.** Before editing any existing file, make sure its last state is committed (Instructions Section 10): git history is the backup. A new file needs nothing; uncommitted work is never overwritten.
 3. **Verified before it lands.** Consequential output is checked by the independent verifier (Head of Quality, Grace) against its completion evidence before the skill persists it (`references/verification.md`). A producer never verifies its own work. Unverified consequential output does not pass, even when reversible.
 4. **In-mandate for the stage.** Any spend, commitment, or hire implied by the artifact sits under the stage's autonomous threshold in `assets/delegation-of-authority.json`. Over the line, the *artifact* is still green to draft, but the *action* it proposes is red to execute.
 
@@ -70,9 +70,9 @@ If the DoA file and this doctrine ever disagree on a *category*, this doctrine w
 The gate inherits the BRAIN's own boundaries; it does not replace them. Independent of the five categories, the skill also never crosses these (Constitution Articles II, 3.1, 3.6; Instructions Section 10):
 
 - **Never create, rename, or delete a top-level folder** (Article II). Department subfolders inside a venture are fine; the top-level structure is not the skill's to touch.
-- **Back up before editing, log core-file changes.** A change to a core or governance file is logged to `System/changelog.md` (Article 3.6) in addition to the venture's `Log.md`.
+- **Commit, and log the venture's change.** Every change is a commit (Article 3.6); a venture change is also appended to the venture's `Log.md`.
 - **Reference vault files by plain path, never wikilinks** (the one exception is an index whose entries are wikilinks by design).
-- **After writing**, run `python3 System/brain.command sync` and `python3 System/brain.command health`.
+- **After writing**, run `python3 .github/scripts/update-vault.py` and `python3 .github/scripts/check-vault.py`.
 - **Offer, never silently file.** Promoting a decision into the durable layer, filing a memo, or folding an outcome into `Memory/` is offered, then done on a yes.
 
 ## The checklist a run applies
@@ -82,8 +82,8 @@ Before any write-back, the skill walks this in order. Stop at the first red.
 1. **Is the action one of the five red categories?** (money, contract, external comms, delete, equity or cap table.) Red - frame it, state it, get the Founder's explicit confirmation. Do not proceed on a CEO-seat yes.
 2. **Does it cross outside this venture's folder, or is it irreversible?** Red - same as above.
 3. **Does the implied spend or hire exceed the stage threshold** in `assets/delegation-of-authority.json`? The artifact is green to draft; the action is red to execute - gate the action.
-4. **Green so far - has the existing file been backed up?** No - run `brain.command backup <path>` first. New file, skip.
+4. **Green so far - is the existing file's last state committed?** No - commit it first. New file, skip.
 5. **Is the output consequential, and has Grace verified it?** Consequential and unverified - verify first (`references/verification.md`).
-6. **All clear - write it.** Persist the artifact into the owning file, **append to `Log.md`**, update `Goals.md` or the `Overview.md` stage if they changed, then run `brain.command sync` and `health`.
+6. **All clear - write it.** Persist the artifact into the owning file, **append to `Log.md`**, update `Goals.md` or the `Overview.md` stage if they changed, then run `update-vault.py` and `check-vault.py`.
 
 One standard holds across both lanes: every angle heard, one owner accountable, and the irreversible-action gate is never bypassed. The skill writes the green lane on its own; the red lane is the Founder's alone to authorize. See `references/synthesis.md` for the decision-escalation twin of this gate, `references/verification.md` for the verify-before-write discipline, and `references/department-deliverable-catalog.md` for which file each deliverable lands in.

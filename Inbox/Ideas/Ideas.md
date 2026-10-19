@@ -6,7 +6,7 @@ tags: ["inbox", "information"]
 aliases: ["Ideas", "the idea pool", "idea backlog", "ideation pool"]
 keywords: ["idea pool", "ideas", "idea records", "idea backlog", "ideation", "discovery ideas", "ICE Elo", "idea lifecycle", "held ideas"]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-10-19
 type: "information"
 folder: "inbox"
 layer: 2
@@ -22,7 +22,7 @@ The held idea pool. The Discovery team, dispatched by the `discover` skill, file
 
 ## Held, not sorted
 
-Like the Reports library, the Visuals library, and the team homes, the engine excludes Ideas from the session-start sort sweep, so an idea record is never proposed for re-sorting. It stays fully linted, synced, and indexed like any other vault content. Only the loose files at the `Inbox/` root are sorted.
+Like the Reports library, the Visuals library, and the team homes, the session-start card leaves Ideas out of the sort sweep, so an idea record is never proposed for re-sorting. It stays fully linted and cataloged like any other vault content. Only the loose files at the `Inbox/` root are sorted.
 
 ## A living pool, governed by status not time
 
@@ -34,7 +34,7 @@ Each idea is one Markdown file with the File Role `record`, carrying a stable `i
 
 ## Idea files are leaves
 
-An idea record links to nothing in the wikilink graph: `parents` are plain ids and `serves` is a plain path. Lineage is reconstructed by querying `id` and `parents`, not by links, and the pool is found by `python3 System/brain.command search "<term>"`. So, unlike the Reports index, this namesake does not wikilink each idea: the pool can grow to many records, and linking them would clutter the graph, while the leaf design keeps it clean. The pool is browsable by search and by status.
+An idea record links to nothing in the wikilink graph: `parents` are plain ids and `serves` is a plain path. Lineage is reconstructed by querying `id` and `parents`, not by links, and the pool is found by searching this folder. So, unlike the Reports index, this namesake does not wikilink each idea: the pool can grow to many records, and linking them would clutter the graph, while the leaf design keeps it clean. The pool is browsable by search and by status.
 
 ## What goes elsewhere
 

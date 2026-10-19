@@ -11,7 +11,6 @@ type: "template"
 folder: "projects"
 layer: 2
 policy: true
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Projects/[Project-Name]/Overview.md"
 id: "pr-overview"

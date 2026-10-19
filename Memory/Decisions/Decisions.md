@@ -6,7 +6,7 @@ tags: ["memory", "information", "timeless"]
 aliases: []
 keywords: ["decision", "choice", "rationale", "tradeoff", "outcome", "lesson", "deliberation"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 2
@@ -37,13 +37,7 @@ Each record holds:
 
 ## How records are created
 
-Add a decision with:
-
-```
-memory add decision "What was decided"
-```
-
-This instantiates the Decision template (Memory/.template/Decision.md) into a new dated record.
+Copy the Decision template (`Memory/.template/Decision.md`) to this folder as a new dated record and follow its instantiation note; `update-vault.py` lists it below.
 
 ## Decision-Making Principles Observed
 
@@ -53,16 +47,10 @@ This index also carries a living list of the principles that recur across the us
 
 ## Superseding, never rewriting
 
-Decisions are part of the record and are not edited away. When a decision no longer holds, supersede it:
-
-```
-memory supersede decision "..."
-```
-
-This sets the old record's Status to `Superseded` (or `Reversed`) and links it forward to its replacement. Records are never silently rewritten or deleted (Constitution 3.1).
+Decisions are part of the record and are not edited away. When a decision no longer holds, supersede it: set the old record's `**Status:**` line to `Superseded` (or `Reversed`) and link it forward to its replacement with a plain-path `Superseded-by:` line. Records are never silently rewritten or deleted (Constitution 3.1).
 
 ## Entries
 
-<!-- brain:collection-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:collection-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _No decisions recorded yet._
 <!-- /brain:collection-entries -->

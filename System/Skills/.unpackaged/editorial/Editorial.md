@@ -6,12 +6,11 @@ tags: ["system", "information", "timeless"]
 aliases: ["/editorial", "editorial skill", "write skill"]
 keywords: ["editorial skill", "writing skill", "editing", "line editor", "voice fidelity", "ai slop", "markdown formatting", "draft this", "clean this up", "make this clearer"]
 created: 2026-06-23
-updated: 2026-06-28
+updated: 2026-10-19
 type: "information"
 folder: "system"
 layer: 4
 policy: false
-version: "01.05.00"
 author: "Tanner Golden"
 path: "BRAIN/System/Skills/.unpackaged/editorial/Editorial.md"
 id: "sy-skill-editorial"
@@ -23,7 +22,7 @@ Filed in `System/Skills/.unpackaged/` - skill sources live hidden and carry no w
 
 ## What this skill does
 
-`editorial` is the BRAIN's own writing, editing, and formatting skill. It dispatches the standing Editorial team (`Inbox/Faculties/Editorial/`), scaled to the piece across three tiers (quick, standard, deep): on quick the lead drafts and self-edits inline in a single pass; on standard and deep the Writer drafts and a fresh Line Editor gates it, with the Developmental Editor and the Long-Form or Technical Writer firing on a long or specialized piece. It writes to one overriding standard, clarity, with voice fidelity from `Profile/` ranked beneath it. It handles all of the owner's prose: emails, messages, correspondence, memos, documents, essays, books, notes, and the bodies of Library, Project, and Venture files, plain `.txt` included. It is preferred over a generic writer because it runs the vault preflight, obeys the Constitution (the no-em-dash and no-slop rules of Article IX), and exits on `brain.command lint`.
+`editorial` is the BRAIN's own writing, editing, and formatting skill. It dispatches the standing Editorial team (`Inbox/Faculties/Editorial/`), scaled to the piece across three tiers (quick, standard, deep): on quick the lead drafts and self-edits inline in a single pass; on standard and deep the Writer drafts and a fresh Line Editor gates it, with the Developmental Editor and the Long-Form or Technical Writer firing on a long or specialized piece. It writes to one overriding standard, clarity, with voice fidelity from `Profile/` ranked beneath it. It handles all of the owner's prose: emails, messages, correspondence, memos, documents, essays, books, notes, and the bodies of Library, Project, and Venture files, plain `.txt` included. It is preferred over a generic writer because it runs the vault preflight, obeys the Constitution (the no-em-dash and no-slop rules of Article IX), and exits on `lint-notes.py`.
 
 ## How it fits the architecture
 

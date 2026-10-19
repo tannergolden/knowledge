@@ -54,30 +54,31 @@ BRAIN/
 ├── Ventures/           Business context, plus a reusable agent workforce.
 ├── Projects/           Personal projects and initiatives.
 ├── Inbox/              Staging for unsorted input, plus the standing agent faculties.
-└── System/             The engine, the skills, and the changelog.
+└── System/             Workflows, the skills, and the generated catalogs.
 ```
 
-## The engine
+## The scripts
 
-Maintenance runs through one self locating Python CLI, [`System/brain.command`](../System/brain.command). It resolves its own location at runtime, so the vault works wherever it is placed.
+The vault's checks and generators are small Python scripts in [`.github/scripts/`](scripts/README.md). Each finds the vault from its own location, so the vault works wherever it is placed, and [`vault.yml`](workflows/vault.yml) runs them all on every pull request.
 
 ```bash
-python3 System/brain.command startup     # the whole session-init bundle, in one call
-python3 System/brain.command health      # ten integrity checks: lint, links, secrets, drift, and more
-python3 System/brain.command load "task" # a ranked, token-budgeted context set for a task
-python3 System/brain.command search "x"  # full-text search across the vault
+python3 .github/scripts/check-vault.py    # every check: notes, links, skills, agents, personal data, generated parts
+python3 .github/scripts/update-vault.py   # redraw everything generated: memory tiers, link blocks, catalogs, skill archives
+python3 .github/scripts/lint-notes.py X   # one note against the frontmatter schema
 ```
+
+In Claude Code the hooks run them on their own: the session start lists what to read, every note written is checked, and the end of a turn redraws what is generated.
 
 ## What makes it different
 
 - **Structured over freeform.** Every file carries YAML frontmatter drawn from a closed, linted vocabulary. Nothing enters without metadata.
-- **Governed, not vibes.** A written Constitution, a versioned changelog, and machine-enforced checks (frontmatter lint, a wikilink graph, a secret and PII scan) keep the vault honest.
+- **Governed, not vibes.** A written Constitution, a git history every change is committed to, and checks CI runs on every pull request (the frontmatter schema, the wikilink graph, the skills, the agents, and scans for secrets and personal numbers) keep the vault honest.
 - **A workforce, not just notes.** The BRAIN ships its own skills (research, editorial, visualize, discover, identify, board) that compose teams of specialized agents, and builds new ones with the universal `develop` skill.
-- **Safe by construction.** Two-stage deletion, pre-edit backups when local, git history when remote, and a "secrets are pointers, not values" rule with a pre-push guard.
+- **Safe by construction.** Nothing is deleted without confirmation, and nothing deleted is lost, since git history keeps it; and a "secrets are pointers, not values" rule that CI's scans back.
 
 ## Working in this repository
 
-Commits follow the [AI-Driven Commit Process](.github/CONTRIBUTING.md) (Conventional Commits, one intent per commit), enforced by a `commit-msg` hook. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before you start, [`SECURITY.md`](SECURITY.md) before you touch anything sensitive, and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) for how we work together.
+Commits follow the [AI-Driven Commit Process](.github/CONTRIBUTING.md) (Conventional Commits, one intent per commit), checked on every pull request. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before you start, [`SECURITY.md`](SECURITY.md) before you touch anything sensitive, and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) for how we work together.
 
 <div align="center">
 

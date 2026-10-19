@@ -6,7 +6,7 @@ tags: ["memory", "information", "timeless"]
 aliases: []
 keywords: ["people", "relationships", "contacts", "friends family", "personal orbit", "person entries", "who someone is"]
 created: 2026-06-18
-updated: 2026-07-04
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 3
@@ -28,7 +28,7 @@ The registry of people in the user's **personal orbit**: family, friends, mentor
 
 ## How entries are made
 
-Create through the engine: `memory add person "First Last"`. It stamps the frontmatter, applies the Person template, and registers the entry below. The AI never hand-edits this index.
+Copy `Memory/.template/Person.md` to this folder as `First Last.md` and follow its instantiation note. `update-vault.py` lists it below; the AI never hand-edits this index.
 
 ## Provenance
 
@@ -38,6 +38,6 @@ Each profile carries `As of:` / `Recorded:` provenance in its body, and changing
 
 ## Entries
 
-<!-- brain:collection-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:collection-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _No people recorded yet._
 <!-- /brain:collection-entries -->

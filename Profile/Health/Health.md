@@ -6,7 +6,7 @@ tags: ["profile", "self", "sensitive", "enduring"]
 aliases: ["Wellbeing", "Accessibility"]
 keywords: ["health", "conditions", "accessibility", "needs", "wellbeing", "accommodations", "how to help"]
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-10-19
 type: "self"
 folder: "profile"
 layer: 2
@@ -30,9 +30,9 @@ The part the AI actually uses: how to pace, format, or adapt help, and what to a
 
 ## Conditions & Needs
 
-One terse `sensitive` entry per condition or accessibility need, isolated for privacy. Add one with `profile add condition "Title"`; the list below is engine-maintained.
+One terse `sensitive` entry per condition or accessibility need, isolated for privacy. Add one by copying `Profile/.template/Health Condition.md` here as `<Title>.md`; `update-vault.py` keeps the list below.
 
-<!-- brain:profile-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:profile-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _None recorded yet._
 <!-- /brain:profile-entries -->
 

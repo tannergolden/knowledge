@@ -6,7 +6,7 @@ tags: ["inbox", "information"]
 aliases: ["Visuals", "visuals library", "visualization gallery", "saved visuals"]
 keywords: ["visuals", "visualizations", "charts", "diagrams", "dashboards", "held visuals", "visual gallery", "design team outputs"]
 created: 2026-06-28
-updated: 2026-10-18
+updated: 2026-10-19
 type: "information"
 folder: "inbox"
 layer: 2
@@ -22,7 +22,7 @@ The held library for finished visuals. The Design team, dispatched by the `visua
 
 ## Held, not sorted
 
-Visuals live here and stay here. They are not sorted into the BRAIN's permanent layers: a saved visual is a rendered artifact, produced, held, used, and eventually cleared or superseded, not durable reference knowledge. The session-start Inbox sweep skips this folder the way it skips the Reports library and the team homes, so a visual is never proposed for re-sorting. Visuals stay fully linted, synced, and indexed like any other vault file.
+Visuals live here and stay here. They are not sorted into the BRAIN's permanent layers: a saved visual is a rendered artifact, produced, held, used, and eventually cleared or superseded, not durable reference knowledge. The session-start Inbox sweep skips this folder the way it skips the Reports library and the team homes, so a visual is never proposed for re-sorting. Visuals stay fully linted and cataloged like any other vault file.
 
 ## Archival, kept until superseded
 
@@ -34,7 +34,7 @@ This library is the default home for a standalone visual: one that answers a que
 
 ## This file is the visuals index
 
-`Visuals.md` is the one hub that links every held visual. The index below carries a wikilink to each visual artifact (an `.svg` or self-contained `.html` file) in this folder, with the question it answers and its data date, so the whole library is browsable from here and in the graph view. This index is the only place a visual is linked: no other file in the BRAIN cites or links to a held visual, which keeps the wider wikilink graph free of disposable nodes. A visual can also be found by searching this folder (`python3 System/brain.command search "<term>"`). Because a rendered `.svg` or `.html` artifact carries no BRAIN frontmatter, its provenance (the question, the data date, the source) lives in its index entry here, and `brain.command sync` writes the folder tag to the artifact's macOS metadata.
+`Visuals.md` is the one hub that links every held visual. The index below carries a wikilink to each visual artifact (an `.svg` or self-contained `.html` file) in this folder, with the question it answers and its data date, so the whole library is browsable from here and in the graph view. This index is the only place a visual is linked: no other file in the BRAIN cites or links to a held visual, which keeps the wider wikilink graph free of disposable nodes. A visual can also be found by searching this folder. Because a rendered `.svg` or `.html` artifact carries no BRAIN frontmatter, its provenance (the question, the data date, the source) lives in its index entry here.
 
 The index is kept in lockstep with the folder. When a visual is filed, regenerated, or cleared, its entry below is added, updated, or removed in the same edit, so the index always mirrors what is actually here.
 

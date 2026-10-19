@@ -6,12 +6,11 @@ tags: ["root", "constitution", "startup", "timeless"]
 aliases: []
 keywords: ["governance", "non-negotiable rules", "boundaries", "ai behavior policy", "hard constraints", "user authority", "governing laws"]
 created: 2026-05-18
-updated: 2026-07-05
+updated: 2026-10-19
 type: "constitution"
 folder: "root"
 layer: 0
 policy: false
-version: "01.08.01"
 author: "Tanner Golden"
 path: "BRAIN/Constitution.md"
 id: "ro-constitution"
@@ -59,7 +58,7 @@ The AI may propose and, upon user confirmation, create new folders at Layer 3 or
 The AI must not create a file or folder that replicates the purpose of an existing one. Before creating anything new, verify that an appropriate destination does not already exist.
 
 **2.5 Location Independence**
-The BRAIN is portable and may be placed anywhere on the filesystem. No hardcoded absolute paths may exist inside the BRAIN - in markdown files, scripts, or any stored data. All internal references must be relative to the BRAIN root. Scripts must resolve the BRAIN root at runtime using their own file path (`__file__`), never a configured or assumed location. Any tool or agent identifying the BRAIN must do so by the presence of both `Instructions.md` and `Constitution.md` at the folder root - not by the folder's name or absolute path. Stored indexes, manifests, or snapshot files must use BRAIN-relative paths only; absolute paths may be computed at read time but must never be persisted.
+The BRAIN is portable and may be placed anywhere on the filesystem. No hardcoded absolute paths may exist inside the BRAIN - in markdown files, scripts, or any stored data. All internal references must be relative to the BRAIN root. Scripts must resolve the BRAIN root at runtime from their own file path (`__file__`), never a configured or assumed location: the vault's scripts live in `.github/scripts/`, so the root is the folder two levels above them. Any tool or agent identifying the BRAIN must do so by the presence of both `Instructions.md` and `Constitution.md` at the folder root - not by the folder's name or absolute path. Stored indexes, manifests, or snapshot files must use BRAIN-relative paths only; absolute paths may be computed at read time but must never be persisted.
 
 **2.6 File Naming Conventions**
 - Every folder's documentation file is named after the folder itself: `Memory/Memory.md`, `System/System.md`. One exception: the BRAIN root's own definition file stays `Information.md` (it documents the whole system, not a folder).
@@ -72,6 +71,8 @@ The BRAIN is portable and may be placed anywhere on the filesystem. No hardcoded
 `Memory/` and `Profile/` are distinct layers and must never duplicate each other. **`Profile/` is the single home for who the user is**: their background, personality, values, preferences, skills, beliefs, goals, health, and any other trait or fact about the user themselves, whether the user stated it or the AI observed it. **`Memory/` holds only what `Profile/` cannot**: what happened (session summaries, the Log), who is around the user (People), what they decided (Decisions), and when things occur (Dates). When the AI learns something about the user themselves, it proposes adding it to the relevant `Profile/` file (Article 4.2); it must never store a parallel copy in a Memory file. A fact about the user lives in exactly one place, and that place is `Profile/`. This is a specific, non-negotiable application of 2.4 (No Duplicate Structures).
 
 **Amendments**
+
+- *2026-10-19*: 2.5 updated when the engine became scripts in `.github/scripts/`: a script finds the root from its own location, two levels above it.
 
 - *2026-07-05*: Reconciled 2.6's no-`README.md` rule with Article 9.7 at the user's direction. 9.7 already recognized GitHub community-health files; 2.6 now carves them out explicitly as the sole exception: `README.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, and `SECURITY.md` live under `.github/`, and the `LICENSE` at the repo root. They are GitHub presentation infrastructure, exempt from the frontmatter schema and the linter (the engine skips `.github/` as a dot-directory and skips the root `LICENSE` via `SKIP_FILES`). Files added the same day.
 
@@ -88,21 +89,14 @@ The BRAIN is portable and may be placed anywhere on the filesystem. No hardcoded
 
 ## Article III - File Modification Rules
 
-**3.1 Never Delete Without Confirmation - and Always in Two Stages**
+**3.1 Never Delete Without Confirmation**
 The AI must never delete a file from this BRAIN without explicit user confirmation, regardless of whether a retention policy flags it for removal. Flagging is allowed; deletion requires user approval.
 
-Deletion itself is **two-level**. There is no single-step permanent deletion anywhere in this BRAIN:
+**Git history is the recovery net.** The BRAIN lives in a git repository, so an approved deletion is a git removal (`git rm`) in a commit, and every earlier version of the file stays in the history, restorable with `git restore` or `git checkout <commit> -- <path>`. A file git cannot bring back, one that is untracked or carries uncommitted changes, is committed before it is deleted, or it is not deleted. Nothing is ever deleted without a way back.
 
-1. **Soft Removal** - the approved item moves to `.trash/`, keeping its BRAIN-relative path (`brain.command trash <path>`). It is out of the live vault but fully restorable (`trash restore`).
-2. **Hard Removal** - `trash empty`, with its own explicit confirmation, hands items from `.trash/` to the host computer's own Trash (macOS `~/.Trash`), where the OS's retention - Finder's 30-day auto-empty, when enabled - finishes the job. The BRAIN itself never destroys a file: the second door opens onto the computer's trash can, not a shredder. An item must pass through Soft Removal first, and on a host with no OS trash, Hard Removal refuses and waits for the Mac.
+Exempt from confirmation: transient junk (`__pycache__/`, `*.pyc`, `._*` AppleDouble files) and `.gitkeep` markers, which are infrastructure: `.github/scripts/update-vault.py` adds a `.gitkeep` to an empty folder and removes it from one that has gained files. `.DS_Store` is in neither category: the AI **ignores it completely** - never deletes, moves, reports, or counts it, anywhere in the BRAIN. macOS owns and regenerates that file; touching it is pure churn.
 
-**The recovery layer depends on the backup mode.** The two-level `.trash/` flow above is the safety net for a **local-only** vault - one with no reachable git remote - where a moved-aside copy is the only way back. When the vault has a **reachable git remote** (`brain.command` detects this automatically and caches the result), git history is the recovery net instead: an approved deletion of a tracked, unmodified file is a git removal (`git rm`, recoverable from history, and before commit with `trash restore`), and the `.backups/` pre-edit snapshots of Section 10 are skipped in favor of commits. The `.trash/` two-stage still applies in a remote-backed vault to anything git cannot recover - an untracked file, or one carrying uncommitted changes - so nothing is ever deleted without a way back. Either way the governing rule holds without exception: no deletion without explicit user confirmation.
-
-**Standing soft-removals.** Two automated processes carry permanent user authorization for stage 1 only: the gitkeep maintenance rule, and backup rotation - `.backups/` keeps the newest 5 versions per source file and soft-removes older versions to `.trash/` (Instructions Section 10.1). Neither ever hard-deletes; stage 2 remains yours alone.
-
-Exempt from the two-level flow: transient junk (`__pycache__/`, `*.pyc`, `._*` AppleDouble files) and `.gitkeep` markers, which are infrastructure governed by their own standing policies, not content. `.DS_Store` is in neither category: the AI **ignores it completely** - never deletes, moves, reports, or counts it, anywhere in the BRAIN. macOS owns and regenerates that file; touching it is pure churn.
-
-The tiered session-memory cascade (`Instructions.md` Section 13.2) does not need an exception: when `Memory/Context/Recent/` exceeds its 6-file cap, `brain.command memory cascade` moves the oldest summary to cold storage in `Memory/Context/Archive/` rather than deleting it. Nothing in this BRAIN is ever deleted by automation. The archive is unbounded, organized by year, and remains searchable for the life of the system.
+The tiered session-memory cascade (`Instructions.md` Section 13.2) does not need an exception: when `Memory/Context/Recent/` exceeds its 6-file cap, `.github/scripts/update-vault.py` moves the oldest summary to cold storage in `Memory/Context/Archive/` rather than deleting it. No content in this BRAIN is ever deleted by automation. The archive is unbounded, organized by year, and remains searchable for the life of the system.
 
 **3.2 Edits Must Be Purposeful**
 The AI must not edit files to add opinions, summarize things the user didn't ask to summarize, or restructure content in ways that weren't requested. Edits should be additive (adding new information), corrective (fixing outdated facts), or structural (applying standards like frontmatter). Rewriting existing content requires user direction.
@@ -113,27 +107,25 @@ Every markdown file created or sorted by the AI must include the standardized YA
 **3.4 Retention Policies Are Advisory**
 Retention policies embedded in Memory files and template files tell the AI what *can* be removed. They do not authorize the AI to remove content unilaterally. Removal suggestions must be surfaced to the user for approval.
 
-**3.5 File Metadata Tags Are Mandatory for All Files (Non-Negotiable)**
-Every file in this BRAIN - markdown or otherwise - must have its tags written to macOS Finder metadata (`com.apple.metadata:_kMDItemUserTags`). For `.md` files, tags come from the YAML frontmatter `tags:` field. For binary or non-editable files (images, PDFs, scripts, etc.), the AI determines appropriate tags based on content and destination, then applies them directly to the file's macOS metadata. A file is not considered fully processed until its Finder metadata tags are set. The sync script at `System/brain.command sync` (or double-click `System/brain.command`) handles bulk synchronization of all `.md` files.
+**3.5 Tags Live in the Frontmatter**
+A note's tags are its YAML frontmatter `tags:` field, and that is the only place they live. `.github/scripts/lint-notes.py` holds every note's tags to the closed vocabulary of Article VII, on every edit and in CI. A file that cannot carry frontmatter (an image, a PDF, a script) carries no tags of its own: its folder places it, and the folder's note describes it. The macOS Finder metadata copy this article once required is retired; it existed only on a Mac and duplicated the frontmatter.
 
-This mandate is scoped to macOS, where the BRAIN normally resides. On any other host, Finder metadata does not exist: the frontmatter `tags:` field alone is canonical there, files are fully processed without xattrs, and `sync` resumes its duty the next time the vault runs on a Mac. Portability (Article 2.5) is never compromised by a platform-specific metadata layer.
-
-**3.6 Changelog Discipline**
-After making any change to a **core BRAIN file** that meets the PATCH threshold or larger, the AI must log the change in `System/changelog.md` per the rules embedded in that file. Core BRAIN files are governance documents (`Constitution.md`, `Instructions.md`), scaffolding (`Information.md`), system scripts (`System/*`), templates (`Template/*`), and the folder structure itself. Changes to content the BRAIN holds (files placed into `Library/`, entries added to `Memory/` files, new Project/Venture instances from templates, personal information filled into `Profile/` files, Inbox sorting) are never logged in the changelog. The changelog is the canonical version history for the BRAIN system itself. Classification rules, version bumping mechanics, and the 4-entry cap per section all live inside `System/changelog.md`.
+**3.6 Change History Is Git**
+The BRAIN keeps no hand-written changelog and no per-file version numbers. Every change is a commit whose Conventional Commits message says what changed and why, and the repository's release notes, drawn from those commits, are the version history of the BRAIN itself. `git log -- <path>` is any one file's history. A note's `updated` field still records when its content last changed meaningfully (Instructions Section 8.3).
 
 **3.7 Wikilink Usage is Mandatory (With Exemptions and Topology)**
 Whenever the AI references a concept, project, venture, person, or any entity that has a corresponding file in the BRAIN, it must use an Obsidian wikilink (e.g., `[[Filename]]`). This ensures the BRAIN forms a connected knowledge graph that can be navigated via Obsidian's backlinks and graph view. Do not use plain text for known entities - within the topology below.
 
-**Tree topology (hub-only).** The graph mirrors the file tree exactly, and only hubs carry edges - enforced by `brain.command links`:
+**Tree topology (hub-only).** The graph mirrors the file tree exactly, and only hubs carry edges - enforced by `.github/scripts/check-links.py`:
 
 1. **Folder docs are the intra-folder linkers.** A folder doc may wikilink the files in its own folder and the namesake docs of its immediate subfolders (one level per hop): `Memory.md` → `Log.md`/`Dates.md` and its collection and tier subfolder docs; `System.md` → `Skills/Skills.md`; `Profile.md` and `Library.md` → their facet and class docs.
 2. **Other content files link nothing.** Any file that is not a folder doc carries zero wikilinks; every reference from a content file is a plain code-style path. Obsidian's backlinks pane still shows each file's hub.
 3. **The root chain is fixed.** `CLAUDE.md` → `AGENTS.md` → `Instructions.md` → `Constitution.md`. `Instructions.md`, serving as the vault root's folder doc, also links `Information.md` and the Layer-1 namesake docs. `Constitution.md` links nothing. No other root edges, no lateral links, no level-skipping, no upward links.
 4. **Excluded zones stand:** `.template/` files neither contain nor receive wikilinks; skill sources in `Skills/.unpackaged/` neither contain nor receive them (a wikilink into a hidden folder invites Obsidian to spawn stray notes - each skill's graph node is its packaged `.skill` artifact, linked from `Skills.md` as a sibling file).
 
-6. **Links cascade - never reciprocate.** Links flow downhill (root → namesake docs → folder files; general → specific). A file never wikilinks back to a file that links to it: Obsidian's backlinks already show the reverse relationship, so a return link is pure duplication. When two files both warrant the connection, the file nearer the root carries the link and the other references by plain path; equal rank resolves by the Article 5.5 priority order or the parent doc's listing order. The graph is kept acyclic - `brain.command links` rejects reciprocal pairs and warns on longer cycles.
+6. **Links cascade - never reciprocate.** Links flow downhill (root → namesake docs → folder files; general → specific). A file never wikilinks back to a file that links to it: Obsidian's backlinks already show the reverse relationship, so a return link is pure duplication. When two files both warrant the connection, the file nearer the root carries the link and the other references by plain path; equal rank resolves by the Article 5.5 priority order or the parent doc's listing order. The graph is kept acyclic - `check-links.py` rejects reciprocal pairs and warns on longer cycles.
 
-7. **Memory-tier docs (ordinary hub-and-spoke, no exception).** The session-summary tiers live under `Memory/Context/`, whose folder doc `Context.md` links its three immediate subfolder docs (`Current`, `Recent`, `Archive`) by the ordinary hub rule, and `Memory.md` links `Context.md` (also ordinary). The tier docs do **not** link each other: the cascade flow (`Current -> Recent -> Archive`) is documented in prose, not as a graph edge. Each tier doc wikilinks only the summary files currently in its own folder (own-folder files, permitted by rule 1), and `brain.command` keeps those per-summary links in sync as files cascade (`_sync_tier_doc_links`, run on every cascade). There are no sanctioned lateral folder-doc links anywhere in the BRAIN; rule 1 holds without exception.
+7. **Memory-tier docs (ordinary hub-and-spoke, no exception).** The session-summary tiers live under `Memory/Context/`, whose folder doc `Context.md` links its three immediate subfolder docs (`Current`, `Recent`, `Archive`) by the ordinary hub rule, and `Memory.md` links `Context.md` (also ordinary). The tier docs do **not** link each other: the cascade flow (`Current -> Recent -> Archive`) is documented in prose, not as a graph edge. Each tier doc wikilinks only the summary files currently in its own folder (own-folder files, permitted by rule 1), and `.github/scripts/update-vault.py` keeps those per-summary links in sync as files cascade. There are no sanctioned lateral folder-doc links anywhere in the BRAIN; rule 1 holds without exception.
 
 The wikilink mandate in the first paragraph applies within these boundaries: link entities when the topology permits an edge; otherwise reference by plain path.
 
@@ -143,12 +135,12 @@ The wikilink mandate in the first paragraph applies within these boundaries: lin
 
 In these locations, reference other files by plain text or plain path instead. This keeps the knowledge graph free of scaffold noise. The linter enforces this for `.template/` folders.
 
-**Backups are deliberately not on this list.** A file in `System/.backups/` is a faithful pre-edit snapshot whose entire purpose is exact restoration, so it must preserve the original verbatim, including any wikilinks. The AI must never edit a backup after writing it. Backups are kept out of the live knowledge graph by location, not by altering their contents: the linter never walks `System/.backups/`, so a backup is never validated or treated as a live node regardless of what it contains. The folder is dot-prefixed so Obsidian and similar programs never display it.
-
 **3.8 Never Clear a File's Contents**
-The AI must never fully empty or blank out any file in the BRAIN. Deleting every line, overwriting a file with nothing, or reducing it to an empty document is prohibited, no matter how the change is framed. A file that has outlived its purpose is removed through the two-level deletion in 3.1 (soft-removed to `.trash/`, recoverable), never by emptying it in place. Editing a file means changing its contents, not erasing them. Two safeguards back this rule: before editing any existing file the AI takes a backup (Instructions Section 10), so accidental loss is always recoverable, and `brain.command lint` flags any empty BRAIN document, so the prohibition is enforced and not merely stated.
+The AI must never fully empty or blank out any file in the BRAIN. Deleting every line, overwriting a file with nothing, or reducing it to an empty document is prohibited, no matter how the change is framed. A file that has outlived its purpose is removed through 3.1 (a confirmed `git rm`, recoverable from history), never by emptying it in place. Editing a file means changing its contents, not erasing them. Two safeguards back this rule: git history keeps every committed version, so accidental loss is always recoverable, and `.github/scripts/lint-notes.py` flags any empty BRAIN document, so the prohibition is enforced and not merely stated.
 
 **Amendments**
+
+- *2026-10-19*: Retired the engine's file machinery at the user's direction, when `System/brain.command` was split into scripts in `.github/scripts/` and everything it did that git or the AI already does was removed. 3.1 now rests on git history alone: an approved deletion is a confirmed `git rm`, and the `.trash/` two-stage flow, the `.backups/` snapshots and their rotation are gone. 3.5 now says tags live in the frontmatter only; the macOS Finder metadata mandate and its `sync` command are retired. 3.6 is now Change History Is Git: the hand-kept `System/changelog.md` and every per-file `version` are retired in favor of commits and release notes. 3.7 and 3.8 name `check-links.py`, `update-vault.py` and `lint-notes.py` for the checks the engine ran.
 
 - *2026-07-04*: Made the recovery layer depend on the backup mode, at the user's direction. When the vault has a reachable git remote, git history is the recovery net: `.backups/` pre-edit snapshots are skipped (commits preserve state) and an approved deletion of a tracked, unmodified file is a `git rm` (recoverable from history, and before commit with `trash restore`). The `.trash/` two-stage and `.backups/` remain the safety net for a local-only vault with no reachable remote, and still apply in a remote-backed vault to anything git cannot recover (untracked or uncommitted-modified files). `brain.command` detects the mode automatically (`_remote_backed`, cached) with a safe bias to local mode on any doubt; 3.1 and Instructions Section 10 updated. The confirm-before-delete rule is unchanged.
 - *2026-06-26*: Dissolved the `System/State/` wrapper at the user's direction, moving the changelog, the generated `Data/`, and the backup folders up to `System/` directly. This reverses the changelog half of the sixteenth amendment (2026-06-13): the changelog returns from `System/State/changelog.md` to `System/changelog.md` (3.6 path updated), and backups move from `System/State/.backups/` to `System/.backups/` (3.7 path updated). `brain.command` was rewired (the data dir, the changelog reader, the backups dir, the search globs), `State.md` was removed, and `System.md` now links `changelog.md` and `Data/Data.md` directly.
@@ -235,9 +227,9 @@ The Library-folder law - 6.1 (Library content is not personal), 6.2 (the freshne
 
 ## Article VII - Tagging Laws
 
-Every file in this BRAIN is tagged from a **fixed, closed vocabulary**. Tags exist for one purpose: fast, reliable filtering and search, both in the AI's retrieval and in macOS Finder/Spotlight. To stay searchable, every tag must be shared across many files and drawn only from the controlled lists below.
+Every file in this BRAIN is tagged from a **fixed, closed vocabulary**. Tags exist for one purpose: fast, reliable filtering and search, in the AI's retrieval, in Obsidian, and in the vault's catalog. To stay searchable, every tag must be shared across many files and drawn only from the controlled lists below.
 
-**Free-form, per-file "content" tags are prohibited.** A tag that lands on a single file helps no one find anything - it is noise. Subject-matter discovery is handled by the folder taxonomy (the path *is* the subject, e.g. `Library/Society & Social Sciences/Economics/`) and by full-text search (`brain.command search`), never by per-file tags.
+**Free-form, per-file "content" tags are prohibited.** A tag that lands on a single file helps no one find anything - it is noise. Subject-matter discovery is handled by the folder taxonomy (the path *is* the subject, e.g. `Library/Society & Social Sciences/Economics/`) and by full-text search over the notes and the `keywords` field, never by per-file tags.
 
 These rules apply every time a file is created, moved, or has its frontmatter updated. They are laws, not suggestions.
 
@@ -308,15 +300,17 @@ Apply one of `timeless` / `enduring` / `current` per Article 6.2. Library files 
 - No trailing spaces or punctuation inside tag strings.
 - Tags are written as an inline array: `tags: ["folder", "role", ...]`.
 
-**7.8 - Sync After Every Change**
+**7.8 - Check After Every Change**
 
-After creating or modifying any file's `tags:` field, run `python3 System/brain.command sync` (or double-click `System/brain.command`) to push the updated tags to macOS file metadata. A file whose frontmatter tags and Finder metadata disagree is in a broken state. Never leave the system in that state.
+After creating or modifying any file's `tags:` field, the note is checked against this Article: the Claude Code hook runs `.github/scripts/lint-notes.py` on every note the AI writes, and CI runs it on every note. A note whose tags break the vocabulary is in a broken state. Never leave the system in that state.
 
 **7.9 - Discovery Fields Are Not Tags (Free-Text Exception)**
 
-The closed-vocabulary rule in this Article governs the `tags:` field only. Two frontmatter fields are deliberately free text and exist to carry exactly the subject-matter and synonym terms that `tags` may not: `keywords` and `aliases`. They are discovery aids, not governance tags, carry no policy meaning, and are not written to Finder metadata. `keywords` holds 4-8 distinctive search synonyms (the words a person would actually type that are not in the title); `aliases` holds alternate names substitutable for the title. The prohibition on free-form *tags* stands unchanged - subject terms belong in `keywords`, never in `tags`. The complete definitions and authoring rules live in `Instructions.md` Section 8.7.
+The closed-vocabulary rule in this Article governs the `tags:` field only. Two frontmatter fields are deliberately free text and exist to carry exactly the subject-matter and synonym terms that `tags` may not: `keywords` and `aliases`. They are discovery aids, not governance tags, and carry no policy meaning. `keywords` holds 4-8 distinctive search synonyms (the words a person would actually type that are not in the title); `aliases` holds alternate names substitutable for the title. The prohibition on free-form *tags* stands unchanged - subject terms belong in `keywords`, never in `tags`. The complete definitions and authoring rules live in `Instructions.md` Section 8.7.
 
 **Amendments**
+
+- *2026-10-19*: 7.8 is now Check After Every Change: the Finder metadata copy and its `sync` step are retired (3.5), and `.github/scripts/lint-notes.py` checks every note's tags on each edit and in CI. The vocabulary is unchanged.
 
 - *2026-07-04 (drift correction)*: Removed the retired `index` value from the 7.1 File Role dimension list, which still carried it although the role was retired on 2026-06-19 (no doc carries it and the engine's `VALID_FILE_TYPES` never listed it). The 7.3 table was already correct. A doc-vs-code drift fix, not a vocabulary change; the closed set is unchanged. `Instructions.md` corrected in the same pass (the two `type` enums dropped `index` and gained the already-valid `agent`; the `folder` enum value `identity` corrected to `profile`; the Library id-prefix `kn-` corrected to `li-`).
 
@@ -351,7 +345,7 @@ These rules apply to every deliverable, document, draft, or written output the A
 **Scope.** Article IX governs user-facing output: conversational responses, and any document, email, report, or other work product the user will read or share. Internal BRAIN system files (governance documents, folder documentation, templates, scripts, logs) prioritize clarity and internal consistency; their other punctuation and phrasing conventions stand. Two rules apply everywhere, internal files included: the 9.1 em-dash ban and the 9.2 ban on empty, padded language.
 
 **9.1 No Em Dashes**
-The AI is not allowed to produce em dashes (the U+2014 long-dash character). This is an absolute prohibition with no exceptions. It applies to every conversational response the AI writes to the user, to every deliverable (documents, emails, reports, summaries, and any other work product), and to every file in the vault (governance docs, folder documentation, templates, scripts, and logs). Em dashes are a telltale AI writing habit; in their place use a comma, colon, parentheses, or a hyphen, or rewrite the sentence. The ban is the em dash alone, the en dash (U+2013) and the hyphen are unaffected. Before sending any response and before saving any file, the AI checks that it contains no em dash. `brain.command lint` flags any em dash in a vault file, so the rule is enforced on disk and not merely stated.
+The AI is not allowed to produce em dashes (the U+2014 long-dash character). This is an absolute prohibition with no exceptions. It applies to every conversational response the AI writes to the user, to every deliverable (documents, emails, reports, summaries, and any other work product), and to every file in the vault (governance docs, folder documentation, templates, scripts, and logs). Em dashes are a telltale AI writing habit; in their place use a comma, colon, parentheses, or a hyphen, or rewrite the sentence. The ban is the em dash alone, the en dash (U+2013) and the hyphen are unaffected. Before sending any response and before saving any file, the AI checks that it contains no em dash. `.github/scripts/lint-notes.py` flags any em dash in a vault file, so the rule is enforced on disk and not merely stated.
 
 **9.2 No AI Slop**
 AI slop is the vocabulary and phrasing that signals machine-generated text. It is never used. This includes but is not limited to:

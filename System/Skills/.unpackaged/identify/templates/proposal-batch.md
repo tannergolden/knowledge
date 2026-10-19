@@ -35,10 +35,10 @@ Per file, numbered, markers visible. Approve all, approve except N, or per item.
    ```
    [was `unconfirmed`; the user confirmed it this run]
 
-### [Profile/[Facet]/[Entry].md] (new engine-scaffolded entry)
+### [Profile/[Facet]/[Entry].md] (new entry from its template)
 
 4. **New [belief|goal|skill|condition] entry:** [Title]
-   - Scaffolded via `profile add [belief|goal|skill|condition] "[Title]"`, then the body edited to:
+   - Copied from `Profile/.template/[Belief|Goal|Skill|Health Condition].md`, then the body edited to:
    ```
    [the entry body, each line marked per provenance.md]
    ```
@@ -47,9 +47,9 @@ Per file, numbered, markers visible. Approve all, approve except N, or per item.
 
 Memory-shaped facts route here, never into a file diff (Constitution 2.7). Each is an explicit offer:
 
-- **[Person]:** [what the ledger holds] -> offer `memory add person "[Name]"`. [Profile keeps only the user-fact phrasing, e.g. the relational style; the person record lives in Memory.]
-- **[Dated happening]:** [what the ledger holds] -> offer `remember "[the log line]"`.
-- **[Decision]:** [what the ledger holds] -> offer `memory add decision "[the decision]"`.
+- **[Person]:** [what the ledger holds] -> offer a person entry, `Memory/Entities/People/[Name].md`. [Profile keeps only the user-fact phrasing, e.g. the relational style; the person record lives in Memory.]
+- **[Dated happening]:** [what the ledger holds] -> offer a `Memory/Log.md` entry: "[the log line]".
+- **[Decision]:** [what the ledger holds] -> offer a decision record in `Memory/Decisions/`: "[the decision]".
 
 ## Skipped this run (shown once, never persisted)
 

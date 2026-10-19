@@ -6,12 +6,11 @@ tags: ["ventures", "information", "timeless"]
 aliases: []
 keywords: ["companies", "businesses", "company subfolders", "department folders", "business context", "folder overview", "venture structure"]
 created: 2026-05-18
-updated: 2026-06-29
+updated: 2026-10-19
 type: "information"
 folder: "ventures"
 layer: 1
 policy: false
-version: "01.02.00"
 author: "Tanner Golden"
 path: "BRAIN/Ventures/Ventures.md"
 id: "ve-ventures"
@@ -99,7 +98,7 @@ The template carries a **strategic core**: the `Administration/` executive offic
 When the user mentions a company they own, operate, or are in the process of starting, the AI should ask:
 > *"Want me to create a venture folder for [Company]?"*
 
-If confirmed, the AI creates the folder by copying the `.template/` structure and names it using short hyphenated format (e.g., `Golden-Media`, `Acme-Corp`). The new folder is picked up automatically by the catalog (`brain.command db`) - there is no hand-maintained index to update.
+If confirmed, the AI creates the folder by copying the `.template/` structure and names it using short hyphenated format (e.g., `Golden-Media`, `Acme-Corp`). The new folder is picked up automatically by the catalog (`System/Data/catalog.ndjson`, drawn by `update-vault.py`) - there is no hand-maintained index to update.
 
 **Triggers for creating a venture folder:**
 - User mentions a company they own, operate, co-found, or actively run
@@ -173,14 +172,14 @@ This check applies every time a venture is referenced, not just on first mention
 | Sales decks, contracts, data exports for a venture | `Ventures/[Company]/[Department]/` |
 | How org structures generally work | `Library/` |
 | The user's personal career history | `Profile/Biography.md` |
-| A business decision the user made | `Memory/Decisions/` (`memory add decision`) |
+| A business decision the user made | `Memory/Decisions/` (an entry from `Memory/.template/Decision.md`) |
 | A personal project not tied to a venture | `Projects/` |
 
 ---
 
 ## Venture stage & status
 
-There is no hand-maintained index. Each venture is a folder whose `Overview.md` frontmatter carries its stage and status; the live list comes from the catalog - `brain.command db search folder=ventures`, or the committed `catalog.ndjson` roll-up.
+There is no hand-maintained index. Each venture is a folder whose `Overview.md` frontmatter carries its stage and status; the live list comes from the catalog: the `ventures` records of the committed `System/Data/catalog.ndjson`.
 
 **Keep each venture's `Overview.md` current:**
 - A new venture folder is created → it is cataloged automatically

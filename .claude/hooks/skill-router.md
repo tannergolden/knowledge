@@ -1,6 +1,6 @@
 # 🧭 BRAIN Skill Router (session-start injection)
 
-The startup bundle loaded into this session's context is authoritative. These standing rules apply on every turn:
+The startup set listed for this session is authoritative. These standing rules apply on every turn:
 
 ## Fire skills on match (no asking)
 

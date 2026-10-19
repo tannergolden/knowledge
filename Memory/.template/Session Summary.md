@@ -6,12 +6,11 @@ tags: ["memory", "template"]
 aliases: []
 keywords: ["session", "summary", "ledger", "delta", "record", "scaffold", "context"]
 created: 2026-06-18
-updated: 2026-07-04
+updated: 2026-10-19
 type: "template"
 folder: "memory"
 layer: 2
 policy: false
-version: "01.00.01"
 author: "Tanner Golden"
 path: "BRAIN/Memory/.template/Session Summary.md"
 id: "me-session-summary"
@@ -26,7 +25,7 @@ FILING INSTRUCTIONS (do this when you save the summary):
 - Remove the "version" key (records are not versioned).
 - Set "path" to the new BRAIN path and give "id" a stable, unique slug.
 - Give the H1 a fitting emoji for the session and replace [YYYY-MM-DD] with the real date.
-- Then run: brain.command memory cascade
+- Then run: python3 .github/scripts/update-vault.py
 NO wikilinks anywhere in this file (Constitution 3.7). Reference files by plain path.
 -->
 

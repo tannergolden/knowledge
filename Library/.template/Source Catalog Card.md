@@ -6,12 +6,11 @@ tags: ["library", "template"]
 aliases: []
 keywords: ["[author]", "[topic]", "[synonym]", "template"]
 created: 2026-01-01
-updated: 2026-01-01
+updated: 2026-10-19
 type: "template"
 folder: "library"
 layer: 2
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Library/.template/Source Catalog Card.md"
 id: "li-source-catalog-card"
@@ -19,7 +18,7 @@ id: "li-source-catalog-card"
 
 # 📇 [Work Title]
 
-> Catalog card for a source document (book, paper, article, report, media) held in or referenced by the Library. The card is authored by the cataloger; the work's own authorship lives in the Bibliographic Record below. This pattern adds **no new frontmatter fields** - the bibliography is body content. On filing: set `type: reference`; add a freshness tag and drop `template`; **remove `version`**; set the real `path` and `id` (`li-<slug>`); give the H1 a fitting leading emoji (Constitution 9.6); drop the literal `template` keyword; file it in one class and division. If a binary (PDF/EPUB) sits beside this card, record its filename under Held Copy. An optional library cross-walk (Dewey / UDC / LCC) may be noted here, never in frontmatter.
+> Catalog card for a source document (book, paper, article, report, media) held in or referenced by the Library. The card is authored by the cataloger; the work's own authorship lives in the Bibliographic Record below. This pattern adds **no new frontmatter fields** - the bibliography is body content. On filing: set `type: reference`; add a freshness tag and drop `template`; set the real `path` and `id` (`li-<slug>`); give the H1 a fitting leading emoji (Constitution 9.6); drop the literal `template` keyword; file it in one class and division. If a binary (PDF/EPUB) sits beside this card, record its filename under Held Copy. An optional library cross-walk (Dewey / UDC / LCC) may be noted here, never in frontmatter.
 
 ## Bibliographic Record
 

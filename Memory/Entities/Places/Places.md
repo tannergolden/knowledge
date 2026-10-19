@@ -6,7 +6,7 @@ tags: ["memory", "information", "timeless"]
 aliases: []
 keywords: ["places", "locations", "home hometown", "significant places", "geography", "where", "frequented spots"]
 created: 2026-06-18
-updated: 2026-07-04
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 3
@@ -28,7 +28,7 @@ The registry of places of **personal significance** to the user: home, hometown,
 
 ## How entries are made
 
-Create through the engine: `memory add place "Name"`. It stamps the frontmatter, applies the Place template, and registers the entry below. The AI never hand-edits this index.
+Copy `Memory/.template/Place.md` to this folder as `<Name>.md` and follow its instantiation note. `update-vault.py` lists it below; the AI never hand-edits this index.
 
 ## Provenance
 
@@ -38,6 +38,6 @@ Each entry carries `As of:` / `Recorded:` provenance in its body, and changing f
 
 ## Entries
 
-<!-- brain:collection-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:collection-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _No places recorded yet._
 <!-- /brain:collection-entries -->

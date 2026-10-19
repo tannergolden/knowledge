@@ -6,7 +6,7 @@ tags: ["memory", "information", "timeless"]
 aliases: []
 keywords: ["archive", "cold storage", "lifetime", "by year", "period digest", "search only", "unbounded"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 3
@@ -22,7 +22,7 @@ The cold-storage tier of context memory: the complete lifetime record. It is unb
 
 ## Organized by year
 
-Summaries are filed by year in subfolders, for example `Memory/Context/Archive/2026/`, each keeping its original `YYYYMMDD-HHMMSS.md` name. They arrive here when they overflow from `Memory/Context/Recent/` via `brain.command memory cascade`.
+Summaries are filed by year in subfolders, for example `Memory/Context/Archive/2026/`, each keeping its original `YYYYMMDD-HHMMSS.md` name. They arrive here when they overflow from `Memory/Context/Recent/` via `update-vault.py`.
 
 ## Period digests (fast long-span recall)
 

@@ -34,7 +34,7 @@ Human language and written art. Spoken communication as a social phenomenon goes
 | Oral & Folk Literature | Folktales, proverbs, and oral verbal art |
 | Translation | Translation theory and practice |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Language & Literature/Drama/Drama|Drama]]
 - [[Library/Language & Literature/Fiction & Prose/Fiction & Prose|Fiction & Prose]]
 - [[Library/Language & Literature/Languages of the World/Languages of the World|Languages of the World]]

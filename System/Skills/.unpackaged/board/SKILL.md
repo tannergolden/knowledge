@@ -5,7 +5,7 @@ license: proprietary
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
 metadata:
   team: Administration
-  version: "02.01.00"
+  version: "02.01.01"
   id: "sy-skill-board-spec"
   author: "Tanner Golden"
   status: "active"
@@ -33,7 +33,7 @@ A run is one mode. The router picks it from the request; the modes share one wor
 
 ## The workforce it convenes
 
-`metadata.team: Administration` names the executive office of the AR workforce (`Ventures/Agent Resources (AR)/Administration/`, lead **Chief Executive Officer / Jonathan**), the chair's seat from which the company is run. The engine binds a skill to one staffed roster, so the annotation names the chair's office while the company itself is the wider AR Fortune 500 workforce: the executive office (COO, Corporate Secretary), the staff chiefs (CTO, CISO), and the functional chiefs who lead Finance, Legal, Sales and Revenue (which now carries the marketing seats), Operations, HR, IT, Product/R&D, Data/BI, Quality, Client Experience, and Communications, each with specialists beneath. Strategy framing sits with the CEO; risk classification is mechanized by the write-gate and the delegation-of-authority thresholds, with the CISO holding the independent security-risk line; record integrity is mechanized by `brain.command health`, the changelog, and the backup protocol. The **Head of Quality (Grace)** is the independent verifier. No agent holds Write or Edit: agents compose and return; the skill persists. Agents are referenced by name and routed by their `description`; nothing is copied locally. On Publish, `develop` vendors the referenced agents into the skill's `agents/`. How the modes and tiers map onto the workforce, and how each lead is briefed, is in `references/dispatch.md` and `references/specialist-dispatch.md`.
+`metadata.team: Administration` names the executive office of the AR workforce (`Ventures/Agent Resources (AR)/Administration/`, lead **Chief Executive Officer / Jonathan**), the chair's seat from which the company is run. `check-skills.py` binds a skill to one staffed roster, so the annotation names the chair's office while the company itself is the wider AR Fortune 500 workforce: the executive office (COO, Corporate Secretary), the staff chiefs (CTO, CISO), and the functional chiefs who lead Finance, Legal, Sales and Revenue (which now carries the marketing seats), Operations, HR, IT, Product/R&D, Data/BI, Quality, Client Experience, and Communications, each with specialists beneath. Strategy framing sits with the CEO; risk classification is mechanized by the write-gate and the delegation-of-authority thresholds, with the CISO holding the independent security-risk line; record integrity is mechanized by `check-vault.py` and the git history every change is committed to. The **Head of Quality (Grace)** is the independent verifier. No agent holds Write or Edit: agents compose and return; the skill persists. Agents are referenced by name and routed by their `description`; nothing is copied locally. On Publish, `develop` vendors the referenced agents into the skill's `agents/`. How the modes and tiers map onto the workforce, and how each lead is briefed, is in `references/dispatch.md` and `references/specialist-dispatch.md`.
 
 ## How a run works (the universal shape)
 
@@ -52,7 +52,7 @@ A pre-revenue idea and a mature company are not run the same way. On every run t
 
 ## The write-gate
 
-The skill is the only writer, so the safety boundary lives here. AR may draft and the skill may write **autonomously** into a venture's internal files (drafts, models, plans, `Log.md`/`Goals.md`/`Overview.md` updates), always backing up an existing file first. Anything **irreversible or external** is hard-gated and needs the Founder's explicit confirmation: moving money, signing or sending a contract, publishing or sending external communications, deleting a file, or changing equity or the cap table. The full doctrine and the stage-keyed delegation-of-authority thresholds are in `references/write-gate.md` and `assets/delegation-of-authority.json`.
+The skill is the only writer, so the safety boundary lives here. AR may draft and the skill may write **autonomously** into a venture's internal files (drafts, models, plans, `Log.md`/`Goals.md`/`Overview.md` updates), always with an existing file's last state committed first. Anything **irreversible or external** is hard-gated and needs the Founder's explicit confirmation: moving money, signing or sending a contract, publishing or sending external communications, deleting a file, or changing equity or the cap table. The full doctrine and the stage-keyed delegation-of-authority thresholds are in `references/write-gate.md` and `assets/delegation-of-authority.json`.
 
 ## Dispatch scaling
 
@@ -60,9 +60,9 @@ A bigger board is not a better one. Convene the **smallest sufficient** roster f
 
 ## Conformance with the live BRAIN
 
-**Preflight (before any vault write).** Writing into a venture or filing a memo is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of every folder written into, back up an existing file first (`python3 System/brain.command backup <path>`), and reference vault files by plain path, never wikilinks (the one exception is an index whose entries are wikilinks by design). After writing, run `brain.command sync` and `brain.command health`. When founding, copy `Ventures/.template/` and **rewrite each file's `id` and `path`** so ids stay globally unique.
+**Preflight (before any vault write).** Writing into a venture or filing a memo is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of every folder written into, commit an existing file's last state first (git history is the backup), and reference vault files by plain path, never wikilinks (the one exception is an index whose entries are wikilinks by design). After writing, run `update-vault.py` and `check-vault.py`. When founding, copy `Ventures/.template/` and **rewrite each file's `id` and `path`** so ids stay globally unique.
 
-**Read before acting.** Run the venture-context preflight and the dedup check (`brain.command search`) before deliberating or producing, so a settled decision is not re-litigated and existing context is not duplicated. **Offer** (never silently) to file a memo, record a decision, or fold the outcome into `Memory/`. Confirm before any gated write; never create or delete top-level folders.
+**Read before acting.** Run the venture-context preflight and the dedup check (a vault search) before deliberating or producing, so a settled decision is not re-litigated and existing context is not duplicated. **Offer** (never silently) to file a memo, record a decision, or fold the outcome into `Memory/`. Confirm before any gated write; never create or delete top-level folders.
 
 ## Quality bars
 

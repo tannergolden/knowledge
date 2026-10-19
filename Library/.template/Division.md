@@ -6,12 +6,11 @@ tags: ["library", "template"]
 aliases: []
 keywords: ["[sub-discipline]", "[synonym]", "[synonym]", "template"]
 created: 2026-01-01
-updated: 2026-01-01
+updated: 2026-10-19
 type: "template"
 folder: "library"
 layer: 2
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Library/.template/Division.md"
 id: "li-division"
@@ -19,7 +18,7 @@ id: "li-division"
 
 # 📁 Library / [Class] / [Division Name] /
 
-> Folder doc for a division, added when the division accumulates enough content to need a finding aid (literary warrant - do not pre-create one for an empty folder). On filing: set `type: information`; add the freshness tag and drop `template`; **remove the `version` field** (subfolder docs carry none); set the real `path` and `id` (`li-<slug>`); set `layer` to the folder's actual depth.
+> Folder doc for a division, added when the division accumulates enough content to need a finding aid (literary warrant - do not pre-create one for an empty folder). On filing: set `type: information`; add the freshness tag and drop `template`; set the real `path` and `id` (`li-<slug>`); set `layer` to the folder's actual depth.
 
 ## Purpose
 

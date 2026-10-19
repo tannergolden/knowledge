@@ -6,12 +6,11 @@ tags: ["profile", "information", "timeless"]
 aliases: ["Identity", "Self", "About Me"]
 keywords: ["who the user is", "personal profile", "stable self", "personalization", "identity layer", "how ai uses profile", "user manual of me", "discretion"]
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-10-19
 type: "information"
 folder: "profile"
 layer: 1
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Profile/Profile.md"
 id: "id-profile"
@@ -77,7 +76,7 @@ Profile entries carry their origin and stay fresh by use, not by schedule. The c
   On the user's confirmation, shorten it to `<!-- confirmed 2026-06-19 -->` or drop it (a confirmed fact is just a fact). An entry left `unconfirmed` is a proposal awaiting approval, never treated as established (Articles 4.1, 4.3).
 - **Refresh on use, not on a calendar.** When you use a section and it still holds, it is current; when something is stale, fix it then. For a drift-prone section (occupation, current chapter), you may stamp `<!-- reviewed 2026-06-19 -->` at its end when you confirm it.
 
-**Standardized provenance vocabulary.** The marker tokens are fixed so they stay machine-filterable across the whole layer: a state token (`observed` | `confirmed` | `reviewed`) with an ISO date, an optional `confidence: low | medium | high`, and the proposal flag `unconfirmed`. The lifecycle is `observed` + `unconfirmed` (an AI inference, a proposal) -> `confirmed` (the user approved it) -> `reviewed` (re-verified later). Because the tokens are fixed, the profile is queryable: `brain.command search unconfirmed` lists every pending proposal, and `search "confidence: low"` surfaces the weakest inferences to re-check. Self-reported facts stay unmarked, so a marker only ever appears on an exception.
+**Standardized provenance vocabulary.** The marker tokens are fixed so they stay machine-filterable across the whole layer: a state token (`observed` | `confirmed` | `reviewed`) with an ISO date, an optional `confidence: low | medium | high`, and the proposal flag `unconfirmed`. The lifecycle is `observed` + `unconfirmed` (an AI inference, a proposal) -> `confirmed` (the user approved it) -> `reviewed` (re-verified later). Because the tokens are fixed, the profile is queryable: a search for `unconfirmed` lists every pending proposal, and one for `confidence: low` surfaces the weakest inferences to re-check. Self-reported facts stay unmarked, so a marker only ever appears on an exception.
 
 ## Sensitivity
 
@@ -89,7 +88,7 @@ Facets come in two shapes, the same split as `Memory/`. A facet read as a whole 
 
 ## Filling these files: the `/identify` skill
 
-The recommended way to populate or deepen these files is the **`/identify`** skill, not hand-editing. It reads what each file currently holds, targets what is thin or unconfirmed, and interviews the user with structured questions drawn from validated frameworks - **Big Five** for Personality, **Schwartz's basic values** for Values, the **McAdams life-story** method for Biography - mixing direct questions for facts with indirect ones that surface traits the user would not think to state. It writes inferences **marked, evidence-cited, confidence-rated, and left unconfirmed until approved**, covers sensitive topics with skip options and the `sensitive` tag, and backs up each file before writing. Hand-editing is fine for a quick correction but misses the inference layer and those safeguards.
+The recommended way to populate or deepen these files is the **`/identify`** skill, not hand-editing. It reads what each file currently holds, targets what is thin or unconfirmed, and interviews the user with structured questions drawn from validated frameworks - **Big Five** for Personality, **Schwartz's basic values** for Values, the **McAdams life-story** method for Biography - mixing direct questions for facts with indirect ones that surface traits the user would not think to state. It writes inferences **marked, evidence-cited, confidence-rated, and left unconfirmed until approved**, covers sensitive topics with skip options and the `sensitive` tag, and commits each file's last state before writing to it. Hand-editing is fine for a quick correction but misses the inference layer and those safeguards.
 
 ## Article IV (Delegated) - Identity & Privacy Rules
 

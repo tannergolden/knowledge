@@ -20,7 +20,7 @@ id: "[two-letter folder prefix]-[hyphenated-slug]"
 
 <!-- A vault-internal document. Single emoji-prefixed H1 (Constitution 9.6); the YAML title stays plain.
      No em dash anywhere (9.1). No slop (9.2). Format per references/formatting.md: restraint by default,
-     every rich element earns its place. Lint is the exit gate: `python3 System/brain.command lint`. -->
+     every rich element earns its place. Lint is the exit gate: `python3 .github/scripts/lint-notes.py`. -->
 
 [The bottom line or one-line summary, so a reader can stop early. Put the conclusion above the fold.]
 

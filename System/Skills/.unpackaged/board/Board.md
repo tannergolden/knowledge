@@ -6,12 +6,11 @@ tags: ["system", "information", "timeless"]
 aliases: ["/board"]
 keywords: ["board skill", "venture operating system", "agent resources", "found strategize decide operate review", "fortune 500 workforce", "write-gate", "decision memo", "company lifecycle"]
 created: 2026-06-29
-updated: 2026-07-02
+updated: 2026-10-19
 type: "information"
 folder: "system"
 layer: 4
 policy: false
-version: "02.01.00"
 author: "Tanner Golden"
 path: "BRAIN/System/Skills/.unpackaged/board/Board.md"
 id: "sy-skill-board"
@@ -25,7 +24,7 @@ Board is the BRAIN's venture operating system. It runs a company end to end by c
 
 ## How it fits the architecture
 
-The skill composes the standing AR corporate workforce (`metadata.team: Administration`, the executive office at `Ventures/Agent Resources (AR)/Administration/`, from which the CEO, Jonathan, chairs). It convenes the whole Fortune 500 workforce: the executive office, the staff chiefs (CTO, CISO), and the functional chiefs and their specialists, with the Head of Quality (Grace) as the independent verifier; strategy framing sits with the CEO, and the retired risk and audit seats are mechanized by the write-gate, the delegation-of-authority thresholds, `brain.command health`, the changelog, and the backup protocol. The AR workforce produces a venture's deliverables by composing content for the venture's department files; the board skill is the sole writer that persists them. The venture template carries the matching surfaces: the `Administration/` executive office (`Strategy.md`, `Decisions.md`, `Cadence.md`), the Finance `Financial-Model.md` and `Cap-Table.md`, and the lifecycle stage in `Overview.md`. Where `discover` generates options and `research` finds what is known, board runs the company. The skill carries no agents of its own; it references the workforce by name and vendors the agents in only at Publish.
+The skill composes the standing AR corporate workforce (`metadata.team: Administration`, the executive office at `Ventures/Agent Resources (AR)/Administration/`, from which the CEO, Jonathan, chairs). It convenes the whole Fortune 500 workforce: the executive office, the staff chiefs (CTO, CISO), and the functional chiefs and their specialists, with the Head of Quality (Grace) as the independent verifier; strategy framing sits with the CEO, and the retired risk and audit seats are mechanized by the write-gate, the delegation-of-authority thresholds, `check-vault.py` and the git history every change is committed to. The AR workforce produces a venture's deliverables by composing content for the venture's department files; the board skill is the sole writer that persists them. The venture template carries the matching surfaces: the `Administration/` executive office (`Strategy.md`, `Decisions.md`, `Cadence.md`), the Finance `Financial-Model.md` and `Cap-Table.md`, and the lifecycle stage in `Overview.md`. Where `discover` generates options and `research` finds what is known, board runs the company. The skill carries no agents of its own; it references the workforce by name and vendors the agents in only at Publish.
 
 ## Design basis
 

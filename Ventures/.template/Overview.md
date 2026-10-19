@@ -11,7 +11,6 @@ type: "template"
 folder: "ventures"
 layer: 2
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Ventures/[Company]/Overview.md"
 id: "ve-overview"

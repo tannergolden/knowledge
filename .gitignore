@@ -148,7 +148,7 @@ _site/
 
 # --- BRAIN Vault ---
 # Carried over from the vault's own .gitignore. Machine-local churn, derived
-# indexes, snapshots, and trash stay out; the knowledge, engine, and config stay
+# indexes, snapshots, and trash stay out; the knowledge, scripts, and config stay
 # in. Rules the sections above already cover are not repeated.
 
 # Undownloaded iCloud placeholders (never commit a dataless stub)
@@ -167,19 +167,21 @@ _site/
 .obsidian/plugins/*/styles.css
 .obsidian/themes/
 
-# Soft-deleted files (Constitution 3.1 trash stage) and local snapshots
+# Left on a machine by the retired engine (System/brain.command): its trash
+# and snapshots. Nothing writes them now; these keep the leftovers out of git.
 .trash/
 System/.backups/
 System/Backups/
 
-# Generated index, logs, and sync state (rebuilt by `brain.command health`).
-# Keep the folder doc (Data.md) and the committed catalog roll-up (catalog.ndjson).
+# System/Data/ holds its folder doc and the two catalogs update-vault.py draws.
+# Anything else there is a leftover of the retired engine: its index, logs and state.
 System/Data/*
 !System/Data/Data.md
 !System/Data/catalog.ndjson
+!System/Data/agent-catalog.json
 
 # Offline knowledge bases (ZIM files in Library/Reference & Encyclopedia/):
-# large, re-downloadable Kiwix binaries, rehydrated by `brain.command kb refresh`.
+# large, re-downloadable Kiwix binaries, fetched by `knowledge-base.py refresh`.
 *.zim
 *.zim.tmp
 *.zim.part
@@ -191,7 +193,7 @@ System/Data/*
 .claude/*.local.json
 .claude/.credentials.json
 
-# Engine atomic-write temp files (a crash mid-write can strand one)
+# Atomic-write temp files from the vault scripts (a crash mid-write can strand one)
 *.tmp~
 
 # macOS AppleDouble resource forks and volume metadata

@@ -34,7 +34,7 @@ How knowledge and information are organized, stored, computed, and transmitted, 
 | General Reference | Encyclopedias, dictionaries, almanacs, cross-subject general works |
 | Systems & Cybernetics | Systems theory, cybernetics, information and complexity across domains |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Information & Computing/Computing & Computer Science/Computing & Computer Science|Computing & Computer Science]]
 - [[Library/Information & Computing/Data & Information Management/Data & Information Management|Data & Information Management]]
 - [[Library/Information & Computing/General Reference/General Reference|General Reference]]

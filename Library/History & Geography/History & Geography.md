@@ -33,7 +33,7 @@ The human record across time and place. The social-science theory of how societi
 | Archaeology | Material remains and the recovery of the past |
 | Genealogy & Heritage | Family history, genealogy, and cultural heritage |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/History & Geography/Archaeology/Archaeology|Archaeology]]
 - [[Library/History & Geography/Biography & Memoir/Biography & Memoir|Biography & Memoir]]
 - [[Library/History & Geography/Genealogy & Heritage/Genealogy & Heritage|Genealogy & Heritage]]

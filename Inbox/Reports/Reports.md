@@ -6,7 +6,7 @@ tags: ["inbox", "information"]
 aliases: ["Reports", "report library", "research reports", "discovery reports"]
 keywords: ["reports", "research reports", "discovery reports", "report freshness", "three months", "verify before reuse", "held reports"]
 created: 2026-06-21
-updated: 2026-10-18
+updated: 2026-10-19
 type: "information"
 folder: "inbox"
 layer: 2
@@ -22,7 +22,7 @@ The held library for finished reports. The Research team files its research repo
 
 ## Held, not sorted
 
-Reports live here and stay here. They are not sorted into the BRAIN's permanent layers (the Library, a venture, a project): a report is a working artifact, produced, held, used, and eventually cleared, not durable reference knowledge. The session-start Inbox sweep skips this folder the way it skips the team homes, so a report is never proposed for re-sorting. Reports stay fully linted, synced, and indexed like any other vault file.
+Reports live here and stay here. They are not sorted into the BRAIN's permanent layers (the Library, a venture, a project): a report is a working artifact, produced, held, used, and eventually cleared, not durable reference knowledge. The session-start Inbox sweep skips this folder the way it skips the team homes, so a report is never proposed for re-sorting. Reports stay fully linted and cataloged like any other vault file.
 
 ## Good for three months, then verify
 
@@ -30,7 +30,7 @@ Every report is good for up to three months from its date. After three months it
 
 ## This file is the report index
 
-`Reports.md` is the one hub that links every held report. The index below carries a wikilink to each report in this folder, so the whole library is browsable from here and in the graph view. This index is the **only** place a report is linked: no other file in the BRAIN cites or links to a report, which keeps the wider wikilink graph free of disposable nodes. A report can also be found by searching this folder (`python3 System/brain.command search "<term>"`).
+`Reports.md` is the one hub that links every held report. The index below carries a wikilink to each report in this folder, so the whole library is browsable from here and in the graph view. This index is the **only** place a report is linked: no other file in the BRAIN cites or links to a report, which keeps the wider wikilink graph free of disposable nodes. A report can also be found by searching this folder.
 
 The index is kept in lockstep with the folder. When a report is filed, refreshed, or cleared, its entry below is added, updated, or removed in the same edit, so the index always mirrors what is actually here. A finding that must outlive its report is still promoted into the durable layer in its own right: a `Library/` doc, a folder namesake, the Constitution or Instructions, or a skill's `references/`.
 

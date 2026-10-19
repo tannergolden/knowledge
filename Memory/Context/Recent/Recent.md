@@ -6,7 +6,7 @@ tags: ["memory", "information", "timeless"]
 aliases: []
 keywords: ["recent", "mid tier", "on request", "lookback", "summaries", "importance aware", "overflow"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 3
@@ -22,7 +22,7 @@ The mid tier of context memory: recent history one step back from the entry tier
 
 ## Cap and cascade
 
-This tier holds a larger ceiling than Current (default a session-or-two's worth, about 6 summaries). When it overflows, the oldest relocates to `Memory/Context/Archive/<year>/` via `brain.command memory cascade`. Nothing is deleted (Constitution 3.1).
+This tier holds a larger ceiling than Current (default a session-or-two's worth, about 6 summaries). When it overflows, the oldest relocates to `Memory/Context/Archive/<year>/` via `update-vault.py`. Nothing is deleted (Constitution 3.1).
 
 ## Recall here is scored, not just listed
 
@@ -30,7 +30,7 @@ When the AI looks back beyond the auto-load set, it does not read this tier top 
 
 ## Summaries in this tier
 
-<!-- brain:tier-summaries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:tier-summaries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _No summaries in this tier right now._
 <!-- /brain:tier-summaries -->
 

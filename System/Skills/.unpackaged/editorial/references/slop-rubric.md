@@ -7,7 +7,7 @@ The Line Editor (and, on quick, the lead self-editing) critiques every piece aga
 
 ## The two hard gates (Article IX, everywhere, internal files included)
 
-1. **No em dash (9.1).** Zero U+2014 in the piece. Replace with a comma, colon, parentheses, or a hyphen, or rewrite. `brain.command lint` flags any em dash in a vault file, so this is enforced on disk, not merely stated. The en dash (U+2013) and the hyphen are fine.
+1. **No em dash (9.1).** Zero U+2014 in the piece. Replace with a comma, colon, parentheses, or a hyphen, or rewrite. `lint-notes.py` flags any em dash in a vault file, so this is enforced on disk, not merely stated. The en dash (U+2013) and the hyphen are fine.
 2. **No slop (9.2).** None of the patterns below. "Write like a sharp human. Be direct, specific, and clear."
 
 ## Cite the span (the rule that makes the rubric work)

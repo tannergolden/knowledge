@@ -1,12 +1,12 @@
 ---
 title: "Current Context"
-description: "The context entry tier - the newest session summaries, auto-loaded at session start under a small token budget."
+description: "The context entry tier - the newest session summaries, the two newest of which load at session start."
 status: "active"
 tags: ["memory", "information", "timeless"]
 aliases: []
-keywords: ["current", "entry tier", "latest", "autoload", "token budget", "freshest", "summaries"]
+keywords: ["current", "entry tier", "latest", "autoload", "session start", "freshest", "summaries"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 3
@@ -20,17 +20,17 @@ id: "me-current"
 
 The entry tier of context memory. Every new session summary is filed here first as a timestamped `YYYYMMDD-HHMMSS.md` record, and the freshest context loads automatically at the start of the next session.
 
-## Auto-load is token-budgeted, not a fixed count
+## The two newest load at session start
 
-The newest summary always loads at session start. Additional newer summaries load only while they fit a small session-start token budget, so one long summary does not crowd out the fresh working context. Loading the freshest one or two is the usual result; the point is the budget, not the number.
+The SessionStart hook (`session-hooks.py start`) lists the two newest summaries here for the AI to read, skipping any marked `deprecated` or `archived` (a later summary that overrides one marks it so). Keep each summary short: both are read in full at the start of every session, so a long one crowds out the fresh working context.
 
 ## Cap and cascade
 
-This tier holds a small ceiling of the newest summaries (default 3) so the auto-load cost stays bounded. When a newer summary pushes the tier over its ceiling, the oldest overflows into `Memory/Context/Recent/` via `brain.command memory cascade`. The engine auto-lists the summaries currently here.
+This tier holds a small ceiling of the newest summaries (default 3) so the auto-load cost stays bounded. When a newer summary pushes the tier over its ceiling, the oldest overflows into `Memory/Context/Recent/` via `update-vault.py`, which also lists the summaries currently here.
 
 ## Summaries in this tier
 
-<!-- brain:tier-summaries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:tier-summaries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _No summaries in this tier right now._
 <!-- /brain:tier-summaries -->
 

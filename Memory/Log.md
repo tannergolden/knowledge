@@ -1,12 +1,12 @@
 ---
 title: "Memory Log"
-description: "Working memory: the chronological capture stream where observations, events, and open threads land first, before they promote to a collection or age out. Engine-owned; read at session start."
+description: "Working memory: the chronological capture stream where observations, events, and open threads land first, before they promote to a collection or age out. Newest first; read at session start."
 status: "active"
 tags: ["memory", "log", "startup"]
 aliases: ["Working Memory", "Memory Buffer"]
-keywords: ["staging buffer", "capture stream", "open loops", "session start", "recent events", "remember", "working memory"]
+keywords: ["staging buffer", "capture stream", "open loops", "session start", "recent events", "quick capture", "working memory"]
 created: 2026-06-18
-updated: 2026-10-18
+updated: 2026-10-19
 type: "log"
 folder: "memory"
 layer: 1
@@ -20,9 +20,9 @@ id: "me-log"
 
 Working memory: the first place new context lands. Observations, events, and open threads are captured here, then either **promote** to a permanent collection (Entities, Decisions, Insights, Dates, or a session summary in Context) or **age out**. Read this file at the start of every session.
 
-**Engine-owned - the AI never hand-edits it.** All writes go through the engine: `remember "Title: detail"` for a note, `remember "..." --loop` for an open thread (auto-listed under Open Loops until `remember close "..."`), and `remember route "<file>" "<dest>" "<why>"` for an Inbox routing rationale. The engine timestamps, places, and keeps the Open Loops view in sync.
+**How to write here.** Add each entry at the top of Log Entries, just below the `brain:log-entries` marker, as `### YYYY-MM-DD - Title`, then the detail and an `Importance: N` line (1 routine to 5 pivotal). An open thread also carries `**Status:** Open`; when it closes, change that line to `**Status:** Resolved (YYYY-MM-DD)`, never delete the entry. Never edit the Open Loops block: `.github/scripts/update-vault.py` redraws it from the entries marked Open. A routing rationale from Inbox sorting is a row in the Sort Routing Notes table.
 
-**Retention:** staging only. Entries that earn a permanent home are promoted through the engine; the rest age out. Nothing here is authoritative once it has been promoted and superseded.
+**Retention:** staging only. Entries that earn a permanent home are promoted into their collection; the rest age out. Nothing here is authoritative once it has been promoted and superseded.
 
 ---
 
@@ -34,7 +34,7 @@ Working memory: the first place new context lands. Observations, events, and ope
 
 ## Open Loops
 
-<!-- brain:open-loops (auto-maintained by brain.command from entries marked Status: Open - do not edit by hand) -->
+<!-- brain:open-loops (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _No open loops._
 <!-- /brain:open-loops -->
 
@@ -42,7 +42,7 @@ _No open loops._
 
 ## Sort Routing Notes
 
-Routing rationales staged during Inbox sorting - each row records what moved, where it went, and why, written by the engine via `remember route`.
+Routing rationales staged during Inbox sorting - each row records what moved, where it went, and why, added as the file is sorted.
 
 | Date | File | Destination | Rationale |
 |------|------|-------------|-----------|

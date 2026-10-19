@@ -6,7 +6,7 @@ tags: ["memory", "information", "timeless"]
 aliases: []
 keywords: ["events", "atomic episode", "what happened", "dated experience", "milestone moment", "occurrence", "context detail"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 2
@@ -43,10 +43,10 @@ A specific, dated occurrence with continuity value: a milestone, a turning point
 
 ## Creating and keeping
 
-Scaffold an event through the engine: `memory add event "When" "What"`, which applies `Memory/.template/Event.md` and registers it here. Events are importance-weighted in recall (recency + importance + relevance, see `Memory/Memory.md`): a high-importance event stays a retrieval candidate for the life of the BRAIN and never ages out of reach. A superseded event is marked, not rewritten (Constitution 3.1).
+Copy `Memory/.template/Event.md` to this folder and follow its instantiation note; `update-vault.py` lists it here. Events are importance-weighted in recall (recency + importance + relevance, see `Memory/Memory.md`): a high-importance event stays a retrieval candidate for the life of the BRAIN and never ages out of reach. A superseded event is marked, not rewritten (Constitution 3.1).
 
 ## Entries
 
-<!-- brain:collection-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:collection-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _No events recorded yet._
 <!-- /brain:collection-entries -->

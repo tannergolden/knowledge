@@ -149,7 +149,7 @@ Before the skill writes this into `Goals.md`, confirm the ladder holds both ways
 
 ## Where this lands and how it is graded
 
-- **Written to:** the venture's `Goals.md` (the OKRs ladder lives there), by the skill, behind the write-gate, backing up the existing file first. The annual objectives are the top of `Goals.md`; the quarterly OKRs are the current cycle.
+- **Written to:** the venture's `Goals.md` (the OKRs ladder lives there), by the skill, behind the write-gate, with the existing file's last state committed first. The annual objectives are the top of `Goals.md`; the quarterly OKRs are the current cycle.
 - **Grounded in:** `Strategy.md` (the thesis the objectives serve) and `Metrics.md` (the canonical north-star and KPIs; the OKRs reference it, never redefine it).
 - **Graded by:** the quarterly QBR (`operating-cadence.md`, Loop 3): each KR scored 0.0 to 1.0 against its tag, the verifier checks the grades (`verification.md`), the chair synthesizes, and the regraded closing OKRs plus the next quarter's OKRs are written back to `Goals.md` with a dated `Log.md` entry.
 - **Reset by:** catchball at the QBR and annual planning (`operating-cadence.md`, Loop 4, V2MOM at the annual tier). The next ladder is set against the grades this one earned, so honest grading now is what makes the next cycle realistic.

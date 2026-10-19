@@ -36,7 +36,7 @@ The **Founder**, the person named and identified in Profile/, is above the entir
 
 ## Federation: one logical library, two physical homes
 
-AR is one home of the agent workforce. The engine federates two physical homes, AR and the Faculties (`Inbox/Faculties/`, holding the four standing teams Research, Discovery, Editorial, and Design), as **one logical library** with **one global namespace**, so no two agents anywhere share a name or a role, and **one catalog** (`System/Data/agent-catalog.json`) indexes the whole library, keyed on each agent's spoken name. A skill or venture references any agent by name regardless of which home holds it; the corporation that serves the ventures lives here in AR.
+AR is one home of the agent workforce. The vault federates two physical homes, AR and the Faculties (`Inbox/Faculties/`, holding the four standing teams Research, Discovery, Editorial, and Design), as **one logical library** with **one global namespace**, which `check-agents.py` enforces, so no two agents anywhere share a name or a role, and **one catalog** (`System/Data/agent-catalog.json`, drawn by `update-vault.py`) indexes the whole library, keyed on each agent's spoken name. A skill or venture references any agent by name regardless of which home holds it; the corporation that serves the ventures lives here in AR.
 
 ## Global rules for every agent
 
@@ -54,7 +54,7 @@ These rules apply to every agent in the workforce. Each agent's spec carries a o
 
 The Founder chairs the board above the CEO; the board is the ultimate authority on direction, irreversible action, and which agents and roles exist. Four standing committees are governance lenses, not staffed teams: each is enforced by a concrete BRAIN mechanism rather than a separate agent. The Corporate Secretary (Margaret) is secretary to all four and keeps the corporate record.
 
-- **Audit Committee** (record kept by the Corporate Secretary): the integrity of the record, enforced by `System/changelog.md` discipline, the pre-edit backup protocol, and `brain.command health`.
+- **Audit Committee** (record kept by the Corporate Secretary): the integrity of the record, enforced by the git history every change is committed to and by `.github/scripts/check-vault.py`.
 - **Compensation Committee** (chaired by the CHRO): role design and the workforce roster, enforced by the agent catalog and the `develop` skill.
 - **Nominating and Governance Committee** (chaired by the Corporate Secretary): which agents and roles exist, and succession, enforced by the Corporate Secretary's governance record and the catalog.
 - **Risk Committee** (security residuals held by the CISO; all else by the CEO): risk and the irreversible-action gates, enforced by the `board` skill's write-gate and its delegation-of-authority thresholds.
@@ -69,7 +69,7 @@ Built from deep research on top-tier corporate org design and the role set per d
 
 ## Subfolders
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Ventures/Agent Resources (AR)/Administration/Administration|Administration]]
 - [[Ventures/Agent Resources (AR)/Business Intelligence (BI)/Business Intelligence (BI)|Business Intelligence (BI)]]
 - [[Ventures/Agent Resources (AR)/Client Experience (CX)/Client Experience (CX)|Client Experience (CX)]]

@@ -6,12 +6,11 @@ tags: ["projects", "information", "timeless"]
 aliases: []
 keywords: ["personal initiatives", "side projects", "passion builds", "folder overview", "project templates", "creative work", "learning initiatives"]
 created: 2026-05-18
-updated: 2026-06-16
+updated: 2026-10-19
 type: "information"
 folder: "projects"
 layer: 1
 policy: false
-version: "01.00.02"
 author: "Tanner Golden"
 path: "BRAIN/Projects/Projects.md"
 id: "pr-projects"
@@ -52,7 +51,7 @@ Projects/
 When the user mentions working on, starting, or planning something that sounds like a personal project, the AI should ask:
 > *"Want me to create a project folder for this?"*
 
-If confirmed, the AI creates a new folder by copying the `.template/` structure and names it using short hyphenated format (e.g., `Personal-Site`, `Fishing-Journal`). The new folder is picked up automatically by the catalog (`brain.command db`) - there is no hand-maintained index to update.
+If confirmed, the AI creates a new folder by copying the `.template/` structure and names it using short hyphenated format (e.g., `Personal-Site`, `Fishing-Journal`). The new folder is picked up automatically by the catalog (`System/Data/catalog.ndjson`, drawn by `update-vault.py`) - there is no hand-maintained index to update.
 
 **Triggers for creating a project folder:**
 - User explicitly starts a new personal project
@@ -124,4 +123,4 @@ These are starting points - the actual subfolders should match what the project 
 
 ## Listing projects
 
-There is no hand-maintained index. Each project is a folder with an `Overview.md` whose frontmatter carries its status; the live list comes from the catalog - `brain.command db search folder=projects`, or the committed `catalog.ndjson` roll-up. Keep each project's `Overview.md` status current as work progresses. If unsure whether something qualifies as a project, ask before creating anything.
+There is no hand-maintained index. Each project is a folder with an `Overview.md` whose frontmatter carries its status; the live list comes from the catalog: the `projects` records of the committed `System/Data/catalog.ndjson`. Keep each project's `Overview.md` status current as work progresses. If unsure whether something qualifies as a project, ask before creating anything.

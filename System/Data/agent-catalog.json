@@ -1,0 +1,807 @@
+{
+  "schema_version": 1,
+  "home_count": 3,
+  "team_count": 19,
+  "agent_count": 69,
+  "homes": [
+    "Agent Resources (AR)",
+    "Faculties",
+    "Library"
+  ],
+  "agents": [
+    {
+      "name": "Jonathan",
+      "role": "★ Chief Executive Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Administration",
+      "description": "Dispatch this agent for a company-level direction, prioritization, or cross-department allocation decision, or when the Founder needs intent turned into a clear call with a single owner. The chief executive, who reports to the Founder.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Administration/★ Chief Executive Officer.md"
+    },
+    {
+      "name": "Patricia",
+      "role": "Chief Operating Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Administration",
+      "description": "Dispatch this agent to turn strategy into an execution plan across the operating departments: sequence the work, assign owners, remove blockers, and measure delivery. The Chief Operating Officer, the CEO's execution deputy.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Administration/Chief Operating Officer.md"
+    },
+    {
+      "name": "Margaret",
+      "role": "Corporate Secretary",
+      "home": "Agent Resources (AR)",
+      "team": "Administration",
+      "description": "Dispatch this agent to record a decision, check it against prior decisions and policy, and keep governance and the corporate record consistent. The Corporate Secretary, the governance keeper who serves the Founder and the board function.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Administration/Corporate Secretary.md"
+    },
+    {
+      "name": "Priscilla",
+      "role": "Analytics Engineer",
+      "home": "Agent Resources (AR)",
+      "team": "Business Intelligence (BI)",
+      "description": "Dispatch this agent when raw data needs to become a trusted, tested, documented model: the dbt transformation layer. The data-modeling seat in Business Intelligence, serving under the Chief Data Officer (Nora).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/Analytics Engineer.md"
+    },
+    {
+      "name": "Nora",
+      "role": "★ Chief Data Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Business Intelligence (BI)",
+      "description": "Dispatch this agent when a question or decision needs data, metrics, dashboards, or evidence: name the decision, grade the evidence, separate correlation from causation, and report findings with their confidence. The Business Intelligence lead.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/★ Chief Data Officer.md"
+    },
+    {
+      "name": "Aaron",
+      "role": "Data Analyst",
+      "home": "Agent Resources (AR)",
+      "team": "Business Intelligence (BI)",
+      "description": "Dispatch this agent when a business question needs an answer from data: SQL, a dashboard, or a report. The central analytics seat in Business Intelligence, serving under the Chief Data Officer (Nora).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/Data Analyst.md"
+    },
+    {
+      "name": "Caleb",
+      "role": "★ Chief Customer Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Client Experience (CX)",
+      "description": "Dispatch this agent when a customer needs onboarding, success, retention, or support: resolve the issue or advance the goal, triage by impact and effort, fix the one-off and escalate the systemic pattern to the department that owns the cause, and close the loop. The Client Experience department lead.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Client Experience (CX)/★ Chief Customer Officer.md"
+    },
+    {
+      "name": "Colin",
+      "role": "Customer Success Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Client Experience (CX)",
+      "description": "Dispatch this agent when a book of accounts needs adoption, value realization, or a renewal or expansion advanced: the post-sale relationship owner. The success seat in Client Experience, serving under the Chief Customer Officer (Caleb).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Client Experience (CX)/Customer Success Manager.md"
+    },
+    {
+      "name": "Darnell",
+      "role": "Support Specialist",
+      "home": "Agent Resources (AR)",
+      "team": "Client Experience (CX)",
+      "description": "Dispatch this agent when an inbound customer or product issue needs resolving across tiers, or a systemic pattern needs escalating. The support seat in Client Experience, serving under the Chief Customer Officer (Caleb).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Client Experience (CX)/Support Specialist.md"
+    },
+    {
+      "name": "Eleanor",
+      "role": "★ Chief Financial Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Finance & Accounting (F&A)",
+      "description": "Dispatch this agent for company-level finance, budget, and controls decisions: money in and out, the books, the forecast, and the controls that protect them. The Finance & Accounting department lead, the steward of cash and the company's financial discipline.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/★ Chief Financial Officer.md"
+    },
+    {
+      "name": "Walter",
+      "role": "Controller",
+      "home": "Agent Resources (AR)",
+      "team": "Finance & Accounting (F&A)",
+      "description": "Dispatch this agent for the books, the close, and accounting compliance: record a transaction correctly, run the month-end close, and produce accurate statements under GAAP. Serves in the Finance & Accounting department under the Chief Financial Officer.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/Controller.md"
+    },
+    {
+      "name": "Priya",
+      "role": "FP&A Analyst",
+      "home": "Agent Resources (AR)",
+      "team": "Finance & Accounting (F&A)",
+      "description": "Dispatch this agent for the forecast, the budget, and decision-support analysis: build or update a financial model, frame a variance, and size the financial case for a decision. Serves in the Finance & Accounting department under the Chief Financial Officer.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/FP&A Analyst.md"
+    },
+    {
+      "name": "Vivian",
+      "role": "★ Chief Human Resources Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Human Resources (HR)",
+      "description": "Dispatch this agent for hiring, compensation, and org-design decisions: define the role before headcount, set pay by market rate and internal equity together, shape the org to the strategy, and fill within the approved plan or escalate a structural or comp-band change. The Human Resources department lead.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Human Resources (HR)/★ Chief Human Resources Officer.md"
+    },
+    {
+      "name": "Rosalind",
+      "role": "HRIS and People Operations Analyst",
+      "home": "Agent Resources (AR)",
+      "team": "Human Resources (HR)",
+      "description": "Dispatch this agent as the HRIS / People Operations Analyst: Owns the HRIS, the agent roster/catalog as a system of record, HR data, and process operations; returns the HR-ops/data spec. Maintains the roster the Compensation Committee relies on and runs the creation-time name-uniqueness check.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Human Resources (HR)/HRIS and People Operations Analyst.md"
+    },
+    {
+      "name": "Sylvia",
+      "role": "★ Chief Information Security Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Information Security",
+      "description": "Dispatch this agent as the Chief Information Security Officer: Seated independent CISO; owns enterprise security strategy, the threat model, and the write-gate/irreversible-action security posture. The IT Security Engineer (Marisol) supplies the operational read up to this office.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Information Security/★ Chief Information Security Officer.md"
+    },
+    {
+      "name": "Samuel",
+      "role": "★ Chief Information Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Information Technology (IT)",
+      "description": "Dispatch this agent to build or maintain the skills, agents, and internal tooling the workforce runs on: scope the capability, reuse before building, design the simplest thing that meets the contract, and ship it reliably and reversibly. The Chief Information Officer, who runs the engineering function.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Information Technology (IT)/★ Chief Information Officer.md"
+    },
+    {
+      "name": "Devin",
+      "role": "Platform Engineer",
+      "home": "Agent Resources (AR)",
+      "team": "Information Technology (IT)",
+      "description": "Dispatch this agent for the internal toolchains, CI/CD, infrastructure-as-code, and the self-service platform: pave the path the workforce builds on, automate the toil, and make the platform safe to self-serve. Serves in the Information Technology department under the Chief Information Officer (Samuel).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Information Technology (IT)/Platform Engineer.md"
+    },
+    {
+      "name": "Marisol",
+      "role": "Security Engineer",
+      "home": "Agent Resources (AR)",
+      "team": "Information Technology (IT)",
+      "description": "Dispatch this agent for secure-by-design review, vulnerability management, and security incident response: threat-model the change, triage and drive the fix by exploitability, and contain a security incident. Serves in the Information Technology department under the Chief Information Officer (Samuel).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Information Technology (IT)/Security Engineer.md"
+    },
+    {
+      "name": "Adrian",
+      "role": "Commercial Counsel",
+      "home": "Agent Resources (AR)",
+      "team": "Legal & Compliance (L&C)",
+      "description": "Dispatch this agent for commercial agreements: draft, review, and negotiate a contract, redline the risk-bearing clauses, and land a defensible position the business can sign. Serves in the Legal & Compliance department under the General Counsel.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Commercial Counsel.md"
+    },
+    {
+      "name": "Lillian",
+      "role": "Compliance Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Legal & Compliance (L&C)",
+      "description": "Dispatch this agent for the compliance program: assess regulatory risk, monitor for and triage violations, and prepare what the regulator must receive. Serves in the Legal & Compliance department under the General Counsel.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Compliance Officer.md"
+    },
+    {
+      "name": "Robert",
+      "role": "★ General Counsel",
+      "home": "Agent Resources (AR)",
+      "team": "Legal & Compliance (L&C)",
+      "description": "Dispatch this agent for contracts, intellectual property, the entity, and regulatory matters: review a document or matter, flag the real and material legal risk with its mitigation, and let the business decide or escalate an irreversible exposure. The Legal & Compliance lead, counsel to the company.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/★ General Counsel.md"
+    },
+    {
+      "name": "Matilda",
+      "role": "Privacy & Data Protection Counsel",
+      "home": "Agent Resources (AR)",
+      "team": "Legal & Compliance (L&C)",
+      "description": "Dispatch this agent as the Privacy & Data Protection Counsel: Owns privacy law and data-protection compliance (DPAs, consent, cross-border, breach notification) and the privacy program; returns the privacy assessment and required controls. This is the regulatory lens the Security Engineer defers to.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Privacy & Data Protection Counsel.md"
+    },
+    {
+      "name": "Hannah",
+      "role": "★ Head of Operations",
+      "home": "Agent Resources (AR)",
+      "team": "Operations & Logistics (O&L)",
+      "description": "Dispatch this agent to run the business as a system: a process, supply, or delivery matter inside the operations function. Find the bottleneck and fix it first, standardize the repeatable, and turn a recurring decision into a process. The Head of Operations, owner of the operations function.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Operations & Logistics (O&L)/★ Head of Operations.md"
+    },
+    {
+      "name": "Wesley",
+      "role": "Process Analyst",
+      "home": "Agent Resources (AR)",
+      "team": "Operations & Logistics (O&L)",
+      "description": "Dispatch this agent to map, document, and improve an operational process or SOP inside the Operations & Logistics department: walk the process as it actually runs, find the waste and the unwritten step, and leave a standard someone else can follow. The Process Analyst, serving under the Head of Operations (Hannah).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Operations & Logistics (O&L)/Process Analyst.md"
+    },
+    {
+      "name": "Tessa",
+      "role": "Program & Project Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Operations & Logistics (O&L)",
+      "description": "Dispatch this agent to drive a cross-department program or project to its deliverables: define the outcome and its done-test, sequence the work along the critical path, surface the risks and blockers early, and hold the plan to delivery. The Program & Project Manager, the shared PMO seat serving under the Head of Operations (Hannah).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Operations & Logistics (O&L)/Program & Project Manager.md"
+    },
+    {
+      "name": "Roland",
+      "role": "Vendor Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Operations & Logistics (O&L)",
+      "description": "Dispatch this agent to select, onboard, and manage a supplier inside the Operations & Logistics department: match the vendor to the requirement on total cost, delivery, and performance, hold them to the contract with measured scorecards, and protect against single-source risk. The Vendor Manager, serving under the Head of Operations (Hannah).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Operations & Logistics (O&L)/Vendor Manager.md"
+    },
+    {
+      "name": "Preston",
+      "role": "★ Chief Technology Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Product Technology",
+      "description": "Dispatch this agent as the Chief Technology Officer: Seated staff chief for product technology, distinct from internal IT/CIO; owns technology strategy, architecture, and build-vs-buy that the R&D product-engineering team executes. Output routes into R&D/.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Product Technology/★ Chief Technology Officer.md"
+    },
+    {
+      "name": "Vanessa",
+      "role": "★ Chief Communications Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Public Relations (PR)",
+      "description": "Dispatch this agent for reputation, press, and external communication: what the company says publicly, to whom, and whether it is on message and on the record. The Public Relations department lead, the guardian of the company's external voice.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Public Relations (PR)/★ Chief Communications Officer.md"
+    },
+    {
+      "name": "Nathaniel",
+      "role": "Crisis & Issues Communications Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Public Relations (PR)",
+      "description": "Dispatch this agent as the Crisis & Issues Communications Manager: Owns crisis communications, issues management, and reputation defense; returns the crisis-response plan and holding statements.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Public Relations (PR)/Crisis & Issues Communications Manager.md"
+    },
+    {
+      "name": "Camille",
+      "role": "Media Relations Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Public Relations (PR)",
+      "description": "Dispatch this agent for journalist relationships, press releases, media inquiries, and earned coverage in the Public Relations department, serving under the Chief Communications Officer (Vanessa). Owns the company's relationships with the press and what it puts on the record to them.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Public Relations (PR)/Media Relations Manager.md"
+    },
+    {
+      "name": "Grace",
+      "role": "★ Head of Quality",
+      "home": "Agent Resources (AR)",
+      "team": "Quality Assurance (QA)",
+      "description": "Dispatch this agent to set the standard, review work independently against it, and prevent defects at their cause: pass or fail the artifact, name the defect class, and escalate a systemic class or a gap in the standard. The Head of Quality, the QA department lead.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Quality Assurance (QA)/★ Head of Quality.md"
+    },
+    {
+      "name": "Trevor",
+      "role": "QA Test Engineer",
+      "home": "Agent Resources (AR)",
+      "team": "Quality Assurance (QA)",
+      "description": "Dispatch this agent to execute verification: test a work product against the written standard and report defects with reproducible evidence. Pass or fail what the standard says, never invent the rule. Serves in the Quality Assurance department under the Head of Quality.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Quality Assurance (QA)/QA Test Engineer.md"
+    },
+    {
+      "name": "Victor",
+      "role": "Applied Researcher",
+      "home": "Agent Resources (AR)",
+      "team": "Research & Development (R&D)",
+      "description": "Dispatch this agent to turn a concept or open problem into a validated working prototype inside the Research & Development department: reduce the unknown to a testable question, build the smallest prototype that answers it, and report what was proven against the evidence. The Applied Researcher, serving under the Chief Product Officer (Oliver).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/Applied Researcher.md"
+    },
+    {
+      "name": "Oliver",
+      "role": "★ Chief Product Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Research & Development (R&D)",
+      "description": "Dispatch this agent to drive product research and invention: test the riskiest assumption first, run cheap experiments before building to ship, set kill-criteria up front, and decide what is next. The Chief Product Officer, who builds the product and invents what comes next.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/★ Chief Product Officer.md"
+    },
+    {
+      "name": "Leonard",
+      "role": "Head of Product Engineering",
+      "home": "Agent Resources (AR)",
+      "team": "Research & Development (R&D)",
+      "description": "Dispatch this agent as the Head of Product Engineering: Owns prototype-to-production product engineering distinct from internal IT and from research; returns the build architecture and productionization plan. FLATTENED from a starred sub-lead to a specialist to preserve the strict two-tier model  -  carries NO Task.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/Head of Product Engineering.md"
+    },
+    {
+      "name": "Naomi",
+      "role": "Product Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Research & Development (R&D)",
+      "description": "Dispatch this agent to own product vision, roadmap, and what gets built inside the Research & Development department: anchor every item to a real user problem and its outcome, decide what makes the cut against what gets cut, and sequence the roadmap by value over effort. The Product Manager, serving under the Chief Product Officer (Oliver).",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/Product Manager.md"
+    },
+    {
+      "name": "Adeline",
+      "role": "UX and Design Research Lead",
+      "home": "Agent Resources (AR)",
+      "team": "Research & Development (R&D)",
+      "description": "Dispatch this agent as the UX / Design Research Lead: Owns product design and user research feeding the product roadmap; returns design direction and validated user insight. Replaces the proposals' colliding 'Mabel'.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/UX and Design Research Lead.md"
+    },
+    {
+      "name": "Brandon",
+      "role": "Account Executive",
+      "home": "Agent Resources (AR)",
+      "team": "Sales & Revenue (S&R)",
+      "description": "Dispatch this agent to own the individual deal: qualify and nurture a qualified lead through the stages to a close, manage the relationship, and call the deal honestly. Sales & Revenue; serves under the CRO.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Account Executive.md"
+    },
+    {
+      "name": "Xavier",
+      "role": "★ Chief Revenue Officer",
+      "home": "Agent Resources (AR)",
+      "team": "Sales & Revenue (S&R)",
+      "description": "Dispatch this agent as the Chief Revenue Officer: Leads the Sales/Revenue department and owns the SINGLE revenue number across Marketing, Sales, and Client Experience  -  a number-ownership line that crosses three departments without changing their reporting lines.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/★ Chief Revenue Officer.md"
+    },
+    {
+      "name": "Derek",
+      "role": "Demand Generation Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Sales & Revenue (S&R)",
+      "description": "Dispatch this agent to own pipeline: plan paid, SEO, email, and lifecycle programs, allocate spend across channels, and tie every program to leads, pipeline, and CAC. Sales & Revenue; serves under the CRO.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Demand Generation Manager.md"
+    },
+    {
+      "name": "Felix",
+      "role": "Product Marketing Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Sales & Revenue (S&R)",
+      "description": "Dispatch this agent to own positioning, messaging, and go-to-market launch: define how the product is framed, sharpen the message, and run the launch plan. Sales & Revenue; serves under the CRO.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Product Marketing Manager.md"
+    },
+    {
+      "name": "Zachary",
+      "role": "Revenue Operations Manager",
+      "home": "Agent Resources (AR)",
+      "team": "Sales & Revenue (S&R)",
+      "description": "Dispatch this agent as the Revenue Operations Manager: Owns RevOps: the revenue tech stack, forecasting discipline, territory/quota design, and the single funnel view across marketing, sales, and success; returns the RevOps plan.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Revenue Operations Manager.md"
+    },
+    {
+      "name": "Cecil",
+      "role": "Sales Engineer",
+      "home": "Agent Resources (AR)",
+      "team": "Sales & Revenue (S&R)",
+      "description": "Dispatch this agent as the Sales Engineer: Owns technical pre-sales, solution scoping, and proof-of-concept support; returns the technical sales design and POC plan. Partners Product and the CTO.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Sales Engineer.md"
+    },
+    {
+      "name": "Vera",
+      "role": "Design Critic",
+      "home": "Faculties",
+      "team": "Design",
+      "description": "Dispatch this agent to review a visual it did not make and rule whether it ships: right form, honest encoding, accessible, clear. The independent critic and accessibility gate on the Design team, the BRAIN's standing visualization team; review-only, never fixes, and reports to the Design Lead.",
+      "path": "BRAIN/Inbox/Faculties/Design/Design Critic.md"
+    },
+    {
+      "name": "Margot",
+      "role": "★ Design Lead",
+      "home": "Faculties",
+      "team": "Design",
+      "description": "Dispatch this agent to lead a visual: frame the request, choose and name the right visual form, dispatch the Design team, run the integrity-and-accessibility gate, and own delivery. The team lead of the Design team, the BRAIN's standing visualization team; orchestrates and synthesizes, never makes the artifact itself, and is never its reviewer.",
+      "path": "BRAIN/Inbox/Faculties/Design/★ Design Lead.md"
+    },
+    {
+      "name": "Otto",
+      "role": "Visualization Designer",
+      "home": "Faculties",
+      "team": "Design",
+      "description": "Dispatch this agent to make the visual: render a chart, diagram, interactive widget, or explanatory illustration to the chosen form, encoded honestly and legibly. The maker on the Design team, the BRAIN's standing visualization team; produces the artifact source and reports to the Design Lead.",
+      "path": "BRAIN/Inbox/Faculties/Design/Visualization Designer.md"
+    },
+    {
+      "name": "Sebastian",
+      "role": "★ Creative Lead",
+      "home": "Faculties",
+      "team": "Discovery",
+      "description": "Dispatch this agent to frame a challenge as a generative brief, run the diverge-then-converge cycle, defer judgment while ideas are generated, apply the kill-gate, and hand the Founder a ranked shortlist with a recommendation: the lead who owns the ideation run's spread and fairness end to end. The lead of the Discovery team, the BRAIN's standing ideation team, serving all BRAIN ideation and reporting to the Founder.",
+      "path": "BRAIN/Inbox/Faculties/Discovery/★ Creative Lead.md"
+    },
+    {
+      "name": "Hugo",
+      "role": "Idea Critic",
+      "home": "Faculties",
+      "team": "Discovery",
+      "description": "Dispatch this agent to steelman then stress-test each surviving idea for novelty, feasibility, and fatal flaws, flagging each KEEP, FLAW, or KILL: the honest skeptic who protects quality without killing boldness and never critiques his own ideas. On the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
+      "path": "BRAIN/Inbox/Faculties/Discovery/Idea Critic.md"
+    },
+    {
+      "name": "Pearl",
+      "role": "Idea Curator",
+      "home": "Faculties",
+      "team": "Discovery",
+      "description": "Dispatch this agent to keep the idea library: deduplicate a new idea against the whole pool including killed ideas, and maintain each record's schema, lifecycle, lineage, and retrieval. In the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
+      "path": "BRAIN/Inbox/Faculties/Discovery/Idea Curator.md"
+    },
+    {
+      "name": "Iris",
+      "role": "Idea Generator",
+      "home": "Faculties",
+      "team": "Discovery",
+      "description": "Dispatch this agent to generate many candidate ideas from one assigned distinct lens, then to evolve and recombine the winners into stronger variants: the diverge engine, run N-parallel and independent so the field is wide by construction. On the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
+      "path": "BRAIN/Inbox/Faculties/Discovery/Idea Generator.md"
+    },
+    {
+      "name": "Lionel",
+      "role": "Portfolio Manager",
+      "home": "Faculties",
+      "team": "Discovery",
+      "description": "Dispatch this agent when there is a portfolio to weigh: balance the whole developed-idea mix across ventures and projects by RICE and recommend the mix. In the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
+      "path": "BRAIN/Inbox/Faculties/Discovery/Portfolio Manager.md"
+    },
+    {
+      "name": "Desmond",
+      "role": "Tournament Ranker",
+      "home": "Faculties",
+      "team": "Discovery",
+      "description": "Dispatch this agent to rank a surviving idea shortlist into a stable order by pairwise Elo comparison: the neutral judge who scores nothing on its own and lets the best idea win on merit alone. In the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
+      "path": "BRAIN/Inbox/Faculties/Discovery/Tournament Ranker.md"
+    },
+    {
+      "name": "Frances",
+      "role": "Developmental Editor",
+      "home": "Faculties",
+      "team": "Editorial",
+      "description": "Dispatch this agent to bring fresh structural eyes to a long or complex piece: structure, argument, and organization, before any line-level work. On the Editorial team, the BRAIN's standing writing team; the structural-independence seat, a fresh reader who never edits its own draft, returns structural critique rather than rewriting, and reports to the Editorial Lead.",
+      "path": "BRAIN/Inbox/Faculties/Editorial/Developmental Editor.md"
+    },
+    {
+      "name": "Edith",
+      "role": "★ Editorial Lead",
+      "home": "Faculties",
+      "team": "Editorial",
+      "description": "Dispatch this agent to lead a piece of writing: frame the brief, hold the Founder's intent and voice, dispatch the Editorial team, run the verification gate, and own the ship gate. The team lead of the Editorial team, the BRAIN's standing writing team; orchestrates and synthesizes, never authors a piece itself, and is never the sole reviewer of a load-bearing one.",
+      "path": "BRAIN/Inbox/Faculties/Editorial/★ Editorial Lead.md"
+    },
+    {
+      "name": "Cora",
+      "role": "Line Editor",
+      "home": "Faculties",
+      "team": "Editorial",
+      "description": "Dispatch this agent to give a drafted piece its fresh-eyes polish: line, copy, and proofreading merged for clarity, correctness, consistency, and voice, and flagging load-bearing factual claims for verification. On the Editorial team, the BRAIN's standing writing team; the clarity gate every piece passes, a fresh reader who never edits its own draft, returns edits and flags rather than rewriting, and reports to the Editorial Lead.",
+      "path": "BRAIN/Inbox/Faculties/Editorial/Line Editor.md"
+    },
+    {
+      "name": "Harper",
+      "role": "Long-Form Writer",
+      "home": "Faculties",
+      "team": "Editorial",
+      "description": "Dispatch this agent to draft sustained narrative in the Founder's voice: books, essays, ghostwriting, and any long-form piece that must hold structure and momentum across length. On the Editorial team, the BRAIN's standing writing team; the by-demand long-form drafter who sustains one voice and one argument over distance, hands flagged claims to the lead, and reports to the Editorial Lead.",
+      "path": "BRAIN/Inbox/Faculties/Editorial/Long-Form Writer.md"
+    },
+    {
+      "name": "Miles",
+      "role": "Technical Writer",
+      "home": "Faculties",
+      "team": "Editorial",
+      "description": "Dispatch this agent to write documentation, instructions, how-to, and structured technical content: accuracy and task completion over style, clarity paramount and voice lighter. On the Editorial team, the BRAIN's standing writing team; the by-demand technical drafter who optimizes for the reader completing the task, flags load-bearing claims, and reports to the Editorial Lead.",
+      "path": "BRAIN/Inbox/Faculties/Editorial/Technical Writer.md"
+    },
+    {
+      "name": "Calvin",
+      "role": "Writer",
+      "home": "Faculties",
+      "team": "Editorial",
+      "description": "Dispatch this agent to draft the everyday prose in the Founder's voice: emails, professional and business writing, correspondence, memos, documents, and general communication. On the Editorial team, the BRAIN's standing writing team; the core drafter who writes clear and in the Founder's true voice, hands flagged claims to the lead to verify, and reports to the Editorial Lead.",
+      "path": "BRAIN/Inbox/Faculties/Editorial/Writer.md"
+    },
+    {
+      "name": "Jasper",
+      "role": "All-Source Analyst",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent to gather, read, cite, and condense the sources for one assigned lane into a findings brief: the workhorse, dispatched in parallel one lane each. A specialist on the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/All-Source Analyst.md"
+    },
+    {
+      "name": "Damon",
+      "role": "Devil's Advocate",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent to attack the conclusion: build the strongest case against it, surface the load-bearing assumptions and groupthink, and find what claim-checking cannot. The intelligence red team and independent critic. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/Devil's Advocate.md"
+    },
+    {
+      "name": "Genevieve",
+      "role": "Editor",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent when a report ships to polish the final product: ordering, confidence-language consistency, citation completeness, and cutting padding, without ever altering meaning. The newsroom and journal editor (Goodman 1994). On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/Editor.md"
+    },
+    {
+      "name": "Ruth",
+      "role": "Fact-Checker",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent to independently verify every load-bearing claim in a draft against its primary source and to check attribution and source quality: the newsroom fact-checker plus review methodologist, fresh eyes that never check their own synthesis. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/Fact-Checker.md"
+    },
+    {
+      "name": "Lydia",
+      "role": "Information Specialist",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent to design the search and source strategy for a research question: where to look, which source types, what queries, what date windows, so the analysts find the best evidence rather than the first hits. A specialist on the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/Information Specialist.md"
+    },
+    {
+      "name": "Mabel",
+      "role": "Knowledge Manager",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent to keep the Research team's report library reusable and current: one canonical report per topic, deduplication, the reuse-is-review freshness lifecycle, and fast retrieval of prior findings. A specialist on the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/Knowledge Manager.md"
+    },
+    {
+      "name": "Beatrice",
+      "role": "★ Research Lead",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent to frame a research question, decompose it into lanes, dispatch the right specialists, and synthesize a cited, calibrated answer, owning the run's integrity end to end. The lead of the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Founder.",
+      "path": "BRAIN/Inbox/Faculties/Research/★ Research Lead.md"
+    },
+    {
+      "name": "Mara",
+      "role": "Search Peer-Reviewer",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent to independently peer-review the search and source strategy before the analysts run it, PRESS-style: catch missed venues, biased or low-recall queries, and where-we-looked bias, and return PASS or REVISE with the fix before the fan-out. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/Search Peer-Reviewer.md"
+    },
+    {
+      "name": "Sterling",
+      "role": "Standards Reviewer",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent to vet sensitive or external-facing output for legal, ethical, and domain-standards risk before it ships: libel, privacy, intellectual property and licensing, regulated claims, and disclosure standards, naming the specific rule and the required change. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/Standards Reviewer.md"
+    },
+    {
+      "name": "Soren",
+      "role": "Statistician",
+      "home": "Faculties",
+      "team": "Research",
+      "description": "Dispatch this agent when numbers are load-bearing to review the quantitative claims: effect sizes, comparability, and methodology, flagging the numbers that cannot carry the weight put on them. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
+      "path": "BRAIN/Inbox/Faculties/Research/Statistician.md"
+    },
+    {
+      "name": "Marian",
+      "role": "★ Librarian",
+      "home": "Library",
+      "team": "Library",
+      "description": "Dispatch this agent to manage or search the Library: classify and catalog a holding, weed against the freshness floor, assign its freshness tier, or search the curated collection and the offline knowledge bases (Library/Reference & Encyclopedia/) to ground a question locally before the web. The BRAIN's sole Librarian, the resident steward of Library/, who acquires, classifies, catalogs, curates, preserves, and serves the reference collection to one standard: every holding earns its place.",
+      "path": "BRAIN/Library/★ Librarian.md"
+    }
+  ],
+  "teams": [
+    {
+      "team": "Administration",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Executive Officer",
+      "members": [
+        "★ Chief Executive Officer",
+        "Chief Operating Officer",
+        "Corporate Secretary"
+      ],
+      "description": "Dispatch this team for company-level direction, coordination, governance, execution, and strategy: the executive office that turns the Founder's intent into coordinated action across the departments. The top Administration tier, above the operating departments.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Administration/Administration.md"
+    },
+    {
+      "team": "Business Intelligence (BI)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Data Officer",
+      "members": [
+        "★ Chief Data Officer",
+        "Analytics Engineer",
+        "Data Analyst"
+      ],
+      "description": "The Business Intelligence (BI) department of the agent workforce: data, metrics, dashboards, and decisions from evidence. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/Business Intelligence (BI).md"
+    },
+    {
+      "team": "Client Experience (CX)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Customer Officer",
+      "members": [
+        "★ Chief Customer Officer",
+        "Customer Success Manager",
+        "Support Specialist"
+      ],
+      "description": "The Client Experience (CX) department of the agent workforce: onboarding, success, retention, and support. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Client Experience (CX)/Client Experience (CX).md"
+    },
+    {
+      "team": "Finance & Accounting (F&A)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Financial Officer",
+      "members": [
+        "★ Chief Financial Officer",
+        "Controller",
+        "FP&A Analyst"
+      ],
+      "description": "The Finance & Accounting (F&A) department of the agent workforce: money in, money out, the books, forecast, and controls. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/Finance & Accounting (F&A).md"
+    },
+    {
+      "team": "Human Resources (HR)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Human Resources Officer",
+      "members": [
+        "★ Chief Human Resources Officer",
+        "HRIS and People Operations Analyst"
+      ],
+      "description": "The Human Resources (HR) department of the agent workforce: people, hiring, compensation, and org design. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Human Resources (HR)/Human Resources (HR).md"
+    },
+    {
+      "team": "Information Security",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Information Security Officer",
+      "members": [
+        "★ Chief Information Security Officer"
+      ],
+      "description": "Information security: enterprise security strategy, the threat model, and the security posture, reporting independently of the IT it secures.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Information Security/Information Security.md"
+    },
+    {
+      "team": "Information Technology (IT)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Information Officer",
+      "members": [
+        "★ Chief Information Officer",
+        "Platform Engineer",
+        "Security Engineer"
+      ],
+      "description": "The Information Technology (IT) department of the agent workforce: the engineering function that builds skills, agents, and the internal tooling the workforce runs on. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Information Technology (IT)/Information Technology (IT).md"
+    },
+    {
+      "team": "Legal & Compliance (L&C)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ General Counsel",
+      "members": [
+        "★ General Counsel",
+        "Commercial Counsel",
+        "Compliance Officer",
+        "Privacy & Data Protection Counsel"
+      ],
+      "description": "The Legal & Compliance (L&C) department of the agent workforce: contracts, intellectual property, entity, regulatory matters, and risk. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Legal & Compliance (L&C).md"
+    },
+    {
+      "team": "Operations & Logistics (O&L)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Head of Operations",
+      "members": [
+        "★ Head of Operations",
+        "Process Analyst",
+        "Program & Project Manager",
+        "Vendor Manager"
+      ],
+      "description": "The Operations & Logistics (O&L) department of the agent workforce: running the business: process, supply, and delivery. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Operations & Logistics (O&L)/Operations & Logistics (O&L).md"
+    },
+    {
+      "team": "Product Technology",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Technology Officer",
+      "members": [
+        "★ Chief Technology Officer"
+      ],
+      "description": "Product technology: technology strategy and architecture for the customer-facing product, distinct from internal IT.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Product Technology/Product Technology.md"
+    },
+    {
+      "team": "Public Relations (PR)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Communications Officer",
+      "members": [
+        "★ Chief Communications Officer",
+        "Crisis & Issues Communications Manager",
+        "Media Relations Manager"
+      ],
+      "description": "The Public Relations (PR) department of the agent workforce: reputation, press, and external communication. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Public Relations (PR)/Public Relations (PR).md"
+    },
+    {
+      "team": "Quality Assurance (QA)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Head of Quality",
+      "members": [
+        "★ Head of Quality",
+        "QA Test Engineer"
+      ],
+      "description": "The Quality Assurance (QA) department of the agent workforce: standards, review, and defect prevention. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Quality Assurance (QA)/Quality Assurance (QA).md"
+    },
+    {
+      "team": "Research & Development (R&D)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Product Officer",
+      "members": [
+        "★ Chief Product Officer",
+        "Applied Researcher",
+        "Head of Product Engineering",
+        "Product Manager",
+        "UX and Design Research Lead"
+      ],
+      "description": "The Research & Development (R&D) department of the agent workforce: building the product and inventing what is next. Led by its department head, with more specialists added by demand.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/Research & Development (R&D).md"
+    },
+    {
+      "team": "Sales & Revenue (S&R)",
+      "home": "Agent Resources (AR)",
+      "lead": "★ Chief Revenue Officer",
+      "members": [
+        "★ Chief Revenue Officer",
+        "Account Executive",
+        "Revenue Operations Manager",
+        "Sales Engineer",
+        "Product Marketing Manager",
+        "Demand Generation Manager"
+      ],
+      "description": "Sales and revenue: pipeline, the close, revenue operations, sales engineering, enablement, and channel, owning the revenue number.",
+      "path": "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Sales & Revenue (S&R).md"
+    },
+    {
+      "team": "Design",
+      "home": "Faculties",
+      "lead": "★ Design Lead",
+      "members": [
+        "★ Design Lead",
+        "Visualization Designer",
+        "Design Critic"
+      ],
+      "description": "The Design team: the BRAIN's standing visualization team. A lead plus two that turn data, structure, and ideas into honest visuals, from charts and diagrams to interactive widgets and explanatory illustration. The see-it counterpart to the Research, Discovery, Development, and Editorial teams.",
+      "path": "BRAIN/Inbox/Faculties/Design/Design.md"
+    },
+    {
+      "team": "Discovery",
+      "home": "Faculties",
+      "lead": "★ Creative Lead",
+      "members": [
+        "★ Creative Lead",
+        "Idea Generator",
+        "Idea Critic",
+        "Tournament Ranker",
+        "Idea Curator",
+        "Portfolio Manager"
+      ],
+      "description": "The BRAIN's standing ideation team and how it works: a lead plus five specialists that generate new ideas then converge to the strongest, to one standard - generate wide, select fair. Defines the roster and the idea method (the record schema, ICE/Elo/RICE scoring, lifecycle, dedup, lineage). The ideation counterpart to the research team.",
+      "path": "BRAIN/Inbox/Faculties/Discovery/Discovery.md"
+    },
+    {
+      "team": "Editorial",
+      "home": "Faculties",
+      "lead": "★ Editorial Lead",
+      "members": [
+        "★ Editorial Lead",
+        "Writer",
+        "Line Editor",
+        "Long-Form Writer",
+        "Technical Writer",
+        "Developmental Editor"
+      ],
+      "description": "The Editorial team: the BRAIN's standing writing and communication team. A lead plus five that draft all of the Founder's own prose, from emails and correspondence to books, essays, and documents. The communications counterpart to the Research team, the Discovery team, and the Development team.",
+      "path": "BRAIN/Inbox/Faculties/Editorial/Editorial.md"
+    },
+    {
+      "team": "Research",
+      "home": "Faculties",
+      "lead": "★ Research Lead",
+      "members": [
+        "★ Research Lead",
+        "Information Specialist",
+        "All-Source Analyst",
+        "Fact-Checker",
+        "Devil's Advocate",
+        "Statistician",
+        "Editor",
+        "Knowledge Manager",
+        "Standards Reviewer",
+        "Search Peer-Reviewer"
+      ],
+      "description": "The BRAIN's standing research team and how it works: a lead plus nine specialists that run any research the BRAIN needs, for any project, venture, or the BRAIN itself, to one standard - zero bias. Defines the roster and the report method (comprehensiveness, freshness, dedup, the Reports.md index rule). The research counterpart to the ideation Discovery team.",
+      "path": "BRAIN/Inbox/Faculties/Research/Research.md"
+    },
+    {
+      "team": "Library",
+      "home": "Library",
+      "lead": "★ Librarian",
+      "members": [
+        "★ Librarian"
+      ],
+      "description": "A universal, discipline-based reference library built to hold all of human knowledge: 10 plain-named classes as the shelf order, a controlled-keyword faceted catalog, boundary rulings and a routing table for hard cases, AI-cataloged intake, freshness weeding, and a vector-ready design. Classification is what keeps AI retrieval precise at scale.",
+      "path": "BRAIN/Library/Library.md"
+    }
+  ]
+}

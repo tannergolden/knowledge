@@ -35,7 +35,7 @@ General practical knowledge for the business of living, written for anyone. It i
 | Hobbies & Skills | Recreational skill-building and pastimes for personal interest |
 | Practical How-To | General step-by-step guides not covered above (kept narrow) |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Life & Practice/Career & Work/Career & Work|Career & Work]]
 - [[Library/Life & Practice/Food & Cooking/Food & Cooking|Food & Cooking]]
 - [[Library/Life & Practice/Health & Wellness/Health & Wellness|Health & Wellness]]

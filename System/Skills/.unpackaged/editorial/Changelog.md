@@ -6,12 +6,11 @@ tags: ["system", "log"]
 aliases: []
 keywords: ["version history", "release notes", "editorial skill changes", "revision log"]
 created: 2026-06-23
-updated: 2026-06-28
+updated: 2026-10-19
 type: "log"
 folder: "system"
 layer: 4
 policy: false
-version: "01.05.00"
 author: "Tanner Golden"
 path: "BRAIN/System/Skills/.unpackaged/editorial/Changelog.md"
 id: "sy-skill-editorial-changelog"
@@ -21,7 +20,7 @@ id: "sy-skill-editorial-changelog"
 
 ## Current Version
 
-**`01.05.00`**
+**`01.05.01`**
 
 Semantic versioning, `MAJOR.MINOR.PATCH`, two-digit zero-padded segments. This value matches `metadata.version` in `SKILL.md`. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -69,6 +68,10 @@ Added two on-demand format references for non-Markdown destinations, both built 
 
 > Fixes, wording, reference tweaks. Most recent 4 entries.
 
+### `01.05.01` - 2026-10-19
+
+Moved the preflight and the exit gate off the retired engine: an edit in place starts from a committed state, `.github/scripts/lint-notes.py` is the exit gate, and `update-vault.py` and `check-vault.py` replace `sync` and `health`. The archive now carries the Editorial team, vendored when it is built.
+
 ### `01.04.02` - 2026-06-27
 
 Expanded the 9.7 alignment to name GitHub's full set of recognized markdown files, not only README. `references/formatting.md` and `SKILL.md` now list the repository and community-health files GitHub renders in its web interface, `README.md`, `LICENSE.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `SECURITY.md`, `SUPPORT.md`, `GOVERNANCE.md`, and the issue and pull-request templates, as the only place GitHub-Flavored Markdown is in bounds. Verified against GitHub's community-health-files documentation.
@@ -81,6 +84,3 @@ Aligned the formatting doctrine to new Constitution rule 9.7 (Obsidian-Compatibl
 
 Verified the markdown and admonition references against primary sources (CommonMark 0.31.2, the frozen GFM spec, the GitHub alerts doc, and the Obsidian Help Callouts and Advanced-formatting pages) with a deep research run: five analysts, a fact-checker, and a devil's advocate. The callout type and alias set matched the live Obsidian doc exactly, and no factual error was found in any Obsidian or portability claim. Applied a small set of anti-footgun corrections rather than spec-completeness padding: in `references/markdown-reference.md`, named the backslash CommonMark hard break and corrected the hard-break portability note, flagged that MathJax renders a LaTeX subset (not full LaTeX), that a table cell takes no line break (use a break tag), and that Obsidian has no native code line-highlighting; in `references/admonitions.md`, that every callout body line needs its own quote marker and a pipe still escapes inside a callout table; in `references/formatting.md`, that vault frontmatter and tags follow the Instructions Section 8 schema and the Article VII vocabulary, not freeform Obsidian properties. Held the signal-scarcity doctrine: deferred the spec-coverage gaps (Setext and indented code, reference-link variants, properties and block-id syntax, wikilink and embed sub-forms) to the vault Markdown Style Guide rather than bloat the references.
 
-### `01.00.00` - 2026-06-23
-
-Initial build. Created the editorial skill as a thin orchestration and doctrine layer over the standing Editorial team (`metadata.team: Editorial`, lead Editorial Lead / Edith plus five specialists), mirroring the shape of the research skill: a BRAIN-resident skill that dispatches a standing team, carries no agents of its own (the team is vendored in only at Publish), and runs the BRAIN preflight. Wrote `SKILL.md` with a trigger-optimized description that fires on writing or editing any text and on creating or editing a prose `.md` or `.txt` even when the word editorial is not said, structurally scoped away from System, agent, log, template, index, and script files and from any `brain.command` write. Set the three tiers with a deliberately lightweight quick tier (the lead drafts and self-edits inline, no team handoff). Externalized the quality gate as `references/slop-rubric.md`, a five-group AI-slop checklist anchored to Constitution 9.2 as its single source of truth, with the cite-the-span rule. Wrote the formatting doctrine (`references/formatting.md`, the full Obsidian callout system plus the Article-IX precedence and the internal-vs-leaving-the-vault scope), the voice protocol (`references/voice.md`, honest on day one against the empty `Profile/` scaffolds), and the email-and-message conventions (`references/email-and-messages.md`). Added three templates (email, message, document) and two assets (the Obsidian callout-type table, the slop-pattern catalog), and a trigger eval set for the smoke test.

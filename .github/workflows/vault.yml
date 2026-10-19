@@ -1,0 +1,44 @@
+# The vault's own checks, on every pull request and every push to the default
+# branch, in this template as much as in every vault made from it.
+#
+# checks.yml stays silent in a template, so the vault's checks cannot ride on
+# its `ci` job alone: a broken note, a dead wikilink or a stale catalog in the
+# template would reach every vault generated from it. This workflow carries no
+# is_template guard for that reason. It runs the composite action in
+# .github/actions/vault/, which runs check-vault.py and the scripts' tests.
+
+name: '🧠 Vault'
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  vault:
+    name: '🧠 Vault Checks'
+    if: ${{ github.event_name != 'push' || github.ref_name == github.event.repository.default_branch }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read # read the vault
+    steps:
+      - name: '🛡️ Harden Runner'
+        uses: tannergolden/standards/actions/harden@v1
+        with:
+          egress-policy: audit
+          notice: '🧠 Checking the notes, links, skills, agents and generated parts of the vault.'
+
+      - name: '📂 Checkout'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: '🧠 Check the vault'
+        uses: ./.github/actions/vault

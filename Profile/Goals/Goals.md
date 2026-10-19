@@ -6,7 +6,7 @@ tags: ["profile", "self", "sensitive", "enduring"]
 aliases: ["Aspirations", "Ambitions", "Direction"]
 keywords: ["goals", "aspirations", "ambitions", "long-term", "what they want", "direction", "future self"]
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-10-19
 type: "self"
 folder: "profile"
 layer: 2
@@ -30,9 +30,9 @@ The overarching arc: where the user wants their life and work to go. The frame t
 
 ## Active Goals
 
-One entry per significant goal (status and next actions stay in `Focus/`, not here). Add one with `profile add goal "Title"`; the list below is engine-maintained.
+One entry per significant goal (status and next actions stay in `Focus/`, not here). Add one by copying `Profile/.template/Goal.md` here as `<Title>.md`; `update-vault.py` keeps the list below.
 
-<!-- brain:profile-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:profile-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _None recorded yet._
 <!-- /brain:profile-entries -->
 

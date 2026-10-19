@@ -5,7 +5,7 @@ license: proprietary
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
 metadata:
   team: Discovery
-  version: "01.00.00"
+  version: "01.00.01"
   id: "sy-skill-discover-spec"
   author: "Tanner Golden"
   status: "active"
@@ -51,7 +51,7 @@ A bigger roster is not a better one. Dispatch the **smallest sufficient** seats:
 
 ## Conformance with the live BRAIN
 
-**Preflight (before any vault write).** Filing idea records or a report is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of every folder written into (`Inbox/Ideas/Ideas.md` for records, `Inbox/Reports/Reports.md` for a report), back up before editing an existing file, and reference vault files by plain path, never wikilinks (the one exception is the `Inbox/Reports/Reports.md` index, whose entries are wikilinks by design). Idea records carry the `record` File Role and the idea schema (`templates/idea-record.md`); a filed report adds its entry to the Reports index in the same edit.
+**Preflight (before any vault write).** Filing idea records or a report is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of every folder written into (`Inbox/Ideas/Ideas.md` for records, `Inbox/Reports/Reports.md` for a report), commit an existing file's last state before editing it, and reference vault files by plain path, never wikilinks (the one exception is the `Inbox/Reports/Reports.md` index, whose entries are wikilinks by design). Idea records carry the `record` File Role and the idea schema (`templates/idea-record.md`); a filed report adds its entry to the Reports index in the same edit.
 
 **Read before acting.** Before filing into `Inbox/Ideas/`, read its namesake so records fit the pool, and dedup against the existing pool (including killed ideas) so the same idea is not re-filed. After a substantial run, **offer** (never silently) to file the survivors and to fold the distilled outcome into `Memory/`. Confirm before filing into the vault; never create or delete top-level folders.
 

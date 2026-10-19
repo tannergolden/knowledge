@@ -35,7 +35,7 @@ How human societies are structured, governed, and sustained. The human record ac
 | Commerce & Organizations | Business, trade, organizational theory, and accounting |
 | Military & Security | Military science, strategy, defense, and security and peace studies |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Society & Social Sciences/Anthropology/Anthropology|Anthropology]]
 - [[Library/Society & Social Sciences/Commerce & Organizations/Commerce & Organizations|Commerce & Organizations]]
 - [[Library/Society & Social Sciences/Economics/Economics|Economics]]

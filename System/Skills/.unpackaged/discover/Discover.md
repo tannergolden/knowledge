@@ -11,7 +11,6 @@ type: "information"
 folder: "system"
 layer: 4
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/System/Skills/.unpackaged/discover/Discover.md"
 id: "sy-skill-discover"

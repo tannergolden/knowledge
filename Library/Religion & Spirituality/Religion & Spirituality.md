@@ -34,7 +34,7 @@ Religion and spirituality studied neutrally, with every tradition treated as a p
 | Contemplative & Secular Spirituality | Meditation, mysticism, and nonreligious spiritual practice |
 | Ritual & Practice | Rites, liturgy, festivals, pilgrimage, prayer, and observance |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Religion & Spirituality/Abrahamic Traditions/Abrahamic Traditions|Abrahamic Traditions]]
 - [[Library/Religion & Spirituality/Comparative Religion/Comparative Religion|Comparative Religion]]
 - [[Library/Religion & Spirituality/Contemplative & Secular Spirituality/Contemplative & Secular Spirituality|Contemplative & Secular Spirituality]]

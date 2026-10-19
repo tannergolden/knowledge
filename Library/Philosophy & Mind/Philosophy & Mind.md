@@ -34,7 +34,7 @@ The examined questions of reason, value, beauty, and mind, and the science of mi
 | Cognitive Science | Cognition across psychology, neuroscience, AI, and linguistics |
 | Philosophical Traditions | Schools and histories of philosophy, Eastern and Western |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Philosophy & Mind/Aesthetics/Aesthetics|Aesthetics]]
 - [[Library/Philosophy & Mind/Cognitive Science/Cognitive Science|Cognitive Science]]
 - [[Library/Philosophy & Mind/Epistemology/Epistemology|Epistemology]]

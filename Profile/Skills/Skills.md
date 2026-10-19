@@ -6,7 +6,7 @@ tags: ["profile", "self", "sensitive", "enduring"]
 aliases: ["Expertise", "Competencies", "Abilities"]
 keywords: ["skills", "expertise", "competencies", "proficiency", "what they know", "explanation depth", "calibration"]
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-10-19
 type: "self"
 folder: "profile"
 layer: 2
@@ -38,8 +38,8 @@ Spoken and programming languages, with fluency.
 
 ## Skill Entries
 
-One entry per area of genuine depth (casual interests are Preferences). Add one with `profile add skill "Title"`; the list below is engine-maintained.
+One entry per area of genuine depth (casual interests are Preferences). Add one by copying `Profile/.template/Skill.md` here as `<Title>.md`; `update-vault.py` keeps the list below.
 
-<!-- brain:profile-entries (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:profile-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _None recorded yet._
 <!-- /brain:profile-entries -->

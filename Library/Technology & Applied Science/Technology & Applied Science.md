@@ -34,7 +34,7 @@ Knowledge applied to practical ends: the making of working things and the runnin
 | Operations & Management | Applied operations, project, and quality management practice |
 | Infrastructure & Built Environment | Construction, building engineering, urban planning, utilities |
 
-<!-- brain:children (auto-maintained by brain.command - do not edit by hand) -->
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 - [[Library/Technology & Applied Science/Agriculture & Food Science/Agriculture & Food Science|Agriculture & Food Science]]
 - [[Library/Technology & Applied Science/Applied Computing & Software/Applied Computing & Software|Applied Computing & Software]]
 - [[Library/Technology & Applied Science/Energy & Materials/Energy & Materials|Energy & Materials]]

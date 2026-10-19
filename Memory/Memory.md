@@ -6,12 +6,11 @@ tags: ["memory", "information", "timeless"]
 aliases: []
 keywords: ["continuity layer", "memory types", "context semantic", "importance salience", "recency relevance retrieval", "reflection cadence", "bitemporal provenance", "supersede not rewrite"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-10-19
 type: "information"
 folder: "memory"
 layer: 1
 policy: false
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Memory/Memory.md"
 id: "me-memory"
@@ -52,9 +51,9 @@ Memory that grows without bound is split into **collections**: a lean, always-sc
 
 The five operations of this memory, each with the rule that governs it:
 
-- **Capture.** Every observation worth keeping enters `Log.md` through `remember`. Rate its **importance 1 to 5 at write time** (1 routine, 3 notable, 5 pivotal), recorded as an `Importance: N` line in the entry body. Importance is judged once, at capture, the way a person tags an experience by how much it mattered; it feeds both retrieval ranking and the reflection trigger.
+- **Capture.** Every observation worth keeping enters `Log.md` as a new entry at the top of its Log Entries, in the format `Log.md` shows. Rate its **importance 1 to 5 at write time** (1 routine, 3 notable, 5 pivotal), recorded as an `Importance: N` line in the entry body. Importance is judged once, at capture, the way a person tags an experience by how much it mattered; it feeds both retrieval ranking and the reflection trigger.
 - **Consolidate.** Promote qualified Log entries into a collection; merge entries that describe the same entity or event; collapse near-duplicate Log lines into the canonical entry; relocate (never compress away) summaries as a tier overflows. A summary always links to its sources and never replaces the raw record.
-- **Retrieve.** Rank by **recency + importance + relevance** (see below); auto-load the newest context summaries each session; reach everything older on demand by `search`.
+- **Retrieve.** Rank by **recency + importance + relevance** (see below); auto-load the newest context summaries each session; reach everything older on demand by searching.
 - **Reflect.** On the periodic consolidation pass, and whenever the summed importance of memories captured since the last reflection crosses about 25, pose a few questions over recent context and entity memory and write the `Insights/` that answer them, each citing its sources. Reflection about the user themselves becomes an `Profile/` proposal, never an Insight.
 - **Forget.** Nothing is ever deleted (Constitution 3.1). Decay is a ranking term, not erasure; a fact that changes is superseded, not overwritten.
 
@@ -70,7 +69,7 @@ score = recency + importance + relevance
 - **importance** - the 1-to-5 score captured at write time, normalized.
 - **relevance** - keyword plus semantic match to the active query or context.
 
-The newest, most important, most on-point memories surface first; superseded or deprecated entries remain searchable but sort last. The newest `Context/Current/` summaries load automatically at the start of every session, up to a small token budget; everything older is reached on demand, where `search` applies the same scoring. An entry may also carry an explicit `Salience:` note when its importance is not obvious from age alone.
+The newest, most important, most on-point memories surface first; superseded or deprecated entries remain searchable but sort last. The two newest `Context/Current/` summaries load at the start of every session; everything older is reached on demand by searching, weighed by the same three signals. An entry may also carry an explicit `Salience:` note when its importance is not obvious from age alone.
 
 ## Provenance and supersession
 
@@ -81,15 +80,15 @@ As of: 2026-06        # when this became true in the world (valid-time)
 Recorded: 2026-06-18  # when the BRAIN learned it (transaction-time)
 ```
 
-When a fact changes, **supersede, do not silently rewrite**: mark the old entry (`memory supersede ...` sets a Decision's Status to `Superseded`; or set the file `status: deprecated`), add a plain-path `Superseded-by:` pointer, and close the old `As of`. The old record stays - demoted in retrieval, never deleted. A memory that preserves *when* facts changed cannot quietly contradict itself; one that rewrites in place can.
+When a fact changes, **supersede, do not silently rewrite**: mark the old entry (set a Decision's `**Status:**` line to `Superseded`, or the file's `status: deprecated`), add a plain-path `Superseded-by:` pointer, and close the old `As of`. The old record stays - demoted in retrieval, never deleted. A memory that preserves *when* facts changed cannot quietly contradict itself; one that rewrites in place can.
 
-## Engine-owned writes
+## Writing memory
 
-The AI supplies content and judgment; it never hand-edits an index table. Writes go through the engine: `remember "Title: detail"` (and `remember "..." --loop` for an open thread, `remember close "..."`) for the Log; `memory add person|organization|place|decision|insight "Name"` to scaffold an entry from its template and register it in the collection index; `memory add date <recurring|onetime|milestone> "When" "Event"`; `memory add event "When" "What"` to log a discrete dated event; `memory supersede ...`; `memory cascade` to enforce the context tier caps; `memory rm ...` to soft-remove an entry to `.trash/`.
+The AI supplies content and judgment and writes each entry itself, in its destination's format: a Log entry at the top of `Log.md`'s Log Entries (with `**Status:** Open` for an open thread, flipped to `**Status:** Resolved (YYYY-MM-DD)` when it closes); an entry file copied from `Memory/.template/` into its collection (People, Organizations, Places, Decisions, Events, Insights) with its instantiation note followed; a row in `Dates.md`. It never hand-edits a generated block: `.github/scripts/update-vault.py` redraws each collection's index, the Open Loops view and the tier lists, and cascades the context tiers. Removing an entry is a confirmed `git rm` that the history keeps (Constitution 3.1).
 
 ## Session summaries
 
-When a session nears its context limit, write one context summary to `Context/Current/`, named `YYYYMMDD-HHMMSS.md` (pure timestamp), then run `memory cascade`. Write it as a **delta update**, separating:
+When a session nears its context limit, write one context summary to `Context/Current/`, named `YYYYMMDD-HHMMSS.md` (pure timestamp), then run `python3 .github/scripts/update-vault.py` to enforce the tier caps (the Stop hook runs it too). Write it as a **delta update**, separating:
 
 - **Established foundations** - prior state still valid.
 - **Active changes** - what this session modified, added, or decided.

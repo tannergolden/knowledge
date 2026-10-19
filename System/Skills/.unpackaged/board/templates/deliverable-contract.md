@@ -33,7 +33,7 @@ VERIFIER SIGN-OFF (Head of Quality, Grace):
   - Defects:    [any noted gaps or open questions that travel with the artifact; none if clean.]
 
 FOUNDER-GATED:   [no | yes - <which red category>. A "no" means the skill writes it autonomously into the venture folder
-                  once verified and backed up. A "yes" means the skill prepares the action and stops for the Founder's
+                  once verified, with the prior state committed. A "yes" means the skill prepares the action and stops for the Founder's
                   explicit confirmation. The five red categories are fixed (write-gate.md): moving money, signing or
                   sending a contract, publishing or sending external comms, deleting a file, changing equity or the cap
                   table. When in doubt, gated.]
@@ -48,8 +48,8 @@ WRITE-BACK:      [the Log.md line the skill appends, and any Goals.md / Overview
 - **Stage and ladders-to** come from the venture-context preflight: the chair read `Overview.md`, `Goals.md`, `Strategy.md`, and recent `Log.md`, and detected the stage (`references/lifecycle.md`). The stage scales the rigor and the catalog subset; ladders-to keeps the artifact tied to a real objective so the work is not unmoored.
 - **Completion evidence** is the producer's, returned with the artifact. The rule is `references/verification.md`'s: every number, every named fact, every external claim traces to a tool call, a venture file, or a cited source. Nothing load-bearing rests on recall.
 - **Verifier sign-off** is Grace's alone. A producer never verifies its own work. Grace receives the artifact, this contract, and the claimed sources in a fresh worker that holds none of the producer's reasoning, and checks the artifact against the DoD and the evidence. The four results are `cleared`, `cleared with noted defects`, `returned`, `escalated` (`references/verification.md`). A `returned` artifact does not land; it goes back to the lead with the specific finding. Consequential output does not land unverified.
-- **Founder-gated** maps to the write-gate's two lanes (`references/write-gate.md`). Green (autonomous): internal, reversible drafts and models into the venture's own folder, written once verified and backed up. Red (hard-gated): the five fixed categories, which never go autonomous at any stage or tier; a CEO-seat yes is advice, not authorization. Stage moves the dollar line inside the green lane, never the category line.
-- **Write-back** is what the skill does after the gate clears: persist the artifact into the filed-to file (backing up an existing file first), append a dated line to the venture `Log.md`, and update `Goals.md` or the `Overview.md` stage when they changed. Then `python3 System/brain.command sync` and `health`.
+- **Founder-gated** maps to the write-gate's two lanes (`references/write-gate.md`). Green (autonomous): internal, reversible drafts and models into the venture's own folder, written once verified, with the prior state committed. Red (hard-gated): the five fixed categories, which never go autonomous at any stage or tier; a CEO-seat yes is advice, not authorization. Stage moves the dollar line inside the green lane, never the category line.
+- **Write-back** is what the skill does after the gate clears: persist the artifact into the filed-to file (with an existing file's last state committed first), append a dated line to the venture `Log.md`, and update `Goals.md` or the `Overview.md` stage when they changed. Then `python3 .github/scripts/update-vault.py` and `check-vault.py`.
 
 ## The gate the contract walks before it is written
 
@@ -58,9 +58,9 @@ The skill walks the write-gate checklist (`references/write-gate.md`) against th
 1. **Is the FOUNDER-GATED field a red category?** (money, contract, external comms, delete, equity or cap table.) Yes - frame the action, state it, get the Founder's explicit confirmation. Do not proceed on a CEO-seat yes.
 2. **Does it cross outside this venture's folder, or is it irreversible?** Yes - same as above.
 3. **Does the implied spend or hire exceed the stage threshold** (`assets/delegation-of-authority.json`)? The artifact is green to draft; the action is red to execute. Gate the action.
-4. **Green so far - is the existing file backed up?** No - `python3 System/brain.command backup <path>` first. A new file needs no backup; an overwrite always does.
+4. **Green so far - is the existing file's last state committed?** No - commit it first. A new file needs nothing.
 5. **Is the output consequential, and has Grace cleared it?** Consequential and unverified does not pass, even when reversible. Verify first.
-6. **All clear - write it.** Persist, append to `Log.md`, update `Goals.md` / `Overview.md` if changed, then `sync` and `health`.
+6. **All clear - write it.** Persist, append to `Log.md`, update `Goals.md` / `Overview.md` if changed, then `update-vault.py` and `check-vault.py`.
 
 ---
 

@@ -17,7 +17,7 @@
     "create or delete a top-level folder",
     "any irreversible external action"
   ],
-  "backup_required_before": "editing any existing venture or vault file (python3 System/brain.command backup <path>)",
+  "backup_required_before": "editing any existing venture or vault file: its last state is committed first, since git history is the backup",
   "founder_gated_note": "The first five founder_gated items are the red categories named in references/write-gate.md; the last two (creating or deleting a top-level folder, and any irreversible external action) are the BRAIN structural boundary and the catch-all, so the list is seven by design, not a five-vs-seven mismatch.",
   "by_stage": {
     "found": {"rule": "protect runway; nearly every consequential or unbudgeted action escalates to the Founder"},

@@ -11,7 +11,6 @@ type: "template"
 folder: "ventures"
 layer: 3
 policy: true
-version: "01.00.00"
 author: "Tanner Golden"
 path: "BRAIN/Ventures/[Company]/Research & Development (R&D)/Roadmap.md"
 id: "ve-roadmap"

@@ -2,7 +2,7 @@
 
 The contract that wires this skill to its people. Three seats, all reuse, constant across every run regardless of facet or sensitivity: the skill **embodies Adeline** as the interviewer, **dispatches Calvin** to compose, and **dispatches Sterling** to review blind. This file is the single source of truth for who runs, on what, and what each hands back; `interviewing.md` and `question-maps.md` shape the interview itself, `provenance.md` governs every line composed.
 
-**The single-writer flow.** The two dispatched seats **return** their artifact as their final message and **persist nothing** (that is each spec's write-scope). The skill's own top-level context, embodied as Adeline, is the sole writer: it holds the interview ledger, it dispatches Calvin and Sterling, and it alone runs the engine writes at pipeline step 10. Never brief a dispatched seat to "write a file": that contradicts its spec and confuses it.
+**The single-writer flow.** The two dispatched seats **return** their artifact as their final message and **persist nothing** (that is each spec's write-scope). The skill's own top-level context, embodied as Adeline, is the sole writer: it holds the interview ledger, it dispatches Calvin and Sterling, and it alone makes the writes at pipeline step 10. Never brief a dispatched seat to "write a file": that contradicts its spec and confuses it.
 
 ## Each seat: how it runs, its input, what it returns, and the template that shapes the return
 

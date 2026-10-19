@@ -14,7 +14,7 @@ The Knowledge Manager canonicalizes the topic (reduce the question to its topic 
 
 ## Filing a report
 
-A filed report goes to **`Inbox/Reports/`**, the held reports library, never to `Inbox/Faculties/Research/` (that folder holds the team). One topic, one canonical file, named `<Topic Title>.md` (the topic title alone, no prefix), built from `templates/report.md` with full BRAIN frontmatter and a `review_by` date. **In the same edit, add the report's entry to the `Inbox/Reports/Reports.md` index** (a bullet with a wikilink to the new file, its `review_by` "good through" date, and a one-line summary), so the index always mirrors the folder; a refreshed report has its index entry updated, a cleared one has it removed. Run the BRAIN edit protocol when filing: back up if overwriting, write, then `brain.command sync` and `brain.command health`.
+A filed report goes to **`Inbox/Reports/`**, the held reports library, never to `Inbox/Faculties/Research/` (that folder holds the team). One topic, one canonical file, named `<Topic Title>.md` (the topic title alone, no prefix), built from `templates/report.md` with full BRAIN frontmatter and a `review_by` date. **In the same edit, add the report's entry to the `Inbox/Reports/Reports.md` index** (a bullet with a wikilink to the new file, its `review_by` "good through" date, and a one-line summary), so the index always mirrors the folder; a refreshed report has its index entry updated, a cleared one has it removed. Run the BRAIN edit protocol when filing: commit first if overwriting, write, then `update-vault.py` and `check-vault.py`.
 
 ## Flat three-month freshness
 
@@ -22,7 +22,7 @@ Every report is good for up to **three months** from its `updated` date; after t
 
 ## Reports are linked only from the `Reports.md` index
 
-A report is a working artifact: produced, consumed, refreshed, cleared. The held library's namesake, **`Inbox/Reports/Reports.md`, is the one hub that wikilinks every held report.** No other file in the BRAIN links to a report, which keeps the wider wikilink graph free of disposable nodes. Reports are also found by `brain.command search "<term>"`.
+A report is a working artifact: produced, consumed, refreshed, cleared. The held library's namesake, **`Inbox/Reports/Reports.md`, is the one hub that wikilinks every held report.** No other file in the BRAIN links to a report, which keeps the wider wikilink graph free of disposable nodes. Reports are also found by searching their folder.
 
 ## Promote to the durable layer (the explicit step)
 
@@ -30,4 +30,4 @@ The flat three-month window is correct only because durable findings do not live
 
 ## Memory write-back
 
-After a substantial run, offer (never silently) to fold the distilled outcome into Memory: a `brain.command remember` capture, promotion to a permanent Memory file, or a session summary. The offer is the contract; the user decides.
+After a substantial run, offer (never silently) to fold the distilled outcome into Memory: a `Memory/Log.md` entry, promotion to a permanent Memory file, or a session summary. The offer is the contract; the user decides.

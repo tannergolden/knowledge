@@ -6,12 +6,11 @@ tags: ["system", "log"]
 aliases: []
 keywords: ["version history", "release notes", "research skill changes", "revision log"]
 created: 2026-06-22
-updated: 2026-06-28
+updated: 2026-10-19
 type: "log"
 folder: "system"
 layer: 4
 policy: false
-version: "01.05.00"
 author: "Tanner Golden"
 path: "BRAIN/System/Skills/.unpackaged/research/Changelog.md"
 id: "sy-skill-research-changelog"
@@ -21,7 +20,7 @@ id: "sy-skill-research-changelog"
 
 ## Current Version
 
-**`01.05.00`**
+**`01.05.01`**
 
 Semantic versioning, `MAJOR.MINOR.PATCH`, two-digit zero-padded segments. This value matches `metadata.version` in `SKILL.md`. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -69,6 +68,10 @@ Reversed the reports-are-never-referenced rule: `Inbox/Reports/Reports.md` is no
 
 > Fixes, wording, reference tweaks. Most recent 4 entries.
 
+### `01.05.01` - 2026-10-19
+
+Moved local grounding and the preflight off the retired engine: the offline knowledge bases are searched with `.github/scripts/knowledge-base.py` when one is installed, a report overwrite starts from a committed state, and `update-vault.py` and `check-vault.py` replace `sync` and `health`. The archive now carries the Research team, vendored when it is built.
+
 ### `01.01.03` - 2026-06-24
 
 Dropped the "Research - " prefix from filed-report naming. A report is now named for its topic alone (`<Topic Title>.md`) and filed in `Inbox/Reports/`; its location, not a prefix, marks it as a report. Updated `references/reporting.md` (the naming rule) and `templates/report.md` (title, path, H1, and the id pattern, now `in-<slug>`). The three existing reports were renamed to match.
@@ -81,6 +84,3 @@ Fixed the filed-report template (`templates/report.md`) to match the live BRAIN 
 
 Audit-and-fix pass: four independent reviewers (consistency, skill-to-team fidelity, executability, leanness and SOTA) found, and this fixed, every real gap. Removed the last write-not-return contradiction (the lane-brief template said the Analyst writes a file) and the stale "filesystem is the artifact bus" line in SKILL.md; corrected the Information Specialist's tier (deep only) and the Editor's return contract in `roster.md`; reconciled the two-axis model to likelihood-and-confidence throughout, and gave the Bottom Line its second axis and `source-strategy.md` its missing ladder tiers. Executability: defined the workspace-create step and slug, the `draft.md` shape (the report sections), the REVISE loop, the Statistician joining the blind message, a blind-reviewer brief example, and a context-compaction rule. SOTA: added the CONTRADICTED Fact-Checker verdict and claim-to-passage logging (mirrored into the Search Peer-Reviewer and Fact-Checker agent specs), and made the URL-resolve a hard stop step. Trimmed duplicated 15x-cost, zero-bias, blind-review, and Step-0 statements to single sources, and refreshed the namesake. Re-verified by the validator, a scoped QA re-audit, and health.
 
-### `01.00.01` - 2026-06-22
-
-Hardening pass, proven by a real test-drive and an adversarial SOTA red-team. Fixed the stale "13-agent" count (the team is 10). Closed the executability gaps the test-drive hit: defined the run workspace path and the lane -> draft -> blind-review artifact flow in `dispatch.md` (resolving the persists-nothing vs artifact-bus contradiction), added the Search Peer-Reviewer sentinel check and PASS/REVISE routing, the lead-filename and apostrophe caveats, the untrusted-input boundary in the brief, and the verbatim-question handoff. Propagated worker-facing SOTA the red-team found stranded in `methodology.md`: saturation, the echo/independence rule, and source-tier tagging now live in `lane-brief.md`; added PRISMA-S negative-result recording, breadth-vs-depth search guidance, a two-axis render example, and the name-the-falsifier rule. Made the URL-resolve check a shipping step and added the fixed chat-synthesis shape to `reporting.md`, defined topic canonicalization, and stated the fan-out's defended boundary (the data-processing-inequality result) in `tiers.md`. Softened the ask-tool phrasing to "structured ask tool when available, otherwise in chat".

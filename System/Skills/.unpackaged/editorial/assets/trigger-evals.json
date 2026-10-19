@@ -20,12 +20,12 @@
     "what is 17 times 24",
     "refactor this function to use async await",
     "build me a skill that drafts invoices",
-    "run health on the vault",
+    "run the vault checks",
     "diagram the OAuth login flow for me",
     "what is the capital of Australia",
     "sort my inbox",
     "look into whether GLP-1 drugs reduce cardiovascular risk",
     "fix the bug in my Python script"
   ],
-  "notes": "Editorial is structurally scoped: it fires on producing or improving prose a person will read (emails, messages, docs, notes, article bodies), even when the word editorial is absent. It does NOT fire on investigating facts (research), building skills (develop), a chat-only visual (visualize), arithmetic or established-fact lookups, code tasks, or brain.command maintenance. 'Diagram this for me' as a chat answer is visualize; a diagram inside a file under edit would be editorial. Auto-fire also excludes System, agent-roster, log, template, index, and script files and any brain.command write, even though those are technically text."
+  "notes": "Editorial is structurally scoped: it fires on producing or improving prose a person will read (emails, messages, docs, notes, article bodies), even when the word editorial is absent. It does NOT fire on investigating facts (research), building skills (develop), a chat-only visual (visualize), arithmetic or established-fact lookups, code tasks, or vault-script maintenance. 'Diagram this for me' as a chat answer is visualize; a diagram inside a file under edit would be editorial. Auto-fire also excludes System, agent-roster, log, template, index, and script files and any write a vault script makes, even though those are technically text."
 }
