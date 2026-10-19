@@ -62,13 +62,14 @@ class TestCheckLinks(unittest.TestCase):
         self.vault.write('Memory/Memory.md', '[[Memory/Events/Party|Party]]\n')
         self.assertIn("a folder's note links the files in its folder", self.check().stdout)
 
-    def test_the_root_chain(self) -> None:
-        self.vault.write('AGENTS.md', '[[Instructions]]\n')
-        self.vault.write('Instructions.md', '[[Constitution]] [[Memory/Memory|Memory]]\n')
-        self.vault.write('Constitution.md', '# Constitution\n')
+    def test_the_root_holds_no_notes_and_its_pages_are_not_walked(self) -> None:
+        # AGENTS.md and a top folder's README.md are pages: never walked, so their
+        # links are Markdown links the topology does not govern.
+        self.vault.write('AGENTS.md', '[Memory](Memory/Memory.md) [[Memory/Events/Party|Party]]\n')
+        self.vault.write('Memory/README.md', '[[Memory/Events/Party|Party]]\n')
         self.assertEqual(self.check().returncode, 0)
-        self.vault.write('Constitution.md', '[[AGENTS]]\n')
-        self.assertIn('the root carries one chain', self.check().stdout)
+        self.vault.write('Notes.md', '[[Memory/Memory|Memory]]\n')
+        self.assertIn('the vault root holds no notes', self.check().stdout)
 
     def test_a_link_back_up_the_tree_fails(self) -> None:
         # Links flow downhill: a folder note links its children, and a child never links its parent.

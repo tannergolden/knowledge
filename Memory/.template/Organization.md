@@ -22,7 +22,7 @@ INSTANTIATION (copy this file to Memory/Entities/Organizations/<Name>.md, then):
 - Set id to me-<slug> (slug of the organization name) and path to BRAIN/Memory/Entities/Organizations/<Name>.md.
 - Keep the emoji H1; replace [Organization Name] with the organization's name.
 - Fill only what is known. Never fabricate - leave a field blank or omit its line rather than guessing.
-- Surface sensitive details only when relevant to the work at hand (Constitution 4.4).
+- Surface sensitive details only when relevant to the work at hand (`Profile/Profile.md`, Rules).
 - Record provenance: As of (when the facts became true) and Recorded (today).
 - Cross-reference with plain-path Related lines. No wikilinks in entries.
 -->

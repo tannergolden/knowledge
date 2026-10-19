@@ -18,7 +18,7 @@ id: "id-finances"
 
 # 💰 Finances
 
-The user's **personal financial self** - their stable financial picture and how they relate to money. The financial dimension of wellness. Boundary: a *business's* finances live in `Ventures/`; dated transactions and bills live in `Memory/`; this holds the durable personal picture. **Sensitive (Constitution 4.4), and secrets are pointers, not values:** record that an account, document, or policy *exists and where it lives*, never the account number, SSN, password, or balance to the dollar. Surface only when directly relevant.
+The user's **personal financial self** - their stable financial picture and how they relate to money. The financial dimension of wellness. Boundary: a *business's* finances live in `Ventures/`; dated transactions and bills live in `Memory/`; this holds the durable personal picture. **Sensitive (`Profile/Profile.md`, Rules), and secrets are pointers, not values:** record that an account, document, or policy *exists and where it lives*, never the account number, SSN, password, or balance to the dollar. Surface only when directly relevant.
 
 ## Snapshot
 
@@ -58,4 +58,4 @@ The existence and location of estate and legal instruments - will, trust, power 
 
 ## Subscriptions & Recurring
 
-Notable recurring commitments worth remembering.
+Recurring commitments worth remembering.

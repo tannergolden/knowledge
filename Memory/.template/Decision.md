@@ -23,7 +23,7 @@ Instantiation: copy this file into Memory/Decisions/ to record a decision.
 - Replace the emoji H1 title with the real decision title.
 - Name the file YYYY-MM-slug.md so records sort chronologically.
 - Fill Actual Outcome later, once the decision has played out.
-- Supersede, never rewrite (Constitution 3.1).
+- Supersede, never rewrite (`AGENTS.md`, Ask first).
 -->
 
 # 🧭 [Decision Title]

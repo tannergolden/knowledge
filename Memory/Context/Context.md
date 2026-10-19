@@ -28,7 +28,7 @@ Session context: the running record of what happened across working sessions, ke
 
 ## Why the tiers are sized the way they are
 
-The tiers are derived from the cost of recall, not chosen as round numbers. The entry tier is kept small so the session-start auto-load stays cheap (the two newest summaries load at session start); the mid tier is a larger on-request lookback; the archive is unbounded. The per-tier caps are **ceilings on auto-load and working cost** (sensible defaults: a few in Current, a session-or-two's worth in Recent), tunable, not magic constants. `.github/scripts/update-vault.py` enforces them by relocating the oldest outward, never deleting (Constitution 3.1).
+The tiers are derived from the cost of recall, not chosen as round numbers. The entry tier is kept small so the session-start auto-load stays cheap (the two newest summaries load at session start); the mid tier is a larger on-request lookback; the archive is unbounded. The per-tier caps are **ceilings on auto-load and working cost** (sensible defaults: a few in Current, a session-or-two's worth in Recent), tunable, not magic constants. `.github/scripts/update-vault.py` enforces them by relocating the oldest outward, never deleting (`AGENTS.md`, Ask first).
 
 ## Recall is importance-aware, not pure recency
 

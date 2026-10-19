@@ -39,7 +39,7 @@ CURRENT = 'Memory/Context/Current'
 
 
 def start(root: pathlib.Path) -> None:
-    print('Vault startup (Instructions Section 9). The startup set is listed, not inlined:')
+    print('Vault startup (AGENTS.md, Start here). The startup set is listed, not inlined:')
     print('Read every READ line with the Read tool before substantive work.')
     for path in vault.startup_notes(root):
         print(f'READ {vault.rel(root, path)}')

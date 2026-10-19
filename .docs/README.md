@@ -5,7 +5,6 @@ tags: [documentation, index, standards, templates]
 category: docs
 -->
 
-
 <div align="center">
 
 # 📚 DOCUMENTATION
@@ -41,11 +40,12 @@ why they ship as seed content rather than as law.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                               | Purpose                                                                                               |
-| :---------------------------------- | :---------------------------------------------------------------------------------------------------- |
-| [`adrs/`](adrs/README.md)           | Architecture decision records, one file per decision, each logged with its status, date and evidence. |
-| [`templates/`](templates/README.md) | Index of the reusable document templates and when to use each one.                                    |
-| [`README.md`](README.md)            | This file.                                                                                            |
+| Entry                               | Purpose                                                                                                            |
+| :---------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| [`adrs/`](adrs/README.md)           | Architecture decision records, one file per decision, each logged with its status, date and evidence.              |
+| [`templates/`](templates/README.md) | Index of the reusable document templates and when to use each one.                                                 |
+| [`vault/`](vault/README.md)         | The reference pages behind the vault's rules: its note schema, tag vocabulary, link topology and context assembly. |
+| [`README.md`](README.md)            | This file.                                                                                                         |
 
 <!-- AUTO-INDEX:END -->
 
@@ -84,7 +84,7 @@ to keep that seed exactly as it is.
 `docs/` is where your instantiated documents go - the tree you build by copying
 seeds out, not the tree they sit in. A conventional shape, none of it mandatory:
 
-```txt
+```bash
 docs/
 ├── technical/           # architecture, backend, database, interface, testing
 ├── adrs/                # architecture decision records
@@ -115,6 +115,6 @@ seeded folder does, and update it in the same change that adds a file.
 
 <br />
 
-Built with ❤️ by the Engineering Team. Proprietary and confidential; all rights reserved.
+Built with ❤️ by the Engineering Team. Distributed under the MIT License.
 
 </div>

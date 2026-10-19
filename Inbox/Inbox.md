@@ -16,7 +16,18 @@ path: "BRAIN/Inbox/Inbox.md"
 id: "in-inbox"
 ---
 
-# Inbox
+# 📥 Inbox/
+
+## Rules
+
+- **Check `Inbox/` at the start of every session**, even when nothing is likely to be there, and sort what waits before other work. If the check is slow, finish it quietly, then report.
+- **Nothing leaves unenriched.** A note gets its frontmatter, and any file a clean name, before it moves. No exceptions.
+- **Nothing moves without a yes.** Propose each file's destination and clean name, and wait for your user to confirm.
+- **Never delete a file here without confirmation.** Leaving it at the `Inbox/` root is the safe default.
+- **The held sub-homes are never sorted**: `Reports/`, `Visuals/`, `Ideas/`, `Faculties/` and `Backups/`.
+- **A new folder only to fit a file.** During a sort, when no folder fits, you may propose one three or more levels down; one directly inside a top folder needs your user's explicit direction, and a top folder never.
+- **Offer cleanup for outside PDFs first**, and copy the originals into `Inbox/Backups/` before changing anything.
+- Follow the sorting protocol below, step by step.
 
 A staging area for any file you want the AI to sort into the BRAIN. Drop files here freely. Any format, any topic, organized or not. The AI handles the rest.
 
@@ -84,7 +95,7 @@ You can drop dozens or hundreds of files at once. When more than 5 files are det
 
 ## The Sorting Protocol (Canonical)
 
-This is the complete, authoritative sorting protocol. Instructions Section 7 carries only the always-on essentials and points here.
+This is the complete sorting protocol; the Rules above are its always-on essentials.
 
 The `Inbox/` folder is a staging area where the user can drop any file (organized or not, any format) for the AI to process and route into the correct part of the BRAIN.
 
@@ -123,7 +134,7 @@ If the user confirms cleanup or doesn't answer clearly, proceed with cleanup. If
 
 **To run cleanup**, the AI performs it directly with whatever PDF tooling its environment provides (e.g., PyMuPDF via a short Python script, or the host platform's PDF tools). There is no bundled cleanup script. The rules below are the contract any cleanup must honor:
 
-- **Back up first, always.** Before modifying anything, copy the original PDFs into a timestamped subfolder under `Inbox/Backups/` (hyphenated timestamp, Article 2.6).
+- **Back up first, always.** Before modifying anything, copy the original PDFs into a timestamped subfolder under `Inbox/Backups/` (a hyphenated timestamp, never underscores).
 - Remove clickable link annotations pointing to shadow library domains (z-library, OceanofPDF, Anna's Archive, and the like)
 - Erase watermark text baked into page content streams
 - Delete an entire page only when it is clearly a shadow library advertisement and nothing else. Never touch pages with real content, blank pages, image-only pages, or internal PDF links.
@@ -165,7 +176,7 @@ Do not move any file without explicit approval for that file.
 **Order of operations:**
 
 1. Apply the rename (if a rename was approved in step 4)
-2. For files destined for `Library/`, assess freshness lifespan per Constitution Article 6.2. If ephemeral (<5 years), redirect to `Projects/`, `Ventures/`, `Memory/`, or deletion with user confirmation. Do not file ephemeral content in the Library.
+2. For files destined for `Library/`, assess freshness lifespan by the Library's tiers (`Library/Library.md`, Rules). If ephemeral (<5 years), redirect to `Projects/`, `Ventures/`, `Memory/`, or deletion with user confirmation. Do not file ephemeral content in the Library.
 3. Enrich with frontmatter (text/markdown); a binary carries none. For Library files, include the freshness tag (`timeless`, `enduring`, or `current`).
 4. Move to destination
 
@@ -177,12 +188,12 @@ Examples: `my_report_v2_FINAL(1).pdf` → `My Report.pdf`, `export_2024_03_07.cs
 
 **Text / Markdown files:**
 
-- Add the standardized YAML frontmatter block (Instructions Section 8) before moving
+- Add the standard frontmatter (`.docs/vault/Note-Schema.md`) before moving
 - Fill in `title`, `description`, `path`, `folder`, `type`, `tags`, `policy`, `created`, and `updated`
 
 **Binary / Non-Editable files (images, PDFs, audio, video, scripts, etc.):**
 
-These cannot embed frontmatter, so they carry no tags (Constitution 3.5): the folder they are filed into places them, and that folder's note describes them. Give each a clean, descriptive name before it moves, so its subject is plain from the name, and keep anything sensitive out of the name.
+These cannot embed frontmatter, so they carry no tags (`.docs/vault/Note-Schema.md`): the folder they are filed into places them, and that folder's note describes them. Give each a clean, descriptive name before it moves, so its subject is plain from the name, and keep anything sensitive out of the name.
 
 ### 6. Ambiguous File Handling
 
@@ -190,7 +201,7 @@ If a file's contents do not clearly match one specific folder, assign it to the 
 
 **Log entry format:**
 
-```
+```markdown
 ### [Date] - Sort routing: [filename]
 
 **Routed to:** [destination path]
@@ -219,7 +230,7 @@ When the AI's analysis finds no reasonable destination, ask the user:
 
 > *"`[filename]` doesn't seem to fit anywhere in the BRAIN. Should I delete it, move it back out of the Inbox to a location you specify, or leave it at the `Inbox/` root for you to decide later?"*
 
-Never delete a file from the Inbox without explicit user confirmation (Constitution Article 3.1). Leaving it at the `Inbox/` root is the safe default if the user doesn't respond.
+Never delete a file from the Inbox without explicit user confirmation (`AGENTS.md`, Ask first). Leaving it at the `Inbox/` root is the safe default if the user doesn't respond.
 
 ### 9. Dynamic Subfolder Creation
 
@@ -227,13 +238,13 @@ If no existing folder is a reasonable fit for a file, you may request permission
 
 > *"I couldn't find a good match for [filename]. I'd suggest creating a new subfolder at [proposed path]. Is that okay?"*
 
-**Strict constraint:** You may never create or propose a new folder at Layer 0 (root) or Layer 1. Layer 2 folders require explicit user confirmation before creation (Constitution Article 2.2). For the Inbox sorting protocol specifically, proposed new folders must be Layer 3 or deeper unless the user explicitly directs a Layer 2 creation.
+**Strict constraint:** You may never create or propose a new folder at Layer 0 (root) or Layer 1. Layer 2 folders require explicit user confirmation before creation (`AGENTS.md`, Ask first). For the Inbox sorting protocol specifically, proposed new folders must be Layer 3 or deeper unless the user explicitly directs a Layer 2 creation.
 
 ### 10. Routing System Assets (Skills, Utilities)
 
-Some Inbox items are system assets rather than personal content. Route them into the `System/` subfolders defined in Section 5:
+Some Inbox items are system assets rather than personal content. Route them into the `System/` subfolders `System/System.md` describes:
 
 - **Skill directories** (a folder containing `SKILL.md` and its supporting files) → `System/Skills/`, preserved as a folder, never flattened. Subagents live inside the skill's own `agents/` folder.
 - **General prompt snippets, workflows, or loose templates** → `System/Utilities/`
 
-Follow the standard sorting protocol: confirm the move, fully move the item out of `Inbox/` so no duplicate is left behind, and apply naming hygiene - strictly no underscores anywhere in the file or folder name (Constitution Article 2.6); use kebab-case, spaces, or PascalCase. Skill directories keep the external `SKILL.md` format and are exempt from BRAIN frontmatter (Section 8 does not apply to them); utility `.md` files take standard BRAIN frontmatter.
+Follow the standard sorting protocol: confirm the move, fully move the item out of `Inbox/` so no duplicate is left behind, and apply naming hygiene - strictly no underscores anywhere in the file or folder name (`AGENTS.md`, Conventions); use kebab-case, spaces, or PascalCase. Skill directories keep the external `SKILL.md` format and are exempt from BRAIN frontmatter (the note schema does not apply to them); utility `.md` files take standard BRAIN frontmatter.

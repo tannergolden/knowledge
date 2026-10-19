@@ -24,7 +24,7 @@ Instantiation: copy this file into Memory/Insights/ to record an insight.
 - Name the file YYYY-MM-slug.md so insights sort chronologically.
 - Boundary reminder: an Insight is about the external world only. Nothing
   about the user themselves - their traits, values, habits, preferences, or
-  goals. That is Profile, and is proposed there (Constitution 4.2), never
+  goals. That is Profile, and is proposed there (`Profile/Profile.md`, Rules), never
   stored here.
 - Supersede, never rewrite.
 -->

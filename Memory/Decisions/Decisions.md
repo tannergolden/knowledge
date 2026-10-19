@@ -47,7 +47,7 @@ This index also carries a living list of the principles that recur across the us
 
 ## Superseding, never rewriting
 
-Decisions are part of the record and are not edited away. When a decision no longer holds, supersede it: set the old record's `**Status:**` line to `Superseded` (or `Reversed`) and link it forward to its replacement with a plain-path `Superseded-by:` line. Records are never silently rewritten or deleted (Constitution 3.1).
+Decisions are part of the record and are not edited away. When a decision no longer holds, supersede it: set the old record's `**Status:**` line to `Superseded` (or `Reversed`) and link it forward to its replacement with a plain-path `Superseded-by:` line. Records are never silently rewritten or deleted (`AGENTS.md`, Ask first).
 
 ## Entries
 

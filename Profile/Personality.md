@@ -104,7 +104,7 @@ How the user relates to others: directness, warmth, group vs one-on-one, how the
 
 ## Regulatory Focus
 
-Promotion (chasing gains, growth, aspirations) vs prevention (securing against loss, duty, safety). This is AI-actionable: it shapes how advice and framing should be pitched.
+Promotion (chasing gains, growth, aspirations) vs prevention (securing against loss, duty, safety). The AI acts on it: it shapes how advice and framing should be pitched.
 
 ## Under Pressure
 
@@ -116,7 +116,7 @@ Top VIA strengths (e.g. curiosity, perseverance, judgment) - the traits the user
 
 ## Weaknesses & Blind Spots
 
-Honest dispositional weaknesses and blind spots the user wants help noticing or compensating for. Held with discretion (Article 4.4).
+Honest dispositional weaknesses and blind spots the user wants help noticing or compensating for. Held with discretion (`Profile/Profile.md`, Rules).
 
 ## Humor
 

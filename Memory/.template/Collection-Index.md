@@ -35,7 +35,7 @@ INSTANTIATION (when scaffolding a new per-entry collection's index doc):
 
 ## Retention
 
-<!-- How entries age: persist, supersede on change, never delete (Constitution 3.1). -->
+<!-- How entries age: persist, supersede on change, never delete (`AGENTS.md`, Ask first). -->
 
 ## How entries are made
 

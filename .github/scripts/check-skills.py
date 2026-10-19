@@ -77,7 +77,7 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
         report.error(manifest, f"metadata.team names '{team}', which no roster in the agent library defines; "
                                'point it at a staffed team or drop the key')
     if '_' in folder.name:
-        report.warn(folder, 'the folder name has an underscore (Article 2.6)')
+        report.warn(folder, 'the folder name has an underscore (AGENTS.md, Conventions)')
     namesake = next((p for p in sorted(folder.glob('*.md'))
                      if p.name != 'SKILL.md' and p.stem.lower() == folder.name.lower()), None)
     for required in ('License.txt', 'Changelog.md'):
@@ -124,7 +124,7 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
             report.error(path, f'cannot be read ({error})')
             continue
         if vault.EM_DASH in body:
-            report.error(path, 'em dash (Article 9.1); use a comma, colon, parentheses or a hyphen')
+            report.error(path, 'em dash (DOC-002); use a comma, colon, parentheses or a hyphen')
         if path.suffix == '.md' and vault.wikilinks(body):
             report.warn(path, 'a skill source carries no wikilinks: it is hidden from Obsidian, and they break on install')
     if not re.search(r'^##\s+Boundaries\b', text, re.M):

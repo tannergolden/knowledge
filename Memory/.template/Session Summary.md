@@ -26,7 +26,7 @@ FILING INSTRUCTIONS (do this when you save the summary):
 - Set "path" to the new BRAIN path and give "id" a stable, unique slug.
 - Give the H1 a fitting emoji for the session and replace [YYYY-MM-DD] with the real date.
 - Then run: python3 .github/scripts/update-vault.py
-NO wikilinks anywhere in this file (Constitution 3.7). Reference files by plain path.
+NO wikilinks anywhere in this file (`.docs/vault/Link-Topology.md`). Reference files by plain path.
 -->
 
 ## 1. Session Metadata

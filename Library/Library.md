@@ -20,9 +20,25 @@ id: "li-library"
 
 # 📚 Library/
 
+## Rules
+
+- **Not personal.** `Library/` holds reference knowledge about the world, never your user's own data, identity, memory or company specifics: those live in `Profile/`, `Memory/` and `Ventures/`.
+- **No opinion.** A holding is factual, of reference quality: never add personal opinions, your user's preferences or a company's context to one.
+- **Freshness gates entry.** Assess a holding's useful lifespan when it is filed, and give it the matching freshness tag:
+
+  | Tier      | Lifespan    | Tag          | What qualifies                                                                          |
+  | :-------- | :---------- | :----------- | :-------------------------------------------------------------------------------------- |
+  | Timeless  | 25+ years   | `timeless`   | Mathematical principles, philosophy, anatomy, historical fact, established frameworks   |
+  | Enduring  | 10-25 years | `enduring`   | Mature best practice, established science, slowly evolving fields, classic methodology  |
+  | Current   | 5-10 years  | `current`    | Present best practice, recent research, mature but evolving technology                  |
+  | Ephemeral | under 5     | (rejected)   | News, specific software versions, current trends, market commentary                     |
+
+  Five years is the floor: ephemeral content never enters `Library/`, so offer `Projects/`, `Ventures/`, `Memory/` or a confirmed deletion instead. Outside `Library/` a note may carry a freshness tag where its lifespan means something: folder notes are usually `timeless`, and templates, logs and records leave it off.
+- **The scheme changes only with a yes.** Adding, renaming or removing a class or division is a structural change your user approves.
+
 ## Purpose
 
-`Library/` is the reference library of this BRAIN: a universal collection built to hold **all of human knowledge**, organized by discipline so the AI can draw on it to answer questions and reason. It is **not personal context** (Article VI). It holds knowledge about the world, including general practical knowledge (how budgeting works), but never the user's own data, identity, memory, or company specifics, which live in `Profile/`, `Memory/`, and `Ventures/`.
+`Library/` is the reference library of this BRAIN: a universal collection built to hold **all of human knowledge**, organized by discipline so the AI can draw on it to answer questions and reason. It is **not personal context** (Rules, above). It holds knowledge about the world, including general practical knowledge (how budgeting works), but never the user's own data, identity, memory, or company specifics, which live in `Profile/`, `Memory/`, and `Ventures/`.
 
 ## Quick reference
 
@@ -122,7 +138,7 @@ The predictable seams, each with the rule that decides them:
 
 ## Facets and controlled keywords
 
-Five orthogonal facets. Subject is the folder; freshness is the tag; the rest live in the free-text `keywords` field (never `tags`, per Article VII) as **slash-namespaced tokens** so an AI or a script can filter by exact match. Use them when they add retrieval value:
+Five orthogonal facets. Subject is the folder; freshness is the tag; the rest live in the free-text `keywords` field (never `tags`; `.docs/vault/Tag-Vocabulary.md`) as **slash-namespaced tokens** so an AI or a script can filter by exact match. Use them when they add retrieval value:
 
 - **Form:** `form/reference`, `form/primer`, `form/howto`, `form/dataset`, `form/source`
 - **Level:** `level/intro`, `level/intermediate`, `level/advanced`
@@ -143,59 +159,29 @@ The named hierarchy stays shallow; specificity lives in facets, not depth.
 - **Layer 2 (class):** the ten disciplines, `A & B` naming.
 - **Layer 3 (division):** recognized sub-disciplines, 7 to 12 per class, plain `A & B` or plain compound names.
 - **Layer 4 and deeper:** only when a division genuinely needs it.
-- No underscores anywhere (Constitution Article 2.6).
+- No underscores anywhere (`AGENTS.md`, Conventions).
 
 ## The catalog record
 
 Every holding carries a catalog record, with no new brain-wide frontmatter fields:
 
-- **A synthesized note** is already a complete record under the standard schema (Instructions Section 8): `title`, `author`, dates, `type: reference`, `id`/`path`, `description`, `keywords`. Template: `.template/Reference Note.md`.
+- **A synthesized note** is already a complete record under the standard schema (`.docs/vault/Note-Schema.md`): `title`, `author`, dates, `type: reference`, `id`/`path`, `description`, `keywords`. Template: `.template/Reference Note.md`.
 - **A source document** (an external book, paper, or media) gets a companion **catalog card** note; the work's own bibliography lives in the card body. Template: `.template/Source Catalog Card.md`.
 
 ## Acquisition, weeding, and finding aids
 
 - **Acquisition:** material lands in `Inbox/`, is appraised against the 6.2 freshness floor, classified into one class and division, cataloged, and shelved.
-- **Weeding:** the 6.2 freshness model plus **MUSTIE** - weed what is **M**isleading, **U**gly or superseded, **S**uperseded, **T**rivial, **I**rrelevant, or available **E**lsewhere. Remove a weeded item only with the Founder's confirmation, as a `git rm` that history keeps (Constitution 3.1).
+- **Weeding:** the 6.2 freshness model plus **MUSTIE** - weed what is **M**isleading, **U**gly or superseded, **S**uperseded, **T**rivial, **I**rrelevant, or available **E**lsewhere. Remove a weeded item only with the Founder's confirmation, as a `git rm` that history keeps (`AGENTS.md`, Ask first).
 - **Finding aids:** each class doc is a finding aid (scope, divisions, "class here / not here", see-also, cross-walk); the generated catalog view (OPAC) is `System/Data/catalog.ndjson`, one record per note, drawn by `update-vault.py`; filter its `library` records.
 
 ## Engine-agnostic and vector-ready
 
 Source of truth is the markdown plus frontmatter, human-readable and portable. Any future vector index is a derived, disposable artifact built from these files. Clean headings double as chunk boundaries; stable `id`s let an external index reference items durably; hybrid retrieval scoped by class and facet is the target.
 
-## Article VI (Delegated) - Library & Reference Rules
-
-Hosted here from the Constitution with full constitutional force (Constitution Article VI; amendments only per Article VIII).
-
-**6.1 Library/ Is Not Personal**
-Files in `Library/` are domain reference material, not user-specific context. They cover subjects broadly. Do not route personal, user-specific information into `Library/` - that belongs in `Profile/`, `Memory/`, or `Ventures/`.
-
-**6.2 Freshness Tiers**
-
-Files in `Library/` are classified by estimated useful lifespan. The AI assesses lifespan at sort time and applies the appropriate freshness tag (the Freshness dimension, Article 7.6).
-
-| Tier | Lifespan | Tag | What Qualifies |
-|------|----------|-----|----------------|
-| Timeless | 25+ years | `timeless` | Mathematical principles, philosophy, anatomy, historical fact, established frameworks |
-| Enduring | 10–25 years | `enduring` | Mature best practices, established science, slowly-evolving fields, classic methodology |
-| Current | 5–10 years | `current` | Present best practices, recent research, mature-but-evolving tech, contemporary thinking |
-| Ephemeral | <5 years | (rejected) | News, specific software versions, current trends, market commentary |
-
-Content estimated as ephemeral does not enter `Library/`. When an Inbox file destined for the Library is assessed as ephemeral, the AI offers redirection: `Projects/`, `Ventures/`, `Memory/`, or deletion with user confirmation. The 5-year floor is the minimum threshold for inclusion in the reference layer.
-
-Freshness tags may also be applied to files outside `Library/` when their estimated lifespan is meaningful. System documentation (Constitution, Instructions, folder documentation files) is typically `timeless`. Files where freshness isn't a useful attribute (templates, indexes, logs, records) omit the tag.
-
-**6.3 Do Not Contaminate the Library With Opinion**
-Files in `Library/` should contain factual, reference-quality material. The AI must not inject personal opinions, user preferences, or organizational context into library files.
-
-**Amendments**
-
-- *2026-05-19*: 6.2 replaced. The single "timeless-only" rule became a four-tier freshness model (`timeless` / `enduring` / `current` / ephemeral-rejected) with a 5-year minimum lifespan threshold. Files below the threshold are redirected rather than filed in Knowledge.
-- *2026-05-19*: 6.2 broadened. Freshness tags may now also apply to files outside `Knowledge/` when their estimated lifespan is meaningful (typically system documentation gets `timeless`).
-
 ## Revisability
 
-No enumerated scheme is provably complete; it is a snapshot that must be revised. New and cross-disciplinary fields are placed by the rules above and surfaced through facets and see-also links until, if warranted, the scheme itself is amended. Adding, renaming, or removing a class or division is a Layer 2 structural change requiring user approval (Constitution Article 2.1 and 2.2). The scheme is intentionally neutral: no privileged religion, no geographic or cultural center.
+No enumerated scheme is provably complete; it is a snapshot that must be revised. New and cross-disciplinary fields are placed by the rules above and surfaced through facets and see-also links until, if warranted, the scheme itself is amended. Adding, renaming, or removing a class or division is a Layer 2 structural change requiring user approval (`AGENTS.md`, Ask first). The scheme is intentionally neutral: no privileged religion, no geographic or cultural center.
 
 ## Templates
 
-`.template/` holds the cataloging templates (no wikilinks, per Constitution 3.7): `Reference Note.md` (the standard holding), `Source Catalog Card.md` (an external source), and `Division.md` (a division folder doc, added under literary warrant).
+`.template/` holds the cataloging templates (no wikilinks; `.docs/vault/Link-Topology.md`): `Reference Note.md` (the standard holding), `Source Catalog Card.md` (an external source), and `Division.md` (a division folder doc, added under literary warrant).

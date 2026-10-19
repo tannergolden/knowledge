@@ -1,6 +1,6 @@
 ---
 title: "Working Style"
-description: "How the AI should respond to the user and how the user collaborates: how to address them, the do's, don'ts, tone, length, and format rules followed every reply, plus communication, terminology, feedback, and decision style. The highest-leverage, AI-actionable facet."
+description: "How the AI should respond to the user and how the user collaborates: how to address them, the do's, don'ts, tone, length, and format rules followed every reply, plus communication, terminology, feedback, and decision style. The facet the AI acts on most."
 status: "active"
 tags: ["profile", "self", "startup", "sensitive", "enduring"]
 aliases: ["How to Work With Me", "AI Interaction", "User Manual", "Collaboration"]
@@ -18,7 +18,7 @@ id: "id-working-style"
 
 # 🤝 Working Style
 
-The user's manual for working with them - the single most AI-actionable facet, loaded every session (`startup`). The "How to Respond" rules are explicit, executable instructions the AI follows in every reply; the rest describes how the user collaborates. Modeled on the mainstream assistant custom-instruction schema ("what to know about me / how to respond to me") and the personal user-manual genre. Absorb it; do not read it back as a checklist.
+The user's manual for working with them - the facet the AI acts on most, loaded every session (`startup`). The "How to Respond" rules are explicit, executable instructions the AI follows in every reply; the rest describes how the user collaborates. Modeled on the mainstream assistant custom-instruction schema ("what to know about me / how to respond to me") and the personal user-manual genre. Absorb it; do not read it back as a checklist.
 
 ## Snapshot
 

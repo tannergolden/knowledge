@@ -24,7 +24,7 @@ FILING INSTRUCTIONS:
 - In frontmatter: set type "record"; set tags ["memory","record"] (add "sensitive" if personal); remove the "template" tag and the "version" key.
 - Set "path" to the new BRAIN path and give "id" a stable, unique slug.
 - Give the H1 a fitting emoji and replace [Event] with a short title.
-- Keep it atomic: one happening per file. NO wikilinks (Constitution 3.7); reference by plain path.
+- Keep it atomic: one happening per file. NO wikilinks (`.docs/vault/Link-Topology.md`); reference by plain path.
 -->
 
 ## What happened

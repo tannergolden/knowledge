@@ -26,7 +26,7 @@ from typing import Iterator
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 IN_ACTIONS = os.environ.get('GITHUB_ACTIONS') == 'true'
 
-# ── The note schema (Instructions Section 8, Constitution Article VII) ──
+# ── The note schema (.docs/vault/Note-Schema.md and Tag-Vocabulary.md) ──
 
 REQUIRED_FIELDS = (
     'title', 'description', 'status', 'tags', 'aliases', 'keywords', 'created',
@@ -35,11 +35,11 @@ REQUIRED_FIELDS = (
 STATUSES = frozenset({'draft', 'active', 'deprecated', 'archived'})
 STALE_STATUSES = frozenset({'deprecated', 'archived'})
 TYPES = frozenset({
-    'guide', 'constitution', 'information', 'template', 'log', 'record', 'self',
+    'guide', 'information', 'template', 'log', 'record', 'self',
     'reference', 'script', 'agent',
 })
 FOLDERS = frozenset({
-    'root', 'library', 'profile', 'memory', 'ventures', 'projects', 'system', 'inbox',
+    'library', 'profile', 'memory', 'ventures', 'projects', 'system', 'inbox',
 })
 SIGNAL_TAGS = frozenset({'startup'})
 SENSITIVITY_TAGS = frozenset({'sensitive'})
@@ -49,14 +49,6 @@ VOCABULARY = FOLDERS | TYPES | SIGNAL_TAGS | SENSITIVITY_TAGS | FRESHNESS_TAGS
 ID_RE = re.compile(r'^[a-z]{2}-[a-z0-9-]+$')
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 EM_DASH = '\u2014'
-
-# The one chain of wikilinks the root may carry (Constitution 3.7): each root file links only the next.
-ROOT_CHAIN = {
-    'CLAUDE.md': ('AGENTS.md',),
-    'AGENTS.md': ('Instructions.md',),
-    'Instructions.md': ('Constitution.md', 'Information.md'),
-    'Constitution.md': (),
-}
 
 # ── Where things live ──
 
@@ -92,9 +84,13 @@ INBOX = 'Inbox'
 # Inbox sub-homes that are kept, never sorted.
 INBOX_HELD = frozenset({'Backups', 'Reports', 'Faculties', 'Visuals', 'Ideas'})
 
-# Folders never walked, and files that are never notes or link targets.
+# Folders never walked, and files that are never notes or link targets. A
+# README.md is a top folder's GitHub page and AGENTS.md the agents' rules:
+# both are pages, in the hidden frontmatter standards' styling guide asks for.
 SKIP_DIRS = frozenset({'Backups', '__pycache__'})
-SKIP_FILES = frozenset({'.DS_Store', '.gitkeep', '.localized', 'LICENSE'})
+SKIP_FILES = frozenset({'.DS_Store', '.gitkeep', '.localized', 'LICENSE', 'README.md', 'AGENTS.md'})
+# The only folders that carry a README.md: the seven top folders.
+TOP_FOLDERS = ('Inbox', 'Library', 'Memory', 'Profile', 'Projects', 'System', 'Ventures')
 TRANSIENT_SUFFIXES = ('.part', '.tmp', '.aria2', '.tmp~')
 
 
@@ -133,6 +129,24 @@ def in_walk(root: pathlib.Path, path: pathlib.Path) -> bool:
         return False
     name = parts[-1]
     return not (name.startswith('.') or name in SKIP_FILES or name.endswith(TRANSIENT_SUFFIXES))
+
+
+def stray_readmes(root: pathlib.Path) -> list[pathlib.Path]:
+    """Every README.md the vault walks past but the seven top folders' own.
+
+    A README is a folder's GitHub page, and only a top folder has one: deeper
+    folders are described by their notes, so a README there is a second,
+    drifting copy of what the note already says.
+    """
+    out = []
+    for folder, dirs, files in os.walk(root):
+        dirs[:] = sorted(d for d in dirs if _keep_dir(d))
+        if 'README.md' in files:
+            path = pathlib.Path(folder) / 'README.md'
+            parts = path.relative_to(root).parts
+            if not (len(parts) == 2 and parts[0] in TOP_FOLDERS):
+                out.append(path)
+    return out
 
 
 def rel(root: pathlib.Path, path: pathlib.Path) -> str:
@@ -461,7 +475,8 @@ def agent_files(home: pathlib.Path) -> list[tuple[pathlib.Path, str]]:
     out = []
     for team in team_dirs(home):
         for path in sorted(team.glob('*.md')):
-            if path.stem.lower() != team.name.lower():
+            # A README is the folder's GitHub page, never an agent.
+            if path.stem.lower() != team.name.lower() and path.name not in SKIP_FILES:
                 out.append((path, team.name))
     return out
 

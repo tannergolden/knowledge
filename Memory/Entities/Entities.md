@@ -35,7 +35,7 @@ An entity earns a file when it has a **real relationship** or **recurs**. A name
 ## Boundaries
 
 - **Personal orbit only.** These are the user's *personal* relationships. A person or organization that exists only in a business context - a client, a vendor, a coworker known purely through work - lives in `Ventures/`, not here. If someone is both a friend and a business contact, the personal entry lives here and cross-references the venture.
-- **Not the user (Constitution 2.7, 4.2).** Nothing about who the *user* is - their traits, values, habits, preferences, goals, biography - belongs here; that is the self-schema in `Profile/`. Entities is the user's external world, never the self. When the AI learns something about the user themselves, it proposes an `Profile/` edit, not an entry here.
+- **Not the user (`Profile/Profile.md`, Rules).** Nothing about who the *user* is - their traits, values, habits, preferences, goals, biography - belongs here; that is the self-schema in `Profile/`. Entities is the user's external world, never the self. When the AI learns something about the user themselves, it proposes an `Profile/` edit, not an entry here.
 - **Library.** General knowledge about a public figure or a famous place is reference material for `Library/`; an Entities file is warranted only when the user has a personal relationship to it.
 
 ## Provenance and supersession

@@ -22,7 +22,7 @@ INSTANTIATION (copy this file to Memory/Entities/People/<First Last>.md, then):
 - Set id to me-<slug> (slug of the person's name) and path to BRAIN/Memory/Entities/People/<First Last>.md.
 - Keep the emoji H1; replace [Person Name] with the person's name.
 - Fill only what is known. Never fabricate - leave a field blank or omit its line rather than guessing.
-- Surface sensitive sections (DOB, contact, family) only when relevant to the work at hand (Constitution 4.4).
+- Surface sensitive sections (DOB, contact, family) only when relevant to the work at hand (`Profile/Profile.md`, Rules).
 - Record provenance: As of (when the facts became true) and Recorded (today).
 - Cross-reference with plain-path Related lines. No wikilinks in entries.
 -->
@@ -82,7 +82,7 @@ INSTANTIATION (copy this file to Memory/Entities/People/<First Last>.md, then):
 
 ## Key Shared History
 
-<!-- Most recent first. Notable shared events and milestones. -->
+<!-- Most recent first. Shared events and milestones worth keeping. -->
 
 ## Open Threads / Follow-ups
 

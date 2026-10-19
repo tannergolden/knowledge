@@ -74,7 +74,7 @@ def check_agent(root: pathlib.Path, path: pathlib.Path, fields: dict[str, object
     elif held & {'Write', 'Edit'}:
         report.error(path, f'an agent that is not a lead holds neither Write nor Edit; found {shown}')
     if vault.EM_DASH in text:
-        report.error(path, 'em dash (Article 9.1); use a comma, colon, parentheses or a hyphen')
+        report.error(path, 'em dash (DOC-002); use a comma, colon, parentheses or a hyphen')
 
 
 def check_roster(path: pathlib.Path, fields: dict[str, object], roles: set[str], report: vault.Report) -> None:
@@ -96,7 +96,7 @@ def check_roster(path: pathlib.Path, fields: dict[str, object], roles: set[str],
         if name not in roles:
             report.error(path, f"member '{name}' is no agent's title in any home")
     if vault.EM_DASH in vault.read_text(path):
-        report.error(path, 'em dash (Article 9.1); use a comma, colon, parentheses or a hyphen')
+        report.error(path, 'em dash (DOC-002); use a comma, colon, parentheses or a hyphen')
 
 
 def main(argv: list[str] | None = None) -> int:

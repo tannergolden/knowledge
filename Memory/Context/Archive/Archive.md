@@ -32,4 +32,4 @@ Scanning a whole year of files to answer "what happened in 2026" is slow. Each y
 
 - Unbounded - no cap; the archive grows for the life of the BRAIN.
 - Search-only, but importance-aware: a high-importance episode stays a live retrieval candidate even from deep in the archive (see `Memory/Context/Context.md`).
-- Nothing is ever deleted from the archive (Constitution 3.1).
+- Nothing is ever deleted from the archive (`AGENTS.md`, Ask first).

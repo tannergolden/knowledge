@@ -32,7 +32,7 @@ Every report is good for up to three months from its date. After three months it
 
 `Reports.md` is the one hub that links every held report. The index below carries a wikilink to each report in this folder, so the whole library is browsable from here and in the graph view. This index is the **only** place a report is linked: no other file in the BRAIN cites or links to a report, which keeps the wider wikilink graph free of disposable nodes. A report can also be found by searching this folder.
 
-The index is kept in lockstep with the folder. When a report is filed, refreshed, or cleared, its entry below is added, updated, or removed in the same edit, so the index always mirrors what is actually here. A finding that must outlive its report is still promoted into the durable layer in its own right: a `Library/` doc, a folder namesake, the Constitution or Instructions, or a skill's `references/`.
+The index is kept in lockstep with the folder. When a report is filed, refreshed, or cleared, its entry below is added, updated, or removed in the same edit, so the index always mirrors what is actually here. A finding that must outlive its report is still promoted into the durable layer in its own right: a `Library/` doc, a folder namesake, `AGENTS.md` or a folder's Rules, or a skill's `references/`.
 
 ## Index
 

@@ -24,7 +24,7 @@ Reflective synthesis: higher-order observations distilled from context and entit
 
 > An Insight is **never** about who the USER is.
 
-Any observation about the user's own traits, values, habits, preferences, or goals does **not** belong here. It belongs in Profile/ and must be proposed there (Constitution 4.2), never stored as an Insight. Insights are about the world **around** the user, not the self.
+Any observation about the user's own traits, values, habits, preferences, or goals does **not** belong here. It belongs in Profile/ and must be proposed there (`Profile/Profile.md`, Rules), never stored as an Insight. Insights are about the world **around** the user, not the self.
 
 - "Conversations with Dana tend to go better in the morning than late at night." - Insight (a relationship dynamic in the external world).
 - "The hiring process at mid-size firms in this market drags for months." - Insight (a pattern in how things go).
@@ -45,7 +45,7 @@ One file per insight, named `YYYY-MM-slug.md` so insights sort chronologically. 
 
 ## Sourcing
 
-Every insight cites the source memories it was derived from, by plain path (Constitution 3.7). An insight with no evidence is not an insight - it is a guess, and does not belong here.
+Every insight cites the source memories it was derived from, by plain path (`.docs/vault/Link-Topology.md`). An insight with no evidence is not an insight - it is a guess, and does not belong here.
 
 ## Superseding
 

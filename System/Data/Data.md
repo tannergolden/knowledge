@@ -16,7 +16,7 @@ path: "BRAIN/System/Data/Data.md"
 id: "sy-data"
 ---
 
-# System/Data/
+# 💾 System/Data/
 
 ## Purpose
 
@@ -35,7 +35,7 @@ id: "sy-data"
 
 ## Rules
 
-- **Never edit by hand.** `update-vault.py` redraws both files from the notes; a hand edit is overwritten on its next run, and until then the catalog lies to everything that reads it (`Constitution.md` Article 1.2 favors accuracy).
+- **Never edit by hand.** `update-vault.py` redraws both files from the notes; a hand edit is overwritten on its next run, and until then the catalog lies to everything that reads it (`AGENTS.md`, Conventions: accurate over complete).
 - **They stay current by check, not by habit.** The Claude Code Stop hook runs `update-vault.py`, and CI runs `update-vault.py --check`, which fails when either catalog differs from the notes.
 - **Never read these for behavioral context.** They are for finding notes and agents, not for rules (`System/System.md`, AI Instructions).
 - **They are deterministic.** No timestamps and a fixed order, so a catalog changes only when a note or an agent does.

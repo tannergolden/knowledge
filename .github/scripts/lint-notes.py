@@ -2,8 +2,8 @@
 """Check each note's frontmatter, tags and naming against the vault's schema.
 
 WHY THIS EXISTS. Every note in the vault carries the same frontmatter
-(Instructions Section 8) and draws its tags from one closed vocabulary
-(Constitution Article VII). Retrieval, the catalog and the link graph all
+(.docs/vault/Note-Schema.md) and draws its tags from one closed vocabulary
+(.docs/vault/Tag-Vocabulary.md). Retrieval, the catalog and the link graph all
 read those fields, so a note that drifts from the schema misleads every one
 of them, quietly. This is the gate: it runs on one note after every edit
 (the Claude Code hook), and on every note in CI.
@@ -27,7 +27,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import vault  # noqa: E402  (vault.py sits beside this file)
 
-# Note types that are structure, not holdings, and so carry no freshness tag (Article 6.2).
+# Note types that are structure, not holdings, and so carry no freshness tag (Library/Library.md, Rules).
 STRUCTURE_TYPES = frozenset({'index', 'information', 'template', 'log', 'record', 'agent'})
 
 
@@ -39,27 +39,27 @@ def is_summary(parts: tuple[str, ...]) -> bool:
 def check_tags(fields: dict[str, object], problems: list[str]) -> None:
     tags = fields.get('tags')
     if not isinstance(tags, list):
-        problems.append(f'tags is not a list (got {tags!r}); Article VII needs a tag array')
+        problems.append(f'tags is not a list (got {tags!r}); the tag vocabulary needs a tag array (Tag-Vocabulary.md)')
         return
     folder, kind = str(fields.get('folder', '')), str(fields.get('type', ''))
     for tag in tags:
         if tag not in vault.VOCABULARY:
-            problems.append(f"tag '{tag}' is outside the closed vocabulary (Article VII has no content tags)")
+            problems.append(f"tag '{tag}' is outside the closed vocabulary, which has no content tags (Tag-Vocabulary.md)")
     if folder and folder not in tags:
-        problems.append(f"missing the Folder tag '{folder}' (Article 7.2)")
+        problems.append(f"missing the Folder tag '{folder}' (Tag-Vocabulary.md)")
     if kind and kind not in tags:
-        problems.append(f"missing the File Role tag '{kind}' (Article 7.3)")
+        problems.append(f"missing the File Role tag '{kind}' (Tag-Vocabulary.md)")
     for label, family, most in (('Folder', vault.FOLDERS, 1), ('File Role', vault.TYPES, 1),
                                 ('Freshness', vault.FRESHNESS_TAGS, 1)):
         count = sum(1 for tag in tags if tag in family)
         if count > most:
-            problems.append(f'{count} {label} tags; Article 7.1 allows one')
+            problems.append(f'{count} {label} tags; the vocabulary allows one (Tag-Vocabulary.md)')
     if folder in tags and kind in tags:
         order = ([folder, kind] + [t for t in tags if t in vault.SIGNAL_TAGS]
                  + [t for t in tags if t in vault.SENSITIVITY_TAGS]
                  + [t for t in tags if t in vault.FRESHNESS_TAGS])
         if tags != order and not set(tags) - set(order):
-            problems.append(f'tags are {tags}; Article 7.1 orders them {order}')
+            problems.append(f'tags are {tags}; the vocabulary orders them {order} (Tag-Vocabulary.md)')
 
 
 def check_note(root: pathlib.Path, path: pathlib.Path) -> tuple[list[str], str]:
@@ -72,11 +72,11 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> tuple[list[str], str]:
     parts = path.relative_to(root).parts
     template = vault.is_template(parts)
     if not text.strip():
-        problems.append('the note is empty (Article 3.8); restore it from git history or delete it')
+        problems.append('the note is empty, and a note is never emptied (AGENTS.md, Ask first); restore it from git history or delete it')
     if '_' in path.name:
-        problems.append('the file name has an underscore (Article 2.6); use spaces or hyphens')
+        problems.append('the file name has an underscore (AGENTS.md, Conventions); use spaces or hyphens')
     if vault.EM_DASH in text:
-        problems.append(f'{text.count(vault.EM_DASH)} em dash(es) (Article 9.1); use a comma, colon, parentheses or a hyphen')
+        problems.append(f'{text.count(vault.EM_DASH)} em dash(es) (DOC-002); use a comma, colon, parentheses or a hyphen')
     fields = vault.parse_frontmatter(text)
     if fields is None:
         if text.strip():
@@ -110,13 +110,13 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> tuple[list[str], str]:
     for field in ('created', 'updated'):
         value = str(fields.get(field, '') or '')
         if value and not vault.DATE_RE.fullmatch(value):
-            problems.append(f"{field} is '{value}'; Section 8.1 writes dates as YYYY-MM-DD")
+            problems.append(f"{field} is '{value}'; the schema writes dates as YYYY-MM-DD (Note-Schema.md)")
     if template and '[[' in text:
-        problems.append('a scaffold carries no wikilinks (Article 3.7)')
+        problems.append('a scaffold carries no wikilinks (Link-Topology.md)')
     tags = vault.as_list(fields.get('tags'))
     if (folder == 'library' and kind not in STRUCTURE_TYPES
             and not set(tags) & vault.FRESHNESS_TAGS and not template):
-        problems.append('a Library holding needs a freshness tag: timeless, enduring or current (Article 6.2)')
+        problems.append('a Library holding needs a freshness tag: timeless, enduring or current (Library/Library.md, Rules)')
     return problems, note_id
 
 
@@ -136,8 +136,14 @@ def main(argv: list[str] | None = None) -> int:
                 return 2
             if path.suffix == '.md' and vault.in_walk(root, path):
                 targets.append(path)
+        strays = [path for path in vault.stray_readmes(root)
+                  if path.resolve() in {(n if n.is_absolute() else root / n).resolve() for n in args.files}]
     else:
         targets = every
+        strays = vault.stray_readmes(root)
+    for path in strays:
+        report.error(path, 'a README.md belongs only in the seven top folders (AGENTS.md, Conventions); '
+                           "describe this folder in its own note")
     ids: dict[str, str] = {}
     checked = {path.resolve() for path in targets}
     for path in targets:

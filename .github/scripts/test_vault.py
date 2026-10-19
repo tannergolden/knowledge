@@ -134,13 +134,29 @@ class TestLayout(unittest.TestCase):
         self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('.github/D.md')))
 
     def test_startup_notes_run_stable_before_volatile(self) -> None:
+        self.vault.note('Memory/Context/Context.md', tags=['memory', 'information', 'startup'], layer=2)
         self.vault.note('Memory/Log.md', tags=['memory', 'information', 'startup'], layer=1)
+        self.vault.note('Profile/Values/Values.md', tags=['profile', 'information', 'startup'], layer=2)
+        self.vault.note('System/System.md', tags=['system', 'information', 'startup'], layer=1)
         self.vault.note('Profile/Working Style.md', tags=['profile', 'information', 'startup'], layer=1)
-        self.vault.note('Instructions.md', tags=['root', 'information', 'startup'], layer=0)
-        self.vault.note('Constitution.md', tags=['root', 'information', 'startup'], layer=0)
-        self.vault.note('Other.md')
+        self.vault.note('Profile/Other.md')
         names = [vault.rel(self.vault.root, p) for p in vault.startup_notes(self.vault.root)]
-        self.assertEqual(names, ['Constitution.md', 'Instructions.md', 'Profile/Working Style.md', 'Memory/Log.md'])
+        self.assertEqual(names, ['Profile/Working Style.md', 'System/System.md', 'Memory/Log.md',
+                                 'Profile/Values/Values.md', 'Memory/Context/Context.md'])
+
+    def test_pages_are_not_notes(self) -> None:
+        # AGENTS.md and the top folders' READMEs are GitHub pages, never walked as notes.
+        for rel in ('AGENTS.md', 'Memory/README.md', 'Memory/Memory.md'):
+            self.vault.write(rel, 'x')
+        notes = [vault.rel(self.vault.root, p) for p in vault.walk_notes(self.vault.root)]
+        self.assertEqual(notes, ['Memory/Memory.md'])
+
+    def test_only_the_top_folders_carry_a_readme(self) -> None:
+        for rel in ('README.md', 'Memory/README.md', 'Memory/Context/README.md', '.github/README.md',
+                    'Memory/.template/README.md'):
+            self.vault.write(rel, 'x')
+        strays = [vault.rel(self.vault.root, p) for p in vault.stray_readmes(self.vault.root)]
+        self.assertEqual(strays, ['README.md', 'Memory/.template/README.md', 'Memory/Context/README.md'])
 
     def test_inbox_drops_leave_the_kept_homes_alone(self) -> None:
         for rel in ('Inbox/Inbox.md', 'Inbox/drop.pdf', 'Inbox/Reports/r.md', 'Inbox/Faculties/f.md', 'Inbox/sub/x.md'):

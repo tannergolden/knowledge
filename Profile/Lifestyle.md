@@ -42,7 +42,7 @@ Movement and fitness habits - what, how often, how it fits the week.
 
 ## Substance Use
 
-Habitual use of caffeine, alcohol, tobacco, or other substances - patterns, not one-off events. Held with discretion (Constitution 4.4).
+Habitual use of caffeine, alcohol, tobacco, or other substances - patterns, not one-off events. Held with discretion (`Profile/Profile.md`, Rules).
 
 ## Rituals & Routines
 

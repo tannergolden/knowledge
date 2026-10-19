@@ -43,7 +43,7 @@ A specific, dated occurrence with continuity value: a milestone, a turning point
 
 ## Creating and keeping
 
-Copy `Memory/.template/Event.md` to this folder and follow its instantiation note; `update-vault.py` lists it here. Events are importance-weighted in recall (recency + importance + relevance, see `Memory/Memory.md`): a high-importance event stays a retrieval candidate for the life of the BRAIN and never ages out of reach. A superseded event is marked, not rewritten (Constitution 3.1).
+Copy `Memory/.template/Event.md` to this folder and follow its instantiation note; `update-vault.py` lists it here. Events are importance-weighted in recall (recency + importance + relevance, see `Memory/Memory.md`): a high-importance event stays a retrieval candidate for the life of the BRAIN and never ages out of reach. A superseded event is marked, not rewritten (`AGENTS.md`, Ask first).
 
 ## Entries
 

@@ -16,7 +16,15 @@ path: "BRAIN/Projects/Projects.md"
 id: "pr-projects"
 ---
 
-# Projects/
+# 🛠️ Projects/
+
+## Rules
+
+- `Projects/` holds your user's personal initiatives only. Work for an employer, a client or one of their companies goes to `Ventures/`.
+- Ask before creating a project folder, then copy `Projects/.template/` and give the folder a short hyphenated name (`Personal-Site`). Not sure it is a project? Ask first.
+- A project's four core files, `Overview.md`, `Log.md`, `Notes.md` and `Resources.md`, always stay at its root.
+- Propose a subfolder and wait for a yes; never create one silently.
+- When work happens on a project, update its `Overview.md` status and add to its `Log.md`.
 
 ## Purpose
 
@@ -26,7 +34,7 @@ id: "pr-projects"
 
 ## Structure
 
-```
+```bash
 Projects/
 ├── Projects.md         ← this file (folder hub)
 ├── .template/           ← blueprint for new project folders
@@ -44,7 +52,7 @@ Projects/
 
 ---
 
-## AI Instructions - Creating Project Folders
+## Creating A Project Folder
 
 **The AI creates project folders. The user does not need to do this manually.**
 
@@ -74,7 +82,7 @@ Each project folder contains four standard files:
 
 ---
 
-## AI Instructions - Subfolder Organization
+## Subfolders
 
 **The four core files always stay at the root of the project folder - no exceptions.**
 
@@ -117,7 +125,7 @@ These are starting points - the actual subfolders should match what the project 
 | A personal side project the user is building | `Projects/[Project-Name]/` |
 | Work assigned by an employer or client | `Ventures/` |
 | Reference material for a project topic | `Library/` |
-| A pattern or trait observed about the user | `Profile/Personality.md` (propose via Constitution 4.2) |
+| A pattern or trait observed about the user | `Profile/Personality.md`, proposed first (`Profile/Profile.md`, Rules) |
 
 ---
 

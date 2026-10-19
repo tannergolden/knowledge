@@ -95,7 +95,15 @@ class TestLintNotes(unittest.TestCase):
         self.vault.note('Library/Library.md', tags=['library', 'information', 'timeless', 'current'])
         self.assert_flags('2 Freshness tags')
         self.vault.note('Library/Library.md', tags=['information', 'library'])
-        self.assert_flags('Article 7.1 orders them')
+        self.assert_flags('the vocabulary orders them')
+
+    def test_a_readme_outside_the_top_folders_fails(self) -> None:
+        self.vault.note('Memory/Memory.md')
+        self.vault.write('Memory/README.md', 'The GitHub page.\n')
+        self.assertEqual(self.lint().returncode, 0, 'a top folder carries a README')
+        self.vault.write('Memory/Context/README.md', 'A second copy.\n')
+        self.assert_flags('a README.md belongs only in the seven top folders')
+        self.assert_flags('a README.md belongs only in the seven top folders', 'Memory/Context/README.md')
 
     def test_tags_must_be_a_list(self) -> None:
         self.vault.note('Library/Library.md')

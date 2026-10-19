@@ -16,7 +16,16 @@ path: "BRAIN/Ventures/Ventures.md"
 id: "ve-ventures"
 ---
 
-# Ventures/
+# 🏢 Ventures/
+
+## Rules
+
+- Before any venture work, look in `Ventures/` for the company's folder: never assume one exists, or that it does not.
+- Ask before creating a venture folder, then copy `Ventures/.template/` and give it a short hyphenated name (`Golden-Media`). A business with clients, employees, revenue or a brand is a venture; one without them is a project.
+- Fill a venture's files only with what your user tells you, and confirm before writing. Never guess or invent.
+- Keep ventures apart: never merge or cross-reference two ventures' context unless asked.
+- Personal information goes to `Profile/` or `Memory/`, and general business knowledge to `Library/`, never here.
+- Keep each venture's `Overview.md` stage and status current, and log meaningful work in its `Log.md`.
 
 ## Purpose
 
@@ -32,7 +41,7 @@ One subfolder of `Ventures/` is not a venture. [[Ventures/Agent Resources (AR)/A
 
 Each venture follows the template defined in `Ventures/.template/`:
 
-```
+```bash
 Ventures/
 └── Company-Name/
     │
@@ -91,7 +100,7 @@ The template carries a **strategic core**: the `Administration/` executive offic
 
 ---
 
-## AI Instructions - Creating Venture Folders
+## Creating A Venture Folder
 
 **The AI creates venture folders. The user does not need to do this manually.**
 
@@ -112,7 +121,7 @@ If it involves clients, employees, revenue, or a brand operating independently i
 
 ---
 
-## AI Instructions - Filling Out Context Over Time
+## Filling Out Context Over Time
 
 **`Ventures/.template/Overview.md` and `Ventures/.template/Sales & Marketing (S&M)/Brand.md` are living documents, not one-time forms.** They are not filled out in a single session - they are built up gradually as the user works on the venture and discusses it with the AI.
 
@@ -142,7 +151,7 @@ strategic priorities, OKRs, targets, milestones, north star metrics, and any ses
 
 ---
 
-## AI Instructions - Working Within a Venture
+## Working Within A Venture
 
 **Always check for an existing folder before doing any venture work.**
 

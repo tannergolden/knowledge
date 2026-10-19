@@ -55,7 +55,7 @@ Current role/title, company or business, industry, employment type, and what the
 
 ## Career
 
-| Period | Role / Org | Notable |
+| Period | Role / Org | Highlights |
 |--------|-----------|---------|
 |        |           |         |
 
@@ -83,7 +83,7 @@ Stable physical characteristics worth holding - appearance, height, distinguishi
 
 ## Identity Documents
 
-The existence and location of core identity and vital documents - passport, driver's license, national ID, birth and other certificates. Record that they exist and where they are kept, never the numbers themselves (Constitution 4.4).
+The existence and location of core identity documents and certificates - passport, driver's license, national ID, birth and other certificates. Record that they exist and where they are kept, never the numbers themselves (`Profile/Profile.md`, Rules).
 
 ## Digital Identity
 

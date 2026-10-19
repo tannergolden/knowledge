@@ -18,6 +18,16 @@ id: "id-profile"
 
 # 🪪 Profile/
 
+## Rules
+
+These govern every write to `Profile/`, and every write to `Memory/` that touches who your user is.
+
+- **Read-only by default.** Treat every note here as read-only unless your user asks you to update it: it is their own description of themselves, and never changes on your inference alone.
+- **Propose, never write silently.** When you learn something about your user that belongs here or in `Memory/`, say so and ask: _"I noticed [X] - want me to add that to [file]?"_
+- **Facts, not guesses.** Record only what your user said or you observed directly. Never speculate about them across sessions, or present an inference as a fact: an inference you propose carries its marker and stays `unconfirmed` until approved (Provenance and freshness, below).
+- **One home for who your user is.** A fact about them lives here and only here, never copied into `Memory/`.
+- **The most care for sensitive categories.** Health and medical conditions, finances, relationships, political or religious views, legal matters and mental health: surface them only when the task needs them, in any folder. Absorb a profile as context; never quote it back.
+
 > [!abstract] What this folder is
 > Everything the AI needs to understand **who the user is as a person**, and the foundation for personalized, contextually appropriate responses. These files are a **personal profile, not reference material.** Treat them with discretion: absorb them as context, never quote them back, and let them inform behavior rather than serve as a checklist to work through.
 
@@ -25,7 +35,7 @@ id: "id-profile"
 
 ## The `profile` Folder tag
 
-Every file here carries `folder: "profile"` and the `profile` Folder tag (Constitution 7.1). The facet files describing the user carry the File Role `self` (`type: "self"`); the hub, index, and templates use their usual roles (`information`, `index`, `template`). Ids use the `id-` prefix.
+Every file here carries `folder: "profile"` and the `profile` Folder tag (`.docs/vault/Tag-Vocabulary.md`). The facet files describing the user carry the File Role `self` (`type: "self"`); the hub, index, and templates use their usual roles (`information`, `index`, `template`). Ids use the `id-` prefix.
 
 ## The facets
 
@@ -51,15 +61,15 @@ Every file here carries `folder: "profile"` and the `profile` Folder tag (Consti
 - Calibrate with [[Profile/Personality|Personality]] (tone, pacing, depth) and [[Profile/Skills/Skills|Skills]] (explanation depth per domain).
 - Weigh options with [[Profile/Values/Values|Values]] and [[Profile/Goals/Goals|Goals]].
 - **Never treat these files as a checklist.** Absorb them as context and apply naturally.
-- **Surface, do not silently write:** when you learn something new about the user, propose adding it (Article 4.2 below) rather than editing on your own.
+- **Surface, do not silently write:** when you learn something new about the user, propose adding it (Rules, above) rather than editing on your own.
 
 ## Profile vs. the other layers
 
-`Profile/` is the **single home for who the user is** (Constitution 2.7): background, personality, values, preferences, skills, beliefs, goals, and health, whether the user stated it or the AI observed it. A fact about the user lives in exactly one place, and that place is `Profile/`.
+`Profile/` is the **single home for who the user is** (Rules, above): background, personality, values, preferences, skills, beliefs, goals, and health, whether the user stated it or the AI observed it. A fact about the user lives in exactly one place, and that place is `Profile/`.
 
 - **Memory** holds only what Profile cannot: what happened (sessions, the Log, Events), who is around the user (Entities/People), what they decided (Decisions), and when things occur (Dates). When the AI learns something about the user *themselves*, it proposes a `Profile/` edit; it never stores a parallel copy in Memory.
 - **Ventures** holds business context and business contacts; `Profile/` is the *personal* self.
-- **Library** holds general and world knowledge; `Profile/` is never reference material (Article 6.1).
+- **Library** holds general and world knowledge; `Profile/` is never reference material (`Library/Library.md`, Rules).
 - **Projects** holds project execution and tasks; `Profile/` holds the person, not the work.
 
 ## Stable vs. dynamic
@@ -68,40 +78,24 @@ Every facet except [[Profile/Focus|Focus]] is **stable**: traits, values, and ba
 
 ## Provenance and freshness
 
-Profile entries carry their origin and stay fresh by use, not by schedule. The convention is deliberately lightweight - it operationalizes Article 4.2 without adding any frontmatter field:
+Profile entries carry their origin and stay fresh by use, not by schedule. The convention is deliberately lightweight - it puts the Rules' propose-first into practice without adding any frontmatter field:
 
 - **Self-reported is the default.** Anything the user states needs no marker; a plain entry is a self-reported fact.
 - **Mark what the AI infers.** When the AI writes an entry it inferred rather than one the user stated, it appends an inline HTML comment, which renders invisibly in Obsidian reading view but stays in the source:
   `**Field:** value <!-- observed 2026-06-19 · confidence: low|medium|high · unconfirmed -->`
-  On the user's confirmation, shorten it to `<!-- confirmed 2026-06-19 -->` or drop it (a confirmed fact is just a fact). An entry left `unconfirmed` is a proposal awaiting approval, never treated as established (Articles 4.1, 4.3).
+  On the user's confirmation, shorten it to `<!-- confirmed 2026-06-19 -->` or drop it (a confirmed fact is just a fact). An entry left `unconfirmed` is a proposal awaiting approval, never treated as established (Rules, above).
 - **Refresh on use, not on a calendar.** When you use a section and it still holds, it is current; when something is stale, fix it then. For a drift-prone section (occupation, current chapter), you may stamp `<!-- reviewed 2026-06-19 -->` at its end when you confirm it.
 
 **Standardized provenance vocabulary.** The marker tokens are fixed so they stay machine-filterable across the whole layer: a state token (`observed` | `confirmed` | `reviewed`) with an ISO date, an optional `confidence: low | medium | high`, and the proposal flag `unconfirmed`. The lifecycle is `observed` + `unconfirmed` (an AI inference, a proposal) -> `confirmed` (the user approved it) -> `reviewed` (re-verified later). Because the tokens are fixed, the profile is queryable: a search for `unconfirmed` lists every pending proposal, and one for `confidence: low` surfaces the weakest inferences to re-check. Self-reported facts stay unmarked, so a marker only ever appears on an exception.
 
 ## Sensitivity
 
-The whole `Profile/` tree is **sensitive by default** (Article 7.5): every content file carries the `sensitive` tag (the structural hub, index, and templates do not, as they hold no personal data). Discretion is behavioral, enforced when surfacing, not by hiding files: do not surface this information unless directly relevant to the task (Article 4.4). The most private facts - health, beliefs, relationships - are **isolated into their own entry files** so that a benign query never drags them in; the per-entry granularity is itself the privacy control. Keep the most sensitive entries terse and factual: record the minimum the AI needs to be considerate, not a full record.
+The whole `Profile/` tree is **sensitive by default** (`.docs/vault/Tag-Vocabulary.md`): every content file carries the `sensitive` tag (the structural hub, index, and templates do not, as they hold no personal data). Discretion is behavioral, enforced when surfacing, not by hiding files: do not surface this information unless directly relevant to the task (Rules, above). The most private facts - health, beliefs, relationships - are **isolated into their own entry files** so that a benign query never drags them in; the per-entry granularity is itself the privacy control. Keep the most sensitive entries terse and factual: record the minimum the AI needs to be considerate, not a full record.
 
 ## Design: facet overview + entries
 
-Facets come in two shapes, the same split as `Memory/`. A facet read as a whole is a single **flat file** at `Profile/` root (Biography, Personality, Preferences, Working Style, Focus). A facet that accretes many independent items is a **folder** with a namesake overview doc plus one **entry file per item** (Values holds belief entries; Goals, Skills, and Health hold one entry per goal, skill, or condition). A flat facet is promoted to a folder only if it later grows entries (for example, Biography gaining life-chapter entries) - never speculatively (Constitution 1.3). Write each independently-answerable fact as its own `## H2` so it chunks cleanly for retrieval, restate the subject in the heading, and keep discrete facts in tables and lists. Discovery is by folder path plus `keywords`, never per-file content tags (Article VII).
+Facets come in two shapes, the same split as `Memory/`. A facet read as a whole is a single **flat file** at `Profile/` root (Biography, Personality, Preferences, Working Style, Focus). A facet that accretes many independent items is a **folder** with a namesake overview doc plus one **entry file per item** (Values holds belief entries; Goals, Skills, and Health hold one entry per goal, skill, or condition). A flat facet is promoted to a folder only if it later grows entries (for example, Biography gaining life-chapter entries) - never speculatively (WORK-001). Write each independently-answerable fact as its own `## H2` so it chunks cleanly for retrieval, restate the subject in the heading, and keep discrete facts in tables and lists. Discovery is by folder path plus `keywords`, never per-file content tags (`.docs/vault/Tag-Vocabulary.md`).
 
 ## Filling these files: the `/identify` skill
 
 The recommended way to populate or deepen these files is the **`/identify`** skill, not hand-editing. It reads what each file currently holds, targets what is thin or unconfirmed, and interviews the user with structured questions drawn from validated frameworks - **Big Five** for Personality, **Schwartz's basic values** for Values, the **McAdams life-story** method for Biography - mixing direct questions for facts with indirect ones that surface traits the user would not think to state. It writes inferences **marked, evidence-cited, confidence-rated, and left unconfirmed until approved**, covers sensitive topics with skip options and the `sensitive` tag, and commits each file's last state before writing to it. Hand-editing is fine for a quick correction but misses the inference layer and those safeguards.
-
-## Article IV (Delegated) - Identity & Privacy Rules
-
-Hosted here from the Constitution with full constitutional force (Constitution Article IV; amendments only per Article VIII). These rules govern every write to `Profile/` and to `Memory/`.
-
-**4.1 Profile Files Are Read-Only by Default**
-The AI should treat files in `Profile/` as read-only unless the user explicitly asks it to update them. These files represent the user's own self-description and should not be modified based on the AI's inferences alone.
-
-**4.2 Inferences Must Be Flagged**
-If the AI learns something about the user through conversation that it believes belongs in a Memory or Profile file, it should surface the observation explicitly rather than writing it silently:
-> *"I noticed [X] - want me to add that to [file]?"*
-
-**4.3 No Cross-Session Speculation**
-The AI must not speculate about or record assumptions about the user that are not grounded in direct observation or explicit statement. Profile and Memory files must contain facts, not inferences presented as facts.
-
-**4.4** remains in the root Constitution - sensitive-category discretion is universal law, not folder law.

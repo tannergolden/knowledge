@@ -50,9 +50,10 @@ trade-offs that shaped it before changing it.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log fields=status,date,evidence -->
 
-| Entry                    | Status | Date | Evidence | Purpose    |
-| :----------------------- | :----- | :--- | :------- | :--------- |
-| [`README.md`](README.md) | -      | -    | -        | This file. |
+| Entry                                                                                    | Status   | Date       | Evidence | Purpose                                                                                                                                                  |
+| :--------------------------------------------------------------------------------------- | :------- | :--------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`ADR-0001-AGENTS-Holds-The-Vaults-Rules.md`](ADR-0001-AGENTS-Holds-The-Vaults-Rules.md) | Accepted | 2026-10-19 | N/A      | The vault's Constitution and Instructions dissolve into AGENTS.md, the folder notes and reference pages, and standards owns every repository convention. |
+| [`README.md`](README.md)                                                                 | -        | -          | -        | This file.                                                                                                                                               |
 
 <!-- AUTO-INDEX:END -->
 
@@ -92,6 +93,6 @@ old record **Superseded** and link the new one.
 
 <br />
 
-Built with ❤️ by the Engineering Team. Proprietary and confidential; all rights reserved.
+Built with ❤️ by the Engineering Team. Distributed under the MIT License.
 
 </div>

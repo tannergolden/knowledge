@@ -19,7 +19,7 @@ id: "li-reference-note"
 # 📝 [Note Title]
 
 > Template for a synthesized reference note (the common Library holding). On filing:
-> set `type: reference`; add the freshness tag (`timeless` / `enduring` / `current`) beside the `library` Folder tag and drop the `template` tag; set the real `path` and a stable `id` (`li-<slug>`); give the H1 a fitting leading emoji (Constitution 9.6); drop the literal `template` keyword and fill `keywords` with the synonyms a person would actually search (optionally the slash-namespaced facet keywords from `Library/Library.md`). File it in one class and division by the classification rules in `Library/Library.md`. Keep section headings clean and meaningful - they double as retrieval chunk boundaries. Reference other files by plain path.
+> set `type: reference`; add the freshness tag (`timeless` / `enduring` / `current`) beside the `library` Folder tag and drop the `template` tag; set the real `path` and a stable `id` (`li-<slug>`); give the H1 a fitting leading emoji (`AGENTS.md`, Conventions); drop the literal `template` keyword and fill `keywords` with the synonyms a person would actually search (optionally the slash-namespaced facet keywords from `Library/Library.md`). File it in one class and division by the classification rules in `Library/Library.md`. Keep section headings clean and meaningful - they double as retrieval chunk boundaries. Reference other files by plain path.
 
 ## Summary
 

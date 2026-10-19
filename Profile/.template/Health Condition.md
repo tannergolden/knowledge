@@ -23,7 +23,7 @@ FILING INSTRUCTIONS (copy this file to Profile/Health/<Title>.md, then) (one hea
 - Save as Profile/Health/[Condition or Need].md.
 - Frontmatter: type "self"; tags ["profile","self","sensitive", + freshness "enduring"]; remove "template" tag and "version".
 - Set "path" and a stable "id" (id-<slug>); give the H1 a fitting emoji. NO wikilinks - plain paths only.
-- For AI awareness, NOT diagnostic use. Record the minimum the AI needs to be considerate, not a medical history. Surface only when directly relevant (Article 4.4).
+- For AI awareness, NOT diagnostic use. Record the minimum the AI needs to be considerate, not a medical history. Surface only when directly relevant (`Profile/Profile.md`, Rules).
 -->
 
 ## Condition

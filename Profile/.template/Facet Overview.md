@@ -23,8 +23,8 @@ FILING INSTRUCTIONS (a facet's namesake overview doc):
 - Single-doc facet: save as a flat file Profile/[Facet Name].md (like Personality). Entry-bearing facet: save as Profile/[Facet Name]/[Facet Name].md, a folder whose namesake shares its name (like Values). Use a folder only when multiple entry files are intended.
 - Frontmatter: type "self"; tags ["profile","self","sensitive", + freshness ("enduring" for stable facets, "current" if it drifts)]; remove the "template" tag and the "version" key.
 - Set "path" to BRAIN/Profile/[Facet Name]/[Facet Name].md and give "id" a stable id-<slug>.
-- Give the H1 a fitting leading emoji (Constitution 9.6) and replace [Facet Name].
-- One H2 per independently-answerable fact; restate the subject in the heading; put discrete facts in tables/lists. NO wikilinks (Article 3.7) - reference by plain path.
+- Give the H1 a fitting leading emoji (`AGENTS.md`, Conventions) and replace [Facet Name].
+- One H2 per independently-answerable fact; restate the subject in the heading; put discrete facts in tables/lists. NO wikilinks (`.docs/vault/Link-Topology.md`) - reference by plain path.
 - Mark AI-inferred facts with the provenance comment (see Profile.md). Keep the most private facts terse.
 -->
 

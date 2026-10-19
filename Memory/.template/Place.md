@@ -22,7 +22,7 @@ INSTANTIATION (copy this file to Memory/Entities/Places/<Name>.md, then):
 - Set id to me-<slug> (slug of the place name) and path to BRAIN/Memory/Entities/Places/<Name>.md.
 - Keep the emoji H1; replace [Place Name] with the place's name.
 - Fill only what is known. Never fabricate - leave a field blank or omit its line rather than guessing.
-- Surface sensitive details (precise address) only when relevant to the work at hand (Constitution 4.4).
+- Surface sensitive details (precise address) only when relevant to the work at hand (`Profile/Profile.md`, Rules).
 - Record provenance: As of (when the facts became true) and Recorded (today).
 - Cross-reference with plain-path Related lines. No wikilinks in entries.
 -->
@@ -41,7 +41,7 @@ INSTANTIATION (copy this file to Memory/Entities/Places/<Name>.md, then):
 - **Location:**
 - **Region:**
 
-## Notable Details
+## Details Worth Keeping
 
 <!-- Distinctive facts worth remembering about this place. -->
 

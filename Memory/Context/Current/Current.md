@@ -37,6 +37,6 @@ _No summaries in this tier right now._
 ## Notes
 
 - Files are named `YYYYMMDD-HHMMSS.md` so they sort newest-first by name.
-- Nothing is deleted; overflow relocates to `Memory/Context/Recent/` (Constitution 3.1).
+- Nothing is deleted; overflow relocates to `Memory/Context/Recent/` (`AGENTS.md`, Ask first).
 - A high-importance summary stays a retrieval candidate after it cascades out (see `Memory/Context/Context.md`).
 - The session-summary format lives in `Memory/Memory.md` and `Memory/.template/Session Summary.md`.

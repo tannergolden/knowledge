@@ -18,7 +18,7 @@ id: "id-health"
 
 # 🩺 Health
 
-Stable health attributes and accessibility needs, kept only insofar as they change **how the AI should help**. This is for AI awareness, **not diagnostic use**, and is surfaced only when directly relevant to the task (Article 4.4). It is not a medical record. Each specific condition is isolated in its own `sensitive` entry so that a benign query never drags in a diagnosis; this page holds only the always-useful summary.
+Stable health attributes and accessibility needs, kept only insofar as they change **how the AI should help**. This is for AI awareness, **not diagnostic use**, and is surfaced only when directly relevant to the task (`Profile/Profile.md`, Rules). It is not a medical record. Each specific condition is isolated in its own `sensitive` entry so that a benign query never drags in a diagnosis; this page holds only the always-useful summary.
 
 ## Snapshot
 

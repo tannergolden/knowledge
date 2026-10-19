@@ -1,6 +1,6 @@
 ---
 title: "Research"
-description: "The BRAIN's standing research team and how it works: a lead plus nine specialists that run any research the BRAIN needs, for any project, venture, or the BRAIN itself, to one standard - zero bias. Defines the roster and the report method (comprehensiveness, freshness, dedup, the Reports.md index rule). The research counterpart to the ideation Discovery team."
+description: "The BRAIN's standing research team and how it works: a lead plus nine specialists that run any research the BRAIN needs, for any project, venture, or the BRAIN itself, to one standard - zero bias. Defines the roster and the report method (coverage, freshness, dedup, the Reports.md index rule). The research counterpart to the ideation Discovery team."
 status: "active"
 tags: ["inbox", "information"]
 aliases: ["Research team", "the Desk", "Research Desk", "research crew", "Reports"]
@@ -49,11 +49,11 @@ The Research Lead scales the team to the question: a quick fact may be the lead 
 
 The report conventions are how the team works, regardless of where a report is delivered:
 
-- **One main topic per report, comprehensive by coverage.** A report covers one main topic plus its directly related subtopics, exhaustively; a sub-aspect with no evidence is written down as "no evidence found", never quietly dropped. Comprehensive means coverage, not length; the prose stays tight.
+- **One main topic per report, complete in coverage.** A report covers one main topic plus its directly related subtopics, exhaustively; a sub-aspect with no evidence is written down as "no evidence found", never quietly dropped. Complete means coverage, not length; the prose stays tight.
 - **Cite everything; surface disagreement.** Every finding carries an inline citation, disagreements are shown with every side cited, and certainty is graded separately from how strongly a claim is stated.
 - **Freshness.** Every report is good for up to three months from its `updated` date; after that it must be verified before it is reused. This one flat window covers all reports; the rule lives in `Inbox/Reports/Reports.md`.
 - **Dedup before writing.** The Knowledge Manager canonicalizes the topic and checks `Inbox/Reports/` for an existing report on it first; a match is refreshed rather than duplicated. Reuse is review: confirming a still-valid report's findings on reuse refreshes its three-month window without a full rewrite.
-- **Reports are linked only from the `Reports.md` index.** A report is a working artifact: produced, consumed, refreshed, and cleared. The held library's namesake, `Inbox/Reports/Reports.md`, is the one hub that wikilinks every report; no other file links to one, which keeps the wider graph free of disposable nodes. When a report is filed, its entry is added to that index in the same edit. A finding that must outlive its report is promoted into the durable layer (a `Library/` doc, a folder namesake, the Constitution or Instructions, a skill's `references/`). Reports are also found by searching their folder.
+- **Reports are linked only from the `Reports.md` index.** A report is a working artifact: produced, consumed, refreshed, and cleared. The held library's namesake, `Inbox/Reports/Reports.md`, is the one hub that wikilinks every report; no other file links to one, which keeps the wider graph free of disposable nodes. When a report is filed, its entry is added to that index in the same edit. A finding that must outlive its report is promoted into the durable layer (a `Library/` doc, a folder namesake, `AGENTS.md` or a folder's Rules, a skill's `references/`). Reports are also found by searching their folder.
 
 ## Global rules
 

@@ -40,7 +40,7 @@ class TestStart(unittest.TestCase):
         self.vault.cleanup()
 
     def test_the_card_lists_startup_notes_summaries_and_the_inbox(self) -> None:
-        self.vault.note('Constitution.md', tags=['root', 'information', 'startup'], layer=0)
+        self.vault.note('Profile/Working Style.md', tags=['profile', 'information', 'startup'], layer=1)
         self.vault.note('Memory/Log.md', tags=['memory', 'information', 'startup'], layer=1)
         for name, status in (('20260101-000000', 'active'), ('20260102-000000', 'active'),
                              ('20260103-000000', 'deprecated'), ('20251231-000000', 'active')):
@@ -50,8 +50,8 @@ class TestStart(unittest.TestCase):
         result = self.vault.run(SCRIPT, 'start')
         self.assertEqual(result.returncode, 0)
         lines = result.stdout.splitlines()
-        self.assertIn('READ Constitution.md', lines)
-        self.assertLess(lines.index('READ Constitution.md'), lines.index('READ Memory/Log.md'))
+        self.assertIn('READ Profile/Working Style.md', lines)
+        self.assertLess(lines.index('READ Profile/Working Style.md'), lines.index('READ Memory/Log.md'))
         self.assertIn('READ Memory/Context/Current/20260102-000000.md  (session summary)', lines)
         self.assertIn('READ Memory/Context/Current/20260101-000000.md  (session summary)', lines)
         self.assertNotIn('20260103', result.stdout)

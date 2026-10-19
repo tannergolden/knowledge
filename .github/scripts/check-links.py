@@ -2,9 +2,9 @@
 """Check the wikilink graph: every link resolves, and links follow the hub topology.
 
 WHY THIS EXISTS. The vault is a knowledge graph in Obsidian, and its links
-follow one shape (Constitution 3.7). A folder's own note links the files in
-its folder and the notes of its immediate subfolders; the root files form one
-chain; every other note links nothing and names files by plain path. Links
+follow one shape (.docs/vault/Link-Topology.md). A folder's own note links
+the files in its folder and the notes of its immediate subfolders, and every
+other note links nothing and names files by plain path. Links
 flow downhill and never back. A broken link is a lie in the graph, and a link
 out of place makes Obsidian's graph and backlinks say something untrue, and
 nothing else would notice either one. Link checkers that read Markdown links
@@ -48,19 +48,16 @@ def allowed(source: str, target: str) -> tuple[bool, str]:
     """Whether the hub topology lets `source` link `target`, and why not."""
     src, dst = source.split('/'), target.split('/')
     if len(src) == 1:
-        layer_one_note = len(dst) == 2 and dst[1].rsplit('.', 1)[0] == dst[0]
-        ok = (len(dst) == 1 and dst[0] in vault.ROOT_CHAIN.get(src[0], ())) or (
-            src[0] == 'Instructions.md' and layer_one_note)
-        return ok, ('the root carries one chain: CLAUDE.md, AGENTS.md, Instructions.md, Constitution.md; '
-                    'Instructions.md also links each top folder note (3.7)')
+        return False, ('the vault root holds no notes; AGENTS.md names the top folder notes '
+                       'with Markdown links (Link-Topology.md)')
     if src[-1].rsplit('.', 1)[0] == src[-2]:
         folder = src[:-1]
         sibling = dst[:-1] == folder
         child = (len(dst) == len(folder) + 2 and dst[:len(folder)] == folder
                  and dst[-1].rsplit('.', 1)[0] == dst[-2])
         return sibling or child, ("a folder's note links the files in its folder and its "
-                                  "subfolders' notes, nothing else (3.7)")
-    return False, 'a note that is not a folder note carries no wikilinks; name the file by plain path (3.7)'
+                                  "subfolders' notes, nothing else (Link-Topology.md)")
+    return False, 'a note that is not a folder note carries no wikilinks; name the file by plain path (Link-Topology.md)'
 
 
 def main(argv: list[str] | None = None) -> int:

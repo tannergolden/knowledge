@@ -22,7 +22,7 @@ The mid tier of context memory: recent history one step back from the entry tier
 
 ## Cap and cascade
 
-This tier holds a larger ceiling than Current (default a session-or-two's worth, about 6 summaries). When it overflows, the oldest relocates to `Memory/Context/Archive/<year>/` via `update-vault.py`. Nothing is deleted (Constitution 3.1).
+This tier holds a larger ceiling than Current (default a session-or-two's worth, about 6 summaries). When it overflows, the oldest relocates to `Memory/Context/Archive/<year>/` via `update-vault.py`. Nothing is deleted (`AGENTS.md`, Ask first).
 
 ## Recall here is scored, not just listed
 
