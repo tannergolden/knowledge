@@ -75,7 +75,7 @@ The vault's checks and generators are scripts in `.github/scripts/`, run from th
 | `check-agents.py` | Each agent spec and team roster, and one namespace across every home. |
 | `scan-pii.py` | Social Security and card numbers in tracked files. Keys and tokens are the gitleaks scan's job in `checks.yml`. |
 | `update-vault.py` | Draws everything generated: the memory cascade, every `brain:` block, both catalogs, the skill archives and the `.gitkeep` markers. `--check` writes nothing and fails when anything is stale. |
-| `session-hooks.py` | The Claude Code hooks in `.claude/settings.json`: the session-start card, the check after every note written, and the end-of-turn redraw. |
+| `session-hooks.py` | The session helpers, run by hand: the session-start card, the check after a note is written, and the end-of-turn redraw. |
 | `profile-coverage.py` | How filled in each Profile facet is; the identify skill reads its `--json`. |
 | `knowledge-base.py` | Offline reference works (Wikipedia and more) in `Library/Reference & Encyclopedia/`: `list`, `enable`, `refresh`, `search`, `read`. Every source ships off. |
 
@@ -98,7 +98,7 @@ Separate the prompt's sections (the opening line, each numbered fix and the clos
 A new vault script goes in `.github/scripts/`, beside the others, and follows them:
 
 - One job per script, named verb-noun with hyphens (`check-links.py`); its tests go in `test_<name>.py` beside it, which CI discovers on its own.
-- Standard library only, and runnable on Python 3.9 (`from __future__ import annotations`), because the hooks run on whatever `python3` the machine has.
+- Standard library only, and runnable on Python 3.9 (`from __future__ import annotations`), because they run on whatever `python3` the machine has.
 - The module docstring's first line is the script's purpose, since the folder's File Log reads it; the rest says why it exists and how to run it.
 - Self-locating: import `vault.py` from the script's own folder, take the vault root from `--root` (the repository by default), and never hardcode a path (Rules, above).
 - Exit 0 when clean, 1 on findings, 2 on misuse, and print one finding per line; `vault.Report` does both, with GitHub annotations under Actions.

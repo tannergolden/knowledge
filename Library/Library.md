@@ -42,7 +42,7 @@ id: "li-library"
 
 ## Quick reference
 
-To file something: (1) pick the **one** class it most belongs to; (2) pick a division; (3) catalog it (frontmatter, plus a catalog card if it is an external source); (4) shelve it; the Claude Code hook checks its frontmatter as it is written. For a hard call, use the **Classification rules**, then the **Boundary rulings** and **Worked examples** below. Weed with freshness plus **MUSTIE**.
+To file something: (1) pick the **one** class it most belongs to; (2) pick a division; (3) catalog it (frontmatter, plus a catalog card if it is an external source); (4) shelve it, then run `lint-notes.py` on it. For a hard call, use the **Classification rules**, then the **Boundary rulings** and **Worked examples** below. Weed with freshness plus **MUSTIE**.
 
 The ten classes: **Information & Computing · Philosophy & Mind · Religion & Spirituality · Society & Social Sciences · Science & Mathematics · Technology & Applied Science · Arts & Recreation · Language & Literature · History & Geography · Life & Practice.** Each is a subfolder with its own namesake doc; the full division map is the "The ten classes" section below, and live listings come from the catalog (`System/Data/catalog.ndjson`, its `library` records).
 

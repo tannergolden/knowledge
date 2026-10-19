@@ -3,11 +3,10 @@
 
 WHY THIS EXISTS. check-vault.py is the one command CI and a person run, so it
 must run every check and fail when any one does. The scripts are also called
-from places a unit test of each script never sees: the Claude Code hooks in
-.claude/settings.json and the composite action CI uses. A renamed script
-would leave those pointing at nothing, silently. These tests check the
-umbrella on a throwaway vault, then check that every script the hooks and
-the action name exists, and that every script is written the way this
+from a place a unit test of each script never sees: the composite action CI
+uses. A renamed script would leave it pointing at nothing, silently. These
+tests check the umbrella on a throwaway vault, then check that every script
+the action names exists, and that every script is written the way this
 folder's File Log reads them.
 
 Run it:
@@ -18,7 +17,6 @@ Run it:
 from __future__ import annotations
 
 import ast
-import json
 import pathlib
 import re
 import sys
@@ -64,16 +62,6 @@ class TestCheckVault(unittest.TestCase):
 
 
 class TestWiring(unittest.TestCase):
-    def test_every_hook_runs_a_script_that_exists(self) -> None:
-        settings = json.loads((ROOT / '.claude' / 'settings.json').read_text(encoding='utf-8'))
-        commands = [hook['command'] for groups in settings['hooks'].values() for group in groups
-                    for hook in group['hooks']]
-        self.assertTrue(commands)
-        for command in commands:
-            self.assertNotIn('brain.command', command)
-            for path in re.findall(r'\$\{CLAUDE_PROJECT_DIR\}/([^"\s]+)', command):
-                self.assertTrue((ROOT / path).is_file(), f'{command} names {path}, which does not exist')
-
     def test_the_action_runs_scripts_that_exist(self) -> None:
         action = (ROOT / '.github' / 'actions' / 'vault' / 'action.yml').read_text(encoding='utf-8')
         named = re.findall(r'\.github/scripts/([\w.-]+\.py)', action)

@@ -17,7 +17,7 @@ an AI keeping it by hand would let it drift. This script owns all of it:
    with its team vendored, so an installed skill carries its agents.
 5. The .gitkeep markers: an empty folder keeps one, a folder with files loses it.
 
-Run it after a change, or let the Claude Code Stop hook run it. With --check it
+Run it after a change. With --check it
 writes nothing and fails when anything is out of date, which is what CI runs.
 Archives are compared by their contents, never their bytes, since two zlib
 builds compress the same files differently.

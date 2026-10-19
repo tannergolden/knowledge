@@ -96,7 +96,6 @@
 # --- The vault: kept current --------------------------------------------------
 # This template's own files. Every vault generated from it keeps them current:
 # the scripts, governance, skills, agents, folder notes and scaffolds.
-/.claude/**
 /.docs/vault/**
 /.github/CODE_OF_CONDUCT.md
 /.github/CONTRIBUTING.md
@@ -127,7 +126,6 @@
 /.github/scripts/update-vault.py
 /.github/scripts/vault.py
 /.github/workflows/vault.yml
-/.obsidian/snippets/**
 /.typos.toml
 /AGENTS.md
 /Inbox/Faculties/**
@@ -176,11 +174,9 @@
 
 # --- The vault: yours ---------------------------------------------------------
 # Each vault's own: what its owner writes about themselves, the logs they keep,
-# their Obsidian settings, the catalogs drawn from their notes, and the stub
-# that keeps the universal rules in AGENTS.md current.
+# the catalogs drawn from their notes, and the stub that keeps the universal
+# rules in AGENTS.md current.
 #/.github/workflows/intelligence-sync.yml
-#/.obsidian/*.json
-#/.obsidian/plugins/**
 #/Memory/Dates.md
 #/Memory/Log.md
 #/Profile/Biography.md

@@ -66,7 +66,7 @@ class TestScanPii(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout)
 
     def test_machine_json_skips_the_number_checks(self) -> None:
-        result = self.scan({'.obsidian/graph.json': f'{{"seed": {CARD}}}\n'})
+        result = self.scan({'System/Data/agent-catalog.json': f'{{"seed": {CARD}}}\n'})
         self.assertEqual(result.returncode, 0, result.stdout)
 
     def test_only_tracked_files_count(self) -> None:

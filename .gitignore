@@ -154,23 +154,9 @@ _site/
 # Undownloaded iCloud placeholders (never commit a dataless stub)
 *.icloud
 
-# Obsidian: drop only volatile UI state and caches; keep config, themes, plugins
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/cache
-# Backups plugins write beside their data, and Obsidian Git's password prompt,
-# which it writes again whenever it needs one.
-.obsidian/**/*.backup*
-.obsidian/*.bak-*
-.obsidian/plugins/obsidian-git/obsidian_askpass.sh
-
-# Obsidian community plugins and themes are third-party releases that Obsidian
-# reinstalls from its catalog, so their code stays out. Each plugin's settings
-# (data.json) and the list of enabled plugins (community-plugins.json) stay in.
-.obsidian/plugins/*/main.js
-.obsidian/plugins/*/manifest.json
-.obsidian/plugins/*/styles.css
-.obsidian/themes/
+# Obsidian: the vault carries no editor settings. One opened in Obsidian keeps
+# the settings Obsidian writes on that machine, out of git.
+.obsidian/
 
 # Left on a machine by the retired engine (System/brain.command): its trash
 # and snapshots. Nothing writes them now; these keep the leftovers out of git.

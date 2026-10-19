@@ -97,8 +97,7 @@ python3 .github/scripts/update-vault.py   # redraw everything generated: memory 
 python3 .github/scripts/lint-notes.py X   # one note against the schema
 ```
 
-In Claude Code the hooks run them on their own: the session start lists what to read, every note
-written is checked, and the end of a turn redraws what is generated.
+`python3 .github/scripts/session-hooks.py start` lists what to read at the start of a session.
 
 ---
 

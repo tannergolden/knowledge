@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Run every vault check, as CI does: notes, links, skills, agents, personal data and generated parts.
 
-WHY THIS EXISTS. Each check is its own script so it can run alone, the way the
-Claude Code hook lints one note after an edit. Before a commit, and in CI, all
+WHY THIS EXISTS. Each check is its own script so it can run alone, the way
+lint-notes.py checks one note after an edit. Before a commit, and in CI, all
 of them need to pass together, and nobody should have to remember the list.
 This runs each one in turn, prints what each found, and fails if any did. The
 generated parts are checked with `update-vault.py --check`, so it never writes.

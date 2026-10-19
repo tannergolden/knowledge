@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Tests for session-hooks.py, the vault's three Claude Code hooks.
+"""Tests for session-hooks.py, the vault's three session helpers.
 
-WHY THIS EXISTS. The hooks run in every Claude Code session in this vault, and
-a hook that crashes or prints the wrong thing breaks that session or hands
-Claude bad context. These run each hook on a throwaway vault. For the hooks
-that call other scripts, they copy session-hooks.py beside small stand-ins,
-so a test of a hook never depends on the scripts it calls.
+WHY THIS EXISTS. A helper that crashes or prints the wrong thing hands the
+agent running it bad context, and breaks any session whose hook calls it.
+These run each helper on a throwaway vault. For the helpers that call other
+scripts, they copy session-hooks.py beside small stand-ins, so a test of a
+helper never depends on the scripts it calls.
 
 Run it:
 

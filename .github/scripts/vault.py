@@ -10,7 +10,7 @@ disagree about what a note says.
 
 It is a library, not a command: the scripts beside it import it. It reads
 only, never writes, and needs nothing beyond Python 3.9's standard library,
-because the Claude Code hooks run it with whatever python3 the machine has.
+because the scripts run on whatever python3 the machine has.
 """
 
 from __future__ import annotations

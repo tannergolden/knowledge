@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
-"""The vault's Claude Code hooks: orient a session, check a note after an edit, and tidy up when a turn ends.
+"""The vault's session helpers: orient a session, check a note after an edit, and tidy up when a turn ends.
 
-WHY THIS EXISTS. .claude/settings.json wires three hooks, and each one calls
-a subcommand here, so the hooks stay one line each and live under test:
+WHY THIS EXISTS. These began as the vault's Claude Code hooks. The vault no
+longer carries an agent configuration of its own, so nothing wires them;
+each runs by hand, and an agent's own hook settings may call one:
 
-- start, on SessionStart: a short orientation card. It lists the notes tagged
-  startup, the two newest session summaries and anything waiting at the Inbox,
-  as paths to Read rather than whole files, because a hook's output is cut
-  short and a card always survives.
-- after-edit, on PostToolUse after Edit or Write: checks the note that was
-  just written with lint-notes.py (and a skill source with check-skills.py),
-  and hands any problem back to Claude, so a mistake is fixed in the same turn.
-- stop, on Stop: when the working tree has changes, redraws everything
-  generated with update-vault.py, runs check-vault.py, and tells the person
-  what changed and what fails.
+- start: a short orientation card. It lists the startup notes, the two
+  newest session summaries and anything waiting at the Inbox, as paths to
+  read rather than whole files, so the card stays short.
+- after-edit: given a hook's JSON on stdin naming the file just written,
+  checks it with lint-notes.py (and a skill source with check-skills.py),
+  and reports any problem, so a mistake is fixed in the same turn.
+- stop: when the working tree has changes, redraws everything generated
+  with update-vault.py, runs check-vault.py, and says what changed and what
+  fails.
 
-A hook must never break a session, so every subcommand exits 0 whatever happens.
+A helper called from a hook must never break a session, so every subcommand
+exits 0 whatever happens.
 
 Run them:
 
@@ -40,7 +41,7 @@ CURRENT = 'Memory/Context/Current'
 
 def start(root: pathlib.Path) -> None:
     print('Vault startup (AGENTS.md, Start here). The startup set is listed, not inlined:')
-    print('Read every READ line with the Read tool before substantive work.')
+    print('Read every file on a READ line before substantive work.')
     for path in vault.startup_notes(root):
         print(f'READ {vault.rel(root, path)}')
     summaries = [p for p in reversed(vault.tier_summaries(root / CURRENT)) if not vault.is_stale(vault.note_fields(p))][:2]

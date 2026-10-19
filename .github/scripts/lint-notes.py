@@ -5,8 +5,8 @@ WHY THIS EXISTS. Every note in the vault carries the same frontmatter
 (.docs/vault/Note-Schema.md) and draws its tags from one closed vocabulary
 (.docs/vault/Tag-Vocabulary.md). Retrieval, the catalog and the link graph all
 read those fields, so a note that drifts from the schema misleads every one
-of them, quietly. This is the gate: it runs on one note after every edit
-(the Claude Code hook), and on every note in CI.
+of them, quietly. This is the gate: run it on one note after every edit,
+and CI runs it on every note.
 
 With no arguments it checks every note the vault walks: every folder but
 hidden ones, plus the .template/ scaffolds. Given files, it checks only

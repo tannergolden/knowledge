@@ -1,7 +1,0 @@
-/* BRAIN - hide each top folder's README.md from Obsidian's file explorer.
-   A README is the folder's page on GitHub, not a note: the folder's own note,
-   named after it, is what to read here. Display-only; the file stays. */
-.nav-file:has(> .nav-file-title[data-path$="/README.md"]),
-.tree-item:has(> .tree-item-self[data-path$="/README.md"]) {
-  display: none;
-}

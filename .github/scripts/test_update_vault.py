@@ -3,7 +3,7 @@
 
 WHY THIS EXISTS. update-vault.py moves session summaries, rewrites blocks
 inside notes, rebuilds two catalogs and every skill archive, and adds and
-removes .gitkeep markers, often from a hook nobody is watching. A mistake in
+removes .gitkeep markers, often with nobody watching. A mistake in
 any of those changes the vault behind someone's back. Each test builds a
 small vault, runs the real script (and its --check), and checks the files it
 leaves. The last test checks, read only, that the vault this repository holds

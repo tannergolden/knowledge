@@ -97,7 +97,7 @@ The AI supplies content and judgment and writes each entry itself, in its destin
 
 ## Session summaries
 
-When a session nears its context limit, write one context summary to `Context/Current/`, named `YYYYMMDD-HHMMSS.md` (pure timestamp), then run `python3 .github/scripts/update-vault.py` to enforce the tier caps (the Stop hook runs it too). Write it as a **delta update**, separating:
+When a session nears its context limit, write one context summary to `Context/Current/`, named `YYYYMMDD-HHMMSS.md` (pure timestamp), then run `python3 .github/scripts/update-vault.py` to enforce the tier caps. Write it as a **delta update**, separating:
 
 - **Established foundations** - prior state still valid.
 - **Active changes** - what this session modified, added, or decided.

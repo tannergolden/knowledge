@@ -75,7 +75,7 @@ At the start of every session, before other work:
 3. Read `Memory/Log.md` and the two newest summaries in `Memory/Context/Current/`.
 4. Read the folder notes the task touches, or the catalog, `System/Data/catalog.ndjson`, to see what exists.
 
-In Claude Code the session-start hook lists these files; read every one it lists.
+`python3 .github/scripts/session-hooks.py start` lists these files; read every one it lists.
 
 - **Folder rules.** Before you create, edit, move or delete anything in a folder, read the Rules in its folder note and in each folder note above it. They add to these rules and never loosen them.
 - **Retrieval order.** Ground a fact in the closest source that holds it: the vault (its notes and the catalog), then an offline knowledge base when one is installed (`python3 .github/scripts/knowledge-base.py search`), then the web. Anything about your user stops at the vault; anything current goes straight to the web.
@@ -90,7 +90,7 @@ In Claude Code the session-start hook lists these files; read every one it lists
 - `python3 -m unittest discover -s .github/scripts -p 'test_*.py'`: the scripts' own tests.
 - `profile-coverage.py --json` picks the next Profile interview; `knowledge-base.py` turns on, fetches and searches the offline knowledge bases.
 
-In Claude Code the hooks run them for you: every note you write is linted, and the end of each turn redraws what is generated. Each script's purpose is in `.github/scripts/README.md`.
+Run `lint-notes.py` on each note you write and `update-vault.py` after a change. Each script's purpose is in `.github/scripts/README.md`.
 
 ## Definition of done
 
@@ -130,7 +130,7 @@ The top folders' notes are [Inbox](Inbox/Inbox.md), [Library](Library/Library.md
 
 ## Gotchas
 
-- Hidden folders are infrastructure: `.obsidian/`, `.git/`, `.github/`, `.claude/`, `.docs/`. Never delete one, empty or not. Ignore `.DS_Store` completely: never delete, move, report or count it.
+- Hidden folders are infrastructure: `.git/`, `.github/`, `.docs/` and each `.template/`. Never delete one, empty or not. Ignore `.DS_Store` completely: never delete, move, report or count it.
 - Some text is machine-owned: `.gitkeep` markers and the blocks between `<!-- brain:` markers are `update-vault.py`'s, the `AUTO-INDEX` blocks are the indexer's, the block above is the hub's, and the catalogs and `.skill` archives are generated. Change the source and redraw; never edit them by hand.
 - In the public template, every note about a person is a blank scaffold. Never fill one in there (SEC-003).
 - Check a premise against Memory before acting on it, and if Memory disagrees, say so rather than adopt either version.
