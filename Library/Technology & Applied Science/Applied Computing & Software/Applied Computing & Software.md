@@ -6,7 +6,7 @@ tags: ["library", "information", "timeless"]
 aliases: []
 keywords: ["applied", "computing", "software", "building", "deploying", "systems"]
 created: 2026-06-18
-updated: 2026-06-27
+updated: 2026-10-19
 type: "information"
 folder: "library"
 layer: 3
@@ -28,7 +28,7 @@ No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each wi
 
 ## Holdings
 
-- [[Library/Technology & Applied Science/Applied Computing & Software/Markdown Style Guide|Markdown Style Guide]] - the house style for clean, readable, portable markdown.
+No holdings yet. For how to write and format Markdown, follow tannergolden/standards' [Document Styling & Formatting](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md) guide, which every repository on this account follows; a vault note keeps the conventions in `AGENTS.md`.
 
 ## Conventions
 

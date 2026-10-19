@@ -1,43 +1,66 @@
+<!--
+title: '🛡️ SECURITY POLICY'
+description: 'How this vault keeps personal data and secrets out of reach, and how to report a problem with either.'
+tags: [security, privacy, secrets, obsidian-vault]
+category: docs
+-->
+
+<!-- markdownlint-disable MD041 -->
 <div align="center">
 
-# 🔐 Security Policy
+# 🛡️ SECURITY POLICY
+
+<a name="top"></a>
+
+**How this vault keeps personal data and secrets out of reach.**
+
+_Private by design, pointers instead of secrets._
 
 </div>
 
-## The vault holds personal data
+---
 
-This repository is a personal context and memory system. It contains biographical, relational, and other sensitive information about its owner, and it is kept **private** by design. Treat everything here as confidential.
+## 🔐 The Vault Holds Personal Data
 
-## Secrets are pointers, not values
+A vault generated from this template holds biographical, relational and other sensitive
+information about its owner, so it is kept **private**: generate it as a private repository and
+keep it that way. This template itself is public, and every note in it about a person is a blank
+scaffold.
 
-The single most important rule: **no secret is ever stored as a value in this vault.** No API keys, tokens, passwords, or credentials belong in any file. Where a secret must be referenced, the vault stores a pointer to where it lives (a password manager, an environment variable, a vault service), never the secret itself.
+---
 
-This is machine enforced:
+## 🗝️ Secrets Are Pointers, Not Values
 
-- The **secret scan** in `checks.yml` (gitleaks) checks the whole history for cloud keys, tokens, and private-key blocks on every push and pull request.
-- `python3 .github/scripts/scan-pii.py` checks every tracked file for Social Security and card numbers; the vault's CI runs it too, through `check-vault.py`.
+No secret is ever stored in this vault as a value: where one must be referenced, the vault holds a
+pointer to where it lives. The rules and the scans that enforce them are standards':
 
-## Reporting a vulnerability
+- [The golden rules of secrets](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md#-the-golden-rules-of-secrets)
+- [The automated guardians](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md#-automated-guardians), which
+  include the gitleaks scan `checks.yml` runs on every push and pull request.
 
-If you discover a security issue, a leaked secret in history, or a weakness in the vault's safeguards:
+The vault adds one scan of its own: `python3 .github/scripts/scan-pii.py` checks every tracked file
+for Social Security and card numbers, and CI runs it through `check-vault.py`.
+
+---
+
+## 📣 Reporting A Vulnerability
 
 > [!IMPORTANT]
 > Do not open a public issue. Report privately.
 
-Contact the owner, **Tanner Golden**, through [github.com/tannergolden](https://github.com/tannergolden). Please include what you found, where, and how to reproduce it. You will get an acknowledgement, and a fix or a clear explanation of why no change is needed.
+Contact the owner through [their GitHub profile](https://github.com/tannergolden) with what you
+found, where, and how to reproduce it. You will get an acknowledgement, and a fix or a clear
+explanation of why no change is needed.
 
-## If a secret is ever committed
-
-1. Treat it as compromised and rotate it immediately at its source.
-2. Remove it from the working tree and from history.
-3. Record the incident and the rotation so the same value is never trusted again.
-
-A private repository is not a safe place for a live secret. Rotation, not obscurity, is the remedy.
-
-<div align="center">
+If a secret is ever committed, follow standards'
+[incident response protocol](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md#-incident-response-protocol).
 
 ---
 
-Thank you for helping keep this system secure.
+<div align="center">
+
+**Personal data stays private; secrets never arrive.**
+
+[↑ Back to Top](#top)
 
 </div>

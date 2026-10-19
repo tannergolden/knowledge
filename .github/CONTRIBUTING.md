@@ -1,66 +1,92 @@
+<!--
+title: '🛠️ CONTRIBUTING'
+description: 'How to change this vault: read its rules, keep every note to the schema, and commit the way the standards say.'
+tags: [contributing, workflow, obsidian-vault, standards]
+category: docs
+-->
+
+<!-- markdownlint-disable MD041 -->
 <div align="center">
 
-# 🛠️ Contributing
+# 🛠️ CONTRIBUTING
 
-Thanks for working on the BRAIN. This vault is governed, so a little orientation goes a long way.
+<a name="top"></a>
+
+**How to change this vault without breaking what it promises.**
+
+_Read the rules, keep the schema, commit the standard way._
 
 </div>
 
-## Read these first
+---
 
-The BRAIN is not an ordinary repository. Before you change anything, orient yourself:
+## 🧭 Read These First
 
-1. [`AGENTS.md`](../AGENTS.md) is the front door. It points you at the canonical documents in the order you should read them.
-2. [`Constitution.md`](../Constitution.md) is non negotiable governance and wins every conflict.
-3. [`Instructions.md`](../Instructions.md) is the operating manual: structure, protocols, and the frontmatter schema.
+1. [`AGENTS.md`](../AGENTS.md): the rules every agent follows, the universal Constitution first,
+   then the vault's own. People follow them too.
+2. The note of each folder you change, named after the folder (`Memory/Memory.md`): its Rules come
+   first.
+3. [`.docs/vault/`](../.docs/vault/README.md): the note schema, the tag vocabulary and the link
+   topology the checks hold every note to.
 
-An AI agent's first move is the Instructions Section 9 checklist; in Claude Code, the SessionStart hook lists the files to read.
+---
 
-## The rules that matter most
+## 📏 The Vault's Rules That Matter Most
 
 > [!IMPORTANT]
 > These are enforced, not aspirational.
 
-- **Every Markdown content file carries YAML frontmatter** from the closed vocabulary in Constitution Article VII. `python3 .github/scripts/lint-notes.py` is the gate, after every edit and in CI.
-- **Changes are commits.** Git history is the backup and the change record; commit before a risky edit.
-- **Never delete a file without confirmation.** An approved deletion is a `git rm`, recoverable from history.
-- **Never restructure the top-level folders.** Layer 0 and Layer 1 are frozen (Constitution Article II).
-- **Secrets are pointers, not values.** Never commit a key, token, or credential. CI scans every push for them, and for personal numbers.
+- **Every note carries the schema's frontmatter**, tagged only from the closed vocabulary.
+  `python3 .github/scripts/lint-notes.py` is the gate, after every edit and in CI.
+- **Changes are commits.** Git history is the backup and the change record; commit before a risky
+  edit.
+- **Never delete a file without confirmation.** An approved deletion is a `git rm`, recoverable
+  from history.
+- **Never restructure the top folders.** They and the root are the owner's to change.
+- **Keep personal data private.** In this public template every note about a person stays a blank
+  scaffold.
 
-## Commit convention
+---
 
-Commits follow the **AI-Driven Commit Process**: [Conventional Commits](https://www.conventionalcommits.org), one intent per commit.
+## 🌿 Commits, Branches And Reviews
 
-```
-<type>(<scope>): <emoji> <summary>
-```
+This repository follows [`tannergolden/standards`](https://github.com/tannergolden/standards), and
+copies none of it here:
 
-- **Type:** one of `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`, `security`
-- **Summary:** imperative, lowercase, 72 characters or fewer, with exactly one emoji
-- **Body:** two to four sentences on the what, the why, and the impact, plus up to six bullets
+- **Commits:** [Conventional Commits](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Conventional-Commits.md), with a required
+  scope, a body saying why and a `Signed-off-by:` line, which the DCO check on every pull request
+  requires.
+- **Branches:** the [branching strategy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Branching-Strategy-&-Workflow.md).
+- **Pull requests:** [pull requests and code reviews](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Pull-Requests-&-Code-Reviews.md).
+- **Documents:** [document styling and formatting](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md),
+  which exempts the vault's notes from its hidden frontmatter and decorative headers.
+- **Secrets:** [security and secrets](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md).
 
-The commit check on every pull request validates each message against these rules.
+---
 
-```
-feat(secrets): ✨ add a pre-push scan for keys and PII
-docs(readme): 📝 document the vault scripts
-fix(memory): 🐛 stop the tier cascade from doubling date prefixes
-```
+## 🚀 Before You Push
 
-## Before you push
-
-Run every vault check and make sure it is green:
+- [ ] Run every vault check and make sure it is green:
 
 ```bash
 python3 .github/scripts/check-vault.py   # notes, links, skills, agents, personal data, generated parts
 ```
 
-Then push. CI runs the same checks, the secret scan and the commit check. A reviewed false positive in the personal-number scan is kept by putting `pii-allow` in a comment on its line; use it sparingly.
-
-<div align="center">
+- [ ] Redraw anything it reports as stale with `python3 .github/scripts/update-vault.py`.
+- [ ] Push. CI runs the same checks, the secret scan and the commit check. A reviewed false
+      positive in the personal-number scan is kept by putting `pii-allow` in a comment on its line;
+      use it sparingly.
 
 ---
 
-Questions go to **[Tanner Golden](https://github.com/tannergolden)**.
+<div align="center">
+
+**Every note to the schema, every change a commit.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Questions go to [@tannergolden](https://github.com/tannergolden).
 
 </div>

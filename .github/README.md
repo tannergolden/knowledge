@@ -1,89 +1,152 @@
+<!--
+title: '🧠 BRAIN'
+description: 'A public template for a personal knowledge vault: plain Markdown that gives any AI lasting, structured knowledge of one person.'
+tags: [knowledge-vault, obsidian, ai-agents, template]
+category: docs
+-->
+
+<!-- markdownlint-disable MD041 -->
 <div align="center">
 
 # 🧠 BRAIN
 
-**A portable, file-based personal context and memory system for AI.**
+<a name="top"></a>
 
-One folder of plain Markdown that gives any AI model persistent, structured
-knowledge of a person: who they are, what they are working on, and everything
-worth remembering. Model agnostic, embedding agnostic, location independent.
+**A personal context and memory vault for AI, in plain Markdown.**
 
-![License](https://img.shields.io/badge/license-proprietary-b23a35.svg)
-![Access](https://img.shields.io/badge/access-private%20%26%20confidential-b23a35.svg)
-![Format](https://img.shields.io/badge/format-Markdown-16202b.svg)
-![AGENTS.md](https://img.shields.io/badge/AGENTS.md-standard-b9761f.svg)
+_Generate your own, keep it private, and let the AI keep it current._
 
 </div>
 
 ---
 
-> [!IMPORTANT]
-> **Private and confidential.** This repository and everything in it are the private property of Tanner Golden. It is not open source, and no license is granted. No one may use, copy, distribute, or disclose any part of it, or discuss it, without written permission. See [`LICENSE`](../LICENSE).
+## 💡 What It Is
 
-## What it is
+**BRAIN** stands for **B**ehavioral **R**ecursive **A**ugmented **I**ntelligence **N**etwork: it adapts to
+its owner, refines what it holds over time, adds retrieval and memory to a model, and connects
+memory, context and knowledge in one place.
 
-**BRAIN** stands for **B**ehavioral **R**ecursive **A**ugmented **I**ntelligence **N**etwork. It is a personal data layer designed to be dropped into any RAG system, AI agent, or context window. It relies entirely on a consistent folder layout and clean YAML frontmatter, so any model that can read files can use it, with no vendor lock in and no database required.
-
-The BRAIN travels with its owner. It can be loaded into Claude, GPT, Gemini, a LangChain pipeline, or a custom agent, and the structure reads the same everywhere.
+It is a portable personal data layer for any AI agent, retrieval pipeline or context window: who
+you are, what you are working on, and everything worth remembering. It relies on a consistent
+folder layout and clean YAML frontmatter alone, so any model that can read files can use it: no
+database, no embeddings required, no vendor lock-in. Claude, GPT, Gemini, a LangChain pipeline or
+a custom agent all read it the same way.
 
 > [!NOTE]
-> This is a living system, not a static archive. The AI maintains it: reading from it, writing to it, and keeping it current as it learns.
+> This is a living system, not an archive. The AI maintains it: it reads from it, writes to it,
+> and keeps it current as it learns.
 
-## How it is governed
+---
 
-Two documents at the root rule everything an AI does here:
+## 🚀 Make Your Own
 
-| Document | Role |
-|----------|------|
-| [`Constitution.md`](../Constitution.md) | Non negotiable governance. Wins every conflict. |
-| [`Instructions.md`](../Instructions.md) | The operating manual: structure, protocols, the frontmatter schema. |
-| [`AGENTS.md`](../AGENTS.md) | The front door for any agent, following the [AGENTS.md](https://agents.md) standard. |
+- [ ] **Generate a repository from this template, and make it private.** It is made to hold who
+      you are, and every rule in it assumes it stays private.
+- [ ] **Let initialisation run.** It makes the vault yours (the licence holder, the code owner and
+      every note's author) and removes what only the template needs. If nothing happens, dispatch
+      🎯 Standards Lifecycle from the Actions tab.
+- [ ] **Open the folder in Obsidian**, and work with an AI agent in it. Every agent reads
+      [`AGENTS.md`](../AGENTS.md) first.
+- [ ] **Fill in `Profile/`** with the `/identify` skill, which interviews you and writes only what you
+      confirm.
+- [ ] **Stay current.** Run 🔄 Template Sync when you want this template's improvements, and let
+      🔁 Intelligence Sync keep the universal rules in `AGENTS.md` up to date. Both open a pull
+      request; neither changes anything you have not merged.
 
-An agent's first move on arrival is to read the Constitution, then the Instructions, then run the startup checklist. Everything else follows from there.
+---
 
-## The structure
+## 🧭 How It Is Governed
 
+| Where                                                                 | What it holds                                                                                                    |
+| :-------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| [`AGENTS.md`](../AGENTS.md)                                           | The rules every agent follows: the universal Constitution from `tannergolden/intelligence`, then the vault's own |
+| Each folder's note                                                    | That folder's rules and procedures, read before working there                                                    |
+| [`.docs/vault/`](../.docs/vault/README.md)                            | The note schema, the tag vocabulary, the link topology and how to assemble context                               |
+| [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                          |
+
+---
+
+## 🗂️ The Structure
+
+```bash
+.
+├── AGENTS.md    # The rules every agent reads first
+├── Inbox/       # Staging for unsorted files, plus the standing agent teams
+├── Library/     # Reference knowledge in ten classes, never personal
+├── Memory/      # What happened, who is around you, what you decided, what is due
+├── Profile/     # Who you are: values, goals, skills, working style
+├── Projects/    # Personal projects, one folder each
+├── System/      # Workflows, the skills and the generated catalogs
+└── Ventures/    # Each company you run, plus a shared agent workforce
 ```
-BRAIN/
-├── Constitution.md     Governance. Non negotiable.
-├── Instructions.md     The operating manual.
-├── Information.md       What the BRAIN is.
-├── Library/            Universal reference knowledge, a Dewey-like taxonomy.
-├── Profile/            Who the owner is: values, goals, skills, working style.
-├── Memory/             Continuity across sessions: log, decisions, entities, summaries.
-├── Ventures/           Business context, plus a reusable agent workforce.
-├── Projects/           Personal projects and initiatives.
-├── Inbox/              Staging for unsorted input, plus the standing agent faculties.
-└── System/             Workflows, the skills, and the generated catalogs.
-```
 
-## The scripts
+Each top folder has a `README.md` for GitHub and a note named after it for Obsidian and the AI.
 
-The vault's checks and generators are small Python scripts in [`.github/scripts/`](scripts/README.md). Each finds the vault from its own location, so the vault works wherever it is placed, and [`vault.yml`](workflows/vault.yml) runs them all on every pull request.
+---
+
+## ⚙️ The Scripts
+
+The vault's checks and generators are small Python scripts in
+[`.github/scripts/`](scripts/README.md). Each finds the vault from its own location, so the vault
+works wherever it is placed, and [`vault.yml`](workflows/vault.yml) runs them all on every pull
+request.
 
 ```bash
 python3 .github/scripts/check-vault.py    # every check: notes, links, skills, agents, personal data, generated parts
 python3 .github/scripts/update-vault.py   # redraw everything generated: memory tiers, link blocks, catalogs, skill archives
-python3 .github/scripts/lint-notes.py X   # one note against the frontmatter schema
+python3 .github/scripts/lint-notes.py X   # one note against the schema
 ```
 
-In Claude Code the hooks run them on their own: the session start lists what to read, every note written is checked, and the end of a turn redraws what is generated.
-
-## What makes it different
-
-- **Structured over freeform.** Every file carries YAML frontmatter drawn from a closed, linted vocabulary. Nothing enters without metadata.
-- **Governed, not vibes.** A written Constitution, a git history every change is committed to, and checks CI runs on every pull request (the frontmatter schema, the wikilink graph, the skills, the agents, and scans for secrets and personal numbers) keep the vault honest.
-- **A workforce, not just notes.** The BRAIN ships its own skills (research, editorial, visualize, discover, identify, board) that compose teams of specialized agents, and builds new ones with the universal `develop` skill.
-- **Safe by construction.** Nothing is deleted without confirmation, and nothing deleted is lost, since git history keeps it; and a "secrets are pointers, not values" rule that CI's scans back.
-
-## Working in this repository
-
-Commits follow the [AI-Driven Commit Process](.github/CONTRIBUTING.md) (Conventional Commits, one intent per commit), checked on every pull request. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before you start, [`SECURITY.md`](SECURITY.md) before you touch anything sensitive, and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) for how we work together.
-
-<div align="center">
+In Claude Code the hooks run them on their own: the session start lists what to read, every note
+written is checked, and the end of a turn redraws what is generated.
 
 ---
 
-Built and maintained by **[Tanner Golden](https://github.com/tannergolden)** &middot; [tannergolden.com](https://www.tannergolden.com)
+## 🎯 Design Principles
+
+- **Structured over freeform.** Every note carries frontmatter from a closed, checked vocabulary;
+  nothing enters without it.
+- **Relative over absolute.** No hardcoded paths: the vault works wherever it is placed.
+- **Minimal over maximal.** Notes are filled in as information surfaces, never invented up front.
+- **AI-maintained.** The AI keeps the vault current, so you do not have to.
+- **Portable across models.** It works with any model that can read files.
+- **Safe by construction.** Nothing is deleted without your yes, and git history keeps whatever is.
+
+---
+
+## 👤 The Developer
+
+The BRAIN was designed and built by **Tanner Golden**: its folder structure, naming conventions,
+agent instructions and scripts all originate with him, and "the developer" means him. "The user"
+means whoever `Profile/` describes: the vault is portable, so the user is whoever adopts it.
+
+<!-- The domain is capitalised on purpose: initialisation rewrites the template owner's
+handle wherever it stands alone, and this address must survive in every vault. -->
+
+Website: [TannerGolden.com](https://www.TannerGolden.com) · The template:
+[`tannergolden/knowledge`](https://github.com/tannergolden/knowledge)
+
+---
+
+## 🤝 Working On The Template
+
+Work on the template follows [`tannergolden/standards`](https://github.com/tannergolden/standards):
+[Conventional Commits](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Conventional-Commits.md), the
+[branching strategy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Branching-Strategy-&-Workflow.md) and
+[pull request reviews](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Pull-Requests-&-Code-Reviews.md). Read
+[`CONTRIBUTING.md`](CONTRIBUTING.md) before you start, [`SECURITY.md`](SECURITY.md) before you touch
+anything sensitive, and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) for how we work together.
+
+---
+
+<div align="center">
+
+**Your context, in your files, for any model you choose.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Distributed under the MIT License.
 
 </div>
