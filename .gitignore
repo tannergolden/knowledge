@@ -158,6 +158,11 @@ _site/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache
+# Backups plugins write beside their data, and Obsidian Git's password prompt,
+# which it writes again whenever it needs one.
+.obsidian/**/*.backup*
+.obsidian/*.bak-*
+.obsidian/plugins/obsidian-git/obsidian_askpass.sh
 
 # Obsidian community plugins and themes are third-party releases that Obsidian
 # reinstalls from its catalog, so their code stays out. Each plugin's settings
