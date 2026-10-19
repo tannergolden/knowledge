@@ -30,7 +30,7 @@ jobs:
       contents: read # read the vault
     steps:
       - name: '🛡️ Harden Runner'
-        uses: tannergolden/standards/actions/harden@v1
+        uses: tannergolden/standards/.github/actions/harden@v1
         with:
           egress-policy: audit
           notice: '🧠 Checking the notes, links, skills, agents and generated parts of the vault.'
