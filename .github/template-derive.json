@@ -17,5 +17,7 @@
     "assets": ".assets",
     "docs": ".docs"
   },
-  "replace": []
+  "replace": [
+    {"under": "docs", "from": "Proprietary and confidential; all rights reserved.", "to": "Distributed under the MIT License."}
+  ]
 }
