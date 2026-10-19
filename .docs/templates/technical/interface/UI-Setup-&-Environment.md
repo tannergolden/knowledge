@@ -13,7 +13,7 @@ category: docs
 
 **Setting up the frontend development environment.**
 
-_Deterministic environments. Parity-first. Streamlined onboarding._
+_Deterministic environments. Parity-first. Fast onboarding._
 
 </div>
 
@@ -100,6 +100,6 @@ Transforming source code into production-grade artifacts.
 
 <br />
 
-Built with ❤️ by the Engineering Team. Proprietary and confidential; all rights reserved.
+Built with ❤️ by the Engineering Team. Distributed under the MIT License.
 
 </div>

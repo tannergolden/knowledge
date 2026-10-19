@@ -21,7 +21,7 @@ _Zero-downtime. Proactive monitoring. Rapid rollback._
 
 ## 🎯 Our Deployment Strategy
 
-We prioritize stability and availability above all else. Our deployment protocols are designed to ensure that new features reach users without interruption, while providing robust safety nets for immediate recovery.
+We prioritize stability and availability above all else. Our deployment protocols are designed to ensure that new features reach users without interruption, while providing reliable safety nets for immediate recovery.
 
 - **Immutability**: We deploy artifacts, not live code changes.
 - **Observability**: No deployment is considered "done" until health metrics are verified.
@@ -95,6 +95,6 @@ The emergency break-glass procedure.
 
 <br />
 
-Built with ❤️ by the Engineering Team. Proprietary and confidential; all rights reserved.
+Built with ❤️ by the Engineering Team. Distributed under the MIT License.
 
 </div>

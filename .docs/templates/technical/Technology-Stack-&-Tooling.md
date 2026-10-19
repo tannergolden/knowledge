@@ -25,7 +25,7 @@ We adhere to a **Universal Technology Stack** philosophy. This allows for flexib
 
 - **Standardized Interop**: Regardless of the tool, it must integrate with our Makefile and CI standards.
 - **Traceability**: Every pivot or architectural change must be recorded in this document.
-- **AI-Augmented**: We leverage modern AI builders and IDEs to accelerate delivery without sacrificing quality.
+- **AI-Augmented**: We use modern AI builders and IDEs to accelerate delivery without sacrificing quality.
 
 ---
 
@@ -86,13 +86,13 @@ The tools ensuring stability and automated promotion.
 
 Mapping the project-specific tools to the universal repository interface (Makefile).
 
-| Makefile Target   | Execution Logic           | Strategic Purpose                         |
-| :---------------- | :------------------------ | :---------------------------------------- |
-| **Setup** | `[e.g., npm ci, or make setup]` | Bootstrap the local workspace. |
-| **Lint** (`lint-command`) | `[e.g., eslint .]` | Static analysis and style enforcement. |
-| **Test** (`test-command`) | `[e.g., vitest run]` | Execution of the validation suite. |
-| **Build** (`build-command`) | `[e.g., vite build]` | Transformation into deployable artifacts. |
-| **`make deploy`** | `[e.g., terraform apply]` | Environmental promotion.                  |
+| Makefile Target             | Execution Logic                 | Strategic Purpose                         |
+| :-------------------------- | :------------------------------ | :---------------------------------------- |
+| **Setup**                   | `[e.g., npm ci, or make setup]` | Bootstrap the local workspace.            |
+| **Lint** (`lint-command`)   | `[e.g., eslint .]`              | Static analysis and style enforcement.    |
+| **Test** (`test-command`)   | `[e.g., vitest run]`            | Execution of the validation suite.        |
+| **Build** (`build-command`) | `[e.g., vite build]`            | Transformation into deployable artifacts. |
+| **`make deploy`**           | `[e.g., terraform apply]`       | Environmental promotion.                  |
 
 ### 🔗 See also
 
@@ -109,6 +109,6 @@ Mapping the project-specific tools to the universal repository interface (Makefi
 
 <br />
 
-Built with ❤️ by the Engineering Team. Proprietary and confidential; all rights reserved.
+Built with ❤️ by the Engineering Team. Distributed under the MIT License.
 
 </div>

@@ -58,7 +58,7 @@ Standardizing the language of our codebase.
 
 The physical organization of the client-side domain.
 
-```txt
+```bash
 /src
 ├── components/    # Reusable, atomic UI elements.
 ├── features/      # Business logic and domain modules.
@@ -103,6 +103,6 @@ How we explain our technical decisions and present our data.
 
 <br />
 
-Built with ❤️ by the Engineering Team. Proprietary and confidential; all rights reserved.
+Built with ❤️ by the Engineering Team. Distributed under the MIT License.
 
 </div>

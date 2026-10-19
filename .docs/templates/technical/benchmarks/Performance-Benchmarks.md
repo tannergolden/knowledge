@@ -5,7 +5,6 @@ tags: [performance, benchmarks, metrics, testing]
 category: docs
 -->
 
-
 <div align="center">
 
 # ⚡ PERFORMANCE BENCHMARKS
@@ -73,6 +72,6 @@ Store each run as a dated entry using the [&#x1F50E; Research Log template](../.
 
 <br />
 
-Built with ❤️ by the Engineering Team. Proprietary and confidential; all rights reserved.
+Built with ❤️ by the Engineering Team. Distributed under the MIT License.
 
 </div>

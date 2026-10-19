@@ -5,7 +5,6 @@ tags: [monorepo, packages, architecture, workspaces]
 category: docs
 -->
 
-
 <div align="center">
 
 # 📦 PACKAGES & WORKSPACES
@@ -36,7 +35,7 @@ Stay single-package until you have a concrete second consumer. Adopt a workspace
 - **Manifest**: `[package.json "workspaces" | pnpm-workspace.yaml]`
 - **Layout**:
 
-```txt
+```bash
 / (repo root)
 ├── apps/
 │   └── [app-name]/          # Deployable applications
@@ -73,6 +72,6 @@ Stay single-package until you have a concrete second consumer. Adopt a workspace
 
 <br />
 
-Built with ❤️ by the Engineering Team. Proprietary and confidential; all rights reserved.
+Built with ❤️ by the Engineering Team. Distributed under the MIT License.
 
 </div>
