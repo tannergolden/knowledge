@@ -97,6 +97,7 @@
 # This template's own files. Every vault generated from it keeps them current:
 # the scripts, governance, skills, agents, folder notes and scaffolds.
 /.claude/**
+/.docs/vault/**
 /.github/CODE_OF_CONDUCT.md
 /.github/CONTRIBUTING.md
 /.github/README.md
@@ -129,13 +130,10 @@
 /.obsidian/snippets/**
 /.typos.toml
 /AGENTS.md
-/CLAUDE.md
-/Constitution.md
-/Information.md
-/Instructions.md
 /Inbox/Faculties/**
 /Inbox/Ideas/Ideas.md
 /Inbox/Inbox.md
+/Inbox/README.md
 /Inbox/Reports/Reports.md
 /Inbox/Visuals/Visuals.md
 /Library/**
@@ -149,20 +147,25 @@
 /Memory/Events/Events.md
 /Memory/Insights/Insights.md
 /Memory/Memory.md
+/Memory/README.md
 /Profile/.template/**
 /Profile/Goals/Goals.md
 /Profile/Health/Health.md
 /Profile/Profile.md
+/Profile/README.md
 /Profile/Skills/Skills.md
 /Profile/Values/Values.md
 /Projects/.template/**
 /Projects/Projects.md
+/Projects/README.md
 /System/Data/Data.md
+/System/README.md
 /System/Skills/**
 /System/System.md
 /System/Workflows.md
 /Ventures/.template/**
 /Ventures/Agent Resources (AR)/**
+/Ventures/README.md
 /Ventures/Ventures.md
 
 # --- Yours: seeded once, never synced -----------------------------------------
@@ -173,8 +176,9 @@
 
 # --- The vault: yours ---------------------------------------------------------
 # Each vault's own: what its owner writes about themselves, the logs they keep,
-# their Obsidian settings, and the catalogs drawn from their notes.
-#/.obsidian/*.bak-*
+# their Obsidian settings, the catalogs drawn from their notes, and the stub
+# that keeps the universal rules in AGENTS.md current.
+#/.github/workflows/intelligence-sync.yml
 #/.obsidian/*.json
 #/.obsidian/plugins/**
 #/Memory/Dates.md
@@ -192,8 +196,11 @@
 
 # --- Only ever in the template ----------------------------------------------
 # Initialisation deletes each of these from every repository generated from
-# this template: they hold its derivation from the golden path template it
-# follows, which nothing generated from it needs.
+# this template: the sentinel that lets it run, the template's derivation from
+# the golden path template it follows, and the record of this template's own
+# design, none of which a vault needs.
+#/.docs/adrs/ADR-0001-AGENTS-Holds-The-Vaults-Rules.md
+#/.github/TEMPLATE_INIT
 #/.github/template-derive.json
 #/.github/template-derive.lock
 
