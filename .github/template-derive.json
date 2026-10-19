@@ -1,0 +1,21 @@
+{
+  "format": 1,
+  "name": "🔄 Template Sync",
+  "source": ".github/template-derive.json",
+  "lock": ".github/template-derive.lock",
+  "list": ".github/template-sync",
+  "exclude": [
+    ".github/scripts/template-parity.py",
+    ".github/scripts/test_template_parity.py",
+    ".github/template-parity.lock",
+    ".github/template-parity.yml",
+    ".github/workflows/template-parity.yml",
+    "LICENSE",
+    "README.md"
+  ],
+  "relocate": {
+    "assets": ".assets",
+    "docs": ".docs"
+  },
+  "replace": []
+}

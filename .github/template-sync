@@ -1,15 +1,15 @@
 # --- 🔄 Template Sync ---
 #
-# Every path tannergolden/repo ships, and whether 🔄 Template Sync, when you run
-# it, keeps it current in this repository. How it all works:
+# Every path tannergolden/knowledge ships, and whether 🔄 Template Sync, when
+# you run it, keeps it current in this repository. How it all works:
 # .github/template-sync.md, beside this.
 #
 # A line naming a path keeps it current. A `#` with no space before a path -
-# `#/README.md` - leaves that path to you. A line starting `# ` is a note.
+# `#/LICENSE` - leaves that path to you. A line starting `# ` is a note.
 #
 # To keep a file as yours, put a `#` in front of its line; to have the
 # template keep it current again, take the `#` away. Rules of your own - a
-# pattern like `!/docs/**` to stop a whole folder - go under "Your rules" at
+# pattern like `!/.docs/**` to stop a whole folder - go under "Your rules" at
 # the end, and win over everything above them. Each sync redraws this file
 # from the template's latest list and keeps every choice you made in it.
 #
@@ -58,60 +58,143 @@
 /.vscode/extensions.json
 /.vscode/settings.json
 
-/docs/README.md
-/docs/adrs/README.md
-/docs/templates/ADR.md
-/docs/templates/Communication.md
-/docs/templates/Implementation-Plan.md
-/docs/templates/Post-Mortem.md
-/docs/templates/README.md
-/docs/templates/Research-Log.md
-/docs/templates/Technical-Design.md
-/docs/templates/User-Story.md
-/docs/templates/technical/Packages-&-Workspaces.md
-/docs/templates/technical/README.md
-/docs/templates/technical/Source-Code.md
-/docs/templates/technical/Technology-Stack-&-Tooling.md
-/docs/templates/technical/backend/API-Design-Standards.md
-/docs/templates/technical/backend/Authentication-&-Security.md
-/docs/templates/technical/backend/README.md
-/docs/templates/technical/backend/Schema-&-Validation.md
-/docs/templates/technical/benchmarks/Performance-Benchmarks.md
-/docs/templates/technical/benchmarks/README.md
-/docs/templates/technical/database/Data-Models-&-Entities.md
-/docs/templates/technical/database/Migration-Policies.md
-/docs/templates/technical/database/README.md
-/docs/templates/technical/infrastructure/CI-CD-Pipelines.md
-/docs/templates/technical/infrastructure/Deployment-Protocols.md
-/docs/templates/technical/infrastructure/Environment-Configuration.md
-/docs/templates/technical/infrastructure/README.md
-/docs/templates/technical/interface/Formatting-&-Standards.md
-/docs/templates/technical/interface/README.md
-/docs/templates/technical/interface/Styling-&-Theming.md
-/docs/templates/technical/interface/UI-Setup-&-Environment.md
-/docs/templates/technical/testing/E2E-Testing.md
-/docs/templates/technical/testing/README.md
-/docs/templates/technical/testing/Unit-Test-Standards.md
+/.docs/README.md
+/.docs/adrs/README.md
+/.docs/templates/ADR.md
+/.docs/templates/Communication.md
+/.docs/templates/Implementation-Plan.md
+/.docs/templates/Post-Mortem.md
+/.docs/templates/README.md
+/.docs/templates/Research-Log.md
+/.docs/templates/Technical-Design.md
+/.docs/templates/User-Story.md
+/.docs/templates/technical/Packages-&-Workspaces.md
+/.docs/templates/technical/README.md
+/.docs/templates/technical/Source-Code.md
+/.docs/templates/technical/Technology-Stack-&-Tooling.md
+/.docs/templates/technical/backend/API-Design-Standards.md
+/.docs/templates/technical/backend/Authentication-&-Security.md
+/.docs/templates/technical/backend/README.md
+/.docs/templates/technical/backend/Schema-&-Validation.md
+/.docs/templates/technical/benchmarks/Performance-Benchmarks.md
+/.docs/templates/technical/benchmarks/README.md
+/.docs/templates/technical/database/Data-Models-&-Entities.md
+/.docs/templates/technical/database/Migration-Policies.md
+/.docs/templates/technical/database/README.md
+/.docs/templates/technical/infrastructure/CI-CD-Pipelines.md
+/.docs/templates/technical/infrastructure/Deployment-Protocols.md
+/.docs/templates/technical/infrastructure/Environment-Configuration.md
+/.docs/templates/technical/infrastructure/README.md
+/.docs/templates/technical/interface/Formatting-&-Standards.md
+/.docs/templates/technical/interface/README.md
+/.docs/templates/technical/interface/Styling-&-Theming.md
+/.docs/templates/technical/interface/UI-Setup-&-Environment.md
+/.docs/templates/technical/testing/E2E-Testing.md
+/.docs/templates/technical/testing/README.md
+/.docs/templates/technical/testing/Unit-Test-Standards.md
+
+# --- The vault: kept current --------------------------------------------------
+# This template's own files. Every vault generated from it keeps them current:
+# the scripts, governance, skills, agents, folder notes and scaffolds.
+/.claude/**
+/.github/CODE_OF_CONDUCT.md
+/.github/CONTRIBUTING.md
+/.github/README.md
+/.github/SECURITY.md
+/.github/actions/**
+/.github/scripts/check-agents.py
+/.github/scripts/check-links.py
+/.github/scripts/check-skills.py
+/.github/scripts/check-vault.py
+/.github/scripts/fixtures.py
+/.github/scripts/knowledge-base.py
+/.github/scripts/lint-notes.py
+/.github/scripts/profile-coverage.py
+/.github/scripts/scan-pii.py
+/.github/scripts/session-hooks.py
+/.github/scripts/test_check_agents.py
+/.github/scripts/test_check_links.py
+/.github/scripts/test_check_skills.py
+/.github/scripts/test_check_vault.py
+/.github/scripts/test_knowledge_base.py
+/.github/scripts/test_lint_notes.py
+/.github/scripts/test_profile_coverage.py
+/.github/scripts/test_scan_pii.py
+/.github/scripts/test_session_hooks.py
+/.github/scripts/test_update_vault.py
+/.github/scripts/test_vault.py
+/.github/scripts/update-vault.py
+/.github/scripts/vault.py
+/.github/workflows/vault.yml
+/.obsidian/snippets/**
+/.typos.toml
+/AGENTS.md
+/CLAUDE.md
+/Constitution.md
+/Information.md
+/Instructions.md
+/Inbox/Faculties/**
+/Inbox/Ideas/Ideas.md
+/Inbox/Inbox.md
+/Inbox/Reports/Reports.md
+/Inbox/Visuals/Visuals.md
+/Library/**
+/Memory/.template/**
+/Memory/Context/**
+/Memory/Decisions/Decisions.md
+/Memory/Entities/Entities.md
+/Memory/Entities/Organizations/Organizations.md
+/Memory/Entities/People/People.md
+/Memory/Entities/Places/Places.md
+/Memory/Events/Events.md
+/Memory/Insights/Insights.md
+/Memory/Memory.md
+/Profile/.template/**
+/Profile/Goals/Goals.md
+/Profile/Health/Health.md
+/Profile/Profile.md
+/Profile/Skills/Skills.md
+/Profile/Values/Values.md
+/Projects/.template/**
+/Projects/Projects.md
+/System/Data/Data.md
+/System/Skills/**
+/System/System.md
+/System/Workflows.md
+/Ventures/.template/**
+/Ventures/Agent Resources (AR)/**
+/Ventures/Ventures.md
 
 # --- Yours: seeded once, never synced -----------------------------------------
-#/README.md
 #/LICENSE
 #/.github/CODEOWNERS
 #/.github/workflows/cut-release.yml
-#/assets/**
+#/.assets/**
+
+# --- The vault: yours ---------------------------------------------------------
+# Each vault's own: what its owner writes about themselves, the logs they keep,
+# their Obsidian settings, and the catalogs drawn from their notes.
+#/.obsidian/*.bak-*
+#/.obsidian/*.json
+#/.obsidian/plugins/**
+#/Memory/Dates.md
+#/Memory/Log.md
+#/Profile/Biography.md
+#/Profile/Finances.md
+#/Profile/Focus.md
+#/Profile/Lifestyle.md
+#/Profile/Personality.md
+#/Profile/Preferences.md
+#/Profile/Relationships.md
+#/Profile/Working Style.md
+#/System/Data/agent-catalog.json
+#/System/Data/catalog.ndjson
 
 # --- Only ever in the template ----------------------------------------------
 # Initialisation deletes each of these from every repository generated from
-# the template - but the workflow, since GitHub lets its token change nothing
-# under .github/workflows/. That one it names for you to delete.
-#/.github/TEMPLATE_INIT
-#/.github/template-parity.lock
-#/.github/template-parity.yml
-#/.github/scripts/template-parity.py
-#/.github/scripts/test_template_parity.py
-#/.github/workflows/template-parity.yml
+# this template: they hold its derivation from the golden path template it
+# follows, which nothing generated from it needs.
+#/.github/template-derive.json
+#/.github/template-derive.lock
 
 # --- Your rules ---------------------------------------------------------------
-# keep mine: /.gitignore
-# docs/ lives at .docs/ here, hidden, so the template's visible copy stays out.
-!/docs/**
