@@ -1,20 +1,9 @@
----
+<!--
 title: "[Project Name] - Notes"
 description: "Freeform capture space for project ideas, brainstorming, research findings, and thoughts. Prune aggressively - acted-on ideas should be removed."
-status: "active"
-tags: ["projects", "template"]
-aliases: []
-keywords: ["brainstorming", "freeform capture", "ideas", "research findings", "scratch space", "thoughts", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "projects"
-layer: 2
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Projects/[Project-Name]/Notes.md"
-id: "pr-notes"
----
+keywords: ["brainstorming", "freeform capture", "ideas", "research findings", "scratch space", "thoughts", "template"]
+-->
 
 # 🗒️ [Project Name] - Notes
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Operations & Management - Folder Information"
 description: "Applied operations, project, and quality management practice."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["operations", "management", "applied", "project", "quality", "practice"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Operations & Management/Operations & Management.md"
-id: "li-operations-management"
----
+type: "index"
+keywords: ["applied", "project", "quality", "practice"]
+-->
 
 # 📁 Library / Technology & Applied Science / Operations & Management /
 

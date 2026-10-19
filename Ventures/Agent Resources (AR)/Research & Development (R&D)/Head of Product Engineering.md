@@ -1,21 +1,7 @@
 ---
-title: "Head of Product Engineering"
 name: "Leonard"
 description: "Dispatch this agent as the Head of Product Engineering: Owns prototype-to-production product engineering distinct from internal IT and from research; returns the build architecture and productionization plan. FLATTENED from a starred sub-lead to a specialist to preserve the strict two-tier model  -  carries NO Task."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Leonard", "Head of Product Engineering"]
-keywords: ["head", "product", "engineering", "research", "development", "agent"]
 tools: Read, Grep, Glob
-created: 2026-06-29
-updated: 2026-06-29
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/Head of Product Engineering.md"
-id: "ve-head-of-product-engineering"
 ---
 
 # 🚀 Head of Product Engineering

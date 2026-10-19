@@ -1,20 +1,9 @@
----
+<!--
 title: "Law & Justice - Folder Information"
 description: "Legal systems, jurisprudence, rights, and justice."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["law", "justice", "legal", "systems", "jurisprudence", "rights"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Law & Justice/Law & Justice.md"
-id: "li-law-justice"
----
+type: "index"
+keywords: ["legal", "systems", "jurisprudence", "rights"]
+-->
 
 # 📁 Library / Society & Social Sciences / Law & Justice /
 

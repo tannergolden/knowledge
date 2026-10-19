@@ -1,8 +1,8 @@
 <!--
 title: '🔗 LINK TOPOLOGY'
 description: 'Which notes may wikilink which, so the vault''s graph mirrors its folder tree and never loops.'
-tags: [wikilinks, graph, obsidian-vault, topology]
-category: docs
+type: standard
+keywords: [wikilinks, graph]
 -->
 
 <!-- markdownlint-disable MD041 -->
@@ -23,14 +23,14 @@ _Links flow downhill. Backlinks carry the way back._
 ## 🎯 The Rule
 
 Whenever a note names an entity the vault has a file for (a project, a venture, a person, a
-concept), it uses an Obsidian wikilink, `[[Filename]]`, wherever the topology below allows the
-edge, and a plain code-style path where it does not. The links make the vault a knowledge graph
-that Obsidian's backlinks and graph view can navigate.
+concept), it uses a wikilink, `[[Filename]]`, wherever the topology below allows the edge, and a
+plain code-style path where it does not. The links make the vault a knowledge graph that an agent
+and `check-links.py` can walk.
 
 `.github/scripts/check-links.py` enforces the topology: it fails on a link to nothing, a link the
 topology does not allow, a link into a scaffold and two notes that link each other, and warns on a
-link that matches several files and on longer cycles. Links inside code and inside Obsidian `%%`
-comments are not links.
+link that matches several files and on longer cycles. Links inside code, or inside a `%%`
+comment, are not links.
 
 ---
 
@@ -41,12 +41,12 @@ The graph mirrors the file tree, and only folder notes carry edges:
 | From                               | May wikilink                                                                                     |
 | :--------------------------------- | :----------------------------------------------------------------------------------------------- |
 | A folder note (`Memory/Memory.md`) | The files in its own folder, and the notes of its immediate subfolders, one level down           |
-| Any other note                     | **Nothing.** Every reference is a plain code-style path; Obsidian's backlinks still show its hub |
+| Any other note                     | **Nothing.** Every reference is a plain code-style path; its hub's link already leads to it      |
 | A file at the vault root           | Nothing. The root holds no notes: `AGENTS.md` names the top folder notes with Markdown links     |
 
 - **Links cascade, never reciprocate.** Links run from the top folders down to their files, from
-  the general to the specific. A note never links back to a note that links to it: Obsidian's
-  backlinks already show that. Where two notes both want the edge, the one nearer the root carries
+  the general to the specific. A note never links back to a note that links to it: the
+  forward link already records the edge. Where two notes both want the edge, the one nearer the root carries
   it, and the graph stays acyclic.
 - **Related folders connect through their common parent**, never sideways.
 - **The memory tiers are ordinary.** `Memory/Memory.md` links `Context/Context.md`, which links the
@@ -59,7 +59,7 @@ The graph mirrors the file tree, and only folder notes carry edges:
 ## 🚫 Where Wikilinks Never Go
 
 - **A `.template/` folder** neither contains wikilinks nor receives them. A scaffold is not a
-  graph node, and a link to one invites Obsidian to create a stray note. Name a scaffold by plain
+  graph node, and a link to one drags it into the graph. Name a scaffold by plain
   path.
 - **A skill's sources** in `System/Skills/.unpackaged/` neither contain nor receive them. Each
   skill's node in the graph is its packaged `.skill` archive, which `System/Skills/Skills.md` links

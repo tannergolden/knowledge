@@ -1,20 +1,9 @@
----
+<!--
 title: "Military & Security - Folder Information"
 description: "Military science, strategy, defense, and security and peace studies."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["military", "security", "science", "strategy", "defense", "peace"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Military & Security/Military & Security.md"
-id: "li-military-security"
----
+type: "index"
+keywords: ["science", "strategy", "defense", "peace"]
+-->
 
 # 📁 Library / Society & Social Sciences / Military & Security /
 

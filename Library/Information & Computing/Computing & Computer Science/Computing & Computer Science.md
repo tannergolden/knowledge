@@ -1,20 +1,9 @@
----
+<!--
 title: "Computing & Computer Science - Folder Information"
 description: "Algorithms, computation theory, programming languages, data structures as a field of study."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["computing", "computer", "science", "algorithms", "computation", "theory"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/Computing & Computer Science/Computing & Computer Science.md"
-id: "li-computing-computer-science"
----
+type: "index"
+keywords: ["algorithms", "computation", "theory"]
+-->
 
 # 📁 Library / Information & Computing / Computing & Computer Science /
 

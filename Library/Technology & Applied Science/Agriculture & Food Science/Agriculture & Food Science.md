@@ -1,20 +1,9 @@
----
+<!--
 title: "Agriculture & Food Science - Folder Information"
 description: "Farming, food production, husbandry, veterinary medicine, and food technology."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["agriculture", "food", "science", "farming", "production", "husbandry"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Agriculture & Food Science/Agriculture & Food Science.md"
-id: "li-agriculture-food-science"
----
+type: "index"
+keywords: ["farming", "production", "husbandry"]
+-->
 
 # 📁 Library / Technology & Applied Science / Agriculture & Food Science /
 

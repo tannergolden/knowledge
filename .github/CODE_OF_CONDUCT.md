@@ -1,8 +1,8 @@
 <!--
 title: '🤝 CODE OF CONDUCT'
 description: 'How everyone who works on this vault, people and AI agents alike, treats each other and the owner''s data.'
-tags: [conduct, community, privacy, obsidian-vault]
-category: docs
+type: standard
+keywords: [community, privacy]
 -->
 
 <!-- markdownlint-disable MD041 -->

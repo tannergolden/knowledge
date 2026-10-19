@@ -1,20 +1,9 @@
----
+<!--
 title: "System - Folder Information"
 description: "Explains the purpose of the System/ folder: AI behavior configuration, persona settings, workflow loops, the skill library, and the generated catalogs. The vault's scripts live in .github/scripts/."
-status: "active"
-tags: ["system", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["ai configuration", "persona settings", "operating context", "control panel", "vault scripts", "behavior config", "folder overview"]
-created: 2026-05-18
-updated: 2026-10-19
-type: "information"
-folder: "system"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/System.md"
-id: "sy-system"
----
+-->
 
 # ⚙️ System/
 
@@ -57,7 +46,7 @@ Machine-written and never hand-edited; `.github/scripts/update-vault.py` draws b
 
 | Path | Purpose |
 |------|---------|
-| `Data/catalog.ndjson` | One JSON record per note (`.template/` scaffolds excluded): path, title, type, folder, layer, tags, keywords, description, status and updated. The vault's live listing of what exists, readable by any AI or tool. |
+| `Data/catalog.ndjson` | One JSON record per note (`.template/` scaffolds excluded): path, title, type, keywords, description and status. The vault's live listing of what exists, readable by any AI or tool. |
 | `Data/agent-catalog.json` | Every agent (spoken name, role, home, team, description) and every team roster in the federated agent library. The agents themselves are the source of truth; skills check a name against this before dispatching it. |
 
 ---
@@ -69,7 +58,7 @@ The vault's checks and generators are scripts in `.github/scripts/`, run from th
 | Script | What it does |
 |--------|--------------|
 | `check-vault.py` | Runs every check below, as CI does. The one command to run before a commit. |
-| `lint-notes.py` | Every note's frontmatter, tags and naming against the schema (`.docs/vault/Note-Schema.md`) and the tag vocabulary (`.docs/vault/Tag-Vocabulary.md`). |
+| `lint-notes.py` | Every note's frontmatter and naming against the schema (`.docs/vault/Note-Schema.md`) and its keywords (`.docs/vault/Keywords.md`). |
 | `check-links.py` | The wikilink graph: every link resolves and follows the hub topology (`.docs/vault/Link-Topology.md`). |
 | `check-skills.py` | Each skill source against the Agent Skills format and the layout in `Skills/Skills.md`. |
 | `check-agents.py` | Each agent spec and team roster, and one namespace across every home. |

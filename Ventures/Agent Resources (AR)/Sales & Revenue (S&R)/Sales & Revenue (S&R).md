@@ -1,22 +1,9 @@
----
+<!--
 title: "Sales & Revenue (S&R)"
 description: "Sales and revenue: pipeline, the close, revenue operations, sales engineering, enablement, and channel, owning the revenue number."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["Sales", "Revenue", "S&R", "RevOps"]
-keywords: ["sales", "revenue", "pipeline", "quota", "revops"]
-members: ["★ Chief Revenue Officer", "Account Executive", "Revenue Operations Manager", "Sales Engineer", "Product Marketing Manager", "Demand Generation Manager"]
-lead: ★ Chief Revenue Officer
-created: 2026-06-29
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Sales & Revenue (S&R).md"
-id: "ve-sales-revenue"
----
+type: "index"
+keywords: ["s&r", "revops", "pipeline", "quota"]
+-->
 # 💰 Sales & Revenue (S&R)
 
 Sales and revenue: pipeline, the close, revenue operations, sales engineering, enablement, and channel, owning the revenue number.

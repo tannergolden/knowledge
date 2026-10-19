@@ -1,20 +1,9 @@
----
+<!--
 title: "Practical How-To - Folder Information"
 description: "General step-by-step guides not covered above (kept narrow)."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["practical", "how-to", "general", "step-by-step", "guides", "covered"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Practical How-To/Practical How-To.md"
-id: "li-practical-how-to"
----
+type: "index"
+keywords: ["how-to", "general", "step-by-step", "guides", "covered"]
+-->
 
 # 📁 Library / Life & Practice / Practical How-To /
 

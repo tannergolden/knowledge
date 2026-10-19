@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Legal & Compliance"
 description: "Legal structure, contracts, licenses, IP, and compliance obligations for [Company]."
-status: "active"
-tags: ["ventures", "template", "sensitive"]
-aliases: ["Legal"]
-keywords: ["legal structure", "contracts", "licenses", "intellectual property", "regulatory", "compliance obligations", "legal compliance", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Legal & Compliance (L&C)/Compliance.md"
-id: "ve-compliance"
----
+keywords: ["legal structure", "contracts", "licenses", "intellectual property", "regulatory", "compliance obligations", "legal compliance", "template"]
+-->
 
 # 📜 [Company] - Legal & Compliance
 

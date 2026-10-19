@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Strategy"
 description: "The company thesis for [Company]: where it plays, how it wins, the market and competitive analysis, and the strategic bets the OKRs ladder up to."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["Business Plan", "Strategic Plan"]
-keywords: ["strategy", "company thesis", "where to play", "how to win", "competitive analysis", "strategic bets", "three horizons", "template"]
-created: 2026-06-29
-updated: 2026-06-29
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Administration/Strategy.md"
-id: "ve-strategy"
----
+keywords: ["business plan", "strategic plan", "company thesis", "where to play", "how to win", "competitive analysis", "strategic bets", "three horizons"]
+-->
 
 # ♟️ [Company] - Strategy
 

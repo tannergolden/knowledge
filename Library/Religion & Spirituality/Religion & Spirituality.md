@@ -1,20 +1,9 @@
----
+<!--
 title: "Religion & Spirituality - Folder Information"
 description: "Religion and spirituality studied neutrally, with every tradition treated as a peer and none privileged."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["religion", "spirituality", "theology", "mythology", "comparative religion", "ritual", "faith"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Religion & Spirituality.md"
-id: "li-religion-spirituality"
----
+type: "index"
+keywords: ["theology", "mythology", "comparative religion", "ritual", "faith"]
+-->
 
 # 🕊️ Library / Religion & Spirituality /
 

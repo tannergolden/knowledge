@@ -1,20 +1,9 @@
----
+<!--
 title: "Ethics & Moral Philosophy - Folder Information"
 description: "Moral theory, applied and professional ethics, value theory."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["ethics", "moral", "philosophy", "theory", "applied", "professional"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Ethics & Moral Philosophy/Ethics & Moral Philosophy.md"
-id: "li-ethics-moral-philosophy"
----
+type: "index"
+keywords: ["theory", "applied", "professional"]
+-->
 
 # 📁 Library / Philosophy & Mind / Ethics & Moral Philosophy /
 

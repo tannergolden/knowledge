@@ -1,22 +1,9 @@
----
+<!--
 title: "Legal & Compliance (L&C)"
 description: "The Legal & Compliance (L&C) department of the agent workforce: contracts, intellectual property, entity, regulatory matters, and risk. Led by its department head, with more specialists added by demand."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["L&C", "Legal", "Compliance"]
-keywords: ["legal", "compliance", "contracts", "intellectual property", "risk"]
-members: ["★ General Counsel", "Commercial Counsel", "Compliance Officer", "Privacy & Data Protection Counsel"]
-lead: ★ General Counsel
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Legal & Compliance (L&C).md"
-id: "ve-legal-compliance"
----
+type: "index"
+keywords: ["l&c", "contracts", "intellectual property", "risk"]
+-->
 # 📜 Legal & Compliance (L&C)
 
 The Legal & Compliance (L&C) department of the agent workforce: contracts, intellectual property, entity, regulatory matters, and risk.

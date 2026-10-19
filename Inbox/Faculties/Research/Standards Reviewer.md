@@ -1,21 +1,7 @@
 ---
-title: "Standards Reviewer"
 name: "Sterling"
 description: "Dispatch this agent to vet sensitive or external-facing output for legal, ethical, and domain-standards risk before it ships: libel, privacy, intellectual property and licensing, regulated claims, and disclosure standards, naming the specific rule and the required change. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Sterling", "Standards Reviewer"]
-keywords: ["standards review", "legal risk", "libel", "privacy", "intellectual property", "compliance"]
 tools: Read, Grep, Glob, WebSearch, WebFetch
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Research/Standards Reviewer.md"
-id: "in-standards-reviewer"
 ---
 
 # 📏 Standards Reviewer

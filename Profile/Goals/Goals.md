@@ -1,20 +1,9 @@
----
+<!--
 title: "Goals"
 description: "The user's enduring aspirations and direction: the stable, long-horizon goals that define what they are working toward, distinct from this week's priorities."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Aspirations", "Ambitions", "Direction"]
-keywords: ["goals", "aspirations", "ambitions", "long-term", "what they want", "direction", "future self"]
-created: 2026-06-19
-updated: 2026-10-19
-type: "self"
-folder: "profile"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Goals/Goals.md"
-id: "id-goals"
----
+type: "reference"
+keywords: ["aspirations", "ambitions", "direction", "long-term", "what they want", "future self"]
+-->
 
 # 🎯 Goals
 

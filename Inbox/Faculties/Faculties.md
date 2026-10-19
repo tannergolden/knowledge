@@ -1,20 +1,9 @@
----
+<!--
 title: "Faculties"
 description: "The BRAIN's standing functional teams: the four cognitive teams the Founder dispatches directly (Research, Discovery, Editorial, Design), grouped as one home. The personal-work counterpart to the venture corporate workforce in Agent Resources (AR)."
-status: "active"
-tags: ["inbox", "information", "timeless"]
-aliases: ["the Faculties", "standing teams", "cognitive teams", "the agent teams"]
-keywords: ["standing teams", "functional teams", "research team", "discovery team", "editorial team", "design team", "agent teams", "cognitive faculties"]
-created: 2026-06-23
-updated: 2026-10-19
-type: "information"
-folder: "inbox"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Faculties.md"
-id: "in-faculties"
----
+type: "index"
+keywords: ["the faculties", "standing teams", "cognitive teams", "the agent teams", "functional teams", "research team", "discovery team", "editorial team"]
+-->
 
 # 👥 Faculties
 
@@ -33,7 +22,7 @@ Building is no longer a faculty of this vault. The Development team, which desig
 
 ## How it is organized
 
-- **One folder per team.** Each team is a flat home: a folder of single-file agent specs plus a namesake roster that carries `members` and the star `lead`. The four together make `Inbox/Faculties/` a multi-team home, the same shape Agent Resources (AR) uses for its departments.
+- **One folder per team.** Each team is a flat home: a folder of single-file agent specs plus a namesake roster; the team is the folder's specs, and the starred one leads. The four together make `Inbox/Faculties/` a multi-team home, the same shape Agent Resources (AR) uses for its departments.
 - **Each team owns its own standard and global rules.** Unlike AR, the Faculties share no workforce-wide rulebook: each is a distinct discipline with its own overriding standard, so the standard and the global rules live in each team's own roster, not here. This doc is the grouping and the map, not a rulebook.
 - **Skills dispatch the teams.** A skill is the trigger that calls a faculty: `research` dispatches Research, `editorial` dispatches Editorial, `visualize` dispatches Design, and `discover` dispatches Discovery. All four faculties have a dispatching skill.
 - **Sanctioned exception.** Only one agent in this vault holds labor tools: the Library's solo ★ Librarian (Write, Edit, Bash, Task), scope-bounded to `Library/` holdings as the documented solo steward. Every other agent composes and returns; the dispatching skill persists. The Development team's Full-Stack Engineer also holds them (Write, Edit, Bash), because the build seat cannot produce working code otherwise, and it moved with its team into `develop`.

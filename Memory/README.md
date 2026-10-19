@@ -1,8 +1,8 @@
 <!--
 title: '🧠 MEMORY'
 description: 'The continuity layer: what happened, who is around you, what you decided and what is due.'
-tags: [memory, continuity, obsidian-vault, readme]
-category: docs
+type: index
+keywords: [continuity, vault]
 -->
 
 <!-- markdownlint-disable MD041 -->

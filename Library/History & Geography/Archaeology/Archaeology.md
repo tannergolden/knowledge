@@ -1,20 +1,9 @@
----
+<!--
 title: "Archaeology - Folder Information"
 description: "Material remains and the recovery of the past."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["archaeology", "material", "remains", "recovery", "past"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/History & Geography/Archaeology/Archaeology.md"
-id: "li-archaeology"
----
+type: "index"
+keywords: ["material", "remains", "recovery", "past"]
+-->
 
 # 📁 Library / History & Geography / Archaeology /
 

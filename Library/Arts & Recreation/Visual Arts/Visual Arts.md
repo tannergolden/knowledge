@@ -1,20 +1,9 @@
----
+<!--
 title: "Visual Arts - Folder Information"
 description: "Painting, sculpture, drawing, photography, and their criticism."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["visual", "arts", "painting", "sculpture", "drawing", "photography"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Visual Arts/Visual Arts.md"
-id: "li-visual-arts"
----
+type: "index"
+keywords: ["painting", "sculpture", "drawing", "photography"]
+-->
 
 # 📁 Library / Arts & Recreation / Visual Arts /
 

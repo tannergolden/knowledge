@@ -1,8 +1,8 @@
 <!--
 title: '🧠 BRAIN'
 description: 'A public template for a personal knowledge vault: plain Markdown that gives any AI lasting, structured knowledge of one person.'
-tags: [knowledge-vault, obsidian, ai-agents, template]
-category: docs
+type: index
+keywords: [knowledge-vault, ai-agents, template]
 -->
 
 <!-- markdownlint-disable MD041 -->
@@ -28,7 +28,7 @@ memory, context and knowledge in one place.
 
 It is a portable personal data layer for any AI agent, retrieval pipeline or context window: who
 you are, what you are working on, and everything worth remembering. It relies on a consistent
-folder layout and clean YAML frontmatter alone, so any model that can read files can use it: no
+folder layout and clean hidden frontmatter alone, so any model that can read files can use it: no
 database, no embeddings required, no vendor lock-in. Claude, GPT, Gemini, a LangChain pipeline or
 a custom agent all read it the same way.
 
@@ -42,10 +42,10 @@ a custom agent all read it the same way.
 
 - [ ] **Generate a repository from this template, and make it private.** It is made to hold who
       you are, and every rule in it assumes it stays private.
-- [ ] **Let initialisation run.** It makes the vault yours (the licence holder, the code owner and
-      every note's author) and removes what only the template needs. If nothing happens, dispatch
+- [ ] **Let initialisation run.** It makes the vault yours (the licence holder and the code owner)
+      and removes what only the template needs. If nothing happens, dispatch
       🎯 Standards Lifecycle from the Actions tab.
-- [ ] **Open the folder in Obsidian**, and work with an AI agent in it. Every agent reads
+- [ ] **Open the folder with an AI agent**, and work with it there. Every agent reads
       [`AGENTS.md`](../AGENTS.md) first.
 - [ ] **Fill in `Profile/`** with the `/identify` skill, which interviews you and writes only what you
       confirm.
@@ -61,7 +61,7 @@ a custom agent all read it the same way.
 | :-------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
 | [`AGENTS.md`](../AGENTS.md)                                           | The rules every agent follows: the universal Constitution from `tannergolden/intelligence`, then the vault's own |
 | Each folder's note                                                    | That folder's rules and procedures, read before working there                                                    |
-| [`.docs/vault/`](../.docs/vault/README.md)                            | The note schema, the tag vocabulary, the link topology and how to assemble context                               |
+| [`.docs/vault/`](../.docs/vault/README.md)                            | The note schema, the keywords, the link topology and how to assemble context                                     |
 | [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                          |
 
 ---
@@ -80,7 +80,7 @@ a custom agent all read it the same way.
 └── Ventures/    # Each company you run, plus a shared agent workforce
 ```
 
-Each top folder has a `README.md` for GitHub and a note named after it for Obsidian and the AI.
+Each top folder has a `README.md` for GitHub and a note named after it for the AI.
 
 ---
 

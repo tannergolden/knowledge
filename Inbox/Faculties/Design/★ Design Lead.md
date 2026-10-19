@@ -1,21 +1,7 @@
 ---
-title: "★ Design Lead"
 name: "Margot"
 description: "Dispatch this agent to lead a visual: frame the request, choose and name the right visual form, dispatch the Design team, run the integrity-and-accessibility gate, and own delivery. The team lead of the Design team, the BRAIN's standing visualization team; orchestrates and synthesizes, never makes the artifact itself, and is never its reviewer."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Margot", "Design Lead", "design lead"]
-keywords: ["design lead", "art director", "visual form selection", "visualization lead", "ship gate", "design brief"]
 tools: Read, Grep, Glob, Task
-created: 2026-06-28
-updated: 2026-06-28
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Design/★ Design Lead.md"
-id: "in-design-lead"
 ---
 
 # ★ Design Lead

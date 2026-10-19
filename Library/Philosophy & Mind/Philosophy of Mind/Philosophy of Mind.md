@@ -1,20 +1,9 @@
----
+<!--
 title: "Philosophy of Mind - Folder Information"
 description: "Consciousness, intentionality, the mind-body question."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["philosophy", "mind", "consciousness", "intentionality", "mind-body", "question"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Philosophy of Mind/Philosophy of Mind.md"
-id: "li-philosophy-of-mind"
----
+type: "index"
+keywords: ["consciousness", "intentionality", "mind-body", "question"]
+-->
 
 # 📁 Library / Philosophy & Mind / Philosophy of Mind /
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Decisions"
 description: "Reflective record of significant decisions, one file per decision, with context, alternatives, outcomes, and lessons."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["decision", "choice", "rationale", "tradeoff", "outcome", "lesson", "deliberation"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Decisions/Decisions.md"
-id: "me-decisions"
----
+-->
 
 # 🧭 Decisions
 

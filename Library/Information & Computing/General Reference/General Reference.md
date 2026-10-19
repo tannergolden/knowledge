@@ -1,20 +1,9 @@
----
+<!--
 title: "General Reference - Folder Information"
 description: "Encyclopedias, dictionaries, almanacs, cross-subject general works."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["general", "reference", "encyclopedias", "dictionaries", "almanacs", "cross-subject"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/General Reference/General Reference.md"
-id: "li-general-reference"
----
+type: "index"
+keywords: ["encyclopedias", "dictionaries", "almanacs", "cross-subject"]
+-->
 
 # 📁 Library / Information & Computing / General Reference /
 

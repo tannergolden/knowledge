@@ -1,21 +1,7 @@
 ---
-title: "★ Chief Executive Officer"
 name: "Jonathan"
 description: "Dispatch this agent for a company-level direction, prioritization, or cross-department allocation decision, or when the Founder needs intent turned into a clear call with a single owner. The chief executive, who reports to the Founder."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Jonathan", "Chief Executive Officer", "CEO"]
-keywords: ["chief executive", "company direction", "cross-department allocation", "executive decision", "runs the company"]
 tools: Read, Grep, Glob, Task
-created: 2026-06-21
-updated: 2026-06-25
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Administration/★ Chief Executive Officer.md"
-id: "ve-chief-executive-officer"
 ---
 
 # ★ Chief Executive Officer

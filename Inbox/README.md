@@ -1,8 +1,8 @@
 <!--
 title: '📥 INBOX'
 description: 'The staging area: drop any file here, and the AI sorts it into the vault.'
-tags: [inbox, sorting, obsidian-vault, readme]
-category: docs
+type: index
+keywords: [sorting, vault]
 -->
 
 <!-- markdownlint-disable MD041 -->

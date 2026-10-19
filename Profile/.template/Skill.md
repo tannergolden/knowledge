@@ -1,28 +1,17 @@
----
+<!--
 title: "[Skill]"
 description: "[One-line description of an area of genuine competence.]"
-status: "active"
-tags: ["profile", "template"]
-aliases: []
-keywords: ["skill", "competence", "expertise", "proficiency", "ability", "template"]
-created: 2026-06-19
-updated: 2026-10-19
 type: "template"
-folder: "profile"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/.template/Skill.md"
-id: "id-skill"
----
+keywords: ["competence", "expertise", "proficiency", "ability", "template"]
+-->
 
 # 🛠️ [Skill]
 
 <!--
 FILING INSTRUCTIONS (copy this file to Profile/Skills/<Title>.md, then) (one area of genuine depth):
 - Save as Profile/Skills/[Skill].md. Casual interests are Preferences, not Skills.
-- Frontmatter: type "self"; tags ["profile","self","sensitive", + freshness "enduring"]; remove "template" tag and "version".
-- Set "path" and a stable "id" (id-<slug>); give the H1 a fitting emoji. NO wikilinks - plain paths only.
+- Frontmatter: set type "reference", and give the copy its real title and description.
+- Give the H1 a fitting emoji. NO wikilinks - plain paths only.
 - The "Proficiency" line feeds the expertise map in Skills.md: it tells the AI how much to explain in this domain.
 -->
 

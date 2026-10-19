@@ -1,20 +1,9 @@
----
+<!--
 title: "Visuals"
 description: "The held library for finished visuals from the visualize skill. The Design team files standalone charts, diagrams, dashboards, and illustrations here; visuals are held, not sorted into the BRAIN, and kept as archival artifacts that carry the date of their underlying data."
-status: "active"
-tags: ["inbox", "information"]
-aliases: ["Visuals", "visuals library", "visualization gallery", "saved visuals"]
-keywords: ["visuals", "visualizations", "charts", "diagrams", "dashboards", "held visuals", "visual gallery", "design team outputs"]
-created: 2026-06-28
-updated: 2026-10-19
-type: "information"
-folder: "inbox"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Visuals/Visuals.md"
-id: "in-visuals"
----
+type: "index"
+keywords: ["visuals library", "visualization gallery", "saved visuals", "visualizations", "charts", "diagrams", "dashboards", "held visuals"]
+-->
 
 # 📊 Visuals
 
@@ -34,7 +23,7 @@ This library is the default home for a standalone visual: one that answers a que
 
 ## This file is the visuals index
 
-`Visuals.md` is the one hub that links every held visual. The index below carries a wikilink to each visual artifact (an `.svg` or self-contained `.html` file) in this folder, with the question it answers and its data date, so the whole library is browsable from here and in the graph view. This index is the only place a visual is linked: no other file in the BRAIN cites or links to a held visual, which keeps the wider wikilink graph free of disposable nodes. A visual can also be found by searching this folder. Because a rendered `.svg` or `.html` artifact carries no BRAIN frontmatter, its provenance (the question, the data date, the source) lives in its index entry here.
+`Visuals.md` is the one hub that links every held visual. The index below carries a wikilink to each visual artifact (an `.svg` or self-contained `.html` file) in this folder, with the question it answers and its data date, so the whole library is browsable from here. This index is the only place a visual is linked: no other file in the BRAIN cites or links to a held visual, which keeps the wider wikilink graph free of disposable nodes. A visual can also be found by searching this folder. Because a rendered `.svg` or `.html` artifact carries no BRAIN frontmatter, its provenance (the question, the data date, the source) lives in its index entry here.
 
 The index is kept in lockstep with the folder. When a visual is filed, regenerated, or cleared, its entry below is added, updated, or removed in the same edit, so the index always mirrors what is actually here.
 

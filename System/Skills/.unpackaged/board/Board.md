@@ -1,20 +1,9 @@
----
+<!--
 title: "Board - Skill Information"
 description: "BRAIN documentation node for the board skill: the venture operating system that convenes the Agent Resources (AR) Fortune 500 workforce to found, strategize, decide, operate, and maintain companies in Ventures/, with the skill as the sole writer behind a write-gate."
-status: "active"
-tags: ["system", "information", "timeless"]
-aliases: ["/board"]
-keywords: ["board skill", "venture operating system", "agent resources", "found strategize decide operate review", "fortune 500 workforce", "write-gate", "decision memo", "company lifecycle"]
-created: 2026-06-29
-updated: 2026-10-19
-type: "information"
-folder: "system"
-layer: 4
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/board/Board.md"
-id: "sy-skill-board"
----
+type: "index"
+keywords: ["/board", "board skill", "venture operating system", "agent resources", "found strategize decide operate review", "fortune 500 workforce", "write-gate", "decision memo"]
+-->
 
 # 🏛️ Board - Information Guide
 

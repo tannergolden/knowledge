@@ -1,20 +1,9 @@
----
+<!--
 title: "Finances"
 description: "The user's stable personal financial picture and money-management self: financial situation, assets and liabilities, insurance, risk posture, money style, financial goals, and the existence and location of legal and estate documents. Sensitive; records the picture and pointers, never secret numbers."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Money", "Financial Profile", "Personal Finances"]
-keywords: ["finances", "money", "income", "assets", "net worth", "insurance", "risk tolerance", "estate", "budget", "financial situation"]
-created: 2026-06-19
-updated: 2026-06-19
-type: "self"
-folder: "profile"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Finances.md"
-id: "id-finances"
----
+type: "reference"
+keywords: ["money", "financial profile", "personal finances", "income", "assets", "net worth", "insurance", "risk tolerance"]
+-->
 
 # 💰 Finances
 

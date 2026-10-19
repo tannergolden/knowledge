@@ -1,8 +1,8 @@
 <!--
 title: '🛡️ SECURITY POLICY'
 description: 'How this vault keeps personal data and secrets out of reach, and how to report a problem with either.'
-tags: [security, privacy, secrets, obsidian-vault]
-category: docs
+type: guide
+keywords: [privacy, secrets]
 -->
 
 <!-- markdownlint-disable MD041 -->

@@ -1,20 +1,9 @@
----
+<!--
 title: "Politics & Government - Folder Information"
 description: "Political science, governance, ideology, international relations."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["politics", "government", "political", "science", "governance", "ideology"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Politics & Government/Politics & Government.md"
-id: "li-politics-government"
----
+type: "index"
+keywords: ["political", "science", "governance", "ideology"]
+-->
 
 # 📁 Library / Society & Social Sciences / Politics & Government /
 

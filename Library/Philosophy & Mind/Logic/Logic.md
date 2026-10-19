@@ -1,20 +1,9 @@
----
+<!--
 title: "Logic - Folder Information"
 description: "Formal and informal logic, reasoning, argumentation."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["logic", "formal", "informal", "reasoning", "argumentation"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Logic/Logic.md"
-id: "li-logic"
----
+type: "index"
+keywords: ["formal", "informal", "reasoning", "argumentation"]
+-->
 
 # 📁 Library / Philosophy & Mind / Logic /
 

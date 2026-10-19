@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Brand"
 description: "Complete brand identity for [Company]: voice, tone, personality, messaging, visual identity, and writing guidelines."
-status: "active"
-tags: ["ventures", "template"]
-aliases: []
-keywords: ["brand identity", "voice and tone", "messaging", "visual identity", "writing guidelines", "brand personality", "copywriting", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Sales & Marketing (S&M)/Brand.md"
-id: "ve-brand"
----
+keywords: ["brand identity", "voice and tone", "messaging", "visual identity", "writing guidelines", "brand personality", "copywriting", "template"]
+-->
 
 # 🎨 [Company] - Brand
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Decisions"
 description: "The governance and decision record for [Company]: the running log of board-style decisions, each with its owner, and the full decision memos behind them."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["Decision Log", "Governance Record"]
-keywords: ["decisions", "decision log", "governance", "board record", "decision memo", "accountable owner", "minority view", "template"]
-created: 2026-06-29
-updated: 2026-06-29
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Administration/Decisions.md"
-id: "ve-decisions"
----
+keywords: ["decision log", "governance record", "governance", "board record", "decision memo", "accountable owner", "minority view", "template"]
+-->
 
 # ⚖️ [Company] - Decisions
 

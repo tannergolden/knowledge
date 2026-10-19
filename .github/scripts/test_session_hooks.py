@@ -40,11 +40,11 @@ class TestStart(unittest.TestCase):
         self.vault.cleanup()
 
     def test_the_card_lists_startup_notes_summaries_and_the_inbox(self) -> None:
-        self.vault.note('Profile/Working Style.md', tags=['profile', 'information', 'startup'], layer=1)
-        self.vault.note('Memory/Log.md', tags=['memory', 'information', 'startup'], layer=1)
+        self.vault.note('Profile/Working Style.md')
+        self.vault.note('Memory/Log.md')
         for name, status in (('20260101-000000', 'active'), ('20260102-000000', 'active'),
                              ('20260103-000000', 'deprecated'), ('20251231-000000', 'active')):
-            self.vault.note(f'Memory/Context/Current/{name}.md', type='record', tags=['memory', 'record'], status=status)
+            self.vault.note(f'Memory/Context/Current/{name}.md', type='record', status=status)
         self.vault.write('Inbox/scan.pdf', 'pdf')
         self.vault.write('Inbox/Reports/kept.md', 'kept')
         result = self.vault.run(SCRIPT, 'start')

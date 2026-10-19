@@ -1,20 +1,9 @@
----
+<!--
 title: "Biology & Life Sciences - Folder Information"
 description: "Life, organisms, genetics, ecology, evolution, paleontology."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["biology", "life", "sciences", "organisms", "genetics", "ecology"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Biology & Life Sciences/Biology & Life Sciences.md"
-id: "li-biology-life-sciences"
----
+type: "index"
+keywords: ["organisms", "genetics", "ecology"]
+-->
 
 # 📁 Library / Science & Mathematics / Biology & Life Sciences /
 

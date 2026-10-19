@@ -1,20 +1,8 @@
----
+<!--
 title: "[Document Title]"
 description: "[One or two task-shaped sentences: what this document is and when to read it. Do not echo the title.]"
-status: "active"
-tags: ["[folder tag]", "[file role tag]", "[freshness tag if Library]"]
-aliases: []
-keywords: ["[4 to 8 lowercase search terms a person would type that are not already in the title]"]
-created: [YYYY-MM-DD]
-updated: [YYYY-MM-DD]
-type: "[guide | information | reference | record]"
-folder: "[library | projects | ventures | inbox | ...]"
-layer: [0-4]
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/[full path from root]/[Document Title].md"
-id: "[two-letter folder prefix]-[hyphenated-slug]"
----
+type: "[guide | index | reference | record]"
+-->
 
 # [emoji] [Document Title]
 
@@ -28,9 +16,10 @@ id: "[two-letter folder prefix]-[hyphenated-slug]"
 
 [One idea per paragraph, led with the idea. Short paragraphs. Plain, direct prose.]
 
-> [!tip] [A callout earns its place only where it helps the reader understand faster than prose]
-> [Use a callout, table, or diagram where it does real work, not for decoration. Foldable `[!type]-`
-> manages density in a long doc. Owner can override the default density per document.]
+> [!TIP]
+> **[A callout earns its place only where it helps the reader understand faster than prose]**
+> [Use a callout, table, or diagram where it does real work, not for decoration. A collapsible `<details>`
+> block manages density in a long doc. Owner can override the default density per document.]
 
 ## [Second section]
 

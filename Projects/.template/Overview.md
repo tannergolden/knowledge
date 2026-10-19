@@ -1,20 +1,9 @@
----
+<!--
 title: "[Project Name] - Overview"
 description: "Goal, scope, current status, blockers, and key decisions for this project. Update in place - this reflects current state, not history."
-status: "active"
-tags: ["projects", "template"]
-aliases: []
-keywords: ["goal", "scope", "current status", "blockers", "key decisions", "project summary", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "projects"
-layer: 2
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Projects/[Project-Name]/Overview.md"
-id: "pr-overview"
----
+keywords: ["goal", "scope", "current status", "blockers", "key decisions", "project summary", "template"]
+-->
 
 # 🧭 [Project Name] - Overview
 

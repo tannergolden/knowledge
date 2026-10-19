@@ -1,22 +1,9 @@
----
+<!--
 title: "Information Technology (IT)"
 description: "The Information Technology (IT) department of the agent workforce: the engineering function that builds skills, agents, and the internal tooling the workforce runs on. Led by its department head, with more specialists added by demand."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["IT", "Engineering", "Platform"]
-keywords: ["information technology", "engineering", "tooling", "platform", "build"]
-members: ["★ Chief Information Officer", "Platform Engineer", "Security Engineer"]
-lead: ★ Chief Information Officer
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Information Technology (IT)/Information Technology (IT).md"
-id: "ve-information-technology"
----
+type: "index"
+keywords: ["engineering", "platform", "information technology", "tooling", "build"]
+-->
 # 💻 Information Technology (IT)
 
 The Information Technology (IT) department of the agent workforce: the engineering function that builds skills, agents, and the internal tooling the workforce runs on.

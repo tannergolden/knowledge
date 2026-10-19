@@ -1,22 +1,9 @@
----
+<!--
 title: "Operations & Logistics (O&L)"
 description: "The Operations & Logistics (O&L) department of the agent workforce: running the business: process, supply, and delivery. Led by its department head, with more specialists added by demand."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["O&L", "Operations", "Logistics"]
-keywords: ["operations", "logistics", "process", "supply", "delivery"]
-members: ["★ Head of Operations", "Process Analyst", "Program & Project Manager", "Vendor Manager"]
-lead: ★ Head of Operations
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Operations & Logistics (O&L)/Operations & Logistics (O&L).md"
-id: "ve-operations-logistics"
----
+type: "index"
+keywords: ["o&l", "process", "supply", "delivery"]
+-->
 # 📦 Operations & Logistics (O&L)
 
 The Operations & Logistics (O&L) department of the agent workforce: running the business: process, supply, and delivery.

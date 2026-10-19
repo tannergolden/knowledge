@@ -1,20 +1,9 @@
----
+<!--
 title: "Society & Social Sciences - Folder Information"
 description: "How human societies are structured, governed, and sustained."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["sociology", "politics", "law", "economics", "anthropology", "education", "society"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Society & Social Sciences.md"
-id: "li-society-social-sciences"
----
+type: "index"
+keywords: ["sociology", "politics", "law", "economics", "anthropology", "education"]
+-->
 
 # 👥 Library / Society & Social Sciences /
 

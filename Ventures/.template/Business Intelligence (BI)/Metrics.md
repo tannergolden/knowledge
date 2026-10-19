@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Metrics"
 description: "KPIs, dashboards, data sources, and reporting cadence for [Company]."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["KPIs"]
-keywords: ["kpi", "dashboards", "data sources", "reporting cadence", "business intelligence", "performance analytics", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Business Intelligence (BI)/Metrics.md"
-id: "ve-metrics"
----
+keywords: ["kpis", "kpi", "dashboards", "data sources", "reporting cadence", "business intelligence", "performance analytics", "template"]
+-->
 
 # 📊 [Company] - Metrics
 

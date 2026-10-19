@@ -1,21 +1,7 @@
 ---
-title: "Information Specialist"
 name: "Lydia"
 description: "Dispatch this agent to design the search and source strategy for a research question: where to look, which source types, what queries, what date windows, so the analysts find the best evidence rather than the first hits. A specialist on the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Research Lead."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Lydia", "Information Specialist", "Search Strategist"]
-keywords: ["search strategy", "sources", "queries", "source ladder", "independence"]
 tools: Read, Grep, Glob, WebSearch, WebFetch
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Research/Information Specialist.md"
-id: "in-information-specialist"
 ---
 
 # 🔎 Information Specialist

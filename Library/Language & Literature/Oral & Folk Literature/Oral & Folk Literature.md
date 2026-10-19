@@ -1,20 +1,9 @@
----
+<!--
 title: "Oral & Folk Literature - Folder Information"
 description: "Folktales, proverbs, and oral verbal art."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["oral", "folk", "literature", "folktales", "proverbs", "verbal"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Oral & Folk Literature/Oral & Folk Literature.md"
-id: "li-oral-folk-literature"
----
+type: "index"
+keywords: ["folktales", "proverbs", "verbal"]
+-->
 
 # 📁 Library / Language & Literature / Oral & Folk Literature /
 

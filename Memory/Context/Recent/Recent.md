@@ -1,20 +1,9 @@
----
+<!--
 title: "Recent Context"
 description: "The context mid tier - recent session summaries one step back from the entry tier, reached on request and ranked by recency, importance, and relevance."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
-keywords: ["recent", "mid tier", "on request", "lookback", "summaries", "importance aware", "overflow"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Context/Recent/Recent.md"
-id: "me-recent"
----
+type: "index"
+keywords: ["mid tier", "on request", "lookback", "summaries", "importance aware", "overflow"]
+-->
 
 # 🗂️ Recent Context
 

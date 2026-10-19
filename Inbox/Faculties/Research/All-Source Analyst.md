@@ -1,21 +1,7 @@
 ---
-title: "All-Source Analyst"
 name: "Jasper"
 description: "Dispatch this agent to gather, read, cite, and condense the sources for one assigned lane into a findings brief: the workhorse, dispatched in parallel one lane each. A specialist on the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Research Lead."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Jasper", "All-Source Analyst", "Analyst"]
-keywords: ["gather", "read", "cite", "findings brief", "lane"]
 tools: Read, Grep, Glob, WebSearch, WebFetch
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Research/All-Source Analyst.md"
-id: "in-all-source-analyst"
 ---
 
 # 🛰️ All-Source Analyst

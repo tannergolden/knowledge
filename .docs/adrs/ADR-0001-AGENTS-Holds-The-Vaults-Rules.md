@@ -1,8 +1,8 @@
 <!--
 title: '🧭 ADR-0001: AGENTS.MD HOLDS THE VAULT''S RULES'
 description: 'The vault''s Constitution and Instructions dissolve into AGENTS.md, the folder notes and reference pages, and standards owns every repository convention.'
-tags: [adr, agents-md, obsidian-vault, governance]
-category: docs
+type: record
+keywords: [governance]
 status: 'Accepted'
 date: '2026-10-19'
 evidence: 'N/A'

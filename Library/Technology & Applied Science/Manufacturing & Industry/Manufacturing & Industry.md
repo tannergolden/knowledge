@@ -1,20 +1,9 @@
----
+<!--
 title: "Manufacturing & Industry - Folder Information"
 description: "Production, industrial processes, and quality engineering."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["manufacturing", "industry", "production", "industrial", "processes", "quality"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Manufacturing & Industry/Manufacturing & Industry.md"
-id: "li-manufacturing-industry"
----
+type: "index"
+keywords: ["production", "industrial", "processes", "quality"]
+-->
 
 # 📁 Library / Technology & Applied Science / Manufacturing & Industry /
 

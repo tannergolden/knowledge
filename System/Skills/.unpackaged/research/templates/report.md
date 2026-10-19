@@ -1,27 +1,15 @@
----
+<!--
 title: "[Topic Title]"
 description: "[One task-shaped sentence: what this report answers.]"
-status: "active"
-tags: ["inbox", "reference", "current"]
-aliases: []
-keywords: ["[4 to 8 lowercase search terms a person would type to find this]"]
-created: [YYYY-MM-DD]
-updated: [YYYY-MM-DD]
-type: "reference"
-folder: "inbox"
-layer: 2
-policy: false
-review_by: [YYYY-MM-DD, created + 3 months]
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Reports/[Topic Title].md"
-id: "in-[topic-slug]"
----
+type: "record"
+review_by: "[YYYY-MM-DD: the filing date plus three months]"
+-->
 
 # 🔬 [Topic Title]
 
 <!-- File to Inbox/Reports/. Tiered so a reader can stop early: Bottom Line, then Key Findings,
      then the full Coverage Map and Findings. Findings first, never a narrative of the research.
-     review_by = created + 3 months (the BRAIN flat window). No inline wikilinks in the body; the only
+     review_by = the filing date + 3 months (the BRAIN flat window). No inline wikilinks in the body; the only
      link to a report is its entry in the Inbox/Reports/Reports.md index, added when the report is filed. -->
 
 ## Bottom line
@@ -55,7 +43,7 @@ id: "in-[topic-slug]"
 
 ## Freshness
 
-Good through **[review_by]** (created + 3 months). Reuse is review: confirming the load-bearing claims still hold refreshes the window without a rewrite.
+Good through **[review_by]** (the filing date + 3 months). Reuse is review: confirming the load-bearing claims still hold refreshes the window without a rewrite.
 
 ## Sources
 

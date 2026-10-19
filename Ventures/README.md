@@ -1,8 +1,8 @@
 <!--
 title: '🏢 VENTURES'
 description: 'Each company you run, with a folder per department, and the agent workforce they share.'
-tags: [ventures, companies, obsidian-vault, readme]
-category: docs
+type: index
+keywords: [companies, vault]
 -->
 
 <!-- markdownlint-disable MD041 -->

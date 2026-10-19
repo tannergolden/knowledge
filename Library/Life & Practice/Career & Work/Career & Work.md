@@ -1,20 +1,9 @@
----
+<!--
 title: "Career & Work - Folder Information"
 description: "Job searching, workplace skills, and professional development how-to."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["career", "work", "job", "searching", "workplace", "skills"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Career & Work/Career & Work.md"
-id: "li-career-work"
----
+type: "index"
+keywords: ["job", "searching", "workplace", "skills"]
+-->
 
 # 📁 Library / Life & Practice / Career & Work /
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Science & Mathematics - Folder Information"
 description: "The formal and natural sciences and how scientific knowledge is made."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["mathematics", "physics", "chemistry", "biology", "statistics", "earth science", "astronomy"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Science & Mathematics.md"
-id: "li-science-mathematics"
----
+type: "index"
+keywords: ["physics", "chemistry", "biology", "statistics", "earth science", "astronomy"]
+-->
 
 # 🔬 Library / Science & Mathematics /
 

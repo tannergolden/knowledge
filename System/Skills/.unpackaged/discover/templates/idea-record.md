@@ -1,18 +1,7 @@
----
+<!--
 title: "[short idea title]"
 description: "[the idea in one sentence, restated as a description]"
-status: "active"
-tags: ["inbox", "record"]
-aliases: []
-keywords: ["[4 to 8 search terms]"]
-created: [YYYY-MM-DD]
-updated: [YYYY-MM-DD]
 type: "record"
-folder: "inbox"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Ideas/[Title].md"
 id: "in-idea-[YYYYMMDD]-[4hex]"
 statement: "[the idea in one sentence]"
 lifecycle: "raw"        # raw | shortlisted | developed | promoted | parked | killed
@@ -22,7 +11,7 @@ elo_games: 0            # comparisons played; low means the rank is unsettled
 lens: "[the generative lens that produced it]"
 parents: []             # ids this idea evolved or combined from (plain ids, not links)
 serves: "[venture, project, or topic path; a plain path, not a link]"
----
+-->
 
 # [Idea title]
 

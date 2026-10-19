@@ -1,20 +1,9 @@
----
+<!--
 title: "History & Geography - Folder Information"
 description: "The human record across time and place."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["history", "biography", "geography", "archaeology", "area studies", "travel", "heritage"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/History & Geography/History & Geography.md"
-id: "li-history-geography"
----
+type: "index"
+keywords: ["biography", "archaeology", "area studies", "travel", "heritage"]
+-->
 
 # 🗺️ Library / History & Geography /
 

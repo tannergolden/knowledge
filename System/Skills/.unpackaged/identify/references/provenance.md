@@ -11,7 +11,7 @@ An assumed claim, one in neither the stated nor the observed column of the ledge
 
 ## The marker grammar
 
-The marker is an inline HTML comment appended to the end of the line. It renders invisibly in Obsidian reading view but stays in the source, so the fact reads clean while the provenance stays machine-queryable:
+The marker is an inline HTML comment appended to the end of the line. It renders invisibly on GitHub and in any Markdown preview but stays in the source, so the fact reads clean while the provenance stays machine-queryable:
 
 ```
 **Field:** value <!-- observed 2026-07-04 · confidence: medium · unconfirmed -->

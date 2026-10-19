@@ -15,7 +15,8 @@ The lead loads this at the start of every piece and carries it into every dispat
 
 ## The day-one reality: the facets are empty scaffolds
 
-> [!warning] Profile is unpopulated
+> [!WARNING]
+> **Profile is unpopulated.**
 > Today, `Profile/Working Style.md` and its siblings are **empty scaffolds**: they carry placeholder text like "terse / balanced / thorough" and "(e.g. Tanner, Mr. Golden)", not real answers. There is no owner voice on disk yet.
 
 **When the voice facets are unpopulated, editorial does NOT claim the owner's voice.** Instead it:
@@ -24,7 +25,8 @@ The lead loads this at the start of every piece and carries it into every dispat
 2. **Says so**, in one plain line: "Profile has no voice captured yet, so this is in a neutral default voice, not yours."
 3. **Offers to capture the real voice**, two ways: call the **`identify` skill** to populate `Profile/` through a structured interview, or have the owner **paste two or three real samples** (a sent email, a note they wrote) to draft from directly for this piece.
 
-> [!danger] Never synthesize a voice from placeholder scaffolding
+> [!CAUTION]
+> **Never synthesize a voice from placeholder scaffolding.**
 > A line that reads "terse / balanced / thorough" is a menu of options, not a setting. Reading it as "the owner is terse" is inventing a voice from a form field. Do not do it. An empty facet means no voice, not a default-to-the-first-word voice.
 
 **Voice fidelity activates once `Profile/` is populated.** From that point the loaded features drive the draft and the Line Editor checks conformance against them. Until then, neutral defaults plus the honest disclaimer.
@@ -49,7 +51,8 @@ When `Profile/` is captured (by `identify` or from samples), a usable voice prof
 - **Tone on named scales.** Position on concrete axes (formal <-> casual, warm <-> reserved, terse <-> expansive, plain <-> playful), not a single adjective.
 - **Register baseline plus per-relationship overrides.** The default register, and how it shifts for named relationships (a client vs a close colleague vs a vendor).
 
-> [!tip] Capture features and samples, never adjectives
+> [!TIP]
+> **Capture features and samples, never adjectives.**
 > "Friendly and professional" is not a voice; it cannot be checked against a draft. "Opens with the person's first name, one-line context, the ask in the first two sentences; signs 'Best,'; never says 'circle back' or 'touch base'" is a voice. Capture the second kind.
 
 ## In the dispatch brief

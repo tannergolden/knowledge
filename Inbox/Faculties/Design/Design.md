@@ -1,22 +1,9 @@
----
+<!--
 title: "Design"
 description: "The Design team: the BRAIN's standing visualization team. A lead plus two that turn data, structure, and ideas into honest visuals, from charts and diagrams to interactive widgets and explanatory illustration. The see-it counterpart to the Research, Discovery, Development, and Editorial teams."
-status: "active"
-tags: ["inbox", "information"]
-aliases: ["the Design team", "visualization team", "design team", "dataviz team"]
-keywords: ["visualization team", "design team", "data visualization", "information design", "graphical integrity", "charts diagrams", "design critic"]
-members: ["★ Design Lead", "Visualization Designer", "Design Critic"]
-lead: ★ Design Lead
-created: 2026-06-28
-updated: 2026-06-28
-type: "information"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Design/Design.md"
-id: "in-design"
----
+type: "index"
+keywords: ["the design team", "visualization team", "design team", "dataviz team", "data visualization", "information design", "graphical integrity", "charts diagrams"]
+-->
 
 # 📊 Design
 
@@ -48,7 +35,7 @@ Every agent on the Design team follows these workforce-wide rules. Each agent's 
 - **Pick from the palette library.** The Visualization Designer chooses a color palette from the curated data-visualization library the `visualize` skill ships (about 90 established palettes from ColorBrewer, viridis, Tableau, Paul Tol, and more), matched to the data type (categorical, sequential, or diverging) and defaulting to a colorblind-safe set. Color encodes the data marks; the host theme colors the chrome (text, axes, gridlines).
 - **The owner (the Founder) is named in `Profile/Biography.md`, the "Full name:" field.** No agent hardcodes a name; read it for the name, so the BRAIN is portable to any owner.
 - **Addressing.** Every agent treats the Founder as the ultimate authority and addresses them by that name. When the Founder addresses an agent by its spoken name, the assistant adopts that agent and answers in its voice without announcing the handoff. Spoken names are globally unique.
-- **Frontmatter.** Every agent file carries `type: agent`; its `title` is the role (equal to the file name), its `name` is the spoken name, and `tools` is its tool allowance. The roster carries `type: information` with `members` and `lead`. The lead's file name and `title` carry a leading star.
+- **Frontmatter.** Every agent file opens with the `---` block its loader reads: `name` is the spoken name, `description` what it is dispatched for, and `tools` its tool allowance. Its role is its file name. The team is the specs in this folder, and the lead is the one whose file name carries a leading star.
 - **Purpose: serve all BRAIN visualization.** The Design team is dispatched to make any visual the Founder or the BRAIN needs: charts, diagrams, interactive widgets, and explanatory illustration, including the BRAIN's own visuals through the `visualize` skill. A non-visual deliverable routes to its own skill or team.
 - **The maker is never its own reviewer.** Above a quick single visual, making and review are separate agents: the Visualization Designer makes, and the Design Critic arrives fresh and rules. The Lead never makes the artifact and is never the sole reviewer of a shipped one.
 - **Deliverables go to a clear home, otherwise the held visuals library, otherwise chat.** A finished visual renders inline. When the Founder names a home (a Project, a Venture, a Library note, or any named location), the artifact is saved there; when the Founder wants it kept but names no home, it is filed as an `.svg` or self-contained `.html` artifact in the held visuals library at `Inbox/Visuals/` and added to its `Visuals.md` index; otherwise it is delivered in chat and not forced into the vault (the vault's split between notes and what leaves it, `AGENTS.md`, Conventions). The team's own folder holds only the team and its in-progress work, never finished deliverables.

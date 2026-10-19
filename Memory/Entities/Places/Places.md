@@ -1,20 +1,9 @@
----
+<!--
 title: "Places"
 description: "Registry of places of personal significance to the user, one file per place."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
-keywords: ["places", "locations", "home hometown", "significant places", "geography", "where", "frequented spots"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Entities/Places/Places.md"
-id: "me-places"
----
+type: "index"
+keywords: ["locations", "home hometown", "significant places", "geography", "where", "frequented spots"]
+-->
 
 # 📍 Places
 

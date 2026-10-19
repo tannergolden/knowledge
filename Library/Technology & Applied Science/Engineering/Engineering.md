@@ -1,20 +1,9 @@
----
+<!--
 title: "Engineering - Folder Information"
 description: "Mechanical, electrical, civil, chemical, and other engineering."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["engineering", "mechanical", "electrical", "civil", "chemical"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Engineering/Engineering.md"
-id: "li-engineering"
----
+type: "index"
+keywords: ["mechanical", "electrical", "civil", "chemical"]
+-->
 
 # 📁 Library / Technology & Applied Science / Engineering /
 

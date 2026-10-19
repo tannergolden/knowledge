@@ -1,20 +1,9 @@
----
+<!--
 title: "Hobbies & Skills - Folder Information"
 description: "Recreational skill-building and pastimes for personal interest."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["hobbies", "skills", "recreational", "skill-building", "pastimes", "personal"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Hobbies & Skills/Hobbies & Skills.md"
-id: "li-hobbies-skills"
----
+type: "index"
+keywords: ["recreational", "skill-building", "pastimes", "personal"]
+-->
 
 # 📁 Library / Life & Practice / Hobbies & Skills /
 

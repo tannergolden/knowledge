@@ -6,7 +6,8 @@ A chat or text message is the **no-furniture** genre: one thought, delivered pla
 
 A message is one thought, often one line, with no ceremony. It gets **no** subject line, **no** salutation (a bare first name at most), and **no** sign-off.
 
-> [!warning] Do not put email furniture on a chat
+> [!WARNING]
+> **Do not put email furniture on a chat.**
 > Writing "Hi Sarah, ... Best, Tanner" in a Slack or text message is the most common medium error. A chat reply gets no subject line, salutation, or sign-off. A message is one thought delivered plain.
 
 ## Register: keep it light, match the thread

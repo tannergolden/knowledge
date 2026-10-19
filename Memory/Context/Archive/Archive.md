@@ -1,20 +1,9 @@
----
+<!--
 title: "Archive"
 description: "The context cold-storage tier - unbounded lifetime history by year, search-only, with optional period digests that link to (never replace) the raw episodes."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
-keywords: ["archive", "cold storage", "lifetime", "by year", "period digest", "search only", "unbounded"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Context/Archive/Archive.md"
-id: "me-archive"
----
+type: "index"
+keywords: ["cold storage", "lifetime", "by year", "period digest", "search only", "unbounded"]
+-->
 
 # 🧊 Archive
 

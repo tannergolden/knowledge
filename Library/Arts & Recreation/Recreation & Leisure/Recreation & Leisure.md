@@ -1,20 +1,9 @@
----
+<!--
 title: "Recreation & Leisure - Folder Information"
 description: "Outdoor recreation, leisure, and play in general."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["recreation", "leisure", "outdoor", "play", "general"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Recreation & Leisure/Recreation & Leisure.md"
-id: "li-recreation-leisure"
----
+type: "index"
+keywords: ["outdoor", "play", "general"]
+-->
 
 # 📁 Library / Arts & Recreation / Recreation & Leisure /
 

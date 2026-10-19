@@ -1,21 +1,7 @@
 ---
-title: "Idea Generator"
 name: "Iris"
 description: "Dispatch this agent to generate many candidate ideas from one assigned distinct lens, then to evolve and recombine the winners into stronger variants: the diverge engine, run N-parallel and independent so the field is wide by construction. On the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Iris", "Idea Generator"]
-keywords: ["ideation", "diverge", "generation", "lens", "evolve", "recombine"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-07-02
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Discovery/Idea Generator.md"
-id: "in-idea-generator"
 ---
 
 # 💡 Idea Generator

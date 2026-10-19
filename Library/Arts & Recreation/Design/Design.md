@@ -1,20 +1,9 @@
----
+<!--
 title: "Design - Folder Information"
 description: "Graphic, industrial, fashion, and interaction design."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["design", "graphic", "industrial", "fashion", "interaction"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Design/Design.md"
-id: "li-design"
----
+type: "index"
+keywords: ["graphic", "industrial", "fashion", "interaction"]
+-->
 
 # 📁 Library / Arts & Recreation / Design /
 

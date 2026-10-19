@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Services"
 description: "Complete services catalog for [Company]: descriptions, scope, pricing, delivery process, capacity, and metrics."
-status: "active"
-tags: ["ventures", "template"]
-aliases: []
-keywords: ["services catalog", "scope", "pricing", "delivery process", "capacity", "service offerings", "sales marketing", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Sales & Marketing (S&M)/Services.md"
-id: "ve-services"
----
+keywords: ["services catalog", "scope", "pricing", "delivery process", "capacity", "service offerings", "sales marketing", "template"]
+-->
 
 # 🛎️ [Company] - Services
 

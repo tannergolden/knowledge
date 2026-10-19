@@ -1,20 +1,9 @@
----
+<!--
 title: "Dharmic Traditions - Folder Information"
 description: "Hinduism, Buddhism, Jainism, Sikhism, and related South Asian paths."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["dharmic", "traditions", "hinduism", "buddhism", "jainism", "sikhism"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Dharmic Traditions/Dharmic Traditions.md"
-id: "li-dharmic-traditions"
----
+type: "index"
+keywords: ["hinduism", "buddhism", "jainism", "sikhism"]
+-->
 
 # 📁 Library / Religion & Spirituality / Dharmic Traditions /
 

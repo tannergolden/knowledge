@@ -1,20 +1,9 @@
----
+<!--
 title: "Languages of the World - Folder Information"
 description: "Individual languages, grammar, and language learning."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["languages", "world", "individual", "grammar", "language", "learning"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Languages of the World/Languages of the World.md"
-id: "li-languages-of-the-world"
----
+type: "index"
+keywords: ["individual", "grammar", "language", "learning"]
+-->
 
 # 📁 Library / Language & Literature / Languages of the World /
 

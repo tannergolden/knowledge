@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Press & PR"
 description: "Press contacts, media coverage, press kit assets, and PR strategy for [Company]."
-status: "active"
-tags: ["ventures", "template"]
-aliases: []
-keywords: ["media contacts", "coverage", "press kit", "pr strategy", "public relations", "press releases", "external communications", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Public Relations (PR)/Press.md"
-id: "ve-press"
----
+keywords: ["media contacts", "coverage", "press kit", "pr strategy", "public relations", "press releases", "external communications", "template"]
+-->
 
 # 📰 [Company] - Press & PR
 

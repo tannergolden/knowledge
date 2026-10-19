@@ -1,20 +1,9 @@
----
+<!--
 title: "Writing & Rhetoric - Folder Information"
 description: "Composition, rhetoric, style, and the craft of writing."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["writing", "rhetoric", "composition", "style", "craft"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Writing & Rhetoric/Writing & Rhetoric.md"
-id: "li-writing-rhetoric"
----
+type: "index"
+keywords: ["composition", "style", "craft"]
+-->
 
 # 📁 Library / Language & Literature / Writing & Rhetoric /
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "World History - Folder Information"
 description: "History across regions and eras at world scale."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["world", "history", "regions", "eras", "scale"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/History & Geography/World History/World History.md"
-id: "li-world-history"
----
+type: "index"
+keywords: ["regions", "eras", "scale"]
+-->
 
 # 📁 Library / History & Geography / World History /
 

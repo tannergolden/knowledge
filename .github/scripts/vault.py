@@ -26,29 +26,25 @@ from typing import Iterator
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 IN_ACTIONS = os.environ.get('GITHUB_ACTIONS') == 'true'
 
-# ── The note schema (.docs/vault/Note-Schema.md and Tag-Vocabulary.md) ──
+# ── The note schema (.docs/vault/Note-Schema.md) ──
+#
+# The account's frontmatter standard, hidden in an HTML comment: a title, a
+# description and a type, with keywords and a status where they say
+# something. A record or a template may add the fields its kind needs.
 
-REQUIRED_FIELDS = (
-    'title', 'description', 'status', 'tags', 'aliases', 'keywords', 'created',
-    'updated', 'type', 'folder', 'layer', 'policy', 'author', 'path', 'id',
-)
-STATUSES = frozenset({'draft', 'active', 'deprecated', 'archived'})
+REQUIRED_FIELDS = ('title', 'description', 'type')
+FIELDS = (*REQUIRED_FIELDS, 'keywords', 'status')
+TYPES = frozenset({'index', 'guide', 'standard', 'reference', 'record', 'template'})
+OWN_FIELDS = frozenset({'record', 'template'})
+STATUSES = frozenset({'draft', 'deprecated', 'archived'})
 STALE_STATUSES = frozenset({'deprecated', 'archived'})
-TYPES = frozenset({
-    'guide', 'information', 'template', 'log', 'record', 'self',
-    'reference', 'script', 'agent',
-})
-FOLDERS = frozenset({
-    'library', 'profile', 'memory', 'ventures', 'projects', 'system', 'inbox',
-})
-SIGNAL_TAGS = frozenset({'startup'})
-SENSITIVITY_TAGS = frozenset({'sensitive'})
-FRESHNESS_TAGS = frozenset({'timeless', 'enduring', 'current'})
-VOCABULARY = FOLDERS | TYPES | SIGNAL_TAGS | SENSITIVITY_TAGS | FRESHNESS_TAGS
+MAX_KEYWORDS = 8
 
-ID_RE = re.compile(r'^[a-z]{2}-[a-z0-9-]+$')
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 EM_DASH = '\u2014'
+
+# The notes every session reads first (AGENTS.md, Start here), stable before volatile.
+STARTUP = ('Profile/Working Style.md', 'Memory/Log.md')
 
 # ── Where things live ──
 
@@ -183,19 +179,25 @@ _KEY = re.compile(r'^([A-Za-z_][\w-]*)[ \t]*:(?:[ \t]+(.*))?[ \t]*$')
 _ESCAPES = {'"': '"', '\\': '\\', '/': '/', 'n': '\n', 't': '\t', 'r': '\r', '0': '\0'}
 
 
+# A note's block is hidden in an HTML comment, as the account's standard asks;
+# an agent spec or a skill keeps the --- block its loader reads.
+_CLOSERS = {'<!--': ('-->',), '---': ('---', '...')}
+
+
 def frontmatter_span(text: str) -> tuple[int, int] | None:
     """Where the frontmatter's lines start and end in the text, or None when it has none.
-    The block opens with a --- first line and closes at the next line that is --- or ...,
-    so a --- inside a value can never cut it short."""
+    The block opens with a <!-- or --- first line and closes at the next line that is -->,
+    or --- and ..., so a marker inside a value can never cut it short."""
     first = text.split('\n', 1)[0]
-    if first.rstrip('\r').rstrip() != '---':
+    closers = _CLOSERS.get(first.rstrip('\r').rstrip())
+    if closers is None:
         return None
     start = len(first) + 1
     at = start
     while at <= len(text):
         end = text.find('\n', at)
         line = text[at:] if end == -1 else text[at:end]
-        if line.rstrip('\r').rstrip() in ('---', '...'):
+        if line.rstrip('\r').rstrip() in closers:
             return start, at
         if end == -1:
             return None
@@ -395,13 +397,18 @@ def is_stale(fields: dict[str, object]) -> bool:
     return str(fields.get('status', '') or '').strip().lower() in STALE_STATUSES
 
 
+def is_fenced(text: str) -> bool:
+    """A --- block: an agent spec's or a skill's, the format its loader reads."""
+    return text.split('\n', 1)[0].rstrip('\r').rstrip() == '---'
+
+
 # ── Wikilinks ──
 
 _WIKILINK = re.compile(r'(!?)\[\[([^\[\]\n]+?)\]\]')
 
 
 def strip_code(text: str) -> str:
-    """The text without fenced code and inline code, where Obsidian renders no links."""
+    """The text without fenced code and inline code, where a link is only text."""
     out, fenced = [], False
     for line in text.split('\n'):
         if re.match(r'^\s*(```|~~~)', line):
@@ -414,7 +421,7 @@ def strip_code(text: str) -> str:
 
 def wikilinks(text: str) -> list[str]:
     """Each wikilink's target, without its alias, heading or block. Links inside
-    code, or inside an Obsidian %% comment, are not links, so they are left out."""
+    code, or inside a %% comment, are not links, so they are left out."""
     visible = re.sub(r'%%.*?(?:%%|\Z)', '', strip_code(text), flags=re.S)
     targets = []
     for _embed, raw in _WIKILINK.findall(visible):
@@ -456,15 +463,28 @@ def redraw_block(text: str, name: str, body: str) -> str | None:
 
 # ── The agent library ──
 #
-# One library, three homes. A home is a folder of team folders, or, when its
-# own note lists members, a single team itself. A team folder holds one file
-# per agent and a roster named after the folder that lists the members.
+# One library, three homes. A home is a folder of team folders, or, when it
+# holds agent specs itself, a single team. A team folder holds one spec per
+# agent, the --- block naming it, and a roster: the folder's own note. The
+# team's members are the specs in its folder, and its lead the starred one.
+
+def is_agent(path: pathlib.Path) -> bool:
+    """An agent spec: a note whose --- block names its agent or its tools."""
+    try:
+        text = read_text(path)
+    except OSError:
+        return False
+    return is_fenced(text) and bool({'name', 'tools'} & set(parse_frontmatter(text) or {}))
+
+
+def _specs(folder: pathlib.Path) -> list[pathlib.Path]:
+    return [p for p in sorted(folder.glob('*.md')) if p.stem.lower() != folder.name.lower() and is_agent(p)]
+
 
 def team_dirs(home: pathlib.Path) -> list[pathlib.Path]:
     if not home.is_dir():
         return []
-    roster = home / f'{home.name}.md'
-    if roster.is_file() and 'members' in note_fields(roster):
+    if _specs(home):
         return [home]
     return [d for d in sorted(home.iterdir())
             if d.is_dir() and not d.name.startswith('.') and d.name.lower() not in NON_TEAM_DIRS]
@@ -472,27 +492,29 @@ def team_dirs(home: pathlib.Path) -> list[pathlib.Path]:
 
 def agent_files(home: pathlib.Path) -> list[tuple[pathlib.Path, str]]:
     """Each agent spec in a home, with the team it belongs to."""
-    out = []
-    for team in team_dirs(home):
-        for path in sorted(team.glob('*.md')):
-            # A README is the folder's GitHub page, never an agent.
-            if path.stem.lower() != team.name.lower() and path.name not in SKIP_FILES:
-                out.append((path, team.name))
-    return out
+    return [(path, team.name) for team in team_dirs(home) for path in _specs(team)]
 
 
 def roster_files(home: pathlib.Path) -> list[tuple[pathlib.Path, str]]:
-    """Each team's roster in a home. A team folder's note counts as a roster once it lists members."""
+    """Each team's roster in a home: the note of a team folder that holds specs."""
     out = []
     for team in team_dirs(home):
         roster = team / f'{team.name}.md'
-        if roster.is_file() and 'members' in note_fields(roster):
+        if roster.is_file() and _specs(team):
             out.append((roster, team.name))
     return out
 
 
-def members(fields: dict[str, object]) -> list[str]:
-    return [m.strip() for m in as_list(fields.get('members')) if m.strip()]
+def members(team: pathlib.Path) -> list[str]:
+    """A team's members by role, its file name: the lead first, then the rest in name order."""
+    roles = [p.stem for p in _specs(team)]
+    return sorted(roles, key=lambda role: (not role.startswith(STAR), role.lstrip(STAR + ' ').lower()))
+
+
+def lead(team: pathlib.Path) -> str:
+    """The team's lead: its one starred member, or '' when it has none."""
+    starred = [role for role in members(team) if role.startswith(STAR)]
+    return starred[0] if len(starred) == 1 else ''
 
 
 def homes(root: pathlib.Path) -> list[pathlib.Path]:
@@ -540,19 +562,8 @@ def entry_files(folder: pathlib.Path) -> list[pathlib.Path]:
 
 
 def startup_notes(root: pathlib.Path) -> list[pathlib.Path]:
-    """The notes tagged startup, stable before volatile: by layer, with Memory last."""
-    tagged = []
-    for path in walk_notes(root):
-        if is_template(path.relative_to(root).parts):
-            continue
-        fields = note_fields(path)
-        if 'startup' in as_list(fields.get('tags')):
-            try:
-                layer = int(str(fields.get('layer', '')))
-            except ValueError:
-                layer = 99
-            tagged.append(((layer, fields.get('folder') == 'memory', rel(root, path)), path))
-    return [path for _key, path in sorted(tagged)]
+    """The notes every session reads first, stable before volatile, as many as the vault holds."""
+    return [root / name for name in STARTUP if (root / name).is_file()]
 
 
 def inbox_drops(root: pathlib.Path) -> list[pathlib.Path]:

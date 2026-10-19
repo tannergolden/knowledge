@@ -1,20 +1,9 @@
----
+<!--
 title: "Film & Media Arts - Folder Information"
 description: "Film, television, and screen media as art."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["film", "media", "arts", "television", "screen", "art"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Film & Media Arts/Film & Media Arts.md"
-id: "li-film-media-arts"
----
+type: "index"
+keywords: ["television", "screen", "art"]
+-->
 
 # 📁 Library / Arts & Recreation / Film & Media Arts /
 

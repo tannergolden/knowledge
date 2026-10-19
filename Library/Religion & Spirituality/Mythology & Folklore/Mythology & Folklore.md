@@ -1,20 +1,9 @@
----
+<!--
 title: "Mythology & Folklore - Folder Information"
 description: "Sacred myths, cosmologies, and legends as belief and narrative."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["mythology", "folklore", "sacred", "myths", "cosmologies", "legends"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Mythology & Folklore/Mythology & Folklore.md"
-id: "li-mythology-folklore"
----
+type: "index"
+keywords: ["sacred", "myths", "cosmologies", "legends"]
+-->
 
 # 📁 Library / Religion & Spirituality / Mythology & Folklore /
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Biography"
 description: "The user's life facts and life story: name, contact, location, work, education, family, formative years, key events, and the McAdams narrative themes that give the facts meaning."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Life Story", "Background", "Bio"]
-keywords: ["life history", "background", "where they live", "career history", "education", "family", "life story", "narrative themes", "formative years", "contact"]
-created: 2026-06-19
-updated: 2026-06-19
-type: "self"
-folder: "profile"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Biography.md"
-id: "id-biography"
----
+type: "reference"
+keywords: ["life story", "background", "bio", "life history", "where they live", "career history", "education", "family"]
+-->
 
 # 📖 Biography
 

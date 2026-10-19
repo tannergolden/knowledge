@@ -1,20 +1,9 @@
----
+<!--
 title: "Chemistry - Folder Information"
 description: "Substances, reactions, and materials at the molecular scale."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["chemistry", "substances", "reactions", "materials", "molecular", "scale"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Chemistry/Chemistry.md"
-id: "li-chemistry"
----
+type: "index"
+keywords: ["substances", "reactions", "materials", "molecular", "scale"]
+-->
 
 # 📁 Library / Science & Mathematics / Chemistry /
 

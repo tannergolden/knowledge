@@ -1,20 +1,9 @@
----
+<!--
 title: "Information Science - Folder Information"
 description: "Theory of information, its measurement, storage, retrieval, and flow."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["information", "science", "theory", "measurement", "storage", "retrieval"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/Information Science/Information Science.md"
-id: "li-information-science"
----
+type: "index"
+keywords: ["theory", "measurement", "storage", "retrieval"]
+-->
 
 # 📁 Library / Information & Computing / Information Science /
 

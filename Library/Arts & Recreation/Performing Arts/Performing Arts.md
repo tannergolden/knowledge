@@ -1,20 +1,9 @@
----
+<!--
 title: "Performing Arts - Folder Information"
 description: "Theatre, dance, opera, and live performance."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["performing", "arts", "theatre", "dance", "opera", "live"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Performing Arts/Performing Arts.md"
-id: "li-performing-arts"
----
+type: "index"
+keywords: ["theatre", "dance", "opera", "live"]
+-->
 
 # 📁 Library / Arts & Recreation / Performing Arts /
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Identify - Skill Information"
 description: "BRAIN documentation node for the identify skill: coverage-driven interviewing that fills and deepens the Profile facets with validated frameworks, provenance-marked inferences, and approval-gated writes."
-status: "active"
-tags: ["system", "information"]
-aliases: ["/identify", "identify skill"]
-keywords: ["profile interview", "fill out my profile", "get to know me", "coverage", "big five", "schwartz values", "mcadams life story", "unconfirmed"]
-created: 2026-07-03
-updated: 2026-10-19
-type: "information"
-folder: "system"
-layer: 4
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/identify/Identify.md"
-id: "sy-skill-identify"
----
+type: "index"
+keywords: ["/identify", "identify skill", "profile interview", "fill out my profile", "get to know me", "coverage", "big five", "schwartz values"]
+-->
 
 # 🪪 identify - Information Guide
 

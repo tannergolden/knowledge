@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Tech Stack"
 description: "Technology stack, tools, infrastructure, and integrations for [Company]."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["Tech Stack"]
-keywords: ["tools", "infrastructure", "integrations", "platforms", "technology", "information technology", "systems", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Information Technology (IT)/Stack.md"
-id: "ve-stack"
----
+keywords: ["tech stack", "tools", "infrastructure", "integrations", "platforms", "technology", "information technology", "systems"]
+-->
 
 # 🧱 [Company] - Tech Stack
 

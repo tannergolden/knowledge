@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """Check the wikilink graph: every link resolves, and links follow the hub topology.
 
-WHY THIS EXISTS. The vault is a knowledge graph in Obsidian, and its links
+WHY THIS EXISTS. The vault is a knowledge graph of wikilinks, and its links
 follow one shape (.docs/vault/Link-Topology.md). A folder's own note links
 the files in its folder and the notes of its immediate subfolders, and every
 other note links nothing and names files by plain path. Links
 flow downhill and never back. A broken link is a lie in the graph, and a link
-out of place makes Obsidian's graph and backlinks say something untrue, and
-nothing else would notice either one. Link checkers that read Markdown links
+out of place makes the graph, and every note's backlinks, say something
+untrue, and nothing else would notice either one. Link checkers that read Markdown links
 do not read wikilinks, so this does.
 
 It fails on a link that resolves to no file, a link the topology does not
 allow, a link into a .template/ scaffold, and two notes that link each other.
 It warns on a link that matches several files (give it a path) and on longer
-cycles. Links inside code and inside Obsidian %% comments are not links.
+cycles. Links inside code and inside %% comments are not links.
 
 Run it:
 
@@ -30,7 +30,7 @@ import vault  # noqa: E402  (vault.py sits beside this file)
 
 
 def resolve(target: str, by_name: dict[str, list[str]], files: list[str]) -> list[str]:
-    """The files a link names, the way Obsidian finds them."""
+    """The files a link names: a path, or a file name anywhere in the vault."""
     lowered = target.lower()
     if '/' in target:
         # A path link matches a whole path, or a tail of one at a folder boundary.

@@ -1,20 +1,9 @@
----
+<!--
 title: "Statistics & Probability - Folder Information"
 description: "Probability theory and statistical inference."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["statistics", "probability", "theory", "statistical", "inference"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Statistics & Probability/Statistics & Probability.md"
-id: "li-statistics-probability"
----
+type: "index"
+keywords: ["theory", "statistical", "inference"]
+-->
 
 # 📁 Library / Science & Mathematics / Statistics & Probability /
 

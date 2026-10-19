@@ -1,22 +1,9 @@
----
+<!--
 title: "Administration"
 description: "Dispatch this team for company-level direction, coordination, governance, execution, and strategy: the executive office that turns the Founder's intent into coordinated action across the departments. The top Administration tier, above the operating departments."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["the executive office"]
-keywords: ["administration", "executive office", "c-suite", "leadership team", "top tier"]
-members: ["★ Chief Executive Officer", "Chief Operating Officer", "Corporate Secretary"]
-lead: ★ Chief Executive Officer
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Administration/Administration.md"
-id: "ve-administration"
----
+type: "index"
+keywords: ["the executive office", "executive office", "c-suite", "leadership team", "top tier"]
+-->
 # 🏛️ Administration
 
 - ★ [[★ Chief Executive Officer]] (Jonathan) - sets direction, allocates across departments, decides or escalates to the Founder; the lead of the executive office.

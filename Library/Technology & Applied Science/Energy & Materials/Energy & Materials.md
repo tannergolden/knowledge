@@ -1,20 +1,9 @@
----
+<!--
 title: "Energy & Materials - Folder Information"
 description: "Energy systems, and materials science and engineering."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["energy", "materials", "systems", "science", "engineering"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Energy & Materials/Energy & Materials.md"
-id: "li-energy-materials"
----
+type: "index"
+keywords: ["systems", "science", "engineering"]
+-->
 
 # 📁 Library / Technology & Applied Science / Energy & Materials /
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Dates"
 description: "Prospective memory: important dates, deadlines, anniversaries, and recurring events. Future-facing reference, one table row per date."
-status: "active"
-tags: ["memory", "record"]
-aliases: ["Important Dates", "Deadlines"]
-keywords: ["dates", "deadlines", "anniversaries", "recurring events", "reminders", "prospective memory", "milestones"]
-created: 2026-06-18
-updated: 2026-10-19
 type: "record"
-folder: "memory"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Dates.md"
-id: "me-dates"
----
+keywords: ["important dates", "deadlines", "anniversaries", "recurring events", "reminders", "prospective memory", "milestones"]
+-->
 
 # 📅 Dates
 

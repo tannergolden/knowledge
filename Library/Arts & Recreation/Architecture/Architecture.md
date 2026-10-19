@@ -1,20 +1,9 @@
----
+<!--
 title: "Architecture - Folder Information"
 description: "Architecture as art and history."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["architecture", "art", "history"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Architecture/Architecture.md"
-id: "li-architecture"
----
+type: "index"
+keywords: ["art", "history"]
+-->
 
 # 📁 Library / Arts & Recreation / Architecture /
 

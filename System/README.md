@@ -1,8 +1,8 @@
 <!--
 title: '⚙️ SYSTEM'
 description: 'How the AI works in the vault: its workflows, its skills and the catalogs it generates.'
-tags: [system, configuration, obsidian-vault, readme]
-category: docs
+type: index
+keywords: [configuration, vault]
 -->
 
 <!-- markdownlint-disable MD041 -->

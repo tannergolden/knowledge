@@ -46,7 +46,7 @@ FIXED_DATE = (1980, 1, 1, 0, 0, 0)  # the earliest a zip records, so a rebuild c
 JUNK_DIRS = frozenset({'__pycache__', '.git', '.obsidian', '.trash'})
 JUNK_FILES = frozenset({'.DS_Store', 'Thumbs.db'})
 JUNK_SUFFIXES = frozenset({'.pyc', '.pyo', '.skill', '.swp'})
-CATALOG_FIELDS = ('path', 'title', 'type', 'folder', 'layer', 'tags', 'keywords', 'description', 'status', 'updated')
+CATALOG_FIELDS = ('path', 'title', 'type', 'keywords', 'description', 'status')
 STATUS_OPEN = re.compile(r'(?im)^\s*\*\*Status:\*\*\s*Open\b')
 LOG_HEADING = re.compile(r'###\s+(\S+)\s+-\s+(.+)')
 
@@ -217,7 +217,7 @@ def catalog(root: pathlib.Path) -> str:
         for key in CATALOG_FIELDS:
             if key == 'path':
                 record[key] = 'BRAIN/' + vault.rel(root, note)
-            elif key in ('tags', 'keywords'):
+            elif key == 'keywords':
                 record[key] = vault.as_list(fields.get(key))
             elif key == 'title':
                 record[key] = str(fields.get('title', note.stem))
@@ -239,7 +239,7 @@ def agent_catalog(root: pathlib.Path) -> str:
             fields = vault.note_fields(path)
             agents.append({
                 'name': str(fields.get('name', '') or '').strip(),
-                'role': str(fields.get('title', '') or '').strip() or path.stem,
+                'role': path.stem,
                 'home': label,
                 'team': team,
                 'description': str(fields.get('description', '') or '').strip(),
@@ -250,8 +250,8 @@ def agent_catalog(root: pathlib.Path) -> str:
             teams.append({
                 'team': team,
                 'home': label,
-                'lead': str(fields.get('lead', '') or '').strip(),
-                'members': vault.members(fields),
+                'lead': vault.lead(path.parent),
+                'members': vault.members(path.parent),
                 'description': str(fields.get('description', '') or '').strip(),
                 'path': 'BRAIN/' + vault.rel(root, path),
             })
@@ -313,16 +313,12 @@ def archive_entries(root: pathlib.Path, folder: pathlib.Path, report: vault.Repo
             report.error(folder / 'SKILL.md', f"metadata.team names '{team}', which no roster defines, "
                                              'so the archive cannot carry its team')
             return entries
-        by_role = {}
-        for home in vault.homes(root):
-            for path, _team in vault.agent_files(home):
-                fields = vault.note_fields(path)
-                by_role[str(fields.get('title', '') or '').strip() or path.stem] = path
+        by_role = {path.stem: path for home in vault.homes(root) for path, _team in vault.agent_files(home)}
         entries[f'{name}/agents/{roster.name}'] = roster.read_bytes()
-        for member in vault.members(vault.note_fields(roster)):
+        for member in vault.members(roster.parent):
             path = by_role.get(member)
             if path is None:
-                report.error(roster, f"names '{member}', which no agent file in the library is titled")
+                report.error(roster, f"names '{member}', which no agent file in the library is named")
                 continue
             entries[f'{name}/agents/{path.name}'] = path.read_bytes()
     return dict(sorted(entries.items()))

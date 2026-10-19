@@ -1,20 +1,9 @@
----
+<!--
 title: "System Workflows"
 description: "Formalized workflows for the AI to follow, defining strategy loops, automated captures, and recurring behaviors."
-status: "active"
-tags: ["system", "guide"]
-aliases: []
-keywords: ["procedures", "strategy loop", "capture loop", "consolidation loop", "recurring behaviors", "operating procedures", "workflow map"]
-created: 2026-06-01
-updated: 2026-10-19
 type: "guide"
-folder: "system"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Workflows.md"
-id: "sy-workflows"
----
+keywords: ["procedures", "strategy loop", "capture loop", "consolidation loop", "recurring behaviors", "operating procedures", "workflow map"]
+-->
 
 # 🔄 System Workflows
 
@@ -97,4 +86,4 @@ Memory quality decays through accumulation, not deletion: duplicates pile up, fa
    - **NOOP** - duplicate or trivial; flag per retention policy.
 2. **Flag, never delete.** Removals surface to the user for confirmation (`AGENTS.md`, Ask first); an approved removal is a `git rm`, so it stays recoverable from history. No automated deletion exists anywhere in the system: even Recent-tier cascade overflow is archived to `Memory/Context/Archive/`, not deleted (`Memory/Memory.md`).
 3. **Check cross-file consistency.** A superseded decision may invalidate a person's status in `People/` or a routing note in `Log.md`; propagate the change rather than leaving siblings stale.
-4. **Finish mechanically:** update `updated` frontmatter on touched files, run `update-vault.py`, then `check-vault.py`.
+4. **Finish mechanically:** run `update-vault.py`, then `check-vault.py`, then commit.

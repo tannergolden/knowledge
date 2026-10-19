@@ -1,20 +1,9 @@
----
+<!--
 title: "Commerce & Organizations - Folder Information"
 description: "Business, trade, organizational theory, and accounting."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["commerce", "organizations", "business", "trade", "organizational", "theory"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Commerce & Organizations/Commerce & Organizations.md"
-id: "li-commerce-organizations"
----
+type: "index"
+keywords: ["business", "trade", "organizational", "theory"]
+-->
 
 # 📁 Library / Society & Social Sciences / Commerce & Organizations /
 

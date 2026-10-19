@@ -1,20 +1,9 @@
----
+<!--
 title: "Economics - Folder Information"
 description: "Economic theory, markets, and finance and policy as a discipline."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["economics", "economic", "theory", "markets", "finance", "policy"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Economics/Economics.md"
-id: "li-economics"
----
+type: "index"
+keywords: ["economic", "theory", "markets", "finance", "policy"]
+-->
 
 # 📁 Library / Society & Social Sciences / Economics /
 

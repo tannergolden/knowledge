@@ -1,8 +1,8 @@
 <!--
 title: '📚 DOCUMENTATION'
 description: 'Where this project keeps its own documents, and where the engineering standards it follows actually live.'
-tags: [documentation, index, standards, templates]
-category: docs
+type: index
+keywords: [standards, templates]
 -->
 
 <div align="center">
@@ -44,7 +44,7 @@ why they ship as seed content rather than as law.
 | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
 | [`adrs/`](adrs/README.md)           | Architecture decision records, one file per decision, each logged with its status, date and evidence.              |
 | [`templates/`](templates/README.md) | Index of the reusable document templates and when to use each one.                                                 |
-| [`vault/`](vault/README.md)         | The reference pages behind the vault's rules: its note schema, tag vocabulary, link topology and context assembly. |
+| [`vault/`](vault/README.md)         | The reference pages behind the vault's rules: its note schema, keywords, link topology and context assembly. |
 | [`README.md`](README.md)            | This file.                                                                                                         |
 
 <!-- AUTO-INDEX:END -->

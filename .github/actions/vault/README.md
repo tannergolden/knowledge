@@ -1,8 +1,8 @@
 <!--
 title: '🧠 VAULT CHECKS ACTION'
 description: 'Checks every note, wikilink, skill, agent and generated part of the vault, and tests the scripts that do it.'
-tags: [github-actions, composite-action, vault, validation]
-category: docs
+type: index
+keywords: [github-actions, composite-action, validation]
 -->
 
 <div align="center">

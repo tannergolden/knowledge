@@ -27,12 +27,14 @@ The reader (and the user) has no face or voice on the page, so emotion is carrie
 - **Sentence length.** Clipped one-liners read as terse or angry; long anxious run-ons or staccato bursts read as stress; medium and relaxed reads as warm; even and measured reads as formal.
 - **Salutation and sign-off.** No greeting or just the name reads as cold or angry; "Hi [name]!" or "Hey" reads as warm; "Dear," title plus surname reads as formal. A curt or absent sign-off ("-J," or none) reads as annoyance or haste; "Thanks again!" or "Warmly" reads as warm; "Best regards," "Sincerely" reads as formal.
 
-> [!warning] Guard against negativity bias
+> [!WARNING]
+> **Guard against negativity bias.**
 > When tone cues are missing, imagination fills the blank, and it rarely fills it with good intent: a neutral message is easy to misread as cold or hostile, and people remember a message's emotional tone longer than its content. Weigh **clusters** of cues, never a single mark. One terse line from a busy sender is not anger. Read deliberately and do not assume hostility that is not there.
 
 ## The tone-calibration rule
 
-> [!important] Mirror the register, never the emotion
+> [!IMPORTANT]
+> **Mirror the register, never the emotion.**
 > **Converge** on the other party's **warmth and formality** (matching their register builds rapport and signals respect). **Diverge** from their **anger, panic, and aggression**: hold a calm, warm, firm register instead. Matching frustration is the single worst move. Coldness reads as dislike and also escalates, so hold warmth steady and high against hostility rather than going cold. **Firmness scales with the stakes and the boundary of the situation, not with the sender's volume.** Calm, warm, and firm-on-substance beats matched heat every time.
 
 | Their register | Converge (match it) | Diverge / hold steady (do NOT match) |
@@ -49,7 +51,8 @@ For a charged reply where emotion is high and the relationship matters (a compla
 
 The user wants help, not a questionnaire. Asking is the exception.
 
-> [!tip] Ask at most 1 to 3 questions, and only when it changes the draft
+> [!TIP]
+> **Ask at most 1 to 3 questions, and only when it changes the draft.**
 > Ask only when **a different plausible answer would produce a materially different draft** AND **a wrong guess is costly to undo** (a sensitive recipient, a firing, a legal or money commitment, an unknown power dynamic). Otherwise draft now on explicitly stated, correctable assumptions.
 
 - **Ask only what changes the draft.** If every reasonable answer yields about the same draft, do not ask. Assume and proceed.

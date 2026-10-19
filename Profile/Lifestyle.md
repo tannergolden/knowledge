@@ -1,20 +1,9 @@
----
+<!--
 title: "Lifestyle"
 description: "How the user lives day to day: the stable patterns of sleep, diet, exercise, substances, daily rhythm, rituals, living environment, and recreation. The enduring counterpart to the dynamic Focus layer."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Way of Living", "Habits", "Daily Life"]
-keywords: ["lifestyle", "daily rhythm", "sleep", "diet", "exercise", "habits", "routines", "chronotype", "living environment", "recreation"]
-created: 2026-06-19
-updated: 2026-06-19
-type: "self"
-folder: "profile"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Lifestyle.md"
-id: "id-lifestyle"
----
+type: "reference"
+keywords: ["way of living", "habits", "daily life", "daily rhythm", "sleep", "diet", "exercise", "routines"]
+-->
 
 # 🌿 Lifestyle
 

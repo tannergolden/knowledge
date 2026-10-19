@@ -1,20 +1,9 @@
----
+<!--
 title: "Ventures - Folder Information"
 description: "Explains the purpose of the Ventures/ folder: one subfolder per venture, each holding that company's full context and department folders."
-status: "active"
-tags: ["ventures", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["companies", "businesses", "company subfolders", "department folders", "business context", "folder overview", "venture structure"]
-created: 2026-05-18
-updated: 2026-10-19
-type: "information"
-folder: "ventures"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Ventures.md"
-id: "ve-ventures"
----
+-->
 
 # 🏢 Ventures/
 
@@ -94,7 +83,7 @@ Ventures/
         └── Metrics.md                           KPIs, dashboards, data sources, reporting cadence
 ```
 
-Subfolder names should be short and hyphenated (e.g., `Golden-Media`, `Acme-Corp`). When creating a new venture, copy `Ventures/.template/` and **rewrite each copied file's `id` and `path`** (replace the template `ve-*` id with a venture-scoped one and the `[Company]` placeholder with the real folder name), so ids stay globally unique and the catalog stays clean; the `board` skill does this in its found mode.
+Subfolder names should be short and hyphenated (e.g., `Golden-Media`, `Acme-Corp`). When creating a new venture, copy `Ventures/.template/` and **give each copied file its real `title`, `description` and `type`** (replace the `[Company]` placeholder with the venture's name, and `template` with the type the copy is), so the catalog stays clean; the `board` skill does this in its found mode.
 
 The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the governance record; `Cadence.md`, the operating rhythm) and, in Finance, a forward `Financial-Model.md` and a real `Cap-Table.md`. The Agent Resources (AR) workforce produces a venture's deliverables by **composing** content for these files and returning it; the `board` skill is the **sole writer** that persists it, behind its write-gate (AR drafts internal files autonomously; money, contracts, external comms, and deletes need the Founder). See [[Ventures/Agent Resources (AR)/Agent Resources (AR)|Agent Resources (AR)]].
 
@@ -169,7 +158,7 @@ This check applies every time a venture is referenced, not just on first mention
 - Do not merge or cross-reference context between ventures unless the user explicitly asks
 - Do not store personal (non-work) information here - that belongs in `Profile/` or `Memory/`
 - Do not store general business knowledge here - that belongs in `Library/`
-- Keep each venture's `Overview.md` current - update its stage and status in frontmatter as the venture evolves
+- Keep each venture's `Overview.md` current - update its stage and status as the venture evolves
 
 ---
 
@@ -188,7 +177,7 @@ This check applies every time a venture is referenced, not just on first mention
 
 ## Venture stage & status
 
-There is no hand-maintained index. Each venture is a folder whose `Overview.md` frontmatter carries its stage and status; the live list comes from the catalog: the `ventures` records of the committed `System/Data/catalog.ndjson`.
+There is no hand-maintained index. Each venture is a folder whose `Overview.md` says its stage and status; the live list comes from the catalog: the `BRAIN/Ventures/` records of the committed `System/Data/catalog.ndjson`.
 
 **Keep each venture's `Overview.md` current:**
 - A new venture folder is created → it is cataloged automatically

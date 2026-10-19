@@ -196,6 +196,7 @@
 # the golden path template it follows, and the record of this template's own
 # design, none of which a vault needs.
 #/.docs/adrs/ADR-0001-AGENTS-Holds-The-Vaults-Rules.md
+#/.docs/adrs/ADR-0002-Notes-Take-The-Hidden-Frontmatter.md
 #/.github/TEMPLATE_INIT
 #/.github/template-derive.json
 #/.github/template-derive.lock

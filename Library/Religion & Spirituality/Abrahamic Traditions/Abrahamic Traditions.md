@@ -1,20 +1,9 @@
----
+<!--
 title: "Abrahamic Traditions - Folder Information"
 description: "Judaism, Christianity, Islam, and related movements and scriptures."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["abrahamic", "traditions", "judaism", "christianity", "islam", "related"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Abrahamic Traditions/Abrahamic Traditions.md"
-id: "li-abrahamic-traditions"
----
+type: "index"
+keywords: ["judaism", "christianity", "islam", "related"]
+-->
 
 # 📁 Library / Religion & Spirituality / Abrahamic Traditions /
 

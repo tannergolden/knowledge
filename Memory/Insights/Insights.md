@@ -1,20 +1,9 @@
----
+<!--
 title: "Insights"
 description: "Reflective synthesis of higher-order observations about the user's external world, distilled from context and entity memory."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["insight", "synthesis", "pattern", "observation", "reflection", "dynamic", "tendency"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Insights/Insights.md"
-id: "me-insights"
----
+-->
 
 # 💡 Insights
 

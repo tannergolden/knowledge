@@ -1,8 +1,8 @@
 <!--
 title: '📚 LIBRARY'
 description: 'The vault''s reference library: knowledge about the world, in ten classes, never personal.'
-tags: [library, reference, obsidian-vault, readme]
-category: docs
+type: index
+keywords: [reference, vault]
 -->
 
 <!-- markdownlint-disable MD041 -->

@@ -1,25 +1,14 @@
----
-id: "sy-skill-board-changelog"
+<!--
 title: "board - Changelog"
 description: "Change history for the board skill."
-aliases: []
+type: "record"
 keywords: ["version history", "release notes", "board changes", "revision log"]
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/board/Changelog.md"
-layer: 4
-folder: "system"
-type: "log"
-tags: ["system", "log"]
-status: "active"
-policy: false
-created: 2026-06-29
-updated: 2026-10-19
----
+-->
 # board Changelog
 
 ## Current Version
 
-**`2.1.2`**
+**`2.1.3`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -56,6 +45,11 @@ Aligned the skill to the 2026-07-02 workforce lean build. Four AR departments di
 ## Patch Updates
 
 > Fixes and clarifications. Most recent 4 entries.
+
+### `2.1.3` - 2026-10-19
+
+- Founding gives each copied venture file its real `title`, `description` and `type`, the vault's hidden frontmatter, in place of rewriting the retired `id` and `path` (`SKILL.md`, `references/modes-router.md`, `references/write-gate.md`).
+- The callouts in `references/metrics-and-kpis.md` and `templates/qbr-sixpager.md` are GitHub alerts.
 
 ### `2.1.2` - 2026-10-19
 

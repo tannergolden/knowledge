@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Financials"
 description: "Financial overview for [Company]: revenue, expenses, burn rate, runway, and key financial metrics."
-status: "active"
-tags: ["ventures", "template", "sensitive"]
-aliases: []
-keywords: ["revenue", "expenses", "burn rate", "runway", "financial metrics", "finance accounting", "pricing", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Finance & Accounting (F&A)/Financials.md"
-id: "ve-financials"
----
+keywords: ["revenue", "expenses", "burn rate", "runway", "financial metrics", "finance accounting", "pricing", "template"]
+-->
 
 # 💰 [Company] - Financials
 

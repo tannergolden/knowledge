@@ -1,28 +1,17 @@
----
+<!--
 title: "[Goal]"
 description: "[One-line description of an enduring aspiration.]"
-status: "active"
-tags: ["profile", "template"]
-aliases: []
-keywords: ["goal", "aspiration", "ambition", "objective", "direction", "template"]
-created: 2026-06-19
-updated: 2026-10-19
 type: "template"
-folder: "profile"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/.template/Goal.md"
-id: "id-goal"
----
+keywords: ["aspiration", "ambition", "objective", "direction", "template"]
+-->
 
 # 🎯 [Goal]
 
 <!--
 FILING INSTRUCTIONS (copy this file to Profile/Goals/<Title>.md, then) (one enduring goal):
 - Save as Profile/Goals/[Goal].md. This is the STABLE aspiration; current status and next actions live in Profile/Focus/, not here.
-- Frontmatter: type "self"; tags ["profile","self","sensitive", + freshness "enduring"]; remove "template" tag and "version".
-- Set "path" and a stable "id" (id-<slug>); give the H1 a fitting emoji. NO wikilinks - plain paths only.
+- Frontmatter: set type "reference", and give the copy its real title and description.
+- Give the H1 a fitting emoji. NO wikilinks - plain paths only.
 -->
 
 ## Goal

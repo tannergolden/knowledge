@@ -1,20 +1,9 @@
----
+<!--
 title: "Translation - Folder Information"
 description: "Translation theory and practice."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["translation", "theory", "practice"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Translation/Translation.md"
-id: "li-translation"
----
+type: "index"
+keywords: ["theory", "practice"]
+-->
 
 # 📁 Library / Language & Literature / Translation /
 

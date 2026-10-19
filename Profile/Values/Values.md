@@ -1,24 +1,13 @@
----
+<!--
 title: "Values"
 description: "What the user cares about and how they decide what is right: core values, orientation axes, life philosophy, ethics, motivation, purpose, role models, and what they stand for and against, plus held beliefs as sensitive entries."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Principles", "Ethics", "What Matters"]
-keywords: ["core values", "ethics", "morals", "purpose", "what matters", "philosophy", "orientations", "motivation", "role models", "beliefs"]
-created: 2026-06-19
-updated: 2026-10-19
-type: "self"
-folder: "profile"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Values/Values.md"
-id: "id-values"
----
+type: "reference"
+keywords: ["principles", "ethics", "what matters", "core values", "morals", "purpose", "philosophy", "orientations"]
+-->
 
 # 🧭 Values
 
-What the user prizes and how they judge right from wrong - the facet the AI consults when **helping weigh options or give advice**. Grounded in Schwartz's theory of basic human values, Moral Foundations, and Self-Determination Theory. Substantial standalone beliefs (religious, political, philosophical) live as their own `sensitive` entries so a benign query never surfaces them.
+What the user prizes and how they judge right from wrong - the facet the AI consults when **helping weigh options or give advice**. Grounded in Schwartz's theory of basic human values, Moral Foundations, and Self-Determination Theory. Substantial standalone beliefs (religious, political, philosophical) live as their own entries so a benign query never surfaces them.
 
 ## Snapshot
 
@@ -84,7 +73,7 @@ The things the user actively opposes.
 
 ## Beliefs
 
-Each substantial belief (religious, political, philosophical) is its own `sensitive` entry. Add one by copying `Profile/.template/Belief.md` here as `<Title>.md`; `update-vault.py` keeps the list below.
+Each substantial belief (religious, political, philosophical) is its own entry. Add one by copying `Profile/.template/Belief.md` here as `<Title>.md`; `update-vault.py` keeps the list below.
 
 <!-- brain:profile-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
 _None recorded yet._

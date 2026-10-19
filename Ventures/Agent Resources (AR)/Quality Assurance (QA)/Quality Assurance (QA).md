@@ -1,22 +1,9 @@
----
+<!--
 title: "Quality Assurance (QA)"
 description: "The Quality Assurance (QA) department of the agent workforce: standards, review, and defect prevention. Led by its department head, with more specialists added by demand."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["QA", "Quality"]
+type: "index"
 keywords: ["quality assurance", "standards", "review", "defect prevention", "testing"]
-members: ["★ Head of Quality", "QA Test Engineer"]
-lead: ★ Head of Quality
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Quality Assurance (QA)/Quality Assurance (QA).md"
-id: "ve-quality-assurance"
----
+-->
 # ✅ Quality Assurance (QA)
 
 The Quality Assurance (QA) department of the agent workforce: standards, review, and defect prevention.

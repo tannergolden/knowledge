@@ -1,20 +1,9 @@
----
+<!--
 title: "Internet & Web - Folder Information"
 description: "The internet, the web, networks, protocols, online platforms."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["internet", "web", "networks", "protocols", "online", "platforms"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/Internet & Web/Internet & Web.md"
-id: "li-internet-web"
----
+type: "index"
+keywords: ["networks", "protocols", "online", "platforms"]
+-->
 
 # 📁 Library / Information & Computing / Internet & Web /
 

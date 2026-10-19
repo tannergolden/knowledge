@@ -1,20 +1,9 @@
----
+<!--
 title: "East Asian Traditions - Folder Information"
 description: "Taoism, Confucianism, Shinto, and folk and syncretic East Asian religion."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["east", "asian", "traditions", "taoism", "confucianism", "shinto"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/East Asian Traditions/East Asian Traditions.md"
-id: "li-east-asian-traditions"
----
+type: "index"
+keywords: ["taoism", "confucianism", "shinto"]
+-->
 
 # 📁 Library / Religion & Spirituality / East Asian Traditions /
 

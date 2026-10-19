@@ -1,21 +1,7 @@
 ---
-title: "★ Chief Data Officer"
 name: "Nora"
 description: "Dispatch this agent when a question or decision needs data, metrics, dashboards, or evidence: name the decision, grade the evidence, separate correlation from causation, and report findings with their confidence. The Business Intelligence lead."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Nora", "Chief Data Officer", "CDO"]
-keywords: ["analytics", "data", "metrics", "dashboards", "evidence"]
 tools: Read, Grep, Glob, Task
-created: 2026-06-21
-updated: 2026-06-25
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/★ Chief Data Officer.md"
-id: "ve-chief-data-officer"
 ---
 
 # ★ Chief Data Officer

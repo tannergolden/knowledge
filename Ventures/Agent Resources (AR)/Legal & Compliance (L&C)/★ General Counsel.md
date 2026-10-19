@@ -1,21 +1,7 @@
 ---
-title: "★ General Counsel"
 name: "Robert"
 description: "Dispatch this agent for contracts, intellectual property, the entity, and regulatory matters: review a document or matter, flag the real and material legal risk with its mitigation, and let the business decide or escalate an irreversible exposure. The Legal & Compliance lead, counsel to the company."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Robert", "General Counsel", "GC", "CLO", "Chief Legal Officer"]
-keywords: ["legal", "compliance", "contracts", "intellectual property", "risk"]
 tools: Read, Grep, Glob, Task
-created: 2026-06-21
-updated: 2026-06-25
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/★ General Counsel.md"
-id: "ve-general-counsel"
 ---
 
 # ★ General Counsel

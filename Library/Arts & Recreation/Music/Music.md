@@ -1,20 +1,9 @@
----
+<!--
 title: "Music - Folder Information"
 description: "Composition, performance, theory, and history of music."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["music", "composition", "performance", "theory", "history"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Music/Music.md"
-id: "li-music"
----
+type: "index"
+keywords: ["composition", "performance", "theory", "history"]
+-->
 
 # 📁 Library / Arts & Recreation / Music /
 

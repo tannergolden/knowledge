@@ -1,26 +1,15 @@
----
+<!--
 title: "editorial - Changelog"
 description: "Change history for the editorial skill, the BRAIN's writing, editing, and formatting orchestrator."
-status: "active"
-tags: ["system", "log"]
-aliases: []
+type: "record"
 keywords: ["version history", "release notes", "editorial skill changes", "revision log"]
-created: 2026-06-23
-updated: 2026-10-19
-type: "log"
-folder: "system"
-layer: 4
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/editorial/Changelog.md"
-id: "sy-skill-editorial-changelog"
----
+-->
 
 # 📋 editorial Changelog
 
 ## Current Version
 
-**`1.5.2`**
+**`1.6.0`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -46,6 +35,12 @@ _None yet._
 
 > New tier behavior, new references, new templates or assets. Most recent 4 entries.
 
+### `1.6.0` - 2026-10-19
+
+- Vault notes are GitHub-Flavored Markdown with wikilinks, the vault's move off Obsidian: `references/formatting.md` and `SKILL.md` make it the default for every vault file and for a markdown target leaving the vault, and wikilinks never leave the notes.
+- Callouts are GitHub's five uppercase alerts, titled by a bold lead-in, and a collapsible `<details>` block replaces folding as the density tool. `references/admonitions.md` and `assets/callout-types.json` keep Obsidian's full set for a target that renders it.
+- The precedence and the exit gate name the hidden frontmatter in `.docs/vault/Note-Schema.md`, and every callout in the skill's references and templates is one of the five.
+
 ### `1.5.0` - 2026-06-28
 
 Restructured `SKILL.md` to develop's canonical skeleton, the standard every skill now mirrors (`develop` `references/architecture.md`): the operational table first (Tiers), then the team it dispatches, how a piece is made (intake Phase 0, the destination rule, the Line Editor gate, editing in place), dispatch scaling, formatting and beauty, voice, conformance with the live BRAIN, quality bars, and boundaries. No behavior change: every prior rule is preserved and reordered, the granular sections (the beauty principle, voice, the structural trigger scope, editing essentials, the BRAIN-aware contract) are folded into the spine, and the quality non-negotiables are consolidated into a Quality bars list. The 986-character description, the tier table, and every reference pointer are unchanged.
@@ -57,10 +52,6 @@ External writing help (a piece the user will send or use outside the vault: writ
 ### `1.3.0` - 2026-06-25
 
 Split the combined correspondence reference into two by medium. The former `references/email-and-messages.md` became `references/email.md` (the furniture-bearing genres: the medium-branch table, bottom-line-up-front email, the Field/Tenor/Mode register theory and Joos's five-rung ladder, the greeting-and-sign-off map, formal letters, and the Writing-for-HTML-email section) and `references/messages.md` (the no-furniture chat genre: one thought delivered plain, no subject or salutation or sign-off, the keep-it-light register rule, and a pointer to `references/messaging-formats.md` for the per-platform syntax). Repointed the three referencing files to the new names (`references/voice.md`, `templates/email.md`, `templates/message.md`); each new reference keeps the plain-H1, no-frontmatter shape.
-
-### `1.2.0` - 2026-06-24
-
-Added two on-demand format references for non-Markdown destinations, both built from primary-source-verified research (RFCs 5322/3676/1849 and each platform's own docs). New `references/plain-text.md` covers true plain text (`.txt`, plain-text email or messages): the no-Markdown-into-raw-text footgun and bare URLs, line wrapping near 72 with the 998 SMTP hard limit, format=flowed soft breaks and space-stuffing (MIME-email-scoped), the `-- ` signature delimiter with its load-bearing trailing space, structure without markup, the ambiguous asterisk/underscore emphasis caveat, and `>` reply quoting. New `references/messaging-formats.md` is the per-platform chat-dialect matrix (Slack, Discord, WhatsApp, Telegram, Teams, iMessage/SMS/RCS, Reddit) leading with a side-by-side table, then the footguns: single-versus-double emphasis chars, the link-form split, Telegram MarkdownV2 escaping, heading and strikethrough variance, and the plain-text-only messaging platforms; scoped to text markup, not Block Kit / Adaptive Cards / bot payloads. Folded a "Writing for HTML email" section into `references/email-and-messages.md` (the mandatory plain-text twin, image-blocking-aware copy, the markdown-paste caveat, and a refer-out pointer for hand-built HTML). Added an other-markup pointer to `references/formatting.md` (match the target's native syntax; the glyphs collide; verify at the source). Added both new references to the `SKILL.md` pointer line and bumped `metadata.version` to match. Evaluated and excluded the out-of-scope formats: Word, PDF, PowerPoint, and Excel (their own BRAIN skills), structured data, code, full LaTeX and Typst, and subtitles.
 
 ---
 

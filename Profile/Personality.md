@@ -1,20 +1,9 @@
----
+<!--
 title: "Personality"
 description: "How the user thinks, focuses, feels, works, learns, and behaves under pressure: personality typing, Big Five with BFI-2 facets, temperament, cognitive/working/learning style, emotional and social style, strengths, blind spots, and behavior under pressure."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Temperament", "Traits", "Disposition"]
-keywords: ["personality traits", "big five", "bfi-2 facets", "mbti", "enneagram", "temperament", "thinking style", "learning style", "under pressure", "blind spots"]
-created: 2026-06-19
-updated: 2026-06-19
-type: "self"
-folder: "profile"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Personality.md"
-id: "id-personality"
----
+type: "reference"
+keywords: ["temperament", "traits", "disposition", "personality traits", "big five", "bfi-2 facets", "mbti", "enneagram"]
+-->
 
 # 🎭 Personality
 

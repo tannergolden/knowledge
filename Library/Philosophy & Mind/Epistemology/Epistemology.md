@@ -1,20 +1,9 @@
----
+<!--
 title: "Epistemology - Folder Information"
 description: "Knowledge, justification, truth, the theory of inquiry."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["epistemology", "knowledge", "justification", "truth", "theory", "inquiry"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Epistemology/Epistemology.md"
-id: "li-epistemology"
----
+type: "index"
+keywords: ["knowledge", "justification", "truth", "theory", "inquiry"]
+-->
 
 # 📁 Library / Philosophy & Mind / Epistemology /
 

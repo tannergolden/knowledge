@@ -1,20 +1,9 @@
----
+<!--
 title: "Preferences"
 description: "The user's interests, tastes, media, food and lifestyle, tools, aesthetics, and dislikes: the topical likes that personalize suggestions, distinct from the AI-interaction rules in Working Style and competencies in Skills."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Tastes", "Interests", "Likes"]
-keywords: ["interests", "hobbies", "tastes", "media", "books", "tools", "tech stack", "likes", "dislikes", "favorites"]
-created: 2026-06-19
-updated: 2026-06-19
-type: "self"
-folder: "profile"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Preferences.md"
-id: "id-preferences"
----
+type: "reference"
+keywords: ["tastes", "interests", "likes", "hobbies", "media", "books", "tools", "tech stack"]
+-->
 
 # 🎨 Preferences
 

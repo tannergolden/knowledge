@@ -1,20 +1,9 @@
----
+<!--
 title: "Food & Cooking - Folder Information"
 description: "Cooking technique, recipes, ingredients, and kitchen practice."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["food", "cooking", "technique", "recipes", "ingredients", "kitchen"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Food & Cooking/Food & Cooking.md"
-id: "li-food-cooking"
----
+type: "index"
+keywords: ["technique", "recipes", "ingredients", "kitchen"]
+-->
 
 # 📁 Library / Life & Practice / Food & Cooking /
 

@@ -1,25 +1,13 @@
----
+<!--
 title: "Decision"
 description: "Template for a single significant decision record - context, alternatives, outcome, and lessons."
-status: "active"
-tags: ["memory", "template"]
-aliases: []
-keywords: ["decision", "choice", "rationale", "tradeoff", "outcome", "lesson", "template"]
-created: 2026-06-18
-updated: 2026-06-18
 type: "template"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/.template/Decision.md"
-id: "me-decision"
----
+keywords: ["choice", "rationale", "tradeoff", "outcome", "lesson", "template"]
+-->
 
 <!--
 Instantiation: copy this file into Memory/Decisions/ to record a decision.
-- Set type to "record" and drop the "template" tag and the version key.
-- Set id to me-<slug> and path to BRAIN/Memory/Decisions/<file>.md.
+- Set type to "record", and give the copy its real title and description.
 - Replace the emoji H1 title with the real decision title.
 - Name the file YYYY-MM-slug.md so records sort chronologically.
 - Fill Actual Outcome later, once the decision has played out.

@@ -1,20 +1,9 @@
----
+<!--
 title: "Publishing & Broadcasting - Folder Information"
 description: "Publishing, the press, and broadcasting institutions and infrastructure."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["publishing", "broadcasting", "press", "institutions", "infrastructure"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/Publishing & Broadcasting/Publishing & Broadcasting.md"
-id: "li-publishing-broadcasting"
----
+type: "index"
+keywords: ["press", "institutions", "infrastructure"]
+-->
 
 # 📁 Library / Information & Computing / Publishing & Broadcasting /
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Data & Information Management - Folder Information"
 description: "Databases, datasets, data management, analytics practice, data literacy."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["data", "information", "management", "databases", "datasets", "analytics"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/Data & Information Management/Data & Information Management.md"
-id: "li-data-information-management"
----
+type: "index"
+keywords: ["databases", "datasets", "analytics"]
+-->
 
 # 📁 Library / Information & Computing / Data & Information Management /
 

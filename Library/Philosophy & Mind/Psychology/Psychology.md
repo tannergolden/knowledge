@@ -1,20 +1,9 @@
----
+<!--
 title: "Psychology - Folder Information"
 description: "The scientific and clinical study of mind and behavior."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["psychology", "scientific", "clinical", "study", "mind", "behavior"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Psychology/Psychology.md"
-id: "li-psychology"
----
+type: "index"
+keywords: ["scientific", "clinical", "study", "mind", "behavior"]
+-->
 
 # 📁 Library / Philosophy & Mind / Psychology /
 

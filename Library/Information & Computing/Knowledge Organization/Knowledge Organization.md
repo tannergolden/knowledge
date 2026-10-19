@@ -1,20 +1,9 @@
----
+<!--
 title: "Knowledge Organization - Folder Information"
 description: "Classification, cataloging, taxonomies, ontologies, metadata."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["knowledge", "organization", "classification", "cataloging", "taxonomies", "ontologies"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/Knowledge Organization/Knowledge Organization.md"
-id: "li-knowledge-organization"
----
+type: "index"
+keywords: ["classification", "cataloging", "taxonomies", "ontologies"]
+-->
 
 # 📁 Library / Information & Computing / Knowledge Organization /
 

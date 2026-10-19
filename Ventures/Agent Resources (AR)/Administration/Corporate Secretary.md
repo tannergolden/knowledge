@@ -1,21 +1,7 @@
 ---
-title: "Corporate Secretary"
 name: "Margaret"
 description: "Dispatch this agent to record a decision, check it against prior decisions and policy, and keep governance and the corporate record consistent. The Corporate Secretary, the governance keeper who serves the Founder and the board function."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Margaret"]
-keywords: ["corporate secretary", "governance", "corporate record", "decision hygiene", "board liaison"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Administration/Corporate Secretary.md"
-id: "ve-corporate-secretary"
 ---
 
 # 🖋️ Corporate Secretary

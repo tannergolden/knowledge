@@ -1,20 +1,9 @@
----
+<!--
 title: "Focus"
 description: "The dynamic layer: the user's current priorities, how to help right now, routines, current life chapter, and what is on the horizon. Changes often; trust it over older notes and refresh it on use."
-status: "active"
-tags: ["profile", "self", "sensitive", "current"]
-aliases: ["Now", "Current Priorities", "Current Context"]
-keywords: ["current priorities", "right now", "current focus", "routines", "what to help with", "current chapter", "on the horizon", "this week"]
-created: 2026-06-19
-updated: 2026-06-19
-type: "self"
-folder: "profile"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Focus.md"
-id: "id-focus"
----
+type: "reference"
+keywords: ["now", "current priorities", "current context", "right now", "current focus", "routines", "what to help with", "current chapter"]
+-->
 
 # 🔦 Focus
 

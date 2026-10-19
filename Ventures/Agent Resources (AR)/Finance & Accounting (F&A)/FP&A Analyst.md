@@ -1,21 +1,7 @@
 ---
-title: "FP&A Analyst"
 name: "Priya"
 description: "Dispatch this agent for the forecast, the budget, and decision-support analysis: build or update a financial model, frame a variance, and size the financial case for a decision. Serves in the Finance & Accounting department under the Chief Financial Officer."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Priya", "FP&A Analyst", "FP&A"]
-keywords: ["forecast", "budget", "modeling", "variance", "analysis"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/FP&A Analyst.md"
-id: "ve-fpa-analyst"
 ---
 
 # 📈 FP&A Analyst

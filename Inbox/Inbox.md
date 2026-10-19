@@ -1,20 +1,9 @@
----
+<!--
 title: "Inbox - Staging Area"
 description: "Drop any unsorted file here. The AI analyzes, proposes a destination, enriches with frontmatter or macOS metadata, and asks for sorting confirmation. Held sub-homes (Reports, Visuals, and the standing teams) live here but are never sorted."
-status: "active"
-tags: ["inbox", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["staging area", "drop files", "unsorted", "sorting protocol", "pdf cleanup", "file triage", "where to put files", "hold folder"]
-created: 2026-05-18
-updated: 2026-10-19
-type: "information"
-folder: "inbox"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Inbox.md"
-id: "in-inbox"
----
+-->
 
 # 📥 Inbox/
 
@@ -49,7 +38,7 @@ A staging area for any file you want the AI to sort into the BRAIN. Drop files h
 2. If any are PDFs, the AI asks whether to run cleanup (removes piracy watermarks, malicious links, shadow library branding) or trust the source
 3. The AI analyzes each file and determines where it should go in the BRAIN
 4. The AI proposes both a destination and (if needed) a clean filename, then asks you to confirm
-5. After confirmation, the AI applies required frontmatter (for text files) or writes tags directly to macOS metadata (for binary files) before moving anything
+5. After confirmation, the AI adds the required frontmatter to each text file (a binary file carries none) before moving anything
 
 **Nothing gets moved without your approval.**
 
@@ -177,7 +166,7 @@ Do not move any file without explicit approval for that file.
 
 1. Apply the rename (if a rename was approved in step 4)
 2. For files destined for `Library/`, assess freshness lifespan by the Library's tiers (`Library/Library.md`, Rules). If ephemeral (<5 years), redirect to `Projects/`, `Ventures/`, `Memory/`, or deletion with user confirmation. Do not file ephemeral content in the Library.
-3. Enrich with frontmatter (text/markdown); a binary carries none. For Library files, include the freshness tag (`timeless`, `enduring`, or `current`).
+3. Enrich with frontmatter (text/markdown); a binary carries none. For Library files, lead the keywords with the freshness token (`freshness/timeless`, `freshness/enduring` or `freshness/current`).
 4. Move to destination
 
 **Filename hygiene (check before enrichment):**
@@ -188,12 +177,12 @@ Examples: `my_report_v2_FINAL(1).pdf` → `My Report.pdf`, `export_2024_03_07.cs
 
 **Text / Markdown files:**
 
-- Add the standard frontmatter (`.docs/vault/Note-Schema.md`) before moving
-- Fill in `title`, `description`, `path`, `folder`, `type`, `tags`, `policy`, `created`, and `updated`
+- Add the hidden frontmatter (`.docs/vault/Note-Schema.md`) before moving
+- Fill in `title`, `description` and `type`, with `keywords` where they help
 
 **Binary / Non-Editable files (images, PDFs, audio, video, scripts, etc.):**
 
-These cannot embed frontmatter, so they carry no tags (`.docs/vault/Note-Schema.md`): the folder they are filed into places them, and that folder's note describes them. Give each a clean, descriptive name before it moves, so its subject is plain from the name, and keep anything sensitive out of the name.
+These cannot embed frontmatter, so they carry none (`.docs/vault/Note-Schema.md`): the folder they are filed into places them, and that folder's note describes them. Give each a clean, descriptive name before it moves, so its subject is plain from the name, and keep anything sensitive out of the name.
 
 ### 6. Ambiguous File Handling
 

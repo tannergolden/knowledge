@@ -5,7 +5,7 @@ license: MIT
 allowed-tools: Read, Grep, Glob, Bash, Write, Edit, Task, AskUserQuestion
 metadata:
   team: Research & Development (R&D)
-  version: "1.0.2"
+  version: "1.0.3"
   id: "sy-skill-identify-spec"
   author: "Tanner Golden"
   status: "active"

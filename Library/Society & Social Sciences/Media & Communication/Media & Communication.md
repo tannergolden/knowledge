@@ -1,20 +1,9 @@
----
+<!--
 title: "Media & Communication - Folder Information"
 description: "Mass communication, journalism, and media studies as social phenomena."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["media", "communication", "mass", "journalism", "studies", "social"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Media & Communication/Media & Communication.md"
-id: "li-media-communication"
----
+type: "index"
+keywords: ["mass", "journalism", "studies", "social"]
+-->
 
 # 📁 Library / Society & Social Sciences / Media & Communication /
 

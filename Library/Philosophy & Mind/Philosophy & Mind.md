@@ -1,20 +1,9 @@
----
+<!--
 title: "Philosophy & Mind - Folder Information"
 description: "The examined questions of reason, value, beauty, and mind, and the science of mind and behavior."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["philosophy", "logic", "ethics", "metaphysics", "psychology", "cognitive science", "mind"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Philosophy & Mind.md"
-id: "li-philosophy-mind"
----
+type: "index"
+keywords: ["logic", "ethics", "metaphysics", "psychology", "cognitive science"]
+-->
 
 # 💭 Library / Philosophy & Mind /
 

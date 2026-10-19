@@ -1,20 +1,9 @@
----
+<!--
 title: "Projects - Folder Information"
 description: "Explains the purpose of the Projects/ folder: personal project tracking with AI-managed folder creation, standardized templates, and a master index."
-status: "active"
-tags: ["projects", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["personal initiatives", "side projects", "passion builds", "folder overview", "project templates", "creative work", "learning initiatives"]
-created: 2026-05-18
-updated: 2026-10-19
-type: "information"
-folder: "projects"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Projects/Projects.md"
-id: "pr-projects"
----
+-->
 
 # 🛠️ Projects/
 
@@ -131,4 +120,4 @@ These are starting points - the actual subfolders should match what the project 
 
 ## Listing projects
 
-There is no hand-maintained index. Each project is a folder with an `Overview.md` whose frontmatter carries its status; the live list comes from the catalog: the `projects` records of the committed `System/Data/catalog.ndjson`. Keep each project's `Overview.md` status current as work progresses. If unsure whether something qualifies as a project, ask before creating anything.
+There is no hand-maintained index. Each project is a folder with an `Overview.md` whose Status section says where it stands; the live list comes from the catalog: the `BRAIN/Projects/` records of the committed `System/Data/catalog.ndjson`. Keep each project's `Overview.md` status current as work progresses. If unsure whether something qualifies as a project, ask before creating anything.

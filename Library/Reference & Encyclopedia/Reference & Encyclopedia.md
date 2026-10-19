@@ -1,20 +1,9 @@
----
+<!--
 title: "Reference & Encyclopedia - Folder Information"
 description: "Offline reference works (Wikipedia and other Kiwix knowledge bases) stored as read-only ZIM files and searched through .github/scripts/knowledge-base.py."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: ["Stacks", "Knowledge Bases", "ZIM Stacks"]
-keywords: ["wikipedia", "zim", "kiwix", "offline", "knowledge base", "reference", "libzim", "full-text search"]
-created: 2026-06-28
-updated: 2026-10-19
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Reference & Encyclopedia/Reference & Encyclopedia.md"
-id: "li-reference-encyclopedia"
----
+type: "index"
+keywords: ["stacks", "knowledge bases", "zim stacks", "wikipedia", "zim", "kiwix", "offline", "knowledge base"]
+-->
 
 # 📚 Library / Reference & Encyclopedia /
 

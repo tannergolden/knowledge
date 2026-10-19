@@ -1,20 +1,9 @@
----
+<!--
 title: "Home & Habitation - Folder Information"
 description: "Household management, repair, gardening, and domestic organization."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["home", "habitation", "household", "management", "repair", "gardening"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Home & Habitation/Home & Habitation.md"
-id: "li-home-habitation"
----
+type: "index"
+keywords: ["household", "management", "repair", "gardening"]
+-->
 
 # 📁 Library / Life & Practice / Home & Habitation /
 

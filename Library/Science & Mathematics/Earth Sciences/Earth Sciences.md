@@ -1,20 +1,9 @@
----
+<!--
 title: "Earth Sciences - Folder Information"
 description: "Geology, oceanography, meteorology, the earth system."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["earth", "sciences", "geology", "oceanography", "meteorology", "system"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Earth Sciences/Earth Sciences.md"
-id: "li-earth-sciences"
----
+type: "index"
+keywords: ["geology", "oceanography", "meteorology", "system"]
+-->
 
 # 📁 Library / Science & Mathematics / Earth Sciences /
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Ideas"
 description: "The held idea pool: the living library of idea records the Discovery team produces, dispatched by the discover skill. Ideas persist here by lifecycle status (raw, shortlisted, developed, promoted, parked, killed), held and never sorted, so the team can dedup against the whole pool including killed ideas and trace lineage. The ideation counterpart to the Reports library."
-status: "active"
-tags: ["inbox", "information"]
-aliases: ["Ideas", "the idea pool", "idea backlog", "ideation pool"]
-keywords: ["idea pool", "ideas", "idea records", "idea backlog", "ideation", "discovery ideas", "ICE Elo", "idea lifecycle", "held ideas"]
-created: 2026-06-28
-updated: 2026-10-19
-type: "information"
-folder: "inbox"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Ideas/Ideas.md"
-id: "in-ideas"
----
+type: "index"
+keywords: ["the idea pool", "idea backlog", "ideation pool", "idea pool", "idea records", "ideation", "discovery ideas", "ice elo"]
+-->
 
 # 💡 Ideas
 
@@ -30,7 +19,7 @@ Unlike Reports (good for three months) and Visuals (archival snapshots), the ide
 
 ## One idea, one record (the schema lives with the team)
 
-Each idea is one Markdown file with the File Role `record`, carrying a stable `id`, a short `title`, a one-line `statement`, its lifecycle `status`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and the `serves` path for the venture, project, or topic it is for. The full schema, the ICE and Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the Discovery team's method, defined in `Inbox/Faculties/Discovery/Discovery.md`. This folder is the home where the records live; that doc is how they are made and scored.
+Each idea is one Markdown file, `type: record`, carrying a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and the `serves` path for the venture, project, or topic it is for. The full schema, the ICE and Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the Discovery team's method, defined in `Inbox/Faculties/Discovery/Discovery.md`. This folder is the home where the records live; that doc is how they are made and scored.
 
 ## Idea files are leaves
 

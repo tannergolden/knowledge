@@ -1,20 +1,9 @@
----
+<!--
 title: "[Project Name] - Log"
 description: "Chronological progress log for this project. Staging-area model - key decisions promote to Overview.md, rest archives when project closes."
-status: "active"
-tags: ["projects", "template"]
-aliases: []
-keywords: ["progress log", "chronological record", "project history", "work done", "decisions made", "template", "staging area"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "projects"
-layer: 2
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Projects/[Project-Name]/Log.md"
-id: "pr-log"
----
+keywords: ["progress log", "chronological record", "project history", "work done", "decisions made", "template", "staging area"]
+-->
 
 # 📓 [Project Name] - Log
 

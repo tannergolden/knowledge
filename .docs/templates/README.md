@@ -1,8 +1,8 @@
 <!--
 title: '📋 PROJECT TEMPLATES'
 description: 'Index of the reusable document templates and when to use each one.'
-tags: [templates, index, documentation, scaffold]
-category: docs
+type: index
+keywords: [documentation, scaffold]
 -->
 
 <div align="center">

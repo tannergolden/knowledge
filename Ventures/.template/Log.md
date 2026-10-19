@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Log"
 description: "Chronological record of sessions, decisions, milestones, and significant events for [Company]."
-status: "active"
-tags: ["ventures", "template"]
-aliases: []
-keywords: ["chronological record", "sessions", "milestones", "decisions", "venture history", "recent context", "events", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 2
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Log.md"
-id: "ve-log"
----
+keywords: ["chronological record", "sessions", "milestones", "decisions", "venture history", "recent context", "events", "template"]
+-->
 
 # 📓 [Company] - Log
 

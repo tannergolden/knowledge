@@ -1,8 +1,8 @@
 <!--
 title: '🧭 ARCHITECTURE DECISIONS'
 description: 'Architecture decision records, one file per decision, each logged with its status, date and evidence.'
-tags: [adr, architecture, decisions, index]
-category: docs
+type: index
+keywords: [adr]
 -->
 
 <div align="center">
@@ -50,10 +50,11 @@ trade-offs that shaped it before changing it.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log fields=status,date,evidence -->
 
-| Entry                                                                                    | Status   | Date       | Evidence | Purpose                                                                                                                                                  |
-| :--------------------------------------------------------------------------------------- | :------- | :--------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`ADR-0001-AGENTS-Holds-The-Vaults-Rules.md`](ADR-0001-AGENTS-Holds-The-Vaults-Rules.md) | Accepted | 2026-10-19 | N/A      | The vault's Constitution and Instructions dissolve into AGENTS.md, the folder notes and reference pages, and standards owns every repository convention. |
-| [`README.md`](README.md)                                                                 | -        | -          | -        | This file.                                                                                                                                               |
+| Entry                                                                                            | Status   | Date       | Evidence | Purpose                                                                                                                                                                          |
+| :----------------------------------------------------------------------------------------------- | :------- | :--------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`ADR-0001-AGENTS-Holds-The-Vaults-Rules.md`](ADR-0001-AGENTS-Holds-The-Vaults-Rules.md)         | Accepted | 2026-10-19 | N/A      | The vault's Constitution and Instructions dissolve into AGENTS.md, the folder notes and reference pages, and standards owns every repository convention.                         |
+| [`ADR-0002-Notes-Take-The-Hidden-Frontmatter.md`](ADR-0002-Notes-Take-The-Hidden-Frontmatter.md) | Accepted | 2026-10-19 | N/A      | The vault drops its Obsidian and Claude Code configuration: every note opens with the account's hidden frontmatter, renders as GitHub-Flavored Markdown and keeps its wikilinks. |
+| [`README.md`](README.md)                                                                         | -        | -          | -        | This file.                                                                                                                                                                       |
 
 <!-- AUTO-INDEX:END -->
 

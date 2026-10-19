@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Cap Table"
 description: "The capitalization table for [Company]: ownership by holder, share classes, the option pool, and the funding-round history."
-status: "active"
-tags: ["ventures", "template", "sensitive"]
-aliases: ["Capitalization Table", "Ownership"]
-keywords: ["cap table", "capitalization", "ownership", "equity", "option pool", "funding rounds", "dilution", "template"]
-created: 2026-06-29
-updated: 2026-06-29
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Finance & Accounting (F&A)/Cap-Table.md"
-id: "ve-cap-table"
----
+keywords: ["capitalization table", "ownership", "cap table", "capitalization", "equity", "option pool", "funding rounds", "dilution"]
+-->
 
 # 🥧 [Company] - Cap Table
 

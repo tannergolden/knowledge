@@ -1,20 +1,9 @@
----
+<!--
 title: "Information & Computing - Folder Information"
 description: "How knowledge and information are organized, stored, computed, and transmitted, plus the general reference works that span every subject."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["information science", "computing", "data", "knowledge organization", "reference", "internet", "systems"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/Information & Computing.md"
-id: "li-information-computing"
----
+type: "index"
+keywords: ["information science", "data", "knowledge organization", "reference", "internet", "systems"]
+-->
 
 # 🗂️ Library / Information & Computing /
 

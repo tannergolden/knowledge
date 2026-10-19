@@ -1,20 +1,9 @@
----
+<!--
 title: "Poetry - Folder Information"
 description: "Poetry across languages and eras."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["poetry", "languages", "eras"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Poetry/Poetry.md"
-id: "li-poetry"
----
+type: "index"
+keywords: ["languages", "eras"]
+-->
 
 # 📁 Library / Language & Literature / Poetry /
 

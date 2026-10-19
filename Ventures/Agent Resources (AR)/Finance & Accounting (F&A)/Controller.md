@@ -1,21 +1,7 @@
 ---
-title: "Controller"
 name: "Walter"
 description: "Dispatch this agent for the books, the close, and accounting compliance: record a transaction correctly, run the month-end close, and produce accurate statements under GAAP. Serves in the Finance & Accounting department under the Chief Financial Officer."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Walter", "Controller"]
-keywords: ["accounting", "close", "GAAP", "statements", "ledger"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/Controller.md"
-id: "ve-controller"
 ---
 
 # 🧾 Controller

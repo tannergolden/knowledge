@@ -1,25 +1,14 @@
----
+<!--
 title: "[Note Title]"
 description: "[One-line description of what this reference note covers.]"
-status: "active"
-tags: ["library", "template"]
-aliases: []
-keywords: ["[synonym]", "[synonym]", "[synonym]", "template"]
-created: 2026-01-01
-updated: 2026-10-19
 type: "template"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/.template/Reference Note.md"
-id: "li-reference-note"
----
+keywords: ["[synonym]", "template"]
+-->
 
 # 📝 [Note Title]
 
 > Template for a synthesized reference note (the common Library holding). On filing:
-> set `type: reference`; add the freshness tag (`timeless` / `enduring` / `current`) beside the `library` Folder tag and drop the `template` tag; set the real `path` and a stable `id` (`li-<slug>`); give the H1 a fitting leading emoji (`AGENTS.md`, Conventions); drop the literal `template` keyword and fill `keywords` with the synonyms a person would actually search (optionally the slash-namespaced facet keywords from `Library/Library.md`). File it in one class and division by the classification rules in `Library/Library.md`. Keep section headings clean and meaningful - they double as retrieval chunk boundaries. Reference other files by plain path.
+> set `type: reference` and give it its real title and description; fill `keywords` with its freshness token (`freshness/timeless`, `freshness/enduring` or `freshness/current`) and the synonyms a person would actually search (optionally the other facet tokens from `Library/Library.md`); give the H1 a fitting leading emoji (`AGENTS.md`, Conventions). File it in one class and division by the classification rules in `Library/Library.md`. Keep section headings clean and meaningful - they double as retrieval chunk boundaries. Reference other files by plain path.
 
 ## Summary
 

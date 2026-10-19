@@ -1,8 +1,8 @@
 <!--
 title: '🔬 REPOSITORY SCRIPTS'
 description: 'The checks this repository runs on its own configuration, and the tests that guard them.'
-tags: [scripts, validation, testing, python]
-category: docs
+type: index
+keywords: [validation, testing, python]
 -->
 
 <div align="center">
@@ -43,7 +43,7 @@ only Python 3, plus PyYAML for the ones that read YAML.
 | [`check-vault.py`](check-vault.py)                             | Run every vault check, as CI does: notes, links, skills, agents, personal data and generated parts.      |
 | [`fixtures.py`](fixtures.py)                                   | Throwaway vaults for the vault scripts' tests, built in a temporary folder.                              |
 | [`knowledge-base.py`](knowledge-base.py)                       | Search and read offline reference works, such as Wikipedia, kept as ZIM files beside the vault's notes.  |
-| [`lint-notes.py`](lint-notes.py)                               | Check each note's frontmatter, tags and naming against the vault's schema.                               |
+| [`lint-notes.py`](lint-notes.py)                               | Check each note's frontmatter and naming against the vault's schema.                                     |
 | [`profile-coverage.py`](profile-coverage.py)                   | Score how filled in each Profile facet is, and name the one the identify skill should ask about next.    |
 | [`README.md`](README.md)                                       | This file.                                                                                               |
 | [`scan-pii.py`](scan-pii.py)                                   | Find US Social Security numbers and payment card numbers in the files git tracks.                        |

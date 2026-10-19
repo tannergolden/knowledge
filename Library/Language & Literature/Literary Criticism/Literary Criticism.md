@@ -1,20 +1,9 @@
----
+<!--
 title: "Literary Criticism - Folder Information"
 description: "Theory and criticism of literature."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["literary", "criticism", "theory", "literature"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Literary Criticism/Literary Criticism.md"
-id: "li-literary-criticism"
----
+type: "index"
+keywords: ["theory", "literature"]
+-->
 
 # 📁 Library / Language & Literature / Literary Criticism /
 

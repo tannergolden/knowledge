@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Goals"
 description: "Strategic goals, OKRs, and key initiatives for [Company] - current cycle and future planning."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["OKRs"]
-keywords: ["okr", "strategic goals", "key initiatives", "priorities", "company direction", "planning", "objectives", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 2
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Goals.md"
-id: "ve-goals"
----
+keywords: ["okrs", "okr", "strategic goals", "key initiatives", "priorities", "company direction", "planning", "objectives"]
+-->
 
 # 🎯 [Company] - Goals
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Philosophy & Method of Science - Folder Information"
 description: "Scientific method, and the philosophy and history of science."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["philosophy", "method", "science", "scientific", "history"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Philosophy & Method of Science/Philosophy & Method of Science.md"
-id: "li-philosophy-method-of-science"
----
+type: "index"
+keywords: ["scientific", "history"]
+-->
 
 # 📁 Library / Science & Mathematics / Philosophy & Method of Science /
 

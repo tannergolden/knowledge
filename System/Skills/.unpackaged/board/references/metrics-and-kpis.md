@@ -4,7 +4,8 @@
 
 This is the reference strategize reaches for when it sets the North Star and the OKRs, and review reaches for when it grades them and statuses the venture. Each metric below carries: a definition, the formula, a 2025/26 benchmark band where one is known, a leading-vs-lagging tag, the AR function that owns it, and the stage where it first becomes load-bearing. Two rules hold throughout. First, every number is grounded in a tool or a source, never asserted (see `verification.md`); a benchmark band is a reference point, not a measurement of this venture. Second, a metric is reported against the stage it belongs to: a pre-revenue idea is not graded on the Rule of 40, and a mature company is not run on raw activation. The stage model and the dominant question per stage are in `lifecycle.md`; the benchmark bands that status a number red/amber/green live in `assets/benchmark-bands.json` and back the venture scorecard.
 
-> [!abstract] How to read a metric
+> [!NOTE]
+> **How to read a metric.**
 > **Leading** metrics move before the outcome and you can still act on them (activation, pipeline coverage, MQL-to-SQL). **Lagging** metrics confirm what already happened (ARR, churned revenue, gross margin). A function should be steered by its leading indicators and judged by its lagging ones. The single canonical KPI source for a live venture is its `Business Intelligence (BI)/Metrics.md`; `Goals.md` references that definition rather than redefining it, so the North Star does not drift between two files.
 
 ## The two metrics that sit above the rest

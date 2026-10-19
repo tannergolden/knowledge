@@ -1,20 +1,9 @@
----
+<!--
 title: "Philosophical Traditions - Folder Information"
 description: "Schools and histories of philosophy, Eastern and Western."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["philosophical", "traditions", "schools", "histories", "philosophy", "eastern"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Philosophical Traditions/Philosophical Traditions.md"
-id: "li-philosophical-traditions"
----
+type: "index"
+keywords: ["schools", "histories", "philosophy", "eastern"]
+-->
 
 # 📁 Library / Philosophy & Mind / Philosophical Traditions /
 

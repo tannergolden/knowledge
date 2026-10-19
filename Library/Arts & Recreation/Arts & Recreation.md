@@ -1,20 +1,9 @@
----
+<!--
 title: "Arts & Recreation - Folder Information"
 description: "What people create as art and how they play."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["art", "music", "performing arts", "design", "architecture", "sport", "games"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Arts & Recreation.md"
-id: "li-arts-recreation"
----
+-->
 
 # 🎨 Library / Arts & Recreation /
 

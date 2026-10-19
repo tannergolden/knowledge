@@ -1,25 +1,13 @@
----
+<!--
 title: "Person"
 description: "Template for a person in the user's personal orbit - a Biography-depth profile entry."
-status: "active"
-tags: ["memory", "template"]
-aliases: []
-keywords: ["person template", "people entry", "relationship profile", "contact", "who someone is", "personal orbit", "biography"]
-created: 2026-06-18
-updated: 2026-10-19
 type: "template"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/.template/Person.md"
-id: "me-person"
----
+keywords: ["person template", "people entry", "relationship profile", "contact", "who someone is", "personal orbit", "biography"]
+-->
 
 <!--
 INSTANTIATION (copy this file to Memory/Entities/People/<First Last>.md, then):
-- Set type to "record" and remove the "template" tag.
-- Set id to me-<slug> (slug of the person's name) and path to BRAIN/Memory/Entities/People/<First Last>.md.
+- Set type to "record", and give the copy its real title and description.
 - Keep the emoji H1; replace [Person Name] with the person's name.
 - Fill only what is known. Never fabricate - leave a field blank or omit its line rather than guessing.
 - Surface sensitive sections (DOB, contact, family) only when relevant to the work at hand (`Profile/Profile.md`, Rules).

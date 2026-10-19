@@ -1,20 +1,9 @@
----
-id: "sy-skill-visualize-changelog"
+<!--
 title: "visualize - Changelog"
 description: "Change history for the visualize skill."
-aliases: []
+type: "record"
 keywords: ["version history", "release notes", "visualize changes", "revision log"]
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/visualize/Changelog.md"
-layer: 4
-folder: "system"
-type: "log"
-tags: ["system", "log"]
-status: "active"
-policy: false
-created: 2026-06-28
-updated: 2026-10-19
----
+-->
 # visualize Changelog
 
 ## Current Version

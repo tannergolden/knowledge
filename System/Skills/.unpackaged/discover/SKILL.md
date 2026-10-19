@@ -5,7 +5,7 @@ license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
 metadata:
   team: Discovery
-  version: "1.0.2"
+  version: "1.0.3"
   id: "sy-skill-discover-spec"
   author: "Tanner Golden"
   status: "active"

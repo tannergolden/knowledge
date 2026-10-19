@@ -1,20 +1,9 @@
----
+<!--
 title: "People"
 description: "Registry of the people in the user's personal orbit, one Biography-depth file per person."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
-keywords: ["people", "relationships", "contacts", "friends family", "personal orbit", "person entries", "who someone is"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Entities/People/People.md"
-id: "me-people"
----
+type: "index"
+keywords: ["relationships", "contacts", "friends family", "personal orbit", "person entries", "who someone is"]
+-->
 
 # 🧑‍🤝‍🧑 People
 

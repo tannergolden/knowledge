@@ -1,20 +1,9 @@
----
+<!--
 title: "Drama - Folder Information"
 description: "Plays and dramatic literature as text."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["drama", "plays", "dramatic", "literature", "text"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Drama/Drama.md"
-id: "li-drama"
----
+type: "index"
+keywords: ["plays", "dramatic", "literature", "text"]
+-->
 
 # 📁 Library / Language & Literature / Drama /
 

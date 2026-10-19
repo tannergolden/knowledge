@@ -1,21 +1,7 @@
 ---
-title: "Data Analyst"
 name: "Aaron"
 description: "Dispatch this agent when a business question needs an answer from data: SQL, a dashboard, or a report. The central analytics seat in Business Intelligence, serving under the Chief Data Officer (Nora)."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Aaron", "Data Analyst"]
-keywords: ["analytics", "sql", "dashboards", "reporting", "metrics"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/Data Analyst.md"
-id: "ve-data-analyst"
 ---
 
 # 📊 Data Analyst

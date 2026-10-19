@@ -1,20 +1,9 @@
----
+<!--
 title: "Skills"
 description: "The user's competencies and the per-domain expertise map the AI uses to calibrate how much to explain: skip the basics where the user is expert, define terms where they are new."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Expertise", "Competencies", "Abilities"]
-keywords: ["skills", "expertise", "competencies", "proficiency", "what they know", "explanation depth", "calibration"]
-created: 2026-06-19
-updated: 2026-10-19
-type: "self"
-folder: "profile"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Skills/Skills.md"
-id: "id-skills"
----
+type: "reference"
+keywords: ["expertise", "competencies", "abilities", "proficiency", "what they know", "explanation depth", "calibration"]
+-->
 
 # 🛠️ Skills
 

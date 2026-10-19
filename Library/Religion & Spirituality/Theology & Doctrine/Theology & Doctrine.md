@@ -1,20 +1,9 @@
----
+<!--
 title: "Theology & Doctrine - Folder Information"
 description: "Systematic theology, creeds, scriptural interpretation, doctrine."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["theology", "doctrine", "systematic", "creeds", "scriptural", "interpretation"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Theology & Doctrine/Theology & Doctrine.md"
-id: "li-theology-doctrine"
----
+type: "index"
+keywords: ["systematic", "creeds", "scriptural", "interpretation"]
+-->
 
 # 📁 Library / Religion & Spirituality / Theology & Doctrine /
 

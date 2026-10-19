@@ -1,22 +1,9 @@
----
+<!--
 title: "Research & Development (R&D)"
 description: "The Research & Development (R&D) department of the agent workforce: building the product and inventing what is next. Led by its department head, with more specialists added by demand."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["R&D", "Research", "Development"]
-keywords: ["research", "development", "product", "prototype", "innovation"]
-members: ["★ Chief Product Officer", "Applied Researcher", "Head of Product Engineering", "Product Manager", "UX and Design Research Lead"]
-lead: ★ Chief Product Officer
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/Research & Development (R&D).md"
-id: "ve-research-development"
----
+type: "index"
+keywords: ["r&d", "product", "prototype", "innovation"]
+-->
 # 🔬 Research & Development (R&D)
 
 The Research & Development (R&D) department of the agent workforce: building the product and inventing what is next.

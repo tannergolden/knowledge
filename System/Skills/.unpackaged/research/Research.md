@@ -1,20 +1,9 @@
----
+<!--
 title: "Research - Skill Information"
 description: "BRAIN documentation node for the research skill: dispatches the standing Research team to run depth-scaled, multi-source, fact-checked research with cited synthesis."
-status: "active"
-tags: ["system", "information", "timeless"]
-aliases: ["/research", "research skill"]
-keywords: ["research skill", "deep research", "multi-source research", "fact-checked", "research team", "cited synthesis", "look into", "current state of"]
-created: 2026-06-22
-updated: 2026-10-19
-type: "information"
-folder: "system"
-layer: 4
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/research/Research.md"
-id: "sy-skill-research"
----
+type: "index"
+keywords: ["/research", "research skill", "deep research", "multi-source research", "fact-checked", "research team", "cited synthesis", "look into"]
+-->
 
 # 🔬 research - Information Guide
 

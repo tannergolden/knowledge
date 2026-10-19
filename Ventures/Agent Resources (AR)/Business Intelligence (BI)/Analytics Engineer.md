@@ -1,21 +1,7 @@
 ---
-title: "Analytics Engineer"
 name: "Priscilla"
 description: "Dispatch this agent when raw data needs to become a trusted, tested, documented model: the dbt transformation layer. The data-modeling seat in Business Intelligence, serving under the Chief Data Officer (Nora)."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Priscilla", "Analytics Engineer"]
-keywords: ["dbt", "data modeling", "transformation", "testing", "data warehouse"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/Analytics Engineer.md"
-id: "ve-analytics-engineer"
 ---
 
 # 🏗️ Analytics Engineer

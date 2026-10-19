@@ -1,20 +1,9 @@
----
+<!--
 title: "Personal Finance - Folder Information"
 description: "Budgeting, saving, debt, and money management for individuals."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["personal", "finance", "budgeting", "saving", "debt", "money"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Personal Finance/Personal Finance.md"
-id: "li-personal-finance"
----
+type: "index"
+keywords: ["budgeting", "saving", "debt", "money"]
+-->
 
 # 📁 Library / Life & Practice / Personal Finance /
 

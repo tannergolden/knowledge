@@ -1,20 +1,9 @@
----
+<!--
 title: "Memory Log"
 description: "Working memory: the chronological capture stream where observations, events, and open threads land first, before they promote to a collection or age out. Newest first; read at session start."
-status: "active"
-tags: ["memory", "log", "startup"]
-aliases: ["Working Memory", "Memory Buffer"]
-keywords: ["staging buffer", "capture stream", "open loops", "session start", "recent events", "quick capture", "working memory"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "log"
-folder: "memory"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Log.md"
-id: "me-log"
----
+type: "record"
+keywords: ["working memory", "memory buffer", "staging buffer", "capture stream", "open loops", "session start", "recent events", "quick capture"]
+-->
 
 # 📓 Log
 

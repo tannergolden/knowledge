@@ -1,20 +1,9 @@
----
+<!--
 title: "Contemplative & Secular Spirituality - Folder Information"
 description: "Meditation, mysticism, and nonreligious spiritual practice."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["contemplative", "secular", "spirituality", "meditation", "mysticism", "nonreligious"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Contemplative & Secular Spirituality/Contemplative & Secular Spirituality.md"
-id: "li-contemplative-secular-spirituality"
----
+type: "index"
+keywords: ["meditation", "mysticism", "nonreligious"]
+-->
 
 # 📁 Library / Religion & Spirituality / Contemplative & Secular Spirituality /
 

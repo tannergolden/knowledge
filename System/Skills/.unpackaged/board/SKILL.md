@@ -5,7 +5,7 @@ license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
 metadata:
   team: Administration
-  version: "2.1.2"
+  version: "2.1.3"
   id: "sy-skill-board-spec"
   author: "Tanner Golden"
   status: "active"
@@ -60,7 +60,7 @@ A bigger board is not a better one. Convene the **smallest sufficient** roster f
 
 ## Conformance with the live BRAIN
 
-**Preflight (before any vault write).** Writing into a venture or filing a memo is a vault write: read `AGENTS.md` and the Rules in the folder note of every folder written into and of each folder above it, commit an existing file's last state first (git history is the backup), and reference vault files by plain path, never wikilinks (the one exception is an index whose entries are wikilinks by design). After writing, run `update-vault.py` and `check-vault.py`. When founding, copy `Ventures/.template/` and **rewrite each file's `id` and `path`** so ids stay globally unique.
+**Preflight (before any vault write).** Writing into a venture or filing a memo is a vault write: read `AGENTS.md` and the Rules in the folder note of every folder written into and of each folder above it, commit an existing file's last state first (git history is the backup), and reference vault files by plain path, never wikilinks (the one exception is an index whose entries are wikilinks by design). After writing, run `update-vault.py` and `check-vault.py`. When founding, copy `Ventures/.template/` and **give each copied file its real `title`, `description` and `type`** (`.docs/vault/Note-Schema.md`).
 
 **Read before acting.** Run the venture-context preflight and the dedup check (a vault search) before deliberating or producing, so a settled decision is not re-litigated and existing context is not duplicated. **Offer** (never silently) to file a memo, record a decision, or fold the outcome into `Memory/`. Confirm before any gated write; never create or delete top-level folders.
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Relationships & Family - Folder Information"
 description: "Friendship, partnership, and communication as general guidance."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["relationships", "family", "friendship", "partnership", "communication", "general"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Relationships & Family/Relationships & Family.md"
-id: "li-relationships-family"
----
+type: "index"
+keywords: ["friendship", "partnership", "communication", "general"]
+-->
 
 # 📁 Library / Life & Practice / Relationships & Family /
 

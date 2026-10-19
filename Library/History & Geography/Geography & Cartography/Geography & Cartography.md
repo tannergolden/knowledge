@@ -1,20 +1,9 @@
----
+<!--
 title: "Geography & Cartography - Folder Information"
 description: "Physical and human geography, maps, and place."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["geography", "cartography", "physical", "human", "maps", "place"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/History & Geography/Geography & Cartography/Geography & Cartography.md"
-id: "li-geography-cartography"
----
+type: "index"
+keywords: ["physical", "human", "maps", "place"]
+-->
 
 # 📁 Library / History & Geography / Geography & Cartography /
 

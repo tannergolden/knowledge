@@ -1,20 +1,9 @@
----
+<!--
 title: "[Project Name] - Resources"
 description: "Tools, reference links, books, assets, and contacts being used for this project. Keep current - remove abandoned tools, update stale links."
-status: "active"
-tags: ["projects", "template"]
-aliases: []
-keywords: ["tools", "reference links", "assets", "contacts", "books", "references consulted", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "projects"
-layer: 2
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Projects/[Project-Name]/Resources.md"
-id: "pr-resources"
----
+keywords: ["tools", "reference links", "assets", "contacts", "books", "references consulted", "template"]
+-->
 
 # 🔗 [Project Name] - Resources
 

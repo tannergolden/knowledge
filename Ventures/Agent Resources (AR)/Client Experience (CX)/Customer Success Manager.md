@@ -1,21 +1,7 @@
 ---
-title: "Customer Success Manager"
 name: "Colin"
 description: "Dispatch this agent when a book of accounts needs adoption, value realization, or a renewal or expansion advanced: the post-sale relationship owner. The success seat in Client Experience, serving under the Chief Customer Officer (Caleb)."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Colin", "Customer Success Manager", "CSM"]
-keywords: ["customer success", "retention", "renewal", "expansion", "adoption"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Client Experience (CX)/Customer Success Manager.md"
-id: "ve-customer-success-manager"
 ---
 
 # 🌟 Customer Success Manager

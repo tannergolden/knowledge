@@ -1,20 +1,9 @@
----
+<!--
 title: "Memory / Entities"
 description: "Semantic memory: durable facts about the people, organizations, and places in the user's personal world, kept as per-entry collections."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
-keywords: ["semantic memory", "entities", "people organizations places", "personal orbit", "durable facts", "index and entry", "who and what"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Entities/Entities.md"
-id: "me-entities"
----
+type: "index"
+keywords: ["semantic memory", "people organizations places", "personal orbit", "durable facts", "index and entry", "who and what"]
+-->
 
 # 🧩 Memory / Entities /
 
@@ -44,4 +33,4 @@ Facts here change slowly but they do change. Each fact carries bitemporal proven
 
 ## Writing entries
 
-Copy the right template from `Memory/.template/` (Person, Organization or Place) into the collection's folder as `<Name>.md`, and follow its instantiation note: the real `type`, `path`, `id` and dates. `.github/scripts/update-vault.py` then lists it in the collection's index; the AI never hand-edits an index block.
+Copy the right template from `Memory/.template/` (Person, Organization or Place) into the collection's folder as `<Name>.md`, and follow its instantiation note: the real `title`, `description` and `type`. `.github/scripts/update-vault.py` then lists it in the collection's index; the AI never hand-edits an index block.

@@ -1,22 +1,9 @@
----
+<!--
 title: "Public Relations (PR)"
 description: "The Public Relations (PR) department of the agent workforce: reputation, press, and external communication. Led by its department head, with more specialists added by demand."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["PR", "Comms", "Press"]
-keywords: ["public relations", "communications", "press", "reputation", "media"]
-members: ["★ Chief Communications Officer", "Crisis & Issues Communications Manager", "Media Relations Manager"]
-lead: ★ Chief Communications Officer
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Public Relations (PR)/Public Relations (PR).md"
-id: "ve-public-relations"
----
+type: "index"
+keywords: ["comms", "press", "public relations", "communications", "reputation", "media"]
+-->
 # 📣 Public Relations (PR)
 
 The Public Relations (PR) department of the agent workforce: reputation, press, and external communication.

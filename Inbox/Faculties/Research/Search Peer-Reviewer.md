@@ -1,21 +1,7 @@
 ---
-title: "Search Peer-Reviewer"
 name: "Mara"
 description: "Dispatch this agent to independently peer-review the search and source strategy before the analysts run it, PRESS-style: catch missed venues, biased or low-recall queries, and where-we-looked bias, and return PASS or REVISE with the fix before the fan-out. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Mara", "Search Peer-Reviewer"]
-keywords: ["search peer review", "PRESS", "search strategy", "coverage gap", "query bias", "recall"]
 tools: Read, Grep, Glob, WebSearch, WebFetch
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Research/Search Peer-Reviewer.md"
-id: "in-search-peer-reviewer"
 ---
 
 # 🔬 Search Peer-Reviewer

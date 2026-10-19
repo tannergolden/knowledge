@@ -1,21 +1,7 @@
 ---
-title: "Commercial Counsel"
 name: "Adrian"
 description: "Dispatch this agent for commercial agreements: draft, review, and negotiate a contract, redline the risk-bearing clauses, and land a defensible position the business can sign. Serves in the Legal & Compliance department under the General Counsel."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Adrian", "Commercial Counsel"]
-keywords: ["contracts", "drafting", "negotiation", "redline", "agreements"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Commercial Counsel.md"
-id: "ve-commercial-counsel"
 ---
 
 # 📑 Commercial Counsel

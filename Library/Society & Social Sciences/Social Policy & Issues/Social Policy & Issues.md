@@ -1,20 +1,9 @@
----
+<!--
 title: "Social Policy & Issues - Folder Information"
 description: "Welfare, public policy, social problems, activism, environmental policy."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["social", "policy", "issues", "welfare", "public", "problems"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Social Policy & Issues/Social Policy & Issues.md"
-id: "li-social-policy-issues"
----
+type: "index"
+keywords: ["welfare", "public", "problems"]
+-->
 
 # 📁 Library / Society & Social Sciences / Social Policy & Issues /
 

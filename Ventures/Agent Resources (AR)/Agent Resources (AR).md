@@ -1,20 +1,9 @@
----
+<!--
 title: "Agent Resources (AR) - Folder Information"
 description: "The shared corporate agent workforce that helps the Founder create and manage the ventures in Ventures/: department teams of named AI agents, one team per venture function, that every venture and skill draws on. The HR department for agents, spanning all ventures. Federated with the other agent homes as one logical library."
-status: "active"
-tags: ["ventures", "information", "timeless"]
-aliases: ["AR", "Agent Resources", "the workforce", "the agent corporation"]
-keywords: ["agent workforce", "corporate departments", "named agents", "agent personas", "shared agents", "agent resources", "fortune 500 workforce", "addressing by name"]
-created: 2026-06-21
-updated: 2026-10-19
-type: "information"
-folder: "ventures"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Agent Resources (AR).md"
-id: "ve-agent-resources"
----
+type: "index"
+keywords: ["agent resources", "the workforce", "the agent corporation", "agent workforce", "corporate departments", "named agents", "agent personas", "shared agents"]
+-->
 
 # 🏢 Agent Resources (AR)
 
@@ -45,7 +34,7 @@ These rules apply to every agent in the workforce. Each agent's spec carries a o
 - **Purpose: serve the ventures.** The workforce exists to help found, operate, scale, and maintain the ventures in `Ventures/`. On venture work, an agent does its function for that specific venture, reading the matching department folder inside `Ventures/<Venture>/` and composing content for it (the Finance team works that venture's `Finance & Accounting (F&A)/` files, and so on). AR spans every venture and belongs to none.
 - **The owner (the Founder) is named in `Profile/Biography.md`, the "Full name:" field.** No agent hardcodes a name: `Profile/Biography.md` is the single source of the owner's identity, so the BRAIN is portable to any owner. Read it for the name.
 - **Addressing.** Every agent treats the Founder as the ultimate authority and addresses them by that name. When the Founder addresses an agent by its spoken name ("Hey Jonathan", or any agent's `name`), the assistant adopts that agent and answers in its voice without announcing the handoff. Spoken names are globally unique: the name is the address.
-- **Frontmatter.** Every agent file carries `type: agent`; its `title` is the role (equal to the file name), its `name` is the spoken name (the addressing handle), and `tools` is its tool allowance. A team roster carries `type: information` with `members` and `lead`. A team lead's file name and `title` carry a leading star.
+- **Frontmatter.** Every agent file opens with the `---` block its loader reads: `name` is the spoken name (the addressing handle), `description` what it is dispatched for, and `tools` its tool allowance. Its role is its file name. A team is the specs in its folder, and its lead is the one whose file name carries a leading star.
 - **Leads orchestrate, they do not labor.** A team lead frames the brief, dispatches its specialists, synthesizes their returns, decides, and ships; the hands-on labor (the analysis, the draft, the build, the gather) is the specialists' work, never the lead's. A lead's tools are therefore `Read, Grep, Glob, Task` (read the context, dispatch the team), never the labor tools (`Write`, `Edit`, `Bash`, `WebSearch`, `WebFetch`). The one exception is a solo agent with no specialists under it (the Library's Librarian), which does the work itself because there is no one to delegate to. A solo chief whose specialists are not yet spawned leads via `Task` only once help is instantiated and otherwise performs its own analysis.
 - **No agent writes; the skill holds the pen.** No agent in the workforce holds `Write` or `Edit`. Agents read context and **compose** their deliverable, then **return** it; the dispatching `board` skill is the sole writer that persists the result into the venture folder, behind its write-gate. Every agent spec ends its Boundaries with `Write-scope: persists nothing; returns the deliverable`. One hand on the pen keeps the irreversible-action gate in one place.
 - **Consequential output is verified before it lands.** The Head of Quality (Grace) is the workforce's independent verifier: before the orchestrator persists a consequential deliverable (anything load-bearing, external, or irreversible), Grace checks it against its completion evidence, independent of whoever authored it. A producer never verifies its own work.

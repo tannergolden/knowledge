@@ -60,7 +60,7 @@ class Base(unittest.TestCase):
         return self.vault.run(SCRIPT, *args)
 
     def summary(self, tier: str, name: str) -> None:
-        self.vault.note(f'Memory/Context/{tier}/{name}.md', type='record', tags=['memory', 'record'])
+        self.vault.note(f'Memory/Context/{tier}/{name}.md', type='record')
 
 
 class TestCascade(Base):
@@ -147,7 +147,7 @@ class TestBlocks(Base):
 
 class TestCatalogs(Base):
     def test_the_note_catalog(self) -> None:
-        self.vault.note('Library/.template/Card.md', type='template', tags=['library', 'template'])
+        self.vault.note('Library/.template/Card.md', type='template')
         self.vault.note('Library/Library.md', keywords=['books'])
         self.update()
         lines = self.vault.read('System/Data/catalog.ndjson').splitlines()
@@ -156,22 +156,22 @@ class TestCatalogs(Base):
         self.assertEqual(paths, sorted(paths))
         self.assertNotIn('BRAIN/Library/.template/Card.md', paths)
         library = next(r for r in records if r['path'] == 'BRAIN/Library/Library.md')
-        self.assertEqual(sorted(library), ['description', 'folder', 'keywords', 'layer', 'path', 'status', 'tags',
-                                           'title', 'type', 'updated'])
+        self.assertEqual(sorted(library), ['description', 'keywords', 'path', 'status', 'title', 'type'])
         self.assertEqual(library['keywords'], ['books'])
-        self.assertEqual(library['layer'], '1')
+        self.assertEqual(library['type'], 'index')
 
     def test_the_agent_catalog(self) -> None:
         self.vault.note('Inbox/Faculties/Faculties.md')
-        self.vault.note('Inbox/Faculties/Research/Research.md', members=[f'{STAR} Lead', 'Analyst'], lead=f'{STAR} Lead')
-        self.vault.note(f'Inbox/Faculties/Research/{STAR} Lead.md', name='Bea', type='agent', tags=['inbox', 'agent'])
-        self.vault.note('Inbox/Faculties/Research/Analyst.md', name='Al', type='agent', tags=['inbox', 'agent'])
+        self.vault.note('Inbox/Faculties/Research/Research.md')
+        self.vault.agent(f'Inbox/Faculties/Research/{STAR} Lead.md', name='Bea')
+        self.vault.agent('Inbox/Faculties/Research/Analyst.md', name='Al')
         self.update()
         first = self.vault.read('System/Data/agent-catalog.json')
         catalog = json.loads(first)
         self.assertEqual(catalog['agent_count'], 2)
         self.assertEqual([a['role'] for a in catalog['agents']], ['Analyst', f'{STAR} Lead'])
         self.assertEqual(catalog['teams'][0]['members'], [f'{STAR} Lead', 'Analyst'])
+        self.assertEqual(catalog['teams'][0]['lead'], f'{STAR} Lead')
         self.assertNotIn('generated', catalog)
         self.update()
         self.assertEqual(self.vault.read('System/Data/agent-catalog.json'), first)
@@ -184,14 +184,14 @@ class TestArchives(Base):
         super().setUp()
         v = self.vault
         v.write(f'{self.SOURCE}/SKILL.md', '---\nname: demo\nmetadata:\n  team: Research\n  version: "01.00.00"\n---\n# Demo\n')
-        v.write(f'{self.SOURCE}/Demo.md', '---\ntitle: Demo\n---\n\n# Demo guide\n')
+        v.write(f'{self.SOURCE}/Demo.md', '<!--\ntitle: Demo\n-->\n\n# Demo guide\n')
         v.write(f'{self.SOURCE}/references/guide.md', 'guide\n')
         v.write(f'{self.SOURCE}/assets/.gitkeep', '')
         v.write(f'{self.SOURCE}/.DS_Store', 'junk')
         v.write(f'{self.SOURCE}/__pycache__/x.pyc', 'junk')
         v.note('Inbox/Faculties/Faculties.md')
-        v.note('Inbox/Faculties/Research/Research.md', members=[f'{STAR} Lead'], lead=f'{STAR} Lead')
-        v.note(f'Inbox/Faculties/Research/{STAR} Lead.md', type='agent', tags=['inbox', 'agent'])
+        v.note('Inbox/Faculties/Research/Research.md')
+        v.agent(f'Inbox/Faculties/Research/{STAR} Lead.md')
 
     def entries(self) -> dict[str, bytes]:
         with zipfile.ZipFile(self.vault.path('System/Skills/demo.skill')) as archive:
@@ -226,11 +226,10 @@ class TestArchives(Base):
         self.assertEqual(result.returncode, 1)
         self.assertIn('System/Skills/demo.skill: the archive differs from its source', result.stdout)
 
-    def test_a_member_no_agent_file_holds(self) -> None:
-        self.vault.note('Inbox/Faculties/Research/Research.md', members=[f'{STAR} Lead', 'Ghost'], lead=f'{STAR} Lead')
-        result = self.update()
-        self.assertEqual(result.returncode, 1)
-        self.assertIn("names 'Ghost', which no agent file in the library is titled", result.stdout)
+    def test_the_team_is_every_spec_in_its_folder(self) -> None:
+        self.vault.agent('Inbox/Faculties/Research/Analyst.md', name='Al')
+        self.assertEqual(self.update().returncode, 0)
+        self.assertIn('demo/agents/Analyst.md', self.entries())
 
     def test_an_archive_without_a_source(self) -> None:
         self.vault.write('System/Skills/orphan.skill', 'x')

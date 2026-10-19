@@ -1,20 +1,9 @@
----
+<!--
 title: "Life & Practice - Folder Information"
 description: "General practical knowledge for the business of living, written for anyone."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["health", "cooking", "home", "personal finance", "career", "relationships", "self-development"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Life & Practice.md"
-id: "li-life-practice"
----
+-->
 
 # 🧰 Library / Life & Practice /
 

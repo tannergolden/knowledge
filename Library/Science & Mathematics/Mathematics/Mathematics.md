@@ -1,20 +1,9 @@
----
+<!--
 title: "Mathematics - Folder Information"
 description: "Pure mathematics: algebra, geometry, analysis, number theory."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["mathematics", "pure", "algebra", "geometry", "analysis", "number"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Mathematics/Mathematics.md"
-id: "li-mathematics"
----
+type: "index"
+keywords: ["pure", "algebra", "geometry", "analysis", "number"]
+-->
 
 # 📁 Library / Science & Mathematics / Mathematics /
 

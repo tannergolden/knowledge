@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Cadence"
 description: "The operating cadence for [Company]: the weekly, monthly, quarterly, and annual rhythm that runs the business, plus the board meeting cadence."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["Operating Rhythm", "Operating Cadence"]
-keywords: ["operating cadence", "business review", "qbr", "okr cycle", "board meeting", "weekly review", "planning rhythm", "template"]
-created: 2026-06-29
-updated: 2026-06-29
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Administration/Cadence.md"
-id: "ve-cadence"
----
+keywords: ["operating rhythm", "operating cadence", "business review", "qbr", "okr cycle", "board meeting", "weekly review", "planning rhythm"]
+-->
 
 # 🗓️ [Company] - Cadence
 

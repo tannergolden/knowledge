@@ -1,25 +1,14 @@
----
-id: "sy-skill-discover-changelog"
+<!--
 title: "discover - Changelog"
 description: "Change history for the discover skill."
-aliases: []
+type: "record"
 keywords: ["version history", "release notes", "discover changes", "revision log"]
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/discover/Changelog.md"
-layer: 4
-folder: "system"
-type: "log"
-tags: ["system", "log"]
-status: "active"
-policy: false
-created: 2026-06-28
-updated: 2026-10-19
----
+-->
 # discover Changelog
 
 ## Current Version
 
-**`1.0.2`**
+**`1.0.3`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -50,6 +39,10 @@ _None yet._
 ## Patch Updates
 
 > Fixes and clarifications. Most recent 4 entries.
+
+### `1.0.3` - 2026-10-19
+
+- An idea record's stage is its `lifecycle` field, not `status`, which stays the standard frontmatter's (`references/brief.md`).
 
 ### `1.0.2` - 2026-10-19
 

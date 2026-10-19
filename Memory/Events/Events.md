@@ -1,20 +1,9 @@
----
+<!--
 title: "Events"
 description: "The atomic grain of context memory: discrete, dated events and experiences worth remembering on their own, distinct from session context, decisions, and future dates."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
-keywords: ["events", "atomic episode", "what happened", "dated experience", "milestone moment", "occurrence", "context detail"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Events/Events.md"
-id: "me-events"
----
+type: "index"
+keywords: ["atomic episode", "what happened", "dated experience", "milestone moment", "occurrence", "context detail"]
+-->
 
 # 📌 Events
 

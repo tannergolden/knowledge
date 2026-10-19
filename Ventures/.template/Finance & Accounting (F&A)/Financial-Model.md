@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Financial Model"
 description: "The forward financial model for [Company]: assumptions, revenue and P&L projections, cash and runway, scenarios, and unit economics. Distinct from the Financials snapshot."
-status: "active"
-tags: ["ventures", "template", "sensitive"]
-aliases: ["Projections", "Forecast Model"]
-keywords: ["financial model", "projections", "forecast", "runway", "unit economics", "scenarios", "burn", "template"]
-created: 2026-06-29
-updated: 2026-06-29
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Finance & Accounting (F&A)/Financial-Model.md"
-id: "ve-financial-model"
----
+keywords: ["projections", "forecast model", "financial model", "forecast", "runway", "unit economics", "scenarios", "burn"]
+-->
 
 # 🧮 [Company] - Financial Model
 

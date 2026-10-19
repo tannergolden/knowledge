@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Clients"
 description: "Complete client roster for [Company]: active accounts, key contacts, contract details, health, history, and pipeline."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["Accounts"]
-keywords: ["client roster", "accounts", "key contacts", "contracts", "account health", "pipeline", "customer experience", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Client Experience (CX)/Clients.md"
-id: "ve-clients"
----
+keywords: ["accounts", "client roster", "key contacts", "contracts", "account health", "pipeline", "customer experience", "template"]
+-->
 
 # 🤝 [Company] - Clients
 

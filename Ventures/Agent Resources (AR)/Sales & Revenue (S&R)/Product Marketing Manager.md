@@ -1,21 +1,7 @@
 ---
-title: "Product Marketing Manager"
 name: "Felix"
 description: "Dispatch this agent to own positioning, messaging, and go-to-market launch: define how the product is framed, sharpen the message, and run the launch plan. Sales & Revenue; serves under the CRO."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Felix", "Product Marketing"]
-keywords: ["positioning", "messaging", "go-to-market", "launch", "differentiation"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Product Marketing Manager.md"
-id: "ve-product-marketing-manager"
 ---
 
 # 🎯 Product Marketing Manager

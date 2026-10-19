@@ -1,20 +1,9 @@
----
+<!--
 title: "Memory - Folder Information"
 description: "The continuity layer, organized by cognitive memory type: working (Log), context (the session timeline), semantic (Entities), reflective (Decisions and Insights), and prospective (Dates). It records what happened and the user's external world, with capture-time importance, recency-importance-relevance retrieval, reflection, and bitemporal provenance. Who the user IS lives in Profile, never here."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["continuity layer", "memory types", "context semantic", "importance salience", "recency relevance retrieval", "reflection cadence", "bitemporal provenance", "supersede not rewrite"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Memory.md"
-id: "me-memory"
----
+-->
 
 # 🧠 Memory/
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Games & Play - Folder Information"
 description: "Games, video games, puzzles, and game design."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["games", "play", "video", "puzzles", "game", "design"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Games & Play/Games & Play.md"
-id: "li-games-play"
----
+type: "index"
+keywords: ["video", "puzzles", "game", "design"]
+-->
 
 # 📁 Library / Arts & Recreation / Games & Play /
 

@@ -40,13 +40,13 @@ def build_skill(vault: fixtures.Vault) -> None:
     vault.write(f'{SOURCE}/SKILL.md', skill_md())
     vault.write(f'{SOURCE}/License.txt', 'MIT License\n')
     vault.note(f'{SOURCE}/Changelog.md', body='# Changelog\n\n## Current Version\n\n**`01.00.00`**\n',
-               folder='system', tags=['system', 'information'])
-    vault.note(f'{SOURCE}/Demo.md', folder='system', tags=['system', 'information'])
+               type='record')
+    vault.note(f'{SOURCE}/Demo.md', type='guide')
     for sub in ('assets', 'references', 'templates'):
         vault.write(f'{SOURCE}/{sub}/.gitkeep', '')
     vault.note('Inbox/Faculties/Faculties.md')
-    vault.note('Inbox/Faculties/Demo/Demo.md', members=[LEAD], lead=LEAD)
-    vault.note(f'Inbox/Faculties/Demo/{LEAD}.md', type='agent', tags=['inbox', 'agent'])
+    vault.note('Inbox/Faculties/Demo/Demo.md')
+    vault.agent(f'Inbox/Faculties/Demo/{LEAD}.md')
 
 
 class TestCheckSkills(unittest.TestCase):
@@ -115,12 +115,12 @@ class TestCheckSkills(unittest.TestCase):
         self.assert_flags('the Current Version is 01.01.00, but SKILL.md says 01.00.00')
 
     def test_a_retired_per_file_version(self) -> None:
-        self.vault.note(f'{SOURCE}/Demo.md', folder='system', tags=['system', 'information'], version='01.00.00')
+        self.vault.note(f'{SOURCE}/Demo.md', folder='system', version='01.00.00')
         self.assert_flags('per-file versions are retired')
 
     def test_the_docs_carry_the_note_schema(self) -> None:
-        self.vault.note(f'{SOURCE}/Demo.md', folder='system', tags=['system', 'information'], author=None)
-        self.assert_flags('the frontmatter lacks author')
+        self.vault.note(f'{SOURCE}/Demo.md', type='guide', description=None)
+        self.assert_flags('the frontmatter lacks description')
 
     def test_em_dashes_and_boundaries(self) -> None:
         self.vault.write(f'{SOURCE}/references/guide.md', 'one \u2014 two\n')

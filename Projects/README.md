@@ -1,8 +1,8 @@
 <!--
 title: '🛠️ PROJECTS'
 description: 'Your personal projects, one folder each, from idea to done.'
-tags: [projects, initiatives, obsidian-vault, readme]
-category: docs
+type: index
+keywords: [initiatives, vault]
 -->
 
 <!-- markdownlint-disable MD041 -->

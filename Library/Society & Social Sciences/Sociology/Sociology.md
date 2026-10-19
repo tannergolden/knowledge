@@ -1,20 +1,9 @@
----
+<!--
 title: "Sociology - Folder Information"
 description: "Social structure, institutions, groups, social theory."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["sociology", "social", "structure", "institutions", "groups", "theory"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Sociology/Sociology.md"
-id: "li-sociology"
----
+type: "index"
+keywords: ["social", "structure", "institutions", "groups", "theory"]
+-->
 
 # 📁 Library / Society & Social Sciences / Sociology /
 

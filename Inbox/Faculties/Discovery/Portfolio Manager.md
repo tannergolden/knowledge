@@ -1,21 +1,7 @@
 ---
-title: "Portfolio Manager"
 name: "Lionel"
 description: "Dispatch this agent when there is a portfolio to weigh: balance the whole developed-idea mix across ventures and projects by RICE and recommend the mix. In the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Lionel", "Portfolio Manager", "Portfolio Balancer"]
-keywords: ["portfolio", "rice", "balance", "cross-venture", "resourcing"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Discovery/Portfolio Manager.md"
-id: "in-portfolio-manager"
 ---
 
 # 💼 Portfolio Manager

@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Roadmap"
 description: "Product and R&D roadmap for [Company]: active development, upcoming work, and longer-term vision."
-status: "active"
-tags: ["ventures", "template"]
-aliases: []
-keywords: ["product roadmap", "active development", "upcoming work", "feature planning", "research development", "prioritization", "vision", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Research & Development (R&D)/Roadmap.md"
-id: "ve-roadmap"
----
+keywords: ["product roadmap", "active development", "upcoming work", "feature planning", "research development", "prioritization", "vision", "template"]
+-->
 
 # 🗺️ [Company] - Roadmap
 

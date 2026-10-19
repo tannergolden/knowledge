@@ -1,20 +1,9 @@
----
+<!--
 title: "Astronomy & Space - Folder Information"
 description: "Astronomy, astrophysics, cosmology, and space science."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["astronomy", "space", "astrophysics", "cosmology", "science"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Astronomy & Space/Astronomy & Space.md"
-id: "li-astronomy-space"
----
+type: "index"
+keywords: ["astrophysics", "cosmology", "science"]
+-->
 
 # 📁 Library / Science & Mathematics / Astronomy & Space /
 

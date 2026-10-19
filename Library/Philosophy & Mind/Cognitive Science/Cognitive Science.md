@@ -1,20 +1,9 @@
----
+<!--
 title: "Cognitive Science - Folder Information"
 description: "Cognition across psychology, neuroscience, AI, and linguistics."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["cognitive", "science", "cognition", "psychology", "neuroscience", "linguistics"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Cognitive Science/Cognitive Science.md"
-id: "li-cognitive-science"
----
+type: "index"
+keywords: ["cognition", "psychology", "neuroscience", "linguistics"]
+-->
 
 # 📁 Library / Philosophy & Mind / Cognitive Science /
 

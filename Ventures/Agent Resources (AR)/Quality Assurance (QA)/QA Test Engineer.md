@@ -1,21 +1,7 @@
 ---
-title: "QA Test Engineer"
 name: "Trevor"
 description: "Dispatch this agent to execute verification: test a work product against the written standard and report defects with reproducible evidence. Pass or fail what the standard says, never invent the rule. Serves in the Quality Assurance department under the Head of Quality."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Trevor", "QA Test Engineer", "Test Engineer"]
-keywords: ["verification", "testing", "test execution", "defect reporting", "reproducibility", "acceptance criteria"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Quality Assurance (QA)/QA Test Engineer.md"
-id: "ve-qa-test-engineer"
 ---
 
 # 🧪 QA Test Engineer

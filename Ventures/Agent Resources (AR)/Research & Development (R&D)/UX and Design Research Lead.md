@@ -1,21 +1,7 @@
 ---
-title: "UX and Design Research Lead"
 name: "Adeline"
 description: "Dispatch this agent as the UX / Design Research Lead: Owns product design and user research feeding the product roadmap; returns design direction and validated user insight. Replaces the proposals' colliding 'Mabel'."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Adeline", "UX / Design Research Lead"]
-keywords: ["design", "research", "development", "agent", "specialist", "venture"]
 tools: Read, Grep, Glob
-created: 2026-06-29
-updated: 2026-06-29
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/UX and Design Research Lead.md"
-id: "ve-ux-design-research-lead"
 ---
 
 # 🎨 UX and Design Research Lead

@@ -1,20 +1,9 @@
----
+<!--
 title: "Travel & Exploration - Folder Information"
 description: "Travel, exploration, and accounts of places."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["travel", "exploration", "accounts", "places"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/History & Geography/Travel & Exploration/Travel & Exploration.md"
-id: "li-travel-exploration"
----
+type: "index"
+keywords: ["accounts", "places"]
+-->
 
 # 📁 Library / History & Geography / Travel & Exploration /
 

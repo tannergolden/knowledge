@@ -1,20 +1,9 @@
----
+<!--
 title: "Transportation - Folder Information"
 description: "Vehicles, logistics, and transport systems."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["transportation", "vehicles", "logistics", "transport", "systems"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Transportation/Transportation.md"
-id: "li-transportation"
----
+type: "index"
+keywords: ["vehicles", "logistics", "transport", "systems"]
+-->
 
 # 📁 Library / Technology & Applied Science / Transportation /
 

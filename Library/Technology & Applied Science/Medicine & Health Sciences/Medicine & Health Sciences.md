@@ -1,20 +1,9 @@
----
+<!--
 title: "Medicine & Health Sciences - Folder Information"
 description: "Clinical medicine, public health, nursing, psychiatry."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["medicine", "health", "sciences", "clinical", "public", "nursing"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Medicine & Health Sciences/Medicine & Health Sciences.md"
-id: "li-medicine-health-sciences"
----
+type: "index"
+keywords: ["clinical", "public", "nursing"]
+-->
 
 # 📁 Library / Technology & Applied Science / Medicine & Health Sciences /
 

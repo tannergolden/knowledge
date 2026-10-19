@@ -1,20 +1,9 @@
----
+<!--
 title: "Language & Literature - Folder Information"
 description: "Human language and written art."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["linguistics", "languages", "literature", "poetry", "fiction", "rhetoric", "translation"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Language & Literature.md"
-id: "li-language-literature"
----
+type: "index"
+keywords: ["linguistics", "languages", "poetry", "fiction", "rhetoric", "translation"]
+-->
 
 # 📖 Library / Language & Literature /
 

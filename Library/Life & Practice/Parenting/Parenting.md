@@ -1,20 +1,9 @@
----
+<!--
 title: "Parenting - Folder Information"
 description: "Child-rearing and caregiving how-to."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["parenting", "child-rearing", "caregiving", "how-to"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Parenting/Parenting.md"
-id: "li-parenting"
----
+type: "index"
+keywords: ["child-rearing", "caregiving", "how-to"]
+-->
 
 # 📁 Library / Life & Practice / Parenting /
 

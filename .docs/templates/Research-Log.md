@@ -1,8 +1,8 @@
 <!--
 title: '🔎 RESEARCH LOG TEMPLATE'
 description: 'The format for a filed research report: a dated, sourced, claim-by-claim investigation kept current by its verification window.'
-tags: [template, research, log, evidence]
-category: docs
+type: template
+keywords: [evidence]
 verified: '[YYYY-MM-DD]'
 focus: '[One line: the question this report answers]'
 decision: '[The ADR or record this fed, as a markdown link - or - while it stands as background]'

@@ -53,14 +53,14 @@ class TestProfileCoverage(unittest.TestCase):
         self.vault.note('Profile/Biography.md', body='\n'.join([
             '# Biography', '## Early life', '- **Born:**', '- **Raised:** (city)', '[Name]', '| --- | --- |',
             '_None recorded yet._', 'Grew up by the sea and learned to sail at nine.',
-            '- **School:** Ridgeview High', '<!-- a comment only -->', '']), type='self', tags=['profile', 'self'])
+            '- **School:** Ridgeview High', '<!-- a comment only -->', '']), type='self')
         biography = self.facet(self.report(), 'Biography')
         self.assertEqual(biography['substantive'], 2)
         self.assertEqual(biography['status'], 'sparse')
 
     def test_unconfirmed_proposals_count_against_depth(self) -> None:
         self.vault.note('Profile/Focus.md', body='# Focus\n## Now\nShipping the vault. <!-- unconfirmed 2026-01-01 -->\n',
-                        type='self', tags=['profile', 'self'])
+                        type='self')
         focus = self.facet(self.report(), 'Focus')
         self.assertEqual((focus['substantive'], focus['unconfirmed'], focus['depth']), (1, 1, 0))
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Systems & Cybernetics - Folder Information"
 description: "Systems theory, cybernetics, information and complexity across domains."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["systems", "cybernetics", "theory", "information", "complexity", "domains"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Information & Computing/Systems & Cybernetics/Systems & Cybernetics.md"
-id: "li-systems-cybernetics"
----
+type: "index"
+keywords: ["theory", "complexity", "domains"]
+-->
 
 # 📁 Library / Information & Computing / Systems & Cybernetics /
 

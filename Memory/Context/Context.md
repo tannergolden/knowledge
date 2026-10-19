@@ -1,20 +1,9 @@
----
+<!--
 title: "Memory / Context"
 description: "Session context: the tiered cascade of session summaries (Current to Recent to Archive) that carries what happened across working sessions. The gist grain of context memory; recall is importance-aware."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["session context", "session summaries", "tiered cascade", "current recent archive", "importance aware recall", "period digest", "continuity"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Context/Context.md"
-id: "me-context"
----
+-->
 
 # 🗓️ Memory / Context /
 

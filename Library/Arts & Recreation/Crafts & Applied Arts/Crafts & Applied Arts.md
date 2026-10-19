@@ -1,20 +1,9 @@
----
+<!--
 title: "Crafts & Applied Arts - Folder Information"
 description: "Craft, decorative, and applied arts."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["crafts", "applied", "arts", "craft", "decorative"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Crafts & Applied Arts/Crafts & Applied Arts.md"
-id: "li-crafts-applied-arts"
----
+type: "index"
+keywords: ["craft", "decorative"]
+-->
 
 # 📁 Library / Arts & Recreation / Crafts & Applied Arts /
 

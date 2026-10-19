@@ -33,7 +33,7 @@ A captured idea stays lightweight until vetted. Fields (the full schema and scor
 - a short `title` and a one-sentence `statement`,
 - the `lens` (or HMW) that produced it,
 - a cheap `ice` score for intake triage and an `elo` from the tournament,
-- a lifecycle `status` (raw, shortlisted, developed, promoted, parked, killed),
+- its `lifecycle` (raw, shortlisted, developed, promoted, parked, killed),
 - `parents` for lineage (what it evolved or combined from) and `serves` for the venture, project, or topic it is for.
 
 ## Sources

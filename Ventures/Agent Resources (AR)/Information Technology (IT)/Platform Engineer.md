@@ -1,21 +1,7 @@
 ---
-title: "Platform Engineer"
 name: "Devin"
 description: "Dispatch this agent for the internal toolchains, CI/CD, infrastructure-as-code, and the self-service platform: pave the path the workforce builds on, automate the toil, and make the platform safe to self-serve. Serves in the Information Technology department under the Chief Information Officer (Samuel)."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Devin", "Platform Engineer", "Platform"]
-keywords: ["platform", "toolchain", "CI/CD", "infrastructure-as-code", "self-service", "automation"]
 tools: Read, Grep, Glob
-created: 2026-06-21
-updated: 2026-06-21
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Information Technology (IT)/Platform Engineer.md"
-id: "ve-platform-engineer"
 ---
 
 # 🖥️ Platform Engineer

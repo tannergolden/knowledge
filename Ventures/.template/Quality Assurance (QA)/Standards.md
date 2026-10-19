@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - QA Standards"
 description: "Quality assurance standards, processes, and checklists for [Company]."
-status: "active"
-tags: ["ventures", "template"]
-aliases: []
-keywords: ["quality standards", "review processes", "checklists", "quality assurance", "consistency", "quality reviews", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Quality Assurance (QA)/Standards.md"
-id: "ve-standards"
----
+keywords: ["quality standards", "review processes", "checklists", "quality assurance", "consistency", "quality reviews", "template"]
+-->
 
 # ✅ [Company] - QA Standards
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Infrastructure & Built Environment - Folder Information"
 description: "Construction, building engineering, urban planning, utilities."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["infrastructure", "built", "environment", "construction", "building", "engineering"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Infrastructure & Built Environment/Infrastructure & Built Environment.md"
-id: "li-infrastructure-built-environment"
----
+type: "index"
+keywords: ["construction", "building", "engineering"]
+-->
 
 # 📁 Library / Technology & Applied Science / Infrastructure & Built Environment /
 

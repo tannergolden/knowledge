@@ -1,26 +1,15 @@
----
+<!--
 title: "research - Changelog"
 description: "Change history for the research skill, the BRAIN's depth-scaled multi-source research orchestrator."
-status: "active"
-tags: ["system", "log"]
-aliases: []
+type: "record"
 keywords: ["version history", "release notes", "research skill changes", "revision log"]
-created: 2026-06-22
-updated: 2026-10-19
-type: "log"
-folder: "system"
-layer: 4
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/research/Changelog.md"
-id: "sy-skill-research-changelog"
----
+-->
 
 # research Changelog
 
 ## Current Version
 
-**`1.5.2`**
+**`1.5.3`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -68,6 +57,10 @@ Reversed the reports-are-never-referenced rule: `Inbox/Reports/Reports.md` is no
 
 > Fixes, wording, reference tweaks. Most recent 4 entries.
 
+### `1.5.3` - 2026-10-19
+
+- A report's three-month window ends on its `review_by` date, since the hidden frontmatter retired `updated` (`references/reporting.md`, `templates/report.md`).
+
 ### `1.5.2` - 2026-10-19
 
 - References point at `AGENTS.md` (Start here holds the retrieval order) and the folder notes' Rules instead of the retired root rule files.
@@ -81,7 +74,3 @@ Moved local grounding and the preflight off the retired engine: the offline know
 ### `1.1.3` - 2026-06-24
 
 Dropped the "Research - " prefix from filed-report naming. A report is now named for its topic alone (`<Topic Title>.md`) and filed in `Inbox/Reports/`; its location, not a prefix, marks it as a report. Updated `references/reporting.md` (the naming rule) and `templates/report.md` (title, path, H1, and the id pattern, now `in-<slug>`). The three existing reports were renamed to match.
-
-### `1.1.2` - 2026-06-23
-
-Fixed the filed-report template (`templates/report.md`) to match the live BRAIN reports convention proven by the held reports in `Inbox/Reports/`: `type` is now `reference` (the prior `report` is outside the closed File Role vocabulary in Constitution Article VII and would fail `lint`), `tags` are `["inbox", "reference", "current"]`, and the `id` pattern is `in-research-<slug>` to match filed reports. No change to the research flow; a report filed from this template now lints clean.

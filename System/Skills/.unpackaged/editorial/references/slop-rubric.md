@@ -2,7 +2,8 @@
 
 The Line Editor (and, on quick, the lead self-editing) critiques every piece against this rubric, never against a vague "make it better." A written standard is the point: naked self-critique degrades, so the bar lives on paper and the critic checks the draft against it.
 
-> [!important] Single source of truth
+> [!IMPORTANT]
+> **Single source of truth.**
 > This rubric does **not** define what slop is. Standards' [Plain Words](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md#plain-words) list does: its banned words and its habits, which **DOC-003** holds every agent to. **DOC-002** bans the em dash. **Read the Plain Words list at that link before grading**, and grade against it as it stands there, never against a copy from memory; a Line Editor dispatched without web access gets the list in its brief, read at the link by the lead and passed inline. This file is the working checklist around it: the patterns that go beyond the list, and how the gate scores. When the list and this file ever disagree, the **list wins**, and this file is the bug. The rubric points at the list; it never forks it.
 
 ## The two hard gates (everywhere, internal files included)

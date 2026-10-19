@@ -1,20 +1,9 @@
----
+<!--
 title: "Metaphysics - Folder Information"
 description: "Being, existence, causation, time, free will."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["metaphysics", "being", "existence", "causation", "free", "will"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Philosophy & Mind/Metaphysics/Metaphysics.md"
-id: "li-metaphysics"
----
+type: "index"
+keywords: ["being", "existence", "causation", "free", "will"]
+-->
 
 # 📁 Library / Philosophy & Mind / Metaphysics /
 

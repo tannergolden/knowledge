@@ -1,20 +1,9 @@
----
+<!--
 title: "Ritual & Practice - Folder Information"
 description: "Rites, liturgy, festivals, pilgrimage, prayer, and observance."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["ritual", "practice", "rites", "liturgy", "festivals", "pilgrimage"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Ritual & Practice/Ritual & Practice.md"
-id: "li-ritual-practice"
----
+type: "index"
+keywords: ["rites", "liturgy", "festivals", "pilgrimage"]
+-->
 
 # 📁 Library / Religion & Spirituality / Ritual & Practice /
 

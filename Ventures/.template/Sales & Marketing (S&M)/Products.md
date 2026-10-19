@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Products"
 description: "Complete product catalog for [Company]: descriptions, positioning, pricing, status, and roadmap."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["Catalog"]
-keywords: ["product catalog", "positioning", "pricing", "product status", "roadmap", "sales marketing", "offerings", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: true
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Sales & Marketing (S&M)/Products.md"
-id: "ve-products"
----
+keywords: ["catalog", "product catalog", "positioning", "pricing", "product status", "roadmap", "sales marketing", "offerings"]
+-->
 
 # 🛍️ [Company] - Products
 

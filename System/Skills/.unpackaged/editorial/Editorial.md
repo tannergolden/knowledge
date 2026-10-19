@@ -1,20 +1,9 @@
----
+<!--
 title: "Editorial - Skill Information"
 description: "BRAIN documentation node for the editorial skill: dispatches the standing Editorial team to write, edit, and format any prose, scaled to the piece, to the one standard of clarity with voice fidelity from Profile."
-status: "active"
-tags: ["system", "information", "timeless"]
-aliases: ["/editorial", "editorial skill", "write skill"]
-keywords: ["editorial skill", "writing skill", "editing", "line editor", "voice fidelity", "ai slop", "markdown formatting", "draft this", "clean this up", "make this clearer"]
-created: 2026-06-23
-updated: 2026-10-19
-type: "information"
-folder: "system"
-layer: 4
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/editorial/Editorial.md"
-id: "sy-skill-editorial"
----
+type: "index"
+keywords: ["/editorial", "editorial skill", "write skill", "writing skill", "editing", "line editor", "voice fidelity", "ai slop"]
+-->
 
 # ✍️ editorial - Information Guide
 
@@ -26,7 +15,7 @@ Filed in `System/Skills/.unpackaged/` - skill sources live hidden and carry no w
 
 ## How it fits the architecture
 
-The skill names the **Editorial team** in `metadata.team: Editorial`, the standing writing team in the federated agent library (`Inbox/Faculties/Editorial/`, lead Editorial Lead / Edith, plus the Writer, Line Editor, Long-Form Writer, Technical Writer, and Developmental Editor). It carries no `agents/` folder of its own: agents are referenced by name and vendored in only at Publish, exactly as `develop` composes the Development team and `research` composes the Research team. The skill is a thin orchestration and doctrine layer. Its `references/` carry the writing method: the tier-and-dispatch table that maps each tier onto the roster, the slop rubric anchored to standards' Plain Words list, the formatting doctrine (with a full markdown-syntax reference and a complete Obsidian admonition reference) that holds a vault note to `AGENTS.md`, Conventions and a page GitHub renders to standards' Document Styling guide, the voice-loading protocol, and the email-and-message conventions. Its `templates/` scaffold the everyday deliverables (an email, a message, a formatted document), and its `assets/` carry the reference data the gate leans on (the full Obsidian callout-type table and the slop-pattern catalog). The agents themselves live once in `Inbox/Faculties/Editorial/`; every agent returns its artifact and persists nothing, and the lead alone writes any working file and owns the ship gate. A finished piece is delivered to its real home (a Project, a Venture, a Memory or Profile destination), or to the `Inbox/` root when no home is named.
+The skill names the **Editorial team** in `metadata.team: Editorial`, the standing writing team in the federated agent library (`Inbox/Faculties/Editorial/`, lead Editorial Lead / Edith, plus the Writer, Line Editor, Long-Form Writer, Technical Writer, and Developmental Editor). It carries no `agents/` folder of its own: agents are referenced by name and vendored in only at Publish, exactly as `develop` composes the Development team and `research` composes the Research team. The skill is a thin orchestration and doctrine layer. Its `references/` carry the writing method: the tier-and-dispatch table that maps each tier onto the roster, the slop rubric anchored to standards' Plain Words list, the formatting doctrine (with a full markdown-syntax reference and a callout reference: GitHub's five, and Obsidian's set for a target that renders it) that holds a vault note to `AGENTS.md`, Conventions and a page GitHub renders to standards' Document Styling guide, the voice-loading protocol, and the email-and-message conventions. Its `templates/` scaffold the everyday deliverables (an email, a message, a formatted document), and its `assets/` carry the reference data the gate leans on (the callout-type tables and the slop-pattern catalog). The agents themselves live once in `Inbox/Faculties/Editorial/`; every agent returns its artifact and persists nothing, and the lead alone writes any working file and owns the ship gate. A finished piece is delivered to its real home (a Project, a Venture, a Memory or Profile destination), or to the `Inbox/` root when no home is named.
 
 ## Design basis
 

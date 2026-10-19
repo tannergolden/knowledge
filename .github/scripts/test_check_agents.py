@@ -2,8 +2,8 @@
 """Tests for check-agents.py, the agent library check.
 
 WHY THIS EXISTS. An agent is addressed by its spoken name and a team is
-dispatched by its roster, so a duplicate name, a roster naming a missing
-agent, or a lead holding labor tools breaks dispatch quietly. Each test builds
+dispatched by its folder, so a duplicate name, a team with no lead or two,
+or a lead holding labor tools breaks dispatch quietly. Each test builds
 a small library in a throwaway vault, breaks one rule, and runs the real
 script; the last runs it, read only, on the library this repository holds.
 
@@ -48,12 +48,11 @@ class TestCheckAgents(unittest.TestCase):
     def tearDown(self) -> None:
         self.vault.cleanup()
 
-    def roster(self, members: list[str] | None = None, lead: str = LEAD, **fields: object) -> None:
-        self.vault.note(f'{TEAM}/Research.md', members=members or [LEAD, 'Fact-Checker'], lead=lead, **fields)
+    def roster(self, **fields: object) -> None:
+        self.vault.note(f'{TEAM}/Research.md', **fields)
 
     def agent(self, role: str, folder: str = TEAM, body: str | None = None, **fields: object) -> None:
-        self.vault.note(f'{folder}/{role}.md', body=body if body is not None else spec(role),
-                        type='agent', tags=['inbox', 'agent'], **fields)
+        self.vault.agent(f'{folder}/{role}.md', body=body if body is not None else spec(role), **fields)
 
     def assert_flags(self, needle: str) -> None:
         result = self.vault.run(SCRIPT)
@@ -64,10 +63,6 @@ class TestCheckAgents(unittest.TestCase):
         result = self.vault.run(SCRIPT)
         self.assertEqual(result.returncode, 0, result.stdout)
         self.assertIn('2 agents and 1 rosters pass across 1 homes.', result.stdout)
-
-    def test_the_title_is_the_file_name(self) -> None:
-        self.agent('Fact-Checker', name='Felix', tools='Read', title='Checker')
-        self.assert_flags("title 'Checker' differs from the file name")
 
     def test_a_spoken_name_and_a_description(self) -> None:
         self.agent('Fact-Checker', tools='Read', name=None, description=None)
@@ -88,26 +83,35 @@ class TestCheckAgents(unittest.TestCase):
         self.assert_flags('holds neither Write nor Edit')
 
     def test_the_librarian_may_labor(self) -> None:
-        self.vault.note('Library/Library.md', members=[f'{STAR} Librarian'], lead=f'{STAR} Librarian')
+        self.vault.note('Library/Library.md')
         self.agent(f'{STAR} Librarian', folder='Library', name='Marian',
                    tools='Read, Grep, Glob, Write, Edit, Bash, Task')
         result = self.vault.run(SCRIPT)
         self.assertEqual(result.returncode, 0, result.stdout)
 
-    def test_the_roster_rules(self) -> None:
-        self.roster(members=[LEAD, 'Fact-Checker', 'Ghost'])
-        self.assert_flags("member 'Ghost' is no agent's title")
-        self.roster(lead='Fact-Checker')
-        result = self.vault.run(SCRIPT)
-        self.assertIn('does not start with the star', result.stdout)
-        self.assertIn("names 'Fact-Checker'", result.stdout)
+    def test_a_team_has_exactly_one_lead(self) -> None:
+        self.agent(f'{STAR} Second Lead', name='Sasha', tools='Read, Grep, Glob, Task')
+        self.assert_flags('a team stars exactly one member, its lead; found 2')
+        self.vault.path(f'{TEAM}/{STAR} Second Lead.md').unlink()
+        self.vault.path(f'{TEAM}/{LEAD}.md').unlink()
+        self.assert_flags('found 0')
 
-    def test_every_agent_is_a_member(self) -> None:
+    def test_the_folder_is_the_team(self) -> None:
         self.agent('Statistician', name='Stella', tools='Read')
-        self.assert_flags("'Statistician' is not one of")
+        result = self.vault.run(SCRIPT)
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn('3 agents and 1 rosters pass', result.stdout)
+
+    def test_a_team_needs_its_own_note(self) -> None:
+        self.vault.path(f'{TEAM}/Research.md').unlink()
+        self.assert_flags('the team Research has no note of its own')
+
+    def test_a_roster_needs_a_title_and_a_description(self) -> None:
+        self.roster(description=None)
+        self.assert_flags('the frontmatter has no description')
 
     def test_names_are_unique_across_homes(self) -> None:
-        self.vault.note('Library/Library.md', members=[f'{STAR} Librarian'], lead=f'{STAR} Librarian')
+        self.vault.note('Library/Library.md')
         self.agent(f'{STAR} Librarian', folder='Library', name='Felix',
                    tools='Read, Grep, Glob, Write, Edit, Bash, Task')
         self.assert_flags("the spoken name 'felix' is also used by")

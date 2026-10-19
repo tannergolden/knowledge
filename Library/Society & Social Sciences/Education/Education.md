@@ -1,20 +1,9 @@
----
+<!--
 title: "Education - Folder Information"
 description: "Education theory, policy, and systems."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["education", "theory", "policy", "systems"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Education/Education.md"
-id: "li-education"
----
+type: "index"
+keywords: ["theory", "policy", "systems"]
+-->
 
 # 📁 Library / Society & Social Sciences / Education /
 

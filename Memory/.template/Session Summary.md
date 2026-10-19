@@ -1,29 +1,16 @@
----
+<!--
 title: "Session Summary"
 description: "Delta-update ledger scaffold for filing a single session into context memory."
-status: "active"
-tags: ["memory", "template"]
-aliases: []
-keywords: ["session", "summary", "ledger", "delta", "record", "scaffold", "context"]
-created: 2026-06-18
-updated: 2026-10-19
 type: "template"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/.template/Session Summary.md"
-id: "me-session-summary"
----
+keywords: ["ledger", "delta", "record", "scaffold", "context"]
+-->
 
 # 🧾 Session Summary - [YYYY-MM-DD]
 
 <!--
 FILING INSTRUCTIONS (do this when you save the summary):
 - Save into Memory/Context/Current/ named YYYYMMDD-HHMMSS.md (timestamp of filing).
-- In frontmatter: set type "record"; set tags ["memory","record","sensitive"]; remove the "template" tag.
-- Remove the "version" key (records are not versioned).
-- Set "path" to the new BRAIN path and give "id" a stable, unique slug.
+- In frontmatter: set type "record", and give the copy its real title and description.
 - Give the H1 a fitting emoji for the session and replace [YYYY-MM-DD] with the real date.
 - Then run: python3 .github/scripts/update-vault.py
 NO wikilinks anywhere in this file (`.docs/vault/Link-Topology.md`). Reference files by plain path.

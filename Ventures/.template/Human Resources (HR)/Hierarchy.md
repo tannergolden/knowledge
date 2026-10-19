@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Hierarchy"
 description: "Organizational hierarchy for [Company]: reporting structure, leadership, full team roster, contractors, open roles, and advisory board."
-status: "active"
-tags: ["ventures", "template", "sensitive"]
-aliases: ["Org Chart"]
-keywords: ["org chart", "reporting structure", "leadership", "team roster", "contractors", "open roles", "advisory board", "human resources", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Human Resources (HR)/Hierarchy.md"
-id: "ve-hierarchy"
----
+keywords: ["org chart", "reporting structure", "leadership", "team roster", "contractors", "open roles", "advisory board", "human resources"]
+-->
 
 # 🏛️ [Company] - Hierarchy
 

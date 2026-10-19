@@ -1,22 +1,9 @@
----
+<!--
 title: "Business Intelligence (BI)"
 description: "The Business Intelligence (BI) department of the agent workforce: data, metrics, dashboards, and decisions from evidence. Led by its department head, with more specialists added by demand."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["BI", "Analytics", "Data"]
-keywords: ["business intelligence", "analytics", "metrics", "dashboards", "reporting"]
-members: ["★ Chief Data Officer", "Analytics Engineer", "Data Analyst"]
-lead: ★ Chief Data Officer
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/Business Intelligence (BI).md"
-id: "ve-business-intelligence"
----
+type: "index"
+keywords: ["analytics", "data", "business intelligence", "metrics", "dashboards", "reporting"]
+-->
 # 📊 Business Intelligence (BI)
 
 The Business Intelligence (BI) department of the agent workforce: data, metrics, dashboards, and decisions from evidence.

@@ -1,20 +1,9 @@
----
+<!--
 title: "Physics - Folder Information"
 description: "Matter, energy, motion, and the fundamental forces."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["physics", "matter", "energy", "motion", "fundamental", "forces"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Physics/Physics.md"
-id: "li-physics"
----
+type: "index"
+keywords: ["matter", "energy", "motion", "fundamental", "forces"]
+-->
 
 # 📁 Library / Science & Mathematics / Physics /
 

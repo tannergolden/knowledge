@@ -1,20 +1,9 @@
----
+<!--
 title: "Organizations"
 description: "Registry of organizations in the user's personal life that are not their own ventures, one file per organization."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
-keywords: ["organizations", "institutions", "gym clinic school", "club membership", "companies", "personal life", "not ventures"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Entities/Organizations/Organizations.md"
-id: "me-organizations"
----
+type: "index"
+keywords: ["institutions", "gym clinic school", "club membership", "companies", "personal life", "not ventures"]
+-->
 
 # 🏢 Organizations
 

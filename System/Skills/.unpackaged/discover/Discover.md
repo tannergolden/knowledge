@@ -1,20 +1,9 @@
----
+<!--
 title: "Discover - Skill Information"
 description: "BRAIN documentation node for the discover skill: dispatches the Discovery team to generate ideas wide for a challenge, then converge to a ranked shortlist by a fair pairwise tournament. Use when the user wants ideas or options generated."
-status: "active"
-tags: ["system", "information", "timeless"]
-aliases: ["/discover"]
-keywords: ["discover skill", "brainstorm", "ideation", "idea generation", "discovery team", "how might we", "idea tournament"]
-created: 2026-06-28
-updated: 2026-06-28
-type: "information"
-folder: "system"
-layer: 4
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/discover/Discover.md"
-id: "sy-skill-discover"
----
+type: "index"
+keywords: ["/discover", "discover skill", "brainstorm", "ideation", "idea generation", "discovery team", "how might we", "idea tournament"]
+-->
 
 # 💡 Discover - Information Guide
 

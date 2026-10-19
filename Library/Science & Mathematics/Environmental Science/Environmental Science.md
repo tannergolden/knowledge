@@ -1,20 +1,9 @@
----
+<!--
 title: "Environmental Science - Folder Information"
 description: "Climate, ecosystems, and environmental systems as natural science."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["environmental", "science", "climate", "ecosystems", "systems", "natural"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Science & Mathematics/Environmental Science/Environmental Science.md"
-id: "li-environmental-science"
----
+type: "index"
+keywords: ["climate", "ecosystems", "systems", "natural"]
+-->
 
 # 📁 Library / Science & Mathematics / Environmental Science /
 

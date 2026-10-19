@@ -1,21 +1,7 @@
 ---
-title: "Design Critic"
 name: "Vera"
 description: "Dispatch this agent to review a visual it did not make and rule whether it ships: right form, honest encoding, accessible, clear. The independent critic and accessibility gate on the Design team, the BRAIN's standing visualization team; review-only, never fixes, and reports to the Design Lead."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Vera", "Design Critic", "design critic"]
-keywords: ["design critic", "design review", "accessibility gate", "graphical integrity", "form-fit", "independent reviewer"]
 tools: Read, Grep, Glob
-created: 2026-06-28
-updated: 2026-06-28
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Design/Design Critic.md"
-id: "in-design-critic"
 ---
 
 # 🧐 Design Critic

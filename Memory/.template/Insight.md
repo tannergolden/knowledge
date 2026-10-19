@@ -1,25 +1,13 @@
----
+<!--
 title: "Insight"
 description: "Template for a single synthesized insight about the user's external world, with evidence and provenance."
-status: "active"
-tags: ["memory", "template"]
-aliases: []
-keywords: ["insight", "synthesis", "pattern", "observation", "evidence", "confidence", "template"]
-created: 2026-06-18
-updated: 2026-06-18
 type: "template"
-folder: "memory"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/.template/Insight.md"
-id: "me-insight"
----
+keywords: ["synthesis", "pattern", "observation", "evidence", "confidence", "template"]
+-->
 
 <!--
 Instantiation: copy this file into Memory/Insights/ to record an insight.
-- Set type to "record" and drop the "template" tag and the version key.
-- Set id to me-<slug> and path to BRAIN/Memory/Insights/<file>.md.
+- Set type to "record", and give the copy its real title and description.
 - Replace the emoji H1 title with the real insight.
 - Name the file YYYY-MM-slug.md so insights sort chronologically.
 - Boundary reminder: an Insight is about the external world only. Nothing

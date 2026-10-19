@@ -1,21 +1,7 @@
 ---
-title: "Visualization Designer"
 name: "Otto"
 description: "Dispatch this agent to make the visual: render a chart, diagram, interactive widget, or explanatory illustration to the chosen form, encoded honestly and legibly. The maker on the Design team, the BRAIN's standing visualization team; produces the artifact source and reports to the Design Lead."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Otto", "Visualization Designer", "visualization designer"]
-keywords: ["visualization designer", "chart maker", "diagram designer", "data visualization", "information design", "svg", "honest encoding"]
 tools: Read, Grep, Glob
-created: 2026-06-28
-updated: 2026-07-02
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Design/Visualization Designer.md"
-id: "in-visualization-designer"
 ---
 
 # 📈 Visualization Designer

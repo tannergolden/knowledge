@@ -1,8 +1,8 @@
 <!--
 title: '🪪 PROFILE'
 description: 'Who you are: the facets the AI reads so it can work the way you do.'
-tags: [profile, identity, obsidian-vault, readme]
-category: docs
+type: index
+keywords: [identity, vault]
 -->
 
 <!-- markdownlint-disable MD041 -->

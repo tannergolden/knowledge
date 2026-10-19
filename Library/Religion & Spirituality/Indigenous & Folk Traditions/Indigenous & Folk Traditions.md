@@ -1,20 +1,9 @@
----
+<!--
 title: "Indigenous & Folk Traditions - Folder Information"
 description: "Native, tribal, animist, and local folk religious systems worldwide."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["indigenous", "folk", "traditions", "native", "tribal", "animist"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Indigenous & Folk Traditions/Indigenous & Folk Traditions.md"
-id: "li-indigenous-folk-traditions"
----
+type: "index"
+keywords: ["native", "tribal", "animist"]
+-->
 
 # 📁 Library / Religion & Spirituality / Indigenous & Folk Traditions /
 

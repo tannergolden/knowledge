@@ -1,21 +1,7 @@
 ---
-title: "Crisis & Issues Communications Manager"
 name: "Nathaniel"
 description: "Dispatch this agent as the Crisis & Issues Communications Manager: Owns crisis communications, issues management, and reputation defense; returns the crisis-response plan and holding statements."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Nathaniel", "Crisis & Issues Communications Manager"]
-keywords: ["crisis", "issues", "communications", "public", "relations", "agent"]
 tools: Read, Grep, Glob
-created: 2026-06-29
-updated: 2026-06-29
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Public Relations (PR)/Crisis & Issues Communications Manager.md"
-id: "ve-crisis-issues-communications-manager"
 ---
 
 # 🚨 Crisis & Issues Communications Manager

@@ -1,20 +1,9 @@
----
+<!--
 title: "Relationships"
 description: "The user's relational self and social world: family and household structure, the roles they hold, their social network, attachment and relational style, and key contacts. The individual people themselves live in Memory; this holds the relational self."
-status: "active"
-tags: ["profile", "self", "sensitive", "enduring"]
-aliases: ["Social World", "Relational Self", "Family and Friends"]
-keywords: ["relationships", "family", "household", "social network", "attachment style", "friends", "key contacts", "social roles"]
-created: 2026-06-19
-updated: 2026-06-19
-type: "self"
-folder: "profile"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Profile/Relationships.md"
-id: "id-relationships"
----
+type: "reference"
+keywords: ["social world", "relational self", "family and friends", "family", "household", "social network", "attachment style", "friends"]
+-->
 
 # 🫂 Relationships
 

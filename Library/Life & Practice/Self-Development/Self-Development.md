@@ -1,20 +1,9 @@
----
+<!--
 title: "Self-Development - Folder Information"
 description: "Habits, productivity, learning, and personal growth methods."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["self-development", "habits", "productivity", "learning", "personal", "growth"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Life & Practice/Self-Development/Self-Development.md"
-id: "li-self-development"
----
+-->
 
 # 📁 Library / Life & Practice / Self-Development /
 

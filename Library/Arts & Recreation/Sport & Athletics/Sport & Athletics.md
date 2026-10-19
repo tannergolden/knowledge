@@ -1,20 +1,9 @@
----
+<!--
 title: "Sport & Athletics - Folder Information"
 description: "Sports and athletics as practice and culture."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["sport", "athletics", "sports", "practice", "culture"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Arts & Recreation/Sport & Athletics/Sport & Athletics.md"
-id: "li-sport-athletics"
----
+type: "index"
+keywords: ["sports", "practice", "culture"]
+-->
 
 # 📁 Library / Arts & Recreation / Sport & Athletics /
 

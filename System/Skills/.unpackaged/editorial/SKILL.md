@@ -5,7 +5,7 @@ license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, Task
 metadata:
   team: Editorial
-  version: "1.5.2"
+  version: "1.6.0"
   id: "sy-skill-editorial-spec"
   author: "Tanner Golden"
   status: "active"
@@ -15,7 +15,7 @@ metadata:
 
 Editorial writes, edits, and formats any text the BRAIN needs by dispatching the standing **Editorial team** (`Inbox/Faculties/Editorial/`), scaled to the piece. The one standard, the team's, is **clarity**: the reader's understanding comes before the writer's expression. Beneath it sits the defining craft rule, **voice fidelity** from `Profile/`, which never outranks being understood. The skill carries no agents of its own; it is a thin orchestration and doctrine layer over a team that already exists. The hard rule, shared with `research` and `develop`: the lead holds the brief and synthesizes, and the maker of a draft is never its own reviewer.
 
-> Operating doctrine lives in `references/`. Read `references/intake.md` before any external piece (the situation read), `references/tiers-and-dispatch.md` before choosing a tier, `references/slop-rubric.md` before the quality gate, and `references/formatting.md` before any markdown beautification. For hard correspondence, `references/difficult-messages.md` is the per-situation playbook. For exhaustive syntax, `references/markdown-reference.md` covers every markdown element, `references/admonitions.md` covers the full Obsidian callout system, `references/plain-text.md` covers true plain text (`.txt` and plain-text email or messages), and `references/messaging-formats.md` covers the per-platform chat-dialect matrix.
+> Operating doctrine lives in `references/`. Read `references/intake.md` before any external piece (the situation read), `references/tiers-and-dispatch.md` before choosing a tier, `references/slop-rubric.md` before the quality gate, and `references/formatting.md` before any markdown beautification. For hard correspondence, `references/difficult-messages.md` is the per-situation playbook. For exhaustive syntax, `references/markdown-reference.md` covers every markdown element, `references/admonitions.md` covers callouts (GitHub's five, and Obsidian's set for a target that renders it), `references/plain-text.md` covers true plain text (`.txt` and plain-text email or messages), and `references/messaging-formats.md` covers the per-platform chat-dialect matrix.
 
 ## Tiers
 
@@ -51,9 +51,9 @@ A bigger roster is not a better one. Dispatch the **smallest sufficient** seats:
 
 ## Formatting and beauty
 
-Master the full Obsidian admonition/callout system and rich markdown, per `references/formatting.md`. **Precedence:** where the file lives decides its rules. A vault note follows the vault's conventions (`AGENTS.md`, Conventions: Obsidian markdown, one emoji-led H1, a plain `title`, no decorative header or footer) and the note schema (`.docs/vault/Note-Schema.md`), and `lint-notes.py` is its exit gate. A page GitHub renders (any `README.md`, `AGENTS.md`, and the files under `.docs/` and `.github/`) follows standards' [Document Styling guide](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md), and only there does GitHub's own syntax, such as the five uppercase alert types NOTE/TIP/IMPORTANT/WARNING/CAUTION, belong (`AGENTS.md`, Conventions). A file leaving the vault follows the target's own format. Do not invent a parallel "portability" vocabulary. Obsidian-only constructs (wikilinks, embeds, `==highlights==`, `%%comments%%`, `^block-refs`) degrade to literal text elsewhere, so they stay in vault notes.
+Master GitHub-Flavored Markdown, its five callouts and the rest of rich markdown, per `references/formatting.md`. **Precedence:** where the file lives decides its rules. A vault note follows the vault's conventions (`AGENTS.md`, Conventions: GitHub-Flavored Markdown with wikilinks, one emoji-led H1, a plain `title`, no decorative header or footer) and the note schema (`.docs/vault/Note-Schema.md`), and `lint-notes.py` is its exit gate. A page GitHub renders (any `README.md`, `AGENTS.md`, and the files under `.docs/` and `.github/`) follows standards' [Document Styling guide](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md). Everything in the vault renders on GitHub: CommonMark plus GitHub-Flavored Markdown, with the five uppercase alert types NOTE/TIP/IMPORTANT/WARNING/CAUTION, and wikilinks are the notes' one addition. A file leaving the vault follows the target's own format, GitHub-Flavored Markdown by default for a markdown target. Do not invent a parallel "portability" vocabulary. Wikilinks degrade to literal text everywhere else, so they never leave the vault notes.
 
-**Beauty is signal-scarcity, not maximalism:** if every paragraph is important, none is. Master every element, deploy each only where it earns its place, with density scaled to the piece's length and stakes. A callout, table, or diagram earns its place only when it helps the reader understand faster than prose would; foldable callouts manage density in long docs. This is a **default, not a ceiling**: the owner overrides per document, and "make this note rich" wins.
+**Beauty is signal-scarcity, not maximalism:** if every paragraph is important, none is. Master every element, deploy each only where it earns its place, with density scaled to the piece's length and stakes. A callout, table, or diagram earns its place only when it helps the reader understand faster than prose would; a collapsible `<details>` block manages density in a long doc. This is a **default, not a ceiling**: the owner overrides per document, and "make this note rich" wins.
 
 ## Voice
 

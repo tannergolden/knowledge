@@ -1,22 +1,9 @@
----
+<!--
 title: "Product Technology"
 description: "Product technology: technology strategy and architecture for the customer-facing product, distinct from internal IT."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["CTO", "Product Technology"]
-keywords: ["technology strategy", "architecture", "engineering", "platform", "product"]
-members: ["★ Chief Technology Officer"]
-lead: ★ Chief Technology Officer
-created: 2026-06-29
-updated: 2026-06-29
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Product Technology/Product Technology.md"
-id: "ve-product-technology"
----
+type: "index"
+keywords: ["cto", "technology strategy", "architecture", "engineering", "platform"]
+-->
 # ⚙️ Product Technology
 
 Product technology: technology strategy and architecture for the customer-facing product, distinct from internal IT.

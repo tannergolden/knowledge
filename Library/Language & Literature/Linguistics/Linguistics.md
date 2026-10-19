@@ -1,20 +1,9 @@
----
+<!--
 title: "Linguistics - Folder Information"
 description: "The scientific study of language, including sign language."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["linguistics", "scientific", "study", "language", "including", "sign"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Linguistics/Linguistics.md"
-id: "li-linguistics"
----
+type: "index"
+keywords: ["scientific", "study", "language", "including", "sign"]
+-->
 
 # 📁 Library / Language & Literature / Linguistics /
 

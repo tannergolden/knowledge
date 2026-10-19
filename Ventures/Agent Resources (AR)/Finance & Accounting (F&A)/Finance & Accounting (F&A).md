@@ -1,22 +1,9 @@
----
+<!--
 title: "Finance & Accounting (F&A)"
 description: "The Finance & Accounting (F&A) department of the agent workforce: money in, money out, the books, forecast, and controls. Led by its department head, with more specialists added by demand."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["F&A", "Finance", "Accounting"]
-keywords: ["finance", "accounting", "budget", "forecast", "treasury"]
-members: ["★ Chief Financial Officer", "Controller", "FP&A Analyst"]
-lead: ★ Chief Financial Officer
-created: 2026-06-21
-updated: 2026-07-02
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/Finance & Accounting (F&A).md"
-id: "ve-finance-accounting"
----
+type: "index"
+keywords: ["f&a", "budget", "forecast", "treasury"]
+-->
 # 🏦 Finance & Accounting (F&A)
 
 The Finance & Accounting (F&A) department of the agent workforce: money in, money out, the books, forecast, and controls.

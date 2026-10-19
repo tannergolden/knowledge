@@ -1,20 +1,9 @@
----
+<!--
 title: "Regional & Area Histories - Folder Information"
 description: "Histories of specific regions, nations, and peoples."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["regional", "area", "histories", "specific", "regions", "nations"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/History & Geography/Regional & Area Histories/Regional & Area Histories.md"
-id: "li-regional-area-histories"
----
+type: "index"
+keywords: ["specific", "regions", "nations"]
+-->
 
 # 📁 Library / History & Geography / Regional & Area Histories /
 

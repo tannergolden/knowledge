@@ -1,20 +1,9 @@
----
+<!--
 title: "Anthropology - Folder Information"
 description: "Cultural and social anthropology, ethnography, human origins."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["anthropology", "cultural", "social", "ethnography", "human", "origins"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Society & Social Sciences/Anthropology/Anthropology.md"
-id: "li-anthropology"
----
+type: "index"
+keywords: ["cultural", "social", "ethnography", "human", "origins"]
+-->
 
 # 📁 Library / Society & Social Sciences / Anthropology /
 

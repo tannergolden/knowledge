@@ -1,20 +1,9 @@
----
+<!--
 title: "Current Context"
 description: "The context entry tier - the newest session summaries, the two newest of which load at session start."
-status: "active"
-tags: ["memory", "information", "timeless"]
-aliases: []
-keywords: ["current", "entry tier", "latest", "autoload", "session start", "freshest", "summaries"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "memory"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Memory/Context/Current/Current.md"
-id: "me-current"
----
+type: "index"
+keywords: ["entry tier", "latest", "autoload", "session start", "freshest", "summaries"]
+-->
 
 # 📥 Current Context
 

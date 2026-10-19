@@ -1,20 +1,9 @@
----
+<!--
 title: "Applied Computing & Software - Folder Information"
 description: "Building and deploying software, systems, applied machine learning, and cybersecurity."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["applied", "computing", "software", "building", "deploying", "systems"]
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Applied Computing & Software/Applied Computing & Software.md"
-id: "li-applied-computing-software"
----
+type: "index"
+keywords: ["building", "deploying", "systems"]
+-->
 
 # 📁 Library / Technology & Applied Science / Applied Computing & Software /
 

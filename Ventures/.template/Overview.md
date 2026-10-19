@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Overview"
 description: "Master company profile for [Company]: identity, business model, market, financials, strategy, and operating context."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["Company Profile"]
-keywords: ["company profile", "business model", "market", "strategy", "operating context", "venture summary", "company identity", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Overview.md"
-id: "ve-overview"
----
+keywords: ["company profile", "business model", "market", "strategy", "operating context", "venture summary", "company identity", "template"]
+-->
 
 # 🧭 [Company] - Overview
 

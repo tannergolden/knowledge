@@ -1,20 +1,9 @@
----
+<!--
 title: "Genealogy & Heritage - Folder Information"
 description: "Family history, genealogy, and cultural heritage."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["genealogy", "heritage", "family", "history", "cultural"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/History & Geography/Genealogy & Heritage/Genealogy & Heritage.md"
-id: "li-genealogy-heritage"
----
+type: "index"
+keywords: ["family", "history", "cultural"]
+-->
 
 # 📁 Library / History & Geography / Genealogy & Heritage /
 

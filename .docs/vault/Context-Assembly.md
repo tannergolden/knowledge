@@ -1,8 +1,8 @@
 <!--
 title: '🤖 CONTEXT ASSEMBLY'
 description: 'How an agent assembles context from the vault so nothing it must remember sits where models forget.'
-tags: [context-window, retrieval, ai-agents, obsidian-vault]
-category: docs
+type: guide
+keywords: [context-window, retrieval, ai-agents]
 -->
 
 <!-- markdownlint-disable MD041 -->

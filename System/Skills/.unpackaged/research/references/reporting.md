@@ -18,7 +18,7 @@ A filed report goes to **`Inbox/Reports/`**, the held reports library, never to 
 
 ## Flat three-month freshness
 
-Every report is good for up to **three months** from its `updated` date; after that it must be verified before reuse. One flat window covers all reports, the rule lives in `Inbox/Reports/Reports.md`. This BRAIN deliberately does not use per-volatility windows: the flat window plus the promote-to-durable step below is the whole freshness model.
+Every report is good through its `review_by` date, **three months** after it was filed or last verified; after that it must be verified before reuse. One flat window covers all reports, the rule lives in `Inbox/Reports/Reports.md`. This BRAIN deliberately does not use per-volatility windows: the flat window plus the promote-to-durable step below is the whole freshness model.
 
 ## Reports are linked only from the `Reports.md` index
 

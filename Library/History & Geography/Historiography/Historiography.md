@@ -1,20 +1,9 @@
----
+<!--
 title: "Historiography - Folder Information"
 description: "The theory, method, and philosophy of history."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["historiography", "theory", "method", "philosophy", "history"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/History & Geography/Historiography/Historiography.md"
-id: "li-historiography"
----
+type: "index"
+keywords: ["theory", "method", "philosophy", "history"]
+-->
 
 # 📁 Library / History & Geography / Historiography /
 

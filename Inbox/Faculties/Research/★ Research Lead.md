@@ -1,21 +1,7 @@
 ---
-title: "★ Research Lead"
 name: "Beatrice"
 description: "Dispatch this agent to frame a research question, decompose it into lanes, dispatch the right specialists, and synthesize a cited, calibrated answer, owning the run's integrity end to end. The lead of the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Founder."
-status: "active"
-tags: ["inbox", "agent"]
-aliases: ["Beatrice", "Research Lead", "Lead Researcher"]
-keywords: ["research", "framing", "decomposition", "synthesis", "orchestration"]
 tools: Read, Grep, Glob, Task
-created: 2026-06-21
-updated: 2026-06-25
-type: "agent"
-folder: "inbox"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Inbox/Faculties/Research/★ Research Lead.md"
-id: "in-research-lead"
 ---
 
 # ★ Research Lead

@@ -1,22 +1,9 @@
----
+<!--
 title: "Library - Folder Information"
 description: "A universal, discipline-based reference library built to hold all of human knowledge: 10 plain-named classes as the shelf order, a controlled-keyword faceted catalog, boundary rulings and a routing table for hard cases, AI-cataloged intake, freshness weeding, and a vector-ready design. Classification is what keeps AI retrieval precise at scale."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["universal classification", "ten classes", "routing table", "boundary rulings", "controlled facet keywords", "shelf vs catalog", "retrieval at scale", "freshness weeding", "vector ready"]
-members: ["★ Librarian"]
-lead: ★ Librarian
-created: 2026-06-18
-updated: 2026-10-19
-type: "information"
-folder: "library"
-layer: 1
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Library.md"
-id: "li-library"
----
+type: "index"
+keywords: ["universal classification", "ten classes", "routing table", "boundary rulings", "controlled facet keywords", "shelf vs catalog", "retrieval at scale", "freshness weeding"]
+-->
 
 # 📚 Library/
 
@@ -24,16 +11,16 @@ id: "li-library"
 
 - **Not personal.** `Library/` holds reference knowledge about the world, never your user's own data, identity, memory or company specifics: those live in `Profile/`, `Memory/` and `Ventures/`.
 - **No opinion.** A holding is factual, of reference quality: never add personal opinions, your user's preferences or a company's context to one.
-- **Freshness gates entry.** Assess a holding's useful lifespan when it is filed, and give it the matching freshness tag:
+- **Freshness gates entry.** Assess a holding's useful lifespan when it is filed, and lead its keywords with the matching freshness token, which `lint-notes.py` requires on every holding:
 
-  | Tier      | Lifespan    | Tag          | What qualifies                                                                          |
-  | :-------- | :---------- | :----------- | :-------------------------------------------------------------------------------------- |
-  | Timeless  | 25+ years   | `timeless`   | Mathematical principles, philosophy, anatomy, historical fact, established frameworks   |
-  | Enduring  | 10-25 years | `enduring`   | Mature best practice, established science, slowly evolving fields, classic methodology  |
-  | Current   | 5-10 years  | `current`    | Present best practice, recent research, mature but evolving technology                  |
-  | Ephemeral | under 5     | (rejected)   | News, specific software versions, current trends, market commentary                     |
+  | Tier      | Lifespan    | Token                | What qualifies                                                                          |
+  | :-------- | :---------- | :------------------- | :-------------------------------------------------------------------------------------- |
+  | Timeless  | 25+ years   | `freshness/timeless` | Mathematical principles, philosophy, anatomy, historical fact, established frameworks   |
+  | Enduring  | 10-25 years | `freshness/enduring` | Mature best practice, established science, slowly evolving fields, classic methodology  |
+  | Current   | 5-10 years  | `freshness/current`  | Present best practice, recent research, mature but evolving technology                  |
+  | Ephemeral | under 5     | (rejected)           | News, specific software versions, current trends, market commentary                     |
 
-  Five years is the floor: ephemeral content never enters `Library/`, so offer `Projects/`, `Ventures/`, `Memory/` or a confirmed deletion instead. Outside `Library/` a note may carry a freshness tag where its lifespan means something: folder notes are usually `timeless`, and templates, logs and records leave it off.
+  Five years is the floor: ephemeral content never enters `Library/`, so offer `Projects/`, `Ventures/`, `Memory/` or a confirmed deletion instead. Only a holding carries a freshness token: a folder's own note, a record and a template carry none, and neither does a note outside `Library/`, since freshness is how the Library is weeded.
 - **The scheme changes only with a yes.** Adding, renaming or removing a class or division is a structural change your user approves.
 
 ## Purpose
@@ -44,11 +31,11 @@ id: "li-library"
 
 To file something: (1) pick the **one** class it most belongs to; (2) pick a division; (3) catalog it (frontmatter, plus a catalog card if it is an external source); (4) shelve it, then run `lint-notes.py` on it. For a hard call, use the **Classification rules**, then the **Boundary rulings** and **Worked examples** below. Weed with freshness plus **MUSTIE**.
 
-The ten classes: **Information & Computing · Philosophy & Mind · Religion & Spirituality · Society & Social Sciences · Science & Mathematics · Technology & Applied Science · Arts & Recreation · Language & Literature · History & Geography · Life & Practice.** Each is a subfolder with its own namesake doc; the full division map is the "The ten classes" section below, and live listings come from the catalog (`System/Data/catalog.ndjson`, its `library` records).
+The ten classes: **Information & Computing · Philosophy & Mind · Religion & Spirituality · Society & Social Sciences · Science & Mathematics · Technology & Applied Science · Arts & Recreation · Language & Literature · History & Geography · Life & Practice.** Each is a subfolder with its own namesake doc; the full division map is the "The ten classes" section below, and live listings come from the catalog (`System/Data/catalog.ndjson`, its `BRAIN/Library/` records).
 
 ## How this Library works
 
-- **Folders are the shelf order, for humans.** A file lives in exactly one folder, its single subject home, like a call number. People browse better by navigating folders than by tags alone.
+- **Folders are the shelf order, for humans.** A file lives in exactly one folder, its single subject home, like a call number. People browse better by navigating folders than by search alone.
 - **Frontmatter and search are the catalog, for the AI.** A file is reachable from many angles at once (subject, freshness, form, place, period) without ever moving. One location, many access points.
 - **The AI is the cataloger and reference librarian.** Classifying and cataloging happen at filing time, done by the AI, not as a chore for the owner.
 
@@ -138,7 +125,9 @@ The predictable seams, each with the rule that decides them:
 
 ## Facets and controlled keywords
 
-Five orthogonal facets. Subject is the folder; freshness is the tag; the rest live in the free-text `keywords` field (never `tags`; `.docs/vault/Tag-Vocabulary.md`) as **slash-namespaced tokens** so an AI or a script can filter by exact match. Use them when they add retrieval value:
+Five orthogonal facets. Subject is the folder; freshness and the rest live in the `keywords` field (`.docs/vault/Keywords.md`) as **slash-namespaced tokens**, so an AI or a script can filter by exact match. Freshness is required on every holding (Rules, above); use the others when they add retrieval value:
+
+- **Freshness:** `freshness/timeless`, `freshness/enduring`, `freshness/current`
 
 - **Form:** `form/reference`, `form/primer`, `form/howto`, `form/dataset`, `form/source`
 - **Level:** `level/intro`, `level/intermediate`, `level/advanced`
@@ -165,18 +154,18 @@ The named hierarchy stays shallow; specificity lives in facets, not depth.
 
 Every holding carries a catalog record, with no new brain-wide frontmatter fields:
 
-- **A synthesized note** is already a complete record under the standard schema (`.docs/vault/Note-Schema.md`): `title`, `author`, dates, `type: reference`, `id`/`path`, `description`, `keywords`. Template: `.template/Reference Note.md`.
+- **A synthesized note** is already a complete record under the standard schema (`.docs/vault/Note-Schema.md`): `title`, `description`, `type: reference`, and `keywords` with its facet tokens. Its path is its shelf mark, and git keeps its dates. Template: `.template/Reference Note.md`.
 - **A source document** (an external book, paper, or media) gets a companion **catalog card** note; the work's own bibliography lives in the card body. Template: `.template/Source Catalog Card.md`.
 
 ## Acquisition, weeding, and finding aids
 
 - **Acquisition:** material lands in `Inbox/`, is appraised against the 6.2 freshness floor, classified into one class and division, cataloged, and shelved.
 - **Weeding:** the 6.2 freshness model plus **MUSTIE** - weed what is **M**isleading, **U**gly or superseded, **S**uperseded, **T**rivial, **I**rrelevant, or available **E**lsewhere. Remove a weeded item only with the Founder's confirmation, as a `git rm` that history keeps (`AGENTS.md`, Ask first).
-- **Finding aids:** each class doc is a finding aid (scope, divisions, "class here / not here", see-also, cross-walk); the generated catalog view (OPAC) is `System/Data/catalog.ndjson`, one record per note, drawn by `update-vault.py`; filter its `library` records.
+- **Finding aids:** each class doc is a finding aid (scope, divisions, "class here / not here", see-also, cross-walk); the generated catalog view (OPAC) is `System/Data/catalog.ndjson`, one record per note, drawn by `update-vault.py`; filter its `BRAIN/Library/` records.
 
 ## Engine-agnostic and vector-ready
 
-Source of truth is the markdown plus frontmatter, human-readable and portable. Any future vector index is a derived, disposable artifact built from these files. Clean headings double as chunk boundaries; stable `id`s let an external index reference items durably; hybrid retrieval scoped by class and facet is the target.
+Source of truth is the markdown plus frontmatter, human-readable and portable. Any future vector index is a derived, disposable artifact built from these files. Clean headings double as chunk boundaries; the path is each item's key, and a move is a git rename that history follows; hybrid retrieval scoped by class and facet is the target.
 
 ## Revisability
 

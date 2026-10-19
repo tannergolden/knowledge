@@ -134,15 +134,11 @@ class TestLayout(unittest.TestCase):
         self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('.github/D.md')))
 
     def test_startup_notes_run_stable_before_volatile(self) -> None:
-        self.vault.note('Memory/Context/Context.md', tags=['memory', 'information', 'startup'], layer=2)
-        self.vault.note('Memory/Log.md', tags=['memory', 'information', 'startup'], layer=1)
-        self.vault.note('Profile/Values/Values.md', tags=['profile', 'information', 'startup'], layer=2)
-        self.vault.note('System/System.md', tags=['system', 'information', 'startup'], layer=1)
-        self.vault.note('Profile/Working Style.md', tags=['profile', 'information', 'startup'], layer=1)
+        self.vault.note('Memory/Log.md')
+        self.vault.note('Profile/Working Style.md')
         self.vault.note('Profile/Other.md')
         names = [vault.rel(self.vault.root, p) for p in vault.startup_notes(self.vault.root)]
-        self.assertEqual(names, ['Profile/Working Style.md', 'System/System.md', 'Memory/Log.md',
-                                 'Profile/Values/Values.md', 'Memory/Context/Context.md'])
+        self.assertEqual(names, ['Profile/Working Style.md', 'Memory/Log.md'])
 
     def test_pages_are_not_notes(self) -> None:
         # AGENTS.md and the top folders' READMEs are GitHub pages, never walked as notes.
@@ -164,18 +160,21 @@ class TestLayout(unittest.TestCase):
         drops = [vault.rel(self.vault.root, p) for p in vault.inbox_drops(self.vault.root)]
         self.assertEqual(drops, ['Inbox/drop.pdf', 'Inbox/sub/x.md'])
 
-    def test_a_home_with_its_own_roster_is_one_team(self) -> None:
-        self.vault.note('Library/Library.md', members=['★ Librarian'])
-        self.vault.note('Library/★ Librarian.md')
+    def test_a_home_holding_specs_is_one_team(self) -> None:
+        self.vault.note('Library/Library.md')
+        self.vault.agent('Library/★ Librarian.md')
+        self.vault.note('Library/Arts/Arts.md')
         self.vault.note('Inbox/Faculties/Faculties.md')
-        self.vault.note('Inbox/Faculties/Research/Research.md', members=['★ Lead'])
-        self.vault.note('Inbox/Faculties/Research/★ Lead.md')
+        self.vault.note('Inbox/Faculties/Research/Research.md')
+        self.vault.agent('Inbox/Faculties/Research/★ Lead.md')
         library, faculties = self.vault.path('Library'), self.vault.path('Inbox/Faculties')
         self.assertEqual(vault.team_dirs(library), [library])
         self.assertEqual([p.name for p, _t in vault.agent_files(library)], ['★ Librarian.md'])
         self.assertEqual([t for _p, t in vault.roster_files(faculties)], ['Research'])
         self.assertEqual(vault.find_roster(self.vault.root, 'Research'), faculties / 'Research' / 'Research.md')
         self.assertIsNone(vault.find_roster(self.vault.root, 'Missing'))
+        self.assertEqual(vault.members(faculties / 'Research'), ['★ Lead'])
+        self.assertEqual(vault.lead(faculties / 'Research'), '★ Lead')
 
 
 class TestReport(unittest.TestCase):

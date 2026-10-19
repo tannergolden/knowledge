@@ -1,20 +1,9 @@
----
+<!--
 title: "Technology & Applied Science - Folder Information"
 description: "Knowledge applied to practical ends: the making of working things and the running of operations."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["engineering", "medicine", "applied computing", "agriculture", "energy", "manufacturing", "technology"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Technology & Applied Science/Technology & Applied Science.md"
-id: "li-technology-applied-science"
----
+type: "index"
+keywords: ["engineering", "medicine", "applied computing", "agriculture", "energy", "manufacturing"]
+-->
 
 # ⚙️ Library / Technology & Applied Science /
 

@@ -5,10 +5,10 @@ WHY THIS EXISTS. The vault's agents live in three homes, the Agent Resources
 (AR) workforce, the Faculties and the Library, which make one library with one
 namespace: an agent is addressed by its spoken name, so two agents sharing a
 name or a role would misroute a request. A skill dispatches a team by its
-roster, so a roster that names a missing agent dispatches into nothing. And a
-team lead orchestrates and never does the labor itself, so its tools are fixed.
-This holds every spec to the agent standard, every roster to its team, and the
-whole library to one namespace.
+folder: the specs in it are the members, and the starred one leads, so a team
+needs exactly one star. And a team lead orchestrates and never does the labor
+itself, so its tools are fixed. This holds every spec to the agent standard,
+every team to one lead, and the whole library to one namespace.
 
 With no arguments it checks the whole library; given names (a role, a file
 name or a spoken name), it checks just those agents.
@@ -40,17 +40,13 @@ def tools(fields: dict[str, object]) -> set[str]:
     return {tool.strip() for tool in str(fields.get('tools', '') or '').split(',') if tool.strip()}
 
 
-def role(path: pathlib.Path, fields: dict[str, object]) -> str:
-    return str(fields.get('title', '') or '').strip() or path.stem
+def role(path: pathlib.Path) -> str:
+    """An agent's role is its file name."""
+    return path.stem
 
 
 def check_agent(root: pathlib.Path, path: pathlib.Path, fields: dict[str, object], report: vault.Report) -> None:
     text = vault.read_text(path)
-    title = str(fields.get('title', '') or '').strip()
-    if not title:
-        report.error(path, 'the frontmatter has no title (the role)')
-    elif title != path.stem:
-        report.error(path, f"title '{title}' differs from the file name, {path.stem}")
     if not str(fields.get('name', '') or '').strip():
         report.error(path, 'the frontmatter has no name (the spoken name)')
     if not str(fields.get('description', '') or '').strip():
@@ -65,7 +61,7 @@ def check_agent(root: pathlib.Path, path: pathlib.Path, fields: dict[str, object
     held = tools(fields)
     shown = ', '.join(sorted(held)) or 'none'
     if path.stem.startswith(vault.STAR):
-        if role(path, fields) == LIBRARIAN and path.parent == root / 'Library':
+        if role(path) == LIBRARIAN and path.parent == root / 'Library':
             if held != LIBRARIAN_TOOLS:
                 report.error(path, f'the Librarian holds exactly {", ".join(sorted(LIBRARIAN_TOOLS))}; found {shown}')
         elif held != LEAD_TOOLS:
@@ -77,24 +73,17 @@ def check_agent(root: pathlib.Path, path: pathlib.Path, fields: dict[str, object
         report.error(path, 'em dash (DOC-002); use a comma, colon, parentheses or a hyphen')
 
 
-def check_roster(path: pathlib.Path, fields: dict[str, object], roles: set[str], report: vault.Report) -> None:
-    for key in ('title', 'description', 'lead'):
+def check_roster(path: pathlib.Path, fields: dict[str, object], report: vault.Report) -> None:
+    for key in ('title', 'description'):
         if not str(fields.get(key, '') or '').strip():
             report.error(path, f'the frontmatter has no {key}')
-    names = vault.members(fields)
-    lead = str(fields.get('lead', '') or '').strip()
-    if not names:
-        report.error(path, 'members is missing or empty')
-    if lead and names and lead not in names:
-        report.error(path, f"the lead, '{lead}', is not one of the members")
-    if lead and not lead.startswith(vault.STAR + ' '):
-        report.error(path, f"the lead, '{lead}', does not start with the star and a space")
+    names = vault.members(path.parent)
     starred = [name for name in names if name.startswith(vault.STAR)]
-    if names and len(starred) != 1:
-        report.error(path, f'a roster stars exactly one member, its lead; found {len(starred)}')
-    for name in names:
-        if name not in roles:
-            report.error(path, f"member '{name}' is no agent's title in any home")
+    if len(starred) != 1:
+        report.error(path, f'a team stars exactly one member, its lead; found {len(starred)}')
+    for name in starred:
+        if not name.startswith(vault.STAR + ' '):
+            report.error(path, f"the lead, '{name}', does not start with the star and a space")
     if vault.EM_DASH in vault.read_text(path):
         report.error(path, 'em dash (DOC-002); use a comma, colon, parentheses or a hyphen')
 
@@ -111,7 +100,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.names:
         chosen = []
         for wanted in args.names:
-            match = next((a for a in agents if wanted in (role(a[0], a[3]), a[0].stem)
+            match = next((a for a in agents if wanted == role(a[0])
                           or str(a[3].get('name', '') or '').strip().lower() == wanted.lower()), None)
             if match is None:
                 print(f'no agent named {wanted} in any home', file=sys.stderr)
@@ -123,28 +112,19 @@ def main(argv: list[str] | None = None) -> int:
         return report.finish(f'{len(chosen)} {noun}.')
     for path, _team, _home, fields in agents:
         check_agent(root, path, fields, report)
-    roles = {role(path, fields) for path, _t, _h, fields in agents}
-    rosters: dict[tuple[pathlib.Path, str], tuple[pathlib.Path, dict[str, object]]] = {}
+    rosters: dict[tuple[pathlib.Path, str], pathlib.Path] = {}
     for home in homes:
         for path, team in vault.roster_files(home):
-            fields = vault.note_fields(path)
-            rosters[(home, team)] = (path, fields)
-            check_roster(path, fields, roles, report)
-    for path, team, home, fields in agents:
-        entry = rosters.get((home, team))
-        own = role(path, fields)
-        if path.stem.startswith(vault.STAR):
-            if entry is None:
-                report.error(path, f"a starred agent's team, {team}, has no roster naming it lead")
-            elif str(entry[1].get('lead', '') or '').strip() != own:
-                report.error(path, f'a starred agent is its roster\'s lead, but {vault.rel(root, entry[0])} '
-                                   f"names '{entry[1].get('lead', '')}'")
-        if entry is not None and own not in vault.members(entry[1]):
-            report.error(path, f"'{own}' is not one of {vault.rel(root, entry[0])}'s members")
+            rosters[(home, team)] = path
+            check_roster(path, vault.note_fields(path), report)
+    for home in homes:
+        for team in vault.team_dirs(home):
+            if vault.members(team) and (home, team.name) not in rosters:
+                report.error(team, f'the team {team.name} has no note of its own, {team.name}.md, to describe it')
     by_role: dict[str, list[str]] = {}
     by_name: dict[str, list[str]] = {}
     for path, _team, _home, fields in agents:
-        by_role.setdefault(role(path, fields), []).append(vault.rel(root, path))
+        by_role.setdefault(role(path), []).append(vault.rel(root, path))
         spoken = str(fields.get('name', '') or '').strip()
         if spoken:
             by_name.setdefault(spoken.lower(), []).append(vault.rel(root, path))

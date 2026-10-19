@@ -1,20 +1,9 @@
----
+<!--
 title: "Comparative Religion - Folder Information"
 description: "Cross-tradition comparison, methods of religious studies, interfaith analysis."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["comparative", "religion", "cross-tradition", "comparison", "methods", "religious"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Religion & Spirituality/Comparative Religion/Comparative Religion.md"
-id: "li-comparative-religion"
----
+type: "index"
+keywords: ["cross-tradition", "comparison", "methods", "religious"]
+-->
 
 # 📁 Library / Religion & Spirituality / Comparative Religion /
 

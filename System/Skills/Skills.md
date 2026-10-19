@@ -1,20 +1,9 @@
----
+<!--
 title: "Skills - Folder Information"
 description: "The System/Skills/ folder: hidden .unpackaged/ skill sources that compose teams from the federated agent library, packaged into .skill artifacts at the root. Skills carry no agents and no scripts of their own."
-status: "active"
-tags: ["system", "information", "timeless"]
-aliases: []
+type: "index"
 keywords: ["skills folder", "unpackaged sources", "skill packaging", "compose teams", "metadata.team", "skill artifacts", "no scripts"]
-created: 2026-06-08
-updated: 2026-10-19
-type: "information"
-folder: "system"
-layer: 2
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/Skills.md"
-id: "sy-skills"
----
+-->
 
 # 🛠️ Skills - the consumers
 

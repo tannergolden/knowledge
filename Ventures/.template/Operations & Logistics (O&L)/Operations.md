@@ -1,20 +1,9 @@
----
+<!--
 title: "[Company] - Operations"
 description: "Core operating processes, SOPs, vendors, and operational infrastructure for [Company]."
-status: "active"
-tags: ["ventures", "template"]
-aliases: ["SOPs"]
-keywords: ["sop", "processes", "vendors", "operational infrastructure", "day-to-day", "logistics", "process improvement", "template"]
-created: 2026-01-01
-updated: 2026-01-01
 type: "template"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/[Company]/Operations & Logistics (O&L)/Operations.md"
-id: "ve-operations"
----
+keywords: ["sops", "sop", "processes", "vendors", "operational infrastructure", "day-to-day", "logistics", "process improvement"]
+-->
 
 # 📦 [Company] - Operations
 

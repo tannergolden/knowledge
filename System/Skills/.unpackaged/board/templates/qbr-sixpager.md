@@ -26,7 +26,8 @@ Fill the frontmatter the venture's `Administration/` files use (id rewritten to 
 
 ## Page 1 - The recommendation and the asks (read this first)
 
-> [!tip] The headline
+> [!TIP]
+> **The headline.**
 > [One paragraph. The single most important thing the reader must take away from this quarter, stated as a conclusion, not a teaser. What the company is, where it stands against its thesis, what the quarter proved or disproved, and what you are recommending the board do or approve. If a director read only this paragraph, they would know the state of the company and what is being asked of them.]
 
 **The quarter in one line:** [the result, the way you would say it out loud: "we hit X, missed Y, and the riskiest open question is now Z."]

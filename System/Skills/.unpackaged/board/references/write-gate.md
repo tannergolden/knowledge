@@ -24,7 +24,7 @@ The skill may write these into `Ventures/<Venture>/` without asking, once the gr
 - **`Log.md` append** recording the decision or the work, every run.
 - **`Overview.md` and `Goals.md` updates** when the stage advances or the goals change, written by a review run.
 - **The `Administration/` governance record**: the decision memo (`references/memo.md`), the QBR pre-read, the operating-cadence record.
-- **Founding scaffold**: copy `Ventures/.template/`, rewrite each file's `id` and `path` so ids stay globally unique (SKILL.md Conformance), and stand up `Overview.md`/`Goals.md`/`Strategy.md` at the starting stage.
+- **Founding scaffold**: copy `Ventures/.template/`, give each file its real `title`, `description` and `type` (SKILL.md Conformance), and stand up `Overview.md`/`Goals.md`/`Strategy.md` at the starting stage.
 
 ### The four green preconditions (all must hold)
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Fiction & Prose - Folder Information"
 description: "Novels, short fiction, and literary prose."
-status: "active"
-tags: ["library", "information", "timeless"]
-aliases: []
-keywords: ["fiction", "prose", "novels", "short", "literary"]
-created: 2026-06-18
-updated: 2026-06-18
-type: "information"
-folder: "library"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Library/Language & Literature/Fiction & Prose/Fiction & Prose.md"
-id: "li-fiction-prose"
----
+type: "index"
+keywords: ["novels", "short", "literary"]
+-->
 
 # 📁 Library / Language & Literature / Fiction & Prose /
 

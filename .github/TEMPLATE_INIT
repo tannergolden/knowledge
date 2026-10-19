@@ -2,9 +2,8 @@ This vault has not been initialised yet.
 
 The presence of this file is what permits the `init` job in
 `.github/workflows/lifecycle.yml` to run. That job makes the vault yours: it
-rewrites the template author's identity to yours - the licence holder, the
-owner named in .github/CODEOWNERS, and the author every note names in its
-frontmatter - and then deletes this file, which is what stops it ever running
+rewrites the template author's identity to yours - the licence holder and
+the owner named in .github/CODEOWNERS - and then deletes this file, which is what stops it ever running
 again. With it go .github/template-derive.json and its lock, which record how
 the template itself follows the golden path template it was made from, and
 anything else .github/template-sync names under "Only ever in the template",
@@ -20,8 +19,7 @@ happens, dispatch "🎯 Standards Lifecycle" from the Actions tab. Running it
 twice is harmless.
 
 Deleting this file by hand skips initialisation entirely; you would then set
-the licence holder in LICENSE, the owner in .github/CODEOWNERS and the author
-in your notes yourself, and delete .github/template-derive.json and
+the licence holder in LICENSE and the owner in .github/CODEOWNERS yourself, and delete .github/template-derive.json and
 .github/template-derive.lock.
 
 Template sync works either way. Without initialisation it takes each file's

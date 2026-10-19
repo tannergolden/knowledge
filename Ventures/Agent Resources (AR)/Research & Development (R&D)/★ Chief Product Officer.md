@@ -1,21 +1,7 @@
 ---
-title: "★ Chief Product Officer"
 name: "Oliver"
 description: "Dispatch this agent to drive product research and invention: test the riskiest assumption first, run cheap experiments before building to ship, set kill-criteria up front, and decide what is next. The Chief Product Officer, who builds the product and invents what comes next."
-status: "active"
-tags: ["ventures", "agent"]
-aliases: ["Oliver", "Chief Product Officer", "CPO"]
-keywords: ["research", "development", "product", "prototype", "experiment"]
 tools: Read, Grep, Glob, Task
-created: 2026-06-21
-updated: 2026-06-25
-type: "agent"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/★ Chief Product Officer.md"
-id: "ve-chief-product-officer"
 ---
 
 # ★ Chief Product Officer

@@ -1,22 +1,9 @@
----
+<!--
 title: "Information Security"
 description: "Information security: enterprise security strategy, the threat model, and the security posture, reporting independently of the IT it secures."
-status: "active"
-tags: ["ventures", "information"]
-aliases: ["Security", "InfoSec", "CISO"]
-keywords: ["security", "cybersecurity", "threat model", "ciso", "infosec"]
-members: ["★ Chief Information Security Officer"]
-lead: ★ Chief Information Security Officer
-created: 2026-06-29
-updated: 2026-06-29
-type: "information"
-folder: "ventures"
-layer: 3
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/Ventures/Agent Resources (AR)/Information Security/Information Security.md"
-id: "ve-information-security"
----
+type: "index"
+keywords: ["infosec", "ciso", "cybersecurity", "threat model"]
+-->
 # 🔒 Information Security
 
 Information security: enterprise security strategy, the threat model, and the security posture, reporting independently of the IT it secures.

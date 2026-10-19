@@ -5,7 +5,7 @@ license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch, Task
 metadata:
   team: Research
-  version: "1.5.2"
+  version: "1.5.3"
   id: "sy-skill-research-spec"
   author: "Tanner Golden"
   status: "active"

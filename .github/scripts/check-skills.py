@@ -126,7 +126,7 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
         if vault.EM_DASH in body:
             report.error(path, 'em dash (DOC-002); use a comma, colon, parentheses or a hyphen')
         if path.suffix == '.md' and vault.wikilinks(body):
-            report.warn(path, 'a skill source carries no wikilinks: it is hidden from Obsidian, and they break on install')
+            report.warn(path, 'a skill source carries no wikilinks: they break when the skill is installed')
     if not re.search(r'^##\s+Boundaries\b', text, re.M):
         report.error(manifest, 'SKILL.md has no ## Boundaries section')
 

@@ -1,20 +1,9 @@
----
+<!--
 title: "Visualize - Skill Information"
 description: "BRAIN documentation node for the visualize skill: dispatches the Design team to turn data, structure, and ideas into honest, legible visuals, rendered inline. Use when the user wants a chart, diagram, dashboard, interactive widget, or explanatory illustration."
-status: "active"
-tags: ["system", "information", "timeless"]
-aliases: ["/visualize"]
-keywords: ["visualization skill", "charts", "diagrams", "dashboards", "data visualization", "graphical integrity", "design team"]
-created: 2026-06-28
-updated: 2026-06-28
-type: "information"
-folder: "system"
-layer: 4
-policy: false
-author: "Tanner Golden"
-path: "BRAIN/System/Skills/.unpackaged/visualize/Visualize.md"
-id: "sy-skill-visualize"
----
+type: "index"
+keywords: ["/visualize", "visualization skill", "charts", "diagrams", "dashboards", "data visualization", "graphical integrity", "design team"]
+-->
 
 # 📊 Visualize - Information Guide
 
