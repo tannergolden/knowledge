@@ -2,8 +2,9 @@
      step 8; the embodied lead presents the reviewed version in chat at step 9 for line-item approval,
      then is the sole writer at step 10. Every line is either verbatim-traceable and unmarked, or an
      inference carrying the full provenance marker and left `unconfirmed` (references/provenance.md).
-     Memory-shaped facts go under Memory promotions, never into a file diff (Constitution 2.7). Skipped
-     items are shown once and never persisted. No em dashes; plain paths, no wikilinks. -->
+     Memory-shaped facts go under Memory promotions, never into a file diff (Memory/Memory.md and
+     Profile/Profile.md, Rules). Skipped items are shown once and never persisted. No em dashes; plain
+     paths, no wikilinks. -->
 
 # Proposal batch: [Facet name]
 
@@ -45,7 +46,7 @@ Per file, numbered, markers visible. Approve all, approve except N, or per item.
 
 ## Memory promotions (offered, not written into Profile)
 
-Memory-shaped facts route here, never into a file diff (Constitution 2.7). Each is an explicit offer:
+Memory-shaped facts route here, never into a file diff (`Memory/Memory.md` and `Profile/Profile.md`, Rules). Each is an explicit offer:
 
 - **[Person]:** [what the ledger holds] -> offer a person entry, `Memory/Entities/People/[Name].md`. [Profile keeps only the user-fact phrasing, e.g. the relational style; the person record lives in Memory.]
 - **[Dated happening]:** [what the ledger holds] -> offer a `Memory/Log.md` entry: "[the log line]".

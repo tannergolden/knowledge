@@ -6,7 +6,7 @@ Voice fidelity is the team's defining craft rule, ranked beneath clarity. It is 
 
 Before drafting anything, read the owner's voice from `Profile/`:
 
-- `Profile/Working Style.md` - the most actionable facet: how to be addressed, default length, tone, do's and don'ts, terminology.
+- `Profile/Working Style.md` - the facet that most directly shapes a draft: how to be addressed, default length, tone, do's and don'ts, terminology.
 - `Profile/Personality.md` - disposition and how it shows up in writing.
 - `Profile/Preferences.md` - likes, dislikes, things to avoid.
 - `Profile/Profile.md` - the overview.
@@ -45,7 +45,7 @@ When `Profile/` is captured (by `identify` or from samples), a usable voice prof
 
 - **Samples per format.** Real sent text for each format that matters (email, message, doc, post). Samples are the ground truth; everything below is distilled from them.
 - **Structural DNA.** Typical sentence length and paragraph length; opener and closer habits; the actual **greeting and sign-off** used, per relationship.
-- **Semantic DNA.** **Signature phrases** the owner reaches for, and **banned words** they never use (their personal slop list, on top of Article 9.2).
+- **Semantic DNA.** **Signature phrases** the owner reaches for, and **banned words** they never use (their personal slop list, on top of standards' Plain Words list).
 - **Tone on named scales.** Position on concrete axes (formal <-> casual, warm <-> reserved, terse <-> expansive, plain <-> playful), not a single adjective.
 - **Register baseline plus per-relationship overrides.** The default register, and how it shifts for named relationships (a client vs a close colleague vs a vendor).
 

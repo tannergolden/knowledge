@@ -18,8 +18,8 @@ id: "[two-letter folder prefix]-[hyphenated-slug]"
 
 # [emoji] [Document Title]
 
-<!-- A vault-internal document. Single emoji-prefixed H1 (Constitution 9.6); the YAML title stays plain.
-     No em dash anywhere (9.1). No slop (9.2). Format per references/formatting.md: restraint by default,
+<!-- A vault note. Single emoji-led H1 (AGENTS.md, Conventions); the YAML title stays plain.
+     No em dash anywhere (DOC-002). No slop (DOC-003). Format per references/formatting.md: restraint by default,
      every rich element earns its place. Lint is the exit gate: `python3 .github/scripts/lint-notes.py`. -->
 
 [The bottom line or one-line summary, so a reader can stop early. Put the conclusion above the fold.]
@@ -45,4 +45,4 @@ id: "[two-letter folder prefix]-[hyphenated-slug]"
 
 ## [Closing section]
 
-[End on the last real point. No generic uplift conclusion, no "in conclusion", no zoom-out to nothing.]
+[End on the last real point. No generic uplift conclusion and no zoom-out to nothing.]

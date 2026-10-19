@@ -1,8 +1,8 @@
 # Obsidian callout (admonition) reference
 
 The complete callout/admonition reference, loaded on demand. `references/formatting.md`
-is the doctrine (when a callout earns its place, the Article-IX precedence, the
-internal-versus-leaving split); this file is the full syntax and the type
+is the doctrine (when a callout earns its place, the precedence, the scope by
+destination); this file is the full syntax and the type
 catalog. The machine-readable alias list lives in `assets/callout-types.json`.
 For all other markdown elements see `references/markdown-reference.md`.
 
@@ -150,9 +150,9 @@ With that snippet enabled, a callout whose type is `decision` renders with the
 custom color and icon. Custom types are vault-local: they are **Obsidian-only**
 and have no meaning outside the vault.
 
-## The GitHub five (leaving the vault)
+## The GitHub five (pages GitHub renders)
 
-When a file is **leaving the vault for GitHub**, only five alert types render, and
+On a **page GitHub renders**, or a piece leaving for GitHub, only five alert types render, and
 they are written in **UPPERCASE** (case-sensitive on GitHub, unlike Obsidian):
 
 ```markdown
@@ -174,8 +174,8 @@ engines, Discord), the bracketed type marker is **not** recognized: the callout
 degrades to an ordinary, plain **nested blockquote**, with the marker line
 showing as literal text. So a callout never breaks a page; it just loses its
 styled box. This is why callouts beyond the GitHub five do not travel: write them
-freely inside the vault, but when a piece leaves, keep to the five uppercase
-types on GitHub and convert the rest to plain prose or blockquotes.
+freely in a vault note, keep to the five uppercase types on a page GitHub
+renders, and convert the rest to plain prose or blockquotes when a piece leaves.
 
 ## When to use which type
 

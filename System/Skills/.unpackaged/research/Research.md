@@ -6,7 +6,7 @@ tags: ["system", "information", "timeless"]
 aliases: ["/research", "research skill"]
 keywords: ["research skill", "deep research", "multi-source research", "fact-checked", "research team", "cited synthesis", "look into", "current state of"]
 created: 2026-06-22
-updated: 2026-06-28
+updated: 2026-10-19
 type: "information"
 folder: "system"
 layer: 4
@@ -18,7 +18,7 @@ id: "sy-skill-research"
 
 # 🔬 research - Information Guide
 
-Filed in `System/Skills/.unpackaged/` - skill sources live hidden and carry no wikilinks; the packaged `research.skill` artifact sits at the `Skills/` root. Governance: Constitution.md. Operating manual: Instructions.md.
+Filed in `System/Skills/.unpackaged/` - skill sources live hidden and carry no wikilinks; the packaged `research.skill` artifact sits at the `Skills/` root. Governance: `AGENTS.md` and the Rules in each folder's note.
 
 ## What this skill does
 

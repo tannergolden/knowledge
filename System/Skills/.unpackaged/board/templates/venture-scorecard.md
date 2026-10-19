@@ -1,6 +1,6 @@
 # Venture scorecard - the stage-aware tiered KPI dashboard
 
-*The one-screen health read for a venture, produced in review mode and written into the venture record. The North Star and the one-metric-that-matters sit on top, then the company vital signs, then a row per function, each number paired with its benchmark band and a red/amber/green status. Metrics not yet load-bearing at the venture's stage are greyed out, not reported as a misleadingly small or empty number. This is a plain markdown scaffold; fill it from the venture's real files, never from recall.*
+*The one-screen health read for a venture, produced in review mode and written into the venture record. The North Star and the one-metric-that-matters sit on top, then the company health metrics, then a row per function, each number paired with its benchmark band and a red/amber/green status. Metrics not yet load-bearing at the venture's stage are greyed out, not reported as a misleadingly small or empty number. This is a plain markdown scaffold; fill it from the venture's real files, never from recall.*
 
 The scorecard is the standing artifact of a **review** run: the chair reads the venture context and detects the stage (`lifecycle.md`), the functional chiefs return their numbers, the Head of Quality (Grace) verifies that every figure traces to a source (`verification.md`), and the skill writes the assembled scorecard into the venture behind the write-gate (`write-gate.md`). It is one screen on purpose. A board that has to scroll has already lost the read. The standard holds here as everywhere: **every angle heard, one owner accountable**. Every function reports its own row and no other's, each row names the one chief who owns that number, and the chair alone assembles the screen and states the single most important thing on it.
 
@@ -44,11 +44,11 @@ The single number the company is built to move, and the one metric that matters 
 
 The OMTM is stage-bound and changes as the venture moves: in FOUND it is almost always a learning or retention signal (activation, cohort retention, willingness-to-pay), not revenue; in SCALE it is an efficiency signal (CAC payback, NRR, burn multiple); in MAINTAIN it is a durability signal (Rule of 40, FCF margin, H2/H3 pipeline health). Pick the one the dominant question of the stage turns on (`lifecycle.md`), and state in the note why it is the one that matters this cycle.
 
-## Tier 2 - Company vital signs
+## Tier 2 - Company health metrics
 
 The handful of numbers that say whether the company is alive and on plan, regardless of function. Read these every cycle in every stage; their bands and which are load-bearing shift with the stage.
 
-| Vital sign | Value | Band (2025/26) | Status | Owner | Note / source |
+| Health metric | Value | Band (2025/26) | Status | Owner | Note / source |
 |---|---|---|---|---|---|
 | **Runway (months)** | [from Financials.md] | 🔴 <6 / 🟡 6 to 12 / 🟢 >12 (FOUND: >18 preferred) | [status] | CFO (Eleanor) | the hard floor; a red here outranks every green below |
 | **Cash / burn (monthly)** | [net burn] | stage-dependent; tie to runway | [status] | CFO (Eleanor) | [source] |
@@ -58,7 +58,7 @@ The handful of numbers that say whether the company is alive and on plan, regard
 | **Rule of 40** | [growth% + FCF margin%] | 🟢 ≥40 / 🟡 30 to 40 / 🔴 <30 | [status or ⚪] | CFO (Eleanor) | `(n/a below ~$5 to 10M ARR)`; headline at SCALE-late and MAINTAIN |
 | **Headcount** | [from Hierarchy.md] | context, not a band | n/a | CHRO (Vivian) | watch the Dunbar (~150) coordination seam |
 
-A red on runway is the one status that overrides the screen: a venture can be green on every functional row and still be a red company if it runs out of cash. Report it first among the vital signs and never let a healthy function bury it.
+A red on runway is the one status that overrides the screen: a venture can be green on every functional row and still be a red company if it runs out of cash. Report it first among the health metrics and never let a healthy function bury it.
 
 ## Tier 3 - Function rows
 

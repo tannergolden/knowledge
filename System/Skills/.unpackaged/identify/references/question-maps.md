@@ -18,7 +18,7 @@ Scale convention: options read as the user describing themselves to themselves (
 ## Working Style (non-sensitive)
 
 **Frameworks:** the mainstream assistant custom-instruction schema ("what to know about me / how to respond to me") and the personal user-manual genre.
-**Highest-signal sections, in fill order:** How to Respond to Me (the directly-executable rules), How I Like to Be Addressed, then Feedback, Decision-Making Style, Pet Peeves, How I Communicate, Terminology. This is the most AI-actionable facet in the vault, so it usually leads coverage; give it depth first.
+**Highest-signal sections, in fill order:** How to Respond to Me (the directly-executable rules), How I Like to Be Addressed, then Feedback, Decision-Making Style, Pet Peeves, How I Communicate, Terminology. This is the facet the AI acts on most directly, so it usually leads coverage; give it depth first.
 
 - **Default length** (tool): "When I ask you something, the answer I want by default is..." Just the answer, terse / The answer plus brief reasoning / A thorough deep dive / Skip.
 - **Format default** (tool): "For most answers I would rather read..." Tight bullets / Flowing prose / Depends on the topic / Skip.

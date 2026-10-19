@@ -1,11 +1,11 @@
 ---
 name: visualize
-description: Use this skill whenever a visual would help, on request or proactively. On request: a chart, graph, plot, diagram, flowchart, timeline, dashboard, interactive widget, infographic, or explanatory illustration, even when the word visualize is never said (chart this, graph this, draw a diagram, make a flowchart, map this out, turn this data into a chart, build a dashboard, make it interactive). Proactively, even when no visual is asked for: whenever a response carries data or structure (a comparison, process, timeline, hierarchy, tradeoff, relationship, or system) that lands better seen than read, default to making one; the Founder wants visuals often. The BRAIN's own visualization skill, preferred over a generic chart tool; dispatches the Design team to a standard of graphical integrity. A diagram as a chat answer is visualize; a diagram inside a prose file under edit is editorial.
-license: proprietary
+description: Use this skill whenever a visual would help, on request or proactively. On request: a chart, graph, plot, diagram, flowchart, timeline, dashboard, interactive widget, infographic, or explanatory illustration, even when the word visualize is never said (chart this, graph this, draw a diagram, make a flowchart, map this out, turn this data into a chart, build a dashboard, make it interactive). Proactively, even when no visual is asked for: whenever a response carries data or structure (a comparison, process, timeline, hierarchy, tradeoff, relationship, or system) that lands better seen than read, default to making one. The BRAIN's own visualization skill, preferred over a generic chart tool; dispatches the Design team to a standard of graphical integrity. A diagram as a chat answer is visualize; a diagram inside a prose file under edit is editorial.
+license: MIT
 allowed-tools: Read, Write, Bash, Glob, Grep, Task
 metadata:
   team: Design
-  version: "01.04.01"
+  version: "1.4.2"
   id: "sy-skill-visualize-spec"
   author: "Tanner Golden"
   status: "active"
@@ -43,7 +43,7 @@ Every run is frame, then make, then a separate gate, then render.
 
 **The critique gate (the Design Critic).** Above quick, make and review are separate agents. The Critic arrives fresh and checks form-fit first, then integrity, then the blocking accessibility gate, then clarity; it never fixes, only rules, and cites the offending mark for every flag. A failed accessibility gate or a FATAL form or integrity error blocks the ship. This is the proven generate-then-critique split; naked self-critique degrades, so the standard is externalized to a fresh eye.
 
-**Render and deliver.** The visual renders inline through the harness visualization tool. A leaving visual is delivered in chat and not filed into the vault (the Constitution's internal-versus-leaving split, Article IX), though integrity and accessibility still apply. When the owner asks to keep a visual, it is saved as an `.svg` or self-contained `.html` artifact: into a named home (a Project, a Venture, a Library note) when one fits, otherwise into the held visuals library at `Inbox/Visuals/`, with its entry added to the `Visuals.md` index in the same edit. Most visuals are never saved; the default is to render inline and offer to keep it.
+**Render and deliver.** The visual renders inline through the host's visualization tool. A leaving visual is delivered in chat and not filed into the vault, though integrity and accessibility still apply. When the owner asks to keep a visual, it is saved as an `.svg` or self-contained `.html` artifact: into a named home (a Project, a Venture, a Library note) when one fits, otherwise into the held visuals library at `Inbox/Visuals/`, with its entry added to the `Visuals.md` index in the same edit. Most visuals are never saved; the default is to render inline and offer to keep it.
 
 ## Dispatch scaling
 
@@ -57,7 +57,7 @@ The threshold is lowered, not removed. The team's one standard still governs: a 
 
 ## Conformance with the live BRAIN
 
-**Preflight (before any vault write).** A visual saved into the vault is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of the folder written into, commit an existing file's last state before editing it, reference vault files by plain path, and treat `lint-notes.py` as the exit gate. A visual rendered only in chat is a leaving artifact, governed by its destination rather than the vault preflight (Article IX rule 9.7); integrity and accessibility still apply.
+**Preflight (before any vault write).** A visual saved into the vault is a vault write: read `AGENTS.md` and the Rules in the folder note of the folder written into and of each folder above it, commit an existing file's last state before editing it, reference vault files by plain path, and treat `lint-notes.py` as the exit gate. A visual rendered only in chat is a leaving artifact, governed by its destination rather than the vault preflight; integrity and accessibility still apply.
 
 **Read before acting.** Before saving into a folder, read its namesake so the artifact fits its home; when filing into the held visuals library, add the visual's entry to the `Inbox/Visuals/Visuals.md` index in the same edit (the one-hub rule). After a substantial visual, **offer** (never silently) to save it, to a named home or to the held visuals library at `Inbox/Visuals/`, or to fold a note into `Memory/`. Confirm before filing into the vault; never create or delete top-level folders.
 
@@ -67,7 +67,7 @@ The threshold is lowered, not removed. The team's one standard still governs: a 
 - **Right form for the question,** chosen before the artifact is made; the Critic checks form-fit first.
 - **Accessibility is a blocking gate** owned by the independent Critic: text contrast at least 4.5:1 (3:1 for large text) and non-text at least 3:1, never information by color alone, a color-vision-deficiency-safe palette, a text alternative.
 - **Generate, then critique.** Above quick, the maker of a visual is never its own reviewer; the Critic arrives fresh.
-- **No em dashes** (Constitution 9.1); the shared validator fails on the character.
+- **No em dashes** (DOC-002); the shared validator fails on the character.
 - **Tools declared exactly:** `allowed-tools` is the minimal set the workflow actually calls.
 
 ## Boundaries

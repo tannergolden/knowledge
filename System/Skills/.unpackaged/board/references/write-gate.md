@@ -29,7 +29,7 @@ The skill may write these into `Ventures/<Venture>/` without asking, once the gr
 ### The four green preconditions (all must hold)
 
 1. **Internal and reversible.** The write lands inside this one venture's folder and an edit or a restore can fully undo it. If it touches money, an external party, the cap table, or another venture, it is not green.
-2. **Committed first.** Before editing any existing file, make sure its last state is committed (Instructions Section 10): git history is the backup. A new file needs nothing; uncommitted work is never overwritten.
+2. **Committed first.** Before editing any existing file, make sure its last state is committed (`AGENTS.md`, Conventions): git history is the backup. A new file needs nothing; uncommitted work is never overwritten.
 3. **Verified before it lands.** Consequential output is checked by the independent verifier (Head of Quality, Grace) against its completion evidence before the skill persists it (`references/verification.md`). A producer never verifies its own work. Unverified consequential output does not pass, even when reversible.
 4. **In-mandate for the stage.** Any spend, commitment, or hire implied by the artifact sits under the stage's autonomous threshold in `assets/delegation-of-authority.json`. Over the line, the *artifact* is still green to draft, but the *action* it proposes is red to execute.
 
@@ -40,7 +40,7 @@ These five categories never go autonomous, at any stage or tier. The skill prepa
 1. **Moving money.** Any payment, transfer, spend commitment, signed budget authorization, or anything that draws down cash or runway. Drafting the invoice, the budget, or the wire instruction is green; *sending* or *paying* is red.
 2. **Signing or sending a contract.** Executing or transmitting any binding agreement (MSA, SOW, NDA, offer letter, vendor commitment, lease, term sheet). Drafting and redlining are green; signature and send are red.
 3. **Publishing or sending any external communication.** Anything that leaves the BRAIN to a third party: a press release, a customer or investor email, a public post, a filing. Drafting the press kit or the announcement is green; publishing or sending it is red.
-4. **Deleting a file.** Any deletion, anywhere, needs explicit user confirmation (Constitution Article 3.1). The skill never deletes a venture file on its own. Renaming or moving a file is treated as red as well.
+4. **Deleting a file.** Any deletion, anywhere, needs explicit user confirmation (`AGENTS.md`, Ask first). The skill never deletes a venture file on its own. Renaming or moving a file is treated as red as well.
 5. **Changing equity or the cap table.** Any change to ownership, the real cap table, option grants, SAFEs, or a financing round's terms. Modeling these is green; *committing* them is red, and several also trip the irreversible founding clocks (83(b) at 30 days, QSBS at 5 years) that `references/founding-playbook.md` surfaces.
 
 A red action that the Founder confirms is then executed and **logged to `Log.md`** with the confirmation noted, so the record shows it was gated and cleared.
@@ -67,10 +67,10 @@ If the DoA file and this doctrine ever disagree on a *category*, this doctrine w
 
 ## Conformance with the live BRAIN
 
-The gate inherits the BRAIN's own boundaries; it does not replace them. Independent of the five categories, the skill also never crosses these (Constitution Articles II, 3.1, 3.6; Instructions Section 10):
+The gate inherits the BRAIN's own boundaries; it does not replace them. Independent of the five categories, the skill also never crosses these (`AGENTS.md`, Ask first and Conventions):
 
-- **Never create, rename, or delete a top-level folder** (Article II). Department subfolders inside a venture are fine; the top-level structure is not the skill's to touch.
-- **Commit, and log the venture's change.** Every change is a commit (Article 3.6); a venture change is also appended to the venture's `Log.md`.
+- **Never create, rename, or delete a top-level folder** (`AGENTS.md`, Ask first). Department subfolders inside a venture are fine; the top-level structure is not the skill's to touch.
+- **Commit, and log the venture's change.** Every change is a commit (`AGENTS.md`, Conventions); a venture change is also appended to the venture's `Log.md`.
 - **Reference vault files by plain path, never wikilinks** (the one exception is an index whose entries are wikilinks by design).
 - **After writing**, run `python3 .github/scripts/update-vault.py` and `python3 .github/scripts/check-vault.py`.
 - **Offer, never silently file.** Promoting a decision into the durable layer, filing a memo, or folding an outcome into `Memory/` is offered, then done on a yes.

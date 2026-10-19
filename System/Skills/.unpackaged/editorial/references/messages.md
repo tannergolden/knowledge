@@ -19,4 +19,4 @@ What renders as bold, a quote, or a link differs by app, and Markdown is not por
 
 ## The standing rules still apply
 
-No em dash (9.1). No slop, including the chatbot tells "I hope this helps" and "Let me know if you need anything else" (9.2 and `slop-rubric.md`). Preserve the sender's length and register; a chat reply stays a chat reply. The template `templates/message.md` scaffolds the common case.
+No em dash (DOC-002). No slop, including the chatbot tells "I hope this helps" and "Let me know if you need anything else" (DOC-003 and `slop-rubric.md`). Preserve the sender's length and register; a chat reply stays a chat reply. The template `templates/message.md` scaffolds the common case.

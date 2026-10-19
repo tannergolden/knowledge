@@ -24,7 +24,7 @@ Each block is the metrics one AR function owns and is judged by. The owning lead
 
 ### Finance and Accounting (CFO Eleanor) - owns the company-level financial and growth set, in `Financials.md`
 
-These are the vital signs the whole board reads. Most are lagging by nature (they confirm an outcome), which is exactly why the function is also judged on the leading inputs to each.
+These are the company health metrics the whole board reads. Most are lagging by nature (they confirm an outcome), which is exactly why the function is also judged on the leading inputs to each.
 
 - **ARR / MRR.** Annual (or Monthly) Recurring Revenue: the normalized run-rate of contracted recurring revenue, excluding one-time fees. MRR x 12 = ARR. *Lagging. Load-bearing from scale* (at found it is a vanity signal: revenue lags PMF and tells you little about whether the problem is real).
 - **ARR / MRR growth rate.** Period-over-period growth of the run-rate, usually expressed year-over-year. *Benchmark (2025/26):* early-scale SaaS that is on track roughly doubles to triples in the first venture-backed years (T2D3 as the aspirational shape), with year-over-year growth commonly in the 2x-3x band below ~$10M ARR and decaying as the base grows; ~30-40% remains strong at scale. *Lagging. Load-bearing from scale.*
@@ -136,6 +136,6 @@ Defend the core and fund the next S-curve; the risk flips from death-by-chaos to
 ## How strategize and review use this file
 
 - **Strategize** sets the NSM (once, durable) and chooses the OMTM for the cycle from the stage block above, then writes the OKRs so each key result is a metric from this glossary with a target relative to its benchmark band. It writes the canonical definition into `Metrics.md` and points `Goals.md` at it. If a proposed key result is a metric the stage suppresses, strategize flags it rather than committing the venture to a number that cannot yet mean anything.
-- **Review** grades the OKRs and statuses each vital sign red/amber/green against its benchmark band (`assets/benchmark-bands.json`), reads only the stage-appropriate metrics, and greys the rest. It surfaces the leading indicators that moved before any lagging number did, so a problem is caught while it is still a leading metric. Every number it reports is grounded in a tool or source per `verification.md`, and the result is written back to the venture per `write-gate.md`.
+- **Review** grades the OKRs and statuses each health metric red/amber/green against its benchmark band (`assets/benchmark-bands.json`), reads only the stage-appropriate metrics, and greys the rest. It surfaces the leading indicators that moved before any lagging number did, so a problem is caught while it is still a leading metric. Every number it reports is grounded in a tool or source per `verification.md`, and the result is written back to the venture per `write-gate.md`.
 
 The standard holds here as everywhere in board: every angle heard, one owner accountable. Each metric in this glossary has exactly one owning function that is steered by its leading version and judged by its lagging version, and the chair (not the loudest function) decides which metrics the stage makes load-bearing this cycle. Benchmark bands are reference points the BI function refreshes; treat them as the band a number is statused against, never as a measurement of this particular venture.

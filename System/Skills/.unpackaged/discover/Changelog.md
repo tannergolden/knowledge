@@ -19,16 +19,16 @@ updated: 2026-10-19
 
 ## Current Version
 
-**`01.00.01`**
+**`1.0.2`**
 
-Semantic versioning, `MAJOR.MINOR.PATCH`, two-digit zero-padded segments. This value matches `metadata.version` in `SKILL.md`. Each section shows the 4 most recent entries; older entries age out. Newest on top.
+The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
 ---
 
 ## How This File Works
 
 - **Tracks** changes to how the skill works: tiers, the team, references, templates, the output contract. Not below-PATCH tweaks.
-- **Bump** PATCH for a fix, MINOR for a backward-compatible addition, MAJOR for a breaking change. Update the Current Version line with every entry.
+- **Bump** the version by standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver), and update the Current Version line with every entry.
 - **4-entry cap** per section; a fifth drops the oldest.
 
 ---
@@ -37,7 +37,7 @@ Semantic versioning, `MAJOR.MINOR.PATCH`, two-digit zero-padded segments. This v
 
 > Breaking changes, restructured pipeline, incompatible output. Most recent 4 entries.
 
-### `01.00.00` - 2026-06-28
+### `1.0.0` - 2026-06-28
 
 Initial build of the discover skill: the BRAIN's ideation skill, dispatching the standing Discovery team (Sebastian's crew) to generate ideas wide then converge to a ranked shortlist by pairwise Elo tournament, to the standard generate wide, select fair. Idea records file to the new held idea pool at Inbox/Ideas/. Grounded in a research pass on ideation method (Osborn, CPS, the Double Diamond, the Diehl and Stroebe productivity evidence, Bradley-Terry and Elo, ICE and RICE, the de Bono and SCAMPER lenses, and the how-might-we briefing craft).
 
@@ -51,9 +51,15 @@ _None yet._
 
 > Fixes and clarifications. Most recent 4 entries.
 
-### `01.00.01` - 2026-10-19
+### `1.0.2` - 2026-10-19
+
+- References point at `AGENTS.md`, the folder notes' Rules and `.docs/vault/` instead of the retired root rule files.
+- The licence is MIT, and the versioning rules link to tannergolden/standards instead of restating them.
+- Versions are plain SemVer: `01.00.01` is now `1.0.1`.
+
+### `1.0.1` - 2026-10-19
 
 Moved the preflight off the retired engine: an existing file's last state is committed before an edit, since git history is the backup. The archive now carries the Discovery team, vendored when it is built.
 
-<!-- This is a BRAIN documentation node: it carries the BRAIN global frontmatter schema
-     above (Instructions Section 8), not the Agent Skills schema. -->
+<!-- This is a BRAIN documentation node: it carries the vault's note schema above
+     (.docs/vault/Note-Schema.md), not the Agent Skills schema. -->

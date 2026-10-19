@@ -1,11 +1,11 @@
 ---
 name: discover
 description: Use this skill whenever the user wants ideas or options generated, on request or proactively when a problem clearly calls for divergent options. Fires on brainstorm this, brainstorm ideas for, give me ideas, how might we, how could I, what are my options for, ways to, ideate on, help me think through, what could I do about, come up with approaches to, and any open-ended generate-possibilities request. The BRAIN's own ideation skill: it dispatches the Discovery team to generate ideas wide from distinct lenses, then converge to a ranked shortlist by a fair pairwise tournament, to a standard of generate wide, select fair. It generates options; deciding among them stays yours. A what-are-my-options is brainstorm; what-is-known-about-X is research; which-should-I-choose is board.
-license: proprietary
+license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
 metadata:
   team: Discovery
-  version: "01.00.01"
+  version: "1.0.2"
   id: "sy-skill-discover-spec"
   author: "Tanner Golden"
   status: "active"
@@ -51,7 +51,7 @@ A bigger roster is not a better one. Dispatch the **smallest sufficient** seats:
 
 ## Conformance with the live BRAIN
 
-**Preflight (before any vault write).** Filing idea records or a report is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of every folder written into (`Inbox/Ideas/Ideas.md` for records, `Inbox/Reports/Reports.md` for a report), commit an existing file's last state before editing it, and reference vault files by plain path, never wikilinks (the one exception is the `Inbox/Reports/Reports.md` index, whose entries are wikilinks by design). Idea records carry the `record` File Role and the idea schema (`templates/idea-record.md`); a filed report adds its entry to the Reports index in the same edit.
+**Preflight (before any vault write).** Filing idea records or a report is a vault write: read `AGENTS.md` and the Rules in the folder note of every folder written into and of each folder above it (`Inbox/Ideas/Ideas.md` for records, `Inbox/Reports/Reports.md` for a report, and `Inbox/Inbox.md` above both), commit an existing file's last state before editing it, and reference vault files by plain path, never wikilinks (the one exception is the `Inbox/Reports/Reports.md` index, whose entries are wikilinks by design). Idea records carry the `record` File Role and the idea schema (`templates/idea-record.md`); a filed report adds its entry to the Reports index in the same edit.
 
 **Read before acting.** Before filing into `Inbox/Ideas/`, read its namesake so records fit the pool, and dedup against the existing pool (including killed ideas) so the same idea is not re-filed. After a substantial run, **offer** (never silently) to file the survivors and to fold the distilled outcome into `Memory/`. Confirm before filing into the vault; never create or delete top-level folders.
 
@@ -63,7 +63,7 @@ A bigger roster is not a better one. Dispatch the **smallest sufficient** seats:
 - **Select by pairwise tournament,** which is more reliable than rating ideas in isolation; the maker of an idea is never its sole judge.
 - **Dedup against the whole pool, including killed ideas;** never re-tread a rejected dead end.
 - **The decision stays the Founder's.** The skill delivers a ranked shortlist and a recommendation, not a committed choice.
-- **No em dashes** (Constitution 9.1); the shared validator fails on the character.
+- **No em dashes** (DOC-002); the shared validator fails on the character.
 - **Tools declared exactly:** `allowed-tools` is the minimal set the workflow actually calls.
 
 ## Boundaries

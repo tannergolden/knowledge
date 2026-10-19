@@ -1,6 +1,6 @@
-# SVG craft - beautiful, robust, theme-reactive hand-authored SVG
+# SVG craft - beautiful, reliable, theme-reactive hand-authored SVG
 
-Hand-authored SVG is the primary inline format (see `formats.md` for when to use it). This is how to make it beautiful and robust: it scales crisply, adapts to light and dark, never overflows its text, and carries a text alternative. The aesthetic bar is in `inline-aesthetics.md`; the quality standard is in `principles.md`.
+Hand-authored SVG is the primary inline format (see `formats.md` for when to use it). This is how to make it beautiful and reliable: it scales crisply, adapts to light and dark, never overflows its text, and carries a text alternative. The aesthetic bar is in `inline-aesthetics.md`; the quality standard is in `principles.md`.
 
 ## Setup and scaling
 
@@ -31,7 +31,7 @@ SVG `<text>` does not wrap by default; the content area is otherwise treated as 
 
 ## Accessibility
 
-- For a meaningful graphic use `role="img"` on the `<svg>`, a short `<title>` (first child) and a longer `<desc>`, wired with `aria-labelledby="titleID descID"`. The explicit `aria-labelledby` link is the robust pattern because browser and assistive-tech auto-exposure of bare title and desc is inconsistent ([CSS-Tricks, accessible SVGs](https://css-tricks.com/accessible-svgs/); [Smashing, accessible SVG patterns](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/)).
+- For a meaningful graphic use `role="img"` on the `<svg>`, a short `<title>` (first child) and a longer `<desc>`, wired with `aria-labelledby="titleID descID"`. The explicit `aria-labelledby` link is the reliable pattern because browser and assistive-tech auto-exposure of bare title and desc is inconsistent ([CSS-Tricks, accessible SVGs](https://css-tricks.com/accessible-svgs/); [Smashing, accessible SVG patterns](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/)).
 - For a purely decorative graphic, add `aria-hidden="true"` ([W3C WAI images](https://www.w3.org/WAI/tutorials/images/)).
 - Add `focusable="false"` to avoid stray tab stops in legacy engines.
 

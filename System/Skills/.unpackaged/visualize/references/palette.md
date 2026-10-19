@@ -15,7 +15,7 @@ The palette type is decided by what the data IS, not by what looks nice. `palett
 Unless a specific look is requested, default to a colorblind-safe palette (the `cvd_safe_defaults` block in the asset):
 
 - **categorical:** Okabe-Ito (8 colors, the safest qualitative default), Tol Bright or Tol Muted, or Tableau Color Blind 10. Each was engineered and tested against red-green deficiency.
-- **sequential:** viridis (perceptually uniform, monotonic lightness, robust under all color-vision deficiencies and in grayscale) or cividis (optimized for deficiency). Monotonic lightness is what keeps the order readable even when hue discrimination fails.
+- **sequential:** viridis (perceptually uniform, monotonic lightness, legible under all color-vision deficiencies and in grayscale) or cividis (optimized for deficiency). Monotonic lightness is what keeps the order readable even when hue discrimination fails.
 - **diverging:** ColorBrewer RdBu or BrBG, or Tol sunset. Two arms on opposite, distinguishable hue axes with a light neutral center.
 
 A palette flagged `cvd_safe: false` (Set1, Spectral, Material, most Plotly and CARTO sets) is for when beauty or a specific brand mood outranks strict accessibility, and only after the Critic confirms the encoding still passes contrast and is not color-only.

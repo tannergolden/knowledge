@@ -1,9 +1,9 @@
 # Formatting doctrine
 
-How editorial formats prose. Built on the vault's `Library/Technology & Applied Science/Applied Computing & Software/Markdown Style Guide.md` (the house style) and subordinate to it and to the Constitution. Read this before any markdown beautification.
+How editorial formats prose, subordinate to the vault's conventions in `AGENTS.md` (Conventions) and, for a page GitHub renders, to standards' [Document Styling guide](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md). Read this before any markdown beautification.
 
-This file is the **doctrine** layer: the beauty principle, the Article IX
-precedence, and the internal-versus-leaving scope. The exhaustive **syntax** lives
+This file is the **doctrine** layer: the beauty principle, the precedence,
+and the scope by destination. The exhaustive **syntax** lives
 in four companions, loaded on demand: `references/markdown-reference.md` (every
 markdown element, with the exact syntax, a worked example, and a portability note),
 `references/admonitions.md` (the complete Obsidian callout system),
@@ -17,20 +17,21 @@ when and why to use it.
 
 ## Precedence (read first)
 
-> [!warning] The Constitution outranks this file
-> A **vault-internal** file obeys **Constitution Article IX** and the **Instructions Section 8** frontmatter schema, and `lint-notes.py` is the **exit gate**. Specifically: rule 9.7 (only Obsidian-compatible markdown by default, with GitHub-Flavored Markdown reserved for a repo-front-page file like a `README.md`), rule 9.6 (every BRAIN markdown file's single H1 begins with one leading emoji, then a space, then the title; the YAML `title` stays plain), rule 9.1 (no em dash, U+2014), and the two-band frontmatter schema on every file. A piece that fails lint is not done, no matter how it reads.
+> [!warning] The vault's rules outrank this file
+> A **vault note** follows the conventions in `AGENTS.md` (Conventions): Obsidian markdown, a single H1 that opens with one fitting emoji, a plain YAML `title`, and no decorative header or footer. It carries the two-band frontmatter in `.docs/vault/Note-Schema.md`, tagged only from `.docs/vault/Tag-Vocabulary.md`, and holds no em dash (DOC-002). `lint-notes.py` is the **exit gate**: a piece that fails lint is not done, no matter how it reads. A **page GitHub renders** (any `README.md`, `AGENTS.md`, and the files under `.docs/` and `.github/`) follows standards' [Document Styling guide](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md) instead.
 
-The order, hardest first: the Constitution, then `lint-notes.py`, then the Markdown Style Guide, then this file, then the owner's per-document override (which can raise density but never break a hard rule).
+The order, hardest first: `AGENTS.md` and the folder's Rules, then `lint-notes.py` for a vault note or the Document Styling guide for a page GitHub renders, then this file, then the owner's per-document override (which can raise density but never break a hard rule).
 
-## Scope - internal vs leaving the vault
+## Scope - where the file lives
 
-Use **Article IX's own internal-vs-leaving-the-vault split**. Do not invent a parallel "portability tier" vocabulary; the Constitution already draws this line.
+Three destinations, three rule sets. Do not invent a parallel "portability tier" vocabulary; the destination already draws the line.
 
-- **Vault-internal** (the file lives in the BRAIN): follow the **Constitution**. Obsidian Flavored Markdown is available in full, because the vault renders it: callouts, wikilinks, embeds, highlights, comments, block refs. The emoji-H1 rule applies; the no-em-dash rule applies. Frontmatter properties and tags follow the **Instructions Section 8** two-band schema and the **Article VII** closed tag vocabulary, not freeform Obsidian properties or `#tags`.
-- **Leaving the vault** (an email, a GitHub README, a post, a file handed to someone): follow the **target's own format**, and per **Constitution 9.7** keep markdown **Obsidian-compatible by default**. GitHub-Flavored Markdown, including the five uppercase alert types **NOTE, TIP, IMPORTANT, WARNING, CAUTION**, is used **only in a markdown file GitHub renders in its web interface**, its recognized repository and community-health files (`README.md`, `LICENSE.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `SECURITY.md`, `SUPPORT.md`, `GOVERNANCE.md`, and the issue and pull-request templates, per **Constitution 9.7**), never in ordinary leaving-the-vault markdown. The portable core is CommonMark; drop everything the target cannot render.
+- **A vault note** (a Markdown note in the BRAIN): follow `AGENTS.md`, Conventions. Obsidian Flavored Markdown is available in full, because the vault renders it: callouts, highlights, comments, block refs, and wikilinks and embeds wherever `.docs/vault/Link-Topology.md` allows the edge. The emoji-H1 rule applies; the no-em-dash rule applies. Frontmatter properties and tags follow the two-band schema in `.docs/vault/Note-Schema.md` and the closed vocabulary in `.docs/vault/Tag-Vocabulary.md`, not freeform Obsidian properties or `#tags`.
+- **A page GitHub renders** (any `README.md`, `AGENTS.md`, and the files under `.docs/` and `.github/`): follow standards' [Document Styling guide](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md). GitHub's own syntax, including the five uppercase alert types **NOTE, TIP, IMPORTANT, WARNING, CAUTION**, belongs only in these pages (`AGENTS.md`, Conventions).
+- **Leaving the vault** (an email, a post, a file handed to someone): follow the **target's own format**. The portable core is CommonMark; drop everything the target cannot render.
 
 > [!danger] Obsidian-only constructs never leave the vault
-> Wikilinks and embeds (Obsidian's double-bracket link and transclusion syntax), highlights `==text==`, comments `%% %%`, and block refs `^id` are **Obsidian-only** and degrade to **literal text** everywhere else (a non-Obsidian renderer shows the raw double-bracket markup). They stay inside the vault. When a piece is leaving, convert wikilinks to real links or plain text and strip the rest; the exact wikilink and embed syntax lives in the vault's Markdown Style Guide.
+> Wikilinks and embeds (Obsidian's double-bracket link and transclusion syntax), highlights `==text==`, comments `%% %%`, and block refs `^id` are **Obsidian-only** and degrade to **literal text** everywhere else (a non-Obsidian renderer shows the raw double-bracket markup). They stay in vault notes, never on a page GitHub renders. When a piece is leaving, convert wikilinks to real links or plain text and strip the rest; the wikilink forms, and where a wikilink may go, are in `.docs/vault/Link-Topology.md`.
 
 ## The Obsidian callout (admonition) system
 
@@ -57,10 +58,9 @@ here:
 - **Foldable callouts are the density tool** for long docs: depth one click away
   instead of a wall.
 - **The GitHub five** (NOTE, TIP, IMPORTANT, WARNING, CAUTION, uppercase) are the
-  GitHub-rendered alert set, used only in GitHub's recognized repository and
-  community-health files (`README.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`,
-  `SECURITY.md`, and the rest, Constitution 9.7). In the vault, use Obsidian's native lowercase callouts and its
-  full type set; a non-Obsidian renderer degrades any callout to a plain nested blockquote.
+  GitHub-rendered alert set, used only in a page GitHub renders (any `README.md`,
+  `AGENTS.md`, and the files under `.docs/` and `.github/`; `AGENTS.md`, Conventions).
+  In a vault note, use Obsidian's native lowercase callouts and its full type set; a non-Obsidian renderer degrades any callout to a plain nested blockquote.
 
 ## Rich markdown the doctrine reaches for (where it earns its place)
 
@@ -71,7 +71,7 @@ here:
 - **Collapsible `<details>`** for optional depth (renders on GitHub and Obsidian).
 - **Footnotes, task lists, strikethrough** where the target supports them (GFM and Obsidian, not plain CommonMark).
 
-Match the element to the content, never reach for variety. The Markdown Style Guide's principle holds: structure before style, whitespace is structural, the right element for the job, restraint with rich content, keep the source readable.
+Match the element to the content, never reach for variety. The principle holds: structure before style, whitespace is structural, the right element for the job, restraint with rich content, keep the source readable.
 
 ## Other lightweight markup
 
@@ -88,4 +88,4 @@ This is a **default, not a ceiling.** The owner overrides per document: "make th
 
 ## The exit gate
 
-For any vault-internal file: after formatting, run `python3 .github/scripts/lint-notes.py` and clear every error. Confirm the single emoji-prefixed H1 (9.6), zero em dashes (9.1), and the full two-band frontmatter (Section 8). The piece is done when it reads clear, sounds true, and lints clean.
+For any vault note: after formatting, run `python3 .github/scripts/lint-notes.py` and clear every error. Confirm the single emoji-led H1 (`AGENTS.md`, Conventions), zero em dashes (DOC-002), and the full two-band frontmatter (`.docs/vault/Note-Schema.md`). The piece is done when it reads clear, sounds true, and lints clean.

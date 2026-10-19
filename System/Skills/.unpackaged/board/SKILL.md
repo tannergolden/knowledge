@@ -1,11 +1,11 @@
 ---
 name: board
 description: Use this skill to found, run, scale, and maintain a company in Ventures/, or make any consequential business or strategy decision. The BRAIN's venture operating system: it convenes the Agent Resources (AR) Fortune 500 workforce, scaled to the venture's stage, and runs five modes. Found stands up a new venture. Strategize sets the thesis and the OKRs. Decide is the multi-perspective decision engine (independent views, structured dissent, one accountable owner). Operate produces real deliverables: a lead frames, specialists produce, QA verifies, the skill writes them into the venture folder behind a write-gate. Review runs the operating cadence, grades OKRs, and advances the stage. Fires on found or start a company, set strategy or OKRs, should I or which or go or no-go, build or produce X, run the venture, and how is it doing or run the QBR. The skill is the sole writer; money, contracts, external comms, and deletes need the Founder. What-are-my-options is discover; what-is-known is research.
-license: proprietary
+license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
 metadata:
   team: Administration
-  version: "02.01.01"
+  version: "2.1.2"
   id: "sy-skill-board-spec"
   author: "Tanner Golden"
   status: "active"
@@ -60,7 +60,7 @@ A bigger board is not a better one. Convene the **smallest sufficient** roster f
 
 ## Conformance with the live BRAIN
 
-**Preflight (before any vault write).** Writing into a venture or filing a memo is a vault write: read `Instructions.md` and `Constitution.md` and the namesake of every folder written into, commit an existing file's last state first (git history is the backup), and reference vault files by plain path, never wikilinks (the one exception is an index whose entries are wikilinks by design). After writing, run `update-vault.py` and `check-vault.py`. When founding, copy `Ventures/.template/` and **rewrite each file's `id` and `path`** so ids stay globally unique.
+**Preflight (before any vault write).** Writing into a venture or filing a memo is a vault write: read `AGENTS.md` and the Rules in the folder note of every folder written into and of each folder above it, commit an existing file's last state first (git history is the backup), and reference vault files by plain path, never wikilinks (the one exception is an index whose entries are wikilinks by design). After writing, run `update-vault.py` and `check-vault.py`. When founding, copy `Ventures/.template/` and **rewrite each file's `id` and `path`** so ids stay globally unique.
 
 **Read before acting.** Run the venture-context preflight and the dedup check (a vault search) before deliberating or producing, so a settled decision is not re-litigated and existing context is not duplicated. **Offer** (never silently) to file a memo, record a decision, or fold the outcome into `Memory/`. Confirm before any gated write; never create or delete top-level folders.
 
@@ -71,7 +71,7 @@ A bigger board is not a better one. Convene the **smallest sufficient** roster f
 - **The skill is the sole writer.** Agents compose and return; the skill writes, behind the write-gate. The irreversible-action gate is never bypassed.
 - **Stage-scaled.** The convened roster, rigor, metrics, and cadence match the venture's stage.
 - **Grounded in the venture.** Every run reads the venture's real context first and writes its result back, so the next run is not blind.
-- **No em dashes** (Constitution 9.1); the shared validator fails on the character.
+- **No em dashes** (DOC-002); the shared validator fails on the character.
 - **Tools declared exactly:** `allowed-tools` is the minimal set the workflow actually calls.
 
 ## Boundaries

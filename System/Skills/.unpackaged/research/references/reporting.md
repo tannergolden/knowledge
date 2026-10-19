@@ -4,7 +4,7 @@ How a run's findings are delivered, filed, and kept fresh. This is the BRAIN's m
 
 ## Chat first, file on request
 
-Every run delivers a **cited chat synthesis, findings first**, in a fixed shape: **Bottom line** (the answer with its two-axis certainty) -> **findings by angle**, each inline-cited and source-tier-aware -> **disagreements and the falsifier** (what would change the conclusion). Findings first, never a narrative of the run. A report **file** is produced only when the user asks for one (the owner keeps the inbox lean), or by standing instruction. Offer it; do not file by reflex.
+Every run delivers a **cited chat synthesis, findings first**, in a fixed shape: **Bottom line** (the answer with its two-axis certainty) -> **findings by angle**, each inline-cited and source-tier-aware -> **disagreements and the falsifier** (what would change the conclusion). Findings first, never a narrative of the run. A report **file** is produced only when the user asks for one, or by standing instruction, so the inbox stays lean. Offer it; do not file by reflex.
 
 **Resolve before shipping (a stop step).** Before any deliverable ships, chat or file, resolve every load-bearing URL (live, dead, or fabricated): any that does not resolve is cut or replaced before the synthesis ships, never shipped with a caveat. A measured 3-13% of deep-research citations are fabricated, so this is a gate, not a hope.
 
@@ -26,7 +26,7 @@ A report is a working artifact: produced, consumed, refreshed, cleared. The held
 
 ## Promote to the durable layer (the explicit step)
 
-The flat three-month window is correct only because durable findings do not live in reports. Before filing, the lead names any finding that must outlive three months and **promotes it into the durable layer**: a `Library/` reference doc, a folder namesake, the Constitution or Instructions, or a skill's `references/`. The disposable report then expires harmlessly; the durable finding persists and can be linked. A foundational result left to rot in an expiring report is the failure this step prevents, so make the promote decision explicit on every filed run, not an afterthought.
+The flat three-month window is correct only because durable findings do not live in reports. Before filing, the lead names any finding that must outlive three months and **promotes it into the durable layer**: a `Library/` reference doc, a folder note, a skill's `references/`, or a proposed change to `AGENTS.md`. The disposable report then expires harmlessly; the durable finding persists and can be linked. A foundational result left to rot in an expiring report is the failure this step prevents, so make the promote decision explicit on every filed run, not an afterthought.
 
 ## Memory write-back
 

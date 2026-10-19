@@ -15,7 +15,7 @@ The danger in synthesis is the HiPPO, the highest-paid person's opinion deciding
 - **Independent input before discussion.** Each function forms its view in isolation (see `lenses.md`), so the room is not anchored before it starts.
 - **Weight by relevance, not volume or status.** The chair weights each view by how much it bears on this decision and its criteria, not by how forcefully or how senior the voice. Input is time-boxed and carries no veto; only a predefined threshold (legal, risk) triggers an Agree or veto.
 - **Surface the minority view.** The dissent is recorded by name, not averaged away (see `memo.md`).
-- **Disagree and commit.** Once the call is made, a single robust decision binds the dissenters: state the objection, record it, and move as one (McKinsey; the Amazon practice).
+- **Disagree and commit.** Once the call is made, the one decision binds the dissenters: state the objection, record it, and move as one (McKinsey; the Amazon practice).
 
 ## The chair speaks last
 

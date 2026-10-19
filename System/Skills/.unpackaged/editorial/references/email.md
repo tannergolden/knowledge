@@ -64,4 +64,4 @@ A hand-built HTML email (nested-table layout, inline CSS, the Outlook Word-engin
 
 ## The standing rules still apply
 
-No em dash (9.1). No slop, including the chatbot tells "I hope this helps" and "Let me know if you need anything else" (9.2 and `slop-rubric.md`). Preserve the sender's length and register unless asked to change them. The template `templates/email.md` scaffolds the most common case.
+No em dash (DOC-002). No slop, including the chatbot tells "I hope this helps" and "Let me know if you need anything else" (DOC-003 and `slop-rubric.md`). Preserve the sender's length and register unless asked to change them. The template `templates/email.md` scaffolds the most common case.

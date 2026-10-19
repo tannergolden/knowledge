@@ -10,7 +10,7 @@ The contract that wires this skill to its people. Three seats, all reuse, consta
 |-------------|-------------|-------|---------|----------|
 | **UX and Design Research Lead** (Adeline) | **embodied** as the top-level context, every run | the coverage report, the target facet file, its section gaps, and the running interview ledger | the interview ledger and the approved writes; she is the only converser and the only writer | `templates/interview-plan.md` |
 | **Writer** (Calvin) | **dispatched**, every run that produces a batch | the interview ledger inline, the target facet file paths, `references/provenance.md`, `templates/proposal-batch.md` | the composed proposal batch, markers already applied per `provenance.md` | `templates/proposal-batch.md` |
-| **Standards Reviewer** (Sterling) | **dispatched blind**, every batch, always | the batch, `Profile/Profile.md`, Constitution 4.4, `references/provenance.md`; never the ledger or Calvin's brief | one review ledger row per proposal | the review ledger shape below (inline) |
+| **Standards Reviewer** (Sterling) | **dispatched blind**, every batch, always | the batch, `Profile/Profile.md` and its Rules, SEC-003, `references/provenance.md`; never the ledger or Calvin's brief | one review ledger row per proposal | the review ledger shape below (inline) |
 
 ## The seats in full
 
@@ -18,7 +18,7 @@ The contract that wires this skill to its people. Three seats, all reuse, consta
 
 **Calvin, Writer** (`Inbox/Faculties/Editorial/Writer.md`). He composes the proposal batch from the ledger in the Founder's voice: one construct per line, stated rows to unmarked lines, observed rows to fully-marked `unconfirmed` lines, the Snapshot composed last. His sole factual input is the ledger passed in the brief: if it is not in the ledger, it does not exist to him. He returns the batch in the `templates/proposal-batch.md` shape and persists nothing.
 
-**Sterling, Standards Reviewer** (`Inbox/Faculties/Research/Standards Reviewer.md`). He audits the batch blind against Article IV and Constitution 4.4: every proposed line traceable to a stated answer or correctly marked, no memory-shaped fact smuggled into a Profile diff (2.7), no sensitive line beyond the minimum needed to be considerate (4.4). He receives the batch and the law only, never the interview reasoning or Calvin's brief, so his eyes are fresh. He returns one ledger row per proposal and persists nothing.
+**Sterling, Standards Reviewer** (`Inbox/Faculties/Research/Standards Reviewer.md`). He audits the batch blind against the Rules in `Profile/Profile.md` and SEC-003: every proposed line traceable to a stated answer or correctly marked, no memory-shaped fact smuggled into a Profile diff (the Memory boundary, `Memory/Memory.md`, Rules), no sensitive line beyond the minimum needed to be considerate (the sensitive categories). He receives the batch and the law only, never the interview reasoning or Calvin's brief, so his eyes are fresh. He returns one ledger row per proposal and persists nothing.
 
 ## The verdict vocabulary (so the lead applies a return mechanically)
 
@@ -35,7 +35,7 @@ Verdicts apply mechanically and in **one round only**. REVISE is applied, BLOCK 
 A blind seat with no template file; it returns one row per proposal:
 
 ```
-[proposal N] · disposition (BLOCK / REVISE / CLEAR) · the specific rule it touches (4.1 / 4.2 / 4.3 / 4.4 / 2.7 / provenance grammar) · the concrete risk · the required change (REVISE) or the reason (BLOCK)
+[proposal N] · disposition (BLOCK / REVISE / CLEAR) · the specific rule it touches (read-only / propose first / facts not guesses / sensitive categories / Memory boundary / provenance grammar) · the concrete risk · the required change (REVISE) or the reason (BLOCK)
 ```
 
 ## Blind pairing
@@ -49,6 +49,6 @@ This skill follows the research skill's Marian convention. `metadata.team` in SK
 ## Rejected alternatives
 
 - **A dedicated interviewer sub-agent.** Rejected: only the top-level context can converse and call the question tool, so the interviewer is embodied, not dispatched. A dispatched interviewer would need the conversation relayed to it turn by turn, which no brief can carry.
-- **A second reviewer or a standalone privacy seat.** Rejected: Sterling's blind Article IV and 4.4 audit already covers privacy and sensitive-category exposure; a second reviewer adds coordination cost without adding a fresh angle. The lever is blindness, not headcount.
+- **A second reviewer or a standalone privacy seat.** Rejected: Sterling's blind audit against the Profile Rules and SEC-003 already covers privacy and sensitive-category exposure; a second reviewer adds coordination cost without adding a fresh angle. The lever is blindness, not headcount.
 - **Letting Calvin check his own composition.** Rejected: "now review your own work" collapses the independence that makes the review worth running. Composition and review are always two contexts.
-- **Skipping review on a one-line batch.** Rejected: there is no batch too small to review; even a single proposed line can carry an unmarked inference or a 2.7 violation.
+- **Skipping review on a one-line batch.** Rejected: there is no batch too small to review; even a single proposed line can carry an unmarked inference or a Memory-boundary violation.

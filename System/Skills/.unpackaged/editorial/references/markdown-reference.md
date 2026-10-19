@@ -41,14 +41,16 @@ not use the Setext underline (`===` / `---`) form.
 **Rules that are not optional.** Use exactly **one H1**, the title, and **never
 skip levels**: an H3 only ever appears under an H2, never directly under an H1.
 Skipped levels break screen-reader navigation, and most screen-reader users move
-through a document by its headings. Use sentence case, front-load the key word,
-keep headings parallel in grammar at one level, and never end a heading with a
-period. Put a blank line above and below every heading.
+through a document by its headings. Front-load the key word, keep headings
+parallel in grammar at one level, and never end a heading with a period. Put a
+blank line above and below every heading.
 
-> Vault note: Constitution rule 9.6 requires a BRAIN file's single H1 to begin
-> with one leading emoji, then a space, then the title (the YAML `title` stays
-> plain). That is a vault rule layered on top of standard ATX, not part of
-> CommonMark.
+> Where the file lives sets its heading style, which is not part of CommonMark. A
+> vault note follows `AGENTS.md`, Conventions: its single H1 opens with one
+> fitting emoji, then a space, then the title, and its YAML `title` stays plain.
+> A page GitHub renders (any `README.md`, `AGENTS.md`, and the files under
+> `.docs/` and `.github/`) follows standards'
+> [Document Styling guide](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md).
 
 **Portability:** CommonMark.
 
@@ -146,8 +148,7 @@ GFM also auto-detects bare URLs without them.
 > same with a leading exclamation mark. They render only in Obsidian and degrade
 > to raw text everywhere else, so they stay inside the vault and a piece leaving
 > the vault converts them to real links or plain text. For the exact literal
-> bracket form, see the vault Markdown Style Guide at
-> `Library/Technology & Applied Science/Applied Computing & Software/Markdown Style Guide.md`.
+> bracket forms, and where a wikilink may go, see `.docs/vault/Link-Topology.md`.
 
 **Portability:** inline, reference, and autolinks are CommonMark; bare-URL
 autodetection is GFM; wikilinks and embeds are Obsidian-only.
@@ -162,7 +163,10 @@ text is the alt text.
 ```
 
 **Alt text rule.** Alt text states the image's **function in context**, not a
-generic label. A purely decorative image takes **empty** alt so assistive
+generic label. A vault note and a page GitHub renders follow the alt-text rule in
+standards' [Document Styling guide](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md) (Rich Media & Accessibility):
+every image, badges included, carries descriptive alt text. Only in a piece
+leaving the vault may a purely decorative image take **empty** alt so assistive
 technology skips it:
 
 ```markdown
