@@ -11,7 +11,7 @@ The entry tier of context memory. Every new session summary is filed here first 
 
 ## The two newest load at session start
 
-`session-hooks.py start` lists the two newest summaries here for the AI to read, skipping any marked `deprecated` or `archived` (a later summary that overrides one marks it so). Keep each summary short: both are read in full at the start of every session, so a long one crowds out the fresh working context.
+`session.py start` lists the two newest summaries here for the AI to read, skipping any marked `deprecated` or `archived` (a later summary that overrides one marks it so). Keep each summary short: both are read in full at the start of every session, so a long one crowds out the fresh working context.
 
 ## Cap and cascade
 

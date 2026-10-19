@@ -75,7 +75,7 @@ At the start of every session, before other work:
 3. Read `Memory/Log.md` and the two newest summaries in `Memory/Context/Current/`.
 4. Read the folder notes the task touches, or the catalog, `System/Data/catalog.ndjson`, to see what exists.
 
-`python3 .github/scripts/session-hooks.py start` lists these files; read every one it lists.
+`python3 .github/scripts/session.py start` lists these files; read every one it lists.
 
 - **Folder rules.** Before you create, edit, move or delete anything in a folder, read the Rules in its folder note and in each folder note above it. They add to these rules and never loosen them.
 - **Retrieval order.** Ground a fact in the closest source that holds it: the vault (its notes and the catalog), then an offline knowledge base when one is installed (`python3 .github/scripts/knowledge-base.py search`), then the web. Anything about your user stops at the vault; anything current goes straight to the web.

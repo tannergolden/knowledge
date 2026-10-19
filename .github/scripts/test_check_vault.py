@@ -30,7 +30,7 @@ SCRIPT = 'check-vault.py'
 ROOT = fixtures.SCRIPTS.parents[1]
 DASHES = re.compile('[\u2013\u2014\u2015]')
 VAULT_SCRIPTS = ('vault.py', 'lint-notes.py', 'check-links.py', 'check-skills.py', 'check-agents.py',
-                 'scan-pii.py', 'update-vault.py', 'check-vault.py', 'session-hooks.py', 'profile-coverage.py',
+                 'scan-pii.py', 'update-vault.py', 'check-vault.py', 'session.py', 'profile-coverage.py',
                  'knowledge-base.py', 'fixtures.py')
 
 

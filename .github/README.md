@@ -97,7 +97,7 @@ python3 .github/scripts/update-vault.py   # redraw everything generated: memory 
 python3 .github/scripts/lint-notes.py X   # one note against the schema
 ```
 
-`python3 .github/scripts/session-hooks.py start` lists what to read at the start of a session.
+`python3 .github/scripts/session.py start` lists what to read at the start of a session.
 
 ---
 

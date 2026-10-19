@@ -47,7 +47,7 @@ only Python 3, plus PyYAML for the ones that read YAML.
 | [`profile-coverage.py`](profile-coverage.py)                   | Score how filled in each Profile facet is, and name the one the identify skill should ask about next.    |
 | [`README.md`](README.md)                                       | This file.                                                                                               |
 | [`scan-pii.py`](scan-pii.py)                                   | Find US Social Security numbers and payment card numbers in the files git tracks.                        |
-| [`session-hooks.py`](session-hooks.py)                         | The vault's session helpers: orient a session, check a note after an edit, and tidy up when a turn ends. |
+| [`session.py`](session.py)                                     | The vault's session helpers: orient a session, check a note after an edit, and tidy up when a turn ends. |
 | [`test_check_agents.py`](test_check_agents.py)                 | Tests for check-agents.py, the agent library check.                                                      |
 | [`test_check_links.py`](test_check_links.py)                   | Tests for check-links.py, the wikilink graph check.                                                      |
 | [`test_check_skills.py`](test_check_skills.py)                 | Tests for check-skills.py, the skill source check.                                                       |
@@ -57,7 +57,7 @@ only Python 3, plus PyYAML for the ones that read YAML.
 | [`test_lint_notes.py`](test_lint_notes.py)                     | Tests for lint-notes.py, the note schema check.                                                          |
 | [`test_profile_coverage.py`](test_profile_coverage.py)         | Tests for profile-coverage.py, the report the identify skill reads.                                      |
 | [`test_scan_pii.py`](test_scan_pii.py)                         | Tests for scan-pii.py, the personal number scan.                                                         |
-| [`test_session_hooks.py`](test_session_hooks.py)               | Tests for session-hooks.py, the vault's three session helpers.                                           |
+| [`test_session.py`](test_session.py)                           | Tests for session.py, the vault's three session helpers.                                                 |
 | [`test_update_vault.py`](test_update_vault.py)                 | Tests for update-vault.py, which draws every generated part of the vault.                                |
 | [`test_validate_repository.py`](test_validate_repository.py)   | Tests for the repository validator.                                                                      |
 | [`test_vault.py`](test_vault.py)                               | Tests for vault.py, the library every vault script shares.                                               |

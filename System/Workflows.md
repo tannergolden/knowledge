@@ -17,7 +17,7 @@ Workflows marked *owned here* are specified in full lower in this file; all othe
 
 | Workflow | When it runs | Canonical home · how it runs |
 |----------|--------------|--------------------------|
-| Session startup / initialization | Start of every session | `AGENTS.md`, Start here · `session-hooks.py start` |
+| Session startup / initialization | Start of every session | `AGENTS.md`, Start here · `session.py start` |
 | Context handoff & session summary | Task boundaries, host context warnings, session end | `Memory/Memory.md` · write it from `Memory/.template/Session Summary.md` |
 | Tiered-memory cascade | After saving a summary | `Memory/Memory.md`, Rules · `update-vault.py` |
 

@@ -20,9 +20,9 @@ exits 0 whatever happens.
 
 Run them:
 
-    python3 .github/scripts/session-hooks.py start
-    echo '{"tool_input": {"file_path": "Memory/Log.md"}}' | python3 .github/scripts/session-hooks.py after-edit
-    python3 .github/scripts/session-hooks.py stop
+    python3 .github/scripts/session.py start
+    echo '{"tool_input": {"file_path": "Memory/Log.md"}}' | python3 .github/scripts/session.py after-edit
+    python3 .github/scripts/session.py stop
 """
 
 from __future__ import annotations
@@ -136,18 +136,18 @@ def stop(root: pathlib.Path) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = vault.arguments((__doc__ or '').split('\n', 1)[0])
-    parser.add_argument('hook', choices=('start', 'after-edit', 'stop'), help='which hook is running')
+    parser.add_argument('helper', choices=('start', 'after-edit', 'stop'), help='which helper to run')
     args = parser.parse_args(argv)
     root = args.root.resolve()
     try:
-        if args.hook == 'start':
+        if args.helper == 'start':
             start(root)
-        elif args.hook == 'after-edit':
+        elif args.helper == 'after-edit':
             after_edit(root, sys.stdin.read())
         else:
             stop(root)
-    except Exception as error:  # noqa: BLE001  (a hook never breaks a session)
-        print(f'session-hooks.py {args.hook}: {error}', file=sys.stderr)
+    except Exception as error:  # noqa: BLE001  (a helper never breaks a session)
+        print(f'session.py {args.helper}: {error}', file=sys.stderr)
     return 0
 
 

@@ -111,7 +111,7 @@
 /.github/scripts/lint-notes.py
 /.github/scripts/profile-coverage.py
 /.github/scripts/scan-pii.py
-/.github/scripts/session-hooks.py
+/.github/scripts/session.py
 /.github/scripts/test_check_agents.py
 /.github/scripts/test_check_links.py
 /.github/scripts/test_check_skills.py
@@ -120,7 +120,7 @@
 /.github/scripts/test_lint_notes.py
 /.github/scripts/test_profile_coverage.py
 /.github/scripts/test_scan_pii.py
-/.github/scripts/test_session_hooks.py
+/.github/scripts/test_session.py
 /.github/scripts/test_update_vault.py
 /.github/scripts/test_vault.py
 /.github/scripts/update-vault.py

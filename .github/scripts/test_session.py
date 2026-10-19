@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Tests for session-hooks.py, the vault's three session helpers.
+"""Tests for session.py, the vault's three session helpers.
 
 WHY THIS EXISTS. A helper that crashes or prints the wrong thing hands the
 agent running it bad context, and breaks any session whose hook calls it.
 These run each helper on a throwaway vault. For the helpers that call other
-scripts, they copy session-hooks.py beside small stand-ins, so a test of a
+scripts, they copy session.py beside small stand-ins, so a test of a
 helper never depends on the scripts it calls.
 
 Run it:
 
-    python3 .github/scripts/test_session_hooks.py
+    python3 .github/scripts/test_session.py
 """
 
 from __future__ import annotations
@@ -25,7 +25,7 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import fixtures  # noqa: E402
 
-SCRIPT = 'session-hooks.py'
+SCRIPT = 'session.py'
 
 
 def stub(exit_code: int, output: str) -> str:
@@ -67,11 +67,11 @@ class TestStart(unittest.TestCase):
 
 
 class TestWithStandIns(unittest.TestCase):
-    """The hooks that call other scripts, run beside stand-ins for them."""
+    """The helpers that call other scripts, run beside stand-ins for them."""
 
     def setUp(self) -> None:
         self.vault = fixtures.Vault()
-        self.scripts = pathlib.Path(tempfile.mkdtemp(prefix='hooks-test-'))
+        self.scripts = pathlib.Path(tempfile.mkdtemp(prefix='session-test-'))
         for name in (SCRIPT, 'vault.py'):
             shutil.copy(fixtures.SCRIPTS / name, self.scripts / name)
 
@@ -82,7 +82,7 @@ class TestWithStandIns(unittest.TestCase):
     def stand_in(self, name: str, exit_code: int, output: str) -> None:
         (self.scripts / name).write_text(stub(exit_code, output), encoding='utf-8')
 
-    def hook(self, name: str, stdin: str = ''):
+    def helper(self, name: str, stdin: str = ''):
         return self.vault.run(SCRIPT, name, stdin=stdin, scripts=self.scripts)
 
     def edited(self, path: str) -> str:
@@ -91,7 +91,7 @@ class TestWithStandIns(unittest.TestCase):
     def test_after_edit_hands_a_lint_failure_back(self) -> None:
         self.stand_in('lint-notes.py', 1, 'error: Memory/Log.md: missing field: id')
         self.vault.write('Memory/Log.md', 'x')
-        result = self.hook('after-edit', self.edited('Memory/Log.md'))
+        result = self.helper('after-edit', self.edited('Memory/Log.md'))
         self.assertEqual(result.returncode, 0)
         out = json.loads(result.stdout)['hookSpecificOutput']
         self.assertEqual(out['hookEventName'], 'PostToolUse')
@@ -101,20 +101,20 @@ class TestWithStandIns(unittest.TestCase):
     def test_after_edit_is_silent_when_the_note_passes(self) -> None:
         self.stand_in('lint-notes.py', 0, '1 note passes.')
         self.vault.write('Memory/Log.md', 'x')
-        self.assertEqual(self.hook('after-edit', self.edited('Memory/Log.md')).stdout, '')
+        self.assertEqual(self.helper('after-edit', self.edited('Memory/Log.md')).stdout, '')
 
     def test_after_edit_checks_a_skill_source(self) -> None:
         self.stand_in('lint-notes.py', 0, 'fine')
         self.stand_in('check-skills.py', 1, 'error: SKILL.md: the frontmatter has no name')
         self.vault.write('System/Skills/.unpackaged/demo/SKILL.md', 'x')
-        result = self.hook('after-edit', self.edited('System/Skills/.unpackaged/demo/SKILL.md'))
+        result = self.helper('after-edit', self.edited('System/Skills/.unpackaged/demo/SKILL.md'))
         self.assertIn('check-skills.py flagged', result.stdout)
 
     def test_after_edit_ignores_what_is_not_the_vault_and_bad_input(self) -> None:
         self.stand_in('lint-notes.py', 1, 'error')
         outside = json.dumps({'tool_input': {'file_path': '/somewhere/else.md'}})
         for payload in (outside, 'not json', '', json.dumps({'tool_input': {'file_path': 'x.py'}})):
-            result = self.hook('after-edit', payload)
+            result = self.helper('after-edit', payload)
             self.assertEqual((result.returncode, result.stdout), (0, ''), payload)
 
     def test_stop_is_silent_on_a_clean_tree(self) -> None:
@@ -122,14 +122,14 @@ class TestWithStandIns(unittest.TestCase):
         self.stand_in('check-vault.py', 1, 'error: x')
         self.vault.write('Memory/Log.md', 'x')
         self.vault.init_git()
-        self.assertEqual(self.hook('stop').stdout, '')
+        self.assertEqual(self.helper('stop').stdout, '')
 
     def test_stop_reports_what_it_redrew_and_what_fails(self) -> None:
         self.stand_in('update-vault.py', 0, 'updated: System/Data/catalog.ndjson')
         self.stand_in('check-vault.py', 1, 'error: Memory/Log.md: missing field: id')
         self.vault.init_git()
         self.vault.write('Memory/Log.md', 'changed')
-        result = self.hook('stop')
+        result = self.helper('stop')
         self.assertEqual(result.returncode, 0)
         message = json.loads(result.stdout)['systemMessage']
         self.assertIn('update-vault.py redrew 1 generated part(s): System/Data/catalog.ndjson.', message)
@@ -140,11 +140,11 @@ class TestWithStandIns(unittest.TestCase):
         self.stand_in('check-vault.py', 0, 'All 6 vault checks pass.')
         self.vault.init_git()
         self.vault.write('Memory/Log.md', 'changed')
-        self.assertEqual(self.hook('stop').stdout, '')
+        self.assertEqual(self.helper('stop').stdout, '')
 
     def test_stop_survives_missing_scripts(self) -> None:
         self.vault.write('Memory/Log.md', 'changed')
-        result = self.hook('stop')
+        result = self.helper('stop')
         self.assertEqual((result.returncode, result.stdout), (0, ''))
 
 
