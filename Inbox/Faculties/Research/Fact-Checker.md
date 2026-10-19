@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Research/Fact-Checker.md"
 id: "in-fact-checker"
 ---
 
-# Fact-Checker
+# ✅ Fact-Checker
 
 ## Identity
 - **Name:** Ruth

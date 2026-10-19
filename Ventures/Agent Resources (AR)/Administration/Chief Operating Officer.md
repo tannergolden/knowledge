@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Administration/Chief Operating Office
 id: "ve-chief-operating-officer"
 ---
 
-# Chief Operating Officer
+# 🎛️ Chief Operating Officer
 
 ## Identity
 - **Name:** Patricia

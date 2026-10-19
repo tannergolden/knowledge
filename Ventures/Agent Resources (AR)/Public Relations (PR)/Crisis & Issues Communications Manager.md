@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Public Relations (PR)/Crisis & Issues
 id: "ve-crisis-issues-communications-manager"
 ---
 
-# Crisis & Issues Communications Manager
+# 🚨 Crisis & Issues Communications Manager
 
 ## Identity
 - **Name:** Nathaniel

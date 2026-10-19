@@ -16,7 +16,7 @@ path: "BRAIN/Projects/[Project-Name]/Notes.md"
 id: "pr-notes"
 ---
 
-# [Project Name] - Notes
+# 🗒️ [Project Name] - Notes
 
 <!-- A freeform space for ideas, brainstorming, research findings, and thoughts that don't fit neatly into the log or overview. No structure required - just capture it. -->
 

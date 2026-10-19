@@ -16,7 +16,7 @@ path: "BRAIN/Projects/[Project-Name]/Resources.md"
 id: "pr-resources"
 ---
 
-# [Project Name] - Resources
+# 🔗 [Project Name] - Resources
 
 <!-- Links, tools, references, and assets being used for this project. Organized so the AI can understand what's available and what's already been consulted. -->
 

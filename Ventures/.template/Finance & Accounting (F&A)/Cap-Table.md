@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Finance & Accounting (F&A)/Cap-Table.md"
 id: "ve-cap-table"
 ---
 
-# [Company] - Cap Table
+# 🥧 [Company] - Cap Table
 
 > The actual ownership record (not just a pointer). Sensitive. Owned by Finance with Legal; updated on every equity event (issuance, option grant, round, transfer). The board skill never executes an equity transaction; it composes and the Founder authorizes.
 

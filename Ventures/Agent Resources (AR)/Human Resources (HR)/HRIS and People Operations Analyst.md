@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Human Resources (HR)/HRIS and People 
 id: "ve-hris-people-operations-analyst"
 ---
 
-# HRIS and People Operations Analyst
+# 🗃️ HRIS and People Operations Analyst
 
 ## Identity
 - **Name:** Rosalind

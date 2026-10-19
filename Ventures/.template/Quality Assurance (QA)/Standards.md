@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Quality Assurance (QA)/Standards.md"
 id: "ve-standards"
 ---
 
-# [Company] - QA Standards
+# ✅ [Company] - QA Standards
 
 > Quality standards, review processes, and checklists for this venture. Reference this file when helping with quality reviews, process design, or any work that involves consistency and standards.
 

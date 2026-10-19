@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Research/Information Specialist.md"
 id: "in-information-specialist"
 ---
 
-# Information Specialist
+# 🔎 Information Specialist
 
 ## Identity
 - **Name:** Lydia

@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/Analytics 
 id: "ve-analytics-engineer"
 ---
 
-# Analytics Engineer
+# 🏗️ Analytics Engineer
 
 ## Identity
 - **Name:** Priscilla

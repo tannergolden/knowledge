@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Research/Statistician.md"
 id: "in-statistician"
 ---
 
-# Statistician
+# 🧮 Statistician
 
 ## Identity
 - **Name:** Soren

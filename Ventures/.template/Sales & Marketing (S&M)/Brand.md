@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Sales & Marketing (S&M)/Brand.md"
 id: "ve-brand"
 ---
 
-# [Company] - Brand
+# 🎨 [Company] - Brand
 
 > Use this file whenever writing copy, content, or communications on behalf of this company.
 

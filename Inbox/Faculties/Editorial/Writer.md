@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Editorial/Writer.md"
 id: "in-writer"
 ---
 
-# Writer
+# ✍️ Writer
 
 ## Identity
 - **Name:** Calvin

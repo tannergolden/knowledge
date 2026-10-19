@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/UX and D
 id: "ve-ux-design-research-lead"
 ---
 
-# UX and Design Research Lead
+# 🎨 UX and Design Research Lead
 
 ## Identity
 - **Name:** Adeline

@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Administration/★ Chief Executive Of
 id: "ve-chief-executive-officer"
 ---
 
-# Chief Executive Officer
+# ★ Chief Executive Officer
 
 ## Identity
 - **Name:** Jonathan

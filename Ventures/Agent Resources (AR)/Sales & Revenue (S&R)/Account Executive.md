@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Account Executi
 id: "ve-account-executive"
 ---
 
-# Account Executive
+# 💼 Account Executive
 
 ## Identity
 - **Name:** Brandon

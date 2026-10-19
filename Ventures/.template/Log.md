@@ -1,6 +1,6 @@
 ---
 title: "[Company] - Log"
-description: "Chronological record of sessions, decisions, milestones, and notable events for [Company]."
+description: "Chronological record of sessions, decisions, milestones, and significant events for [Company]."
 status: "active"
 tags: ["ventures", "template"]
 aliases: []
@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Log.md"
 id: "ve-log"
 ---
 
-# [Company] - Log
+# 📓 [Company] - Log
 
 > Chronological record of what happened with this venture over time. Add an entry at the end of any session where meaningful work was done, a decision was made, or a milestone was reached. Read this file for recent context before diving into venture-specific work.
 

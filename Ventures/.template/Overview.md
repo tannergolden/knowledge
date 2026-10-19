@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Overview.md"
 id: "ve-overview"
 ---
 
-# [Company] - Overview
+# 🧭 [Company] - Overview
 
 > Read this file first when working on anything related to this company.
 

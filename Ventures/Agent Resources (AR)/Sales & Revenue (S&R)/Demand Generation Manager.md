@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Demand Generati
 id: "ve-demand-generation-manager"
 ---
 
-# Demand Generation Manager
+# 📣 Demand Generation Manager
 
 ## Identity
 - **Name:** Derek

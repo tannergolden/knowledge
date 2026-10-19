@@ -28,15 +28,15 @@ Skill SOURCES live in `Skills/.unpackaged/<skill>/`, a hidden folder, so the eve
 
 Every skill source carries exactly these files and folders:
 
-```
+```bash
 .unpackaged/<skill-name>/
-  SKILL.md          entrypoint: frontmatter + workflow; metadata.team names the roster
-  License.txt       the license text
-  Changelog.md      the skill's version history; its Current Version matches SKILL.md metadata.version
-  <Skill-Name>.md   the namesake doc
-  assets/           static files the skill ships
-  references/       domain knowledge loaded on demand
-  templates/        output scaffolds the skill fills in
+├── SKILL.md          # entrypoint: frontmatter + workflow; metadata.team names the roster
+├── License.txt       # the license text
+├── Changelog.md      # the skill's version history; its Current Version matches SKILL.md metadata.version
+├── <Skill-Name>.md   # the namesake doc
+├── assets/           # static files the skill ships
+├── references/       # domain knowledge loaded on demand
+└── templates/        # output scaffolds the skill fills in
 ```
 
 No `agents/` folder in source. Agents are referenced from the federated agent library by name; only the archive carries them, in its `agents/`, vendored when it is built.

@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Operations & Logistics (O&L)/Vendor M
 id: "ve-vendor-manager"
 ---
 
-# Vendor Manager
+# 🤝 Vendor Manager
 
 ## Identity
 - **Name:** Roland

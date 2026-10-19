@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Sales Engineer.
 id: "ve-sales-engineer"
 ---
 
-# Sales Engineer
+# 🔧 Sales Engineer
 
 ## Identity
 - **Name:** Cecil

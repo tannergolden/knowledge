@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/Controller
 id: "ve-controller"
 ---
 
-# Controller
+# 🧾 Controller
 
 ## Identity
 - **Name:** Walter

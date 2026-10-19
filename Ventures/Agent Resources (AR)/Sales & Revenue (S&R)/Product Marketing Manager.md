@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Product Marketi
 id: "ve-product-marketing-manager"
 ---
 
-# Product Marketing Manager
+# 🎯 Product Marketing Manager
 
 ## Identity
 - **Name:** Felix

@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Sales & Revenue (S&R)/Revenue Operati
 id: "ve-revenue-operations-manager"
 ---
 
-# Revenue Operations Manager
+# 💹 Revenue Operations Manager
 
 ## Identity
 - **Name:** Zachary

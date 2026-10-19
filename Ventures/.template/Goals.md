@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Goals.md"
 id: "ve-goals"
 ---
 
-# [Company] - Goals
+# 🎯 [Company] - Goals
 
 > Current priorities, OKRs, and strategic initiatives. Read this file when helping with planning, prioritization, or any work that touches company direction. Update it when goals change, are completed, or are deprioritized.
 

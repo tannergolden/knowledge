@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Editorial/Line Editor.md"
 id: "in-line-editor"
 ---
 
-# Line Editor
+# ✏️ Line Editor
 
 ## Identity
 - **Name:** Cora

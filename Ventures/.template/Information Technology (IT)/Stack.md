@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Information Technology (IT)/Stack.md"
 id: "ve-stack"
 ---
 
-# [Company] - Tech Stack
+# 🧱 [Company] - Tech Stack
 
 > All tools, platforms, infrastructure, and integrations used to run and build this venture. Update when the stack changes. Reference this file when helping with technical decisions, integrations, or any work that touches the company's systems.
 

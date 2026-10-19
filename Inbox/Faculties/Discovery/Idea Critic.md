@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Discovery/Idea Critic.md"
 id: "in-idea-critic"
 ---
 
-# Idea Critic
+# ⚖️ Idea Critic
 
 ## Identity
 - **Name:** Hugo

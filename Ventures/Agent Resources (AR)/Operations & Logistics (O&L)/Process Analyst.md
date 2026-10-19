@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Operations & Logistics (O&L)/Process 
 id: "ve-process-analyst"
 ---
 
-# Process Analyst
+# 🔄 Process Analyst
 
 ## Identity
 - **Name:** Wesley

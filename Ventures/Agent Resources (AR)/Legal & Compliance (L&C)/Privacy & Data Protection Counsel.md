@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Privacy & Da
 id: "ve-privacy-data-protection-counsel"
 ---
 
-# Privacy & Data Protection Counsel
+# 🔏 Privacy & Data Protection Counsel
 
 ## Identity
 - **Name:** Matilda

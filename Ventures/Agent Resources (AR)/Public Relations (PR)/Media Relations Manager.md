@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Public Relations (PR)/Media Relations
 id: "ve-media-relations-manager"
 ---
 
-# Media Relations Manager
+# 🎙️ Media Relations Manager
 
 ## Identity
 - **Name:** Camille

@@ -26,7 +26,7 @@ A few lines on the user's core competencies. Fill last.
 
 ## Expertise Map
 
-The AI-actionable core: per domain, the level and the calibration note.
+The core the AI acts on: per domain, the level and the calibration note.
 
 | Domain | Level (novice / competent / expert) | Calibration note |
 |--------|-------------------------------------|------------------|

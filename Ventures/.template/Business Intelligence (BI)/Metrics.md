@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Business Intelligence (BI)/Metrics.md"
 id: "ve-metrics"
 ---
 
-# [Company] - Metrics
+# 📊 [Company] - Metrics
 
 > Key performance indicators and data sources for this venture. Update as metrics evolve. Reference this file when helping with analysis, reporting, or any work involving company performance.
 

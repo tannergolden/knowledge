@@ -16,7 +16,7 @@ path: "BRAIN/Projects/[Project-Name]/Overview.md"
 id: "pr-overview"
 ---
 
-# [Project Name] - Overview
+# 🧭 [Project Name] - Overview
 
 <!-- Replace [Project Name] with the actual project name. Fill in every field. This file is the AI's primary reference for understanding what this project is and where it stands. -->
 

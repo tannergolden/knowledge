@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Research/Knowledge Manager.md"
 id: "in-knowledge-manager"
 ---
 
-# Knowledge Manager
+# 🗄️ Knowledge Manager
 
 ## Identity
 - **Name:** Mabel

@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Legal & Compliance (L&C)/Compliance.md"
 id: "ve-compliance"
 ---
 
-# [Company] - Legal & Compliance
+# 📜 [Company] - Legal & Compliance
 
 > Legal structure, active contracts, licenses, IP, and compliance requirements. This file informs the AI when helping with legal questions, contracts, or regulatory matters. Always consult a qualified attorney for legal decisions - this file is for context only.
 

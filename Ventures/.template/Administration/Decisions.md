@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Administration/Decisions.md"
 id: "ve-decisions"
 ---
 
-# [Company] - Decisions
+# ⚖️ [Company] - Decisions
 
 > The corporate record of consequential decisions. The Corporate Secretary keeps this current. The `board` skill (decide mode) appends here when it makes a call, and a one-line entry is also logged to `Log.md`. Read this before re-opening a question, so a settled decision is not re-litigated.
 

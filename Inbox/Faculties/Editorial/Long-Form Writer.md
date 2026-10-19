@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Editorial/Long-Form Writer.md"
 id: "in-long-form-writer"
 ---
 
-# Long-Form Writer
+# 📜 Long-Form Writer
 
 ## Identity
 - **Name:** Harper

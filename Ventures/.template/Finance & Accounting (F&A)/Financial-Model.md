@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Finance & Accounting (F&A)/Financial-Model.md"
 id: "ve-financial-model"
 ---
 
-# [Company] - Financial Model
+# 🧮 [Company] - Financial Model
 
 > The forward-looking model the fundraise, the budget, and the OKRs rest on. `Financials.md` is the current-state snapshot; this file is the projection. Owned by Finance (CFO and FP&A); load-bearing for founding and fundraising.
 

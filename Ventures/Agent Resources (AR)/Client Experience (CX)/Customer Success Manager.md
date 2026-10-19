@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Client Experience (CX)/Customer Succe
 id: "ve-customer-success-manager"
 ---
 
-# Customer Success Manager
+# 🌟 Customer Success Manager
 
 ## Identity
 - **Name:** Colin

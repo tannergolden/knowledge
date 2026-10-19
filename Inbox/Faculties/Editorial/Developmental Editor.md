@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Editorial/Developmental Editor.md"
 id: "in-developmental-editor"
 ---
 
-# Developmental Editor
+# 🏗️ Developmental Editor
 
 ## Identity
 - **Name:** Frances

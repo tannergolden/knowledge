@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Research/All-Source Analyst.md"
 id: "in-all-source-analyst"
 ---
 
-# All-Source Analyst
+# 🛰️ All-Source Analyst
 
 ## Identity
 - **Name:** Jasper

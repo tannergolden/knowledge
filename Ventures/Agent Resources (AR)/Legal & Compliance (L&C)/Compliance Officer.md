@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Compliance O
 id: "ve-compliance-officer"
 ---
 
-# Compliance Officer
+# 🛡️ Compliance Officer
 
 ## Identity
 - **Name:** Lillian

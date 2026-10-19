@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Design/Design Critic.md"
 id: "in-design-critic"
 ---
 
-# Design Critic
+# 🧐 Design Critic
 
 ## Identity
 - **Name:** Vera

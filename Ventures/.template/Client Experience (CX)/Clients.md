@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Client Experience (CX)/Clients.md"
 id: "ve-clients"
 ---
 
-# [Company] - Clients
+# 🤝 [Company] - Clients
 
 ---
 

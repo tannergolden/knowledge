@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Administration/Cadence.md"
 id: "ve-cadence"
 ---
 
-# [Company] - Cadence
+# 🗓️ [Company] - Cadence
 
 > The rhythm that runs the company. The `board` skill (review mode) drives these loops and keeps `Goals.md`, `Metrics.md`, and `Log.md` current against them. The cadence scales to the venture's stage (lighter when founding, fuller at scale).
 
@@ -26,7 +26,7 @@ id: "ve-cadence"
 
 | Loop | Frequency | Purpose | Inputs | Output |
 |------|-----------|---------|--------|--------|
-| **Weekly business review** | weekly | check the vital signs, surface what is off-track, decide the week | `Metrics.md` scorecard | the week's decisions and unblocks, logged |
+| **Weekly business review** | weekly | check the health metrics, surface what is off-track, decide the week | `Metrics.md` scorecard | the week's decisions and unblocks, logged |
 | **Monthly review** | monthly | financials vs plan, pipeline, OKR progress | `Financials.md`, `Goals.md` | course corrections |
 | **Quarterly (QBR + planning)** | quarterly | grade the OKRs, set the next quarter, recalibrate the operating plan | `Goals.md`, `Strategy.md` | next-quarter OKRs |
 | **Annual planning** | yearly | refresh the thesis and the annual goals, set the budget | `Strategy.md`, the financial model | the annual plan and budget |
@@ -38,7 +38,7 @@ id: "ve-cadence"
 ## Board cadence
 
 **Frequency:** (monthly when founding, quarterly at scale)
-**Standing agenda:** financials and runway, the metric vital signs, the asks/decisions, the risks. A written pre-read goes out ahead; the meeting opens with silent reading.
+**Standing agenda:** financials and runway, the health metrics, the asks/decisions, the risks. A written pre-read goes out ahead; the meeting opens with silent reading.
 **Committees:** Audit, Compensation, Nominating & Governance, Risk convene as needed (see `Agent Resources (AR).md`).
 
 ---

@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Legal & Compliance (L&C)/Commercial C
 id: "ve-commercial-counsel"
 ---
 
-# Commercial Counsel
+# 📑 Commercial Counsel
 
 ## Identity
 - **Name:** Adrian

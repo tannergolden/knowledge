@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Design/Visualization Designer.md"
 id: "in-visualization-designer"
 ---
 
-# Visualization Designer
+# 📈 Visualization Designer
 
 ## Identity
 - **Name:** Otto

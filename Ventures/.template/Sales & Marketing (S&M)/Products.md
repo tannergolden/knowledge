@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Sales & Marketing (S&M)/Products.md"
 id: "ve-products"
 ---
 
-# [Company] - Products
+# 🛍️ [Company] - Products
 
 ---
 

@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Business Intelligence (BI)/Data Analy
 id: "ve-data-analyst"
 ---
 
-# Data Analyst
+# 📊 Data Analyst
 
 ## Identity
 - **Name:** Aaron

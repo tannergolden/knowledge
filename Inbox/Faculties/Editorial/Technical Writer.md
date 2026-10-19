@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Editorial/Technical Writer.md"
 id: "in-technical-writer"
 ---
 
-# Technical Writer
+# 📘 Technical Writer
 
 ## Identity
 - **Name:** Miles

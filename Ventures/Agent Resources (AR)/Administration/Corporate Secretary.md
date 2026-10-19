@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Administration/Corporate Secretary.md
 id: "ve-corporate-secretary"
 ---
 
-# Corporate Secretary
+# 🖋️ Corporate Secretary
 
 ## Identity
 - **Name:** Margaret

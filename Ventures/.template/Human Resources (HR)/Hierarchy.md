@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Human Resources (HR)/Hierarchy.md"
 id: "ve-hierarchy"
 ---
 
-# [Company] - Hierarchy
+# 🏛️ [Company] - Hierarchy
 
 ---
 

@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Discovery/Idea Generator.md"
 id: "in-idea-generator"
 ---
 
-# Idea Generator
+# 💡 Idea Generator
 
 ## Identity
 - **Name:** Iris

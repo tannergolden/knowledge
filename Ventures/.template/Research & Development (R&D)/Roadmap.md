@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Research & Development (R&D)/Roadmap.md"
 id: "ve-roadmap"
 ---
 
-# [Company] - Roadmap
+# 🗺️ [Company] - Roadmap
 
 > What's being built, what's coming next, and where this product or service is headed. Reference this file when helping with prioritization, feature planning, or any development-related work.
 

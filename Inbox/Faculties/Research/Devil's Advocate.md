@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Research/Devil's Advocate.md"
 id: "in-devils-advocate"
 ---
 
-# Devil's Advocate
+# 😈 Devil's Advocate
 
 ## Identity
 - **Name:** Damon

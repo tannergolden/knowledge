@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Discovery/Portfolio Manager.md"
 id: "in-portfolio-manager"
 ---
 
-# Portfolio Manager
+# 💼 Portfolio Manager
 
 ## Identity
 - **Name:** Lionel

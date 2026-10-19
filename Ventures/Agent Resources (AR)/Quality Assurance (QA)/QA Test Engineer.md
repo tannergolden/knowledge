@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Quality Assurance (QA)/QA Test Engine
 id: "ve-qa-test-engineer"
 ---
 
-# QA Test Engineer
+# 🧪 QA Test Engineer
 
 ## Identity
 - **Name:** Trevor

@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Discovery/Tournament Ranker.md"
 id: "in-tournament-ranker"
 ---
 
-# Tournament Ranker
+# 🏆 Tournament Ranker
 
 ## Identity
 - **Name:** Desmond

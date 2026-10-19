@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Client Experience (CX)/Support Specia
 id: "ve-support-specialist"
 ---
 
-# Support Specialist
+# 🎧 Support Specialist
 
 ## Identity
 - **Name:** Darnell

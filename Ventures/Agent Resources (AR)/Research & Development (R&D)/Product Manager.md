@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Research & Development (R&D)/Product 
 id: "ve-product-manager"
 ---
 
-# Product Manager
+# 🧩 Product Manager
 
 ## Identity
 - **Name:** Naomi

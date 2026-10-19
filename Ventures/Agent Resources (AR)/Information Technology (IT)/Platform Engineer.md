@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Information Technology (IT)/Platform 
 id: "ve-platform-engineer"
 ---
 
-# Platform Engineer
+# 🖥️ Platform Engineer
 
 ## Identity
 - **Name:** Devin

@@ -17,7 +17,7 @@ author: "Tanner Golden"
 path: "BRAIN/Ventures/Agent Resources (AR)/Administration/Administration.md"
 id: "ve-administration"
 ---
-# Administration - roster
+# 🏛️ Administration
 
 - ★ [[★ Chief Executive Officer]] (Jonathan) - sets direction, allocates across departments, decides or escalates to the Founder; the lead of the executive office.
 

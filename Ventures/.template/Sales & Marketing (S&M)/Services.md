@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Sales & Marketing (S&M)/Services.md"
 id: "ve-services"
 ---
 
-# [Company] - Services
+# 🛎️ [Company] - Services
 
 ---
 
@@ -100,7 +100,7 @@ id: "ve-services"
 - Repeat / Renewal Rate:
 
 **Case Studies / Success Stories:**
-<!-- Reference any case studies or notable wins for this service. -->
+<!-- Reference any case studies or standout wins for this service. -->
 
 ---
 

@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Operations & Logistics (O&L)/Operations.md"
 id: "ve-operations"
 ---
 
-# [Company] - Operations
+# 📦 [Company] - Operations
 
 > How this venture runs day-to-day. Covers core processes, SOPs, vendors, and operational infrastructure. Reference this file when helping with process improvements, vendor decisions, or operational planning.
 

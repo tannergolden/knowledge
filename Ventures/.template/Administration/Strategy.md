@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Administration/Strategy.md"
 id: "ve-strategy"
 ---
 
-# [Company] - Strategy
+# ♟️ [Company] - Strategy
 
 > The company's thesis: the single source the `Goals.md` OKRs ladder up to. Read this before any planning, prioritization, or go-to-market work. Owned by the executive office (CSO and CEO); refreshed each planning cycle.
 

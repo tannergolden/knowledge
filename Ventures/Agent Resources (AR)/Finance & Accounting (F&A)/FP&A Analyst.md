@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Finance & Accounting (F&A)/FP&A Analy
 id: "ve-fpa-analyst"
 ---
 
-# FP&A Analyst
+# 📈 FP&A Analyst
 
 ## Identity
 - **Name:** Priya

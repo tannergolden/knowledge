@@ -16,7 +16,7 @@ path: "BRAIN/Projects/[Project-Name]/Log.md"
 id: "pr-log"
 ---
 
-# [Project Name] - Log
+# 📓 [Project Name] - Log
 
 <!-- Chronological record of work done, decisions made, and progress notes for this project. Most recent entry at the top. -->
 

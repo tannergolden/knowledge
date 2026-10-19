@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Finance & Accounting (F&A)/Financials.md"
 id: "ve-financials"
 ---
 
-# [Company] - Financials
+# 💰 [Company] - Financials
 
 > Financial context for this venture. Fill in what's known; leave the rest blank. This file informs the AI when helping with pricing, runway analysis, financial planning, or any task where company finances are relevant.
 

@@ -18,7 +18,7 @@ path: "BRAIN/Ventures/Agent Resources (AR)/Information Technology (IT)/Security 
 id: "ve-security-engineer"
 ---
 
-# Security Engineer
+# 🔐 Security Engineer
 
 ## Identity
 - **Name:** Marisol

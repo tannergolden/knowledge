@@ -18,7 +18,7 @@ path: "BRAIN/Inbox/Faculties/Discovery/Idea Curator.md"
 id: "in-idea-curator"
 ---
 
-# Idea Curator
+# 🗂️ Idea Curator
 
 ## Identity
 - **Name:** Pearl

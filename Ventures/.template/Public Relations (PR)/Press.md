@@ -16,7 +16,7 @@ path: "BRAIN/Ventures/[Company]/Public Relations (PR)/Press.md"
 id: "ve-press"
 ---
 
-# [Company] - Press & PR
+# 📰 [Company] - Press & PR
 
 > Media contacts, coverage history, press kit details, and PR positioning. Reference this file when writing press releases, pitching media, or handling any external communications.
 
