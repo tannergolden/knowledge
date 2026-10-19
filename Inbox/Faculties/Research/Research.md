@@ -8,7 +8,7 @@ keywords: ["research team", "research desk", "research lead", "fact-checker", "r
 members: ["★ Research Lead", "Information Specialist", "All-Source Analyst", "Fact-Checker", "Devil's Advocate", "Statistician", "Editor", "Knowledge Manager", "Standards Reviewer", "Search Peer-Reviewer"]
 lead: ★ Research Lead
 created: 2026-06-17
-updated: 2026-06-25
+updated: 2026-10-19
 type: "information"
 folder: "inbox"
 layer: 3
@@ -20,7 +20,7 @@ id: "in-research"
 
 # 🔬 Research
 
-The BRAIN's standing research team lives here, a flat home like the Development team and the Discovery team. A lead (the Research Lead) and nine specialists run any research the BRAIN needs, for any project, any venture, or the BRAIN itself. It is the research counterpart to the ideation Discovery team, and to the Agent Resources (AR) workforce; where AR serves the ventures, the team serves all research. It was formerly called the Desk.
+The BRAIN's standing research team lives here, a flat home like the Discovery team and the Editorial team. A lead (the Research Lead) and nine specialists run any research the BRAIN needs, for any project, any venture, or the BRAIN itself. It is the research counterpart to the ideation Discovery team, and to the Agent Resources (AR) workforce; where AR serves the ventures, the team serves all research. It was formerly called the Desk.
 
 The team works to one overriding standard: zero bias. It follows the evidence wherever it leads and never bends a finding toward a preferred answer, whoever is asking.
 

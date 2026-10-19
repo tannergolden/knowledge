@@ -72,7 +72,7 @@ python3 System/brain.command search "x"  # full-text search across the vault
 
 - **Structured over freeform.** Every file carries YAML frontmatter drawn from a closed, linted vocabulary. Nothing enters without metadata.
 - **Governed, not vibes.** A written Constitution, a versioned changelog, and machine-enforced checks (frontmatter lint, a wikilink graph, a secret and PII scan) keep the vault honest.
-- **A workforce, not just notes.** The BRAIN ships its own skills (research, editorial, visualize, discover, develop, identify, board) that compose teams of specialized agents.
+- **A workforce, not just notes.** The BRAIN ships its own skills (research, editorial, visualize, discover, identify, board) that compose teams of specialized agents, and builds new ones with the universal `develop` skill.
 - **Safe by construction.** Two-stage deletion, pre-edit backups when local, git history when remote, and a "secrets are pointers, not values" rule with a pre-push guard.
 
 ## Working in this repository

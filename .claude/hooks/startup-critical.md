@@ -8,6 +8,6 @@
 
 3. THE CONSTITUTION GOVERNS. Constitution.md wins every conflict. Back up before editing any file; never delete or restructure Layer 0 or Layer 1 without explicit user confirmation; log core-file changes to the changelog.
 
-4. FIRE MATCHING SKILLS without asking, and prefer the BRAIN's own (board, develop, discover, editorial, identify, research, visualize) over any generic equivalent.
+4. FIRE MATCHING SKILLS without asking, and prefer the BRAIN's own (board, discover, editorial, identify, research, visualize) and the universal `develop` over any generic equivalent.
 
 5. OUTPUT. No em dashes. 12-hour clock times. Answer directly, with no preamble or filler.

@@ -15,12 +15,12 @@ keywords:
   - system updates
   - revision log
 created: 2026-05-19
-updated: 2026-07-05
+updated: 2026-10-19
 type: log
 folder: system
 layer: 1
 policy: true
-version: "01.00.19"
+version: "01.00.20"
 author: Tanner Golden
 path: BRAIN/System/changelog.md
 id: sy-changelog
@@ -30,7 +30,7 @@ id: sy-changelog
 
 ## Current Version
 
-**`40.09.00`**
+**`40.10.00`**
 
 The version format is `MAJOR.MINOR.PATCH`, two-digit zero-padded segments.
 
@@ -173,6 +173,12 @@ Replaced the Library/ and Memory/ Layer-1 folders with AI-designed versions and 
 
 > New categories, new folders, new vocabulary values, significant documentation additions. Most recent 4 entries.
 
+### `40.10.00` - 2026-10-19
+
+Moved develop and the Development team out of the vault at the owner's direction. develop is now the one universal skill, shipped from tannergolden/intelligence with its home kit and carrying its own Development team, so System/Skills/.unpackaged/develop/, System/Skills/develop.skill and Inbox/Faculties/Development/ were removed with git rm, recoverable from history. The Faculties are now four teams (Research, Discovery, Editorial, Design): Faculties.md, Inbox.md (01.09.01), Skills.md (01.01.04), the AR charter, the Research and Discovery rosters, the three hook rosters and the GitHub README now say so, and catalog.ndjson was regenerated. brain.command is unchanged.
+
+**Files affected:** System/Skills/.unpackaged/develop/, System/Skills/develop.skill, Inbox/Faculties/Development/, Inbox/Faculties/Faculties.md, Inbox/Inbox.md, System/Skills/Skills.md, System/Data/catalog.ndjson, .claude/hooks/
+
 ### `40.09.00` - 2026-07-05
 
 Added GitHub community-health files, designed for the repo landing page: .github/README.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md, and a root MIT LICENSE. Reconciled Constitution 2.6 (no-README rule) with Article 9.7 to carve them out as GitHub presentation infrastructure, exempt from the schema and linter; the engine skips .github/ (dot-dir) and now skips the root LICENSE via SKIP_FILES.
@@ -190,12 +196,6 @@ Adopt and enforce the AI-Driven Commit Process (Conventional Commits) for vault 
 Recovery layer now depends on the backup mode (owner direction). New engine detector _remote_backed (cached ls-remote probe, safe-bias to local on doubt): when a git remote is reachable, backup skips the .backups/ pre-edit snapshot (git history is the backstop; backup <path> local forces one) and trash deletes a tracked+clean item with git rm (recoverable via trash restore / git history), keeping the two-stage .trash/ only for what git cannot recover (untracked or uncommitted-modified files) and for local-only vaults. Governance updated: Constitution 3.1 + amendment, Instructions Section 10 + Critical Rules, AGENTS.md, System.md backup/trash rows.
 
 **Files affected:** System/brain.command, Constitution.md, Instructions.md, System/System.md, AGENTS.md
-
-### `40.06.00` - 2026-07-04
-
-Rebuilt and packaged the identify skill (was pending across five passes). Authored its five missing doctrine files (references/question-maps, provenance, roster; templates/interview-plan, proposal-batch) plus assets/trigger-evals.json and regression-cases.jsonl; validates and packages to identify.skill (12 files). Flipped identify from pending to live in Skills.md and the three hook rosters (skill-router, startup-critical, prompt-reminder). All 7 BRAIN skills now packaged and valid.
-
-**Files affected:** System/Skills/Skills.md
 
 ## Patch Updates
 

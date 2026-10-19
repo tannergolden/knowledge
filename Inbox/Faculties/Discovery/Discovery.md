@@ -8,7 +8,7 @@ keywords: ["ideation team", "discovery team", "brainstorming", "idea generation"
 members: ["★ Creative Lead", "Idea Generator", "Idea Critic", "Tournament Ranker", "Idea Curator", "Portfolio Manager"]
 lead: ★ Creative Lead
 created: 2026-06-21
-updated: 2026-06-21
+updated: 2026-10-19
 type: "information"
 folder: "inbox"
 layer: 3
@@ -20,7 +20,7 @@ id: "in-discovery"
 
 # 💡 Discovery
 
-The BRAIN's standing ideation team lives here, a flat home like the Research team and the Development team. A lead (the Creative Lead) and five specialists generate new ideas, then converge to the strongest. Discovery is the counterpart to Research: where Research finds and verifies what is already known, Discovery generates what is new, then ranks and culls to the best. The two are duals and feed each other, research grounds ideation and ideation produces hypotheses research then tests. It was formerly called the Studio.
+The BRAIN's standing ideation team lives here, a flat home like the Research team and the Editorial team. A lead (the Creative Lead) and five specialists generate new ideas, then converge to the strongest. Discovery is the counterpart to Research: where Research finds and verifies what is already known, Discovery generates what is new, then ranks and culls to the best. The two are duals and feed each other, research grounds ideation and ideation produces hypotheses research then tests. It was formerly called the Studio.
 
 The team works to one overriding standard: generate wide, select fair. It generates without bias toward the safe or expected (judgment is deferred while ideas are still being made, so bold ideas are protected), and it selects without bias toward any lens, any generator, or the requester's preferred answer. The best idea wins on merit, by tournament, not by whose hand made it or who is asking.
 
