@@ -155,7 +155,8 @@ class TestLayout(unittest.TestCase):
         self.assertEqual(strays, ['README.md', 'Memory/.template/README.md', 'Memory/Context/README.md'])
 
     def test_inbox_drops_leave_the_kept_homes_alone(self) -> None:
-        for rel in ('Inbox/Inbox.md', 'Inbox/drop.pdf', 'Inbox/Reports/r.md', 'Inbox/Faculties/f.md', 'Inbox/sub/x.md'):
+        for rel in ('Inbox/Inbox.md', 'Inbox/README.md', 'Inbox/drop.pdf', 'Inbox/Reports/r.md', 'Inbox/Faculties/f.md',
+                    'Inbox/sub/x.md'):
             self.vault.write(rel, 'x')
         drops = [vault.rel(self.vault.root, p) for p in vault.inbox_drops(self.vault.root)]
         self.assertEqual(drops, ['Inbox/drop.pdf', 'Inbox/sub/x.md'])

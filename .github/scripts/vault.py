@@ -576,7 +576,8 @@ def inbox_drops(root: pathlib.Path) -> list[pathlib.Path]:
         if not path.is_file() or path.name.startswith('.'):
             continue
         parts = path.relative_to(inbox).parts
-        if parts[0] in INBOX_HELD or parts[0].startswith('.') or (len(parts) == 1 and path.name == 'Inbox.md'):
+        # The Inbox's own note and its GitHub page are the folder, never a drop.
+        if parts[0] in INBOX_HELD or parts[0].startswith('.') or (len(parts) == 1 and path.name in ('Inbox.md', 'README.md')):
             continue
         out.append(path)
     return out
