@@ -5,7 +5,9 @@ WHY THIS EXISTS. The identify skill decides which part of a person's Profile to
 ask about from this report, so a line counted wrongly sends the interview to
 the wrong place, and a change to the JSON breaks the skill outright. These
 score small Profiles in a throwaway vault, pin the JSON contract's keys, and
-read the real vault's report, which never writes.
+read the real vault's report, which never writes. In the blank template they
+also check that every facet still scores as scaffold, so a reworded facet
+fails here until the frozen table is refrozen.
 
 Run it:
 
@@ -102,6 +104,18 @@ class TestProfileCoverage(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         report = json.loads(result.stdout)
         self.assertEqual([f['facet'] for f in report['facets']][:3], ['Working Style', 'Biography', 'Personality'])
+
+    def test_the_blank_template_leads_with_working_style(self) -> None:
+        if not (fixtures.SCRIPTS.parents[1] / '.github' / 'TEMPLATE_INIT').is_file():
+            self.skipTest('only the template and a vault not yet initialised hold the blank facets')
+        result = fixtures.subprocess.run([sys.executable, str(fixtures.SCRIPTS / SCRIPT), '--json'],
+                                         capture_output=True, text=True, check=False)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        report = json.loads(result.stdout)
+        filled = [f['facet'] for f in report['facets'] if f['status'] != 'template']
+        self.assertEqual(filled, [], 'a blank facet scores as filled; in the template, refreeze SCAFFOLD '
+                                     'with --print-scaffold')
+        self.assertEqual(report['target'], 'Working Style')
 
 
 if __name__ == '__main__':

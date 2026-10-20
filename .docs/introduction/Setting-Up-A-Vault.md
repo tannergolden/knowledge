@@ -98,8 +98,8 @@ python3 .github/scripts/profile-coverage.py
   next. Every facet starts as a blank scaffold.
 - **Fill `Profile/` with `/identify`.** The skill reads that report, interviews you about one facet at
   a time, and writes only the proposals you approve; it opens Health, Finances, Values and
-  Relationships only when you choose to. Begin with `Profile/Working Style.md`, which tells every agent
-  how to work with you: name it ("let's fill in my Working Style") and the skill takes that facet.
+  Relationships only when you choose to. It starts with `Profile/Working Style.md`, which tells every
+  agent how to work with you.
 - **Drop files into `Inbox/`** to have them sorted into the vault, with your yes for each move.
 - **Turn on an offline reference work** if you want one:
   `Library/Reference & Encyclopedia/Reference & Encyclopedia.md` lists the sources, every one off at
