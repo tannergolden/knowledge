@@ -41,9 +41,10 @@ the folder holds.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                    | Purpose    |
-| :----------------------- | :--------- |
-| [`README.md`](README.md) | This file. |
+| Entry                                                | Purpose                                                                                                                                                                                                      |
+| :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`README.md`](README.md)                             | This file.                                                                                                                                                                                                   |
+| [`Working-In-The-Vault.md`](Working-In-The-Vault.md) | How to change this vault without breaking what it promises: what to read first, the rules its checks enforce, how commits and reviews work, and what to run before a push. Read it before your first change. |
 
 <!-- AUTO-INDEX:END -->
 

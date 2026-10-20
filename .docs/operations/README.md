@@ -43,9 +43,10 @@ the folder holds.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                    | Purpose    |
-| :----------------------- | :--------- |
-| [`README.md`](README.md) | This file. |
+| Entry                                                      | Purpose                                                                                                                                                                                                               |
+| :--------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Personal-Data-&-Secrets.md`](Personal-Data-&-Secrets.md) | Why a vault generated from this template stays private, how a secret is referenced without being stored, the scan that guards both, and what to do when something leaks. Read it before you touch anything sensitive. |
+| [`README.md`](README.md)                                   | This file.                                                                                                                                                                                                            |
 
 <!-- AUTO-INDEX:END -->
 

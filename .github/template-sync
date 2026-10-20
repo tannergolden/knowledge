@@ -102,11 +102,10 @@
 # --- The vault: kept current --------------------------------------------------
 # This template's own files. Every vault generated from it keeps them current:
 # the scripts, governance, skills, agents, folder notes and scaffolds.
+/.docs/introduction/Working-In-The-Vault.md
+/.docs/operations/Personal-Data-&-Secrets.md
 /.docs/technical/vault/**
-/.github/CODE_OF_CONDUCT.md
-/.github/CONTRIBUTING.md
 /.github/README.md
-/.github/SECURITY.md
 /.github/actions/**
 /.github/scripts/check-agents.py
 /.github/scripts/check-links.py

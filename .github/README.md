@@ -133,8 +133,10 @@ Work on the template follows [`tannergolden/standards`](https://github.com/tanne
 [Conventional Commits](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Conventional-Commits.md), the
 [branching strategy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Branching-Strategy-&-Workflow.md) and
 [pull request reviews](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Pull-Requests-&-Code-Reviews.md). Read
-[`CONTRIBUTING.md`](CONTRIBUTING.md) before you start, [`SECURITY.md`](SECURITY.md) before you touch
-anything sensitive, and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) for how we work together.
+[Working In The Vault](../.docs/introduction/Working-In-The-Vault.md) before you start, and
+[Personal Data & Secrets](../.docs/operations/Personal-Data-&-Secrets.md) before you touch anything
+sensitive. The code of conduct, the contributing guide and the security policy are the account's,
+which GitHub serves to every repository that keeps none of its own.
 
 ---
 
