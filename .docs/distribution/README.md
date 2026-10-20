@@ -47,9 +47,10 @@ the folder holds.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                    | Purpose    |
-| :----------------------- | :--------- |
-| [`README.md`](README.md) | This file. |
+| Entry                                                                | Purpose                                                                                                                                                                                                                                                                                                                                       |
+| :------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`How-A-Change-Reaches-A-Vault.md`](How-A-Change-Reaches-A-Vault.md) | The path a change takes from the private template, through tannergolden/knowledge and its releases, into a vault whose owner runs &#x1F504; Template Sync, what each section of the sync list means for a vault, and what a sync leaves alone. Read it before you add a file the template ships, cut a release, or merge a sync pull request. |
+| [`README.md`](README.md)                                             | This file.                                                                                                                                                                                                                                                                                                                                    |
 
 <!-- AUTO-INDEX:END -->
 

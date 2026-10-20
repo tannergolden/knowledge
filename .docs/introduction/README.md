@@ -41,10 +41,12 @@ the folder holds.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                                                | Purpose                                                                                                                                                                                                      |
-| :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`README.md`](README.md)                             | This file.                                                                                                                                                                                                   |
-| [`Working-In-The-Vault.md`](Working-In-The-Vault.md) | How to change this vault without breaking what it promises: what to read first, the rules its checks enforce, how commits and reviews work, and what to run before a push. Read it before your first change. |
+| Entry                                                | Purpose                                                                                                                                                                                                                                                                                          |
+| :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`How-The-Vault-Works.md`](How-The-Vault-Works.md)   | How the parts of a BRAIN vault fit together: the rules an agent reads and which wins, the shapes its notes take, how information moves between folders, the skills and their agent teams, and the machinery that checks and redraws it all. Read it first, before any other page here.           |
+| [`README.md`](README.md)                             | This file.                                                                                                                                                                                                                                                                                       |
+| [`Setting-Up-A-Vault.md`](Setting-Up-A-Vault.md)     | How to make your own vault from this template: generating it private, what initialisation changes and leaves alone, the settings its automation needs, the first session, and how it stays current. Read it when you generate a vault, and again if initialisation or a sync pull request fails. |
+| [`Working-In-The-Vault.md`](Working-In-The-Vault.md) | How to change this vault without breaking what it promises: what to read first, the rules its checks enforce, how commits and reviews work, and what to run before a push. Read it before your first change.                                                                                     |
 
 <!-- AUTO-INDEX:END -->
 

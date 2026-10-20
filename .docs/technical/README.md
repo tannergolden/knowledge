@@ -48,10 +48,11 @@ the folder holds.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                       | Purpose                                                                                                      |
-| :-------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| [`vault/`](vault/README.md) | The reference pages behind the vault's rules: its note schema, keywords, link topology and context assembly. |
-| [`README.md`](README.md)    | This file.                                                                                                   |
+| Entry                                  | Purpose                                                                                                                                                                                                                                                                                                      |
+| :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`vault/`](vault/README.md)            | The reference pages behind the vault's rules: its note schema, keywords and link topology, how context is assembled, and how a session runs and its summaries age.                                                                                                                                           |
+| [`README.md`](README.md)               | This file.                                                                                                                                                                                                                                                                                                   |
+| [`Vault-Scripts.md`](Vault-Scripts.md) | How the scripts in .github/scripts/ fit together: the library they share, the contract each one keeps, what each check fails on, what update-vault.py draws and where, how they are tested and where CI runs them, and what to do when one fails. Read it before you change a script, or when a check fails. |
 
 <!-- AUTO-INDEX:END -->
 

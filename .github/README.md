@@ -53,6 +53,9 @@ a custom agent all read it the same way.
       🔁 Intelligence Sync keep the universal rules in `AGENTS.md` up to date. Both open a pull
       request; neither changes anything you have not merged.
 
+[Setting Up A Vault](../.docs/introduction/Setting-Up-A-Vault.md) takes each step in turn, with the
+settings the automation needs.
+
 ---
 
 ## 🧭 How It Is Governed
@@ -61,7 +64,7 @@ a custom agent all read it the same way.
 | :-------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
 | [`AGENTS.md`](../AGENTS.md)                                           | The rules every agent follows: the universal Constitution from `tannergolden/intelligence`, then the vault's own |
 | Each folder's note                                                    | That folder's rules and procedures, read before working there                                                    |
-| [`.docs/technical/vault/`](../.docs/technical/vault/README.md)        | The note schema, the keywords, the link topology and how to assemble context                                     |
+| [`.docs/technical/vault/`](../.docs/technical/vault/README.md)        | The note schema, the keywords, the link topology, how to assemble context and how a session runs                 |
 | [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                          |
 
 ---
@@ -81,6 +84,8 @@ a custom agent all read it the same way.
 ```
 
 Each top folder has a `README.md` for GitHub and a note named after it for the AI.
+[How The Vault Works](../.docs/introduction/How-The-Vault-Works.md) says how the parts fit together,
+and the [Glossary](../.docs/references/Glossary.md) defines the vault's own terms.
 
 ---
 
@@ -98,6 +103,8 @@ python3 .github/scripts/lint-notes.py X   # one note against the schema
 ```
 
 `python3 .github/scripts/session.py start` lists what to read at the start of a session.
+[Vault Scripts](../.docs/technical/Vault-Scripts.md) says how the scripts fit together, and what to
+do when one fails.
 
 ---
 
@@ -135,8 +142,10 @@ Work on the template follows [`tannergolden/standards`](https://github.com/tanne
 [pull request reviews](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Pull-Requests-&-Code-Reviews.md). Read
 [Working In The Vault](../.docs/introduction/Working-In-The-Vault.md) before you start, and
 [Personal Data & Secrets](../.docs/operations/Personal-Data-&-Secrets.md) before you touch anything
-sensitive. The code of conduct, the contributing guide and the security policy are the account's,
-which GitHub serves to every repository that keeps none of its own.
+sensitive. [How A Change Reaches A Vault](../.docs/distribution/How-A-Change-Reaches-A-Vault.md)
+says what to do when you add a file the template ships. The code of conduct, the contributing guide
+and the security policy are the account's, which GitHub serves to every repository that keeps none
+of its own.
 
 ---
 

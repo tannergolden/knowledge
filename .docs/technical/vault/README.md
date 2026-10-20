@@ -1,6 +1,6 @@
 <!--
 title: '🧠 VAULT REFERENCE'
-description: 'The reference pages behind the vault''s rules: its note schema, keywords, link topology and context assembly.'
+description: 'The reference pages behind the vault''s rules: its note schema, keywords and link topology, how context is assembled, and how a session runs and its summaries age.'
 type: index
 keywords: [schema]
 -->
@@ -33,13 +33,14 @@ walk skips this folder, and the vault's checks read the same rules from `.github
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                                        | Purpose                                                                                                                     |
-| :------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| [`Context-Assembly.md`](Context-Assembly.md) | How an agent assembles context from the vault so nothing it must remember sits where models forget.                         |
-| [`Keywords.md`](Keywords.md)                 | How a note is found without tags: its path, its title and a few keywords, and the controlled tokens the Library filters on. |
-| [`Link-Topology.md`](Link-Topology.md)       | Which notes may wikilink which, so the vault's graph mirrors its folder tree and never loops.                               |
-| [`Note-Schema.md`](Note-Schema.md)           | The frontmatter every note in the vault carries, field by field, and how a change to it reaches every note.                 |
-| [`README.md`](README.md)                     | This file.                                                                                                                  |
+| Entry                                                                  | Purpose                                                                                                                                                                                                                                                                                                                |
+| :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Context-Assembly.md`](Context-Assembly.md)                           | How an agent assembles context from the vault so nothing it must remember sits where models forget.                                                                                                                                                                                                                    |
+| [`Keywords.md`](Keywords.md)                                           | How a note is found without tags: its path, its title and a few keywords, and the controlled tokens the Library filters on.                                                                                                                                                                                            |
+| [`Link-Topology.md`](Link-Topology.md)                                 | Which notes may wikilink which, so the vault's graph mirrors its folder tree and never loops.                                                                                                                                                                                                                          |
+| [`Note-Schema.md`](Note-Schema.md)                                     | The frontmatter every note in the vault carries, field by field, and how a change to it reaches every note.                                                                                                                                                                                                            |
+| [`README.md`](README.md)                                               | This file.                                                                                                                                                                                                                                                                                                             |
+| [`Sessions-&-The-Memory-Cascade.md`](Sessions-&-The-Memory-Cascade.md) | What an agent does from a session's first read to its last commit, which session helper serves each step and what each one reads and prints, and how update-vault.py moves summaries from Current to Recent to Archive. Read it when you run the helpers, call one from your own tooling, or change how summaries age. |
 
 <!-- AUTO-INDEX:END -->
 

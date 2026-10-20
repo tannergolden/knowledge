@@ -41,9 +41,10 @@ the folder holds.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                    | Purpose    |
-| :----------------------- | :--------- |
-| [`README.md`](README.md) | This file. |
+| Entry                        | Purpose                                                                                                                                                                                                                                                                  |
+| :--------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Glossary.md`](Glossary.md) | The vault's own terms, from folder note and scaffold to held, faculty and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account's shared engineering terms are in the standards' glossary. |
+| [`README.md`](README.md)     | This file.                                                                                                                                                                                                                                                               |
 
 <!-- AUTO-INDEX:END -->
 
