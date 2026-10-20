@@ -27,6 +27,8 @@ holds the vault's six skills (board, discover, editorial, identify, research and
 `Data/` holds the catalogs `update-vault.py` generates. The vault's checks and generators live in
 `.github/scripts/`, beside the CI that runs them.
 
+---
+
 ## 🚀 How To Use It
 
 - **Add a setting** as a note here, such as `Persona.md`, and the AI follows it over its own

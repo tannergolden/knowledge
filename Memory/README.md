@@ -27,6 +27,8 @@ happened and what is still open, `Dates.md` for what is due, `Context/` for sess
 age from Current to Recent to Archive, and `Events/`, `Entities/`, `Decisions/` and `Insights/` for
 what lasts. Who you are is not here: that is `Profile/`.
 
+---
+
 ## 🚀 How To Use It
 
 - **Read the Log** to see what the AI has recorded and what is still open.

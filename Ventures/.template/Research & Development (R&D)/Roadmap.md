@@ -65,7 +65,7 @@ keywords: ["product roadmap", "active development", "upcoming work", "feature pl
 
 ## Product Vision (Long-Term)
 
-<!-- Where is this product or service headed in 2–3 years? What does the fully realized version look like? -->
+<!-- Where is this product or service headed in 2 to 3 years? What does the fully realized version look like? -->
 
 
 ---

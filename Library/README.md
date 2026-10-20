@@ -27,6 +27,8 @@ library is, so the AI can draw on it to answer and reason. It holds nothing pers
 lives in `Profile/`, what happened in `Memory/`, and your companies in `Ventures/`. Every holding is
 tagged by how long it stays true, and nothing with less than five years of life is filed here.
 
+---
+
 ## 🚀 How To Use It
 
 - **Add a source through `Inbox/`.** The AI classifies it, checks its freshness and files it in

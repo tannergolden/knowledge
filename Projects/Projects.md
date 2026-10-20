@@ -82,7 +82,7 @@ Subfolders are for additional content only - assets, code, drafts, research file
 **When to assess subfolder needs:**
 - When creating a new project folder - if the project description makes it obvious the content will be varied (code + assets, writing + research, etc.), propose subfolders upfront
 - When the user adds a new file to a project - assess whether it fits the existing structure or signals a need for a dedicated subfolder
-- When a project folder accumulates more than 6–8 loose files - suggest consolidating into subfolders
+- When a project folder accumulates more than 6 to 8 loose files - suggest consolidating into subfolders
 
 **How to propose (always ask before creating):**
 > *"This project looks like it'll have [code/assets/research/etc.]. Want me to add a [Code/Assets/Research/] subfolder to keep things organized?"*

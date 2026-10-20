@@ -25,5 +25,5 @@ keywords: ["chronological record", "sessions", "milestones", "decisions", "ventu
 ## Log
 
 <!-- Format: ### YYYY-MM-DD - [Brief title of session/event]
-Content: 2–5 bullet points summarizing what happened. -->
+Content: 2 to 5 bullet points summarizing what happened. -->
 

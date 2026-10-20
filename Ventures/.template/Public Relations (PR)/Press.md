@@ -44,7 +44,7 @@ keywords: ["media contacts", "coverage", "press kit", "pr strategy", "public rel
 
 **Boilerplate (for "About [Company]" at end of press releases):**
 
-<!-- Standard 3–5 sentence company description used at the bottom of every release. -->
+<!-- Standard 3 to 5 sentence company description used at the bottom of every release. -->
 
 ---
 

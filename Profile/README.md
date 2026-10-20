@@ -28,6 +28,8 @@ and `Working Style.md`, which tells the AI how to work with you and is read at t
 session. In the public template every facet is a blank scaffold; in your own vault, which stays
 private, they hold the most personal notes you have.
 
+---
+
 ## 🚀 How To Use It
 
 - **Fill it with the `/identify` skill.** It interviews you, writes what you confirm, and marks

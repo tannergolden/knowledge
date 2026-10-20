@@ -18,7 +18,7 @@ keywords: ["catalog", "product catalog", "positioning", "pricing", "product stat
 **Launch Date:**
 
 **Description:**
-<!-- What it is and what it does in 2–4 sentences. -->
+<!-- What it is and what it does in 2 to 4 sentences. -->
 
 **Value Proposition:**
 <!-- Why customers buy it - the outcome or problem solved. -->

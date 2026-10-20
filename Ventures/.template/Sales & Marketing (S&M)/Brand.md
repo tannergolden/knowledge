@@ -21,7 +21,7 @@ keywords: ["brand identity", "voice and tone", "messaging", "visual identity", "
 
 ## Personality
 
-<!-- How would you describe this brand if it were a person? Pick 4–6 traits. -->
+<!-- How would you describe this brand if it were a person? Pick 4 to 6 traits. -->
 
 | Trait | What It Means in Practice |
 |-------|--------------------------|
@@ -50,7 +50,7 @@ keywords: ["brand identity", "voice and tone", "messaging", "visual identity", "
 
 ## Messaging Pillars
 
-<!-- 3–5 core things we always communicate. Every piece of content should connect to at least one. -->
+<!-- 3 to 5 core things we always communicate. Every piece of content should connect to at least one. -->
 
 1. **[Pillar 1]** -
 2. **[Pillar 2]** -

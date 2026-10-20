@@ -27,6 +27,8 @@ work, learning goals. Each project is a folder copied from `.template/`, with an
 its goal and status, a `Log.md` of progress, `Notes.md` and `Resources.md`. Work for an employer, a
 client or a company of yours belongs in `Ventures/`.
 
+---
+
 ## 🚀 How To Use It
 
 - **Mention a new project.** The AI asks whether to create its folder, and fills it in as you

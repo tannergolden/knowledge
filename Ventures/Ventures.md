@@ -30,6 +30,9 @@ One subfolder of `Ventures/` is not a venture. [[Ventures/Agent Resources (AR)/A
 
 Each venture follows the template defined in `Ventures/.template/`:
 
+<details>
+<summary>The venture template, folder by folder</summary>
+
 ```bash
 Ventures/
 └── Company-Name/
@@ -83,6 +86,8 @@ Ventures/
         └── Metrics.md                           KPIs, dashboards, data sources, reporting cadence
 ```
 
+</details>
+
 Subfolder names should be short and hyphenated (e.g., `Golden-Media`, `Acme-Corp`). When creating a new venture, copy `Ventures/.template/` and **give each copied file its real `title`, `description` and `type`** (replace the `[Company]` placeholder with the venture's name, and `template` with the type the copy is), so the catalog stays clean; the `board` skill does this in its found mode.
 
 The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the governance record; `Cadence.md`, the operating rhythm) and, in Finance, a forward `Financial-Model.md` and a real `Cap-Table.md`. The Agent Resources (AR) workforce produces a venture's deliverables by **composing** content for these files and returning it; the `board` skill is the **sole writer** that persists it, behind its write-gate (AR drafts internal files autonomously; money, contracts, external comms, and deletes need the Founder). See [[Ventures/Agent Resources (AR)/Agent Resources (AR)|Agent Resources (AR)]].
@@ -134,7 +139,7 @@ marketing, copywriting, messaging, visual identity, tone of voice, target audien
 **`Ventures/.template/Goals.md` builds from conversations about:**
 strategic priorities, OKRs, targets, milestones, north star metrics, and any session where the user discusses what the company is trying to accomplish this quarter or year.
 
-**`Ventures/.template/Log.md` is updated by the AI** at the end of any session where meaningful work was done on the venture - decisions made, milestones hit, pivots, hires, launches. Keep entries concise: date + 2–5 bullet points. Do not log routine Q&A.
+**`Ventures/.template/Log.md` is updated by the AI** at the end of any session where meaningful work was done on the venture - decisions made, milestones hit, pivots, hires, launches. Keep entries concise: date + 2 to 5 bullet points. Do not log routine Q&A.
 
 **Other department files** (`Ventures/.template/Human Resources (HR)/Hierarchy.md`, `Ventures/.template/Client Experience (CX)/Clients.md`, `Ventures/.template/Sales & Marketing (S&M)/Products.md`, `Ventures/.template/Sales & Marketing (S&M)/Services.md`, `Ventures/.template/Finance & Accounting (F&A)/Financials.md`, `Ventures/.template/Information Technology (IT)/Stack.md`, `Ventures/.template/Business Intelligence (BI)/Metrics.md`, `Ventures/.template/Research & Development (R&D)/Roadmap.md`, `Ventures/.template/Operations & Logistics (O&L)/Operations.md`, `Ventures/.template/Legal & Compliance (L&C)/Compliance.md`, `Ventures/.template/Public Relations (PR)/Press.md`, `Ventures/.template/Quality Assurance (QA)/Standards.md`) follow the same pattern - update them when relevant information surfaces, always with user confirmation.
 

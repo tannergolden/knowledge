@@ -17,7 +17,7 @@ keywords: ["services catalog", "scope", "pricing", "delivery process", "capacity
 **Launch Date:**
 
 **Description:**
-<!-- What the service is and how it's delivered in 2–4 sentences. -->
+<!-- What the service is and how it's delivered in 2 to 4 sentences. -->
 
 **Value Proposition:**
 <!-- The outcome the client is actually buying - the transformation, not the deliverable. -->

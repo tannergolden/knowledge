@@ -27,6 +27,8 @@ _One folder per company, every department in its place._
 Legal & Compliance. `Agent Resources (AR)/` is the workforce of specialist agents every venture
 shares, which the `board` skill runs.
 
+---
+
 ## 🚀 How To Use It
 
 - **Mention a company.** The AI checks for its folder, offers to create one, and builds up its

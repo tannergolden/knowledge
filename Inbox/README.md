@@ -28,6 +28,8 @@ name for each file. Four sub-homes here are held rather than sorted: `Reports/` 
 the finished output of the research and visualize skills, `Ideas/` keeps the discovery skill's idea
 pool, and `Faculties/` keeps the standing agent teams.
 
+---
+
 ## 🚀 How To Use It
 
 - **Drop files at the root of `Inbox/`**, in any format, organised or not.

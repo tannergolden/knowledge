@@ -26,7 +26,7 @@ keywords: ["company profile", "business model", "market", "strategy", "operating
 
 ## What It Does
 
-<!-- 2–4 sentence plain-language description of what this company does and who it serves. -->
+<!-- 2 to 4 sentence plain-language description of what this company does and who it serves. -->
 
 
 ---
@@ -111,7 +111,7 @@ keywords: ["company profile", "business model", "market", "strategy", "operating
 
 ## Current Strategic Priorities
 
-<!-- Top 3–5 things the company is focused on right now. Update each quarter. -->
+<!-- Top 3 to 5 things the company is focused on right now. Update each quarter. -->
 
 1.
 2.
