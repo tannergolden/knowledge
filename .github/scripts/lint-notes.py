@@ -2,7 +2,7 @@
 """Check each note's frontmatter and naming against the vault's schema.
 
 WHY THIS EXISTS. Every note in the vault opens with the account's hidden
-frontmatter (.docs/vault/Note-Schema.md): a title, a description and a type,
+frontmatter (.docs/technical/vault/Note-Schema.md): a title, a description and a type,
 with keywords and a status where they say something. Retrieval, the catalog
 and every agent that routes by a note's head read those fields, so a note
 that drifts from the schema misleads every one of them, quietly. This is the

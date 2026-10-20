@@ -62,4 +62,4 @@ Aligned the skill to the 2026-07-02 workforce lean build. Four AR departments di
 Moved the write gate and the preflight off the retired engine: an existing file's last state is committed before an edit (git history is the backup, so the snapshot step is gone), the dedup check is a vault search, and every write ends with `.github/scripts/update-vault.py` and `check-vault.py` instead of `sync` and `health`. The archive now carries the Administration team, vendored when it is built.
 
 <!-- This is a BRAIN documentation node: it carries the vault's note schema above
-     (.docs/vault/Note-Schema.md), not the Agent Skills schema. -->
+     (.docs/technical/vault/Note-Schema.md), not the Agent Skills schema. -->

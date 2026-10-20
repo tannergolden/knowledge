@@ -70,7 +70,7 @@ conventions (commits, branches, releases, document styling, secrets) belong to
 1. **Keep the Constitution and Instructions below `AGENTS.md`**, as vault documents an agent reads
    after the root file.
 2. **Dissolve them**: the universal block and the vault's own rules in `AGENTS.md`, each folder's
-   rules in a Rules section of its note, and the long reference parts in `.docs/vault/`.
+   rules in a Rules section of its note, and the long reference parts in `.docs/technical/vault/`.
 3. **One `AGENTS.md` per folder**, which Claude Code loads on its own when work reaches a folder.
 
 ---
@@ -95,18 +95,18 @@ now reads about 14 KB before work: the 4.5 KB universal block and the vault's ow
 | Constitution 1.2, 2.4, 2.5, 2.6, 3.6, 9.6, 9.7         | `AGENTS.md`, Conventions                                                      |
 | Constitution 2.1-2.3, 3.1, 3.4, 3.8, VIII              | `AGENTS.md`, Ask first                                                        |
 | Constitution 2.7, 4.1-4.4, 1.5                         | `Profile/Profile.md` and `Memory/Memory.md`, Rules; SEC-003                   |
-| Constitution 3.3, 3.5; Instructions 4.2, 8             | `.docs/vault/Note-Schema.md`                                                  |
-| Constitution 3.7; Instructions 12                      | `.docs/vault/Link-Topology.md`                                                |
+| Constitution 3.3, 3.5; Instructions 4.2, 8             | `.docs/technical/vault/Note-Schema.md`                                        |
+| Constitution 3.7; Instructions 12                      | `.docs/technical/vault/Link-Topology.md`                                      |
 | Constitution 5.1, 5.2; Instructions 4.3-4.5, 9         | `AGENTS.md`, Start here and Commands                                          |
 | Constitution 5.3; Instructions 7                       | `Inbox/Inbox.md`, Rules                                                       |
 | Constitution 5.6                                       | STD-001 and `tannergolden/standards`                                          |
 | Constitution VI                                        | `Library/Library.md`, Rules                                                   |
-| Constitution VII                                       | `.docs/vault/Tag-Vocabulary.md`                                               |
+| Constitution VII                                       | `.docs/technical/vault/Tag-Vocabulary.md`                                     |
 | Constitution 9.1, 9.2, 9.5, X                          | DOC-002, DOC-003 (with standards' Plain Words), COM-005, COM-004              |
 | Constitution 9.3                                       | An owner's own `Profile/Working Style.md`, never the template                 |
 | Constitution 9.4                                       | `System/System.md`, Reports On The Vault                                      |
 | Instructions 1, 2, 5, 6, 11, 13                        | `.github/README.md`, `AGENTS.md`, `Profile/Profile.md` and `Memory/Memory.md` |
-| Instructions 14                                        | `.docs/vault/Context-Assembly.md`                                             |
+| Instructions 14                                        | `.docs/technical/vault/Context-Assembly.md`                                   |
 | `Information.md`                                       | `.github/README.md`                                                           |
 | `CLAUDE.md` and the three hook digests                 | Removed: Claude Code reads `AGENTS.md` itself                                 |
 
@@ -142,7 +142,7 @@ Every amendment the deleted files recorded stays in the git history.
 ## 🔗 Traceability & Links
 
 - [`AGENTS.md`](../../AGENTS.md), the vault's rules
-- [Vault reference](../vault/README.md): the schema, the tag vocabulary, the link topology and
+- [Vault reference](../technical/vault/README.md): the schema, the tag vocabulary, the link topology and
   context assembly
 - The universal rules:
   [`CONSTITUTION.md` in tannergolden/intelligence](https://github.com/tannergolden/intelligence/blob/Development/CONSTITUTION.md)

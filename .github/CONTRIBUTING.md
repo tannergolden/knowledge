@@ -26,7 +26,7 @@ _Read the rules, keep the schema, commit the standard way._
    then the vault's own. People follow them too.
 2. The note of each folder you change, named after the folder (`Memory/Memory.md`): its Rules come
    first.
-3. [`.docs/vault/`](../.docs/vault/README.md): the note schema, the keywords and the link
+3. [`.docs/technical/vault/`](../.docs/technical/vault/README.md): the note schema, the keywords and the link
    topology the checks hold every note to.
 
 ---

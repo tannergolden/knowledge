@@ -26,7 +26,7 @@ from typing import Iterator
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 IN_ACTIONS = os.environ.get('GITHUB_ACTIONS') == 'true'
 
-# ── The note schema (.docs/vault/Note-Schema.md) ──
+# ── The note schema (.docs/technical/vault/Note-Schema.md) ──
 #
 # The account's frontmatter standard, hidden in an HTML comment: a title, a
 # description and a type, with keywords and a status where they say

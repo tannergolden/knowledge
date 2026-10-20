@@ -37,7 +37,7 @@ from a low-attention position.
   [Note Schema](Note-Schema.md) to pull only what the task turns on.
 - **Prefer many small reads to one large one.** Read the section you need, not the whole file.
 - **Never assemble a full-vault context**, even for a fresh agent. Orientation comes from
-  [`AGENTS.md`](../../AGENTS.md) and its start-of-session list; everything else loads on demand.
+  [`AGENTS.md`](../../../AGENTS.md) and its start-of-session list; everything else loads on demand.
 
 ---
 

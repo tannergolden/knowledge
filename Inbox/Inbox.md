@@ -177,12 +177,12 @@ Examples: `my_report_v2_FINAL(1).pdf` → `My Report.pdf`, `export_2024_03_07.cs
 
 **Text / Markdown files:**
 
-- Add the hidden frontmatter (`.docs/vault/Note-Schema.md`) before moving
+- Add the hidden frontmatter (`.docs/technical/vault/Note-Schema.md`) before moving
 - Fill in `title`, `description` and `type`, with `keywords` where they help
 
 **Binary / Non-Editable files (images, PDFs, audio, video, scripts, etc.):**
 
-These cannot embed frontmatter, so they carry none (`.docs/vault/Note-Schema.md`): the folder they are filed into places them, and that folder's note describes them. Give each a clean, descriptive name before it moves, so its subject is plain from the name, and keep anything sensitive out of the name.
+These cannot embed frontmatter, so they carry none (`.docs/technical/vault/Note-Schema.md`): the folder they are filed into places them, and that folder's note describes them. Give each a clean, descriptive name before it moves, so its subject is plain from the name, and keep anything sensitive out of the name.
 
 ### 6. Ambiguous File Handling
 

@@ -60,6 +60,12 @@
 
 /.docs/README.md
 /.docs/adrs/README.md
+/.docs/distribution/README.md
+/.docs/introduction/README.md
+/.docs/library/README.md
+/.docs/operations/README.md
+/.docs/references/README.md
+/.docs/technical/README.md
 /.docs/templates/ADR.md
 /.docs/templates/Communication.md
 /.docs/templates/Implementation-Plan.md
@@ -96,7 +102,7 @@
 # --- The vault: kept current --------------------------------------------------
 # This template's own files. Every vault generated from it keeps them current:
 # the scripts, governance, skills, agents, folder notes and scaffolds.
-/.docs/vault/**
+/.docs/technical/vault/**
 /.github/CODE_OF_CONDUCT.md
 /.github/CONTRIBUTING.md
 /.github/README.md

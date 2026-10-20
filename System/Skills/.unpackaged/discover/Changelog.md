@@ -55,4 +55,4 @@ _None yet._
 Moved the preflight off the retired engine: an existing file's last state is committed before an edit, since git history is the backup. The archive now carries the Discovery team, vendored when it is built.
 
 <!-- This is a BRAIN documentation node: it carries the vault's note schema above
-     (.docs/vault/Note-Schema.md), not the Agent Skills schema. -->
+     (.docs/technical/vault/Note-Schema.md), not the Agent Skills schema. -->

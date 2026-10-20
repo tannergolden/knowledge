@@ -101,7 +101,7 @@ Capture for recall first, then prune: compaction loss is permanent, so keep verb
 
 ## Cross-referencing
 
-Entries cross-reference with a plain-path `Related:` field (content files carry no wikilinks; `.docs/vault/Link-Topology.md`):
+Entries cross-reference with a plain-path `Related:` field (content files carry no wikilinks; `.docs/technical/vault/Link-Topology.md`):
 
 ```txt
 Related: Memory/Decisions/2026-05-switched-to-llc.md

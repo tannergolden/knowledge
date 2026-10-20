@@ -2,7 +2,7 @@
 """Check the wikilink graph: every link resolves, and links follow the hub topology.
 
 WHY THIS EXISTS. The vault is a knowledge graph of wikilinks, and its links
-follow one shape (.docs/vault/Link-Topology.md). A folder's own note links
+follow one shape (.docs/technical/vault/Link-Topology.md). A folder's own note links
 the files in its folder and the notes of its immediate subfolders, and every
 other note links nothing and names files by plain path. Links
 flow downhill and never back. A broken link is a lie in the graph, and a link

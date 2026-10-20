@@ -29,7 +29,7 @@ standard,
 in the Document Styling guide, so a note reads the same way as every document in every repository.
 
 A note is any `.md` file in the seven top folders, their `.template/` scaffolds included. The
-`README.md` pages, [`AGENTS.md`](../../AGENTS.md) and everything under a hidden folder are not
+`README.md` pages, [`AGENTS.md`](../../../AGENTS.md) and everything under a hidden folder are not
 notes; they carry the same hidden block, as the styling guide asks of every page.
 
 `.github/scripts/lint-notes.py` checks every note against this page. Run it on a note after
@@ -119,7 +119,7 @@ The fields narrow a search before any note is opened:
 | Anything under `Profile/`          | Personal data about your user: surface it with discretion           |
 
 The notes an agent reads at the start of every session are `STARTUP` in `.github/scripts/vault.py`,
-listed in [`AGENTS.md`](../../AGENTS.md), Start here. `System/Data/catalog.ndjson` holds every
+listed in [`AGENTS.md`](../../../AGENTS.md), Start here. `System/Data/catalog.ndjson` holds every
 note's path, title, type, keywords, description and status, one line each, for a search that reads
 no note at all.
 

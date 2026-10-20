@@ -125,7 +125,7 @@ The predictable seams, each with the rule that decides them:
 
 ## Facets and controlled keywords
 
-Five orthogonal facets. Subject is the folder; freshness and the rest live in the `keywords` field (`.docs/vault/Keywords.md`) as **slash-namespaced tokens**, so an AI or a script can filter by exact match. Freshness is required on every holding (Rules, above); use the others when they add retrieval value:
+Five orthogonal facets. Subject is the folder; freshness and the rest live in the `keywords` field (`.docs/technical/vault/Keywords.md`) as **slash-namespaced tokens**, so an AI or a script can filter by exact match. Freshness is required on every holding (Rules, above); use the others when they add retrieval value:
 
 - **Freshness:** `freshness/timeless`, `freshness/enduring`, `freshness/current`
 
@@ -154,7 +154,7 @@ The named hierarchy stays shallow; specificity lives in facets, not depth.
 
 Every holding carries a catalog record, with no new brain-wide frontmatter fields:
 
-- **A synthesized note** is already a complete record under the standard schema (`.docs/vault/Note-Schema.md`): `title`, `description`, `type: reference`, and `keywords` with its facet tokens. Its path is its shelf mark, and git keeps its dates. Template: `.template/Reference Note.md`.
+- **A synthesized note** is already a complete record under the standard schema (`.docs/technical/vault/Note-Schema.md`): `title`, `description`, `type: reference`, and `keywords` with its facet tokens. Its path is its shelf mark, and git keeps its dates. Template: `.template/Reference Note.md`.
 - **A source document** (an external book, paper, or media) gets a companion **catalog card** note; the work's own bibliography lives in the card body. Template: `.template/Source Catalog Card.md`.
 
 ## Acquisition, weeding, and finding aids
@@ -173,4 +173,4 @@ No enumerated scheme is provably complete; it is a snapshot that must be revised
 
 ## Templates
 
-`.template/` holds the cataloging templates (no wikilinks; `.docs/vault/Link-Topology.md`): `Reference Note.md` (the standard holding), `Source Catalog Card.md` (an external source), and `Division.md` (a division folder doc, added under literary warrant).
+`.template/` holds the cataloging templates (no wikilinks; `.docs/technical/vault/Link-Topology.md`): `Reference Note.md` (the standard holding), `Source Catalog Card.md` (an external source), and `Division.md` (a division folder doc, added under literary warrant).

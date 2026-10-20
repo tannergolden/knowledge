@@ -28,7 +28,7 @@ The lead frames the prompt as a generative brief and assigns distinct lenses. Th
 
 ## The idea method (how the team works)
 
-The idea conventions are the team's method, regardless of where an idea is delivered. Idea records live in the held idea pool at `Inbox/Ideas/` (see `Inbox/Ideas/Ideas.md`), and the team is dispatched by the `discover` skill. One idea is one Markdown file, `type: record`, whose hidden frontmatter adds these fields of its own (`.docs/vault/Note-Schema.md`, Fields Of A Kind), from the `discover` skill's `templates/idea-record.md`:
+The idea conventions are the team's method, regardless of where an idea is delivered. Idea records live in the held idea pool at `Inbox/Ideas/` (see `Inbox/Ideas/Ideas.md`), and the team is dispatched by the `discover` skill. One idea is one Markdown file, `type: record`, whose hidden frontmatter adds these fields of its own (`.docs/technical/vault/Note-Schema.md`, Fields Of A Kind), from the `discover` skill's `templates/idea-record.md`:
 
 ```yaml
 title: "Voice-first inbox triage"

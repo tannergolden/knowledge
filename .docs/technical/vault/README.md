@@ -22,7 +22,7 @@ _The rules say what to do. These pages say exactly how._
 
 ## 💡 What This Folder Is For
 
-[`AGENTS.md`](../../AGENTS.md) holds the vault's rules in one line each, and each folder note holds
+[`AGENTS.md`](../../../AGENTS.md) holds the vault's rules in one line each, and each folder note holds
 its folder's. The long reference parts those lines point to live here, so an agent reads them when
 a task needs them rather than at the start of every session. They are pages, not notes: the vault's
 walk skips this folder, and the vault's checks read the same rules from `.github/scripts/vault.py`.

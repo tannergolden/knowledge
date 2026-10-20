@@ -69,4 +69,4 @@ Moved the preflight off the retired engine: an existing file's last state is com
 Audit fixes to the format references found by a fresh-context review: corrected the Chart.js bundle figure in interactive.md (full bundle is comparable to D3, not markedly smaller), added a browser-support caveat and a `currentColor` fallback for `context-stroke` markers in svg-craft.md, and clarified that `orient=auto-start-reverse` needs the marker referenced on both ends.
 
 <!-- This is a BRAIN documentation node: it carries the vault's note schema above
-     (.docs/vault/Note-Schema.md), not the Agent Skills schema. -->
+     (.docs/technical/vault/Note-Schema.md), not the Agent Skills schema. -->

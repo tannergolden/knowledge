@@ -13,7 +13,7 @@ FILING INSTRUCTIONS (a facet's namesake overview doc):
 - Frontmatter: set type "reference", and give the copy its real title and description.
 - Save it as Profile/[Facet Name]/[Facet Name].md.
 - Give the H1 a fitting leading emoji (`AGENTS.md`, Conventions) and replace [Facet Name].
-- One H2 per independently-answerable fact; restate the subject in the heading; put discrete facts in tables/lists. NO wikilinks (`.docs/vault/Link-Topology.md`) - reference by plain path.
+- One H2 per independently-answerable fact; restate the subject in the heading; put discrete facts in tables/lists. NO wikilinks (`.docs/technical/vault/Link-Topology.md`) - reference by plain path.
 - Mark AI-inferred facts with the provenance comment (see Profile.md). Keep the most private facts terse.
 -->
 

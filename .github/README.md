@@ -61,7 +61,7 @@ a custom agent all read it the same way.
 | :-------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
 | [`AGENTS.md`](../AGENTS.md)                                           | The rules every agent follows: the universal Constitution from `tannergolden/intelligence`, then the vault's own |
 | Each folder's note                                                    | That folder's rules and procedures, read before working there                                                    |
-| [`.docs/vault/`](../.docs/vault/README.md)                            | The note schema, the keywords, the link topology and how to assemble context                                     |
+| [`.docs/technical/vault/`](../.docs/technical/vault/README.md)        | The note schema, the keywords, the link topology and how to assemble context                                     |
 | [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                          |
 
 ---

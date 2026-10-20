@@ -12,7 +12,7 @@ FILING INSTRUCTIONS:
 - Save into Memory/Events/ named YYYY-MM-DD-slug.md (the date of the event).
 - In frontmatter: set type "record", and give the copy its real title and description.
 - Give the H1 a fitting emoji and replace [Event] with a short title.
-- Keep it atomic: one happening per file. NO wikilinks (`.docs/vault/Link-Topology.md`); reference by plain path.
+- Keep it atomic: one happening per file. NO wikilinks (`.docs/technical/vault/Link-Topology.md`); reference by plain path.
 -->
 
 ## What happened

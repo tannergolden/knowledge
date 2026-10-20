@@ -85,9 +85,9 @@ keywords and a status. Option 3 doubles every note's head, and the two copies dr
 
 | Was                                                                                  | Is now                                                                                              |
 | :----------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| The 15-field `---` block in two bands                                                | The hidden block: `title`, `description`, `type`, `keywords`, `status` (`.docs/vault/Note-Schema.md`) |
+| The 15-field `---` block in two bands                                                | The hidden block: `title`, `description`, `type`, `keywords`, `status` (`.docs/technical/vault/Note-Schema.md`) |
 | Nine File Role types                                                                 | Six types: `index`, `guide`, `standard`, `reference`, `record`, `template`                          |
-| The closed tag vocabulary                                                            | The path, and a few keywords (`.docs/vault/Keywords.md`)                                            |
+| The closed tag vocabulary                                                            | The path, and a few keywords (`.docs/technical/vault/Keywords.md`)                                            |
 | The `startup` and `sensitive` tags                                                   | `STARTUP` in `.github/scripts/vault.py`, and the `Profile/` path                                    |
 | Freshness tags                                                                       | `freshness/` keyword tokens, on Library holdings                                                    |
 | `aliases`, `created`, `updated`, `folder`, `layer`, `policy`, `author`, `path`, `id` | Retired: the path and git say them, and a record may still keep a field of its own kind              |
@@ -125,7 +125,7 @@ keywords and a status. Option 3 doubles every note's head, and the two copies dr
 
 ## 🔗 Traceability & Links
 
-- [Note schema](../vault/Note-Schema.md) and [keywords](../vault/Keywords.md)
+- [Note schema](../technical/vault/Note-Schema.md) and [keywords](../technical/vault/Keywords.md)
 - [ADR-0001](ADR-0001-AGENTS-Holds-The-Vaults-Rules.md), whose note-format consequence this
   replaces
 - The account's standard:

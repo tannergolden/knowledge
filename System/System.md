@@ -58,8 +58,8 @@ The vault's checks and generators are scripts in `.github/scripts/`, run from th
 | Script | What it does |
 |--------|--------------|
 | `check-vault.py` | Runs every check below, as CI does. The one command to run before a commit. |
-| `lint-notes.py` | Every note's frontmatter and naming against the schema (`.docs/vault/Note-Schema.md`) and its keywords (`.docs/vault/Keywords.md`). |
-| `check-links.py` | The wikilink graph: every link resolves and follows the hub topology (`.docs/vault/Link-Topology.md`). |
+| `lint-notes.py` | Every note's frontmatter and naming against the schema (`.docs/technical/vault/Note-Schema.md`) and its keywords (`.docs/technical/vault/Keywords.md`). |
+| `check-links.py` | The wikilink graph: every link resolves and follows the hub topology (`.docs/technical/vault/Link-Topology.md`). |
 | `check-skills.py` | Each skill source against the Agent Skills format and the layout in `Skills/Skills.md`. |
 | `check-agents.py` | Each agent spec and team roster, and one namespace across every home. |
 | `scan-pii.py` | Social Security and card numbers in tracked files. Keys and tokens are the gitleaks scan's job in `checks.yml`. |

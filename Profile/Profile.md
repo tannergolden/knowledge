@@ -25,7 +25,7 @@ These govern every write to `Profile/`, and every write to `Memory/` that touche
 
 ## Frontmatter here
 
-The facet files describing the user carry `type: "reference"`; this hub carries `index`, and the scaffolds `template` (`.docs/vault/Note-Schema.md`). No field marks a file personal: everything under `Profile/` is personal by its path (`.docs/vault/Keywords.md`).
+The facet files describing the user carry `type: "reference"`; this hub carries `index`, and the scaffolds `template` (`.docs/technical/vault/Note-Schema.md`). No field marks a file personal: everything under `Profile/` is personal by its path (`.docs/technical/vault/Keywords.md`).
 
 ## The facets
 
@@ -80,11 +80,11 @@ Profile entries carry their origin and stay fresh by use, not by schedule. The c
 
 ## Sensitivity
 
-The whole `Profile/` tree is **sensitive by default**, by its path (`.docs/vault/Keywords.md`): no tag marks it, because the folder already does. Discretion is behavioral, enforced when surfacing, not by hiding files: do not surface this information unless directly relevant to the task (Rules, above). The most private facts - health, beliefs, relationships - are **isolated into their own entry files** so that a benign query never drags them in; the per-entry granularity is itself the privacy control. Keep the most sensitive entries terse and factual: record the minimum the AI needs to be considerate, not a full record.
+The whole `Profile/` tree is **sensitive by default**, by its path (`.docs/technical/vault/Keywords.md`): no tag marks it, because the folder already does. Discretion is behavioral, enforced when surfacing, not by hiding files: do not surface this information unless directly relevant to the task (Rules, above). The most private facts - health, beliefs, relationships - are **isolated into their own entry files** so that a benign query never drags them in; the per-entry granularity is itself the privacy control. Keep the most sensitive entries terse and factual: record the minimum the AI needs to be considerate, not a full record.
 
 ## Design: facet overview + entries
 
-Facets come in two shapes, the same split as `Memory/`. A facet read as a whole is a single **flat file** at `Profile/` root (Biography, Personality, Preferences, Working Style, Focus). A facet that accretes many independent items is a **folder** with a namesake overview doc plus one **entry file per item** (Values holds belief entries; Goals, Skills, and Health hold one entry per goal, skill, or condition). A flat facet is promoted to a folder only if it later grows entries (for example, Biography gaining life-chapter entries) - never speculatively (WORK-001). Write each independently-answerable fact as its own `## H2` so it chunks cleanly for retrieval, restate the subject in the heading, and keep discrete facts in tables and lists. Discovery is by folder path plus `keywords`, never tags (`.docs/vault/Keywords.md`).
+Facets come in two shapes, the same split as `Memory/`. A facet read as a whole is a single **flat file** at `Profile/` root (Biography, Personality, Preferences, Working Style, Focus). A facet that accretes many independent items is a **folder** with a namesake overview doc plus one **entry file per item** (Values holds belief entries; Goals, Skills, and Health hold one entry per goal, skill, or condition). A flat facet is promoted to a folder only if it later grows entries (for example, Biography gaining life-chapter entries) - never speculatively (WORK-001). Write each independently-answerable fact as its own `## H2` so it chunks cleanly for retrieval, restate the subject in the heading, and keep discrete facts in tables and lists. Discovery is by folder path plus `keywords`, never tags (`.docs/technical/vault/Keywords.md`).
 
 ## Filling these files: the `/identify` skill
 

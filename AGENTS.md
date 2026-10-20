@@ -95,7 +95,7 @@ Run `lint-notes.py` on each note you write and `update-vault.py` after a change.
 ## Definition of done
 
 - `check-vault.py` passes, and `update-vault.py` has nothing left to redraw.
-- Every note you wrote carries [the note schema](.docs/vault/Note-Schema.md), and `lint-notes.py` passes on it.
+- Every note you wrote carries [the note schema](.docs/technical/vault/Note-Schema.md), and `lint-notes.py` passes on it.
 - The change is committed, with a message that follows [Conventional Commits](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Conventional-Commits.md).
 - Your user knows which files changed and what is not yet committed.
 
@@ -103,9 +103,9 @@ Run `lint-notes.py` on each note you write and `update-vault.py` after a change.
 
 The vault follows [tannergolden/standards](https://github.com/tannergolden/standards) for everything a repository does: [commits](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Conventional-Commits.md), [branches](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Branching-Strategy-&-Workflow.md), [pull requests](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Pull-Requests-&-Code-Reviews.md), [releases](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md), [secrets](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md) and [documents](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md). What it does differently, and why:
 
-- **Notes open with hidden frontmatter.** Each opens with the HTML-comment block of [the note schema](.docs/vault/Note-Schema.md), the account's own standard, and is found by its path, its title and a few [keywords](.docs/vault/Keywords.md), never by tags, with no decorative header or footer. An agent spec keeps the `---` block its loader reads. A note's single H1 opens with one fitting emoji and then its title (a lead's ★ stands in for the emoji); the `title` field stays plain.
+- **Notes open with hidden frontmatter.** Each opens with the HTML-comment block of [the note schema](.docs/technical/vault/Note-Schema.md), the account's own standard, and is found by its path, its title and a few [keywords](.docs/technical/vault/Keywords.md), never by tags, with no decorative header or footer. An agent spec keeps the `---` block its loader reads. A note's single H1 opens with one fitting emoji and then its title (a lead's ★ stands in for the emoji); the `title` field stays plain.
 - **Markdown is GitHub's**: CommonMark plus GitHub-Flavored Markdown, with its five alerts (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]` and `[!CAUTION]`, each marker alone on its line), and wikilinks as the notes' one addition. Embeds, highlights, `%%` comments, block references and other callout types are not used, and `lint-notes.py` flags a callout beyond the five.
-- **Links follow the tree.** Wikilink an entity wherever [the link topology](.docs/vault/Link-Topology.md) allows the edge, and name it by plain path where it does not.
+- **Links follow the tree.** Wikilink an entity wherever [the link topology](.docs/technical/vault/Link-Topology.md) allows the edge, and name it by plain path where it does not.
 - **Names are plain.** Every folder has a note named after it (`Memory/Memory.md`). Scaffolds live in `.template/`. Only the seven top folders carry a `README.md`, their GitHub page. A project folder takes a short hyphenated name. Names use spaces or hyphens, never underscores: rename a garbled one as you file it.
 - **One home for each thing.** Before you create a file or folder, check that none already serves its purpose. A fact about your user lives in `Profile/` alone.
 - **Accurate over complete.** Less that is true and current beats more that is stale: do not pad a note, and do not keep what is no longer true.
@@ -114,17 +114,17 @@ The vault follows [tannergolden/standards](https://github.com/tannergolden/stand
 
 ## Where things live
 
-| Path               | Holds                                                                               |
-| :----------------- | :---------------------------------------------------------------------------------- |
-| `Inbox/`           | Files waiting to be sorted, and the held reports, visuals, ideas and standing teams |
-| `Library/`         | Reference knowledge in ten classes, never personal                                  |
-| `Memory/`          | What happened, who is around your user, what they decided, and what is due          |
-| `Profile/`         | Who your user is; `Working Style.md` says how to work with them                     |
-| `Projects/`        | Your user's personal projects, one folder each                                      |
-| `Ventures/`        | Each company your user runs, and the agent workforce they share                     |
-| `System/`          | Workflows, the skills and the generated catalogs                                    |
-| `.github/scripts/` | The vault's checks and generators                                                   |
-| `.docs/vault/`     | The note schema, the keywords, the link topology and how to assemble context        |
+| Path                     | Holds                                                                               |
+| :----------------------- | :---------------------------------------------------------------------------------- |
+| `Inbox/`                 | Files waiting to be sorted, and the held reports, visuals, ideas and standing teams |
+| `Library/`               | Reference knowledge in ten classes, never personal                                  |
+| `Memory/`                | What happened, who is around your user, what they decided, and what is due          |
+| `Profile/`               | Who your user is; `Working Style.md` says how to work with them                     |
+| `Projects/`              | Your user's personal projects, one folder each                                      |
+| `Ventures/`              | Each company your user runs, and the agent workforce they share                     |
+| `System/`                | Workflows, the skills and the generated catalogs                                    |
+| `.github/scripts/`       | The vault's checks and generators                                                   |
+| `.docs/technical/vault/` | The note schema, the keywords, the link topology and how to assemble context        |
 
 The top folders' notes are [Inbox](Inbox/Inbox.md), [Library](Library/Library.md), [Memory](Memory/Memory.md), [Profile](Profile/Profile.md), [Projects](Projects/Projects.md), [System](System/System.md) and [Ventures](Ventures/Ventures.md).
 
@@ -135,7 +135,7 @@ The top folders' notes are [Inbox](Inbox/Inbox.md), [Library](Library/Library.md
 - In the public template, every note about a person is a blank scaffold. Never fill one in there (SEC-003).
 - Check a premise against Memory before acting on it, and if Memory disagrees, say so rather than adopt either version.
 - Commit, and leave pushing to your user (OPS-001). Commit a meaningful state before a risky or wide edit.
-- A long context has a forgetful middle: [context assembly](.docs/vault/Context-Assembly.md) says what goes first and what goes last.
+- A long context has a forgetful middle: [context assembly](.docs/technical/vault/Context-Assembly.md) says what goes first and what goes last.
 
 ## Ask first
 

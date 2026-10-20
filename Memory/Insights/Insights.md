@@ -34,7 +34,7 @@ One file per insight, named `YYYY-MM-slug.md` so insights sort chronologically. 
 
 ## Sourcing
 
-Every insight cites the source memories it was derived from, by plain path (`.docs/vault/Link-Topology.md`). An insight with no evidence is not an insight - it is a guess, and does not belong here.
+Every insight cites the source memories it was derived from, by plain path (`.docs/technical/vault/Link-Topology.md`). An insight with no evidence is not an insight - it is a guess, and does not belong here.
 
 ## Superseding
 

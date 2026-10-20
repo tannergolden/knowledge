@@ -13,7 +13,7 @@ FILING INSTRUCTIONS (do this when you save the summary):
 - In frontmatter: set type "record", and give the copy its real title and description.
 - Give the H1 a fitting emoji for the session and replace [YYYY-MM-DD] with the real date.
 - Then run: python3 .github/scripts/update-vault.py
-NO wikilinks anywhere in this file (`.docs/vault/Link-Topology.md`). Reference files by plain path.
+NO wikilinks anywhere in this file (`.docs/technical/vault/Link-Topology.md`). Reference files by plain path.
 -->
 
 ## 1. Session Metadata

@@ -148,7 +148,7 @@ GFM also auto-detects bare URLs without them.
 > same with a leading exclamation mark. They render only in Obsidian and degrade
 > to raw text everywhere else, so they stay inside the vault and a piece leaving
 > the vault converts them to real links or plain text. For the exact literal
-> bracket forms, and where a wikilink may go, see `.docs/vault/Link-Topology.md`.
+> bracket forms, and where a wikilink may go, see `.docs/technical/vault/Link-Topology.md`.
 
 **Portability:** inline, reference, and autolinks are CommonMark; bare-URL
 autodetection is GFM; wikilinks and embeds are Obsidian-only.
