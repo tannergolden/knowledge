@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "home_count": 3,
-  "team_count": 19,
-  "agent_count": 69,
+  "team_count": 20,
+  "agent_count": 78,
   "homes": [
     "Agent Resources (AR)",
     "Faculties",
@@ -474,6 +474,78 @@
       "path": "BRAIN/Inbox/Faculties/Editorial/Writer.md"
     },
     {
+      "name": "Lucille",
+      "role": "Cash Flow Analyst",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent for the household's monthly money picture: net income against fixed, variable and irregular spending, the surplus or gap and the savings rate, the budget method that fits the Founder, the emergency fund target and where to hold it, and the levers that free up cash. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Cash Flow Analyst.md"
+    },
+    {
+      "name": "Owen",
+      "role": "Credit & Debt Specialist",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent for anything credit or debt: credit reports and scores, disputes, freezes and identity theft; credit cards, mortgages, auto, student and personal loans; payoff order, balance transfers, consolidation and refinancing; collections, settlement and hardship; and whether to borrow, co-sign or lend at all. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Credit & Debt Specialist.md"
+    },
+    {
+      "name": "Elliot",
+      "role": "Equity & Benefits Specialist",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent for the workplace pay package: the retirement plan's match, vesting and Roth options, HSA and FSA, open enrollment and life-event elections, RSUs, stock options (ISO and NSO), ESPP, early exercise and 83(b) elections, comparing job offers on total compensation, and what to do when leaving a job. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Equity & Benefits Specialist.md"
+    },
+    {
+      "name": "Theodore",
+      "role": "★ Financial Planning Lead",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent to lead any personal or household money question: frame it against the Founder's whole financial picture, check the foundations first, dispatch the Finance specialists it touches, and synthesize one prioritized recommendation with its math, trade-offs and next steps. The lead of the Finance team, the BRAIN's standing personal and household finance team; orchestrates and synthesizes, never does a specialist's analysis itself.",
+      "path": "BRAIN/Inbox/Faculties/Finance/★ Financial Planning Lead.md"
+    },
+    {
+      "name": "Henry",
+      "role": "Home & Major Purchases Analyst",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent for big-ticket decisions: rent or buy, how much house is affordable, the down payment and loan type, the home buying and selling process, a car (buy, lease, new or used), and any large planned purchase such as a wedding or a renovation, judged by total cost over the time it will be owned. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Home & Major Purchases Analyst.md"
+    },
+    {
+      "name": "Clara",
+      "role": "Insurance & Estate Specialist",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent for protecting the household: health, disability, life, home or renters, auto, umbrella and long-term care coverage, what to insure and what to self-insure, and the estate essentials (will and guardians, beneficiary designations, powers of attorney, health care directives, trusts when warranted, and where every document lives). On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Insurance & Estate Specialist.md"
+    },
+    {
+      "name": "Graham",
+      "role": "Investment & Retirement Analyst",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent for investing and retirement: goals by horizon, risk tolerance, asset allocation, fund costs and rebalancing, which account to fund, retirement readiness and projections, withdrawal order, Social Security timing, education savings, the investing side of pay-off-debt-or-invest, and judging any product or adviser being pitched. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Investment & Retirement Analyst.md"
+    },
+    {
+      "name": "Ingrid",
+      "role": "Plan Reviewer",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent to independently review a finished money recommendation before the Founder sees it: suitability against the Founder's goals, horizon and risk tolerance, every load-bearing number traced and reproduced, every tax figure, limit and rule current, cited and dated, and the team's limits respected. On the Finance team, the BRAIN's standing personal and household finance team; arrives fresh, never reviews her own work, and reports to the Financial Planning Lead.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Plan Reviewer.md"
+    },
+    {
+      "name": "Harriet",
+      "role": "Tax Strategist",
+      "home": "Faculties",
+      "team": "Finance",
+      "description": "Dispatch this agent for personal income tax planning: the right tax year and state, marginal and effective rates, withholding and estimated payments, deductions and credits, traditional versus Roth and other account choices, capital gains and loss harvesting, charitable giving, the tax side of any money move, IRS notices, and the dated tax deadlines. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Tax Strategist.md"
+    },
+    {
       "name": "Jasper",
       "role": "All-Source Analyst",
       "home": "Faculties",
@@ -773,6 +845,24 @@
       ],
       "description": "The Editorial team: the BRAIN's standing writing and communication team. A lead plus five that draft all of the Founder's own prose, from emails and correspondence to books, essays, and documents. The communications counterpart to the Research team, the Discovery team, and the Development team.",
       "path": "BRAIN/Inbox/Faculties/Editorial/Editorial.md"
+    },
+    {
+      "team": "Finance",
+      "home": "Faculties",
+      "lead": "★ Financial Planning Lead",
+      "members": [
+        "★ Financial Planning Lead",
+        "Cash Flow Analyst",
+        "Credit & Debt Specialist",
+        "Equity & Benefits Specialist",
+        "Home & Major Purchases Analyst",
+        "Insurance & Estate Specialist",
+        "Investment & Retirement Analyst",
+        "Plan Reviewer",
+        "Tax Strategist"
+      ],
+      "description": "The Finance team: the BRAIN's standing personal and household finance team. A lead plus eight specialists that advise the Founder on any money matter in their life, from budgets, credit and debt to taxes, investing, insurance, benefits and big purchases, to one standard: the Founder's interest first. Dispatched by the finance skill.",
+      "path": "BRAIN/Inbox/Faculties/Finance/Finance.md"
     },
     {
       "team": "Research",
