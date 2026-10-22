@@ -138,8 +138,8 @@ Conventional Commits, are in the standards'
   that serves every venture.
 - **Agent spec**: one agent's file, opening with the `---` block its loader reads: `name`,
   `description` and `tools`.
-- **Faculty**: one of the four standing teams in `Inbox/Faculties/` that serve the owner's own work:
-  Research, Discovery, Editorial and Design, each dispatched by a skill.
+- **Faculty**: one of the five standing teams in `Inbox/Faculties/` that serve the owner's own work:
+  Research, Discovery, Editorial, Design and Finance, each dispatched by a skill.
 - **Founder**: the owner, as the agents know them: named in `Profile/Biography.md` and above the whole
   workforce.
 - **Lead**: the one member of a team whose file name opens with ★ and a space. A lead orchestrates and

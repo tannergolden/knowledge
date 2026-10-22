@@ -108,7 +108,7 @@ graph LR
 
 ## 🤖 Skills & Agent Teams
 
-The vault's six skills live in `System/Skills/`: each source in `.unpackaged/<name>/`, beside the
+The vault's seven skills live in `System/Skills/`: each source in `.unpackaged/<name>/`, beside the
 `<name>.skill` archive built from it. An agent fires the skill whose description matches the request,
 without asking. A skill owns no agents: it names a team in its `metadata.team`, and the team lives in
 one of the agent homes.
@@ -118,6 +118,7 @@ one of the agent homes.
 | `board`     | Administration               | `Ventures/Agent Resources (AR)/` |
 | `discover`  | Discovery                    | `Inbox/Faculties/`               |
 | `editorial` | Editorial                    | `Inbox/Faculties/`               |
+| `finance`   | Finance                      | `Inbox/Faculties/`               |
 | `identify`  | Research & Development (R&D) | `Ventures/Agent Resources (AR)/` |
 | `research`  | Research                     | `Inbox/Faculties/`               |
 | `visualize` | Design                       | `Inbox/Faculties/`               |

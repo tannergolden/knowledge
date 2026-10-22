@@ -23,7 +23,7 @@ _The dials and settings behind every session._
 ## 💡 What This Folder Is For
 
 `System/` is the vault's control panel. `Workflows.md` holds the loops the AI follows, `Skills/`
-holds the vault's six skills (board, discover, editorial, identify, research and visualize), and
+holds the vault's seven skills (board, discover, editorial, finance, identify, research and visualize), and
 `Data/` holds the catalogs `update-vault.py` generates. The vault's checks and generators live in
 `.github/scripts/`, beside the CI that runs them.
 

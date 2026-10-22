@@ -79,7 +79,7 @@ At the start of every session, before other work:
 
 - **Folder rules.** Before you create, edit, move or delete anything in a folder, read the Rules in its folder note and in each folder note above it. They add to these rules and never loosen them.
 - **Retrieval order.** Ground a fact in the closest source that holds it: the vault (its notes and the catalog), then an offline knowledge base when one is installed (`python3 .github/scripts/knowledge-base.py search`), then the web. Anything about your user stops at the vault; anything current goes straight to the web.
-- **Skills.** Fire a skill whose description matches the request, without asking. Prefer the vault's own (board, discover, editorial, identify, research, visualize) to a general one that does the same job; `develop`, the universal skill, builds and fixes skills.
+- **Skills.** Fire a skill whose description matches the request, without asking. Prefer the vault's own (board, discover, editorial, finance, identify, research, visualize) to a general one that does the same job; `develop`, the universal skill, builds and fixes skills.
 - **Writing.** Write a log entry, a summary, a Memory or Profile entry, or a new project or venture yourself, in the format its folder's note shows; the scripts check the result and redraw what derives from it.
 
 ## Commands
