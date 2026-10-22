@@ -11,7 +11,7 @@ Each skill is a folder with a `SKILL.md` entrypoint. A skill does not own agents
 
 ## Sources live in `.unpackaged/`
 
-Skill SOURCES live in `Skills/.unpackaged/<skill>/`, a hidden folder, so the everyday tree is not cluttered by working files. Packaging a skill produces a self-contained `<skill>.skill` artifact at the `Skills/` root: `.github/scripts/update-vault.py` builds every archive from its source, the same bytes every time, and CI fails when one differs from its source. The source is what `develop` edits; the artifact is what installs and ships. Each packaged skill is the graph node linked here as a sibling file: currently [[research.skill]], [[editorial.skill]], [[visualize.skill]], [[discover.skill]], [[identify.skill]], and [[board.skill]].
+Skill SOURCES live in `Skills/.unpackaged/<skill>/`, a hidden folder, so the everyday tree is not cluttered by working files. Packaging a skill produces a self-contained `<skill>.skill` artifact at the `Skills/` root: `.github/scripts/update-vault.py` builds every archive from its source, the same bytes every time, and CI fails when one differs from its source. The source is what `develop` edits; the artifact is what installs and ships. Each packaged skill is the graph node linked here as a sibling file: currently [[research.skill]], [[editorial.skill]], [[visualize.skill]], [[discover.skill]], [[identify.skill]], [[board.skill]], and [[finance.skill]].
 
 ## Per-skill folder (the mandatory structure)
 
