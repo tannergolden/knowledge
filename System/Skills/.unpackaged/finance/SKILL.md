@@ -5,7 +5,7 @@ license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch, Task, AskUserQuestion
 metadata:
   team: Finance
-  version: "1.0.0"
+  version: "1.0.1"
   id: "sy-skill-finance-spec"
   author: "Tanner Golden"
   status: "active"
@@ -32,8 +32,8 @@ A run is one mode. Pick it from the request; when a question arrives inside a li
 | Tier | When | Dispatch | Deliverable |
 |------|------|----------|-------------|
 | **quick** | one figure, one rule or one calculation inside one domain, with nothing irreversible riding on it | the skill answers directly from the official source with a computed number, or dispatches one seat | a cited chat answer |
-| **standard** | a bounded decision touching one to three domains | the lead frames, one to three seats return in dependency order, the lead synthesizes, the skill's computation check, then the Plan Reviewer's gate | the plan in chat, with write-backs offered |
-| **deep** | a full plan, a life event, or a large or irreversible decision (a home, an equity exercise, a retirement date, a windfall, a debt restructuring, an insurance or estate overhaul) | the lead plus every seat the question touches, the computation check on every number, the Plan Reviewer, and the referral checklist | the plan in chat, with an offer to keep it as a project |
+| **standard** | a bounded decision touching one to three domains, or any irreversible step | the lead frames, one to three seats return in dependency order, the lead synthesizes, the skill's computation check, then the Plan Reviewer's gate | the plan in chat, with write-backs offered |
+| **deep** | a full plan, a life event, a windfall, or an irreversible decision large relative to the Founder's net worth (a home, an equity exercise, a retirement date, a pension election, a debt restructuring, an insurance or estate overhaul) | the lead plus every seat the question touches, the computation check on every number, the Plan Reviewer, and the referral checklist | the plan in chat, with an offer to keep it as a project |
 
 **Announce the mode and the tier before dispatching**; both are cost decisions made with the owner's tokens. Choose the tier from the decision table in `references/dispatch.md`, never by feel; when two rows fit, take the higher. When the answer turns on facts nobody has given, ask for up to five of them first, through the structured ask tool when available, rounded figures welcome and "prefer not to say" honored. One question per ask run; a plan may span domains.
 
@@ -51,14 +51,14 @@ Every run is the same shape, scaled by mode and tier: ground, frame, gather fact
 1. **Frame and announce.** The one question, the decision it serves, its deadline, and the household unit; then the mode and the tier.
 2. **Fact sheet.** Fill `templates/fact-sheet.md` with only the facts the answer turns on, each with its source and as-of date, estimates marked. It lives in the run workspace outside the vault (`references/data-and-writes.md`).
 3. **Dispatch.** Per tier and in dependency order, each seat on a self-contained brief (`templates/brief.md`). Every agent returns its artifact and persists nothing; the lead synthesizes the draft plan in the `templates/plan.md` shape.
-4. **Compute.** The skill reproduces every load-bearing number with a short Python script run from the workspace (payoff schedules, amortization, break-evens, projections, tax estimates, reserve targets). A mismatch goes back to its seat once; no number ships that a script did not reproduce.
+4. **Compute.** The skill first adds to the fact sheet every fact a seat took from a document or an official source, with its source and as-of date; then it reproduces every load-bearing number with a short Python script run from the workspace (payoff schedules, amortization, break-evens, projections, tax estimates, reserve targets). A mismatch goes back to its seat once; no number ships that a script did not reproduce.
 5. **Review.** Above quick, and on any irreversible step, the Plan Reviewer reads the draft and the fact sheet blind, with the computation check, and rules SHIP, REVISE or HOLD (`templates/review.md`). Apply every FATAL and MATERIAL finding; a FATAL that survives two rounds goes to the Founder as an open question, never shipped.
 6. **Deliver findings-first** in the `templates/plan.md` shape: the recommendation, ranked actions with dates, the math, the trade-offs, the assumptions with as-of dates, what would change the answer, foundation gaps, and referrals.
-7. **Write back behind the gate** (`references/data-and-writes.md`): dated deadlines into `Memory/Dates.md` and open loops into `Memory/Log.md`, named in the delivery; offer a `Memory/Decisions/` record when the Founder decides, `Profile/Finances.md` changes line by line, and a `Projects/` folder for a goal they will pursue. Offer a chart through `visualize` or a letter through `editorial` when either helps. Delete the run workspace.
+7. **Write back behind the gate** (`references/data-and-writes.md`): dated deadlines into `Memory/Dates.md` and open loops into `Memory/Log.md`, named in the delivery; offer a `Memory/Decisions/` record when the Founder decides, `Profile/Finances.md` changes line by line, and a `Projects/` folder for a goal they will pursue. Offer a chart through `visualize` or a letter through `editorial` when either helps. Delete the run workspace, whether the run shipped or not.
 
 ## Dispatch scaling
 
-A bigger roster is not a better one. Dispatch the **smallest sufficient** seats: most ask runs use the lead and one or two specialists; the Cash Flow Analyst runs first whenever the answer depends on the monthly surplus; the Tax Strategist joins whenever another seat's move has a tax effect; and the Plan Reviewer gates everything above quick. Every dispatch is a self-contained brief; the subagent sees none of this conversation. Only the orchestrator dispatches: subagents never spawn subagents. When the Agent tool is unavailable, run the role specs in sequence in one context and tell the Founder the independent review is weakened.
+A bigger roster is not a better one. Dispatch the **smallest sufficient** seats: most ask runs use the lead and one or two specialists; the Cash Flow Analyst runs first whenever the answer depends on the monthly surplus; the Tax Strategist joins whenever another seat's move has a tax effect; and the Plan Reviewer gates everything above quick. Every dispatch is a self-contained brief; the subagent sees none of this conversation. Only the orchestrator dispatches: subagents never spawn subagents. When subagents cannot be dispatched, run the role specs in sequence in one context and tell the Founder the independent review is weakened.
 
 ## The gate
 

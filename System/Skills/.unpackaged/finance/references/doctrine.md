@@ -13,14 +13,14 @@ The rules every finance run reasons by. Read before synthesizing any advice. The
 
 Before optimizing anything, check the household's foundations in this order. A gap above the question is named first, with its math, and the question is still answered after it. These are durable heuristics, adapted to the Founder's situation, never applied blindly.
 
-1. **Essentials and minimum payments covered:** housing, utilities, food, transport to work, insurance premiums, every minimum payment.
+1. **Essentials and minimum payments covered:** housing, utilities, food, transport to work, insurance premiums, every minimum payment, with none missed or in collection.
 2. **A starter emergency buffer:** about one month of essential expenses, in insured cash.
 3. **The full employer match:** an immediate, guaranteed return no other step beats.
-4. **High-interest debt:** commonly anything above roughly 8 to 10 percent, cards first.
+4. **High-interest debt:** anything above about 8 percent, cards first.
 5. **The full emergency fund:** three to twelve months of essential expenses, sized by income risk (`Cash Flow Analyst.md`).
 6. **Tax-advantaged retirement saving:** an HSA when eligible, then IRAs and the workplace plan, toward a common benchmark of about 15 percent of gross income including any match, adjusted for age and goals.
-7. **Other goals:** a home down payment, a child's education, moderate-interest debt.
-8. **Taxable investing and prepaying low-interest debt.**
+7. **Other goals:** a home down payment, a child's education, and debt at about 4 to 8 percent, weighed by the pay-off-or-invest rule below.
+8. **Taxable investing and prepaying debt below about 4 percent.**
 
 Alongside, from the first step: insure the catastrophic risks (health, disability for every earner, life where someone depends on the income, liability), and give dependents a will that names a guardian.
 
@@ -28,10 +28,10 @@ Alongside, from the first step: insure the catastrophic risks (health, disabilit
 
 The lead decides between seats by these rules and shows the losing case in one line.
 
-- **Pay off debt or invest.** Paying a debt earns its after-tax interest rate, guaranteed; investing earns an expected return, with risk. Above roughly 7 to 8 percent the debt usually wins; below roughly 4 percent, investing usually wins over a long horizon; in between, weigh the Founder's risk tolerance, liquidity, and the value they put on being debt-free. Never at the cost of the match or the emergency fund.
+- **Pay off debt or invest.** Paying a debt earns its after-tax interest rate, guaranteed; investing earns an expected return, with risk. Above about 8 percent the debt wins (foundations step 4); below about 4 percent, investing usually wins over a long horizon; in between, weigh the Founder's risk tolerance, liquidity, and the value they put on being debt-free. Never at the cost of the match or the emergency fund. The exception is a federal student loan on track for forgiveness: extra payments shrink only what would be forgiven, so the Credit & Debt Specialist prices the forgiveness, and the Tax Strategist any tax on it, first.
 - **Pre-tax or Roth.** Compare the marginal rate now with the marginal rate expected when the money comes out; split when the two are close (`Tax Strategist.md`).
 - **Liquidity before return; reversible before irreversible.** When two options are close, keep the money reachable and the door open.
-- **A windfall waits.** A bonus, an inheritance, a sale or a settlement goes to insured cash first, with the tax set aside, for a cooling-off period of weeks to months; then the foundations order spends it. Big irreversible moves wait until the Founder is ready.
+- **A windfall waits.** A bonus, a sale, a settlement, or inherited cash or securities goes to safe cash first, with the tax set aside, for a cooling-off period of weeks to months; then the foundations order spends it. Above the deposit insurance limit, spread it across banks or ownership categories, or hold Treasury bills. An inherited IRA or workplace plan is never cashed out to park it: it moves by direct trustee-to-trustee transfer into an inherited account, and the Tax Strategist plans the withdrawals. Big irreversible moves wait until the Founder is ready.
 - **A lump sum or spread in.** Investing a lump sum at once has historically beaten spreading it in more often than not, because markets rise more often than they fall; spreading in buys protection against regret. Choose by the Founder's temperament, and set the schedule in advance.
 - **Total cost over the monthly payment.** Every loan, lease and purchase is compared by its total cost over the time it will be held.
 - **Concentration is a risk, not a strategy.** No single stock, the employer's included, above a common ceiling of about 10 to 15 percent of net worth.
@@ -46,7 +46,7 @@ The team is candid and specific, and plain that it is not a licensed professiona
 | A will, trust or power of attorney to draft; probate; a contested estate | An estate planning attorney licensed in the Founder's state | The asset and beneficiary map, the family picture, existing documents |
 | A creditor's lawsuit, a garnishment, bankruptcy | A consumer or bankruptcy attorney, or legal aid | The summons and its deadline, the debt ledger, collector letters |
 | Unsecured debt no workable plan can clear | A nonprofit credit counselor (an NFCC member) | The debt ledger and the monthly cash flow |
-| A mortgage payment missed or foreclosure risk; first-time buyer counseling | A HUD-approved housing counselor, free | The mortgage statement, the servicer's letters, income and expenses |
+| A mortgage payment missed or foreclosure risk; first-time buyer counseling | A HUD-approved housing counselor (foreclosure help is free; other counseling is free or low cost) | The mortgage statement, the servicer's letters, income and expenses |
 | Ongoing management, a complex situation, a second opinion on a product | A fee-only fiduciary planner paid by the Founder, not by commission | The plan, the statements, the product's contract |
 | Coverage to quote or place | An independent insurance agent or broker | The coverage map and the needs computed |
 | Long-term care or Medicaid planning | An elder law attorney | The asset picture, the health outlook, the family plan |

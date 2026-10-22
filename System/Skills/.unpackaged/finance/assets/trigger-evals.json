@@ -15,7 +15,7 @@
     {"q": "am I on track to retire at 60", "mode": "plan"},
     {"q": "we're having a baby, what do we need to sort out financially", "mode": "plan"},
     {"q": "I just got laid off, what do I do about money", "mode": "plan"},
-    {"q": "should we rent or buy in the next two years", "mode": "plan"},
+    {"q": "should we rent or buy in the next two years", "mode": "ask"},
     {"q": "do a money checkup for me", "mode": "review"},
     {"q": "what year-end tax moves should I make", "mode": "review"},
     {"q": "help me pick my benefits for open enrollment", "mode": "review"}

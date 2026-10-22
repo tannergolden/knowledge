@@ -8,7 +8,7 @@ keywords: ["version history", "release notes", "finance changes", "revision log"
 
 ## Current Version
 
-**`1.0.0`**
+**`1.0.1`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -37,6 +37,17 @@ Initial build of the finance skill: the BRAIN's personal and household finance s
 ## Patch Updates
 
 > Fixes and clarifications. Most recent 4 entries.
+
+### `1.0.1` - 2026-10-22
+
+Fixes from an independent review of the team and the skill, each checked against the official sources:
+
+- A windfall no longer reads as a reason to cash out an inherited IRA or workplace plan: it moves by trustee-to-trustee transfer, and cash above the deposit insurance limit is spread or held in Treasury bills (`references/doctrine.md`, `references/life-events.md`).
+- Catastrophic insurance and a will for dependents run alongside the foundations from the first step, the same in the lead's spec, the fact sheet and the Plan Reviewer's check (`templates/fact-sheet.md`).
+- One tier table rules, in `references/dispatch.md`: any irreversible step is standard at least, and deep is a plan, a life event, a windfall, or an irreversible decision large relative to net worth.
+- The skill adds every fact a seat found to the fact sheet before the computation check, the lead sets each seat's share of the surplus, and the run workspace is deleted whether the run shipped or not.
+- Routing gains owners for Medicare, medical bills, a pension's lump-sum-or-annuity choice, college aid, rental property and scam checks, and one owner each for the health plan choice, the HSA and Social Security.
+- `templates/plan.md` opens with the question, the Plan Reviewer's brief includes the Profile, and the official sources add the state attorney general, the state's own health insurance exchange and the state housing finance agency.
 
 <!-- This is a BRAIN documentation node: it carries the vault's note schema above
      (.docs/technical/vault/Note-Schema.md), not the Agent Skills schema. -->

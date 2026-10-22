@@ -50,7 +50,7 @@ Read a statement, a return, a pay stub, a plan document or a grant agreement whe
 
 ## The run workspace
 
-The fact sheet, the draft plan and the computation scripts live in the run workspace outside the vault (`dispatch.md`), because they may hold exact figures. Delete the workspace when the run ships. Never place it inside the BRAIN.
+The fact sheet, the draft plan and the computation scripts live in the run workspace outside the vault (`dispatch.md`), because they may hold exact figures. Create it readable by its owner only, and delete it when the run ends, whether it shipped or not. Never place it inside the BRAIN.
 
 ## The gate
 

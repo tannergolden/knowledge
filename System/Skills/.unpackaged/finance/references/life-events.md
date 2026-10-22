@@ -10,13 +10,13 @@ A life event runs as a deep plan. Read the event's entry before dispatching: it 
 
 ## A new job or an offer
 
-- Seats: Elliot (the offer on total compensation, the new benefits, the enrollment window), Harriet (a new W-4), Graham (the old workplace plan: leave it, roll it to the new plan or an IRA by direct rollover), Clara (any gap in coverage between jobs).
+- Seats: Elliot (the offer on total compensation, the new benefits, the enrollment window), Harriet (a new W-4), Graham (the old workplace plan: leave it, or roll it to the new plan or an IRA by direct rollover, checking first with Harriet for net unrealized appreciation on employer stock, the age-55 rule, and the pro-rata effect an IRA balance has on a backdoor Roth; only one IRA-to-IRA 60-day rollover is allowed a year), Clara (any gap in coverage between jobs).
 - Time-critical: the new employer's enrollment window, often 30 days from the start date.
 
 ## A layoff or job loss
 
 - Seats: Lucille first (cut to essentials, the emergency fund's runway in months), Elliot (severance terms, unvested equity, option exercise windows, COBRA), Clara (health coverage: COBRA or the Marketplace), Owen (hardship programs before any payment is missed), Harriet (withholding on severance; unemployment benefits are taxable).
-- Time-critical: file for unemployment at once; the COBRA election window, generally 60 days; the Marketplace special enrollment window, 60 days from losing coverage; option exercise windows, often 90 days; a workplace plan loan can come due faster after separation, so check the plan's terms.
+- Time-critical: file for unemployment at once; the COBRA election window, generally 60 days, and the Marketplace special enrollment window, 60 days from losing coverage, decided together, since dropping COBRA later opens no special enrollment period; option exercise windows, often 90 days, and an ISO held past three months is taxed as an NSO; a workplace plan loan can come due faster after separation, and an unpaid balance is taxed unless rolled over by the return's due date, extensions included.
 
 ## Marriage
 
@@ -27,22 +27,23 @@ A life event runs as a deep plan. Read the event's entry before dispatching: it 
 ## A divorce
 
 - Refer first: a family law attorney and a CPA; the team supports, it never negotiates.
-- Seats: Owen (joint debts and accounts, separated cleanly), Graham (dividing retirement accounts; a workplace plan needs a qualified domestic relations order), Harriet (filing status, set by marital status on December 31), Clara (coverage, and beneficiaries changed when the court allows, since changes can be restricted while the case is open), Lucille (a one-income budget).
+- Seats: Owen (joint debts and accounts, separated cleanly), Graham (dividing retirement accounts; a workplace plan needs a qualified domestic relations order), Harriet (filing status, set by marital status on December 31), Clara (coverage, and beneficiaries changed when the court allows, since changes can be restricted while the case is open and a divorce does not change a workplace plan's form), Lucille (a one-income budget).
 
 ## A new child
 
-- Seats: Clara (add the child to health coverage, life and disability needs, a will naming a guardian, beneficiaries and contingents), Harriet (credits, the dependent care FSA, the child's Social Security number), Graham (education savings), Lucille (childcare in the budget).
+- Seats: Clara (add the child to health coverage, life and disability needs, a will naming a guardian, beneficiaries and contingents through a trust or a custodian, never the child by name), Harriet (credits, the dependent care FSA, the child's Social Security number), Graham (education savings, and any government-seeded child account the IRS currently offers, with its eligibility fetched at IRS.gov), Lucille (childcare in the budget).
 - Time-critical: the health plan's special enrollment window, often 30 days at work.
 
 ## A death in the family, or an inheritance
 
 - Pause: no irreversible decision for weeks to months unless a deadline forces it.
-- Seats: Clara (life insurance and beneficiary claims; an estate attorney for probate), Harriet (inherited retirement accounts, which most beneficiaries other than a spouse must empty within ten years under current rules; the step-up in basis on inherited assets; estate and inheritance tax thresholds, federal and state), Owen (the estate, not the heirs, generally pays the deceased's debts: check before paying any from personal funds), Graham (placing the inheritance), Lucille (the household budget, and survivor benefits from the SSA when a spouse dies).
+- Seats: Clara (life insurance and beneficiary claims; an estate attorney for probate), Harriet (inherited retirement accounts: most heirs other than a spouse must empty one by the end of the tenth year after the death and, when the owner had already begun required distributions, take one every year in between; a minor child of the owner, a disabled or chronically ill heir, or one not more than ten years younger follows other rules, fetched at IRS.gov; the step-up in basis on inherited taxable assets, which retirement accounts do not get; estate and inheritance tax thresholds, federal and state), Owen (the estate, not the heirs, generally pays the deceased's debts: check before paying any from personal funds), Graham (placing the inheritance, and survivor benefits from the SSA when a spouse dies), Lucille (the household budget).
+- Never cash out an inherited retirement account to park the money: it moves by direct trustee-to-trustee transfer into an inherited account first.
 - Order several certified death certificates; notify the SSA.
 
 ## A windfall (a bonus, an equity sale, a settlement, a large gift)
 
-- Park it in insured cash with the tax set aside (Harriet), wait, then spend it by the foundations order in `doctrine.md` (the lead, with Owen and Graham).
+- Park cash in safe accounts with the tax set aside (Harriet), spread across banks or into Treasury bills above the deposit insurance limit, wait, then spend it by the foundations order in `doctrine.md` (the lead, with Owen and Graham). An inherited retirement account is never cashed out to park it.
 
 ## Moving to another state
 
@@ -60,8 +61,8 @@ A life event runs as a deep plan. Read the event's entry before dispatching: it 
 
 ## Approaching retirement
 
-- Seats: Graham (the drawdown plan and Social Security timing), Harriet (conversions in low-income years, required distributions at the age the current rules set), Clara (Medicare enrollment and long-term care), Lucille (the retirement budget).
-- Time-critical: Medicare's initial enrollment period, the seven months around the 65th birthday; enrolling late can carry lifelong penalties.
+- Seats: Graham (the drawdown plan, Social Security timing, a pension's lump-sum-or-annuity choice), Harriet (conversions in low-income years, the Medicare income surcharge they can trigger, required distributions at the age the current rules set), Clara (Medicare enrollment and long-term care), Lucille (the retirement budget).
+- Time-critical: Medicare's initial enrollment period, the seven months around the 65th birthday, since enrolling late can carry lifelong penalties; Part B delayed only with group coverage from current employment, never on COBRA or a retiree plan; the Medigap open enrollment window; HSA contributions stopped six months before applying for Medicare or Social Security after 65, because Part A is backdated.
 
 ## A serious illness, an injury or a disability
 

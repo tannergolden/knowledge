@@ -486,7 +486,7 @@
       "role": "Credit & Debt Specialist",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent for anything credit or debt: credit reports and scores, disputes, freezes and identity theft; credit cards, mortgages, auto, student and personal loans; payoff order, balance transfers, consolidation and refinancing; collections, settlement and hardship; and whether to borrow, co-sign or lend at all. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "description": "Dispatch this agent for anything credit or debt: credit reports and scores, disputes, freezes, identity theft and scam checks; credit cards, mortgages, auto, student and personal loans; payoff order, balance transfers, consolidation and refinancing; collections, settlement and hardship; and whether to borrow, co-sign or lend at all. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
       "path": "BRAIN/Inbox/Faculties/Finance/Credit & Debt Specialist.md"
     },
     {
@@ -502,7 +502,7 @@
       "role": "★ Financial Planning Lead",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent to lead any personal or household money question: frame it against the Founder's whole financial picture, check the foundations first, dispatch the Finance specialists it touches, and synthesize one prioritized recommendation with its math, trade-offs and next steps. The lead of the Finance team, the BRAIN's standing personal and household finance team; orchestrates and synthesizes, never does a specialist's analysis itself.",
+      "description": "Dispatch this agent to lead any personal or household money question: frame it against the Founder's whole financial picture, check the foundations first, dispatch the Finance specialists it touches, and synthesize one prioritized recommendation with its math, trade-offs and next steps. The lead of the Finance team, the BRAIN's standing personal and household finance team, embodied by the finance skill as its orchestrator; orchestrates and synthesizes, never does a specialist's analysis itself.",
       "path": "BRAIN/Inbox/Faculties/Finance/★ Financial Planning Lead.md"
     },
     {
@@ -510,7 +510,7 @@
       "role": "Home & Major Purchases Analyst",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent for big-ticket decisions: rent or buy, how much house is affordable, the down payment and loan type, the home buying and selling process, a car (buy, lease, new or used), and any large planned purchase such as a wedding or a renovation, judged by total cost over the time it will be owned. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "description": "Dispatch this agent for big-ticket decisions: rent or buy, how much house is affordable, the down payment and the loan programs that fit, the home buying and selling process, a rental or investment property, a car (buy, lease, new or used), and any large planned purchase such as a wedding or a renovation, judged by total cost over the time it will be owned. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
       "path": "BRAIN/Inbox/Faculties/Finance/Home & Major Purchases Analyst.md"
     },
     {
@@ -518,7 +518,7 @@
       "role": "Insurance & Estate Specialist",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent for protecting the household: health, disability, life, home or renters, auto, umbrella and long-term care coverage, what to insure and what to self-insure, and the estate essentials (will and guardians, beneficiary designations, powers of attorney, health care directives, trusts when warranted, and where every document lives). On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "description": "Dispatch this agent for protecting the household: health and Medicare, disability, life, home or renters, auto, umbrella and long-term care coverage, medical bills and insurance appeals, what to insure and what to self-insure, and the estate essentials (will and guardians, beneficiary designations, powers of attorney, health care directives, trusts when warranted, and where every document lives). On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
       "path": "BRAIN/Inbox/Faculties/Finance/Insurance & Estate Specialist.md"
     },
     {
@@ -526,7 +526,7 @@
       "role": "Investment & Retirement Analyst",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent for investing and retirement: goals by horizon, risk tolerance, asset allocation, fund costs and rebalancing, which account to fund, retirement readiness and projections, withdrawal order, Social Security timing, education savings, the investing side of pay-off-debt-or-invest, and judging any product or adviser being pitched. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "description": "Dispatch this agent for investing and retirement: goals by horizon, risk tolerance, asset allocation, fund costs and rebalancing, which account to fund, retirement readiness and projections, withdrawal order, Social Security timing, a pension's lump-sum-or-annuity choice, education savings and college aid, the investing side of pay-off-debt-or-invest, and judging any product or adviser being pitched. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
       "path": "BRAIN/Inbox/Faculties/Finance/Investment & Retirement Analyst.md"
     },
     {

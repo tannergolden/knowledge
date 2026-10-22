@@ -15,6 +15,7 @@
     {"domain": "credit", "name": "IdentityTheft.gov", "url": "https://www.identitytheft.gov", "use": "the federal identity theft report and recovery plan"},
     {"domain": "credit", "name": "Federal Student Aid", "url": "https://studentaid.gov", "use": "federal student loan types, servicers, repayment plans, forgiveness and discharge"},
     {"domain": "credit", "name": "National Foundation for Credit Counseling", "url": "https://www.nfcc.org", "use": "finding a nonprofit credit counselor"},
+    {"domain": "credit", "name": "The state attorney general", "url": "", "use": "consumer complaints about collectors, scams and lenders; find it from the state's official site"},
     {"domain": "cash", "name": "Federal Deposit Insurance Corporation", "url": "https://www.fdic.gov", "use": "bank deposit insurance limits and coverage"},
     {"domain": "cash", "name": "National Credit Union Administration", "url": "https://www.ncua.gov", "use": "credit union share insurance limits and coverage"},
     {"domain": "cash", "name": "TreasuryDirect", "url": "https://www.treasurydirect.gov", "use": "Treasury bills, notes, and savings bonds, with current rates"},
@@ -22,9 +23,11 @@
     {"domain": "investing", "name": "FINRA BrokerCheck", "url": "https://brokercheck.finra.org", "use": "a broker's registration and disciplinary record"},
     {"domain": "investing", "name": "SEC Investment Adviser Public Disclosure", "url": "https://adviserinfo.sec.gov", "use": "an investment adviser's registration, fees and disclosures"},
     {"domain": "insurance", "name": "HealthCare.gov", "url": "https://www.healthcare.gov", "use": "Marketplace plans, open and special enrollment periods"},
+    {"domain": "insurance", "name": "The state's own health insurance exchange", "url": "", "use": "Marketplace plans and enrollment dates in a state that runs its own exchange; find it from HealthCare.gov or the state's official site"},
     {"domain": "insurance", "name": "National Association of Insurance Commissioners", "url": "https://content.naic.org", "use": "finding the state insurance department, consumer guides"},
     {"domain": "insurance", "name": "FloodSmart (National Flood Insurance Program)", "url": "https://www.floodsmart.gov", "use": "flood risk and flood insurance"},
     {"domain": "housing", "name": "Department of Housing and Urban Development", "url": "https://www.hud.gov", "use": "HUD-approved housing counselors, FHA loans, foreclosure help"},
+    {"domain": "housing", "name": "The state housing finance agency", "url": "", "use": "first-time buyer programs and down payment help; find it from the state's official site"},
     {"domain": "benefits", "name": "The employer's plan documents", "url": "", "use": "the summary plan description, the grant agreements and the equity plan, which govern over any summary"}
   ]
 }

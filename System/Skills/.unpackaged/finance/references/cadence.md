@@ -27,7 +27,7 @@ What a review run checks and when. Read before a review run. Each checkup ends i
 | Mid-October | The extended filing deadline | Harriet |
 | Autumn | Workplace open enrollment: the health plan, HSA or FSA amounts, group coverage | Elliot, Clara |
 | Mid-October to early December | Medicare open enrollment, when the Founder or a parent is on Medicare | Clara |
-| November to mid-January | Marketplace open enrollment in most states, when not covered at work | Clara |
+| November to mid-January | Marketplace open enrollment on HealthCare.gov, when not covered at work: enroll by mid-December for coverage from January 1; a state's own exchange sets its own dates | Clara |
 | November and December | Year-end moves: harvest losses or gains, Roth conversions, required distributions, charitable giving, the last workplace plan deferrals, FSA balances, withholding checked against the safe harbor | Harriet, Graham, Elliot |
 | Once a year, any month | Credit reports from all three bureaus (free at the official source), insurance renewals and coverage review, every beneficiary designation, the emergency fund re-sized, the full plan refreshed | Owen, Clara, Lucille, the lead |
 | Every three to five years, and at every life event | The will, the powers of attorney and the health care directive reviewed | Clara |

@@ -1,6 +1,10 @@
 # Plan (the shape every delivered answer takes)
 
-The lead synthesizes the draft in this shape, the Plan Reviewer rules on it, and the skill delivers it in chat, findings first. A quick answer uses the first three sections and the sources.
+The lead synthesizes the draft in this shape, the Plan Reviewer rules on it, and the skill delivers it in chat, findings first. A quick answer uses The question, Bottom line, Do this next, and Assumptions and as-of dates.
+
+## The question
+
+[The one question, as framed, and the decision it serves.]
 
 ## Bottom line
 

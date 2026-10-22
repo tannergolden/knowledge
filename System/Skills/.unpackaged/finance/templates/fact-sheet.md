@@ -24,14 +24,21 @@ The facts the answer turns on, and nothing more. It lives in the run workspace o
 
 ## Foundations
 
+In order:
+
 | Foundation | Status |
 |------------|--------|
-| Essentials and minimum payments covered | [ok, gap or unknown] |
+| Essentials and minimum payments covered, none missed or in collection | [ok, gap or unknown] |
 | Starter emergency buffer | [ok, gap or unknown] |
 | Employer match captured | [ok, gap, none offered or unknown] |
 | High-interest debt | [none, present or unknown] |
 | Full emergency fund | [ok, gap or unknown] |
-| Catastrophic risks insured | [ok, gap or unknown] |
+
+Alongside, from the first step:
+
+| Foundation | Status |
+|------------|--------|
+| Catastrophic risks insured: health, disability for every earner, liability, life where someone depends on the income | [ok, gap or unknown] |
 | Will and guardian for dependents | [ok, gap, not applicable or unknown] |
 
 ## Open questions
