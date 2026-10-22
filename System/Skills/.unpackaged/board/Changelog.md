@@ -8,7 +8,7 @@ keywords: ["version history", "release notes", "board changes", "revision log"]
 
 ## Current Version
 
-**`2.1.3`**
+**`2.1.4`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -45,6 +45,11 @@ Aligned the skill to the 2026-07-02 workforce lean build. Four AR departments di
 ## Patch Updates
 
 > Fixes and clarifications. Most recent 4 entries.
+
+### `2.1.4` - 2026-10-22
+
+- The description routes the Founder's personal and household money to the new `finance` skill ("personal money is finance"), so a personal "should I" no longer competes with a business one, and Boundaries says where the two meet. "Fortune 500" left the description to keep it under the 1,024-character limit; the body is unchanged.
+- Two near-miss trigger tests route personal money questions to `finance`.
 
 ### `2.1.3` - 2026-10-19
 

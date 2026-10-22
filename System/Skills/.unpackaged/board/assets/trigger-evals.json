@@ -28,6 +28,8 @@
     {"q": "what is a weighted decision matrix", "route": "a definition, not a run"},
     {"q": "build me a skill that runs companies", "route": "develop"},
     {"q": "write a standalone blog post", "route": "editorial (board may dispatch it inside operate, but a lone post is editorial)"},
-    {"q": "make a chart of our revenue", "route": "visualize"}
+    {"q": "make a chart of our revenue", "route": "visualize"},
+    {"q": "should I refinance my mortgage", "route": "finance"},
+    {"q": "should I pay off my car loan or invest the money", "route": "finance"}
   ]
 }
