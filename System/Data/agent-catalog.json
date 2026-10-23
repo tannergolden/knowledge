@@ -478,7 +478,7 @@
       "role": "Cash Flow Analyst",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent for the household's monthly money picture: net income against fixed, variable and irregular spending, the surplus or gap and the savings rate, the budget method that fits the Founder, the emergency fund target and where to hold it, and the levers that free up cash. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "description": "Dispatch this agent for the household's monthly money picture: net income against fixed, variable and irregular spending, the surplus or gap and the savings rate, the budget method that fits the Founder, the emergency fund target and where to hold it, the levers that free up cash, and unemployment insurance and other benefits when income drops. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
       "path": "BRAIN/Inbox/Faculties/Finance/Cash Flow Analyst.md"
     },
     {
@@ -502,7 +502,7 @@
       "role": "★ Financial Planning Lead",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent to lead any personal or household money question: frame it against the Founder's whole financial picture, check the foundations first, dispatch the Finance specialists it touches, and synthesize one prioritized recommendation with its math, trade-offs and next steps. The lead of the Finance team, the BRAIN's standing personal and household finance team, embodied by the finance skill as its orchestrator; orchestrates and synthesizes, never does a specialist's analysis itself.",
+      "description": "Embodied by the finance skill, never dispatched as a subagent, to lead any personal or household money question: frame it against the Founder's whole financial picture, check the foundations first, dispatch the Finance specialists it touches, and synthesize one prioritized recommendation with its math, trade-offs and next steps. The lead of the Finance team, the BRAIN's standing personal and household finance team; orchestrates and synthesizes, never does a specialist's analysis itself.",
       "path": "BRAIN/Inbox/Faculties/Finance/★ Financial Planning Lead.md"
     },
     {
@@ -526,7 +526,7 @@
       "role": "Investment & Retirement Analyst",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent for investing and retirement: goals by horizon, risk tolerance, asset allocation, fund costs and rebalancing, which account to fund, retirement readiness and projections, withdrawal order, Social Security timing, a pension's lump-sum-or-annuity choice, education savings and college aid, the investing side of pay-off-debt-or-invest, and judging any product or adviser being pitched. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "description": "Dispatch this agent for investing and retirement: goals by horizon, risk tolerance, asset allocation, fund costs and rebalancing, which account to fund, retirement readiness and projections, withdrawal order, Social Security timing and disability benefits, a pension's lump-sum-or-annuity choice, retirement plans for self-employment income, education savings and college aid, the investing side of pay-off-debt-or-invest, and judging any product or adviser being pitched. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
       "path": "BRAIN/Inbox/Faculties/Finance/Investment & Retirement Analyst.md"
     },
     {
@@ -542,7 +542,7 @@
       "role": "Tax Strategist",
       "home": "Faculties",
       "team": "Finance",
-      "description": "Dispatch this agent for personal income tax planning: the right tax year and state, marginal and effective rates, withholding and estimated payments, deductions and credits, traditional versus Roth and other account choices, capital gains and loss harvesting, charitable giving, the tax side of any money move, IRS notices, and the dated tax deadlines. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
+      "description": "Dispatch this agent for personal income tax planning: the right tax year and state, marginal and effective rates, withholding and estimated payments, deductions and credits including the Marketplace premium tax credit, traditional versus Roth and other account choices, capital gains and loss harvesting, charitable giving, gifts and loans to family, estate and gift tax thresholds, the tax side of any money move, IRS notices, and the dated tax deadlines. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
       "path": "BRAIN/Inbox/Faculties/Finance/Tax Strategist.md"
     },
     {

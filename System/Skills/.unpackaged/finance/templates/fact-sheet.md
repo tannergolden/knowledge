@@ -1,6 +1,6 @@
 # Fact sheet (the skill fills this before dispatching)
 
-The facts the answer turns on, and nothing more. It lives in the run workspace outside the vault, may hold exact figures for the run, and is deleted when the run ships (`references/data-and-writes.md`). Every seat and the Plan Reviewer read this same sheet.
+The facts the answer turns on, and nothing more. It lives in the run workspace outside the vault, may hold exact figures for the run, and is deleted when the run ends, whether it shipped or not (`references/data-and-writes.md`). Every seat and the Plan Reviewer read this same sheet.
 
 - **Question:** [the one question, as framed]
 - **Decision it serves and its deadline:** [what the Founder will do with the answer, and by when]

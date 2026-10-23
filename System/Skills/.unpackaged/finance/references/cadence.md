@@ -20,7 +20,7 @@ What a review run checks and when. Read before a review run. Each checkup ends i
 |------|---------|-------|
 | Mid-January | The prior year's fourth-quarter estimated payment | Harriet |
 | Late January to mid-February | Tax forms arrive (W-2s, 1099s, brokerage statements); gather the documents | Harriet |
-| February to mid-April | File, or extend; contributions to IRAs and HSAs for the prior year are due by the filing deadline, not the extension | Harriet, Graham |
+| February to mid-April | File, or extend; contributions to IRAs and HSAs for the prior year are due by the filing deadline, not the extension | Harriet, Graham, Elliot |
 | Mid-April | The filing deadline and the first-quarter estimated payment | Harriet |
 | Mid-June | The second-quarter estimated payment | Harriet |
 | Mid-September | The third-quarter estimated payment | Harriet |

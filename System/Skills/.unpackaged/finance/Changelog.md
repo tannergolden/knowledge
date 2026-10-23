@@ -8,7 +8,7 @@ keywords: ["version history", "release notes", "finance changes", "revision log"
 
 ## Current Version
 
-**`1.0.1`**
+**`1.0.2`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -37,6 +37,17 @@ Initial build of the finance skill: the BRAIN's personal and household finance s
 ## Patch Updates
 
 > Fixes and clarifications. Most recent 4 entries.
+
+### `1.0.2` - 2026-10-23
+
+Fixes from a second, independent audit of the team and the skill, each checked against the official sources:
+
+- Delaying Medicare Part B now depends on who pays first: at an employer with fewer than 20 employees Medicare usually does, so Part B starts on time (the Insurance & Estate Specialist, `references/life-events.md`).
+- Every income move (a Roth conversion, a gain harvest, a bonus, an extra withdrawal) is checked against the Marketplace premium tax credit, now repaid at filing with no cap, as well as IRMAA (the Tax Strategist, the Investment & Retirement Analyst, the Insurance & Estate Specialist, `references/doctrine.md`).
+- The inheritance event dates its deadlines (the nine-month disclaimer, the portability election, the year-of-death distribution); a federal student loan is never left to default; the match counts once it vests; debt payoff waits only on the starter buffer; the IRA rollover limit runs per 12 months; a government money market fund is no longer called government-backed.
+- Quick answers reproduce a seat's numbers with a script and lead with any foundation gap; the Plan Reviewer's inputs, severities and re-review scope read the same everywhere; the dependency order adds Clara before Elliot and Graham before Harriet on account choice.
+- One owner per topic now holds (COBRA, the dependent care FSA, self-employed retirement plans, estate tax thresholds), public benefits and Social Security disability have owners, and the brief carries each seat's sources inline.
+- The official sources add the state unemployment agency, SHIP Medicare counseling, the No Surprises Act, the PBGC and the IRS child-account page.
 
 ### `1.0.1` - 2026-10-22
 

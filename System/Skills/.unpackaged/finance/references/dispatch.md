@@ -9,7 +9,7 @@ How `finance` spends the Finance team, scaled to the question. Read before the f
 | One current figure, one rule, or one calculation inside one domain, and nothing irreversible rides on it | quick |
 | A decision with a trade-off, touching one to three domains | standard |
 | Any irreversible step (an exercise, a purchase, a rollover or a cash-out, a Roth conversion, an 83(b) election, a pension or Social Security election, a policy change, a large payoff) | standard at least |
-| A full plan, a life event (`life-events.md`), a windfall, or an irreversible decision large relative to the Founder's net worth | deep |
+| A full plan, a life event (`life-events.md`), a windfall, a decision touching four or more domains, or an irreversible decision large relative to the Founder's net worth (about a tenth of it, or any sum the Founder calls large) | deep |
 | A review run | standard; deep for the annual review |
 
 When two rows fit, take the higher. Announce the mode and the tier before dispatching.
@@ -18,12 +18,12 @@ When two rows fit, take the higher. Announce the mode and the tier before dispat
 
 | The question is about | Seat |
 |-----------------------|------|
-| Income, spending, budget, savings rate, emergency fund, where cash is held | Cash Flow Analyst (Lucille) |
+| Income, spending, budget, savings rate, emergency fund, where cash is held; unemployment insurance and means-tested benefits (Medicaid, CHIP, SNAP) when income drops | Cash Flow Analyst (Lucille) |
 | Credit reports and scores, cards, any loan's terms, payoff order, refinancing, collections, borrowing, co-signing, a suspected scam | Credit & Debt Specialist (Owen) |
-| Income tax, withholding and estimates, deductions and credits, account types, capital gains, notices | Tax Strategist (Harriet) |
-| Investing, allocation, fees, retirement projections and drawdown, Social Security (survivor benefits included), a pension's lump sum or annuity, education savings and college aid, investing an HSA balance, products and advisers | Investment & Retirement Analyst (Graham) |
-| Choosing a health plan, Medicare, disability, life, property, liability and long-term care coverage, medical bills and insurance appeals; wills, beneficiaries, powers of attorney, trusts | Insurance & Estate Specialist (Clara) |
-| Workplace elections, the retirement plan's match and vesting, HSA and FSA eligibility and contributions, RSUs, options, ESPP, job offers, leaving a job | Equity & Benefits Specialist (Elliot) |
+| Income tax, withholding and estimates, deductions and credits (the premium tax credit included), account types, capital gains, notices; gifts and loans to family and the gift tax return; estate and gift tax thresholds | Tax Strategist (Harriet) |
+| Investing, allocation, fees, retirement projections and drawdown, Social Security (survivor and disability benefits included), a pension's lump sum or annuity, retirement plans for self-employment income, education savings and college aid, investing an HSA balance, products and advisers | Investment & Retirement Analyst (Graham) |
+| Choosing a health plan, COBRA or the Marketplace, Medicare, disability, life, property, liability and long-term care coverage, medical bills and insurance appeals; wills, beneficiaries, powers of attorney, trusts | Insurance & Estate Specialist (Clara) |
+| Workplace elections, the retirement plan's match and vesting, HSA and FSA eligibility and contributions (an HSA with an eligible Marketplace plan included), the dependent care FSA, RSUs, options, ESPP, job offers, leaving a job (equity, severance, the plan's COBRA dates) | Equity & Benefits Specialist (Elliot) |
 | Rent or buy, how much house, the down payment and loan programs, a rental or investment property, a car, a wedding, a renovation, any large planned purchase | Home & Major Purchases Analyst (Henry) |
 | The gate on any consequential draft | Plan Reviewer (Ingrid) |
 
@@ -32,16 +32,18 @@ The Financial Planning Lead (Theodore) frames, synthesizes and decides between s
 ## Dependency order
 
 1. Lucille first when the answer depends on how much money is free each month.
-2. Then the lead sets each seat's provisional share of the surplus in its brief, and the independent seats run in parallel, in one message.
-3. Harriet after any seat whose move has a tax effect (a rollover, a sale, an exercise, a conversion, a settled debt, a home sale), with that seat's return as input.
-4. The lead synthesizes the draft; the skill runs the computation check.
-5. Ingrid last, on the draft and the fact sheet only.
+2. Clara before Elliot when a health plan choice is in play, since Elliot's elections follow her plan choice.
+3. For account choice, Graham's projection first, then Harriet's marginal-rate comparison, then the lead sets the order.
+4. The lead sets each remaining seat's provisional share of the surplus in its brief, and the independent seats run in parallel, in one message.
+5. Harriet after any seat whose move has a tax effect (a rollover, a sale, an exercise, a conversion, a settled debt, a home sale), with that seat's return as input.
+6. The lead synthesizes the draft; the skill runs the computation check.
+7. Ingrid last, on the draft plan, the fact sheet, the computation check and the Profile paths, never the lead's notes or the seats' returns.
 
 ## What runs at each tier
 
-- **quick.** No team fan-out. The skill fetches the figure or rule from the official source (`assets/official-sources.json`), runs the calculation as a script, and answers with the source and its date. When the question needs a seat's judgment rather than a lookup, dispatch that one seat and deliver its return. No review unless an irreversible step rides on the answer, which makes it standard.
+- **quick.** No team fan-out. The skill fetches the figure or rule from the official source (`assets/official-sources.json`), runs the calculation as a script, and answers with the source and its date. When the question needs a seat's judgment rather than a lookup, dispatch that one seat, reproduce every number it returns with a script, and lead the answer with any foundation gap the preflight found. No review unless an irreversible step rides on the answer, which makes it standard.
 - **standard.** The lead frames and names the seats; one to three seats return in dependency order; the lead synthesizes the draft plan; the skill reproduces every load-bearing number; Ingrid gates; the lead applies her findings; the skill delivers.
-- **deep.** As standard, with every seat the question touches, the life-event checklist when one applies, the computation check on every number in the plan, and the referral checklist from `doctrine.md` run in full.
+- **deep.** As standard, with every seat the question touches, the life-event checklist when one applies, the computation check on every number in the plan, and the referral triggers in `doctrine.md` checked in full.
 
 ## Run workspace
 
@@ -49,7 +51,7 @@ The run workspace is an ephemeral folder outside the vault tree: the session's s
 
 ## The self-contained brief
 
-A subagent sees none of this conversation. Every dispatch restates, in full, in the `templates/brief.md` shape: the role spec to read, the objective and its success test, the inputs (the fact sheet inline, the Profile paths to read, the jurisdiction and tax year), the output contract, the tools and sources to prefer, and the boundaries. An incomplete brief is the commonest dispatch failure: the worker improvises the gap. Role specs are at `Inbox/Faculties/Finance/<Role>.md`; the lead's file is `★ Financial Planning Lead.md`, and mind the ampersands in five file names.
+A subagent sees none of this conversation. Every dispatch restates, in full, in the `templates/brief.md` shape: the role spec to read, the objective and its success test, the inputs (the fact sheet inline, the Profile paths to read, the jurisdiction and tax year), the output contract, the tools and sources to prefer, and the boundaries. An incomplete brief is a common dispatch failure: the worker improvises the gap. Role specs are at `Inbox/Faculties/Finance/<Role>.md`; the lead's file is `★ Financial Planning Lead.md`, and mind the ampersands in five file names.
 
 ## The computation check
 
@@ -57,7 +59,7 @@ Before review, the skill adds to the fact sheet every fact a seat took from a do
 
 ## The review loop
 
-Ingrid reads the draft and the fact sheet, never the lead's notes or the seats' returns. REVISE: the lead applies the MATERIAL findings and the plan ships. HOLD: the lead fixes the FATAL findings, and Ingrid reviews only the cited items, fresh. A FATAL that survives the second round is put to the Founder as an open question with both sides, never shipped as advice.
+Ingrid reads the draft plan, the fact sheet, the computation check and the Profile paths, never the lead's notes or the seats' returns. REVISE: the plan ships only once every MATERIAL finding is applied. HOLD: the lead fixes the FATAL findings, and Ingrid reviews the cited items and every line the fix changed, fresh. A FATAL that survives the second round is put to the Founder as an open question with both sides, never shipped as advice.
 
 ## The rules that never bend
 
