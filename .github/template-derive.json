@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "name": "🔄 Template Sync",
+  "source": ".github/template-derive.json",
+  "lock": ".github/template-derive.lock",
+  "list": ".github/template-sync",
+  "exclude": [
+    ".github/ISSUE_TEMPLATE/Vulnerability-Report.yaml",
+    ".github/actions/README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "benchmarks",
+    "docs/adrs/ADR-0001-Record-Architecture-Decisions.md",
+    "examples",
+    "packages",
+    "src",
+    "tests"
+  ],
+  "relocate": {
+    "assets": ".assets",
+    "docs": ".docs"
+  }
+}

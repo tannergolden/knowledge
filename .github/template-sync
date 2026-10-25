@@ -1,15 +1,15 @@
 # --- 🔄 Template Sync ---
 #
-# Every path tannergolden/path ships, and whether 🔄 Template Sync, when you run
-# it, keeps it current in this repository. How it all works:
+# Every path tannergolden/knowledge ships, and whether 🔄 Template Sync, when
+# you run it, keeps it current in this repository. How it all works:
 # .github/template-sync.md, beside this.
 #
 # A line naming a path keeps it current. A `#` with no space before a path -
-# `#/README.md` - leaves that path to you. A line starting `# ` is a note.
+# `#/LICENSE` - leaves that path to you. A line starting `# ` is a note.
 #
 # To keep a file as yours, put a `#` in front of its line; to have the
 # template keep it current again, take the `#` away. Rules of your own - a
-# pattern like `!/docs/**` to stop a whole folder - go under "Your rules" at
+# pattern like `!/.docs/**` to stop a whole folder - go under "Your rules" at
 # the end, and win over everything above them. Each sync redraws this file
 # from the template's latest list and keeps every choice you made in it.
 #
@@ -47,7 +47,6 @@
 /.github/ISSUE_TEMPLATE/Feedback-Report.yaml
 /.github/ISSUE_TEMPLATE/Performance-Report.yaml
 /.github/ISSUE_TEMPLATE/README.md
-/.github/ISSUE_TEMPLATE/Vulnerability-Report.yaml
 /.github/ISSUE_TEMPLATE/config.yml
 /.github/SECURITY.md
 /.github/SUPPORT.md
@@ -76,7 +75,6 @@
 /.github/workflows/ci-failure-alert.yml
 /.github/workflows/dependabot-automerge.yml
 /.github/workflows/governance.yml
-/.github/workflows/intelligence-sync.yml
 /.github/workflows/lifecycle.yml
 /.github/workflows/maintenance.yml
 /.github/workflows/preview-deploy.yml
@@ -93,83 +91,175 @@
 /.vscode/extensions.json
 /.vscode/settings.json
 
-/docs/Prompts.md
-/docs/README.md
-/docs/adrs/README.md
-/docs/distribution/README.md
-/docs/introduction/README.md
-/docs/library/README.md
-/docs/operations/README.md
-/docs/references/README.md
-/docs/technical/README.md
-/docs/templates/ADR.md
-/docs/templates/Communication.md
-/docs/templates/Implementation-Plan.md
-/docs/templates/Post-Mortem.md
-/docs/templates/Project-README.md
-/docs/templates/README.md
-/docs/templates/Research-Log.md
-/docs/templates/Runbook.md
-/docs/templates/Technical-Design.md
-/docs/templates/User-Story.md
-/docs/templates/distribution/README.md
-/docs/templates/distribution/Release-Process.md
-/docs/templates/distribution/Release-Verification.md
-/docs/templates/introduction/Getting-Started.md
-/docs/templates/introduction/README.md
-/docs/templates/introduction/Roadmap.md
-/docs/templates/operations/Dependency-Policy.md
-/docs/templates/operations/Incident-Response.md
-/docs/templates/operations/README.md
-/docs/templates/operations/Threat-Model.md
-/docs/templates/references/Glossary.md
-/docs/templates/references/README.md
-/docs/templates/technical/Architecture-Overview.md
-/docs/templates/technical/Packages-&-Workspaces.md
-/docs/templates/technical/README.md
-/docs/templates/technical/Source-Code.md
-/docs/templates/technical/Technology-Stack-&-Tooling.md
-/docs/templates/technical/backend/API-Design-Standards.md
-/docs/templates/technical/backend/Authentication-&-Security.md
-/docs/templates/technical/backend/README.md
-/docs/templates/technical/backend/Schema-&-Validation.md
-/docs/templates/technical/benchmarks/Performance-Benchmarks.md
-/docs/templates/technical/benchmarks/README.md
-/docs/templates/technical/database/Data-Models-&-Entities.md
-/docs/templates/technical/database/Migration-Policies.md
-/docs/templates/technical/database/README.md
-/docs/templates/technical/infrastructure/CI-CD-Pipelines.md
-/docs/templates/technical/infrastructure/Deployment-Protocols.md
-/docs/templates/technical/infrastructure/Environment-Configuration.md
-/docs/templates/technical/infrastructure/README.md
-/docs/templates/technical/interface/Formatting-&-Standards.md
-/docs/templates/technical/interface/README.md
-/docs/templates/technical/interface/Styling-&-Theming.md
-/docs/templates/technical/interface/UI-Setup-&-Environment.md
-/docs/templates/technical/testing/E2E-Testing.md
-/docs/templates/technical/testing/README.md
-/docs/templates/technical/testing/Unit-Test-Standards.md
+/.docs/Prompts.md
+/.docs/README.md
+/.docs/adrs/README.md
+/.docs/distribution/README.md
+/.docs/introduction/README.md
+/.docs/library/README.md
+/.docs/operations/README.md
+/.docs/references/README.md
+/.docs/technical/README.md
+/.docs/templates/ADR.md
+/.docs/templates/Communication.md
+/.docs/templates/Implementation-Plan.md
+/.docs/templates/Post-Mortem.md
+/.docs/templates/Project-README.md
+/.docs/templates/README.md
+/.docs/templates/Research-Log.md
+/.docs/templates/Runbook.md
+/.docs/templates/Technical-Design.md
+/.docs/templates/User-Story.md
+/.docs/templates/distribution/README.md
+/.docs/templates/distribution/Release-Process.md
+/.docs/templates/distribution/Release-Verification.md
+/.docs/templates/introduction/Getting-Started.md
+/.docs/templates/introduction/README.md
+/.docs/templates/introduction/Roadmap.md
+/.docs/templates/operations/Dependency-Policy.md
+/.docs/templates/operations/Incident-Response.md
+/.docs/templates/operations/README.md
+/.docs/templates/operations/Threat-Model.md
+/.docs/templates/references/Glossary.md
+/.docs/templates/references/README.md
+/.docs/templates/technical/Architecture-Overview.md
+/.docs/templates/technical/Packages-&-Workspaces.md
+/.docs/templates/technical/README.md
+/.docs/templates/technical/Source-Code.md
+/.docs/templates/technical/Technology-Stack-&-Tooling.md
+/.docs/templates/technical/backend/API-Design-Standards.md
+/.docs/templates/technical/backend/Authentication-&-Security.md
+/.docs/templates/technical/backend/README.md
+/.docs/templates/technical/backend/Schema-&-Validation.md
+/.docs/templates/technical/benchmarks/Performance-Benchmarks.md
+/.docs/templates/technical/benchmarks/README.md
+/.docs/templates/technical/database/Data-Models-&-Entities.md
+/.docs/templates/technical/database/Migration-Policies.md
+/.docs/templates/technical/database/README.md
+/.docs/templates/technical/infrastructure/CI-CD-Pipelines.md
+/.docs/templates/technical/infrastructure/Deployment-Protocols.md
+/.docs/templates/technical/infrastructure/Environment-Configuration.md
+/.docs/templates/technical/infrastructure/README.md
+/.docs/templates/technical/interface/Formatting-&-Standards.md
+/.docs/templates/technical/interface/README.md
+/.docs/templates/technical/interface/Styling-&-Theming.md
+/.docs/templates/technical/interface/UI-Setup-&-Environment.md
+/.docs/templates/technical/testing/E2E-Testing.md
+/.docs/templates/technical/testing/README.md
+/.docs/templates/technical/testing/Unit-Test-Standards.md
+
+# --- The vault: kept current --------------------------------------------------
+# This template's own files. Every vault generated from it keeps them current:
+# the scripts, governance, skills, agents, folder notes and scaffolds.
+/.docs/distribution/How-A-Change-Reaches-A-Vault.md
+/.docs/introduction/How-The-Vault-Works.md
+/.docs/introduction/Setting-Up-A-Vault.md
+/.docs/introduction/Working-In-The-Vault.md
+/.docs/operations/Personal-Data-&-Secrets.md
+/.docs/references/Glossary.md
+/.docs/technical/Vault-Scripts.md
+/.docs/technical/vault/**
+/.github/README.md
+/.github/actions/**
+/.github/scripts/check-agents.py
+/.github/scripts/check-links.py
+/.github/scripts/check-skills.py
+/.github/scripts/check-vault.py
+/.github/scripts/fixtures.py
+/.github/scripts/knowledge-base.py
+/.github/scripts/lint-notes.py
+/.github/scripts/profile-coverage.py
+/.github/scripts/scan-pii.py
+/.github/scripts/session.py
+/.github/scripts/test_check_agents.py
+/.github/scripts/test_check_links.py
+/.github/scripts/test_check_skills.py
+/.github/scripts/test_check_vault.py
+/.github/scripts/test_knowledge_base.py
+/.github/scripts/test_lint_notes.py
+/.github/scripts/test_profile_coverage.py
+/.github/scripts/test_scan_pii.py
+/.github/scripts/test_session.py
+/.github/scripts/test_update_vault.py
+/.github/scripts/test_vault.py
+/.github/scripts/update-vault.py
+/.github/scripts/vault.py
+/.github/workflows/vault.yml
+/.typos.toml
+/AGENTS.md
+/Inbox/Faculties/**
+/Inbox/Ideas/Ideas.md
+/Inbox/Inbox.md
+/Inbox/README.md
+/Inbox/Reports/Reports.md
+/Inbox/Visuals/Visuals.md
+/Library/**
+/Memory/.template/**
+/Memory/Context/**
+/Memory/Decisions/Decisions.md
+/Memory/Entities/Entities.md
+/Memory/Entities/Organizations/Organizations.md
+/Memory/Entities/People/People.md
+/Memory/Entities/Places/Places.md
+/Memory/Events/Events.md
+/Memory/Insights/Insights.md
+/Memory/Memory.md
+/Memory/README.md
+/Profile/.template/**
+/Profile/Goals/Goals.md
+/Profile/Health/Health.md
+/Profile/Profile.md
+/Profile/README.md
+/Profile/Skills/Skills.md
+/Profile/Values/Values.md
+/Projects/.template/**
+/Projects/Projects.md
+/Projects/README.md
+/System/Data/Data.md
+/System/README.md
+/System/Skills/**
+/System/System.md
+/System/Workflows.md
+/Ventures/.template/**
+/Ventures/Agent Resources (AR)/**
+/Ventures/README.md
+/Ventures/Ventures.md
 
 # --- Yours: seeded once, never synced -----------------------------------------
-#/README.md
 #/LICENSE
 #/.git-blame-ignore-revs
 #/.github/CODEOWNERS
 #/.github/FUNDING.yml
-#/.github/actions/**
 #/.github/workflows/cut-release.yml
-#/assets/**
-#/benchmarks/**
-#/docs/adrs/ADR-0001-Record-Architecture-Decisions.md
-#/examples/**
-#/packages/**
-#/src/**
-#/tests/**
+#/.assets/**
+
+# --- The vault: yours ---------------------------------------------------------
+# Each vault's own: what its owner writes about themselves, the logs they keep,
+# the catalogs drawn from their notes, and the stub that keeps the universal
+# rules in AGENTS.md current.
+#/.github/workflows/intelligence-sync.yml
+#/Memory/Dates.md
+#/Memory/Log.md
+#/Profile/Biography.md
+#/Profile/Finances.md
+#/Profile/Focus.md
+#/Profile/Lifestyle.md
+#/Profile/Personality.md
+#/Profile/Preferences.md
+#/Profile/Relationships.md
+#/Profile/Working Style.md
+#/System/Data/agent-catalog.json
+#/System/Data/catalog.ndjson
 
 # --- Only ever in the template ----------------------------------------------
 # Initialisation deletes each of these from every repository generated from
-# the template.
+# this template: the sentinel that lets it run, the template's derivation from
+# the golden path template it follows, and the record of this template's own
+# design, none of which a vault needs.
+#/.docs/adrs/ADR-0001-AGENTS-Holds-The-Vaults-Rules.md
+#/.docs/adrs/ADR-0002-Notes-Take-The-Hidden-Frontmatter.md
 #/.github/TEMPLATE_INIT
-#/CHANGELOG.md
+#/.github/template-derive.json
+#/.github/template-derive.lock
 
 # --- Your rules ---------------------------------------------------------------

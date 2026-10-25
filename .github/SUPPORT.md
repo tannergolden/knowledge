@@ -35,7 +35,7 @@ _Ask once. Ask in the right place._
 
 ## 📚 Self-Serve First
 
-- **[README](../README.md)** - quick start and repository map.
+- **[README](README.md)** - quick start and repository map.
 - **[Documentation index](https://github.com/tannergolden/standards/blob/Development/docs/README.md)** - every canonical guide, from branching to releases (lives in the template home).
 - **[Troubleshooting](https://github.com/tannergolden/standards/blob/Development/docs/operations/Troubleshooting.md)** - the 90-second triage for common failures.
 - **[Contributing guide](CONTRIBUTING.md)** - standards for changes and pull requests.

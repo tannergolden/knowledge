@@ -1,0 +1,52 @@
+<!--
+title: "Insight"
+description: "Template for a single synthesized insight about the user's external world, with evidence and provenance."
+type: "template"
+keywords: ["synthesis", "pattern", "observation", "evidence", "confidence", "template"]
+-->
+
+<!--
+Instantiation: copy this file into Memory/Insights/ to record an insight.
+- Set type to "record", and give the copy its real title and description.
+- Replace the emoji H1 title with the real insight.
+- Name the file YYYY-MM-slug.md so insights sort chronologically.
+- Boundary reminder: an Insight is about the external world only. Nothing
+  about the user themselves - their traits, values, habits, preferences, or
+  goals. That is Profile, and is proposed there (`Profile/Profile.md`, Rules), never
+  stored here.
+- Supersede, never rewrite.
+-->
+
+# 💡 [Insight]
+
+## Statement
+
+The synthesized observation, about the external world only - a recurring situation, a relationship dynamic, or a pattern in how things tend to go.
+
+## Evidence
+
+Plain-path links to the source memories this insight was distilled from. An insight with no evidence is a guess, not an insight.
+
+-
+-
+
+## Confidence
+
+How strongly this holds, and why - how much evidence backs it, and how consistent that evidence is.
+
+## Provenance
+
+- As of:
+- Recorded:
+
+## Status
+
+`Active` / `Superseded`
+
+## Superseded-by
+
+Plain path to the insight that replaced this one, if any.
+
+## Related
+
+-

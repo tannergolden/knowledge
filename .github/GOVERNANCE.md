@@ -64,7 +64,7 @@ The people who hold merge and administrative access, and how to reach them in pr
 The project is designed so that **no single person is a point of failure**:
 
 - **Administrative access never rests on one account.** An organization MUST list two or more owners or admins, so loss of any one account never strands the project; record the continuity contacts in the organization's owner list. A personal account's repository has one owner and no second admin, so its owner names a successor under <kbd>Settings</kbd> → <kbd>Account</kbd> → <kbd>Successor settings</kbd>, who can archive the owner's public repositories or transfer them to an account that can carry on.
-- **No credentials live only in one head.** Release signing, publishing, and any service tokens are kept in a private store every admin can open, such as a shared password manager - never in this repository, and never tied to one person's personal account. Name the store, but never a secret, in the project's [Runbook](../docs/templates/Runbook.md) for rotating them.
+- **No credentials live only in one head.** Release signing, publishing, and any service tokens are kept in a private store every admin can open, such as a shared password manager - never in this repository, and never tied to one person's personal account. Name the store, but never a secret, in the project's [Runbook](../.docs/templates/Runbook.md) for rotating them.
 - **Succession plan.** If a Maintainer becomes unavailable, the remaining Maintainers (or, if none remain, the organization owners) appoint replacements by updating the [Maintainers](#-maintainers) table, `CODEOWNERS` and the admin list. Because every standard, workflow, and guardrail is committed to the repository, a new Maintainer can take over from the documentation alone.
 
 > [!IMPORTANT]
@@ -85,7 +85,7 @@ Quality is enforced by process, not trust:
 
 ## 🌱 Onboarding New Contributors
 
-- Start with the [Contributing Guidelines](CONTRIBUTING.md) and the setup checklist in the repository [README](../README.md).
+- Start with the [Contributing Guidelines](CONTRIBUTING.md) and the setup checklist in the repository [README](README.md).
 - Good entry points are issues labelled **`good first issue`** and **`help wanted`** - small, well-scoped tasks that need no deep context. Maintainers keep a few of these open on purpose.
 - Ask questions in **Discussions** (the tab on this repository; enable it under Settings → General → Features if it is not there) or via [Support](SUPPORT.md).
 

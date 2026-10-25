@@ -223,3 +223,66 @@ playwright/.cache/
 _site/
 .jekyll-cache/
 .jekyll-metadata
+
+# --- BRAIN Vault ---
+# Carried over from the vault's own .gitignore. Machine-local churn, derived
+# indexes, snapshots, and trash stay out; the knowledge, scripts, and config stay
+# in. Rules the sections above already cover are not repeated.
+
+# Undownloaded iCloud placeholders (never commit a dataless stub)
+*.icloud
+
+# Obsidian: the vault carries no editor settings. One opened in Obsidian keeps
+# the settings Obsidian writes on that machine, out of git.
+.obsidian/
+
+# Left on a machine by the retired engine (System/brain.command): its trash
+# and snapshots. Nothing writes them now; these keep the leftovers out of git.
+.trash/
+System/.backups/
+System/Backups/
+
+# System/Data/ holds its folder doc and the two catalogs update-vault.py draws.
+# Anything else there is a leftover of the retired engine: its index, logs and state.
+System/Data/*
+!System/Data/Data.md
+!System/Data/catalog.ndjson
+!System/Data/agent-catalog.json
+
+# Offline knowledge bases (ZIM files in Library/Reference & Encyclopedia/):
+# large, re-downloadable Kiwix binaries, fetched by `knowledge-base.py refresh`.
+*.zim
+*.zim.tmp
+*.zim.part
+*.zim.aria2
+
+# Claude Code local state: personal overrides and anything machine-local or
+# secret the harness may write into the project .claude/ folder.
+.claude/settings.local.json
+.claude/*.local.json
+.claude/.credentials.json
+
+# Atomic-write temp files from the vault scripts (a crash mid-write can strand one)
+*.tmp~
+
+# macOS AppleDouble resource forks and volume metadata
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.DocumentRevisions-V100
+.TemporaryItems
+.Trashes
+.fseventsd
+.apdisk
+.VolumeIcon.icns
+
+# Windows metadata, so the vault stays clean if opened on Windows
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor scratch and merge leftovers
+.#*
+*.orig
+*.bak

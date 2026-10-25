@@ -1,0 +1,30 @@
+# The vault's checks as one step: every check in .github/scripts/, through
+# check-vault.py, then the unit tests of the scripts themselves. A workflow
+# runs it after actions/checkout; .github/workflows/vault.yml is the one that
+# does here.
+name: 'Vault Checks'
+description: >-
+  Checks every note, wikilink, skill, agent and generated part of the vault,
+  scans the tracked files for personal numbers, and tests the scripts that do it.
+author: 'Tanner Golden'
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
+inputs:
+  tests:
+    description: "'false' skips the unit tests of the scripts in .github/scripts/."
+    required: false
+    default: 'true'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: '🧠 Run every vault check'
+      shell: bash
+      run: python3 .github/scripts/check-vault.py
+
+    - name: '🧪 Test the vault scripts'
+      if: ${{ inputs.tests == 'true' }}
+      shell: bash
+      run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'

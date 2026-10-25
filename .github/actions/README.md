@@ -2,6 +2,7 @@
 title: '🎬 REPOSITORY ACTIONS'
 description: 'The composite actions this repository keeps for its own workflows, and for any other repository that calls them.'
 type: index
+keywords: [github-actions, composite-action, workflows, automation]
 -->
 
 <div align="center">
@@ -27,7 +28,7 @@ here so every repository keeps its actions in the same place.
 
 A workflow in this repository calls one by its path, `./.github/actions/<name>`,
 after `actions/checkout`. Another repository calls it by address and tag, as
-`tannergolden/knowledge/.github/actions/<name>@<tag>`, and GitHub fetches it from this
+`OWNER/REPOSITORY/.github/actions/<name>@<tag>`, and GitHub fetches it from this
 repository's source archive at that tag. That is why `.gitattributes` keeps this
 folder in the archive while it leaves the rest of `.github/` out.
 
@@ -41,13 +42,14 @@ repository calls from nowhere else.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                    | Purpose    |
-| :----------------------- | :--------- |
-| [`README.md`](README.md) | This file. |
+| Entry                       | Purpose                                                                                                      |
+| :-------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| [`vault/`](vault/README.md) | Checks every note, wikilink, skill, agent and generated part of the vault, and tests the scripts that do it. |
+| [`README.md`](README.md)    | This file.                                                                                                   |
 
 <!-- AUTO-INDEX:END -->
 
-🗂️ Machined Indexes redraws this log after every push to the default branch.
+🗂️ Machined Indexes redraws this log after every push.
 
 ---
 

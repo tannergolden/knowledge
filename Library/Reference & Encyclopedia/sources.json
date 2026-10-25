@@ -1,0 +1,165 @@
+{
+  "sources": [
+    {
+      "name": "wikipedia-simple",
+      "prefix": "wikipedia_en_simple_all_nopic",
+      "base": "https://lb.download.kiwix.org/zim/wikipedia/",
+      "enabled": false,
+      "note": "Simple English Wikipedia, full text, no images (~940 MB). Small pipeline-test source."
+    },
+    {
+      "name": "wikipedia",
+      "prefix": "wikipedia_en_all_nopic",
+      "base": "https://lb.download.kiwix.org/zim/wikipedia/",
+      "enabled": false,
+      "note": "Full English Wikipedia, full text, no images (~49 GB)"
+    },
+    {
+      "name": "wiktionary",
+      "prefix": "wiktionary_en_all_nopic",
+      "base": "https://lb.download.kiwix.org/zim/wiktionary/",
+      "enabled": false,
+      "note": "English Wiktionary dictionary, no images (~8.5 GB)"
+    },
+    {
+      "name": "wikivoyage",
+      "prefix": "wikivoyage_en_all_nopic",
+      "base": "https://lb.download.kiwix.org/zim/wikivoyage/",
+      "enabled": false,
+      "note": "Wikivoyage travel guides, English, no images (~220 MB)"
+    },
+    {
+      "name": "wikiquote",
+      "prefix": "wikiquote_en_all_nopic",
+      "base": "https://lb.download.kiwix.org/zim/wikiquote/",
+      "enabled": false,
+      "note": "Wikiquote sourced quotations, English, no images (~310 MB)"
+    },
+    {
+      "name": "wikibooks",
+      "prefix": "wikibooks_en_all_nopic",
+      "base": "https://lb.download.kiwix.org/zim/wikibooks/",
+      "enabled": false,
+      "note": "Wikibooks open textbooks, English, no images (~3.3 GB)"
+    },
+    {
+      "name": "wikisource",
+      "prefix": "wikisource_en_all_nopic",
+      "base": "https://lb.download.kiwix.org/zim/wikisource/",
+      "enabled": false,
+      "note": "Wikisource primary-source texts, English, no images (~11 GB)"
+    },
+    {
+      "name": "wikiversity",
+      "prefix": "wikiversity_en_all_nopic",
+      "base": "https://lb.download.kiwix.org/zim/wikiversity/",
+      "enabled": false,
+      "note": "Wikiversity learning materials and courses, English, no images (~1.5 GB)"
+    },
+    {
+      "name": "stackoverflow",
+      "prefix": "stackoverflow.com_en_all",
+      "base": "https://lb.download.kiwix.org/zim/stack_exchange/",
+      "enabled": false,
+      "note": "Stack Overflow programming Q&A, English (~75 GB). Frozen at the 2023-11 build, the last Kiwix produced (no newer or multilingual main build exists); durable for established programming, use the web for recent."
+    },
+    {
+      "name": "gutenberg",
+      "prefix": "gutenberg_en_all",
+      "base": "https://lb.download.kiwix.org/zim/gutenberg/",
+      "enabled": false,
+      "note": "Project Gutenberg public-domain books, English (~206 GB, includes media)"
+    },
+    {
+      "name": "medicine",
+      "prefix": "mdwiki_en_all",
+      "base": "https://lb.download.kiwix.org/zim/other/",
+      "enabled": false,
+      "note": "WikiProject Medicine offline medical encyclopedia (~10 GB)"
+    },
+    {
+      "name": "ifixit",
+      "prefix": "ifixit_en_all",
+      "base": "https://lb.download.kiwix.org/zim/ifixit/",
+      "enabled": false,
+      "note": "iFixit repair guides for devices, electronics, and hardware (~3.3 GB)"
+    },
+    {
+      "name": "libretexts-math",
+      "prefix": "libretexts.org_en_math",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college mathematics textbooks (~790 MB)"
+    },
+    {
+      "name": "libretexts-chem",
+      "prefix": "libretexts.org_en_chem",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college chemistry textbooks (~2 GB)"
+    },
+    {
+      "name": "libretexts-phys",
+      "prefix": "libretexts.org_en_phys",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college physics textbooks (~530 MB)"
+    },
+    {
+      "name": "libretexts-bio",
+      "prefix": "libretexts.org_en_bio",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college biology textbooks (~2.1 GB)"
+    },
+    {
+      "name": "libretexts-stats",
+      "prefix": "libretexts.org_en_stats",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college statistics textbooks (~210 MB)"
+    },
+    {
+      "name": "libretexts-eng",
+      "prefix": "libretexts.org_en_eng",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college engineering textbooks (~650 MB)"
+    },
+    {
+      "name": "libretexts-geo",
+      "prefix": "libretexts.org_en_geo",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college geosciences textbooks (~1.1 GB)"
+    },
+    {
+      "name": "libretexts-med",
+      "prefix": "libretexts.org_en_med",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college medicine textbooks (~1.1 GB)"
+    },
+    {
+      "name": "libretexts-socialsci",
+      "prefix": "libretexts.org_en_socialsci",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college social-science textbooks (~1.9 GB)"
+    },
+    {
+      "name": "libretexts-human",
+      "prefix": "libretexts.org_en_human",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college humanities textbooks (~3.5 GB)"
+    },
+    {
+      "name": "libretexts-biz",
+      "prefix": "libretexts.org_en_biz",
+      "base": "https://lb.download.kiwix.org/zim/libretexts/",
+      "enabled": false,
+      "note": "LibreTexts open college business textbooks (~800 MB)"
+    }
+  ]
+}

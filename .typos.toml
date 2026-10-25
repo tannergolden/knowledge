@@ -1,0 +1,16 @@
+# --- Vault Spell-Check Words ---
+#
+# Words the shared standards config does not know but this vault spells
+# correctly. `typos` finds this file on its own and adds it to the shared
+# config that the Check Spelling job passes with --config, so both lists apply.
+#
+# Additive, like the shared list: add the term rather than reword the sentence.
+#
+# ---
+
+[default.extend-words]
+Damon = "Damon" # the Devil's Advocate agent's name, Inbox/Faculties/Research/
+Extraversion = "Extraversion" # the Big Five domain, Profile/Personality.md
+HSA = "HSA" # a health savings account, Inbox/Faculties/Finance/
+mis = "mis" # the prefix in hyphenated words: mis-fires, mis-called
+UNIO = "UNIO" # typos splits "UNIONs" (a verb in a comment) into UNIO and Ns

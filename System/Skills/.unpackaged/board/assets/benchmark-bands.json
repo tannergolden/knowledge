@@ -1,0 +1,17 @@
+{
+  "skill": "board",
+  "note": "Reference benchmark bands (2025/26) for the venture scorecard, backing references/metrics-and-kpis.md. These are general B2B SaaS reference points; adjust per industry and stage. The scorecard sets red/amber/green status against these bands.",
+  "bands": {
+    "nrr":               {"unit": "%",                       "red": "<100", "amber": "100-110",  "green": ">120", "note": "net revenue retention; 100 is the floor, 120+ elite"},
+    "grr":               {"unit": "%",                       "red": "<80",  "amber": "80-90",    "green": ">90"},
+    "rule_of_40":        {"unit": "growth% + margin%",       "red": "<20",  "amber": "20-40",    "green": ">40",  "note": "becomes the headline above roughly 5-10M ARR"},
+    "cac_payback":       {"unit": "months",                  "red": ">18",  "amber": "12-18",    "green": "<12"},
+    "ltv_cac":           {"unit": "ratio",                   "red": "<1",   "amber": "1-3",      "green": ">3"},
+    "gross_margin":      {"unit": "%",                       "red": "<60",  "amber": "60-75",    "green": ">75",  "note": "software; goods-based businesses differ"},
+    "burn_multiple":     {"unit": "net burn / net new ARR",  "red": ">2",   "amber": "1-2",      "green": "<1"},
+    "magic_number":      {"unit": "ratio",                   "red": "<0.5", "amber": "0.5-0.75", "green": ">0.75"},
+    "logo_churn_annual": {"unit": "%",                       "red": ">15",  "amber": "7-15",     "green": "<7"},
+    "growth_rate_yoy":   {"unit": "%",                       "red": "<30",  "amber": "30-100",   "green": ">100", "note": "early-stage band; decays with scale"},
+    "nps":               {"unit": "score",                   "red": "<20",  "amber": "20-50",    "green": ">50"}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "skill": "identify",
+  "description": "Trigger evaluation set for the identify skill: requests that SHOULD activate coverage-driven Profile interviewing, and near-miss negatives that should route elsewhere. Used by the develop trigger smoke test and by `develop optimize`.",
+  "should_trigger": [
+    "/identify",
+    "interview me",
+    "fill out my profile",
+    "help me populate my Working Style",
+    "get to know me better",
+    "confirm my unconfirmed profile entries",
+    "let's fill in my Health",
+    "my Personality facet is still all template, can we fix that",
+    "you don't really know much about me yet, let's change that",
+    "walk me through some questions so my profile isn't so empty"
+  ],
+  "should_not_trigger": [
+    "research Big Five versus HEXACO",
+    "what does the McAdams life-story method actually measure",
+    "update my Focus: heads-down on the launch this week",
+    "change my salutation to Mr. Golden",
+    "draft my bio for the company website",
+    "write up my working style as a one-pager for my team",
+    "what is the capital of Australia",
+    "summarize the article I just pasted",
+    "set a reminder for my dentist appointment tomorrow",
+    "translate this paragraph into Spanish"
+  ],
+  "notes": "Positives are the named triggers plus the proactive case: a facet found thin or template-empty pulls identify in even when the user never says identify. Near-misses are deliberately adjacent. A world-fact question about a framework (Big Five, McAdams) is research, not identify: identify asks the user about themselves, never about the world. A user-dictated update ('update my Focus', 'change my salutation') is a direct edit under the normal write path (Profile/Profile.md, Rules), no interview needed: identify is for eliciting, not transcribing. A prose file written under instruction ('draft my bio', 'write up my working style') is editorial's; identify writes only the approved proposal batch into Profile. Generic clerical, arithmetic, and translation tasks are out of scope."
+}
