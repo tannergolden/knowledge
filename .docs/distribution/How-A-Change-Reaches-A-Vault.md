@@ -130,21 +130,26 @@ changed the skills takes two steps of its own.
   to their new homes; deleting those lines instead leaves them behind at the old paths, where
   nothing reads them. Then add, under Your rules, the five lines that keep a skill yours (above)
   for each skill you changed.
-- If you deleted a skill, add the same five lines for it, or it comes back at the new paths.
+- If you deleted a skill, add the same five lines for it, or it comes back at the new paths. Add
+  `# keep mine: /System/Skills/Skills.md` too: that note links each skill's archive, and the line
+  keeps your copy of it, without the deleted skill's link, which `check-links.py` needs gone.
 
 Commit that, move `ref:` in the stub to `v2`, and run 🔄 Template Sync.
 
-**On the sync pull request's branch**, before you merge it:
+**On the sync pull request's branch**, then merge it as soon as its checks pass: each run of 🔄
+Template Sync replaces that branch, so run it again only once you have merged.
 
 - Move each skill you kept to `.agents/skills/<skill>/`, and its team's files into
   `.agents/skills/<skill>/agents/`, from wherever your version is now: its old path, or the commit
-  before the sync if the sync took it away. Delete what is left at the old paths. Then run
-  `python3 .github/scripts/check-skills.py <skill>` and fix what it reports: v2 holds every skill
-  to one frontmatter key a line, a description that says "Use when" and read-only `allowed-tools`,
-  and each faculty to the hand-over rule.
+  before the sync if the sync took it away. Delete what is left at the old paths, empty folders
+  included. Then run `python3 .github/scripts/check-skills.py <skill>` and fix what it reports: v2
+  holds every skill to one frontmatter key a line, a description that says "Use when" and read-only
+  `allowed-tools`, and each faculty to the hand-over rule.
 - Where the sync reports a conflict in a file you edited, move your file to its new path and carry
-  in the template's change, which the pull request shows. An `Inbox/Faculties/` note you edited
-  stays behind the same way; delete it once nothing you need is left in it.
+  in the template's change, which the pull request shows. Then add `# keep mine: /<new path>`
+  under Your rules, such as `# keep mine: /.agents/skills/research/agents/Research.md`, or every
+  later sync reports the same file again. An `Inbox/Faculties/` note you edited stays behind the
+  same way; delete it once nothing you need is left in it.
 - Run `python3 .github/scripts/update-vault.py` and commit what it draws: your skills' copies and
   archives, and the two catalogs in `System/Data/`, which are yours, so `check-vault.py` fails
   until they are redrawn.
