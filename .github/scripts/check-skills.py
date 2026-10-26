@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
-"""Check each skill source against the Agent Skills format and the vault's skill layout.
+"""Check each skill against the Agent Skills format and the vault's skill layout.
 
-WHY THIS EXISTS. A skill's source lives in System/Skills/.unpackaged/<name>/
-and installs from the archive built from it. Claude refuses a skill whose
-manifest breaks the Agent Skills format, and a skill that names a team that
-no longer exists dispatches into nothing. The vault adds its own layout on
-top (System/Skills/Skills.md): a namesake doc, a License.txt, a Changelog.md,
-the assets/, references/ and templates/ folders, and no agents/ or scripts/
-in the source, because agents are vendored into the archive when it is built
-and scripts live in .github/scripts. This checks all of it, so a broken skill
-fails in CI instead of on someone's install.
+WHY THIS EXISTS. A skill lives in .agents/skills/<name>/, where the agent apps
+read a repository's skills. update-vault.py copies it to .claude/skills/ for
+Claude Code and packs it into System/Skills/<name>.skill for the Claude app,
+and tannergolden/intelligence's home kit carries the faculties from a release
+of this template. An app refuses a skill whose manifest breaks the Agent
+Skills format, the home kit refuses one that breaks its stricter reading of
+it, and a skill that names a team that no longer exists dispatches into
+nothing. The vault adds its own layout on top (System/Skills/Skills.md): a
+namesake doc, a License.txt, a Changelog.md, the assets/, references/ and
+templates/ folders, a team in agents/ only when the skill keeps its own, and
+no scripts/, because the vault keeps its scripts in .github/scripts. This
+checks all of it, so a broken skill fails in CI instead of on someone's
+install.
 
 With no arguments it checks every skill; given names, only those.
 
@@ -33,12 +37,65 @@ JUNK_FILES = frozenset({'.DS_Store', 'Thumbs.db'})
 JUNK_SUFFIXES = frozenset({'.pyc', '.pyo', '.skill', '.swp'})
 NAME = re.compile(r'[a-z0-9]+(-[a-z0-9]+)*')
 CURRENT_VERSION = re.compile(r'##\s+Current Version\b.*?\*\*`([^`]+)`\*\*', re.S)
+# What the home kit's reader accepts (tannergolden/intelligence, kit.py): these
+# keys only, each on one line, a description that says when, and a short body.
+KEYS = ('name', 'description', 'license', 'compatibility', 'metadata', 'allowed-tools')
+ONE_LINE = re.compile(r'^[A-Za-z][A-Za-z0-9-]*:')
+MAX_DESCRIPTION = 1024
+MAX_BODY_LINES = 500
+# allowed-tools pre-approves what it lists while the skill runs, so it lists
+# read-only tools alone; writing, running commands and starting agents go
+# through the session's own permissions.
+NOT_READ_ONLY = frozenset({'Write', 'Edit', 'MultiEdit', 'NotebookEdit', 'Bash', 'Task', 'Agent'})
+DASHES = re.compile('[\u2013\u2014\u2015]')
 
 
 def junk(relative: pathlib.Path) -> bool:
     """A file that never ships in an archive, so the checks never read it either."""
     return (any(part in JUNK_DIRS for part in relative.parts) or relative.name in JUNK_FILES
             or relative.name.startswith('._') or relative.suffix.lower() in JUNK_SUFFIXES)
+
+
+def check_manifest_shape(manifest: pathlib.Path, text: str, report: vault.Report) -> None:
+    """The frontmatter as the strictest reader takes it: a first-line fence, then one key to a line."""
+    lines = text.split('\n')
+    if lines[0].rstrip('\r').rstrip() != '---':
+        report.error(manifest, 'SKILL.md opens with a --- frontmatter fence on its first line')
+        return
+    end = next((i for i in range(1, len(lines)) if lines[i].rstrip('\r').rstrip() == '---'), None)
+    if end is None:
+        report.error(manifest, 'the frontmatter has no closing ---')
+        return
+    for line in lines[1:end]:
+        if not line.strip() or line.lstrip().startswith('#'):
+            continue
+        if not ONE_LINE.match(line):
+            report.error(manifest, f'keep each frontmatter key on one line, metadata as a one-line map, '
+                                   f'because some loaders read nothing else: {line.strip()[:40]}')
+            continue
+        key, _, value = line.partition(':')
+        value = value.strip()
+        if value and value[0] not in '"\'[{' and (': ' in value or ' #' in value):
+            report.error(manifest, f'quote the {key} value: YAML reads ": " or " #" inside a plain value as '
+                                   'structure, and a loader that cannot parse the frontmatter drops it')
+    body = '\n'.join(lines[end + 1:]).lstrip('\n')
+    if body.count('\n') > MAX_BODY_LINES:
+        report.error(manifest, f'the body is over {MAX_BODY_LINES} lines; move detail into references/')
+
+
+def check_team(root: pathlib.Path, folder: pathlib.Path, manifest: pathlib.Path, team: str,
+               report: vault.Report) -> None:
+    """A team kept in agents/ is the one metadata.team names, and only a skill's own team sits there."""
+    held = folder / vault.TEAM_FOLDER
+    if not held.is_dir():
+        return
+    if not team:
+        report.error(held, f'{vault.TEAM_FOLDER}/ holds a team, so metadata.team names it')
+        return
+    roster = vault.find_roster(root, team)
+    if roster is not None and roster.parent != held:
+        report.error(held, f"metadata.team names '{team}', whose roster is {vault.rel(root, roster)}; "
+                           f'a skill keeps only its own team in {vault.TEAM_FOLDER}/')
 
 
 def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) -> None:
@@ -50,7 +107,11 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
     for other in others:
         report.error(other, 'a skill holds exactly one SKILL.md, at its root; name a template manifest t-SKILL.md')
     text = vault.read_text(manifest)
+    check_manifest_shape(manifest, text, report)
     fields = vault.parse_frontmatter(text) or {}
+    extra = sorted(set(fields) - set(KEYS))
+    if extra:
+        report.error(manifest, f'the frontmatter may hold only {", ".join(KEYS)}, not {", ".join(extra)}')
     name = str(fields.get('name', '') or '')
     description = str(fields.get('description', '') or '')
     if not name:
@@ -63,11 +124,22 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
         report.error(manifest, f"name '{name}' may not contain claude or anthropic (Agent Skills format)")
     if not description:
         report.error(manifest, 'the frontmatter has no description')
-    elif len(description) > 1024:
-        report.error(manifest, f'the description is {len(description)} characters; the format allows 1024')
+    else:
+        if len(description) > MAX_DESCRIPTION:
+            report.error(manifest, f'the description is {len(description)} characters; the format allows '
+                                   f'{MAX_DESCRIPTION}')
+        if 'Use when' not in description:
+            report.error(manifest, 'the description says when to use the skill, with "Use when"')
+        if '<' in description or '>' in description:
+            report.error(manifest, 'the description may not hold angle brackets')
     for key in ('license', 'allowed-tools'):
         if not str(fields.get(key, '') or '').strip():
             report.error(manifest, f'the frontmatter has no {key}')
+    tools = {tool.strip() for tool in str(fields.get('allowed-tools', '') or '').split(',') if tool.strip()}
+    writes = sorted(tools & NOT_READ_ONLY)
+    if writes:
+        report.error(manifest, f'allowed-tools pre-approves read-only tools only; {", ".join(writes)} '
+                               'goes through the session\'s own permissions')
     metadata = fields.get('metadata')
     if not isinstance(metadata, dict) or not metadata:
         report.error(manifest, 'the frontmatter has no metadata block')
@@ -76,6 +148,7 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
     if team and vault.find_roster(root, team) is None:
         report.error(manifest, f"metadata.team names '{team}', which no roster in the agent library defines; "
                                'point it at a staffed team or drop the key')
+    check_team(root, folder, manifest, team, report)
     if '_' in folder.name:
         report.warn(folder, 'the folder name has an underscore (AGENTS.md, Conventions)')
     namesake = next((p for p in sorted(folder.glob('*.md'))
@@ -88,10 +161,8 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
     for required in ('assets', 'references', 'templates'):
         if not (folder / required).is_dir():
             report.error(folder, f'the {required}/ folder is missing')
-    if (folder / 'agents').is_dir():
-        report.error(folder / 'agents', 'a source holds no agents/; the team is vendored into the archive when it is built')
     if (folder / 'scripts').is_dir():
-        report.error(folder / 'scripts', 'a source holds no scripts/; the vault keeps its scripts in .github/scripts')
+        report.error(folder / 'scripts', 'a skill holds no scripts/; the vault keeps its scripts in .github/scripts')
     version = str(metadata.get('version', '') or '').strip()
     changelog = folder / 'Changelog.md'
     if not version:
@@ -116,17 +187,20 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
         relative = path.relative_to(folder)
         if not path.is_file() or junk(relative):
             continue
+        if len(relative.parts) > 2:
+            report.error(path, 'keep every file at most one folder below SKILL.md, where every app finds it')
         try:
             body = path.read_bytes().decode('utf-8')
         except UnicodeDecodeError:
+            report.error(path, 'a skill ships text only')
             continue
         except OSError as error:
             report.error(path, f'cannot be read ({error})')
             continue
-        if vault.EM_DASH in body:
-            report.error(path, 'em dash (DOC-002); use a comma, colon, parentheses or a hyphen')
+        if DASHES.search(body):
+            report.error(path, 'an en or em dash (DOC-002); use a comma, colon, parentheses or a spaced hyphen')
         if path.suffix == '.md' and vault.wikilinks(body):
-            report.warn(path, 'a skill source carries no wikilinks: they break when the skill is installed')
+            report.warn(path, 'a skill carries no wikilinks: they break when the skill is installed')
     if not re.search(r'^##\s+Boundaries\b', text, re.M):
         report.error(manifest, 'SKILL.md has no ## Boundaries section')
 

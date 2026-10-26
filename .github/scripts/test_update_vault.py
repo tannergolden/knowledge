@@ -161,15 +161,18 @@ class TestCatalogs(Base):
         self.assertEqual(library['type'], 'index')
 
     def test_the_agent_catalog(self) -> None:
-        self.vault.note('Inbox/Faculties/Faculties.md')
-        self.vault.note('Inbox/Faculties/Research/Research.md')
-        self.vault.agent(f'Inbox/Faculties/Research/{STAR} Lead.md', name='Bea')
-        self.vault.agent('Inbox/Faculties/Research/Analyst.md', name='Al')
+        self.vault.write('.agents/skills/research/SKILL.md', '---\nname: research\n---\n# Research\n')
+        self.vault.note('.agents/skills/research/agents/Research.md')
+        self.vault.agent(f'.agents/skills/research/agents/{STAR} Lead.md', name='Bea')
+        self.vault.agent('.agents/skills/research/agents/Analyst.md', name='Al')
         self.update()
         first = self.vault.read('System/Data/agent-catalog.json')
         catalog = json.loads(first)
         self.assertEqual(catalog['agent_count'], 2)
+        self.assertEqual(catalog['homes'], ['Faculties'])
         self.assertEqual([a['role'] for a in catalog['agents']], ['Analyst', f'{STAR} Lead'])
+        self.assertEqual({a['team'] for a in catalog['agents']}, {'Research'})
+        self.assertEqual(catalog['agents'][0]['path'], 'BRAIN/.agents/skills/research/agents/Analyst.md')
         self.assertEqual(catalog['teams'][0]['members'], [f'{STAR} Lead', 'Analyst'])
         self.assertEqual(catalog['teams'][0]['lead'], f'{STAR} Lead')
         self.assertNotIn('generated', catalog)
@@ -178,7 +181,8 @@ class TestCatalogs(Base):
 
 
 class TestArchives(Base):
-    SOURCE = 'System/Skills/.unpackaged/demo'
+    SOURCE = '.agents/skills/demo'
+    TEAM = 'Ventures/Agent Resources (AR)/Research'
 
     def setUp(self) -> None:
         super().setUp()
@@ -189,9 +193,8 @@ class TestArchives(Base):
         v.write(f'{self.SOURCE}/assets/.gitkeep', '')
         v.write(f'{self.SOURCE}/.DS_Store', 'junk')
         v.write(f'{self.SOURCE}/__pycache__/x.pyc', 'junk')
-        v.note('Inbox/Faculties/Faculties.md')
-        v.note('Inbox/Faculties/Research/Research.md')
-        v.agent(f'Inbox/Faculties/Research/{STAR} Lead.md')
+        v.note(f'{self.TEAM}/Research.md')
+        v.agent(f'{self.TEAM}/{STAR} Lead.md')
 
     def entries(self) -> dict[str, bytes]:
         with zipfile.ZipFile(self.vault.path('System/Skills/demo.skill')) as archive:
@@ -227,13 +230,66 @@ class TestArchives(Base):
         self.assertIn('System/Skills/demo.skill: the archive differs from its source', result.stdout)
 
     def test_the_team_is_every_spec_in_its_folder(self) -> None:
-        self.vault.agent('Inbox/Faculties/Research/Analyst.md', name='Al')
+        self.vault.agent(f'{self.TEAM}/Analyst.md', name='Al')
         self.assertEqual(self.update().returncode, 0)
         self.assertIn('demo/agents/Analyst.md', self.entries())
+
+    def test_a_skill_that_keeps_its_team_ships_it_as_it_is(self) -> None:
+        self.vault.note(f'{self.SOURCE}/agents/Research.md')
+        self.vault.agent(f'{self.SOURCE}/agents/{STAR} Own Lead.md', name='Own')
+        self.assertEqual(self.update().returncode, 0)
+        entries = self.entries()
+        self.assertIn(f'demo/agents/{STAR} Own Lead.md', entries)
+        self.assertNotIn(f'demo/agents/{STAR} Lead.md', entries)
 
     def test_an_archive_without_a_source(self) -> None:
         self.vault.write('System/Skills/orphan.skill', 'x')
         self.assertIn('has no source', self.update().stdout)
+
+
+class TestMirror(Base):
+    SOURCE = '.agents/skills/demo'
+    MIRROR = '.claude/skills/demo'
+
+    def setUp(self) -> None:
+        super().setUp()
+        v = self.vault
+        v.write(f'{self.SOURCE}/SKILL.md', '---\nname: demo\n---\n# Demo\n')
+        v.write(f'{self.SOURCE}/Demo.md', '<!--\ntitle: Demo\n-->\n\n# Demo guide\n')
+        v.write(f'{self.SOURCE}/references/guide.md', 'guide\n')
+        v.write(f'{self.SOURCE}/.DS_Store', 'junk')
+
+    def test_the_mirror_copies_every_skill_exactly(self) -> None:
+        self.assertEqual(self.update().returncode, 0)
+        for name in ('SKILL.md', 'Demo.md', 'references/guide.md'):
+            self.assertEqual(self.vault.path(f'{self.MIRROR}/{name}').read_bytes(),
+                             self.vault.path(f'{self.SOURCE}/{name}').read_bytes(), name)
+        self.assertFalse(self.vault.path(f'{self.MIRROR}/.DS_Store').exists())
+        self.assertIn('Everything generated is up to date.', self.update().stdout)
+
+    def test_a_mirror_that_drifted_is_stale(self) -> None:
+        self.update()
+        self.vault.write(f'{self.SOURCE}/references/guide.md', 'changed\n')
+        self.vault.write(f'{self.MIRROR}/references/extra.md', 'extra\n')
+        result = self.update('--check')
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('.claude/skills/demo/references/guide.md: the mirror differs from .agents/skills/',
+                      result.stdout)
+        self.assertIn('.claude/skills/demo/references/extra.md: the mirror holds a file .agents/skills/ does not',
+                      result.stdout)
+        self.update()
+        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'changed\n')
+        self.assertFalse(self.vault.path(f'{self.MIRROR}/references/extra.md').exists())
+
+    def test_a_skill_removed_from_the_sources_leaves_the_mirror(self) -> None:
+        self.update()
+        for path in sorted(self.vault.path(self.SOURCE).rglob('*'), reverse=True):
+            path.unlink() if path.is_file() else path.rmdir()
+        self.vault.path(self.SOURCE).rmdir()
+        self.vault.path('System/Skills/demo.skill').unlink()
+        self.assertEqual(self.update().returncode, 0)
+        self.assertFalse(self.vault.path(self.MIRROR).exists())
+        self.assertEqual(self.update('--check').returncode, 0)
 
 
 class TestKeepsAndCheck(Base):

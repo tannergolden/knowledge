@@ -2,7 +2,8 @@
 """Check the agent library: each agent spec, each team roster, and names unique across every home.
 
 WHY THIS EXISTS. The vault's agents live in three homes, the Agent Resources
-(AR) workforce, the Faculties and the Library, which make one library with one
+(AR) workforce, the Faculties, each kept in the agents/ folder of the skill
+that dispatches it, and the Library, which make one library with one
 namespace: an agent is addressed by its spoken name, so two agents sharing a
 name or a role would misroute a request. A skill dispatches a team by its
 folder: the specs in it are the members, and the starred one leads, so a team
@@ -119,7 +120,13 @@ def main(argv: list[str] | None = None) -> int:
             check_roster(path, vault.note_fields(path), report)
     for home in homes:
         for team in vault.team_dirs(home):
-            if vault.members(team) and (home, team.name) not in rosters:
+            if not vault.members(team) or (home, vault.team_name(team)) in rosters:
+                continue
+            if team.name == vault.TEAM_FOLDER:
+                found = len(vault.team_rosters(team))
+                report.error(team, f'a skill keeps its team in {vault.TEAM_FOLDER}/ with exactly one roster, '
+                                   f'the note named for the team; found {found}')
+            else:
                 report.error(team, f'the team {team.name} has no note of its own, {team.name}.md, to describe it')
     by_role: dict[str, list[str]] = {}
     by_name: dict[str, list[str]] = {}

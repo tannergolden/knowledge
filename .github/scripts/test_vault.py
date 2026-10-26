@@ -155,7 +155,7 @@ class TestLayout(unittest.TestCase):
         self.assertEqual(strays, ['README.md', 'Memory/.template/README.md', 'Memory/Context/README.md'])
 
     def test_inbox_drops_leave_the_kept_homes_alone(self) -> None:
-        for rel in ('Inbox/Inbox.md', 'Inbox/README.md', 'Inbox/drop.pdf', 'Inbox/Reports/r.md', 'Inbox/Faculties/f.md',
+        for rel in ('Inbox/Inbox.md', 'Inbox/README.md', 'Inbox/drop.pdf', 'Inbox/Reports/r.md', 'Inbox/Visuals/v.md',
                     'Inbox/sub/x.md'):
             self.vault.write(rel, 'x')
         drops = [vault.rel(self.vault.root, p) for p in vault.inbox_drops(self.vault.root)]
@@ -165,17 +165,41 @@ class TestLayout(unittest.TestCase):
         self.vault.note('Library/Library.md')
         self.vault.agent('Library/★ Librarian.md')
         self.vault.note('Library/Arts/Arts.md')
-        self.vault.note('Inbox/Faculties/Faculties.md')
-        self.vault.note('Inbox/Faculties/Research/Research.md')
-        self.vault.agent('Inbox/Faculties/Research/★ Lead.md')
-        library, faculties = self.vault.path('Library'), self.vault.path('Inbox/Faculties')
+        self.vault.note('Ventures/Agent Resources (AR)/Legal/Legal.md')
+        self.vault.agent('Ventures/Agent Resources (AR)/Legal/★ Counsel.md')
+        library, workforce = self.vault.path('Library'), self.vault.path('Ventures/Agent Resources (AR)')
         self.assertEqual(vault.team_dirs(library), [library])
         self.assertEqual([p.name for p, _t in vault.agent_files(library)], ['★ Librarian.md'])
-        self.assertEqual([t for _p, t in vault.roster_files(faculties)], ['Research'])
-        self.assertEqual(vault.find_roster(self.vault.root, 'Research'), faculties / 'Research' / 'Research.md')
+        self.assertEqual([t for _p, t in vault.roster_files(workforce)], ['Legal'])
+        self.assertEqual(vault.find_roster(self.vault.root, 'Legal'), workforce / 'Legal' / 'Legal.md')
         self.assertIsNone(vault.find_roster(self.vault.root, 'Missing'))
-        self.assertEqual(vault.members(faculties / 'Research'), ['★ Lead'])
-        self.assertEqual(vault.lead(faculties / 'Research'), '★ Lead')
+        self.assertEqual(vault.members(workforce / 'Legal'), ['★ Counsel'])
+        self.assertEqual(vault.lead(workforce / 'Legal'), '★ Counsel')
+
+    def test_a_skill_keeps_its_team_in_agents(self) -> None:
+        self.vault.write('.agents/skills/research/SKILL.md', '---\nname: research\n---\n')
+        self.vault.note('.agents/skills/research/agents/Research.md')
+        self.vault.agent('.agents/skills/research/agents/★ Lead.md')
+        self.vault.agent('.agents/skills/research/agents/Analyst.md')
+        self.vault.write('.agents/skills/board/SKILL.md', '---\nname: board\n---\n')
+        skills = self.vault.path('.agents/skills')
+        team = skills / 'research' / 'agents'
+        self.assertEqual(vault.team_dirs(skills), [team])
+        self.assertEqual(vault.team_name(team), 'Research')
+        self.assertEqual([t for _p, t in vault.roster_files(skills)], ['Research'])
+        self.assertEqual(sorted(t for _p, t in vault.agent_files(skills)), ['Research', 'Research'])
+        self.assertEqual(vault.find_roster(self.vault.root, 'Research'), team / 'Research.md')
+        self.assertEqual(vault.members(team), ['★ Lead', 'Analyst'])
+        self.assertEqual(vault.lead(team), '★ Lead')
+
+    def test_a_skill_team_without_one_roster_has_no_name_of_its_own(self) -> None:
+        self.vault.agent('.agents/skills/research/agents/★ Lead.md')
+        team = self.vault.path('.agents/skills/research/agents')
+        self.assertEqual(vault.team_name(team), 'agents')
+        self.vault.note('.agents/skills/research/agents/Research.md')
+        self.vault.note('.agents/skills/research/agents/Notes.md')
+        self.assertEqual(vault.team_name(team), 'agents')
+        self.assertEqual(vault.roster_files(self.vault.path('.agents/skills')), [])
 
 
 class TestReport(unittest.TestCase):

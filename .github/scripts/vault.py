@@ -49,13 +49,18 @@ STARTUP = ('Profile/Working Style.md', 'Memory/Log.md')
 # ── Where things live ──
 
 SKILLS = 'System/Skills'
-SKILL_SOURCES = 'System/Skills/.unpackaged'
+# A skill's source sits where the agent apps read a repository's skills, and
+# Claude Code, which reads nothing under .agents/, gets a copy update-vault.py draws.
+SKILL_SOURCES = '.agents/skills'
+SKILL_MIRROR = '.claude/skills'
+# The folder in a skill that holds the team it dispatches, when the skill keeps its own.
+TEAM_FOLDER = 'agents'
 CATALOG = 'System/Data/catalog.ndjson'
 AGENT_CATALOG = 'System/Data/agent-catalog.json'
-AGENT_HOMES = ('Ventures/Agent Resources (AR)', 'Inbox/Faculties', 'Library')
+AGENT_HOMES = ('Ventures/Agent Resources (AR)', SKILL_SOURCES, 'Library')
 HOME_LABELS = {
     'Ventures/Agent Resources (AR)': 'Agent Resources (AR)',
-    'Inbox/Faculties': 'Faculties',
+    SKILL_SOURCES: 'Faculties',
     'Library': 'Library',
 }
 NON_TEAM_DIRS = frozenset({'assets', 'references', 'templates', 'scripts'})
@@ -78,7 +83,7 @@ PROFILE_COLLECTIONS = ('Profile/Values', 'Profile/Goals', 'Profile/Skills', 'Pro
 LOG = 'Memory/Log.md'
 INBOX = 'Inbox'
 # Inbox sub-homes that are kept, never sorted.
-INBOX_HELD = frozenset({'Backups', 'Reports', 'Faculties', 'Visuals', 'Ideas'})
+INBOX_HELD = frozenset({'Backups', 'Reports', 'Visuals', 'Ideas'})
 
 # Folders never walked, and files that are never notes or link targets. A
 # README.md is a top folder's GitHub page and AGENTS.md the agents' rules:
@@ -467,6 +472,8 @@ def redraw_block(text: str, name: str, body: str) -> str | None:
 # holds agent specs itself, a single team. A team folder holds one spec per
 # agent, the --- block naming it, and a roster: the folder's own note. The
 # team's members are the specs in its folder, and its lead the starred one.
+# The skills are the third home: a skill that keeps its own team holds it in
+# its agents/ folder, whose roster is the one note there named for the team.
 
 def is_agent(path: pathlib.Path) -> bool:
     """An agent spec: a note whose --- block names its agent or its tools."""
@@ -481,27 +488,50 @@ def _specs(folder: pathlib.Path) -> list[pathlib.Path]:
     return [p for p in sorted(folder.glob('*.md')) if p.stem.lower() != folder.name.lower() and is_agent(p)]
 
 
+def _holds_skills(home: pathlib.Path) -> bool:
+    """The skills folder, where each skill that keeps a team keeps it in its agents/."""
+    return home.as_posix().endswith('/' + SKILL_SOURCES)
+
+
 def team_dirs(home: pathlib.Path) -> list[pathlib.Path]:
     if not home.is_dir():
         return []
+    if _holds_skills(home):
+        return [d / TEAM_FOLDER for d in sorted(home.iterdir(), key=lambda d: d.name.lower())
+                if d.is_dir() and not d.name.startswith('.') and (d / TEAM_FOLDER).is_dir()]
     if _specs(home):
         return [home]
     return [d for d in sorted(home.iterdir())
             if d.is_dir() and not d.name.startswith('.') and d.name.lower() not in NON_TEAM_DIRS]
 
 
+def team_rosters(team: pathlib.Path) -> list[pathlib.Path]:
+    """The notes in a skill's agents/ folder that are not agent specs: its roster, when there is exactly one."""
+    return [p for p in sorted(team.glob('*.md')) if not is_agent(p)]
+
+
+def team_name(team: pathlib.Path) -> str:
+    """A team's name: its folder's, or, for a team a skill keeps in agents/, its roster's."""
+    if team.name == TEAM_FOLDER:
+        notes = team_rosters(team)
+        if len(notes) == 1:
+            return notes[0].stem
+    return team.name
+
+
 def agent_files(home: pathlib.Path) -> list[tuple[pathlib.Path, str]]:
     """Each agent spec in a home, with the team it belongs to."""
-    return [(path, team.name) for team in team_dirs(home) for path in _specs(team)]
+    return [(path, team_name(team)) for team in team_dirs(home) for path in _specs(team)]
 
 
 def roster_files(home: pathlib.Path) -> list[tuple[pathlib.Path, str]]:
     """Each team's roster in a home: the note of a team folder that holds specs."""
     out = []
     for team in team_dirs(home):
-        roster = team / f'{team.name}.md'
+        name = team_name(team)
+        roster = team / f'{name}.md'
         if roster.is_file() and _specs(team):
-            out.append((roster, team.name))
+            out.append((roster, name))
     return out
 
 

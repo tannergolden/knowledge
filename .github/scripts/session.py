@@ -91,8 +91,9 @@ def after_edit(root: pathlib.Path, payload: str) -> None:
         result = run('lint-notes.py', '--root', str(root), str(path), timeout=60)
         if result is not None and result.returncode != 0:
             flagged.append(('lint-notes.py', (result.stdout + result.stderr).strip()))
-    if parts[:3] == tuple(vault.SKILL_SOURCES.split('/')) and len(parts) > 4:
-        result = run('check-skills.py', '--root', str(root), parts[3], timeout=60)
+    sources = tuple(vault.SKILL_SOURCES.split('/'))
+    if parts[:len(sources)] == sources and len(parts) > len(sources) + 1:
+        result = run('check-skills.py', '--root', str(root), parts[len(sources)], timeout=60)
         if result is not None and result.returncode != 0:
             flagged.append(('check-skills.py', (result.stdout + result.stderr).strip()))
     if flagged:

@@ -25,7 +25,7 @@ import fixtures  # noqa: E402
 SCRIPT = 'check-agents.py'
 STAR = '★'
 LEAD = f'{STAR} Research Lead'
-TEAM = 'Inbox/Faculties/Research'
+TEAM = '.agents/skills/research/agents'
 SECTIONS = ('Identity', 'Role & Objective', 'Inputs', 'Method', 'Output contract', 'Examples', 'Boundaries',
             'Recovery', 'Non-negotiables')
 
@@ -40,7 +40,6 @@ def spec(title: str) -> str:
 class TestCheckAgents(unittest.TestCase):
     def setUp(self) -> None:
         self.vault = fixtures.Vault()
-        self.vault.note('Inbox/Faculties/Faculties.md')
         self.roster()
         self.agent(LEAD, name='Beatrice', tools='Read, Grep, Glob, Task')
         self.agent('Fact-Checker', name='Felix', tools='Read, Grep, Glob, WebSearch')
@@ -103,8 +102,16 @@ class TestCheckAgents(unittest.TestCase):
         self.assertIn('3 agents and 1 rosters pass', result.stdout)
 
     def test_a_team_needs_its_own_note(self) -> None:
+        folder = 'Ventures/Agent Resources (AR)/Legal'
+        self.agent(f'{STAR} General Counsel', folder=folder, name='Gwen', tools='Read, Grep, Glob, Task')
+        self.assert_flags('the team Legal has no note of its own')
+
+    def test_a_skill_keeps_exactly_one_roster_beside_its_team(self) -> None:
         self.vault.path(f'{TEAM}/Research.md').unlink()
-        self.assert_flags('the team Research has no note of its own')
+        self.assert_flags('exactly one roster, the note named for the team; found 0')
+        self.roster()
+        self.vault.note(f'{TEAM}/Notes.md')
+        self.assert_flags('found 2')
 
     def test_a_roster_needs_a_title_and_a_description(self) -> None:
         self.roster(description=None)

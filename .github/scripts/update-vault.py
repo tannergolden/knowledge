@@ -14,8 +14,12 @@ an AI keeping it by hand would let it drift. This script owns all of it:
 3. The catalogs: System/Data/catalog.ndjson, one record per note, and
    System/Data/agent-catalog.json, every agent and team in the library.
 4. The skill archives: System/Skills/<name>.skill, each built from its source
-   with its team vendored, so an installed skill carries its agents.
-5. The .gitkeep markers: an empty folder keeps one, a folder with files loses it.
+   in .agents/skills/ with its team, so an installed skill carries its agents.
+   A skill that keeps its team in agents/ already holds it; for one that names
+   an Agent Resources (AR) department, the department is vendored in.
+5. The skill mirror: .claude/skills/, a copy of .agents/skills/ for Claude
+   Code, which reads nothing under .agents/.
+6. The .gitkeep markers: an empty folder keeps one, a folder with files loses it.
 
 Run it after a change. With --check it
 writes nothing and fails when anything is out of date, which is what CI runs.
@@ -356,10 +360,54 @@ def archives(run: Run) -> None:
     if skills.is_dir():
         for path in sorted(skills.glob('*.skill')):
             if path.stem not in built:
-                run.report.error(path, 'has no source in System/Skills/.unpackaged; delete it or restore the source')
+                run.report.error(path, f'has no source in {vault.SKILL_SOURCES}/; delete it or restore the source')
 
 
-# ── 5. The .gitkeep markers ──
+# ── 5. The skill mirror ──
+
+def mirror_entries(root: pathlib.Path) -> dict[str, bytes]:
+    """Each file the mirror holds, by its path inside .claude/skills/, and its bytes: the sources, exactly."""
+    entries: dict[str, bytes] = {}
+    for folder in vault.skill_dirs(root):
+        for path in sorted(folder.rglob('*')):
+            relative = path.relative_to(folder)
+            if path.is_dir() or path.is_symlink() or junk(relative):
+                continue
+            entries[f'{folder.name}/{relative.as_posix()}'] = path.read_bytes()
+    return entries
+
+
+def mirror(run: Run) -> None:
+    root = run.root
+    target = root / vault.SKILL_MIRROR
+    wanted = mirror_entries(root)
+    present: dict[str, pathlib.Path] = {}
+    if target.is_dir():
+        for path in sorted(target.rglob('*')):
+            relative = path.relative_to(target)
+            if path.is_file() and not junk(relative):
+                present[relative.as_posix()] = path
+    for name, data in wanted.items():
+        path = present.get(name)
+        if path is None or path.is_symlink() or path.read_bytes() != data:
+            run.write(target / name, data, f'the mirror differs from {vault.SKILL_SOURCES}/')
+    for name, path in present.items():
+        if name in wanted:
+            continue
+        if run.check:
+            run.stale(path, f'the mirror holds a file {vault.SKILL_SOURCES}/ does not')
+            continue
+        path.unlink()
+        run.changes.append(f'removed: {vault.rel(root, path)}')
+    if run.check or not target.is_dir():
+        return
+    # A skill removed from the sources leaves folders behind; clear the empty ones, deepest first.
+    for folder in sorted((p for p in target.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
+        if not any(folder.iterdir()):
+            folder.rmdir()
+
+
+# ── 6. The .gitkeep markers ──
 
 def keeps(run: Run) -> None:
     root = run.root
@@ -389,7 +437,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--check', action='store_true', help='write nothing; fail when anything is out of date')
     args = parser.parse_args(argv)
     run = Run(args.root.resolve(), args.check)
-    for step in (cascade, blocks, catalogs, archives, keeps):
+    for step in (cascade, blocks, catalogs, archives, mirror, keeps):
         step(run)
     for line in run.changes:
         print(line)

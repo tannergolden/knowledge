@@ -106,8 +106,8 @@ class TestWithStandIns(unittest.TestCase):
     def test_after_edit_checks_a_skill_source(self) -> None:
         self.stand_in('lint-notes.py', 0, 'fine')
         self.stand_in('check-skills.py', 1, 'error: SKILL.md: the frontmatter has no name')
-        self.vault.write('System/Skills/.unpackaged/demo/SKILL.md', 'x')
-        result = self.helper('after-edit', self.edited('System/Skills/.unpackaged/demo/SKILL.md'))
+        self.vault.write('.agents/skills/demo/SKILL.md', 'x')
+        result = self.helper('after-edit', self.edited('.agents/skills/demo/SKILL.md'))
         self.assertIn('check-skills.py flagged', result.stdout)
 
     def test_after_edit_ignores_what_is_not_the_vault_and_bad_input(self) -> None:
