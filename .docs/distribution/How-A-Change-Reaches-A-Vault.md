@@ -114,16 +114,17 @@ The full standard for templates, derived ones included, is the standards'
 
 ---
 
-## 🚚 Moving A Vault To v2
+## 🚚 Moving An Older Vault To This Layout
 
-v2 moves the skills from `System/Skills/.unpackaged/` to `.agents/skills/`, moves each faculty's
-team from `Inbox/Faculties/` into its skill's own `agents/`, and adds Claude Code's copy in
-`.claude/skills/` ([ADR-0003](../adrs/ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md)). A
-vault that kept the template's skills as they came needs only the sync: 🔄 Template Sync moves every
-file. A sync does not carry an owner's choice from an old path to a new one, so a vault whose owner
-changed the skills takes two steps of its own.
+v1.0.0, the template's first release, keeps the skills in `.agents/skills/`, each faculty's team in
+its skill's own `agents/`, and Claude Code's copy in `.claude/skills/`
+([ADR-0003](../adrs/ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md)). A vault generated before
+it holds the older layout, with the skills in `System/Skills/.unpackaged/` and the teams in
+`Inbox/Faculties/`, and its first sync moves every file. A vault that kept the template's skills as
+they came needs only that sync. A sync does not carry an owner's choice from an old path to a new
+one, so a vault whose owner changed the skills takes two steps of its own.
 
-**Before the sync**, in `.github/template-sync`, while the stub still follows the current release:
+**Before the sync**, in `.github/template-sync`:
 
 - If you kept your own skills or teams with a `#` before `/System/Skills/**` or
   `/Inbox/Faculties/**`, take the `#` off, so the sync moves the template's other skills and teams
@@ -134,7 +135,7 @@ changed the skills takes two steps of its own.
   `# keep mine: /System/Skills/Skills.md` too: that note links each skill's archive, and the line
   keeps your copy of it, without the deleted skill's link, which `check-links.py` needs gone.
 
-Commit that, move `ref:` in the stub to `v2`, and run 🔄 Template Sync.
+Commit that, and run 🔄 Template Sync.
 
 **On the sync pull request's branch**, then merge it as soon as its checks pass: each run of 🔄
 Template Sync replaces that branch, so run it again only once you have merged.
@@ -142,8 +143,8 @@ Template Sync replaces that branch, so run it again only once you have merged.
 - Move each skill you kept to `.agents/skills/<skill>/`, and its team's files into
   `.agents/skills/<skill>/agents/`, from wherever your version is now: its old path, or the commit
   before the sync if the sync took it away. Delete what is left at the old paths, empty folders
-  included. Then run `python3 .github/scripts/check-skills.py <skill>` and fix what it reports: v2
-  holds every skill to one frontmatter key a line, a description that says "Use when" and read-only
+  included. Then run `python3 .github/scripts/check-skills.py <skill>` and fix what it reports: it
+  now holds every skill to one frontmatter key a line, a description that says "Use when" and read-only
   `allowed-tools`, and each faculty to the hand-over rule.
 - Where the sync reports a conflict in a file you edited, move your file to its new path and carry
   in the template's change, which the pull request shows. Then add `# keep mine: /<new path>`

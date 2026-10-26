@@ -109,11 +109,11 @@ vault, and splits a faculty from the vault layout it names.
 
 ## 📈 Consequence Matrix
 
-| Category         | Impact / Consequence                                                                                                                                                                                                                                      |
-| :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Positive (+)** | The skills load in every app, in every vault, for anyone; the home kit can carry the faculties everywhere; a vault's copy and layout never drift apart                                                                                                    |
-| **Negative (-)** | The teams leave the tree Obsidian shows; each skill file is kept twice, once as its generated copy, so an app that reads both folders, as VS Code's Copilot does, lists each skill twice; a vault takes new skills only when its owner runs Template Sync |
-| **Neutral (~)**  | The move renames every skill and team file a vault holds, so the release that carries it is a new major; ADR-0002's removal of `.claude/` now admits one generated folder in it                                                                           |
+| Category         | Impact / Consequence                                                                                                                                                                                                                                                     |
+| :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Positive (+)** | The skills load in every app, in every vault, for anyone; the home kit can carry the faculties everywhere; a vault's copy and layout never drift apart                                                                                                                   |
+| **Negative (-)** | The teams leave the tree Obsidian shows; each skill file is kept twice, once as its generated copy, so an app that reads both folders, as VS Code's Copilot does, lists each skill twice; a vault takes new skills only when its owner runs Template Sync                |
+| **Neutral (~)**  | The move renames every skill and team file a vault holds; it ships in v1.0.0, the template's first release, and a vault made before then takes it with the steps in How A Change Reaches A Vault; ADR-0002's removal of `.claude/` now admits one generated folder in it |
 
 ---
 
@@ -139,8 +139,8 @@ vault, and splits a faculty from the vault layout it names.
 - `.github/scripts/check-skills.py` and `.github/scripts/update-vault.py`: the check and the copy
 - [ADR-0002](ADR-0002-Notes-Take-The-Hidden-Frontmatter.md), whose removal of `.claude/` this
   narrows to one generated folder
-- [Moving A Vault To v2](../distribution/How-A-Change-Reaches-A-Vault.md#-moving-a-vault-to-v2): the steps an owner
-  who changed or deleted a skill takes before syncing this release
+- [Moving An Older Vault To This Layout](../distribution/How-A-Change-Reaches-A-Vault.md#-moving-an-older-vault-to-this-layout):
+  the steps the owner of a vault made before v1.0.0 who changed or deleted a skill takes first
 - tannergolden/intelligence keeps the pinned copy of the five faculties for its home kit
 
 ### 🔗 See also
