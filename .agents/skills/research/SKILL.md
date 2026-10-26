@@ -1,19 +1,16 @@
 ---
 name: research
-description: Orchestrates the BRAIN's standing Research team to run multi-source, fact-checked research scaled to the question's depth, with parallel source analysts, fresh-context fact-checking and devil's-advocate critique, and cited synthesis. Use this whenever the user types /research, says research X, look into X, dig into X, find out about X, what is the current state of X, or get me sources on X. Use it proactively when an answer turns on post-cutoff or contested multi-source facts, or on evidence for a decision, even when the user never says research. This is the BRAIN's own research skill, preferred over any generic deep-research. Not for questions answerable from established knowledge, creative writing, or code. Outputs a cited chat synthesis, and a filed report on request.
+description: Orchestrates the BRAIN's standing Research team to run multi-source, fact-checked research scaled to the question's depth, with parallel source analysts, fresh-context fact-checking and devil's-advocate critique, and cited synthesis. Use when the user types /research, says research X, look into X, dig into X, find out about X, what is the current state of X, or get me sources on X, and proactively when an answer turns on post-cutoff or contested multi-source facts, or on evidence for a decision, even when the user never says research. This is the BRAIN's own research skill, preferred over any generic deep-research. Not for questions answerable from established knowledge, creative writing, or code. Outputs a cited chat synthesis, and a filed report on request.
 license: MIT
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch, Task
-metadata:
-  team: Research
-  version: "1.5.3"
-  id: "sy-skill-research-spec"
-  author: "Tanner Golden"
-  status: "active"
+allowed-tools: Read, Grep, Glob, WebSearch, WebFetch
+metadata: { team: Research, version: "1.6.0", id: sy-skill-research-spec, author: Tanner Golden, status: active }
 ---
 
 # 🔬 Research - the BRAIN's research skill
 
-Research runs any research the BRAIN needs by dispatching the standing **Research team** (`Inbox/Faculties/Research/`), scaled to the question. The hard rule, shared with `develop`: exploration happens in isolated parallel workers, and **the lead holds the question and synthesizes**. Subagents never spawn subagents. The skill carries no agents of its own; it is a thin orchestration and doctrine layer over a team that already exists.
+Research runs any research the BRAIN needs by dispatching the standing **Research team**, whose specs ship with this skill in `agents/`, scaled to the question. The hard rule, shared with `develop`: exploration happens in isolated parallel workers, and **the lead holds the question and synthesizes**. Subagents never spawn subagents. The skill is a thin orchestration and doctrine layer over its team.
+
+**Where it runs.** In a BRAIN vault, whose `AGENTS.md` says it is one, the vault's own copy of this skill runs: if the file you loaded is not that vault's `.agents/skills/research/SKILL.md` or `.claude/skills/research/SKILL.md`, read the vault's copy and follow it instead, with the files beside it, because a vault's copy matches its layout and its owner may have changed it. Anywhere else, the Founder is your user and the steps that read or write a vault folder do not apply: skip the Step-0 dedup and the Librarian, deliver the synthesis in chat, write a report only when asked and where your user says, and never write anything about your user into a repository that is not their private vault (SEC-003).
 
 > Operating doctrine lives in `references/`. Read `references/tiers.md` before choosing a tier and `references/methodology.md` before synthesizing.
 
@@ -29,15 +26,15 @@ Research runs any research the BRAIN needs by dispatching the standing **Researc
 
 ## The team it dispatches
 
-`metadata.team: Research` names the standing Research team (`Inbox/Faculties/Research/`, lead **Research Lead / Beatrice**). Agents are referenced by name and routed by their `description`; nothing is copied locally. On Publish, `develop` vendors the referenced agents into the skill's `agents/` so the package is self-contained. The 10-agent roster, what each agent returns, and how the tiers map onto it: `references/roster.md` and `references/dispatch.md`.
+`metadata.team: Research` names the standing Research team, whose roster (`agents/Research.md`) and ten specs ship in this skill's `agents/` folder, so the skill runs the same wherever it is installed (lead **Research Lead / Beatrice**). Agents are routed by their `description`. The 10-agent roster, what each agent returns, and how the tiers map onto it: `references/roster.md` and `references/dispatch.md`.
 
 ## How a run works
 
 Every run is the same shape, scaled by tier: frame, ground locally, fan out, verify blind, synthesize.
 
 1. **Frame.** The lead reads the real question and, when scope, timeframe, region, or decision context is missing where it matters, asks 2-3 clarifying questions first, then chooses and **announces the tier**.
-2. **Step 0, dedup and freshness.** On every non-quick run the Knowledge Manager checks `Inbox/Reports/` for an existing report that still holds, so the team never re-runs work that already exists.
-3. **Ground locally, then escalate (the retrieval order).** Before any web run, dispatch the **Librarian** (Marian, homed in `Library/`) to search the vault's `Library/` notes and the offline knowledge bases (`knowledge-base.py search` to find an article, then `knowledge-base.py read` to fetch and read its body, across `Library/Reference & Encyclopedia/`). She returns what the local tiers hold, cited, with the gaps named. A settled, non-time-sensitive question the Library and the knowledge bases fully answer is synthesized from there, with no web run. This is the retrieval order in `AGENTS.md` (Start here): vault, then knowledge bases, then the web; time-sensitive or "latest" questions skip to the web, and questions about the user stop at the vault.
+2. **Step 0, dedup and freshness.** On every non-quick run in a vault, the Knowledge Manager checks `Inbox/Reports/` for an existing report that still holds, so the team never re-runs work that already exists.
+3. **Ground locally, then escalate (the retrieval order).** In a vault, before any web run, dispatch the **Librarian** (Marian, homed in `Library/`) to search the vault's `Library/` notes and the offline knowledge bases (`knowledge-base.py search` to find an article, then `knowledge-base.py read` to fetch and read its body, across `Library/Reference & Encyclopedia/`). She returns what the local tiers hold, cited, with the gaps named. A settled, non-time-sensitive question the Library and the knowledge bases fully answer is synthesized from there, with no web run. This is the retrieval order in `AGENTS.md` (Start here): vault, then knowledge bases, then the web; time-sensitive or "latest" questions skip to the web, and questions about the user stop at the vault.
 4. **Decompose into lanes.** The lead splits what is left, the gaps the local tiers could not close and anything needing current sources, into MECE lanes by dimension (not by source type), one self-contained brief per lane.
 5. **Fan out.** The All-Source Analysts run in parallel, each on its own brief, each returning its artifact; subagents never spawn subagents.
 6. **Verify blind.** The lead writes `draft.md`, then dispatches the Fact-Checker and the Devil's Advocate in one message, blind to each other, on the draft. One verify-and-critique round.
@@ -60,7 +57,7 @@ Every dispatch is a self-contained brief (objective, inputs, output contract, to
 
 ## Output and freshness (`references/reporting.md`)
 
-Deliver a **cited chat synthesis by default, findings first**. File a report only on request, so the inbox stays lean. When filed, the report goes to **`Inbox/Reports/`** (not `Inbox/Faculties/Research/`, which holds the team), good for a flat **three months** before it must be re-verified (reuse is review). Reports are working artifacts: the only link to one is its entry in the `Inbox/Reports/Reports.md` index (the one hub; no other file links to a report), they are also found by searching, and a finding that must outlive its report is **promoted into the durable layer** (a `Library/` doc, a folder note, a skill's `references/`, or a proposed change to `AGENTS.md`). When filing, add the report's entry to the index in the same edit; make the promote step explicit before filing. When the local-grounding step found no curated `Library/` note on a durable topic, offer to promote the synthesis into one for the Librarian to catalog, so the next run answers locally.
+Deliver a **cited chat synthesis by default, findings first**. File a report only on request, so the inbox stays lean. When filed in a vault, the report goes to **`Inbox/Reports/`**, never into this skill's folder, good for a flat **three months** before it must be re-verified (reuse is review). Reports are working artifacts: the only link to one is its entry in the `Inbox/Reports/Reports.md` index (the one hub; no other file links to a report), they are also found by searching, and a finding that must outlive its report is **promoted into the durable layer** (a `Library/` doc, a folder note, a skill's `references/`, or a proposed change to `AGENTS.md`). When filing, add the report's entry to the index in the same edit; make the promote step explicit before filing. When the local-grounding step found no curated `Library/` note on a durable topic, offer to promote the synthesis into one for the Librarian to catalog, so the next run answers locally.
 
 ## BRAIN preflight and the standing contract
 

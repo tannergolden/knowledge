@@ -1,6 +1,6 @@
 # Dispatch - how the tiers map onto the Finance team
 
-How `finance` spends the Finance team, scaled to the question. Read before the first dispatch of a run. The roster lives in `Inbox/Faculties/Finance/Finance.md`, which is authoritative for who exists; this file maps questions to seats, sets the order, and shapes every brief.
+How `finance` spends the Finance team, scaled to the question. Read before the first dispatch of a run. The roster lives in this skill's `agents/Finance.md`, which is authoritative for who exists; this file maps questions to seats, sets the order, and shapes every brief.
 
 ## Tier decision table
 

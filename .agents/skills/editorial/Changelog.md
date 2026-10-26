@@ -9,7 +9,7 @@ keywords: ["version history", "release notes", "editorial skill changes", "revis
 
 ## Current Version
 
-**`1.6.0`**
+**`1.7.0`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -35,6 +35,10 @@ _None yet._
 
 > New tier behavior, new references, new templates or assets. Most recent 4 entries.
 
+### `1.7.0` - 2026-10-26
+
+The Editorial team now ships inside the skill, in `agents/`, instead of living in `Inbox/Faculties/Editorial/`, and the skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, so the vault's own sessions load it and tannergolden/intelligence's home kit can carry it to every repository. Briefs read each spec from `<skill>/agents/`. A new **Where it runs** rule: in a vault, the vault's own copy runs, so a home copy hands over to it; anywhere else the voice comes from the user's own writing at hand. `allowed-tools` now pre-approves read-only tools only, and the frontmatter keeps one key to a line, as the home kit's reader requires. The description is now quoted: unquoted, its colon made the frontmatter invalid YAML, so a loader dropped the description and the skill could never trigger.
+
 ### `1.6.0` - 2026-10-19
 
 - Vault notes are GitHub-Flavored Markdown with wikilinks, the vault's move off Obsidian: `references/formatting.md` and `SKILL.md` make it the default for every vault file and for a markdown target leaving the vault, and wikilinks never leave the notes.
@@ -48,10 +52,6 @@ Restructured `SKILL.md` to develop's canonical skeleton, the standard every skil
 ### `1.4.0` - 2026-06-25
 
 External writing help (a piece the user will send or use outside the vault: write me an email, rewrite this, proofread this, reply to this, soften this) is now **first-class**, and an **understand-the-situation intake phase** runs before drafting. New `references/intake.md` is the understand-first method: the **situation read** (the rhetorical checks of goal, audience and relationship and power, the one key message, and constraints, plus a sentiment read of the clustered tone cues), the **sentiment-and-tone calibration** rule (mirror the register, never the emotion: converge on warmth and formality, diverge from anger and panic, hold calm-warm-firm, with the NVC frame for charged replies), the **elicitation rule** (ask at most 1 to 3 questions, only when a different answer would change the draft and a wrong guess is costly to undo, else draft on stated assumptions; batch once; check Profile and memory first), and the **situation-brief spine** (the fields the lead captures, each with a default). The lead runs this as Phase 0 and threads a **situation brief** into every dispatch so the Writer drafts to it and the Line Editor gates against it. Added `references/difficult-messages.md` (the bad-news, apology, refusal, complaint and recovery, and de-escalation playbook) and `templates/situation-brief.md` (the scaffold the lead fills). Clarified in `SKILL.md` that a leaving piece goes to the user and is governed by the destination's own format, so the vault preflight and lint exit gate do not apply to it, though clarity and the slop rubric still do. Made intake Phase 0 in `references/tiers-and-dispatch.md` and updated the self-contained-brief contract to carry the situation brief. Intake is a **formalized lead responsibility, not a new team seat** (no roster change). Built from a deep four-lane research run: the rhetorical situation, sentiment and communication-accommodation theory, difficult-message frameworks, and intake-brief practice.
-
-### `1.3.0` - 2026-06-25
-
-Split the combined correspondence reference into two by medium. The former `references/email-and-messages.md` became `references/email.md` (the furniture-bearing genres: the medium-branch table, bottom-line-up-front email, the Field/Tenor/Mode register theory and Joos's five-rung ladder, the greeting-and-sign-off map, formal letters, and the Writing-for-HTML-email section) and `references/messages.md` (the no-furniture chat genre: one thought delivered plain, no subject or salutation or sign-off, the keep-it-light register rule, and a pointer to `references/messaging-formats.md` for the per-platform syntax). Repointed the three referencing files to the new names (`references/voice.md`, `templates/email.md`, `templates/message.md`); each new reference keeps the plain-H1, no-frontmatter shape.
 
 ---
 

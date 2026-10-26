@@ -1,19 +1,16 @@
 ---
 name: discover
-description: Use this skill whenever the user wants ideas or options generated, on request or proactively when a problem clearly calls for divergent options. Fires on brainstorm this, brainstorm ideas for, give me ideas, how might we, how could I, what are my options for, ways to, ideate on, help me think through, what could I do about, come up with approaches to, and any open-ended generate-possibilities request. The BRAIN's own ideation skill: it dispatches the Discovery team to generate ideas wide from distinct lenses, then converge to a ranked shortlist by a fair pairwise tournament, to a standard of generate wide, select fair. It generates options; deciding among them stays yours. A what-are-my-options is brainstorm; what-is-known-about-X is research; which-should-I-choose is board.
+description: "Use when the user wants ideas or options generated, on request or proactively when a problem clearly calls for divergent options. Fires on brainstorm this, brainstorm ideas for, give me ideas, how might we, how could I, what are my options for, ways to, ideate on, help me think through, what could I do about, come up with approaches to, and any open-ended generate-possibilities request. The BRAIN's own ideation skill: it dispatches the Discovery team to generate ideas wide from distinct lenses, then converge to a ranked shortlist by a fair pairwise tournament, to a standard of generate wide, select fair. It generates options; deciding among them stays yours. A what-are-my-options is brainstorm; what-is-known-about-X is research; which-should-I-choose is board."
 license: MIT
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
-metadata:
-  team: Discovery
-  version: "1.0.3"
-  id: "sy-skill-discover-spec"
-  author: "Tanner Golden"
-  status: "active"
+allowed-tools: Read, Grep, Glob
+metadata: { team: Discovery, version: "1.1.0", id: sy-skill-discover-spec, author: Tanner Golden, status: active }
 ---
 
 # 💡 Discover - the BRAIN's ideation skill
 
-Discover generates ideas for any challenge by dispatching the standing **Discovery team** (`Inbox/Faculties/Discovery/`), scaled to the question. The one standard, the team's, is **generate wide, select fair**: bold ideas are protected while generating (judgment deferred), and the winner is settled by a fair pairwise tournament, never by whose idea it is or which answer was hoped for. The skill carries no agents of its own; it is a thin orchestration and doctrine layer over a team that already exists. The hard rule, shared with `research` and `develop`: the lead holds the brief and generation happens in isolated parallel workers, so no generator grades its own idea and the tournament decides.
+Discover generates ideas for any challenge by dispatching the standing **Discovery team**, whose specs ship with this skill in `agents/`, scaled to the question. The one standard, the team's, is **generate wide, select fair**: bold ideas are protected while generating (judgment deferred), and the winner is settled by a fair pairwise tournament, never by whose idea it is or which answer was hoped for. The skill is a thin orchestration and doctrine layer over its team. The hard rule, shared with `research` and `develop`: the lead holds the brief and generation happens in isolated parallel workers, so no generator grades its own idea and the tournament decides.
+
+**Where it runs.** In a BRAIN vault, whose `AGENTS.md` says it is one, the vault's own copy of this skill runs: if the file you loaded is not that vault's `.agents/skills/discover/SKILL.md` or `.claude/skills/discover/SKILL.md`, read the vault's copy and follow it instead, with the files beside it, because a vault's copy matches its layout and its owner may have changed it. Anywhere else, the Founder is your user and the steps that read or write a vault folder do not apply: keep the idea pool in the conversation, dedup against what this run produced, write idea records only when asked and where your user says, and never write anything about your user into a repository that is not their private vault (SEC-003).
 
 > Operating doctrine lives in `references/`. Read `references/brief.md` to frame the challenge, `references/lenses.md` for the generation lenses, `references/method.md` for the diverge-converge method and why parallel generation wins, `references/convergence.md` before ranking, and `references/dispatch.md` before choosing a tier.
 
@@ -31,7 +28,7 @@ The operational axis is the tier: how much of the team to spend on the challenge
 
 ## The team it dispatches
 
-`metadata.team: Discovery` names the standing Discovery team (`Inbox/Faculties/Discovery/`, lead **Creative Lead / Sebastian**). The roster is the lead plus five: **Idea Generator** (Iris), **Idea Critic** (Hugo), **Tournament Ranker** (Desmond), **Idea Curator** (Pearl), and **Portfolio Manager** (Lionel). Agents are referenced by name and routed by their `description`; nothing is copied locally. On Publish, `develop` vendors the referenced agents into the skill's `agents/` so the package is self-contained. How the tiers map onto the roster and how each agent is briefed is in `references/dispatch.md`.
+`metadata.team: Discovery` names the standing Discovery team, whose roster (`agents/Discovery.md`) and specs ship in this skill's `agents/` folder (lead **Creative Lead / Sebastian**). The roster is the lead plus five: **Idea Generator** (Iris), **Idea Critic** (Hugo), **Tournament Ranker** (Desmond), **Idea Curator** (Pearl), and **Portfolio Manager** (Lionel). Agents are routed by their `description`, and a brief names the spec to read, `<skill>/agents/<Role>.md`, by the absolute path of this skill's folder. How the tiers map onto the roster and how each agent is briefed is in `references/dispatch.md`.
 
 ## How a run works
 

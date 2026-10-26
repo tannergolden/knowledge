@@ -28,7 +28,7 @@ A brief is neither a vague theme nor a pre-baked solution. One clear challenge p
 
 ## The idea record (lightweight, reusable, rankable)
 
-A captured idea stays lightweight until vetted. Fields (the full schema and scoring are the Discovery team's method in `Inbox/Faculties/Discovery/Discovery.md`, scaffolded by `templates/idea-record.md`):
+A captured idea stays lightweight until vetted. Fields (the full schema and scoring are the Discovery team's method in this skill's `agents/Discovery.md`, scaffolded by `templates/idea-record.md`):
 - a stable `id` (never reused; the dedup and lineage key),
 - a short `title` and a one-sentence `statement`,
 - the `lens` (or HMW) that produced it,

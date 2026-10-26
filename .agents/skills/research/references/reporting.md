@@ -14,7 +14,7 @@ The Knowledge Manager canonicalizes the topic (reduce the question to its topic 
 
 ## Filing a report
 
-A filed report goes to **`Inbox/Reports/`**, the held reports library, never to `Inbox/Faculties/Research/` (that folder holds the team). One topic, one canonical file, named `<Topic Title>.md` (the topic title alone, no prefix), built from `templates/report.md` with full BRAIN frontmatter and a `review_by` date. **In the same edit, add the report's entry to the `Inbox/Reports/Reports.md` index** (a bullet with a wikilink to the new file, its `review_by` "good through" date, and a one-line summary), so the index always mirrors the folder; a refreshed report has its index entry updated, a cleared one has it removed. Run the BRAIN edit protocol when filing: commit first if overwriting, write, then `update-vault.py` and `check-vault.py`.
+In a vault, a filed report goes to **`Inbox/Reports/`**, the held reports library, never into the skill's own folder, which holds the team; outside a vault it goes where the user says. One topic, one canonical file, named `<Topic Title>.md` (the topic title alone, no prefix), built from `templates/report.md` with full BRAIN frontmatter and a `review_by` date. **In the same edit, add the report's entry to the `Inbox/Reports/Reports.md` index** (a bullet with a wikilink to the new file, its `review_by` "good through" date, and a one-line summary), so the index always mirrors the folder; a refreshed report has its index entry updated, a cleared one has it removed. Run the BRAIN edit protocol when filing: commit first if overwriting, write, then `update-vault.py` and `check-vault.py`.
 
 ## Flat three-month freshness
 

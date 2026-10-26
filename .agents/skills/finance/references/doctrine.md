@@ -1,6 +1,6 @@
 # Doctrine - how the Finance team decides
 
-The rules every finance run reasons by. Read before synthesizing any advice. The team's roster and global rules are in `Inbox/Faculties/Finance/Finance.md`; this file is the method the lead and the skill apply on top of them.
+The rules every finance run reasons by. Read before synthesizing any advice. The team's roster and global rules are in this skill's `agents/Finance.md`; this file is the method the lead and the skill apply on top of them.
 
 ## The standard in practice: the Founder's interest first
 

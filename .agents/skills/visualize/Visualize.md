@@ -13,7 +13,7 @@ Visualize turns data, structure, and ideas into finished visuals: statistical ch
 
 ## How it fits the architecture
 
-The skill composes the standing **Design team** (`metadata.team: Design`, at `Inbox/Faculties/Design/`): the Design Lead (Margot) frames the request and picks the visual form, the Visualization Designer (Otto) makes the artifact, and the Design Critic (Vera) is the independent reviewer and blocking accessibility gate. It is the fifth BRAIN faculty, "show," alongside Research (find), Discovery (ideate), Development (build), and Editorial (write). The skill carries no agents of its own; it references the team by name and vendors the agents in only at Publish.
+The skill composes the standing **Design team** (`metadata.team: Design`, in the skill's own `agents/`): the Design Lead (Margot) frames the request and picks the visual form, the Visualization Designer (Otto) makes the artifact, and the Design Critic (Vera) is the independent reviewer and blocking accessibility gate. It is the fifth BRAIN faculty, "show," alongside Research (find), Discovery (ideate), Development (build), and Editorial (write). The skill carries its team in `agents/`, so it runs the same in a vault, in any other repository, and from a home install; in a vault, the vault's own copy runs.
 
 ## Design basis
 

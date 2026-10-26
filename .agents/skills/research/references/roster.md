@@ -1,6 +1,6 @@
 # Roster - the Research team wired to the pipeline
 
-The contract that wires this skill to the standing Research team (`Inbox/Faculties/Research/`). It is the single source of truth for who runs, on what, and what each one hands back; `dispatch.md` sets the per-tier order and the briefing shape.
+The contract that wires this skill to the standing Research team, whose specs ship in this skill's `agents/`. It is the single source of truth for who runs, on what, and what each one hands back; `dispatch.md` sets the per-tier order and the briefing shape.
 
 **The return-based flow.** Every team agent **returns** its artifact as its final message and **persists nothing** (that is each spec's write-scope). The lead is the only one who writes a workspace file: `draft.md`, the synthesis the blind reviewers attack. So the lead collects the returns, writes `draft.md`, points the Fact-Checker and Devil's Advocate at it, and applies their returned ledgers. Never brief an agent to "write a file": that contradicts its spec and confuses it.
 

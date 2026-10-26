@@ -1,19 +1,16 @@
 ---
 name: editorial
-description: Orchestrates the BRAIN's standing Editorial team to write, edit, and format any prose, scaled to the piece. Use whenever the user writes or edits text or a prose .md or .txt is created or edited, even when the word editorial is never said: emails, messages, replies, letters, memos, documents, essays, books, posts, notes, and the bodies of Library, Project, and Venture files. Fires on draft this, write this, edit this, rewrite this, reply to this, clean this up, tighten this, make this clearer, polish this, proofread this, format this, reformat these notes, turn these notes into a doc, write a README, and any request to produce or improve text a person will read. The BRAIN's own writing skill, preferred over a generic writer; obeys AGENTS.md. Structurally scoped: does not auto-fire on System, agent, log, template, index, or script files, or on a write by one of the vault's scripts. Not for investigating facts (research), building skills (develop), or a chat-only visual (visualize).
+description: "Orchestrates the BRAIN's standing Editorial team to write, edit, and format any prose, scaled to the piece. Use whenever the user writes or edits text or a prose .md or .txt is created or edited, even when the word editorial is never said: emails, messages, replies, letters, memos, documents, essays, books, posts, notes, and the bodies of Library, Project, and Venture files. Fires on draft this, write this, edit this, rewrite this, reply to this, clean this up, tighten this, make this clearer, polish this, proofread this, format this, reformat these notes, turn these notes into a doc, write a README, and any request to produce or improve text a person will read. The BRAIN's own writing skill, preferred over a generic writer; obeys AGENTS.md. Structurally scoped: does not auto-fire on System, agent, log, template, index, or script files, or on a write by one of the vault's scripts. Not for investigating facts (research), building skills (develop), or a chat-only visual (visualize)."
 license: MIT
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, Task
-metadata:
-  team: Editorial
-  version: "1.6.0"
-  id: "sy-skill-editorial-spec"
-  author: "Tanner Golden"
-  status: "active"
+allowed-tools: Read, Grep, Glob, WebFetch
+metadata: { team: Editorial, version: "1.7.0", id: sy-skill-editorial-spec, author: Tanner Golden, status: active }
 ---
 
 # ✍️ Editorial - the BRAIN's writing skill
 
-Editorial writes, edits, and formats any text the BRAIN needs by dispatching the standing **Editorial team** (`Inbox/Faculties/Editorial/`), scaled to the piece. The one standard, the team's, is **clarity**: the reader's understanding comes before the writer's expression. Beneath it sits the defining craft rule, **voice fidelity** from `Profile/`, which never outranks being understood. The skill carries no agents of its own; it is a thin orchestration and doctrine layer over a team that already exists. The hard rule, shared with `research` and `develop`: the lead holds the brief and synthesizes, and the maker of a draft is never its own reviewer.
+Editorial writes, edits, and formats any text the BRAIN needs by dispatching the standing **Editorial team**, whose specs ship with this skill in `agents/`, scaled to the piece. The one standard, the team's, is **clarity**: the reader's understanding comes before the writer's expression. Beneath it sits the defining craft rule, **voice fidelity** from `Profile/`, which never outranks being understood. The skill is a thin orchestration and doctrine layer over its team. The hard rule, shared with `research` and `develop`: the lead holds the brief and synthesizes, and the maker of a draft is never its own reviewer.
+
+**Where it runs.** In a BRAIN vault, whose `AGENTS.md` says it is one, the vault's own copy of this skill runs: if the file you loaded is not that vault's `.agents/skills/editorial/SKILL.md` or `.claude/skills/editorial/SKILL.md`, read the vault's copy and follow it instead, with the files beside it, because a vault's copy matches its layout and its owner may have changed it. Anywhere else, the Founder is your user and the steps that read or write a vault folder do not apply: there is no voice profile in `Profile/`, so take the voice from your user's own writing in the conversation or the repository, deliver in chat or write only where the task points, and never write anything about your user into a repository that is not their private vault (SEC-003).
 
 > Operating doctrine lives in `references/`. Read `references/intake.md` before any external piece (the situation read), `references/tiers-and-dispatch.md` before choosing a tier, `references/slop-rubric.md` before the quality gate, and `references/formatting.md` before any markdown beautification. For hard correspondence, `references/difficult-messages.md` is the per-situation playbook. For exhaustive syntax, `references/markdown-reference.md` covers every markdown element, `references/admonitions.md` covers callouts (GitHub's five, and Obsidian's set for a target that renders it), `references/plain-text.md` covers true plain text (`.txt` and plain-text email or messages), and `references/messaging-formats.md` covers the per-platform chat-dialect matrix.
 
@@ -31,7 +28,7 @@ The operational axis is the tier: how much of the team to spend on the piece. Qu
 
 ## The team it dispatches
 
-`metadata.team: Editorial` names the standing Editorial team (`Inbox/Faculties/Editorial/`, lead **Editorial Lead / Edith**). The roster is the lead plus five: **Writer**, **Line Editor**, **Long-Form Writer**, **Technical Writer**, **Developmental Editor**. Agents are referenced by name and routed by their `description`; nothing is copied locally. On Publish, `develop` vendors the referenced agents into the skill's `agents/` so the package is self-contained. How the tiers map onto the roster, and how each dispatch is briefed, is in `references/tiers-and-dispatch.md`.
+`metadata.team: Editorial` names the standing Editorial team, whose roster (`agents/Editorial.md`) and specs ship in this skill's `agents/` folder (lead **Editorial Lead / Edith**). The roster is the lead plus five: **Writer**, **Line Editor**, **Long-Form Writer**, **Technical Writer**, **Developmental Editor**. Agents are routed by their `description`. How the tiers map onto the roster, and how each dispatch is briefed, is in `references/tiers-and-dispatch.md`.
 
 ## How a piece is made
 

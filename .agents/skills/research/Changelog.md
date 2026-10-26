@@ -9,7 +9,7 @@ keywords: ["version history", "release notes", "research skill changes", "revisi
 
 ## Current Version
 
-**`1.5.3`**
+**`1.6.0`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -35,6 +35,10 @@ _None yet._
 
 > New tier behavior, new references, new by-demand seats. Most recent 4 entries.
 
+### `1.6.0` - 2026-10-26
+
+The Research team now ships inside the skill, in `agents/`, instead of living in `Inbox/Faculties/Research/`, and the skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, so the vault's own sessions finally load it and tannergolden/intelligence's home kit can carry it to every repository. Briefs read each spec from `<skill>/agents/`. A new **Where it runs** rule: in a vault, the vault's own copy runs, so a home copy hands over to it; anywhere else the run skips the Step-0 dedup and the Librarian and delivers in chat. `allowed-tools` now pre-approves read-only tools only, and the frontmatter keeps one key to a line, as the home kit's reader requires.
+
 ### `1.5.0` - 2026-06-28
 
 Added the `kb read` step to local grounding and tightened the knowledge-base doctrine. `brain.command` gained a `kb read "article"` command (full article text by title or path, with a citation line) and now rejects unknown flags on `kb search`; the grounding step and the Librarian use `kb search` to find an article then `kb read` to fetch and read its body, so a knowledge-base finding is fetched and read, not snippet-guessed. `references/methodology.md` adds: single-source grounding downgrades confidence and corroborates; the web-escalation triggers (current events, post-snapshot facts, primary research, non-English, specialized depth); and intra-source contradictions are surfaced like cross-source ones. Output gains a learn-loop: when grounding finds no curated `Library/` note on a durable topic, offer to promote the synthesis for the Librarian to catalog.
@@ -46,10 +50,6 @@ Wired the Section 4.5 retrieval order (vault, then knowledge bases, then the web
 ### `1.3.0` - 2026-06-28
 
 Restructured `SKILL.md` to develop's canonical skeleton, the standard every skill mirrors (`develop` `references/architecture.md`): Tiers, the team it dispatches, a new **How a run works** pipeline section (the frame, Step-0, lanes, fan-out, blind-verify, synthesize flow that was previously implicit across the tier table and the doctrine), dispatch scaling, output and freshness, the BRAIN preflight conformance, the doctrine that never bends (the quality bars), and boundaries. The reorder puts conformance before the quality doctrine to match the spine. No rule changed: every prior section is preserved, only reordered, plus the added pipeline overview. Also aligned the version sites, which had drifted: the namesake (01.01.02) and this Changelog's frontmatter (01.00.00) now version with the skill at 01.03.00.
-
-### `1.2.0` - 2026-06-25
-
-Reversed the reports-are-never-referenced rule: `Inbox/Reports/Reports.md` is now the single index that wikilinks every held report, and filing a report adds its entry to that index in the same edit (refresh updates it, clear removes it). No other file links to a report, so the wider graph stays free of disposable nodes, and durable findings are still promoted out. Updated `references/reporting.md` (the index rule plus the filing step), `SKILL.md` (the output contract and the one wikilink exception), and `templates/report.md` (the body still carries no inline wikilinks; the index entry is the only link). The team doc `Inbox/Faculties/Research/Research.md`, the namesake `Inbox/Reports/Reports.md`, and `Inbox/Inbox.md` were updated to match, and the five existing reports were backfilled into the index.
 
 ---
 

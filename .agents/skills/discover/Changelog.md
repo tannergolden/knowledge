@@ -8,7 +8,7 @@ keywords: ["version history", "release notes", "discover changes", "revision log
 
 ## Current Version
 
-**`1.0.3`**
+**`1.1.0`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -34,7 +34,9 @@ Initial build of the discover skill: the BRAIN's ideation skill, dispatching the
 
 > Backward-compatible additions. Most recent 4 entries.
 
-_None yet._
+### `1.1.0` - 2026-10-26
+
+The Discovery team now ships inside the skill, in `agents/`, instead of living in `Inbox/Faculties/Discovery/`, and the skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, so the vault's own sessions load it and tannergolden/intelligence's home kit can carry it to every repository. A new **Where it runs** rule: in a vault, the vault's own copy runs, so a home copy hands over to it; anywhere else the idea pool stays in the conversation. `allowed-tools` now pre-approves read-only tools only, and the frontmatter keeps one key to a line, as the home kit's reader requires. The description is now quoted: unquoted, its colon made the frontmatter invalid YAML, so a loader dropped the description and the skill could never trigger.
 
 ## Patch Updates
 

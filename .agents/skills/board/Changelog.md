@@ -8,7 +8,7 @@ keywords: ["version history", "release notes", "board changes", "revision log"]
 
 ## Current Version
 
-**`2.1.4`**
+**`2.1.5`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -46,6 +46,12 @@ Aligned the skill to the 2026-07-02 workforce lean build. Four AR departments di
 
 > Fixes and clarifications. Most recent 4 entries.
 
+### `2.1.5` - 2026-10-26
+
+- The skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, with a copy in `.claude/skills/` for Claude Code, so the vault's own sessions load it.
+- The description is quoted and says "Use when": unquoted, its colon made the frontmatter invalid YAML, so a loader dropped the description and the skill could never trigger.
+- `allowed-tools` pre-approves read-only tools only, and the frontmatter keeps one key to a line.
+
 ### `2.1.4` - 2026-10-22
 
 - The description routes the Founder's personal and household money to the new `finance` skill ("personal money is finance"), so a personal "should I" no longer competes with a business one, and Boundaries says where the two meet. "Fortune 500" left the description to keep it under the 1,024-character limit; the body is unchanged.
@@ -61,10 +67,3 @@ Aligned the skill to the 2026-07-02 workforce lean build. Four AR departments di
 - References point at `AGENTS.md`, the folder notes' Rules and `.docs/vault/` instead of the retired root rule files.
 - The licence is MIT, and the versioning rules link to tannergolden/standards instead of restating them.
 - Versions are plain SemVer: `02.01.01` is now `2.1.1`.
-
-### `2.1.1` - 2026-10-19
-
-Moved the write gate and the preflight off the retired engine: an existing file's last state is committed before an edit (git history is the backup, so the snapshot step is gone), the dedup check is a vault search, and every write ends with `.github/scripts/update-vault.py` and `check-vault.py` instead of `sync` and `health`. The archive now carries the Administration team, vendored when it is built.
-
-<!-- This is a BRAIN documentation node: it carries the vault's note schema above
-     (.docs/technical/vault/Note-Schema.md), not the Agent Skills schema. -->

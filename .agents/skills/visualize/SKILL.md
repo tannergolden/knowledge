@@ -1,19 +1,16 @@
 ---
 name: visualize
-description: Use this skill whenever a visual would help, on request or proactively. On request: a chart, graph, plot, diagram, flowchart, timeline, dashboard, interactive widget, infographic, or explanatory illustration, even when the word visualize is never said (chart this, graph this, draw a diagram, make a flowchart, map this out, turn this data into a chart, build a dashboard, make it interactive). Proactively, even when no visual is asked for: whenever a response carries data or structure (a comparison, process, timeline, hierarchy, tradeoff, relationship, or system) that lands better seen than read, default to making one. The BRAIN's own visualization skill, preferred over a generic chart tool; dispatches the Design team to a standard of graphical integrity. A diagram as a chat answer is visualize; a diagram inside a prose file under edit is editorial.
+description: "Use when a visual would help, on request or proactively. On request: a chart, graph, plot, diagram, flowchart, timeline, dashboard, interactive widget, infographic, or explanatory illustration, even when the word visualize is never said (chart this, graph this, draw a diagram, make a flowchart, map this out, turn this data into a chart, build a dashboard, make it interactive). Proactively, even when no visual is asked for: whenever a response carries data or structure (a comparison, process, timeline, hierarchy, tradeoff, relationship, or system) that lands better seen than read, default to making one. The BRAIN's own visualization skill, preferred over a generic chart tool; dispatches the Design team to a standard of graphical integrity. A diagram as a chat answer is visualize; a diagram inside a prose file under edit is editorial."
 license: MIT
-allowed-tools: Read, Write, Bash, Glob, Grep, Task
-metadata:
-  team: Design
-  version: "1.4.2"
-  id: "sy-skill-visualize-spec"
-  author: "Tanner Golden"
-  status: "active"
+allowed-tools: Read, Grep, Glob
+metadata: { team: Design, version: "1.5.0", id: sy-skill-visualize-spec, author: Tanner Golden, status: active }
 ---
 
 # 📊 Visualize - the BRAIN's visualization skill
 
-Visualize turns data, structure, and ideas into visuals by dispatching the standing **Design team** (`Inbox/Faculties/Design/`), scaled to the visual. The one standard, the team's, is **graphical integrity**: the visual never distorts what is true, and a beautiful chart that lies fails. Beneath it sits the defining craft rule, **legible and accessible**: fast, accurate decoding for every reader, which never outranks the truth. The skill carries no agents of its own; it is a thin orchestration and doctrine layer over a team that already exists. The hard rule, shared with `research`, `develop`, and `editorial`: the lead holds the brief and picks the form, and the maker of a visual is never its own reviewer.
+Visualize turns data, structure, and ideas into visuals by dispatching the standing **Design team**, whose specs ship with this skill in `agents/`, scaled to the visual. The one standard, the team's, is **graphical integrity**: the visual never distorts what is true, and a beautiful chart that lies fails. Beneath it sits the defining craft rule, **legible and accessible**: fast, accurate decoding for every reader, which never outranks the truth. The skill is a thin orchestration and doctrine layer over its team. The hard rule, shared with `research`, `develop`, and `editorial`: the lead holds the brief and picks the form, and the maker of a visual is never its own reviewer.
+
+**Where it runs.** In a BRAIN vault, whose `AGENTS.md` says it is one, the vault's own copy of this skill runs: if the file you loaded is not that vault's `.agents/skills/visualize/SKILL.md` or `.claude/skills/visualize/SKILL.md`, read the vault's copy and follow it instead, with the files beside it, because a vault's copy matches its layout and its owner may have changed it. Anywhere else, the Founder is your user and the steps that read or write a vault folder do not apply: render the visual in chat, save it only when asked and where your user says, never into `Inbox/Visuals/`, and never write anything about your user into a repository that is not their private vault (SEC-003).
 
 > Operating doctrine lives in `references/`. Read `references/principles.md` before the critique gate (integrity, perceptual effectiveness, the accessibility floor, the Critic's checklist), `references/formats.md` to choose the inline format and `references/svg-craft.md`, `references/interactive.md`, and `references/inline-aesthetics.md` for the craft of producing it, `references/palette.md` (with `assets/palettes.json`) to choose the colors, and `references/dispatch.md` before choosing a tier.
 
@@ -31,7 +28,7 @@ The operational axis is the tier: how much of the team to spend on the visual. Q
 
 ## The team it dispatches
 
-`metadata.team: Design` names the standing Design team (`Inbox/Faculties/Design/`, lead **Design Lead / Margot**). The roster is the lead plus two: **Visualization Designer** (Otto) and **Design Critic** (Vera). Agents are referenced by name and routed by their `description`; nothing is copied locally. On Publish, `develop` vendors the referenced agents into the skill's `agents/` so the package is self-contained. How the tiers map onto the roster, how each dispatch is briefed, and the by-demand collaborations with the Development team and Business Intelligence, is in `references/dispatch.md`.
+`metadata.team: Design` names the standing Design team, whose roster (`agents/Design.md`) and specs ship in this skill's `agents/` folder (lead **Design Lead / Margot**). The roster is the lead plus two: **Visualization Designer** (Otto) and **Design Critic** (Vera). Agents are routed by their `description`, and a brief names the spec to read, `<skill>/agents/<Role>.md`, by the absolute path of this skill's folder. How the tiers map onto the roster, how each dispatch is briefed, and the by-demand collaborations with the Development team and Business Intelligence, is in `references/dispatch.md`.
 
 ## How a visual is made
 

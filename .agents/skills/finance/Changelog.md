@@ -8,7 +8,7 @@ keywords: ["version history", "release notes", "finance changes", "revision log"
 
 ## Current Version
 
-**`1.0.2`**
+**`1.1.0`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -33,6 +33,10 @@ Initial build of the finance skill: the BRAIN's personal and household finance s
 ## Minor Updates
 
 > Backward-compatible additions. Most recent 4 entries.
+
+### `1.1.0` - 2026-10-26
+
+The Finance team now ships inside the skill, in `agents/`, instead of living in `Inbox/Faculties/Finance/`, and the skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, so the vault's own sessions load it and tannergolden/intelligence's home kit can carry it to every repository. Briefs read each spec from `<skill>/agents/`. A new **Where it runs** rule: in a vault, the vault's own copy runs, so a home copy hands over to it; anywhere else the run works only from what the user says and keeps nothing. `allowed-tools` now pre-approves read-only tools only, and the frontmatter keeps one key to a line, as the home kit's reader requires.
 
 ## Patch Updates
 

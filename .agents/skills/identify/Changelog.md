@@ -8,7 +8,7 @@ keywords: ["version history", "release notes", "identify changes", "revision log
 
 ## Current Version
 
-**`1.0.3`**
+**`1.0.4`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -39,6 +39,11 @@ _None yet._
 ## Patch Updates
 
 > Fixes and clarifications. Most recent 4 entries.
+
+### `1.0.4` - 2026-10-26
+
+- The skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, with a copy in `.claude/skills/` for Claude Code, so the vault's own sessions load it. The Writer and the Standards Reviewer it borrows now live in the editorial and research skills' `agents/` folders, and the roster points there.
+- The description says "Use when", `allowed-tools` pre-approves read-only tools only, and the frontmatter keeps one key to a line.
 
 ### `1.0.3` - 2026-10-19
 

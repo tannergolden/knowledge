@@ -7,7 +7,7 @@ keywords: ["/finance", "personal finance skill", "money advice", "budget", "debt
 
 # 💰 Finance - Information Guide
 
-Filed in `System/Skills/.unpackaged/` - skill sources live hidden and carry no wikilinks; the packaged `finance.skill` artifact sits at the `Skills/` root. Governance: `AGENTS.md` and the Rules in each folder's note.
+Filed in `.agents/skills/finance/`, where the agent apps read a repository's skills; `update-vault.py` copies it to `.claude/skills/finance/` for Claude Code and packs `System/Skills/finance.skill` for the Claude app. Skill files carry no wikilinks. Governance: `AGENTS.md` and the Rules in each folder's note.
 
 ## What this skill does
 
@@ -15,7 +15,7 @@ Filed in `System/Skills/.unpackaged/` - skill sources live hidden and carry no w
 
 ## How it fits the architecture
 
-The skill names the **Finance team** in `metadata.team: Finance`, the standing personal and household finance team in the federated agent library (`Inbox/Faculties/Finance/`, lead Financial Planning Lead). The roster is the lead plus eight: seven domain seats (cash flow, credit and debt, tax, investing and retirement, insurance and estate, equity and benefits, home and major purchases) and an independent Plan Reviewer. It carries no `agents/` folder: agents are referenced by name, and `update-vault.py` vendors them into the archive's `agents/` when it builds `finance.skill`. The skill is a thin orchestration and doctrine layer: its `references/` carry the method (the doctrine and the foundations order, the dispatch and routing, the data and write rules, the checkup cadence, the life-event checklists), its `templates/` scaffold each artifact (the fact sheet, the brief, the plan, the review ledger, the checkup scorecard), and its `assets/` hold the trigger tests and the official sources. Every agent returns its artifact and persists nothing; the skill alone writes, behind its gate. Where the Founder's money meets a venture's, it works with AR's Finance & Accounting department through `board`.
+The skill names the **Finance team** in `metadata.team: Finance`, the standing personal and household finance team in the federated agent library (lead Financial Planning Lead), which it carries in its own `agents/` folder. The roster is the lead plus eight: seven domain seats (cash flow, credit and debt, tax, investing and retirement, insurance and estate, equity and benefits, home and major purchases) and an independent Plan Reviewer. Because the team ships inside it, the skill runs the same in a vault, in any other repository, and from a home install; in a vault, the vault's own copy runs, and outside one it keeps nothing. The skill is a thin orchestration and doctrine layer: its `references/` carry the method (the doctrine and the foundations order, the dispatch and routing, the data and write rules, the checkup cadence, the life-event checklists), its `templates/` scaffold each artifact (the fact sheet, the brief, the plan, the review ledger, the checkup scorecard), and its `assets/` hold the trigger tests and the official sources. Every agent returns its artifact and persists nothing; the skill alone writes, behind its gate. Where the Founder's money meets a venture's, it works with AR's Finance & Accounting department through `board`.
 
 ## Design basis
 

@@ -8,7 +8,7 @@ keywords: ["version history", "release notes", "visualize changes", "revision lo
 
 ## Current Version
 
-**`1.4.2`**
+**`1.5.0`**
 
 The version is SemVer, per standards' [versioning policy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md#-versioning-policy-semver). It matches `metadata.version` in `SKILL.md`, and `check-skills.py` fails when they differ. Each section shows the 4 most recent entries; older entries age out. Newest on top.
 
@@ -34,6 +34,10 @@ Initial build of the visualize skill. Rebuilt fresh on the federated-team archit
 
 > Backward-compatible additions. Most recent 4 entries.
 
+### `1.5.0` - 2026-10-26
+
+The Design team now ships inside the skill, in `agents/`, instead of living in `Inbox/Faculties/Design/`, and the skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, so the vault's own sessions load it and tannergolden/intelligence's home kit can carry it to every repository. A new **Where it runs** rule: in a vault, the vault's own copy runs, so a home copy hands over to it; anywhere else a visual renders in chat and is saved only where the user says. `allowed-tools` now pre-approves read-only tools only, and the frontmatter keeps one key to a line, as the home kit's reader requires. The description is now quoted: unquoted, its colon made the frontmatter invalid YAML, so a loader dropped the description and the skill could never trigger.
+
 ### `1.4.0` - 2026-06-28
 
 Added a curated color-palette library: assets/palettes.json (about 87 established data-visualization palettes across categorical, sequential, and diverging, hex copied verbatim from ColorBrewer, the viridis family, Tableau, d3, Plotly, CARTOColors, Paul Tol, and Okabe-Ito, with colorblind-safe defaults) and references/palette.md (how to pick a palette by data type and apply it). The Visualization Designer now chooses a palette at creation; the Critic still gates accessibility. From a deep research run that computed hex from canonical source files.
@@ -45,10 +49,6 @@ Added four format and inline-craft references from a deep research run: formats.
 ### `1.2.0` - 2026-06-28
 
 Proactive use: the skill now fires on its own, not only on request. It defaults to producing a visual whenever a substantive response carries data or structure (comparison, process, timeline, hierarchy, tradeoff, relationship, system), skipping trivial or conversational replies. The description and a new Proactive use section carry the lowered-but-earned threshold; graphical integrity still governs. Standing rules were added to the skill-router and per-turn hooks.
-
-### `1.1.0` - 2026-06-28
-
-Saved visuals now file to the held visuals library at `Inbox/Visuals/` by default (a named home still wins when one fits), with the artifact's entry added to the `Visuals.md` index. The skill output contract, the Design roster's delivery rule, the engine sweep-exclusion, and Inbox.md were updated together.
 
 ## Patch Updates
 

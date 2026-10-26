@@ -1,14 +1,9 @@
 ---
 name: board
-description: Use this skill to found, run, scale, and maintain a company in Ventures/, or make any consequential business or strategy decision. The BRAIN's venture operating system: it convenes the Agent Resources (AR) workforce, scaled to the venture's stage, and runs five modes. Found stands up a new venture. Strategize sets the thesis and the OKRs. Decide is the multi-perspective decision engine (independent views, structured dissent, one accountable owner). Operate produces real deliverables: a lead frames, specialists produce, QA verifies, the skill writes them into the venture folder behind a write-gate. Review runs the operating cadence, grades OKRs, and advances the stage. Fires on found or start a company, set strategy or OKRs, should I or which or go or no-go, build or produce X, run the venture, and how is it doing or run the QBR. The skill is the sole writer; money, contracts, external comms, and deletes need the Founder. What-are-my-options is discover; what-is-known is research; personal money is finance.
+description: "Use when founding, running, scaling or maintaining a company in Ventures/, or making a consequential business or strategy decision. The BRAIN's venture operating system: it convenes the Agent Resources (AR) workforce, scaled to the venture's stage, and runs five modes. Found stands up a new venture. Strategize sets the thesis and the OKRs. Decide is the multi-perspective decision engine (independent views, structured dissent, one accountable owner). Operate produces real deliverables: a lead frames, specialists produce, QA verifies, the skill writes them into the venture folder behind a write-gate. Review runs the operating cadence, grades OKRs, and advances the stage. Fires on found or start a company, set strategy or OKRs, should I or which or go or no-go, build or produce X, run the venture, and how is it doing or run the QBR. The skill is the sole writer; money, contracts, external comms, and deletes need the Founder. What-are-my-options is discover; what-is-known is research; personal money is finance."
 license: MIT
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task
-metadata:
-  team: Administration
-  version: "2.1.4"
-  id: "sy-skill-board-spec"
-  author: "Tanner Golden"
-  status: "active"
+allowed-tools: Read, Grep, Glob
+metadata: { team: Administration, version: "2.1.5", id: sy-skill-board-spec, author: Tanner Golden, status: active }
 ---
 
 # 🏛️ Board - the BRAIN's venture operating system

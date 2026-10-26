@@ -1,14 +1,9 @@
 ---
 name: identify
-description: Coverage-driven interviewing that fills and deepens the Profile facets by asking the user about themselves with validated frameworks (Big Five, HEXACO, Schwartz, McAdams life story). Use this whenever the user types /identify, says interview me, fill out my profile, help me populate my Working Style, get to know me better, or asks to confirm unconfirmed profile entries, and proactively when a Profile facet is found thin or template-empty, even when they never say identify. Mixed structured and conversational questions with skip options; writes only an approved proposal batch.
+description: Coverage-driven interviewing that fills and deepens the Profile facets by asking the user about themselves with validated frameworks (Big Five, HEXACO, Schwartz, McAdams life story). Use when the user types /identify, says interview me, fill out my profile, help me populate my Working Style, get to know me better, or asks to confirm unconfirmed profile entries, and proactively when a Profile facet is found thin or template-empty, even when they never say identify. Mixed structured and conversational questions with skip options; writes only an approved proposal batch.
 license: MIT
-allowed-tools: Read, Grep, Glob, Bash, Write, Edit, Task, AskUserQuestion
-metadata:
-  team: Research & Development (R&D)
-  version: "1.0.3"
-  id: "sy-skill-identify-spec"
-  author: "Tanner Golden"
-  status: "active"
+allowed-tools: Read, Grep, Glob, AskUserQuestion
+metadata: { team: "Research & Development (R&D)", version: "1.0.4", id: sy-skill-identify-spec, author: Tanner Golden, status: active }
 ---
 
 # 🪪 Identify
