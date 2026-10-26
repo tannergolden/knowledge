@@ -150,7 +150,7 @@ Ask me which of this repository's community health files to remove, and wait for
 **Find a prompt.** Each runs as it is, except those marked ✏️, which ask for your details.
 
 - **Every day:** [Capture This](#capture-this) ✏️, [Answer From My Vault](#answer-from-my-vault) ✏️, [Catch Me Up On My Week](#catch-me-up-on-my-week), [Plan My Week](#plan-my-week), [Prepare Me To Meet Someone](#prepare-me-to-meet-someone) ✏️, [Brief Another AI About Me](#brief-another-ai-about-me) ✏️, [Close This Session](#close-this-session)
-- **Memory:** [Record A Decision](#record-a-decision) ✏️, [Consolidate My Memory](#consolidate-my-memory), [Find Patterns In What Happened](#find-patterns-in-what-happened), [Look Back On My Decisions](#look-back-on-my-decisions), [Write A Digest Of A Year](#write-a-digest-of-a-year) ✏️
+- **Memory:** [Record A Decision](#record-a-decision) ✏️, [Consolidate My Memory](#consolidate-my-memory), [Find Patterns In What Happened](#find-patterns-in-what-happened), [Look Back On My Decisions](#look-back-on-my-decisions), [Write A Digest Of A Year](#write-a-digest-of-a-year) ✏️, [Split An Entry That Grew Too Long](#split-an-entry-that-grew-too-long) ✏️
 - **Profile:** [Review My Profile For What Has Changed](#review-my-profile-for-what-has-changed), [Check My Goals Against What I'm Doing](#check-my-goals-against-what-im-doing)
 - **Projects:** [Start A Project](#start-a-project) ✏️, [Review A Project](#review-a-project) ✏️, [Close A Project](#close-a-project) ✏️
 - **Library and held work:** [File Reference Material In The Library](#file-reference-material-in-the-library) ✏️, [Review The Library Collection](#review-the-library-collection), [Turn On An Offline Reference Work](#turn-on-an-offline-reference-work) ✏️, [Review My Held Reports And Visuals](#review-my-held-reports-and-visuals)
@@ -480,6 +480,34 @@ Read the summaries in Memory/Context/Archive/{{YEAR}}/ and that year's records i
 <done_when>
 - The digest exists, lint-notes.py and check-links.py pass, and update-vault.py has nothing left to redraw.
 - You report how many episodes it lists, and any source you could not read.
+</done_when>
+```
+
+### Split An Entry That Grew Too Long
+
+**Use when** a Memory entry, such as a person you have known for years, has grown too long to load whole, and you want it lean again with nothing lost. **Fill in** `{{ENTRY}}`, the entry's path, or `find them` to look for every entry past the size.
+
+```text
+<context>
+The entry: {{ENTRY}}.
+An entry loads whole whenever it is relevant, so it has to stay small. The Growth Protocol in Memory/Memory.md says when an entry is too long and how it splits: the entry keeps its path and its present, its dated history becomes entries in Memory/Events/, and nothing is compressed.
+</context>
+
+<task>
+Measure the entry, or every permanent entry when I asked you to find them, against the protocol's size. For each one past it, propose the split as a table: each part, where it goes, and the Related lines that tie it back. Once I approve, make the split.
+</task>
+
+<constraints>
+- Write nothing before my yes on the table. Move text word for word, never summarized, and keep every supersession mark.
+- Keep the entry's path and name, so every link to it still holds.
+- Write each event from Memory/.template/Event.md, named by the date it happened.
+- If .github/TEMPLATE_INIT exists, this is the public template, whose entries are blank scaffolds: stop and tell me to run this in my private vault.
+- If any detail above is still a placeholder in double braces, ask me for it before you start.
+</constraints>
+
+<done_when>
+- Each entry I approved is under the size, every moved item is in its new home word for word, and lint-notes.py, check-links.py and check-vault.py pass, with nothing left for update-vault.py to redraw.
+- You report each entry's length before and after, and each file you wrote.
 </done_when>
 ```
 
