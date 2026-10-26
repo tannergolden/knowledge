@@ -1,0 +1,33 @@
+{
+  "skill": "editorial",
+  "purpose": "The callout (admonition) type sets, the machine-readable companion to references/formatting.md: GitHub's five alerts, the only types the vault uses (AGENTS.md, Conventions), and the complete Obsidian set with aliases, for a target that renders it. Each entry is one rendered style; the listed types are interchangeable aliases for it. Type matching is case-insensitive. The render syntax is `> [!type]`, with `-` for collapsed-by-default, `+` for expanded-but-foldable, and trailing text as a custom title.",
+  "syntax": {
+    "callout": "> [!type] Optional Custom Title",
+    "body": "arbitrary markdown on subsequent `>` lines (lists, code, tables, nested callouts)",
+    "fold_collapsed": "> [!type]-",
+    "fold_expanded": "> [!type]+",
+    "case_insensitive": true,
+    "nesting_practical_ceiling": 2
+  },
+  "callouts": [
+    {"style": "Note", "aliases": ["note"], "use": "a neutral aside"},
+    {"style": "Abstract", "aliases": ["abstract", "summary", "tldr"], "use": "a summary or stop-early line"},
+    {"style": "Info", "aliases": ["info"], "use": "supporting context"},
+    {"style": "Todo", "aliases": ["todo"], "use": "an open task"},
+    {"style": "Tip", "aliases": ["tip", "hint", "important"], "use": "advice or a key point"},
+    {"style": "Success", "aliases": ["success", "check", "done"], "use": "a confirmed result"},
+    {"style": "Question", "aliases": ["question", "help", "faq"], "use": "an open question"},
+    {"style": "Warning", "aliases": ["warning", "caution", "attention"], "use": "a hazard or caveat"},
+    {"style": "Failure", "aliases": ["failure", "fail", "missing"], "use": "a failed check or a gap"},
+    {"style": "Danger", "aliases": ["danger", "error"], "use": "a critical risk"},
+    {"style": "Bug", "aliases": ["bug"], "use": "a known defect"},
+    {"style": "Example", "aliases": ["example"], "use": "a worked example"},
+    {"style": "Quote", "aliases": ["quote", "cite"], "use": "a quotation"}
+  ],
+  "github_alert_subset": {
+    "note": "The vault's set, and the only types GitHub renders: UPPERCASE, the marker alone on its line, a title as a bold lead-in on the first body line. Everything else degrades to a plain blockquote.",
+    "types": ["NOTE", "TIP", "IMPORTANT", "WARNING", "CAUTION"],
+    "syntax": "> [!NOTE]",
+    "limit": "one or two per document; do not nest"
+  }
+}

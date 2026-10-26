@@ -359,7 +359,7 @@
       "home": "Faculties",
       "team": "Design",
       "description": "Dispatch this agent to review a visual it did not make and rule whether it ships: right form, honest encoding, accessible, clear. The independent critic and accessibility gate on the Design team, the BRAIN's standing visualization team; review-only, never fixes, and reports to the Design Lead.",
-      "path": "BRAIN/Inbox/Faculties/Design/Design Critic.md"
+      "path": "BRAIN/.agents/skills/visualize/agents/Design Critic.md"
     },
     {
       "name": "Margot",
@@ -367,7 +367,7 @@
       "home": "Faculties",
       "team": "Design",
       "description": "Dispatch this agent to lead a visual: frame the request, choose and name the right visual form, dispatch the Design team, run the integrity-and-accessibility gate, and own delivery. The team lead of the Design team, the BRAIN's standing visualization team; orchestrates and synthesizes, never makes the artifact itself, and is never its reviewer.",
-      "path": "BRAIN/Inbox/Faculties/Design/★ Design Lead.md"
+      "path": "BRAIN/.agents/skills/visualize/agents/★ Design Lead.md"
     },
     {
       "name": "Otto",
@@ -375,7 +375,7 @@
       "home": "Faculties",
       "team": "Design",
       "description": "Dispatch this agent to make the visual: render a chart, diagram, interactive widget, or explanatory illustration to the chosen form, encoded honestly and legibly. The maker on the Design team, the BRAIN's standing visualization team; produces the artifact source and reports to the Design Lead.",
-      "path": "BRAIN/Inbox/Faculties/Design/Visualization Designer.md"
+      "path": "BRAIN/.agents/skills/visualize/agents/Visualization Designer.md"
     },
     {
       "name": "Sebastian",
@@ -383,7 +383,7 @@
       "home": "Faculties",
       "team": "Discovery",
       "description": "Dispatch this agent to frame a challenge as a generative brief, run the diverge-then-converge cycle, defer judgment while ideas are generated, apply the kill-gate, and hand the Founder a ranked shortlist with a recommendation: the lead who owns the ideation run's spread and fairness end to end. The lead of the Discovery team, the BRAIN's standing ideation team, serving all BRAIN ideation and reporting to the Founder.",
-      "path": "BRAIN/Inbox/Faculties/Discovery/★ Creative Lead.md"
+      "path": "BRAIN/.agents/skills/discover/agents/★ Creative Lead.md"
     },
     {
       "name": "Hugo",
@@ -391,7 +391,7 @@
       "home": "Faculties",
       "team": "Discovery",
       "description": "Dispatch this agent to steelman then stress-test each surviving idea for novelty, feasibility, and fatal flaws, flagging each KEEP, FLAW, or KILL: the honest skeptic who protects quality without killing boldness and never critiques his own ideas. On the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
-      "path": "BRAIN/Inbox/Faculties/Discovery/Idea Critic.md"
+      "path": "BRAIN/.agents/skills/discover/agents/Idea Critic.md"
     },
     {
       "name": "Pearl",
@@ -399,7 +399,7 @@
       "home": "Faculties",
       "team": "Discovery",
       "description": "Dispatch this agent to keep the idea library: deduplicate a new idea against the whole pool including killed ideas, and maintain each record's schema, lifecycle, lineage, and retrieval. In the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
-      "path": "BRAIN/Inbox/Faculties/Discovery/Idea Curator.md"
+      "path": "BRAIN/.agents/skills/discover/agents/Idea Curator.md"
     },
     {
       "name": "Iris",
@@ -407,7 +407,7 @@
       "home": "Faculties",
       "team": "Discovery",
       "description": "Dispatch this agent to generate many candidate ideas from one assigned distinct lens, then to evolve and recombine the winners into stronger variants: the diverge engine, run N-parallel and independent so the field is wide by construction. On the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
-      "path": "BRAIN/Inbox/Faculties/Discovery/Idea Generator.md"
+      "path": "BRAIN/.agents/skills/discover/agents/Idea Generator.md"
     },
     {
       "name": "Lionel",
@@ -415,7 +415,7 @@
       "home": "Faculties",
       "team": "Discovery",
       "description": "Dispatch this agent when there is a portfolio to weigh: balance the whole developed-idea mix across ventures and projects by RICE and recommend the mix. In the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
-      "path": "BRAIN/Inbox/Faculties/Discovery/Portfolio Manager.md"
+      "path": "BRAIN/.agents/skills/discover/agents/Portfolio Manager.md"
     },
     {
       "name": "Desmond",
@@ -423,7 +423,7 @@
       "home": "Faculties",
       "team": "Discovery",
       "description": "Dispatch this agent to rank a surviving idea shortlist into a stable order by pairwise Elo comparison: the neutral judge who scores nothing on its own and lets the best idea win on merit alone. In the Discovery team, the BRAIN's standing ideation team; serves all BRAIN ideation and reports to the Creative Lead.",
-      "path": "BRAIN/Inbox/Faculties/Discovery/Tournament Ranker.md"
+      "path": "BRAIN/.agents/skills/discover/agents/Tournament Ranker.md"
     },
     {
       "name": "Frances",
@@ -431,7 +431,7 @@
       "home": "Faculties",
       "team": "Editorial",
       "description": "Dispatch this agent to bring fresh structural eyes to a long or complex piece: structure, argument, and organization, before any line-level work. On the Editorial team, the BRAIN's standing writing team; the structural-independence seat, a fresh reader who never edits its own draft, returns structural critique rather than rewriting, and reports to the Editorial Lead.",
-      "path": "BRAIN/Inbox/Faculties/Editorial/Developmental Editor.md"
+      "path": "BRAIN/.agents/skills/editorial/agents/Developmental Editor.md"
     },
     {
       "name": "Edith",
@@ -439,7 +439,7 @@
       "home": "Faculties",
       "team": "Editorial",
       "description": "Dispatch this agent to lead a piece of writing: frame the brief, hold the Founder's intent and voice, dispatch the Editorial team, run the verification gate, and own the ship gate. The team lead of the Editorial team, the BRAIN's standing writing team; orchestrates and synthesizes, never authors a piece itself, and is never the sole reviewer of a load-bearing one.",
-      "path": "BRAIN/Inbox/Faculties/Editorial/★ Editorial Lead.md"
+      "path": "BRAIN/.agents/skills/editorial/agents/★ Editorial Lead.md"
     },
     {
       "name": "Cora",
@@ -447,7 +447,7 @@
       "home": "Faculties",
       "team": "Editorial",
       "description": "Dispatch this agent to give a drafted piece its fresh-eyes polish: line, copy, and proofreading merged for clarity, correctness, consistency, and voice, and flagging load-bearing factual claims for verification. On the Editorial team, the BRAIN's standing writing team; the clarity gate every piece passes, a fresh reader who never edits its own draft, returns edits and flags rather than rewriting, and reports to the Editorial Lead.",
-      "path": "BRAIN/Inbox/Faculties/Editorial/Line Editor.md"
+      "path": "BRAIN/.agents/skills/editorial/agents/Line Editor.md"
     },
     {
       "name": "Harper",
@@ -455,7 +455,7 @@
       "home": "Faculties",
       "team": "Editorial",
       "description": "Dispatch this agent to draft sustained narrative in the Founder's voice: books, essays, ghostwriting, and any long-form piece that must hold structure and momentum across length. On the Editorial team, the BRAIN's standing writing team; the by-demand long-form drafter who sustains one voice and one argument over distance, hands flagged claims to the lead, and reports to the Editorial Lead.",
-      "path": "BRAIN/Inbox/Faculties/Editorial/Long-Form Writer.md"
+      "path": "BRAIN/.agents/skills/editorial/agents/Long-Form Writer.md"
     },
     {
       "name": "Miles",
@@ -463,7 +463,7 @@
       "home": "Faculties",
       "team": "Editorial",
       "description": "Dispatch this agent to write documentation, instructions, how-to, and structured technical content: accuracy and task completion over style, clarity paramount and voice lighter. On the Editorial team, the BRAIN's standing writing team; the by-demand technical drafter who optimizes for the reader completing the task, flags load-bearing claims, and reports to the Editorial Lead.",
-      "path": "BRAIN/Inbox/Faculties/Editorial/Technical Writer.md"
+      "path": "BRAIN/.agents/skills/editorial/agents/Technical Writer.md"
     },
     {
       "name": "Calvin",
@@ -471,7 +471,7 @@
       "home": "Faculties",
       "team": "Editorial",
       "description": "Dispatch this agent to draft the everyday prose in the Founder's voice: emails, professional and business writing, correspondence, memos, documents, and general communication. On the Editorial team, the BRAIN's standing writing team; the core drafter who writes clear and in the Founder's true voice, hands flagged claims to the lead to verify, and reports to the Editorial Lead.",
-      "path": "BRAIN/Inbox/Faculties/Editorial/Writer.md"
+      "path": "BRAIN/.agents/skills/editorial/agents/Writer.md"
     },
     {
       "name": "Lucille",
@@ -479,7 +479,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Dispatch this agent for the household's monthly money picture: net income against fixed, variable and irregular spending, the surplus or gap and the savings rate, the budget method that fits the Founder, the emergency fund target and where to hold it, the levers that free up cash, and unemployment insurance and other benefits when income drops. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Cash Flow Analyst.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Cash Flow Analyst.md"
     },
     {
       "name": "Owen",
@@ -487,7 +487,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Dispatch this agent for anything credit or debt: credit reports and scores, disputes, freezes, identity theft and scam checks; credit cards, mortgages, auto, student and personal loans; payoff order, balance transfers, consolidation and refinancing; collections, settlement and hardship; and whether to borrow, co-sign or lend at all. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Credit & Debt Specialist.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Credit & Debt Specialist.md"
     },
     {
       "name": "Elliot",
@@ -495,7 +495,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Dispatch this agent for the workplace pay package: the retirement plan's match, vesting and Roth options, HSA and FSA, open enrollment and life-event elections, RSUs, stock options (ISO and NSO), ESPP, early exercise and 83(b) elections, comparing job offers on total compensation, and what to do when leaving a job. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Equity & Benefits Specialist.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Equity & Benefits Specialist.md"
     },
     {
       "name": "Theodore",
@@ -503,7 +503,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Embodied by the finance skill, never dispatched as a subagent, to lead any personal or household money question: frame it against the Founder's whole financial picture, check the foundations first, dispatch the Finance specialists it touches, and synthesize one prioritized recommendation with its math, trade-offs and next steps. The lead of the Finance team, the BRAIN's standing personal and household finance team; orchestrates and synthesizes, never does a specialist's analysis itself.",
-      "path": "BRAIN/Inbox/Faculties/Finance/★ Financial Planning Lead.md"
+      "path": "BRAIN/.agents/skills/finance/agents/★ Financial Planning Lead.md"
     },
     {
       "name": "Henry",
@@ -511,7 +511,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Dispatch this agent for big-ticket decisions: rent or buy, how much house is affordable, the down payment and the loan programs that fit, the home buying and selling process, a rental or investment property, a car (buy, lease, new or used), and any large planned purchase such as a wedding or a renovation, judged by total cost over the time it will be owned. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Home & Major Purchases Analyst.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Home & Major Purchases Analyst.md"
     },
     {
       "name": "Clara",
@@ -519,7 +519,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Dispatch this agent for protecting the household: health and Medicare, disability, life, home or renters, auto, umbrella and long-term care coverage, medical bills and insurance appeals, what to insure and what to self-insure, and the estate essentials (will and guardians, beneficiary designations, powers of attorney, health care directives, trusts when warranted, and where every document lives). On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Insurance & Estate Specialist.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Insurance & Estate Specialist.md"
     },
     {
       "name": "Graham",
@@ -527,7 +527,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Dispatch this agent for investing and retirement: goals by horizon, risk tolerance, asset allocation, fund costs and rebalancing, which account to fund, retirement readiness and projections, withdrawal order, Social Security timing and disability benefits, a pension's lump-sum-or-annuity choice, retirement plans for self-employment income, education savings and college aid, the investing side of pay-off-debt-or-invest, and judging any product or adviser being pitched. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Investment & Retirement Analyst.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Investment & Retirement Analyst.md"
     },
     {
       "name": "Ingrid",
@@ -535,7 +535,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Dispatch this agent to independently review a finished money recommendation before the Founder sees it: suitability against the Founder's goals, horizon and risk tolerance, every load-bearing number traced and reproduced, every tax figure, limit and rule current, cited and dated, and the team's limits respected. On the Finance team, the BRAIN's standing personal and household finance team; arrives fresh, never reviews her own work, and reports to the Financial Planning Lead.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Plan Reviewer.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Plan Reviewer.md"
     },
     {
       "name": "Harriet",
@@ -543,7 +543,7 @@
       "home": "Faculties",
       "team": "Finance",
       "description": "Dispatch this agent for personal income tax planning: the right tax year and state, marginal and effective rates, withholding and estimated payments, deductions and credits including the Marketplace premium tax credit, traditional versus Roth and other account choices, capital gains and loss harvesting, charitable giving, gifts and loans to family, estate and gift tax thresholds, the tax side of any money move, IRS notices, and the dated tax deadlines. On the Finance team, the BRAIN's standing personal and household finance team; serves the Founder and reports to the Financial Planning Lead.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Tax Strategist.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Tax Strategist.md"
     },
     {
       "name": "Jasper",
@@ -551,7 +551,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent to gather, read, cite, and condense the sources for one assigned lane into a findings brief: the workhorse, dispatched in parallel one lane each. A specialist on the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/All-Source Analyst.md"
+      "path": "BRAIN/.agents/skills/research/agents/All-Source Analyst.md"
     },
     {
       "name": "Damon",
@@ -559,7 +559,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent to attack the conclusion: build the strongest case against it, surface the load-bearing assumptions and groupthink, and find what claim-checking cannot. The intelligence red team and independent critic. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/Devil's Advocate.md"
+      "path": "BRAIN/.agents/skills/research/agents/Devil's Advocate.md"
     },
     {
       "name": "Genevieve",
@@ -567,7 +567,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent when a report ships to polish the final product: ordering, confidence-language consistency, citation completeness, and cutting padding, without ever altering meaning. The newsroom and journal editor (Goodman 1994). On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/Editor.md"
+      "path": "BRAIN/.agents/skills/research/agents/Editor.md"
     },
     {
       "name": "Ruth",
@@ -575,7 +575,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent to independently verify every load-bearing claim in a draft against its primary source and to check attribution and source quality: the newsroom fact-checker plus review methodologist, fresh eyes that never check their own synthesis. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/Fact-Checker.md"
+      "path": "BRAIN/.agents/skills/research/agents/Fact-Checker.md"
     },
     {
       "name": "Lydia",
@@ -583,7 +583,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent to design the search and source strategy for a research question: where to look, which source types, what queries, what date windows, so the analysts find the best evidence rather than the first hits. A specialist on the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/Information Specialist.md"
+      "path": "BRAIN/.agents/skills/research/agents/Information Specialist.md"
     },
     {
       "name": "Mabel",
@@ -591,7 +591,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent to keep the Research team's report library reusable and current: one canonical report per topic, deduplication, the reuse-is-review freshness lifecycle, and fast retrieval of prior findings. A specialist on the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/Knowledge Manager.md"
+      "path": "BRAIN/.agents/skills/research/agents/Knowledge Manager.md"
     },
     {
       "name": "Beatrice",
@@ -599,7 +599,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent to frame a research question, decompose it into lanes, dispatch the right specialists, and synthesize a cited, calibrated answer, owning the run's integrity end to end. The lead of the Research team, the BRAIN's standing research team, serving all BRAIN research and reporting to the Founder.",
-      "path": "BRAIN/Inbox/Faculties/Research/★ Research Lead.md"
+      "path": "BRAIN/.agents/skills/research/agents/★ Research Lead.md"
     },
     {
       "name": "Mara",
@@ -607,7 +607,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent to independently peer-review the search and source strategy before the analysts run it, PRESS-style: catch missed venues, biased or low-recall queries, and where-we-looked bias, and return PASS or REVISE with the fix before the fan-out. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/Search Peer-Reviewer.md"
+      "path": "BRAIN/.agents/skills/research/agents/Search Peer-Reviewer.md"
     },
     {
       "name": "Sterling",
@@ -615,7 +615,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent to vet sensitive or external-facing output for legal, ethical, and domain-standards risk before it ships: libel, privacy, intellectual property and licensing, regulated claims, and disclosure standards, naming the specific rule and the required change. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/Standards Reviewer.md"
+      "path": "BRAIN/.agents/skills/research/agents/Standards Reviewer.md"
     },
     {
       "name": "Soren",
@@ -623,7 +623,7 @@
       "home": "Faculties",
       "team": "Research",
       "description": "Dispatch this agent when numbers are load-bearing to review the quantitative claims: effect sizes, comparability, and methodology, flagging the numbers that cannot carry the weight put on them. On the Research team, the BRAIN's standing research team; serves all BRAIN research and reports to the Research Lead.",
-      "path": "BRAIN/Inbox/Faculties/Research/Statistician.md"
+      "path": "BRAIN/.agents/skills/research/agents/Statistician.md"
     },
     {
       "name": "Marian",
@@ -814,7 +814,7 @@
         "Visualization Designer"
       ],
       "description": "The Design team: the BRAIN's standing visualization team. A lead plus two that turn data, structure, and ideas into honest visuals, from charts and diagrams to interactive widgets and explanatory illustration. The see-it counterpart to the Research, Discovery, Development, and Editorial teams.",
-      "path": "BRAIN/Inbox/Faculties/Design/Design.md"
+      "path": "BRAIN/.agents/skills/visualize/agents/Design.md"
     },
     {
       "team": "Discovery",
@@ -829,7 +829,7 @@
         "Tournament Ranker"
       ],
       "description": "The BRAIN's standing ideation team and how it works: a lead plus five specialists that generate new ideas then converge to the strongest, to one standard - generate wide, select fair. Defines the roster and the idea method (the record schema, ICE/Elo/RICE scoring, lifecycle, dedup, lineage). The ideation counterpart to the research team.",
-      "path": "BRAIN/Inbox/Faculties/Discovery/Discovery.md"
+      "path": "BRAIN/.agents/skills/discover/agents/Discovery.md"
     },
     {
       "team": "Editorial",
@@ -844,7 +844,7 @@
         "Writer"
       ],
       "description": "The Editorial team: the BRAIN's standing writing and communication team. A lead plus five that draft all of the Founder's own prose, from emails and correspondence to books, essays, and documents. The communications counterpart to the Research team, the Discovery team, and the Development team.",
-      "path": "BRAIN/Inbox/Faculties/Editorial/Editorial.md"
+      "path": "BRAIN/.agents/skills/editorial/agents/Editorial.md"
     },
     {
       "team": "Finance",
@@ -862,7 +862,7 @@
         "Tax Strategist"
       ],
       "description": "The Finance team: the BRAIN's standing personal and household finance team. A lead plus eight specialists that advise the Founder on any money matter in their life, from budgets, credit and debt to taxes, investing, insurance, benefits and big purchases, to one standard: the Founder's interest first. Dispatched by the finance skill.",
-      "path": "BRAIN/Inbox/Faculties/Finance/Finance.md"
+      "path": "BRAIN/.agents/skills/finance/agents/Finance.md"
     },
     {
       "team": "Research",
@@ -881,7 +881,7 @@
         "Statistician"
       ],
       "description": "The BRAIN's standing research team and how it works: a lead plus nine specialists that run any research the BRAIN needs, for any project, venture, or the BRAIN itself, to one standard - zero bias. Defines the roster and the report method (coverage, freshness, dedup, the Reports.md index rule). The research counterpart to the ideation Discovery team.",
-      "path": "BRAIN/Inbox/Faculties/Research/Research.md"
+      "path": "BRAIN/.agents/skills/research/agents/Research.md"
     },
     {
       "team": "Library",

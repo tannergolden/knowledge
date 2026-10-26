@@ -1,0 +1,12 @@
+{
+  "skill": "research",
+  "purpose": "Realistic competing skill descriptions for the trigger smoke test. A judge is shown a query, the research description, and these distractors, and routes the query. Research should win its should-trigger queries (assets/trigger-evals.json should_trigger) and lose the near-misses (should_not_trigger).",
+  "distractors": [
+    {"name": "markdown", "description": "Create and reformat Markdown files into clean, platform-tailored Markdown. Use when writing or tidying a .md file, a README, or notes."},
+    {"name": "deep-research-generic", "description": "A generic web-research helper: fetch a few pages on a topic and summarize them. No team, no fact-checking, no calibrated certainty."},
+    {"name": "code-assistant", "description": "Read, write, refactor, debug, and explain source code in any language. Use for programming tasks and fixing bugs."},
+    {"name": "creative-writing", "description": "Draft stories, poems, scripts, and other creative prose from a prompt."},
+    {"name": "quick-answer", "description": "Answer arithmetic, conversions, and established-fact lookups directly from knowledge, no sources needed."},
+    {"name": "translate", "description": "Translate text between languages and explain idioms."}
+  ]
+}

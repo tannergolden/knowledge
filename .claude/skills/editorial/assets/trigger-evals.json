@@ -1,0 +1,31 @@
+{
+  "skill": "editorial",
+  "description": "Trigger evaluation set for the editorial skill: requests that SHOULD activate it (writing, editing, formatting prose, even when the word editorial is not said) and near-miss negatives that should NOT. Used by the develop trigger smoke test and by `develop optimize`.",
+  "should_trigger": [
+    "draft a reply declining this partnership, keep it warm",
+    "write a thank-you email to my landlord",
+    "clean up these notes into a doc",
+    "tighten this paragraph, it rambles",
+    "make this README read well",
+    "/editorial rewrite this for clarity",
+    "proofread this before I send it",
+    "format these notes for Obsidian",
+    "turn this rough outline into an essay",
+    "reword this message so it sounds less harsh",
+    "write the body of this Library article",
+    "edit this cover letter"
+  ],
+  "should_not_trigger": [
+    "research the current state of solid-state batteries",
+    "what is 17 times 24",
+    "refactor this function to use async await",
+    "build me a skill that drafts invoices",
+    "run the vault checks",
+    "diagram the OAuth login flow for me",
+    "what is the capital of Australia",
+    "sort my inbox",
+    "look into whether GLP-1 drugs reduce cardiovascular risk",
+    "fix the bug in my Python script"
+  ],
+  "notes": "Editorial is structurally scoped: it fires on producing or improving prose a person will read (emails, messages, docs, notes, article bodies), even when the word editorial is absent. It does NOT fire on investigating facts (research), building skills (develop), a chat-only visual (visualize), arithmetic or established-fact lookups, code tasks, or vault-script maintenance. 'Diagram this for me' as a chat answer is visualize; a diagram inside a file under edit would be editorial. Auto-fire also excludes System, agent-roster, log, template, index, and script files and any write a vault script makes, even though those are technically text."
+}

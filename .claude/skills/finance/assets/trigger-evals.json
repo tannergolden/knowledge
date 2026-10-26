@@ -1,0 +1,33 @@
+{
+  "skill": "finance",
+  "note": "Mode-tagged should-trigger phrasings and near-miss negatives that must route elsewhere. Used by the description trigger check across all three modes.",
+  "should_trigger": [
+    {"q": "can I afford a $40k car on my salary", "mode": "ask"},
+    {"q": "should I pay off my student loans or invest the extra money", "mode": "ask"},
+    {"q": "Roth or traditional 401k for me", "mode": "ask"},
+    {"q": "how do I raise my credit score before applying for a mortgage", "mode": "ask"},
+    {"q": "do I need life insurance if I'm single", "mode": "ask"},
+    {"q": "what should I do with my $15k bonus", "mode": "ask"},
+    {"q": "my RSUs vest next week, should I sell", "mode": "ask"},
+    {"q": "a collector keeps calling about an old credit card", "mode": "ask"},
+    {"q": "help me make a budget, I never have money left at the end of the month", "mode": "plan"},
+    {"q": "get me out of credit card debt", "mode": "plan"},
+    {"q": "am I on track to retire at 60", "mode": "plan"},
+    {"q": "we're having a baby, what do we need to sort out financially", "mode": "plan"},
+    {"q": "I just got laid off, what do I do about money", "mode": "plan"},
+    {"q": "should we rent or buy in the next two years", "mode": "ask"},
+    {"q": "do a money checkup for me", "mode": "review"},
+    {"q": "what year-end tax moves should I make", "mode": "review"},
+    {"q": "help me pick my benefits for open enrollment", "mode": "review"}
+  ],
+  "near_miss": [
+    {"q": "build the financial model for my startup", "route": "board"},
+    {"q": "should our company take on venture debt", "route": "board"},
+    {"q": "what does the research say about active versus passive funds", "route": "research"},
+    {"q": "write an email to my landlord asking to renew the lease", "route": "editorial"},
+    {"q": "chart my net worth over the last five years from this table", "route": "visualize"},
+    {"q": "interview me to fill out my financial profile", "route": "identify"},
+    {"q": "brainstorm side business ideas I could start", "route": "discover"},
+    {"q": "build me a budgeting app", "route": "develop"}
+  ]
+}
