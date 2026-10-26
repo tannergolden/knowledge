@@ -46,14 +46,16 @@ ONE_LINE = re.compile(r'^[A-Za-z][A-Za-z0-9-]*:')
 MAX_DESCRIPTION = 1024
 MAX_BODY_LINES = 500
 # allowed-tools pre-approves what it lists while the skill runs, so it lists
-# read-only tools alone; writing, running commands and starting agents go
-# through the session's own permissions.
-NOT_READ_ONLY = frozenset({'Write', 'Edit', 'MultiEdit', 'NotebookEdit', 'Bash', 'Task', 'Agent'})
+# these read-only tools alone; writing, running commands, starting agents and
+# every MCP tool go through the session's own permissions.
+READ_ONLY = ('Read', 'Grep', 'Glob', 'WebFetch', 'WebSearch', 'AskUserQuestion')
 # A tool in allowed-tools, with or without a scope such as Bash(git push:*);
 # the list may be separated by commas or spaces.
 TOOL = re.compile(r'([A-Za-z_][\w-]*)\s*(?:\([^)]*\))?')
 # The characters a YAML plain value may not start with.
 YAML_INDICATORS = frozenset(',[]{}#&*!|>\'"%@`')
+# The escapes YAML allows in a double-quoted value.
+YAML_ESCAPE = re.compile(r'\\(?:[0abtnvfre "/\\N_LP\t]|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})')
 # The rule a faculty, a skill with its own team, opens with, word for word, for
 # its own name. tannergolden/intelligence's home kit carries the faculties to
 # every repository, where Claude Code loads its copy over a vault's, and
@@ -97,9 +99,13 @@ def yaml_value_problem(value: str) -> str | None:
             return 'its quote never closes'
         if value[end + 1:].strip():
             return 'text follows its closing quote, so quote the whole value'
+        if first == '"' and BACKSLASH in YAML_ESCAPE.sub('', value[1:end]):
+            return 'it holds a backslash YAML does not read as an escape'
         return None
     if first in '[{':
-        return None if value.rstrip().endswith(']' if first == '[' else '}') else 'it opens a list or map it never closes'
+        if not value.rstrip().endswith(']' if first == '[' else '}'):
+            return 'it opens a list or map it never closes'
+        return flow_problem(value.strip()[1:-1], first == '{')
     if first in YAML_INDICATORS:
         return f'it starts with {first}, which YAML reads as structure'
     if first in '-?:' and (len(value) == 1 or value[1] in ' \t'):
@@ -108,6 +114,35 @@ def yaml_value_problem(value: str) -> str | None:
         return 'YAML reads a colon before a space, or at the end, as structure'
     if ' #' in value or '\t#' in value:
         return 'YAML reads " #" as the start of a comment'
+    return None
+
+
+def flow_problem(inside: str, is_map: bool) -> str | None:
+    """Why YAML would misread an item of a one-line list or map, or None when it reads each as written."""
+    items, start, quote = [], 0, ''
+    for i, char in enumerate(inside):
+        if quote:
+            if char == quote and inside[i - 1:i] != BACKSLASH:
+                quote = ''
+        elif char in '"\'':
+            quote = char
+        elif char == ',':
+            items.append(inside[start:i])
+            start = i + 1
+    items.append(inside[start:])
+    for item in (item.strip() for item in items):
+        if not item:
+            continue
+        if is_map:
+            key, colon, item = item.partition(': ')
+            if not colon:
+                return f'its map entry {key[:20]!r} is not "key: value"'
+            item = item.strip()
+        if item and item[0] not in '"\'' and any(char in item for char in '[]{}'):
+            return f'its entry {item[:20]!r} nests a list or map, where a value stays plain or quoted'
+        problem = yaml_value_problem(item) if item else None
+        if problem:
+            return f'its entry {item[:20]!r} needs quotes ({problem})'
     return None
 
 
@@ -195,11 +230,10 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
         if not str(fields.get(key, '') or '').strip():
             report.error(manifest, f'the frontmatter has no {key}')
     tools = {match.group(1) for match in TOOL.finditer(str(fields.get('allowed-tools', '') or ''))}
-    forbidden = {tool.lower() for tool in NOT_READ_ONLY}
-    writes = sorted(tool for tool in tools if tool.lower() in forbidden)
-    if writes:
-        report.error(manifest, f'allowed-tools pre-approves read-only tools only; {", ".join(writes)} '
-                               'goes through the session\'s own permissions')
+    others = sorted(tool for tool in tools if tool not in READ_ONLY)
+    if others:
+        report.error(manifest, f'allowed-tools pre-approves read-only tools only, {", ".join(READ_ONLY)}; '
+                               f'{", ".join(others)} goes through the session\'s own permissions')
     metadata = fields.get('metadata')
     if not isinstance(metadata, dict) or not metadata:
         report.error(manifest, 'the frontmatter has no metadata block')

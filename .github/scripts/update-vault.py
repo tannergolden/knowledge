@@ -458,18 +458,21 @@ def mirror(run: Run) -> None:
         extra = sorted(rel for rel in present if rel not in wanted)
         if not changed and not extra:
             continue
-        if run.check:
-            for rel in changed:
-                run.stale(copy / rel, f'the copy differs from {vault.SKILL_SOURCES}/')
-            for rel in extra:
-                run.stale(copy / rel, f'the copy holds a file {vault.SKILL_SOURCES}/ does not')
-            continue
-        by_hand = [rel for rel in changed + extra if rel in present and not own(f'{name}/{rel}', present[rel])]
-        if by_hand:
-            for rel in by_hand:
-                run.report.error(copy / rel, f'changed by hand, so update-vault.py leaves {vault.SKILL_MIRROR}/{name}/ '
-                                             f'as it is: make the change in {vault.SKILL_SOURCES}/{name}/, its source, '
-                                             'then delete this file and run update-vault.py again')
+        by_hand = {rel for rel in changed + extra if rel in present and not own(f'{name}/{rel}', present[rel])}
+        if record_path is None:
+            hand = (f'update-vault.py cannot tell outside a git checkout whether this file of the copy was changed by '
+                    f'hand, so it leaves {vault.SKILL_MIRROR}/{name}/ as it is: delete this file and run it again to '
+                    f'draw it from {vault.SKILL_SOURCES}/{name}/')
+        else:
+            hand = (f'changed by hand, so update-vault.py leaves {vault.SKILL_MIRROR}/{name}/ as it is: make the change '
+                    f'in {vault.SKILL_SOURCES}/{name}/, its source, then delete this file and run update-vault.py again')
+        if run.check or by_hand:
+            for rel in sorted(set(changed) | set(extra)):
+                if rel in by_hand:
+                    run.report.error(copy / rel, hand if rel in wanted else hand.replace('changed by hand', 'added by hand'))
+                elif run.check:
+                    run.stale(copy / rel, f'the copy differs from {vault.SKILL_SOURCES}/' if rel in wanted
+                              else f'the copy holds a file {vault.SKILL_SOURCES}/ does not')
             continue
         # Removals first, so a rename that only changes a letter's case is not undone on a case-blind disk.
         for rel in extra:

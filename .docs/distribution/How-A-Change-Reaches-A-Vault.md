@@ -75,9 +75,12 @@ A sync never touches a file the template does not ship, which is every note an o
 file the list leaves to its owner. A file both changed is merged; where both changed the same lines,
 the owner's file stays exactly as it was and the pull request shows the template's change. An owner
 puts a `#` before a line to keep that file, or writes `# keep mine: /path` under Your rules to keep
-their own lines and take the rest. To keep a skill of their own, they add three lines under Your
-rules, `!/.agents/skills/<skill>/**`, `!/.claude/skills/<skill>/**` and
-`!/System/Skills/<skill>.skill`, so the skill, its Claude Code copy and its archive all stay theirs. [Template Sync](../../.github/template-sync.md) explains every
+their own lines and take the rest. To keep a skill of their own, they add five lines under Your
+rules, so the skill, its Claude Code copy and its archive all stay theirs: `!/.agents/skills/<skill>/`
+and `!/.agents/skills/<skill>/**`, the same two for `.claude/skills/`, and
+`!/System/Skills/<skill>.skill`. A folder takes a line of its own beside the one for what it holds,
+because the sync reads the list with git's matcher, which cannot switch off a file inside a folder a
+line above keeps current. [Template Sync](../../.github/template-sync.md) explains every
 outcome a sync pull request reports.
 
 ---
@@ -117,26 +120,34 @@ v2 moves the skills from `System/Skills/.unpackaged/` to `.agents/skills/`, move
 team from `Inbox/Faculties/` into its skill's own `agents/`, and adds Claude Code's copy in
 `.claude/skills/` ([ADR-0003](../adrs/ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md)). A
 vault that kept the template's skills as they came needs only the sync: 🔄 Template Sync moves every
-file. A vault whose owner changed them needs one step first, before `ref:` in its stub moves to
-`v2`, because a sync does not carry an owner's choice from an old path to a new one:
+file. A sync does not carry an owner's choice from an old path to a new one, so a vault whose owner
+changed the skills takes two steps of its own.
 
-- **You kept your own skills or teams**, with lines such as `#/System/Skills/**` or
-  `#/Inbox/Faculties/**`: move each skill you changed to `.agents/skills/<skill>/` and its team's
-  files into `.agents/skills/<skill>/agents/`, and under Your rules replace those lines with
-  `!/.agents/skills/<skill>/**`, `!/.claude/skills/<skill>/**` and
-  `!/System/Skills/<skill>.skill`. Otherwise the template's skills arrive switched on, and Claude
-  Code loads them in place of yours.
-- **You deleted a skill**: add the same three lines for it under Your rules, or it comes back at
-  the new paths.
-- **You edited a skill file or a roster the template also changed**: the sync reports the
-  conflict, keeps your file at its old path and leaves its new path empty, so the skill's checks
-  fail. Move your file to its new path and carry in the template's change, which the pull request
-  shows. An `Inbox/Faculties/` note you edited stays behind the same way; delete it once nothing
-  you need is left in it.
+**Before the sync**, in `.github/template-sync`, while the stub still follows the current release:
 
-Once the sync pull request is open, run `python3 .github/scripts/update-vault.py` on its branch and
-commit what it redraws: the two catalogs in `System/Data/` are yours, so the sync leaves them, and
-`check-vault.py` fails until they are redrawn.
+- If you kept your own skills or teams with a `#` before `/System/Skills/**` or
+  `/Inbox/Faculties/**`, take the `#` off, so the sync moves the template's other skills and teams
+  to their new homes; deleting those lines instead leaves them behind at the old paths, where
+  nothing reads them. Then add, under Your rules, the five lines that keep a skill yours (above)
+  for each skill you changed.
+- If you deleted a skill, add the same five lines for it, or it comes back at the new paths.
+
+Commit that, move `ref:` in the stub to `v2`, and run 🔄 Template Sync.
+
+**On the sync pull request's branch**, before you merge it:
+
+- Move each skill you kept to `.agents/skills/<skill>/`, and its team's files into
+  `.agents/skills/<skill>/agents/`, from wherever your version is now: its old path, or the commit
+  before the sync if the sync took it away. Delete what is left at the old paths. Then run
+  `python3 .github/scripts/check-skills.py <skill>` and fix what it reports: v2 holds every skill
+  to one frontmatter key a line, a description that says "Use when" and read-only `allowed-tools`,
+  and each faculty to the hand-over rule.
+- Where the sync reports a conflict in a file you edited, move your file to its new path and carry
+  in the template's change, which the pull request shows. An `Inbox/Faculties/` note you edited
+  stays behind the same way; delete it once nothing you need is left in it.
+- Run `python3 .github/scripts/update-vault.py` and commit what it draws: your skills' copies and
+  archives, and the two catalogs in `System/Data/`, which are yours, so `check-vault.py` fails
+  until they are redrawn.
 
 ---
 

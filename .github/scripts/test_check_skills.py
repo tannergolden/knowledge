@@ -105,7 +105,8 @@ class TestCheckSkills(unittest.TestCase):
         self.vault.write(f'{SOURCE}/SKILL.md', skill_md(license=None))
         self.assert_flags('the frontmatter has no license')
         self.vault.write(f'{SOURCE}/SKILL.md', skill_md(**{'allowed-tools': 'Read, Write, Bash, Task'}))
-        self.assert_flags('allowed-tools pre-approves read-only tools only; Bash, Task, Write')
+        self.assert_flags('allowed-tools pre-approves read-only tools only, Read, Grep, Glob, WebFetch, WebSearch, '
+                          'AskUserQuestion; Bash, Task, Write goes through')
 
     def test_the_frontmatter_the_home_kit_reads(self) -> None:
         self.vault.write(f'{SOURCE}/SKILL.md', skill_md(version='"01.00.00"'))
@@ -132,19 +133,33 @@ class TestCheckSkills(unittest.TestCase):
             with self.subTest(value=value):
                 self.vault.write(f'{SOURCE}/SKILL.md', skill_md(description=value))
                 self.assert_flags('quote the description value')
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(description='"Use when C:' + BS + 'Users is asked for."'))
+        self.assert_flags('a backslash YAML does not read as an escape')
         for value in ('"Use when asked, for a demo: any."', "'Use when it''s asked.'", 'Use when asked about issue#1.',
-                      'Use when asked - quickly.', 'Use when asked for 50% off.'):
+                      'Use when asked - quickly.', 'Use when asked for 50% off.', '"Use when asked' + BS + 'tnow."'):
             with self.subTest(value=value):
                 self.vault.write(f'{SOURCE}/SKILL.md', skill_md(description=value))
                 self.assertEqual(self.vault.run(SCRIPT).returncode, 0, self.vault.run(SCRIPT).stdout)
 
+    def test_every_metadata_value_yaml_would_misread(self) -> None:
+        for entry, fragment in (('note: @me', "its entry '@me' needs quotes"), ('note: a: b', "its entry 'a: b'"),
+                                ('note', "its map entry 'note' is not"), ('note: [x]', 'nests a list or map')):
+            with self.subTest(entry=entry):
+                text = skill_md().replace('version: "01.00.00" }', f'version: "01.00.00", {entry} }}')
+                self.vault.write(f'{SOURCE}/SKILL.md', text)
+                self.assert_flags(fragment)
+        text = skill_md().replace('version: "01.00.00" }', 'version: "01.00.00", note: "a: b, c" }')
+        self.vault.write(f'{SOURCE}/SKILL.md', text)
+        self.assertEqual(self.vault.run(SCRIPT).returncode, 0)
+
     def test_allowed_tools_in_any_spelling(self) -> None:
         for tools, named in (('Read Grep Bash Write', 'Bash, Write'), ('Read, Bash(git push:*)', 'Bash'),
-                             ('Read, write', 'write'), ('Read Write(*)', 'Write')):
+                             ('Read, write', 'write'), ('Read Write(*)', 'Write'),
+                             ('Read, mcp__github__push_files', 'mcp__github__push_files')):
             with self.subTest(tools=tools):
                 self.vault.write(f'{SOURCE}/SKILL.md', skill_md(**{'allowed-tools': tools}))
-                self.assert_flags(f'allowed-tools pre-approves read-only tools only; {named} goes through')
-        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(**{'allowed-tools': 'Read Grep Glob WebFetch'}))
+                self.assert_flags(f'AskUserQuestion; {named} goes through')
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(**{'allowed-tools': 'Read Grep Glob WebFetch AskUserQuestion'}))
         self.assertEqual(self.vault.run(SCRIPT).returncode, 0)
 
     def test_a_team_no_roster_defines(self) -> None:
