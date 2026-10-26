@@ -45,6 +45,16 @@ The fourth classical type, **procedural** (skills, habits, how the user likes th
 
 Memory that grows without bound is split into **collections**: a lean, always-scannable index doc (the folder's namesake file) plus one entry file per item, loaded only when relevant. This is parent-document retrieval - small to find, large to read - so a whole-collection scan never drags in years of irrelevant history. The per-entry collections are People, Organizations, Places, Decisions, and Insights; the streaming or small files (`Log.md`, `Dates.md`) stay flat.
 
+## Growth Protocol
+
+An entry loads whole whenever it is relevant, so it has to stay small enough to read beside the task. When a permanent entry (a person, organization, place, decision or insight) passes about 300 lines, or sessions keep loading it for a small part of it, split it the way the collections are split: the entry stays lean, and what only accumulates moves out. Propose the split first, as a table of what moves where, and wait for a yes.
+
+- **The entry keeps its path and its present.** Its name, every field that describes its subject now, its open threads, its important dates and its provenance stay where they are, so every link to it still holds.
+- **Its history becomes events.** Each dated item of its history that stands on its own, such as a shared milestone, a past role or a move, becomes an entry in `Events/`, written from `.template/Event.md`, with a plain-path `Related:` line each way. The entry keeps one `Related:` line per moved event, newest first.
+- **Move, never compress.** Text moves word for word, and a superseded fact keeps its supersession marks: compaction loss is permanent.
+- **The flat files stay flat.** `Log.md` shrinks by consolidation; `Dates.md`, past the same size, moves its one-time dates that have passed into `Events/`.
+- **Finish mechanically:** `lint-notes.py` on every file written, then `update-vault.py` and `check-vault.py`, then commit.
+
 ## Operations
 
 The five operations of this memory, each with the rule that governs it:

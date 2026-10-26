@@ -7,7 +7,7 @@ keywords: ["important dates", "deadlines", "anniversaries", "recurring events", 
 
 # 📅 Dates
 
-Prospective memory: the future-facing reference for dates that matter. Add an entry as a row in the right table below (recurring, one-time or milestone), keeping its three columns; keep each table in date order. A person's significant dates also live in their `Entities/People/` entry. Small enough to stay one file; split only if it ever crosses the size threshold.
+Prospective memory: the future-facing reference for dates that matter. Add an entry as a row in the right table below (recurring, one-time or milestone), keeping its three columns; keep each table in date order. A person's significant dates also live in their `Entities/People/` entry. Small enough to stay one file; past the size the Growth Protocol in `Memory/Memory.md` sets, its one-time dates that have passed move into `Events/`.
 
 ---
 

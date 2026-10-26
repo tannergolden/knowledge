@@ -35,7 +35,7 @@ Workflows marked *owned here* are specified in full lower in this file; all othe
 |----------|--------------|--------------------------|
 | Memory consolidation loop | ~10+ unpromoted Log entries / monthly / on request | *owned here* |
 | Log → permanent promotion | A Log entry qualifies for People/Decisions/Dates (user-facts go to Profile) | *owned here* (consolidation) + `Memory/Memory.md` retention tables |
-| Memory entry growth (lifetime) | A permanent Memory entry file grows too long to load whole | `Memory/Memory.md` "Growth Protocol" |
+| Memory entry growth (lifetime) | A permanent Memory entry file grows too long to load whole | `Memory/Memory.md` "Growth Protocol" · the entry keeps its present, and its history moves into `Memory/Events/` |
 
 ### Integrity & maintenance
 
