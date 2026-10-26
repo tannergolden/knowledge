@@ -123,6 +123,30 @@ class TestCheckSkills(unittest.TestCase):
         self.vault.write(f'{SOURCE}/SKILL.md', skill_md(description='"Use when asked: it runs the demo."'))
         self.assertEqual(self.vault.run(SCRIPT).returncode, 0)
 
+    def test_every_value_yaml_would_misread(self) -> None:
+        hazards = ('Use when asked for a demo:', '`demo` runs. Use when asked.', '*Use when* asked.',
+                   '@demo. Use when asked.', '%demo. Use when asked.', '&demo. Use when asked.',
+                   '!demo. Use when asked.', '- Use when asked.', '"Use when" asked for a demo.',
+                   "'Use when' asked.", '[demo] Use when asked.', 'Use when asked.\t# a note', '"Use when asked.')
+        for value in hazards:
+            with self.subTest(value=value):
+                self.vault.write(f'{SOURCE}/SKILL.md', skill_md(description=value))
+                self.assert_flags('quote the description value')
+        for value in ('"Use when asked, for a demo: any."', "'Use when it''s asked.'", 'Use when asked about issue#1.',
+                      'Use when asked - quickly.', 'Use when asked for 50% off.'):
+            with self.subTest(value=value):
+                self.vault.write(f'{SOURCE}/SKILL.md', skill_md(description=value))
+                self.assertEqual(self.vault.run(SCRIPT).returncode, 0, self.vault.run(SCRIPT).stdout)
+
+    def test_allowed_tools_in_any_spelling(self) -> None:
+        for tools, named in (('Read Grep Bash Write', 'Bash, Write'), ('Read, Bash(git push:*)', 'Bash'),
+                             ('Read, write', 'write'), ('Read Write(*)', 'Write')):
+            with self.subTest(tools=tools):
+                self.vault.write(f'{SOURCE}/SKILL.md', skill_md(**{'allowed-tools': tools}))
+                self.assert_flags(f'allowed-tools pre-approves read-only tools only; {named} goes through')
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(**{'allowed-tools': 'Read Grep Glob WebFetch'}))
+        self.assertEqual(self.vault.run(SCRIPT).returncode, 0)
+
     def test_a_team_no_roster_defines(self) -> None:
         shutil.rmtree(self.vault.path(f'{SOURCE}/agents'))
         self.assert_flags("metadata.team names 'Demo'")
@@ -151,6 +175,8 @@ class TestCheckSkills(unittest.TestCase):
         self.assert_flags('opens with the hand-over rule word for word')
         self.vault.write(f'{SOURCE}/SKILL.md', skill_md(rule=RULE.replace('read the vault', 'open the vault')))
         self.assert_flags('opens with the hand-over rule word for word')
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(rule=None) + chr(10) + RULE + chr(10))
+        self.assert_flags('before its first section')
 
     def test_paths_use_forward_slashes(self) -> None:
         self.vault.write(f'{SOURCE}/SKILL.md', skill_md() + 'Read references' + BS + 'tiers.md first.' + chr(10))

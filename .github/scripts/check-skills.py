@@ -49,6 +49,11 @@ MAX_BODY_LINES = 500
 # read-only tools alone; writing, running commands and starting agents go
 # through the session's own permissions.
 NOT_READ_ONLY = frozenset({'Write', 'Edit', 'MultiEdit', 'NotebookEdit', 'Bash', 'Task', 'Agent'})
+# A tool in allowed-tools, with or without a scope such as Bash(git push:*);
+# the list may be separated by commas or spaces.
+TOOL = re.compile(r'([A-Za-z_][\w-]*)\s*(?:\([^)]*\))?')
+# The characters a YAML plain value may not start with.
+YAML_INDICATORS = frozenset(',[]{}#&*!|>\'"%@`')
 # The rule a faculty, a skill with its own team, opens with, word for word, for
 # its own name. tannergolden/intelligence's home kit carries the faculties to
 # every repository, where Claude Code loads its copy over a vault's, and
@@ -65,6 +70,45 @@ def junk(relative: pathlib.Path) -> bool:
     """A file that never ships in an archive, so the checks never read it either."""
     return (any(part in JUNK_DIRS for part in relative.parts) or relative.name in JUNK_FILES
             or relative.name.startswith('._') or relative.suffix.lower() in JUNK_SUFFIXES)
+
+
+def closing_quote(value: str) -> int | None:
+    """Where a quoted value's closing quote stands, or None when it never closes."""
+    quote, i = value[0], 1
+    while i < len(value):
+        if quote == '"' and value[i] == BACKSLASH:
+            i += 2
+            continue
+        if value[i] == quote:
+            if quote == "'" and value[i + 1:i + 2] == "'":
+                i += 2
+                continue
+            return i
+        i += 1
+    return None
+
+
+def yaml_value_problem(value: str) -> str | None:
+    """Why YAML would not read this one-line value as written, or None when it would."""
+    first = value[0]
+    if first in '"\'':
+        end = closing_quote(value)
+        if end is None:
+            return 'its quote never closes'
+        if value[end + 1:].strip():
+            return 'text follows its closing quote, so quote the whole value'
+        return None
+    if first in '[{':
+        return None if value.rstrip().endswith(']' if first == '[' else '}') else 'it opens a list or map it never closes'
+    if first in YAML_INDICATORS:
+        return f'it starts with {first}, which YAML reads as structure'
+    if first in '-?:' and (len(value) == 1 or value[1] in ' \t'):
+        return f'it starts with "{first} ", which YAML reads as structure'
+    if ': ' in value or ':\t' in value or value.endswith(':'):
+        return 'YAML reads a colon before a space, or at the end, as structure'
+    if ' #' in value or '\t#' in value:
+        return 'YAML reads " #" as the start of a comment'
+    return None
 
 
 def check_manifest_shape(manifest: pathlib.Path, text: str, report: vault.Report) -> None:
@@ -86,9 +130,10 @@ def check_manifest_shape(manifest: pathlib.Path, text: str, report: vault.Report
             continue
         key, _, value = line.partition(':')
         value = value.strip()
-        if value and value[0] not in '"\'[{' and (': ' in value or ' #' in value):
-            report.error(manifest, f'quote the {key} value: YAML reads ": " or " #" inside a plain value as '
-                                   'structure, and a loader that cannot parse the frontmatter drops it')
+        problem = yaml_value_problem(value) if value else None
+        if problem:
+            report.error(manifest, f'quote the {key} value: {problem}, and a loader that cannot parse the '
+                                   'frontmatter drops it')
     body = '\n'.join(lines[end + 1:]).lstrip('\n')
     if body.count('\n') > MAX_BODY_LINES:
         report.error(manifest, f'the body is over {MAX_BODY_LINES} lines; move detail into references/')
@@ -149,8 +194,9 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
     for key in ('license', 'allowed-tools'):
         if not str(fields.get(key, '') or '').strip():
             report.error(manifest, f'the frontmatter has no {key}')
-    tools = {tool.strip() for tool in str(fields.get('allowed-tools', '') or '').split(',') if tool.strip()}
-    writes = sorted(tools & NOT_READ_ONLY)
+    tools = {match.group(1) for match in TOOL.finditer(str(fields.get('allowed-tools', '') or ''))}
+    forbidden = {tool.lower() for tool in NOT_READ_ONLY}
+    writes = sorted(tool for tool in tools if tool.lower() in forbidden)
     if writes:
         report.error(manifest, f'allowed-tools pre-approves read-only tools only; {", ".join(writes)} '
                                'goes through the session\'s own permissions')
@@ -163,9 +209,11 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
         report.error(manifest, f"metadata.team names '{team}', which no roster in the agent library defines; "
                                'point it at a staffed team or drop the key')
     check_team(root, folder, manifest, team, report)
-    if (folder / vault.TEAM_FOLDER).is_dir() and HANDOVER.format(name=folder.name) not in text:
+    opening = text.split('\n## ', 1)[0]
+    if (folder / vault.TEAM_FOLDER).is_dir() and HANDOVER.format(name=folder.name) not in opening:
         report.error(manifest, 'a faculty, a skill with its own team, opens with the hand-over rule word for word, '
-                               'naming its own copies (System/Skills/Skills.md); the home kit refuses one without it')
+                               'before its first section, naming its own copies (System/Skills/Skills.md); the home '
+                               'kit refuses one without it')
     if '_' in folder.name:
         report.warn(folder, 'the folder name has an underscore (AGENTS.md, Conventions)')
     namesake = next((p for p in sorted(folder.glob('*.md'))
