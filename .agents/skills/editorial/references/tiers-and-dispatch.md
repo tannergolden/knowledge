@@ -1,6 +1,6 @@
 # Tiers and dispatch - the Editorial team, per tier
 
-The tier is chosen from the table, not by feel. The lead applies it and announces the tier before any dispatch, because the tier is a cost decision made with the owner's tokens. Then it scales the standing Editorial team (`Inbox/Faculties/Editorial/`) to the piece, dispatching the smallest sufficient roster.
+The tier is chosen from the table, not by feel. The lead applies it and announces the tier before any dispatch, because the tier is a cost decision made with the owner's tokens. Then it scales the standing Editorial team (this skill's `agents/`) to the piece, dispatching the smallest sufficient roster.
 
 ## Pick the tier by the piece's shape
 

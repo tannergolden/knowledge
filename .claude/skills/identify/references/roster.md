@@ -44,7 +44,7 @@ Sterling reviews the batch and the law, never the ledger, the plan, or Calvin's 
 
 ## The cross-home reference convention
 
-This skill follows the research skill's Marian convention. `metadata.team` in SKILL.md names **Research & Development (R&D)**, the home of the embodied lead (Adeline). The two dispatched seats are referenced by name from their own homes: Calvin from `Inbox/Faculties/Editorial/`, Sterling from `Inbox/Faculties/Research/`. Nothing is copied into this skill: the unpackaged skill carries no local `agents/` folder and resolves all three seats from the federated agent library at runtime, by the plain paths above. Only on Publish are the referenced specs vendored into `agents/` so the shipped package is self-contained; the source of truth stays the federated library.
+This skill follows the research skill's Marian convention. `metadata.team` in SKILL.md names **Research & Development (R&D)**, the home of the embodied lead (Adeline). The two dispatched seats are referenced by name from their own homes: Calvin from `.agents/skills/editorial/agents/`, Sterling from `.agents/skills/research/agents/`. Nothing is copied into this skill: its source carries no local `agents/` folder and resolves all three seats from the federated agent library at runtime, by the plain paths above. Its archive carries the R&D department, vendored when it is built; Calvin and Sterling stay in their own skills, which remain the source of truth.
 
 ## Rejected alternatives
 

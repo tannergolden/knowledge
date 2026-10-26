@@ -51,7 +51,7 @@ The run workspace is an ephemeral folder outside the vault tree: the session's s
 
 ## The self-contained brief
 
-A subagent sees none of this conversation. Every dispatch restates, in full, in the `templates/brief.md` shape: the role spec to read, the objective and its success test, the inputs (the fact sheet inline, the Profile paths to read, the jurisdiction and tax year), the output contract, the tools and sources to prefer, and the boundaries. An incomplete brief is a common dispatch failure: the worker improvises the gap. Role specs are at `Inbox/Faculties/Finance/<Role>.md`; the lead's file is `★ Financial Planning Lead.md`, and mind the ampersands in five file names.
+A subagent sees none of this conversation. Every dispatch restates, in full, in the `templates/brief.md` shape: the role spec to read, the objective and its success test, the inputs (the fact sheet inline, the Profile paths to read, the jurisdiction and tax year), the output contract, the tools and sources to prefer, and the boundaries. An incomplete brief is a common dispatch failure: the worker improvises the gap. Role specs are in this skill's `agents/` folder, read as `<skill>/agents/<Role>.md` by the absolute path of the skill's folder; the lead's file is `★ Financial Planning Lead.md`, and mind the ampersands in five file names.
 
 ## The computation check
 

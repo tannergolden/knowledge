@@ -36,7 +36,7 @@ Initial build of the finance skill: the BRAIN's personal and household finance s
 
 ### `1.1.0` - 2026-10-26
 
-The Finance team now ships inside the skill, in `agents/`, instead of living in `Inbox/Faculties/Finance/`, and the skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, so the vault's own sessions load it and tannergolden/intelligence's home kit can carry it to every repository. Briefs read each spec from `<skill>/agents/`. A new **Where it runs** rule: in a vault, the vault's own copy runs, so a home copy hands over to it; anywhere else the run works only from what the user says and keeps nothing. `allowed-tools` now pre-approves read-only tools only, and the frontmatter keeps one key to a line, as the home kit's reader requires.
+The Finance team now ships inside the skill, in `agents/`, instead of living in `Inbox/Faculties/Finance/`, and the skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, so the vault's own sessions load it and tannergolden/intelligence's home kit can carry it to every repository. Briefs read each spec from `<skill>/agents/`, and the dispatch reference and `SKILL.md` point there too. A new **Where it runs** rule: in a vault, the vault's own copy runs, so a home copy hands over to it; anywhere else the run works only from what the user says and keeps nothing. `allowed-tools` now pre-approves read-only tools only, and the frontmatter keeps one key to a line, as the home kit's reader requires.
 
 ## Patch Updates
 

@@ -1,6 +1,6 @@
 <!--
 title: "Inbox - Staging Area"
-description: "Drop any unsorted file here. The AI analyzes, proposes a destination, enriches with frontmatter or macOS metadata, and asks for sorting confirmation. Held sub-homes (Reports, Visuals, and the standing teams) live here but are never sorted."
+description: "Drop any unsorted file here. The AI analyzes, proposes a destination, enriches with frontmatter or macOS metadata, and asks for sorting confirmation. Held sub-homes (Reports, Visuals and Ideas) live here but are never sorted."
 type: "index"
 keywords: ["staging area", "drop files", "unsorted", "sorting protocol", "pdf cleanup", "file triage", "where to put files", "hold folder"]
 -->

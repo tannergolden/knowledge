@@ -42,7 +42,7 @@ _None yet._
 
 ### `1.0.4` - 2026-10-26
 
-- The skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, with a copy in `.claude/skills/` for Claude Code, so the vault's own sessions load it. The Writer and the Standards Reviewer it borrows now live in the editorial and research skills' `agents/` folders, and the roster points there.
+- The skill source moved from `System/Skills/.unpackaged/` to `.agents/skills/`, where the agent apps read a repository's skills, with a copy in `.claude/skills/` for Claude Code, so the vault's own sessions load it. The Writer and the Standards Reviewer it borrows now live in the editorial and research skills' `agents/` folders, and `SKILL.md`, the namesake doc and the roster point there. They also say what the archive carries: the R&D department, never the two borrowed seats.
 - The description says "Use when", `allowed-tools` pre-approves read-only tools only, and the frontmatter keeps one key to a line.
 
 ### `1.0.3` - 2026-10-19
