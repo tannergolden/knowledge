@@ -232,7 +232,10 @@ class TestCheckSkills(unittest.TestCase):
         self.vault.write(f'{SOURCE}/references/other.md', 'one \u2013 two\n')
         self.vault.write(f'{SOURCE}/SKILL.md', skill_md().replace('## Boundaries', '## Limits'))
         result = self.vault.run(SCRIPT)
-        self.assertEqual(result.stdout.count('an en or em dash'), 2, result.stdout)
+        # Under GitHub Actions each error prints twice, once as an annotation, so count the error lines alone.
+        flagged = [line for line in result.stdout.splitlines()
+                   if line.startswith('error:') and 'an en or em dash' in line]
+        self.assertEqual(len(flagged), 2, result.stdout)
         self.assertIn('no ## Boundaries section', result.stdout)
 
     def test_wikilinks_only_warn(self) -> None:
