@@ -111,6 +111,35 @@ The full standard for templates, derived ones included, is the standards'
 
 ---
 
+## 🚚 Moving A Vault To v2
+
+v2 moves the skills from `System/Skills/.unpackaged/` to `.agents/skills/`, moves each faculty's
+team from `Inbox/Faculties/` into its skill's own `agents/`, and adds Claude Code's copy in
+`.claude/skills/` ([ADR-0003](../adrs/ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md)). A
+vault that kept the template's skills as they came needs only the sync: 🔄 Template Sync moves every
+file. A vault whose owner changed them needs one step first, before `ref:` in its stub moves to
+`v2`, because a sync does not carry an owner's choice from an old path to a new one:
+
+- **You kept your own skills or teams**, with lines such as `#/System/Skills/**` or
+  `#/Inbox/Faculties/**`: move each skill you changed to `.agents/skills/<skill>/` and its team's
+  files into `.agents/skills/<skill>/agents/`, and under Your rules replace those lines with
+  `!/.agents/skills/<skill>/**`, `!/.claude/skills/<skill>/**` and
+  `!/System/Skills/<skill>.skill`. Otherwise the template's skills arrive switched on, and Claude
+  Code loads them in place of yours.
+- **You deleted a skill**: add the same three lines for it under Your rules, or it comes back at
+  the new paths.
+- **You edited a skill file or a roster the template also changed**: the sync reports the
+  conflict, keeps your file at its old path and leaves its new path empty, so the skill's checks
+  fail. Move your file to its new path and carry in the template's change, which the pull request
+  shows. An `Inbox/Faculties/` note you edited stays behind the same way; delete it once nothing
+  you need is left in it.
+
+Once the sync pull request is open, run `python3 .github/scripts/update-vault.py` on its branch and
+commit what it redraws: the two catalogs in `System/Data/` are yours, so the sync leaves them, and
+`check-vault.py` fails until they are redrawn.
+
+---
+
 <div align="center">
 
 **Merged here, released once, taken by each vault when its owner asks.**

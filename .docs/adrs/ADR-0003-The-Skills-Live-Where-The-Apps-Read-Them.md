@@ -139,6 +139,8 @@ vault, and splits a faculty from the vault layout it names.
 - `.github/scripts/check-skills.py` and `.github/scripts/update-vault.py`: the check and the copy
 - [ADR-0002](ADR-0002-Notes-Take-The-Hidden-Frontmatter.md), whose removal of `.claude/` this
   narrows to one generated folder
+- [Moving A Vault To v2](../distribution/How-A-Change-Reaches-A-Vault.md#-moving-a-vault-to-v2): the steps an owner
+  who changed or deleted a skill takes before syncing this release
 - tannergolden/intelligence keeps the pinned copy of the five faculties for its home kit
 
 ### 🔗 See also
