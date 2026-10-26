@@ -153,7 +153,7 @@ Ask me which of this repository's community health files to remove, and wait for
 - **Memory:** [Record A Decision](#record-a-decision) ✏️, [Consolidate My Memory](#consolidate-my-memory), [Find Patterns In What Happened](#find-patterns-in-what-happened), [Look Back On My Decisions](#look-back-on-my-decisions), [Write A Digest Of A Year](#write-a-digest-of-a-year) ✏️
 - **Profile:** [Review My Profile For What Has Changed](#review-my-profile-for-what-has-changed), [Check My Goals Against What I'm Doing](#check-my-goals-against-what-im-doing)
 - **Projects:** [Start A Project](#start-a-project) ✏️, [Review A Project](#review-a-project) ✏️, [Close A Project](#close-a-project) ✏️
-- **Library and held work:** [File Reference Material In The Library](#file-reference-material-in-the-library) ✏️, [Review The Library's Collection](#review-the-librarys-collection), [Turn On An Offline Reference Work](#turn-on-an-offline-reference-work) ✏️, [Review My Held Reports And Visuals](#review-my-held-reports-and-visuals)
+- **Library and held work:** [File Reference Material In The Library](#file-reference-material-in-the-library) ✏️, [Review The Library Collection](#review-the-library-collection), [Turn On An Offline Reference Work](#turn-on-an-offline-reference-work) ✏️, [Review My Held Reports And Visuals](#review-my-held-reports-and-visuals)
 - **Bringing things in:** [Bring In Notes From Another App](#bring-in-notes-from-another-app) ✏️, [Bring In What Another AI Knew About Me](#bring-in-what-another-ai-knew-about-me) ✏️
 - **Setting up and upkeep:** [Check This Vault Is Set Up](#check-this-vault-is-set-up), [Set Up An AI App To Use This Vault](#set-up-an-ai-app-to-use-this-vault) ✏️, [Rename Or Move A Note Safely](#rename-or-move-a-note-safely) ✏️, [Check Nothing Personal Leaks](#check-nothing-personal-leaks)
 - **The template:** [Add A File To The Template](#add-a-file-to-the-template) ✏️, [Change A Folder's Rules](#change-a-folders-rules) ✏️, [Change The Note Schema](#change-the-note-schema) ✏️, [Add Or Change A Vault Script](#add-or-change-a-vault-script) ✏️, [Check The Template Still Works Once Initialised](#check-the-template-still-works-once-initialised)
@@ -661,7 +661,7 @@ Appraise the material's freshness, choose its class and division, and propose th
 </done_when>
 ```
 
-### Review The Library's Collection
+### Review The Library Collection
 
 **Use when** you want the Library weeded of what no longer earns its place, and the thin areas you need filled found.
 
