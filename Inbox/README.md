@@ -24,9 +24,9 @@ _Unsorted in, filed out, nothing lost._
 
 `Inbox/` is where anything waiting to be filed lands: a document, a PDF, a photo, an export, a note
 written in a hurry. The AI checks it at the start of every session and proposes a home and a clean
-name for each file. Four sub-homes here are held rather than sorted: `Reports/` and `Visuals/` keep
-the finished output of the research and visualize skills, `Ideas/` keeps the discovery skill's idea
-pool, and `Faculties/` keeps the standing agent teams.
+name for each file. Three sub-homes here are held rather than sorted: `Reports/` and `Visuals/` keep
+the finished output of the research and visualize skills, and `Ideas/` keeps the discovery skill's
+idea pool.
 
 ---
 
@@ -48,14 +48,13 @@ rules come first, then how the folder works.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                      | Purpose                                                                                                                                                                                                                                                                                                                                                                              |
-| :------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Faculties/`](Faculties/) | The BRAIN's standing functional teams, grouped as one home: the four cognitive teams the Founder dispatches directly (Research, Discovery, Editorial, Design) and the Finance team for the Founder's personal and household money. The personal-work counterpart to the venture corporate workforce in Agent Resources (AR).                                                         |
-| [`Ideas/`](Ideas/)         | The held idea pool: the living library of idea records the Discovery team produces, dispatched by the discover skill. Ideas persist here by lifecycle status (raw, shortlisted, developed, promoted, parked, killed), held and never sorted, so the team can dedup against the whole pool including killed ideas and trace lineage. The ideation counterpart to the Reports library. |
-| [`Reports/`](Reports/)     | The held library for finished research and discovery reports. The Research team and the Discovery team file their reports here; reports are held, not sorted into the BRAIN, and every report is good for up to three months before it must be re-verified.                                                                                                                          |
-| [`Visuals/`](Visuals/)     | The held library for finished visuals from the visualize skill. The Design team files standalone charts, diagrams, dashboards, and illustrations here; visuals are held, not sorted into the BRAIN, and kept as archival artifacts that carry the date of their underlying data.                                                                                                     |
-| [`Inbox.md`](Inbox.md)     | Drop any unsorted file here. The AI analyzes, proposes a destination, enriches with frontmatter or macOS metadata, and asks for sorting confirmation. Held sub-homes (Reports, Visuals, and the standing teams) live here but are never sorted.                                                                                                                                      |
-| [`README.md`](README.md)   | This file.                                                                                                                                                                                                                                                                                                                                                                           |
+| Entry                    | Purpose                                                                                                                                                                                                                                                                                                                                                                              |
+| :----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Ideas/`](Ideas/)       | The held idea pool: the living library of idea records the Discovery team produces, dispatched by the discover skill. Ideas persist here by lifecycle status (raw, shortlisted, developed, promoted, parked, killed), held and never sorted, so the team can dedup against the whole pool including killed ideas and trace lineage. The ideation counterpart to the Reports library. |
+| [`Reports/`](Reports/)   | The held library for finished research and discovery reports. The Research team and the Discovery team file their reports here; reports are held, not sorted into the BRAIN, and every report is good for up to three months before it must be re-verified.                                                                                                                          |
+| [`Visuals/`](Visuals/)   | The held library for finished visuals from the visualize skill. The Design team files standalone charts, diagrams, dashboards, and illustrations here; visuals are held, not sorted into the BRAIN, and kept as archival artifacts that carry the date of their underlying data.                                                                                                     |
+| [`Inbox.md`](Inbox.md)   | Drop any unsorted file here. The AI analyzes, proposes a destination, enriches with frontmatter or macOS metadata, and asks for sorting confirmation. Held sub-homes (Reports, Visuals, and the standing teams) live here but are never sorted.                                                                                                                                      |
+| [`README.md`](README.md) | This file.                                                                                                                                                                                                                                                                                                                                                                           |
 
 <!-- AUTO-INDEX:END -->
 

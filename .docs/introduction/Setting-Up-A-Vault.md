@@ -26,8 +26,8 @@ _Generated private, claimed once, filled in by interview._
 - **git and Python 3.9 or later** on the machine you work from. The vault scripts need only Python's
   standard library; the repository validator also needs PyYAML, and the offline reference works need
   `libzim`.
-- **An AI agent that reads files.** The vault carries no agent configuration of its own: every agent
-  reads `AGENTS.md` first.
+- **An AI agent that reads files.** Every agent reads `AGENTS.md` first. The vault's skills sit
+  where the apps look for them: `.agents/skills/`, with a copy in `.claude/skills/` for Claude Code.
 
 The steps every repository on the standards shares, such as the admin token, 🎯 Apply Standards and
 signed commits, are in the standards'

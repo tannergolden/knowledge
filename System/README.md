@@ -45,13 +45,13 @@ rules come first, then how the folder works.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                          | Purpose                                                                                                                                                                                                           |
-| :----------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Data/`](Data/)               | Explains the System/Data/ folder: the two generated catalogs, one of every note and one of every agent, drawn by update-vault.py and committed. Machine-written; never hand-edit.                                 |
-| [`Skills/`](Skills/)           | The System/Skills/ folder: hidden .unpackaged/ skill sources that compose teams from the federated agent library, packaged into .skill artifacts at the root. Skills carry no agents and no scripts of their own. |
-| [`README.md`](README.md)       | This file.                                                                                                                                                                                                        |
-| [`System.md`](System.md)       | Explains the purpose of the System/ folder: AI behavior configuration, persona settings, workflow loops, the skill library, and the generated catalogs. The vault's scripts live in .github/scripts/.             |
-| [`Workflows.md`](Workflows.md) | Formalized workflows for the AI to follow, defining strategy loops, automated captures, and recurring behaviors.                                                                                                  |
+| Entry                          | Purpose                                                                                                                                                                                                                                                  |
+| :----------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Data/`](Data/)               | Explains the System/Data/ folder: the two generated catalogs, one of every note and one of every agent, drawn by update-vault.py and committed. Machine-written; never hand-edit.                                                                        |
+| [`Skills/`](Skills/)           | The System/Skills/ folder: the .skill archives for the Claude app, built from the vault's skills in .agents/skills/, where the agent apps read them, with a copy in .claude/skills/ for Claude Code. A faculty keeps its team in its own agents/ folder. |
+| [`README.md`](README.md)       | This file.                                                                                                                                                                                                                                               |
+| [`System.md`](System.md)       | Explains the purpose of the System/ folder: AI behavior configuration, persona settings, workflow loops, the skill library, and the generated catalogs. The vault's scripts live in .github/scripts/.                                                    |
+| [`Workflows.md`](Workflows.md) | Formalized workflows for the AI to follow, defining strategy loops, automated captures, and recurring behaviors.                                                                                                                                         |
 
 <!-- AUTO-INDEX:END -->
 

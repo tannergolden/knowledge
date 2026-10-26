@@ -79,7 +79,7 @@ At the start of every session, before other work:
 
 - **Folder rules.** Before you create, edit, move or delete anything in a folder, read the Rules in its folder note and in each folder note above it. They add to these rules and never loosen them.
 - **Retrieval order.** Ground a fact in the closest source that holds it: the vault (its notes and the catalog), then an offline knowledge base when one is installed (`python3 .github/scripts/knowledge-base.py search`), then the web. Anything about your user stops at the vault; anything current goes straight to the web.
-- **Skills.** Fire a skill whose description matches the request, without asking. Prefer the vault's own (board, discover, editorial, finance, identify, research, visualize) to a general one that does the same job; `develop`, the universal skill, builds and fixes skills.
+- **Skills.** Fire a skill whose description matches the request, without asking. Prefer the vault's own (board, discover, editorial, finance, identify, research, visualize), kept in `.agents/skills/` with a copy in `.claude/skills/`, to a general one that does the same job; a faculty installed at home from tannergolden/intelligence hands over to the vault's copy here. `develop`, the universal skill, builds and fixes skills.
 - **Writing.** Write a log entry, a summary, a Memory or Profile entry, or a new project or venture yourself, in the format its folder's note shows; the scripts check the result and redraw what derives from it.
 
 ## Commands
@@ -116,13 +116,14 @@ The vault follows [tannergolden/standards](https://github.com/tannergolden/stand
 
 | Path                     | Holds                                                                               |
 | :----------------------- | :---------------------------------------------------------------------------------- |
-| `Inbox/`                 | Files waiting to be sorted, and the held reports, visuals, ideas and standing teams |
+| `Inbox/`                 | Files waiting to be sorted, and the held reports, visuals and ideas                 |
 | `Library/`               | Reference knowledge in ten classes, never personal                                  |
 | `Memory/`                | What happened, who is around your user, what they decided, and what is due          |
 | `Profile/`               | Who your user is; `Working Style.md` says how to work with them                     |
 | `Projects/`              | Your user's personal projects, one folder each                                      |
 | `Ventures/`              | Each company your user runs, and the agent workforce they share                     |
-| `System/`                | Workflows, the skills and the generated catalogs                                    |
+| `System/`                | Workflows, the skill archives and the generated catalogs                            |
+| `.agents/skills/`        | The vault's seven skills, each faculty with its team; `.claude/skills/` copies them |
 | `.github/scripts/`       | The vault's checks and generators                                                   |
 | `.docs/technical/vault/` | The note schema, the keywords, the link topology and how to assemble context        |
 
@@ -130,8 +131,8 @@ The top folders' notes are [Inbox](Inbox/Inbox.md), [Library](Library/Library.md
 
 ## Gotchas
 
-- Hidden folders are infrastructure: `.git/`, `.github/`, `.docs/` and each `.template/`. Never delete one, empty or not. Ignore `.DS_Store` completely: never delete, move, report or count it.
-- Some text is machine-owned: `.gitkeep` markers and the blocks between `<!-- brain:` markers are `update-vault.py`'s, the `AUTO-INDEX` blocks are the indexer's, the block above is the hub's, and the catalogs and `.skill` archives are generated. Change the source and redraw; never edit them by hand.
+- Hidden folders are infrastructure: `.git/`, `.github/`, `.docs/`, `.agents/`, `.claude/` and each `.template/`. Never delete one, empty or not. Ignore `.DS_Store` completely: never delete, move, report or count it.
+- Some text is machine-owned: `.gitkeep` markers and the blocks between `<!-- brain:` markers are `update-vault.py`'s, the `AUTO-INDEX` blocks are the indexer's, the block above is the hub's, and the catalogs, the `.skill` archives and the `.claude/skills/` copy are generated. Change the source and redraw; never edit them by hand.
 - In the public template, every note about a person is a blank scaffold. Never fill one in there (SEC-003).
 - Check a premise against Memory before acting on it, and if Memory disagrees, say so rather than adopt either version.
 - Commit, and leave pushing to your user (OPS-001). Commit a meaningful state before a risky or wide edit.

@@ -44,7 +44,7 @@ request is not the first place you hear about them.
 | [`hooks/`](hooks/README.md)                                    | The git hooks this repository ships, what each catches before a commit is recorded, and how to switch them on. |
 | [`check-agents.py`](check-agents.py)                           | Check the agent library: each agent spec, each team roster, and names unique across every home.                |
 | [`check-links.py`](check-links.py)                             | Check the wikilink graph: every link resolves, and links follow the hub topology.                              |
-| [`check-skills.py`](check-skills.py)                           | Check each skill source against the Agent Skills format and the vault's skill layout.                          |
+| [`check-skills.py`](check-skills.py)                           | Check each skill against the Agent Skills format and the vault's skill layout.                                 |
 | [`check-vault.py`](check-vault.py)                             | Run every vault check, as CI does: notes, links, skills, agents, personal data and generated parts.            |
 | [`fixtures.py`](fixtures.py)                                   | Throwaway vaults for the vault scripts' tests, built in a temporary folder.                                    |
 | [`knowledge-base.py`](knowledge-base.py)                       | Search and read offline reference works, such as Wikipedia, kept as ZIM files beside the vault's notes.        |

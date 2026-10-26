@@ -61,7 +61,8 @@ The graph mirrors the file tree, and only folder notes carry edges:
 - **A `.template/` folder** neither contains wikilinks nor receives them. A scaffold is not a
   graph node, and a link to one drags it into the graph. Name a scaffold by plain
   path.
-- **A skill's sources** in `System/Skills/.unpackaged/` neither contain nor receive them. Each
+- **A skill's files** in `.agents/skills/` and its copy in `.claude/skills/` neither contain nor
+  receive them. Each
   skill's node in the graph is its packaged `.skill` archive, which `System/Skills/Skills.md` links
   as a file of its own folder.
 

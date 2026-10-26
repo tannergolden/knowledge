@@ -45,7 +45,7 @@ The Library is kept by a single resident **Librarian** ([[★ Librarian]], Maria
 
 The Librarian acquires, classifies, catalogs, curates, weeds, preserves, and serves every holding, to one overriding standard: **every holding earns its place**. The collection is judged by what it excludes as much as what it serves, and findability is the purpose that curation serves. By demand the Librarian also does deep per-class subject work, a link and authority-control integrity pass (via `.github/scripts/check-vault.py`), and a Conspectus-style depth assessment per class; a genuinely contested class, weed, or tier goes to the Founder.
 
-Boundaries: the Research team (`Inbox/Faculties/Research/`) gathers evidence and files reports to `Inbox/Reports/`, and the single handoff is the promotion of a finding into a `Library/` doc; the Librarian owns the durable collection here and commissions the Research team to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the Librarian makes the authoritative tier and class assignment at catalog time.
+Boundaries: the Research team (in the research skill, `.agents/skills/research/agents/`) gathers evidence and files reports to `Inbox/Reports/`, and the single handoff is the promotion of a finding into a `Library/` doc; the Librarian owns the durable collection here and commissions the Research team to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the Librarian makes the authoritative tier and class assignment at catalog time.
 
 ## Why classification matters for AI (not just humans)
 

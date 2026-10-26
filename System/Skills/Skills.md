@@ -1,47 +1,52 @@
 <!--
 title: "Skills - Folder Information"
-description: "The System/Skills/ folder: hidden .unpackaged/ skill sources that compose teams from the federated agent library, packaged into .skill artifacts at the root. Skills carry no agents and no scripts of their own."
+description: "The System/Skills/ folder: the .skill archives for the Claude app, built from the vault's skills in .agents/skills/, where the agent apps read them, with a copy in .claude/skills/ for Claude Code. A faculty keeps its team in its own agents/ folder."
 type: "index"
-keywords: ["skills folder", "unpackaged sources", "skill packaging", "compose teams", "metadata.team", "skill artifacts", "no scripts"]
+keywords: ["skills folder", "skill sources", "skill packaging", "agents folder", "metadata.team", "skill artifacts", "claude code copy", "hand-over"]
 -->
 
 # 🛠️ Skills - the consumers
 
-Each skill is a folder with a `SKILL.md` entrypoint. A skill does not own agents; it composes a team from the federated agent library, naming the team in `metadata.team`. Authored and packaged by `develop`, the one universal skill, which comes from tannergolden/intelligence with its home kit, so this folder keeps no copy of it.
+Each skill is a folder with a `SKILL.md` entrypoint. It names the team it dispatches in `metadata.team`, and a faculty keeps that team in its own `agents/` folder. Skills are authored by `develop`, the universal skill, which comes from tannergolden/intelligence with its home kit, so the vault keeps no copy of it.
 
-## Sources live in `.unpackaged/`
+## Where a skill lives
 
-Skill SOURCES live in `Skills/.unpackaged/<skill>/`, a hidden folder, so the everyday tree is not cluttered by working files. Packaging a skill produces a self-contained `<skill>.skill` artifact at the `Skills/` root: `.github/scripts/update-vault.py` builds every archive from its source, the same bytes every time, and CI fails when one differs from its source. The source is what `develop` edits; the artifact is what installs and ships. Each packaged skill is the graph node linked here as a sibling file: currently [[research.skill]], [[editorial.skill]], [[visualize.skill]], [[discover.skill]], [[identify.skill]], [[board.skill]], and [[finance.skill]].
+- **The source** is `.agents/skills/<skill>/`, a hidden folder at the vault root, where Codex, Copilot, Cursor, Gemini and Antigravity read a repository's skills. It is what `develop` edits, and it is not walked as notes.
+- **The Claude Code copy** is `.claude/skills/<skill>/`, because Claude Code reads nothing under `.agents/`. `.github/scripts/update-vault.py` draws it byte for byte, and CI fails when it differs from the source; never edit it by hand.
+- **The Claude app archive** is `<skill>.skill`, here beside this note, built from the source with its team, the same bytes every time; upload one in the Claude app to use it there. Each archive is the graph node linked here as a sibling file: currently [[research.skill]], [[editorial.skill]], [[visualize.skill]], [[discover.skill]], [[identify.skill]], [[board.skill]], and [[finance.skill]].
 
 ## Per-skill folder (the mandatory structure)
 
-Every skill source carries exactly these files and folders:
+Every skill carries exactly these files and folders, `agents/` only when it keeps its own team:
 
 ```bash
-.unpackaged/<skill-name>/
-├── SKILL.md          # entrypoint: frontmatter + workflow; metadata.team names the roster
+.agents/skills/<skill-name>/
+├── SKILL.md          # entrypoint: frontmatter + workflow; metadata.team names the team
 ├── License.txt       # the license text
 ├── Changelog.md      # the skill's version history; its Current Version matches SKILL.md metadata.version
 ├── <Skill-Name>.md   # the namesake doc
+├── agents/           # a faculty's own team: its roster and one spec per agent
 ├── assets/           # static files the skill ships
 ├── references/       # domain knowledge loaded on demand
 └── templates/        # output scaffolds the skill fills in
 ```
 
-No `agents/` folder in source. Agents are referenced from the federated agent library by name; only the archive carries them, in its `agents/`, vendored when it is built.
+No `scripts/` folder. Every deterministic helper a skill needs (validation, packaging, the agent catalog) lives once in `.github/scripts/` and serves every skill: `check-skills.py` validates each skill and `update-vault.py` draws the copy and builds the archives. Keeping them there means one implementation, and because they read the live vault, a rule change in the vault is picked up without editing any skill.
 
-No `scripts/` folder either. Every deterministic helper a skill needs (validation, packaging, the agent catalog) lives once in `.github/scripts/` and serves every skill: `check-skills.py` validates the sources and `update-vault.py` builds the archives. Keeping them there means one implementation, and because they read the live vault, a rule change in the vault is picked up without editing any skill.
+Every skill also meets the reader of tannergolden/intelligence's home kit, which carries the five faculties to every repository: only the frontmatter keys the Agent Skills format defines, each on one line, with `metadata` as a one-line map; a quoted value wherever YAML would misread it; a description that says "Use when"; read-only `allowed-tools`; files at most one folder below `SKILL.md`; and no en or em dash. `check-skills.py` holds all of it.
 
 ## How a skill names its team
 
-- `SKILL.md` frontmatter carries `metadata.team: <team-name>`, a string naming a team in the federated agent library (a team in one of the agent homes: a `Ventures/Agent Resources (AR)/` department or a team folder in `Inbox/Faculties/`, such as `Inbox/Faculties/Research/`). This is a portable annotation: the SKILL.md schema is closed, and `metadata` is the only spec-legal home for it. `check-skills.py` rejects a `metadata.team` that does not resolve to a staffed roster.
+- `SKILL.md` frontmatter carries `metadata.team: <team-name>`. A faculty (`research`, `discover`, `editorial`, `visualize`, `finance`) keeps that team in its own `agents/`: the roster is the one note there named for the team, and the specs beside it are the members. `board` and `identify` name a `Ventures/Agent Resources (AR)/` department instead and keep no `agents/`; their archives vendor the department in when they are built. `check-skills.py` rejects a `metadata.team` that does not resolve to a staffed roster, and an `agents/` that holds any team but the one the skill names.
 - The SKILL.md BODY carries the dispatch-scaling rule: which members of the team run at which task complexity. The body is the real behavior; the annotation is documentation.
-- Agents are selected and invoked by their `description`. Where supported, a skill composes an agent at runtime via `context: fork` plus `agent: <name>`.
+- Agents are selected and invoked by their `description`; a brief names the spec to read, `<skill>/agents/<Role>.md`, by the absolute path of the skill's folder.
 
-## Reference locally, vendor on export
+## Where a faculty runs
 
-Locally a skill references its team's agents by name and nothing is copied. When the archive is built, `update-vault.py` vendors the team's roster and every member into the archive's `agents/`, so the shipped `.skill` is self-contained. Vendoring is a packaging step, not the everyday state.
+A faculty runs from any copy: this vault's, a home install from tannergolden/intelligence, or another vault's. Each opens with the same rule: in a BRAIN vault, the vault's own copy runs, so a home copy that finds itself here reads `.agents/skills/<skill>/SKILL.md` and follows it instead; anywhere else, it skips the vault's steps and returns its work in chat. A vault's copy and its layout always arrive together, from the same release of this template.
+
+To keep a skill of your own, change it in `.agents/skills/` and add three lines under "Your rules" in `.github/template-sync`, so that Template Sync leaves the skill, its copy and its archive alone: `!/.agents/skills/<skill>/**`, `!/.claude/skills/<skill>/**` and `!/System/Skills/<skill>.skill`.
 
 ## How develop works here
 
-`develop` is universal: it is installed with the home kit, not kept here, and its own Development team ships inside it rather than in `Inbox/Faculties/`. In this vault it follows the vault's rules over its own defaults. It authors each agent into its home team folder in the federated library (a domain home such as `Inbox/Faculties/Research/` or a `Ventures/Agent Resources (AR)/` department), writes or updates that team's namesake roster, and writes skills into this folder from the develop skill's `templates/`, in the mandatory structure above. It places each agent in its home professional team, marks the team lead with a star, gates every build with `.github/scripts/check-skills.py` and `check-agents.py`, and leaves vendoring to the archive build.
+`develop` is universal: it is installed with the home kit, not kept here, and its own Development team ships inside it. In this vault it follows the vault's rules over its own defaults. It writes each skill into `.agents/skills/` from the develop skill's `templates/`, in the mandatory structure above; puts a faculty's agents in that skill's `agents/` and a venture role in its `Ventures/Agent Resources (AR)/` department; writes or updates the team's roster and marks its lead with a star; gates every build with `.github/scripts/check-skills.py` and `check-agents.py`; and leaves the copy and the archives to `update-vault.py`.

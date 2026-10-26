@@ -19,7 +19,7 @@ Unlike Reports (good for three months) and Visuals (archival snapshots), the ide
 
 ## One idea, one record (the schema lives with the team)
 
-Each idea is one Markdown file, `type: record`, carrying a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and the `serves` path for the venture, project, or topic it is for. The full schema, the ICE and Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the Discovery team's method, defined in `Inbox/Faculties/Discovery/Discovery.md`. This folder is the home where the records live; that doc is how they are made and scored.
+Each idea is one Markdown file, `type: record`, carrying a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and the `serves` path for the venture, project, or topic it is for. The full schema, the ICE and Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the Discovery team's method, defined in its roster, `.agents/skills/discover/agents/Discovery.md`. This folder is the home where the records live; that doc is how they are made and scored.
 
 ## Idea files are leaves
 

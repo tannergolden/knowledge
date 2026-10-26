@@ -9,8 +9,8 @@
 # ---
 
 [default.extend-words]
-Damon = "Damon" # the Devil's Advocate agent's name, Inbox/Faculties/Research/
+Damon = "Damon" # the Devil's Advocate agent's name, .agents/skills/research/agents/
 Extraversion = "Extraversion" # the Big Five domain, Profile/Personality.md
-HSA = "HSA" # a health savings account, Inbox/Faculties/Finance/
+HSA = "HSA" # a health savings account, .agents/skills/finance/agents/
 mis = "mis" # the prefix in hyphenated words: mis-fires, mis-called
 UNIO = "UNIO" # typos splits "UNIONs" (a verb in a comment) into UNIO and Ns

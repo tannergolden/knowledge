@@ -44,8 +44,8 @@ Conventional Commits, are in the standards'
 - **Folder note**: the note named after its folder, such as `Memory/Memory.md`, typed `index`. It
   describes its folder, holds the folder's Rules where it has any, and is the only kind of note that
   may carry wikilinks, which is why it is also called the folder's hub ([Link Topology](../technical/vault/Link-Topology.md)).
-- **Held**: kept at the Inbox's path but never sorted. `Reports/`, `Visuals/`, `Ideas/`, `Faculties/`
-  and `Backups/` are the held sub-homes; they are still linted and cataloged (`Inbox/Inbox.md`).
+- **Held**: kept at the Inbox's path but never sorted. `Reports/`, `Visuals/`, `Ideas/` and
+  `Backups/` are the held sub-homes; they are still linted and cataloged (`Inbox/Inbox.md`).
 - **Note**: any `.md` file in the seven top folders, scaffolds included. It opens with the hidden
   frontmatter of the [Note Schema](../technical/vault/Note-Schema.md), and carries a single H1 and no
   decorative header or footer.
@@ -132,14 +132,15 @@ Conventional Commits, are in the standards'
 ## 🤖 Agents & Skills
 
 - **Agent home**: a folder of agent teams. The three are `Ventures/Agent Resources (AR)/`,
-  `Inbox/Faculties/` and `Library/`, whose one agent is the Librarian; together they make one library
-  with one namespace (`.github/scripts/vault.py`).
+  `.agents/skills/`, where each faculty keeps its team in its skill's `agents/`, and `Library/`, whose
+  one agent is the Librarian; together they make one library with one namespace
+  (`.github/scripts/vault.py`).
 - **Agent Resources (AR)**: the shared corporate workforce in `Ventures/`, one team per department,
   that serves every venture.
 - **Agent spec**: one agent's file, opening with the `---` block its loader reads: `name`,
   `description` and `tools`.
-- **Faculty**: one of the five standing teams in `Inbox/Faculties/` that serve the owner's own work:
-  Research, Discovery, Editorial, Design and Finance, each dispatched by a skill.
+- **Faculty**: one of the five standing teams that serve the owner's own work: Research, Discovery,
+  Editorial, Design and Finance, each kept in the `agents/` folder of the skill that dispatches it.
 - **Founder**: the owner, as the agents know them: named in `Profile/Biography.md` and above the whole
   workforce.
 - **Lead**: the one member of a team whose file name opens with ★ and a space. A lead orchestrates and
@@ -147,8 +148,9 @@ Conventional Commits, are in the standards'
   `Edit` and `Bash` (`.github/scripts/check-agents.py`).
 - **Role**: an agent's file name, unique across the library.
 - **Roster**: a team folder's own note, which describes the team.
-- **Skill**: a capability with a `SKILL.md`, kept as a source in `System/Skills/.unpackaged/<name>/`
-  and installed from the `<name>.skill` archive built from it (`System/Skills/Skills.md`).
+- **Skill**: a capability with a `SKILL.md`, kept in `.agents/skills/<name>/`, where the agent apps
+  read it, copied to `.claude/skills/<name>/` for Claude Code, and packed into the `<name>.skill`
+  archive for the Claude app (`System/Skills/Skills.md`).
 - **Spoken name**: an agent's `name`, by which the owner addresses it, unique across the library.
 - **Team**: the agent specs in one folder, with its roster.
 - **Vendoring**: copying a team's roster and members into a skill's archive as it is built, so an

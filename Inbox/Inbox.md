@@ -13,7 +13,7 @@ keywords: ["staging area", "drop files", "unsorted", "sorting protocol", "pdf cl
 - **Nothing leaves unenriched.** A note gets its frontmatter, and any file a clean name, before it moves. No exceptions.
 - **Nothing moves without a yes.** Propose each file's destination and clean name, and wait for your user to confirm.
 - **Never delete a file here without confirmation.** Leaving it at the `Inbox/` root is the safe default.
-- **The held sub-homes are never sorted**: `Reports/`, `Visuals/`, `Ideas/`, `Faculties/` and `Backups/`.
+- **The held sub-homes are never sorted**: `Reports/`, `Visuals/`, `Ideas/` and `Backups/`.
 - **A new folder only to fit a file.** During a sort, when no folder fits, you may propose one three or more levels down; one directly inside a top folder needs your user's explicit direction, and a top folder never.
 - **Offer cleanup for outside PDFs first**, and copy the originals into `Inbox/Backups/` before changing anything.
 - Follow the sorting protocol below, step by step.
@@ -28,9 +28,8 @@ A staging area for any file you want the AI to sort into the BRAIN. Drop files h
 2. **`Reports/`** - the held reports library (`Inbox/Reports/Reports.md`): the finished research and discovery reports, fully indexed and **excluded from the sort sweep**; held here, not sorted into the BRAIN, and good for up to three months before they must be re-verified.
 3. **`Visuals/`** - the held visuals library (`Inbox/Visuals/Visuals.md`): the finished charts, diagrams, dashboards, and illustrations from the visualize skill, fully indexed and **excluded from the sort sweep**; held here as archival artifacts, not sorted into the BRAIN, and kept until superseded.
 4. **`Ideas/`** - the held idea pool (`Inbox/Ideas/Ideas.md`): the living library of idea records the Discovery team generates, dispatched by the discover skill, fully indexed and **excluded from the sort sweep**; held here by lifecycle status (raw, shortlisted, developed, promoted, parked, killed), not sorted into the BRAIN, with killed ideas kept so the team never re-treads a dead end.
-5. **`Faculties/`** - the standing-teams home (`Inbox/Faculties/Faculties.md`): the four cognitive teams Research, Discovery, Editorial, and Design, and the Finance team, with their agents, fully indexed and **excluded from the sort sweep**; their finished work sorts outward to its real home.
 
-`Reports/`, `Visuals/`, `Ideas/`, and `Faculties/` are therefore **distinct, held lists that live at the inbox path - not contents of the inbox.** "Process the inbox to empty," and any "is the inbox empty?" check, apply only to the loose files at the root; they never count `Reports/`, `Visuals/`, `Ideas/`, or `Faculties/`. This is a deliberate, documented exception to the inbox-is-transient rule.
+`Reports/`, `Visuals/`, and `Ideas/` are therefore **distinct, held lists that live at the inbox path - not contents of the inbox.** "Process the inbox to empty," and any "is the inbox empty?" check, apply only to the loose files at the root; they never count `Reports/`, `Visuals/`, or `Ideas/`. This is a deliberate, documented exception to the inbox-is-transient rule.
 
 ## What Happens When You Drop a File Here
 
@@ -72,11 +71,7 @@ If you drop one of these and the AI sees no good home, it'll ask whether to dele
 
 ## The `Ideas/` Subfolder
 
-`Inbox/Ideas/` is the held idea pool for the `discover` skill: the living library of idea records the Discovery team generates and ranks. See [[Inbox/Ideas/Ideas|Ideas.md]] for the held-not-sorted rule, the living-pool retention (ideas persist by lifecycle status, and killed and parked ideas are kept so the team dedups against them and never re-treads a dead end), and the leaf rule (an idea record links to nothing; the pool is found by search and by status, not by an index of links). The idea schema and the ICE, Elo, RICE, lifecycle, and lineage rules are the Discovery team's method, in `Inbox/Faculties/Discovery/Discovery.md`. Like `Reports/`, it is fully linted and cataloged, and excluded only from the session-start sort sweep.
-
-## The `Faculties/` Subfolder
-
-`Inbox/Faculties/` is the home for the BRAIN's five standing functional teams, the **Faculties**: Research (evidence), Discovery (ideas), Editorial (writing), Design (visuals), and Finance (personal money). It is a multi-team home, the same shape Agent Resources (AR) uses, and the personal-work counterpart to AR's venture workforce. See [[Inbox/Faculties/Faculties|Faculties.md]] for the rosters, each team's standard, the skill that dispatches it, and the federation with AR. Like `Reports/`, it is a permanent home, fully linted and cataloged, and excluded only from the session-start sort sweep. The teams keep no library of their own here: a finished report, build, piece of writing, or financial plan sorts outward to its real home.
+`Inbox/Ideas/` is the held idea pool for the `discover` skill: the living library of idea records the Discovery team generates and ranks. See [[Inbox/Ideas/Ideas|Ideas.md]] for the held-not-sorted rule, the living-pool retention (ideas persist by lifecycle status, and killed and parked ideas are kept so the team dedups against them and never re-treads a dead end), and the leaf rule (an idea record links to nothing; the pool is found by search and by status, not by an index of links). The idea schema and the ICE, Elo, RICE, lifecycle, and lineage rules are the Discovery team's method, in its roster, `.agents/skills/discover/agents/Discovery.md`. Like `Reports/`, it is fully linted and cataloged, and excluded only from the session-start sort sweep.
 
 ## Bulk Drops
 
@@ -102,14 +97,13 @@ Detection scans only files that are eligible for sorting. The following are excl
 - The `Inbox/Reports/` subfolder and everything inside it (the held reports library; see "The `Reports/` Subfolder" above). It stays linted and cataloged; it is excluded from sort-detection only.
 - The `Inbox/Visuals/` subfolder and everything inside it (the held visuals library; see "The `Visuals/` Subfolder" above). It stays linted and cataloged; it is excluded from sort-detection only.
 - The `Inbox/Ideas/` subfolder and everything inside it (the held idea pool; see "The `Ideas/` Subfolder" above). It stays linted and cataloged; it is excluded from sort-detection only.
-- The `Inbox/Faculties/` subfolder and everything inside it (the standing-teams home, holding Research, Discovery, Editorial, Design, and Finance; see "The `Faculties/` Subfolder" above). It stays linted and cataloged; it is excluded from sort-detection only.
 - Files modified within the last 30 seconds (may still be syncing or copying; recheck after a short wait)
 
 If no eligible files remain after these exclusions, treat the Inbox as empty and continue with the session.
 
 ### 2. The Held Sub-Homes (Not Sorted)
 
-`Inbox/` holds four permanent sub-homes that are never sorted: `Reports/` (the held research and discovery reports), `Visuals/` (the held visuals from the visualize skill), `Ideas/` (the held idea pool from the discover skill), and `Faculties/` (the five standing teams, each its own roster of agents). The session-start card leaves all four out of sort-detection, so their contents are never scanned, surfaced, or proposed for routing at session start. They are not invisible: they stay fully linted and cataloged like any other vault content. Only the loose files at the `Inbox/` root are subject to the sorting protocol below.
+`Inbox/` holds three permanent sub-homes that are never sorted: `Reports/` (the held research and discovery reports), `Visuals/` (the held visuals from the visualize skill), and `Ideas/` (the held idea pool from the discover skill). The session-start card leaves all three out of sort-detection, so their contents are never scanned, surfaced, or proposed for routing at session start. They are not invisible: they stay fully linted and cataloged like any other vault content. Only the loose files at the `Inbox/` root are subject to the sorting protocol below.
 
 ### 3. PDF Pre-Processing
 

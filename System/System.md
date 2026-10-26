@@ -38,7 +38,7 @@ Think of this folder as the control panel: `AGENTS.md` is the rulebook, and `Sys
 
 | Path | Purpose |
 |------|---------|
-| [[System/Skills/Skills\|Skills/Skills.md]] | Packaged `.skill` artifacts at the root; skill sources hidden in `.unpackaged/` (external format, no wikilinks, not walked as notes). A skill composes a team from the federated agent library and carries no agents of its own; its archive carries the team, vendored when it is built. |
+| [[System/Skills/Skills\|Skills/Skills.md]] | Packaged `.skill` artifacts for the Claude app, built from the skills in `.agents/skills/` (external format, no wikilinks, not walked as notes), where the agent apps read them, with a copy in `.claude/skills/` for Claude Code. A faculty keeps its team in its own `agents/`; a skill that names an Agent Resources (AR) department has it vendored into its archive. |
 
 ### `Data/` - generated files
 
@@ -60,10 +60,10 @@ The vault's checks and generators are scripts in `.github/scripts/`, run from th
 | `check-vault.py` | Runs every check below, as CI does. The one command to run before a commit. |
 | `lint-notes.py` | Every note's frontmatter and naming against the schema (`.docs/technical/vault/Note-Schema.md`) and its keywords (`.docs/technical/vault/Keywords.md`). |
 | `check-links.py` | The wikilink graph: every link resolves and follows the hub topology (`.docs/technical/vault/Link-Topology.md`). |
-| `check-skills.py` | Each skill source against the Agent Skills format and the layout in `Skills/Skills.md`. |
+| `check-skills.py` | Each skill in `.agents/skills/` against the Agent Skills format, the home kit's stricter reading of it, and the layout in `Skills/Skills.md`. |
 | `check-agents.py` | Each agent spec and team roster, and one namespace across every home. |
 | `scan-pii.py` | Social Security and card numbers in tracked files. Keys and tokens are the gitleaks scan's job in `checks.yml`. |
-| `update-vault.py` | Draws everything generated: the memory cascade, every `brain:` block, both catalogs, the skill archives and the `.gitkeep` markers. `--check` writes nothing and fails when anything is stale. |
+| `update-vault.py` | Draws everything generated: the memory cascade, every `brain:` block, both catalogs, the skill archives, the `.claude/skills/` copy and the `.gitkeep` markers. `--check` writes nothing and fails when anything is stale. |
 | `session.py` | The session helpers, run by hand: the session-start card, the check after a note is written, and the end-of-turn redraw. |
 | `profile-coverage.py` | How filled in each Profile facet is; the identify skill reads its `--json`. |
 | `knowledge-base.py` | Offline reference works (Wikipedia and more) in `Library/Reference & Encyclopedia/`: `list`, `enable`, `refresh`, `search`, `read`. Every source ships off. |

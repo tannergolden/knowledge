@@ -152,6 +152,8 @@
 # --- The vault: kept current --------------------------------------------------
 # This template's own files. Every vault generated from it keeps them current:
 # the scripts, governance, skills, agents, folder notes and scaffolds.
+/.agents/skills/**
+/.claude/skills/**
 /.docs/distribution/How-A-Change-Reaches-A-Vault.md
 /.docs/introduction/How-The-Vault-Works.md
 /.docs/introduction/Setting-Up-A-Vault.md
@@ -188,7 +190,6 @@
 /.github/workflows/vault.yml
 /.typos.toml
 /AGENTS.md
-/Inbox/Faculties/**
 /Inbox/Ideas/Ideas.md
 /Inbox/Inbox.md
 /Inbox/README.md
@@ -259,6 +260,7 @@
 # design, none of which a vault needs.
 #/.docs/adrs/ADR-0001-AGENTS-Holds-The-Vaults-Rules.md
 #/.docs/adrs/ADR-0002-Notes-Take-The-Hidden-Frontmatter.md
+#/.docs/adrs/ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md
 #/.github/TEMPLATE_INIT
 #/.github/template-derive.json
 #/.github/template-derive.lock

@@ -18,7 +18,7 @@ keywords: ["generated artifacts", "note catalog", "agent catalog", "ndjson", "ma
 | File | Drawn from | Holds |
 |------|-----------|-------|
 | [[catalog.ndjson]] | Every note's frontmatter | One JSON record per note, one per line for clean diffs, sorted by path: path, title, type, keywords, description and status. `.template/` scaffolds are left out. The live listing of what exists: the Projects and Ventures hubs, the Library's finding aids and any AI or tool read it instead of walking the tree. |
-| [[agent-catalog.json]] | The agent homes (`Ventures/Agent Resources (AR)/`, `Inbox/Faculties/`, `Library/`) | Every agent (spoken name, role, home, team, description, path) and every team roster (team, home, lead, members, description, path), with counts. Skills check a specialist's name against it before dispatching it, so a renamed or retired agent fails loudly. |
+| [[agent-catalog.json]] | The agent homes (`Ventures/Agent Resources (AR)/`, each faculty's `agents/` in `.agents/skills/`, `Library/`) | Every agent (spoken name, role, home, team, description, path) and every team roster (team, home, lead, members, description, path), with counts. Skills check a specialist's name against it before dispatching it, so a renamed or retired agent fails loudly. |
 
 ---
 

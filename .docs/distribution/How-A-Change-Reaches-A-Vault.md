@@ -75,7 +75,9 @@ A sync never touches a file the template does not ship, which is every note an o
 file the list leaves to its owner. A file both changed is merged; where both changed the same lines,
 the owner's file stays exactly as it was and the pull request shows the template's change. An owner
 puts a `#` before a line to keep that file, or writes `# keep mine: /path` under Your rules to keep
-their own lines and take the rest. [Template Sync](../../.github/template-sync.md) explains every
+their own lines and take the rest. To keep a skill of their own, they add three lines under Your
+rules, `!/.agents/skills/<skill>/**`, `!/.claude/skills/<skill>/**` and
+`!/System/Skills/<skill>.skill`, so the skill, its Claude Code copy and its archive all stay theirs. [Template Sync](../../.github/template-sync.md) explains every
 outcome a sync pull request reports.
 
 ---

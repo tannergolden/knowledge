@@ -25,7 +25,7 @@ The **Founder**, the person named and identified in Profile/, is above the entir
 
 ## Federation: one logical library, two physical homes
 
-AR is one home of the agent workforce. The vault federates two physical homes, AR and the Faculties (`Inbox/Faculties/`, holding the five standing teams Research, Discovery, Editorial, Design, and Finance), as **one logical library** with **one global namespace**, which `check-agents.py` enforces, so no two agents anywhere share a name or a role, and **one catalog** (`System/Data/agent-catalog.json`, drawn by `update-vault.py`) indexes the whole library, keyed on each agent's spoken name. A skill or venture references any agent by name regardless of which home holds it; the corporation that serves the ventures lives here in AR.
+AR is one home of the agent workforce. The vault federates its homes, AR, the Faculties (the five standing teams Research, Discovery, Editorial, Design, and Finance, each kept in the `agents/` folder of the skill that dispatches it, under `.agents/skills/`) and the Library, as **one logical library** with **one global namespace**, which `check-agents.py` enforces, so no two agents anywhere share a name or a role, and **one catalog** (`System/Data/agent-catalog.json`, drawn by `update-vault.py`) indexes the whole library, keyed on each agent's spoken name. A skill or venture references any agent by name regardless of which home holds it; the corporation that serves the ventures lives here in AR.
 
 ## Global rules for every agent
 

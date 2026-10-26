@@ -64,15 +64,15 @@ Inbox clear.
 - **`READ` lines** name the startup notes, `STARTUP` in `.github/scripts/vault.py`, stable before
   volatile, then up to two summaries from `Memory/Context/Current/`, newest first by file name,
   skipping any marked `deprecated` or `archived`.
-- **`INBOX` lines** name each loose file outside the held sub-homes (`Reports/`, `Visuals/`, `Ideas/`,
-  `Faculties/` and `Backups/`), then say how many wait and that they are sorted before other work.
+- **`INBOX` lines** name each loose file outside the held sub-homes (`Reports/`, `Visuals/`, `Ideas/`
+  and `Backups/`), then say how many wait and that they are sorted before other work.
 
 ---
 
 ## 🤖 The Helpers' Contract
 
-The helpers began as the vault's Claude Code hooks. The vault carries no agent configuration now, so
-nothing wires them: run each by hand, or call one from an agent's own hook settings. Every helper
+The helpers began as the vault's Claude Code hooks. The vault's only agent configuration now is its
+skills, in `.agents/skills/` and `.claude/skills/`, so nothing wires the helpers: run each by hand, or call one from an agent's own hook settings. Every helper
 exits 0 whatever happens, so a helper never breaks a session.
 
 | Helper       | Reads                                                                                                          | Does                                                                                                                                                      | Prints                                                                                                                                                         |

@@ -79,7 +79,7 @@ say, and a field that only repeats them drifts. A note's subject is its path, ne
 
 A record or a template may add the fields its own kind needs, defined once in its template and
 documented where that kind is defined: an idea record's lineage `id`, `lifecycle` and scores (the
-Discovery team, `Inbox/Faculties/Discovery/Discovery.md`), or a research report's `review_by` date
+Discovery team's roster, `.agents/skills/discover/agents/Discovery.md`), or a research report's `review_by` date
 (the research skill). Such a field lives only on its kind and is never added to this page.
 
 ### Agent Specs

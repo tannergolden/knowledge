@@ -60,7 +60,7 @@ Workflows marked *owned here* are specified in full lower in this file; all othe
 | Workflow | When it runs | Canonical home · how it runs |
 |----------|--------------|--------------------------|
 | Skill development | Build / update / optimize a skill | the universal `develop` skill (`/develop`) |
-| Skill packaging | Ship a `.skill` from a source folder | `System/Skills/Skills.md` · `update-vault.py` builds every archive, team included |
+| Skill packaging | Ship a `.skill` and the Claude Code copy from `.agents/skills/` | `System/Skills/Skills.md` · `update-vault.py` builds every archive, team included, and the `.claude/skills/` copy |
 | BRAIN-work report fix prompt | Ending any report about developing the BRAIN | `System/System.md`, Reports On The Vault |
 
 When a new workflow is added anywhere in the BRAIN, add a row here so this map stays complete.
