@@ -15,26 +15,36 @@ Run it:
 
 from __future__ import annotations
 
+import importlib.util
 import pathlib
 import shutil
 import sys
 import unittest
 
 sys.dont_write_bytecode = True
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+HERE = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
 import fixtures  # noqa: E402
 
 SCRIPT = 'check-skills.py'
 SOURCE = '.agents/skills/demo'
 LEAD = '★ Demo Lead'
+_spec = importlib.util.spec_from_file_location('check_skills', HERE / SCRIPT)
+check_skills = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(check_skills)
+RULE = check_skills.HANDOVER.format(name='demo')
+BS = chr(92)  # one backslash
 
 
-def skill_md(**overrides: str) -> str:
+def skill_md(rule: str | None = RULE, **overrides: str) -> str:
+    """A valid SKILL.md, opening with the hand-over rule a skill with its own team needs."""
     fields = {'name': 'demo', 'description': 'Does the demo. Use when the user asks for a demo.',
               'license': 'MIT', 'allowed-tools': 'Read, Grep'}
     fields.update(overrides)
     head = '\n'.join(f'{key}: {value}' for key, value in fields.items() if value is not None)
-    return f'---\n{head}\nmetadata: {{ team: Demo, version: "01.00.00" }}\n---\n\n# Demo\n\n## Boundaries\n\n- Stay small.\n'
+    opening = f'{rule}\n\n' if rule else ''
+    return (f'---\n{head}\nmetadata: {{ team: Demo, version: "01.00.00" }}\n---\n\n# Demo\n\n{opening}'
+            '## Boundaries\n\n- Stay small.\n')
 
 
 def build_skill(vault: fixtures.Vault) -> None:
@@ -130,8 +140,23 @@ class TestCheckSkills(unittest.TestCase):
         shutil.rmtree(self.vault.path(f'{SOURCE}/agents'))
         self.vault.note('Ventures/Agent Resources (AR)/Demo/Demo.md')
         self.vault.agent(f'Ventures/Agent Resources (AR)/Demo/{LEAD}.md')
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(rule=None))
         result = self.vault.run(SCRIPT)
         self.assertEqual(result.returncode, 0, result.stdout)
+
+    def test_a_faculty_opens_with_the_hand_over_rule(self) -> None:
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(rule=None))
+        self.assert_flags('opens with the hand-over rule word for word')
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(rule=check_skills.HANDOVER.format(name='research')))
+        self.assert_flags('opens with the hand-over rule word for word')
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md(rule=RULE.replace('read the vault', 'open the vault')))
+        self.assert_flags('opens with the hand-over rule word for word')
+
+    def test_paths_use_forward_slashes(self) -> None:
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md() + 'Read references' + BS + 'tiers.md first.' + chr(10))
+        self.assert_flags('write paths with forward slashes')
+        self.vault.write(f'{SOURCE}/SKILL.md', skill_md() + 'On Windows it is `C:' + BS + 'Users`.' + chr(10))
+        self.assertEqual(self.vault.run(SCRIPT).returncode, 0)
 
     def test_the_layout(self) -> None:
         self.vault.path(f'{SOURCE}/License.txt').unlink()

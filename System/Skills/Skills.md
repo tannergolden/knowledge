@@ -33,7 +33,7 @@ Every skill carries exactly these files and folders, `agents/` only when it keep
 
 No `scripts/` folder. Every deterministic helper a skill needs (validation, packaging, the agent catalog) lives once in `.github/scripts/` and serves every skill: `check-skills.py` validates each skill and `update-vault.py` draws the copy and builds the archives. Keeping them there means one implementation, and because they read the live vault, a rule change in the vault is picked up without editing any skill.
 
-Every skill also meets the reader of tannergolden/intelligence's home kit, which carries the five faculties to every repository: only the frontmatter keys the Agent Skills format defines, each on one line, with `metadata` as a one-line map; a quoted value wherever YAML would misread it; a description that says "Use when"; read-only `allowed-tools`; files at most one folder below `SKILL.md`; and no en or em dash. `check-skills.py` holds all of it.
+Every skill also meets the reader of tannergolden/intelligence's home kit, which carries the five faculties to every repository: only the frontmatter keys the Agent Skills format defines, each on one line, with `metadata` as a one-line map; a quoted value wherever YAML would misread it; a description that says "Use when"; read-only `allowed-tools`; paths written with forward slashes; files at most one folder below `SKILL.md`; and no en or em dash. `check-skills.py` holds all of it.
 
 ## How a skill names its team
 
@@ -43,7 +43,7 @@ Every skill also meets the reader of tannergolden/intelligence's home kit, which
 
 ## Where a faculty runs
 
-A faculty runs from any copy: this vault's, a home install from tannergolden/intelligence, or another vault's. Each opens with the same rule: in a BRAIN vault, the vault's own copy runs, so a home copy that finds itself here reads `.agents/skills/<skill>/SKILL.md` and follows it instead; anywhere else, it skips the vault's steps and returns its work in chat. A vault's copy and its layout always arrive together, from the same release of this template.
+A faculty runs from any copy: this vault's, a home install from tannergolden/intelligence, or another vault's. Each opens with the same rule: in a BRAIN vault, the vault's own copy runs, so a home copy that finds itself here reads `.agents/skills/<skill>/SKILL.md` and follows it instead; anywhere else, it skips the vault's steps and returns its work in chat. A vault's copy and its layout always arrive together, from the same release of this template. `check-skills.py` holds every faculty to the rule word for word, because the home kit refuses a faculty without it, and tannergolden/intelligence's loader probe proves each app follows it.
 
 To keep a skill of your own, change it in `.agents/skills/` and add three lines under "Your rules" in `.github/template-sync`, so that Template Sync leaves the skill, its copy and its archive alone: `!/.agents/skills/<skill>/**`, `!/.claude/skills/<skill>/**` and `!/System/Skills/<skill>.skill`.
 

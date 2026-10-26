@@ -11,9 +11,11 @@ it, and a skill that names a team that no longer exists dispatches into
 nothing. The vault adds its own layout on top (System/Skills/Skills.md): a
 namesake doc, a License.txt, a Changelog.md, the assets/, references/ and
 templates/ folders, a team in agents/ only when the skill keeps its own, and
-no scripts/, because the vault keeps its scripts in .github/scripts. This
-checks all of it, so a broken skill fails in CI instead of on someone's
-install.
+no scripts/, because the vault keeps its scripts in .github/scripts. A
+faculty, a skill with its own team, also opens with the rule that hands a
+home copy of it over to a vault's own, word for word, because the home kit
+carries the faculties and refuses one without it. This checks all of it, so
+a broken skill fails in CI instead of on someone's install.
 
 With no arguments it checks every skill; given names, only those.
 
@@ -47,6 +49,15 @@ MAX_BODY_LINES = 500
 # read-only tools alone; writing, running commands and starting agents go
 # through the session's own permissions.
 NOT_READ_ONLY = frozenset({'Write', 'Edit', 'MultiEdit', 'NotebookEdit', 'Bash', 'Task', 'Agent'})
+# The rule a faculty, a skill with its own team, opens with, word for word, for
+# its own name. tannergolden/intelligence's home kit carries the faculties to
+# every repository, where Claude Code loads its copy over a vault's, and
+# refuses a faculty without this rule, which hands that copy over.
+HANDOVER = ("**Where it runs.** In a BRAIN vault, whose `AGENTS.md` says it is one, the vault's own copy of this "
+            "skill runs: if the file you loaded is not that vault's `.agents/skills/{name}/SKILL.md` or "
+            "`.claude/skills/{name}/SKILL.md`, read the vault's copy and follow it instead, with the files beside "
+            "it, because a vault's copy matches its layout and its owner may have changed it.")
+BACKSLASH = chr(92)  # one backslash, which kit.py refuses outside inline code in a SKILL.md body
 DASHES = re.compile('[\u2013\u2014\u2015]')
 
 
@@ -81,6 +92,9 @@ def check_manifest_shape(manifest: pathlib.Path, text: str, report: vault.Report
     body = '\n'.join(lines[end + 1:]).lstrip('\n')
     if body.count('\n') > MAX_BODY_LINES:
         report.error(manifest, f'the body is over {MAX_BODY_LINES} lines; move detail into references/')
+    if BACKSLASH in re.sub(r'`[^`]*`', '', body).replace(BACKSLASH + '\n', ''):
+        report.error(manifest, 'write paths with forward slashes: the home kit refuses a backslash in the body '
+                               'outside inline code')
 
 
 def check_team(root: pathlib.Path, folder: pathlib.Path, manifest: pathlib.Path, team: str,
@@ -149,6 +163,9 @@ def check_skill(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) 
         report.error(manifest, f"metadata.team names '{team}', which no roster in the agent library defines; "
                                'point it at a staffed team or drop the key')
     check_team(root, folder, manifest, team, report)
+    if (folder / vault.TEAM_FOLDER).is_dir() and HANDOVER.format(name=folder.name) not in text:
+        report.error(manifest, 'a faculty, a skill with its own team, opens with the hand-over rule word for word, '
+                               'naming its own copies (System/Skills/Skills.md); the home kit refuses one without it')
     if '_' in folder.name:
         report.warn(folder, 'the folder name has an underscore (AGENTS.md, Conventions)')
     namesake = next((p for p in sorted(folder.glob('*.md'))
