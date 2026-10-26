@@ -42,7 +42,8 @@ _One source in the template, a copy for Claude Code, and a home install that han
 The vault's seven skills kept their sources in `System/Skills/.unpackaged/`, and the five faculty
 teams they dispatch lived in `Inbox/Faculties/`. No agent app reads either place: Claude Code reads
 a repository's skills only from `.claude/skills/`, and Codex, Copilot, Cursor, Gemini and
-Antigravity only from `.agents/skills/`. So a session in a vault never listed the skills, the line
+Antigravity from `.agents/skills/`, some of them from `.claude/skills/` as well. So a session in a
+vault never listed the skills, the line
 in `AGENTS.md` that says to fire them had nothing to fire, and the teams never ran. Four of the
 descriptions also held an unquoted colon, which made their frontmatter invalid YAML, so a loader
 that found them would have dropped the description that triggers them.
@@ -94,25 +95,25 @@ vault, and splits a faculty from the vault layout it names.
 
 ### What Changed
 
-| Was                                                                | Is now                                                                                                   |
-| :----------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------- |
-| Skill sources in `System/Skills/.unpackaged/`                      | `.agents/skills/<skill>/`, read by every app but Claude Code                                             |
-| No copy for Claude Code                                            | `.claude/skills/`, drawn byte for byte by `update-vault.py` and held to its source by `--check`          |
-| The five teams in `Inbox/Faculties/`, a held sub-home of the Inbox | Each in the `agents/` folder of the skill that dispatches it; `Inbox/` holds three sub-homes             |
-| A team vendored into the archive at build time                     | A faculty's archive packs its own `agents/`; `board` and `identify` still vendor their AR department     |
-| Frontmatter in loose YAML, four descriptions unparseable           | One key to a line, `metadata` as a one-line map, quoted where YAML would misread a value                 |
-| `allowed-tools` pre-approving writes, commands and agents          | Read-only tools only; the rest goes through the session's own permissions                                |
-| A skill that assumed the vault                                     | A faculty that runs anywhere: the vault's own copy wins inside a vault, and outside one it works in chat |
+| Was                                                                | Is now                                                                                                                                                         |
+| :----------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Skill sources in `System/Skills/.unpackaged/`                      | `.agents/skills/<skill>/`, read by every app but Claude Code                                                                                                   |
+| No copy for Claude Code                                            | `.claude/skills/`, drawn byte for byte by `update-vault.py`, held to its source by `--check`, and never written over a hand edit or a skill of the owner's own |
+| The five teams in `Inbox/Faculties/`, a held sub-home of the Inbox | Each in the `agents/` folder of the skill that dispatches it; `Inbox/` holds three sub-homes                                                                   |
+| A team vendored into the archive at build time                     | A faculty's archive packs its own `agents/`; `board` and `identify` still vendor their AR department                                                           |
+| Frontmatter in loose YAML, four descriptions unparseable           | One key to a line, `metadata` as a one-line map, quoted where YAML would misread a value                                                                       |
+| `allowed-tools` pre-approving writes, commands and agents          | Read-only tools only; the rest goes through the session's own permissions                                                                                      |
+| A skill that assumed the vault                                     | A faculty that runs anywhere: the vault's own copy wins inside a vault, and outside one it works in chat                                                       |
 
 ---
 
 ## 📈 Consequence Matrix
 
-| Category         | Impact / Consequence                                                                                                                                                            |
-| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Positive (+)** | The skills load in every app, in every vault, for anyone; the home kit can carry the faculties everywhere; a vault's copy and layout never drift apart                          |
-| **Negative (-)** | The teams leave the tree Obsidian shows; each skill file is kept twice, once as its generated copy; a vault takes new skills only when its owner runs Template Sync             |
-| **Neutral (~)**  | The move renames every skill and team file a vault holds, so the release that carries it is a new major; ADR-0002's removal of `.claude/` now admits one generated folder in it |
+| Category         | Impact / Consequence                                                                                                                                                                                                                                      |
+| :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Positive (+)** | The skills load in every app, in every vault, for anyone; the home kit can carry the faculties everywhere; a vault's copy and layout never drift apart                                                                                                    |
+| **Negative (-)** | The teams leave the tree Obsidian shows; each skill file is kept twice, once as its generated copy, so an app that reads both folders, as VS Code's Copilot does, lists each skill twice; a vault takes new skills only when its owner runs Template Sync |
+| **Neutral (~)**  | The move renames every skill and team file a vault holds, so the release that carries it is a new major; ADR-0002's removal of `.claude/` now admits one generated folder in it                                                                           |
 
 ---
 

@@ -267,29 +267,85 @@ class TestMirror(Base):
         self.assertFalse(self.vault.path(f'{self.MIRROR}/.DS_Store').exists())
         self.assertIn('Everything generated is up to date.', self.update().stdout)
 
-    def test_a_mirror_that_drifted_is_stale(self) -> None:
+    def test_a_change_to_a_source_reaches_its_committed_copy(self) -> None:
         self.update()
+        self.vault.init_git()
         self.vault.write(f'{self.SOURCE}/references/guide.md', 'changed\n')
-        self.vault.write(f'{self.MIRROR}/references/extra.md', 'extra\n')
+        self.vault.path(f'{self.SOURCE}/Demo.md').unlink()
         result = self.update('--check')
         self.assertEqual(result.returncode, 1)
-        self.assertIn('.claude/skills/demo/references/guide.md: the mirror differs from .agents/skills/',
-                      result.stdout)
-        self.assertIn('.claude/skills/demo/references/extra.md: the mirror holds a file .agents/skills/ does not',
-                      result.stdout)
-        self.update()
+        self.assertIn('.claude/skills/demo/references/guide.md: the copy differs from .agents/skills/', result.stdout)
+        self.assertIn('.claude/skills/demo/Demo.md: the copy holds a file .agents/skills/ does not', result.stdout)
+        self.assertEqual(self.update().returncode, 0)
         self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'changed\n')
-        self.assertFalse(self.vault.path(f'{self.MIRROR}/references/extra.md').exists())
+        self.assertFalse(self.vault.path(f'{self.MIRROR}/Demo.md').exists())
+        self.assertEqual(self.update('--check').returncode, 0)
 
-    def test_a_skill_removed_from_the_sources_leaves_the_mirror(self) -> None:
+    def test_a_change_to_a_new_skill_reaches_the_copy_this_checkout_wrote(self) -> None:
+        # Nothing is committed yet, as while a skill is being built: the run's record says the copy is its own.
+        self.vault.init_git()
+        self.update()
+        self.vault.write(f'{self.SOURCE}/references/guide.md', 'second draft\n')
+        result = self.update()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'second draft\n')
+
+    def test_a_copy_changed_by_hand_is_never_overwritten(self) -> None:
+        self.update()
+        self.vault.init_git()
+        self.vault.write(f'{self.MIRROR}/SKILL.md', '---\nname: demo\n---\n# Demo, edited in the copy\n')
+        self.vault.write(f'{self.SOURCE}/references/guide.md', 'changed\n')
+        result = self.update()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('.claude/skills/demo/SKILL.md: changed by hand, so update-vault.py leaves .claude/skills/demo/ '
+                      'as it is: make the change in .agents/skills/demo/', result.stdout)
+        self.assertIn('edited in the copy', self.vault.read(f'{self.MIRROR}/SKILL.md'))
+        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'guide\n', 'the skill is left whole')
+        self.vault.path(f'{self.MIRROR}/SKILL.md').unlink()
+        self.assertEqual(self.update().returncode, 0)
+        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'changed\n')
+
+    def test_a_file_added_to_a_copy_by_hand_is_kept(self) -> None:
+        self.update()
+        self.vault.init_git()
+        self.vault.write(f'{self.MIRROR}/references/mine.md', 'my notes\n')
+        self.assertIn('holds a file .agents/skills/ does not', self.update('--check').stdout)
+        result = self.update()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('.claude/skills/demo/references/mine.md: changed by hand', result.stdout)
+        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/mine.md'), 'my notes\n')
+
+    def test_outside_git_a_differing_copy_is_kept_until_deleted(self) -> None:
+        self.update()
+        self.vault.write(f'{self.SOURCE}/references/guide.md', 'changed\n')
+        self.assertEqual(self.update().returncode, 1)
+        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'guide\n')
+        self.vault.path(f'{self.MIRROR}/references/guide.md').unlink()
+        self.assertEqual(self.update().returncode, 0)
+        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'changed\n')
+
+    def test_a_skill_of_your_own_in_the_copy_folder_is_left_alone(self) -> None:
+        self.vault.write('.claude/skills/mine/SKILL.md', '---\nname: mine\n---\n# Mine\n')
+        self.vault.init_git()
+        self.vault.write('.claude/skills/scratch/SKILL.md', '---\nname: scratch\n---\n# Not committed\n')
+        result = self.update()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn('.claude/skills/mine: has no source in .agents/skills/, so update-vault.py leaves it as it is',
+                      result.stdout)
+        self.assertTrue(self.vault.path('.claude/skills/mine/SKILL.md').is_file())
+        self.assertTrue(self.vault.path('.claude/skills/scratch/SKILL.md').is_file())
+        self.assertEqual(self.update('--check').returncode, 0)
+
+    def test_a_skill_removed_from_the_sources_leaves_its_copy_with_a_warning(self) -> None:
         self.update()
         for path in sorted(self.vault.path(self.SOURCE).rglob('*'), reverse=True):
             path.unlink() if path.is_file() else path.rmdir()
         self.vault.path(self.SOURCE).rmdir()
         self.vault.path('System/Skills/demo.skill').unlink()
-        self.assertEqual(self.update().returncode, 0)
-        self.assertFalse(self.vault.path(self.MIRROR).exists())
-        self.assertEqual(self.update('--check').returncode, 0)
+        result = self.update()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertTrue(self.vault.path(f'{self.MIRROR}/SKILL.md').is_file())
+        self.assertIn('delete it if its source was removed', result.stdout)
 
 
 class TestKeepsAndCheck(Base):

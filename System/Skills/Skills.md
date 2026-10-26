@@ -11,8 +11,8 @@ Each skill is a folder with a `SKILL.md` entrypoint. It names the team it dispat
 
 ## Where a skill lives
 
-- **The source** is `.agents/skills/<skill>/`, a hidden folder at the vault root, where Codex, Copilot, Cursor, Gemini and Antigravity read a repository's skills. It is what `develop` edits, and it is not walked as notes.
-- **The Claude Code copy** is `.claude/skills/<skill>/`, because Claude Code reads nothing under `.agents/`. `.github/scripts/update-vault.py` draws it byte for byte, and CI fails when it differs from the source; never edit it by hand.
+- **The source** is `.agents/skills/<skill>/`, a hidden folder at the vault root, where Codex, Copilot, Cursor, Gemini and Antigravity read a repository's skills. It is what `develop` edits, and it is not walked as notes. An app that reads both folders, as VS Code's Copilot does, may list each skill twice; the two copies are the same.
+- **The Claude Code copy** is `.claude/skills/<skill>/`, because Claude Code reads nothing under `.agents/`. `.github/scripts/update-vault.py` draws it byte for byte, and CI fails when it differs from the source; never edit it by hand. It is your folder too: `update-vault.py` leaves alone a skill there with no source in `.agents/skills/`, and never overwrites a copy changed by hand, but says so, so you can move the change into the source.
 - **The Claude app archive** is `<skill>.skill`, here beside this note, built from the source with its team, the same bytes every time; upload one in the Claude app to use it there. Each archive is the graph node linked here as a sibling file: currently [[research.skill]], [[editorial.skill]], [[visualize.skill]], [[discover.skill]], [[identify.skill]], [[board.skill]], and [[finance.skill]].
 
 ## Per-skill folder (the mandatory structure)

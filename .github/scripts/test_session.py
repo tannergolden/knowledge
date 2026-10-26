@@ -110,6 +110,17 @@ class TestWithStandIns(unittest.TestCase):
         result = self.helper('after-edit', self.edited('.agents/skills/demo/SKILL.md'))
         self.assertIn('check-skills.py flagged', result.stdout)
 
+    def test_after_edit_points_an_edit_to_a_copy_at_its_source(self) -> None:
+        self.stand_in('lint-notes.py', 0, 'fine')
+        self.vault.write('.agents/skills/demo/SKILL.md', 'x')
+        self.vault.write('.claude/skills/demo/SKILL.md', 'edited')
+        result = self.helper('after-edit', self.edited('.claude/skills/demo/SKILL.md'))
+        context = json.loads(result.stdout)['hookSpecificOutput']['additionalContext']
+        self.assertIn('the Claude Code copy of a skill', context)
+        self.assertIn('.agents/skills/demo/', context)
+        self.vault.write('.claude/skills/mine/SKILL.md', 'a Claude-only skill of your own')
+        self.assertEqual(self.helper('after-edit', self.edited('.claude/skills/mine/SKILL.md')).stdout, '')
+
     def test_after_edit_ignores_what_is_not_the_vault_and_bad_input(self) -> None:
         self.stand_in('lint-notes.py', 1, 'error')
         outside = json.dumps({'tool_input': {'file_path': '/somewhere/else.md'}})
@@ -134,6 +145,15 @@ class TestWithStandIns(unittest.TestCase):
         message = json.loads(result.stdout)['systemMessage']
         self.assertIn('update-vault.py redrew 1 generated part(s): System/Data/catalog.ndjson.', message)
         self.assertIn('check-vault.py found problems:\nerror: Memory/Log.md: missing field: id', message)
+
+    def test_stop_says_what_it_removed_apart_from_what_it_redrew(self) -> None:
+        self.stand_in('update-vault.py', 0, 'updated: System/Data/catalog.ndjson\nremoved: Projects/Full/.gitkeep')
+        self.stand_in('check-vault.py', 0, 'All 6 vault checks pass.')
+        self.vault.init_git()
+        self.vault.write('Memory/Log.md', 'changed')
+        message = json.loads(self.helper('stop').stdout)['systemMessage']
+        self.assertIn('update-vault.py redrew 1 generated part(s): System/Data/catalog.ndjson.', message)
+        self.assertIn('update-vault.py removed 1 generated part(s): Projects/Full/.gitkeep.', message)
 
     def test_stop_is_silent_when_all_is_well(self) -> None:
         self.stand_in('update-vault.py', 0, 'Everything generated is up to date.')

@@ -10,7 +10,9 @@ each runs by hand, and an agent's own hook settings may call one:
   read rather than whole files, so the card stays short.
 - after-edit: given a hook's JSON on stdin naming the file just written,
   checks it with lint-notes.py (and a skill source with check-skills.py),
-  and reports any problem, so a mistake is fixed in the same turn.
+  and reports any problem, so a mistake is fixed in the same turn. An edit
+  to a skill's Claude Code copy is reported too, since its source is the
+  place to change it.
 - stop: when the working tree has changes, redraws everything generated
   with update-vault.py, runs check-vault.py, and says what changed and what
   fails.
@@ -96,6 +98,13 @@ def after_edit(root: pathlib.Path, payload: str) -> None:
         result = run('check-skills.py', '--root', str(root), parts[len(sources)], timeout=60)
         if result is not None and result.returncode != 0:
             flagged.append(('check-skills.py', (result.stdout + result.stderr).strip()))
+    copies = tuple(vault.SKILL_MIRROR.split('/'))
+    if parts[:len(copies)] == copies and len(parts) > len(copies) + 1:
+        skill = parts[len(copies)]
+        if (root / vault.SKILL_SOURCES / skill).is_dir():
+            flagged.append(('session.py', f'this is the Claude Code copy of a skill, which update-vault.py writes from '
+                                          f'{vault.SKILL_SOURCES}/{skill}/; make the change there, and leave the copy '
+                                          'to update-vault.py, which never overwrites a copy changed by hand'))
     if flagged:
         where = vault.rel(root, path)
         context = '\n\n'.join(f'{script} flagged {where}:\n{output}' for script, output in flagged)
@@ -118,11 +127,12 @@ def stop(root: pathlib.Path) -> None:
     messages = []
     update = run('update-vault.py', '--root', str(root))
     if update is not None:
-        lines = [line for line in update.stdout.splitlines() if line.startswith(('updated:', 'moved:', 'removed:'))]
-        if lines:
-            shown = ', '.join(line.split(': ', 1)[1] for line in lines[:5])
-            more = f' and {len(lines) - 5} more' if len(lines) > 5 else ''
-            messages.append(f'update-vault.py redrew {len(lines)} generated part(s): {shown}{more}.')
+        for verb, prefixes in (('redrew', ('updated:', 'moved:')), ('removed', ('removed:',))):
+            lines = [line for line in update.stdout.splitlines() if line.startswith(prefixes)]
+            if lines:
+                shown = ', '.join(line.split(': ', 1)[1] for line in lines[:5])
+                more = f' and {len(lines) - 5} more' if len(lines) > 5 else ''
+                messages.append(f'update-vault.py {verb} {len(lines)} generated part(s): {shown}{more}.')
         if update.returncode != 0:
             problems = [line for line in update.stdout.splitlines() if line.startswith('error:')][:3]
             messages.append('update-vault.py could not draw everything:\n' + '\n'.join(problems))

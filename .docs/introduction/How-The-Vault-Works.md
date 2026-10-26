@@ -111,7 +111,9 @@ graph LR
 The vault's seven skills live in `.agents/skills/<name>/`, where Codex, Copilot, Cursor, Gemini and
 Antigravity read a repository's skills. `update-vault.py` copies each into `.claude/skills/<name>/`
 for Claude Code, which reads nothing under `.agents/`, and builds its `<name>.skill` archive in
-`System/Skills/` for the Claude app. An agent fires the skill whose description matches the request,
+`System/Skills/` for the Claude app. An app that reads both folders, as VS Code's Copilot does, may
+list each skill twice. The copy never overwrites a change made to it by hand, and never touches a
+skill in `.claude/skills/` that has no source. An agent fires the skill whose description matches the request,
 without asking. A skill names its team in its `metadata.team`: a faculty keeps that team in its own
 `agents/` folder, and `board` and `identify` call on a department of the venture workforce.
 

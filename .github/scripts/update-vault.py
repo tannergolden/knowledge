@@ -18,7 +18,9 @@ an AI keeping it by hand would let it drift. This script owns all of it:
    A skill that keeps its team in agents/ already holds it; for one that names
    an Agent Resources (AR) department, the department is vendored in.
 5. The skill mirror: .claude/skills/, a copy of .agents/skills/ for Claude
-   Code, which reads nothing under .agents/.
+   Code, which reads nothing under .agents/. It leaves alone a skill there
+   with no source, and never overwrites a copy changed by hand: it says so,
+   and the change belongs in the source.
 6. The .gitkeep markers: an empty folder keeps one, a folder with files loses it.
 
 Run it after a change. With --check it
@@ -34,12 +36,14 @@ Run it:
 
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import os
 import pathlib
 import re
 import shutil
+import subprocess
 import sys
 import zipfile
 
@@ -364,47 +368,127 @@ def archives(run: Run) -> None:
 
 
 # ── 5. The skill mirror ──
+#
+# .claude/skills/ is Claude Code's copy of each skill in .agents/skills/, and
+# it is the owner's folder too: a skill kept there with no source is left
+# alone, and a copy changed by hand is never overwritten. A file in a copy is
+# the mirror's own while its bytes are what git last committed for it, or
+# what a run in this checkout last wrote, which the run records in the git
+# folder, outside the vault's files.
 
-def mirror_entries(root: pathlib.Path) -> dict[str, bytes]:
-    """Each file the mirror holds, by its path inside .claude/skills/, and its bytes: the sources, exactly."""
-    entries: dict[str, bytes] = {}
-    for folder in vault.skill_dirs(root):
-        for path in sorted(folder.rglob('*')):
-            relative = path.relative_to(folder)
-            if path.is_dir() or path.is_symlink() or junk(relative):
-                continue
-            entries[f'{folder.name}/{relative.as_posix()}'] = path.read_bytes()
-    return entries
+MIRROR_RECORD = 'vault-skill-copy.json'
+
+
+def skill_files(folder: pathlib.Path) -> dict[str, bytes]:
+    """Each file a skill's copy holds, by its path inside the skill, and its bytes: the source's, exactly."""
+    files: dict[str, bytes] = {}
+    for path in sorted(folder.rglob('*')):
+        relative = path.relative_to(folder)
+        if path.is_dir() or path.is_symlink() or junk(relative):
+            continue
+        files[relative.as_posix()] = path.read_bytes()
+    return files
+
+
+def git_output(root: pathlib.Path, *args: str) -> bytes | None:
+    """What a git command prints in the vault, or None outside a checkout or when it fails."""
+    try:
+        result = subprocess.run(['git', '-C', str(root), *args], capture_output=True, timeout=60, check=False)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    return result.stdout if result.returncode == 0 else None
+
+
+def blob_ids(data: bytes) -> set[str]:
+    """The ids git could hold for these bytes: as they are, and with the LF endings text=auto stores."""
+    return {hashlib.sha1(b'blob %d\0' % len(body) + body).hexdigest()
+            for body in (data, data.replace(b'\r\n', b'\n'))}
+
+
+def mirror_history(root: pathlib.Path) -> tuple[dict[str, str], pathlib.Path | None, dict[str, str]]:
+    """Each copy file's committed blob id, by its path inside the mirror; where this checkout's record lives; the record."""
+    committed: dict[str, str] = {}
+    prefix = vault.SKILL_MIRROR + '/'
+    for entry in (git_output(root, 'ls-tree', '-r', '-z', 'HEAD', '--', vault.SKILL_MIRROR) or b'').split(b'\0'):
+        meta, _, name = entry.partition(b'\t')
+        fields = meta.split()
+        path = name.decode('utf-8', 'replace')
+        if len(fields) == 3 and fields[1] == b'blob' and path.startswith(prefix):
+            committed[path[len(prefix):]] = fields[2].decode('ascii', 'replace')
+    where = git_output(root, 'rev-parse', '--git-path', MIRROR_RECORD)
+    if where is None:
+        return committed, None, {}
+    record_path = root / where.decode('utf-8', 'replace').strip()
+    try:
+        record = json.loads(record_path.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        record = {}
+    return committed, record_path, record if isinstance(record, dict) else {}
 
 
 def mirror(run: Run) -> None:
     root = run.root
     target = root / vault.SKILL_MIRROR
-    wanted = mirror_entries(root)
-    present: dict[str, pathlib.Path] = {}
+    sources = {folder.name: folder for folder in vault.skill_dirs(root)}
     if target.is_dir():
-        for path in sorted(target.rglob('*')):
-            relative = path.relative_to(target)
-            if path.is_file() and not junk(relative):
-                present[relative.as_posix()] = path
-    for name, data in wanted.items():
-        path = present.get(name)
-        if path is None or path.is_symlink() or path.read_bytes() != data:
-            run.write(target / name, data, f'the mirror differs from {vault.SKILL_SOURCES}/')
-    for name, path in present.items():
-        if name in wanted:
+        for folder in sorted(p for p in target.iterdir() if p.is_dir() and p.name not in sources):
+            if not junk(folder.relative_to(target)):
+                run.report.warn(folder, f'has no source in {vault.SKILL_SOURCES}/, so update-vault.py leaves it as it '
+                                        'is; Claude Code still loads it, so delete it if its source was removed')
+    committed, record_path, record = mirror_history(root)
+    kept = dict(record)
+
+    def own(key: str, path: pathlib.Path) -> bool:
+        if path.is_symlink():
+            return False
+        data = path.read_bytes()
+        return committed.get(key) in blob_ids(data) or kept.get(key) == hashlib.sha256(data).hexdigest()
+
+    for name, folder in sources.items():
+        copy = target / name
+        wanted = skill_files(folder)
+        present: dict[str, pathlib.Path] = {}
+        if copy.is_dir():
+            for path in sorted(copy.rglob('*')):
+                relative = path.relative_to(copy)
+                if (path.is_file() or path.is_symlink()) and not junk(relative):
+                    present[relative.as_posix()] = path
+        changed = sorted(rel for rel, data in wanted.items()
+                         if rel not in present or present[rel].is_symlink() or present[rel].read_bytes() != data)
+        extra = sorted(rel for rel in present if rel not in wanted)
+        if not changed and not extra:
             continue
         if run.check:
-            run.stale(path, f'the mirror holds a file {vault.SKILL_SOURCES}/ does not')
+            for rel in changed:
+                run.stale(copy / rel, f'the copy differs from {vault.SKILL_SOURCES}/')
+            for rel in extra:
+                run.stale(copy / rel, f'the copy holds a file {vault.SKILL_SOURCES}/ does not')
             continue
-        path.unlink()
-        run.changes.append(f'removed: {vault.rel(root, path)}')
-    if run.check or not target.is_dir():
+        by_hand = [rel for rel in changed + extra if rel in present and not own(f'{name}/{rel}', present[rel])]
+        if by_hand:
+            for rel in by_hand:
+                run.report.error(copy / rel, f'changed by hand, so update-vault.py leaves {vault.SKILL_MIRROR}/{name}/ '
+                                             f'as it is: make the change in {vault.SKILL_SOURCES}/{name}/, its source, '
+                                             'then delete this file and run update-vault.py again')
+            continue
+        # Removals first, so a rename that only changes a letter's case is not undone on a case-blind disk.
+        for rel in extra:
+            present[rel].unlink()
+            kept.pop(f'{name}/{rel}', None)
+            run.changes.append(f'removed: {vault.rel(root, present[rel])}')
+        for rel in changed:
+            run.write(copy / rel, wanted[rel], f'the copy differs from {vault.SKILL_SOURCES}/')
+            kept[f'{name}/{rel}'] = hashlib.sha256(wanted[rel]).hexdigest()
+        # A file removed from a source can leave an empty folder behind; clear those, deepest first.
+        for sub in sorted((p for p in copy.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
+            if not any(sub.iterdir()):
+                sub.rmdir()
+    if run.check or record_path is None:
         return
-    # A skill removed from the sources leaves folders behind; clear the empty ones, deepest first.
-    for folder in sorted((p for p in target.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
-        if not any(folder.iterdir()):
-            folder.rmdir()
+    kept = {key: digest for key, digest in kept.items() if (target / key).is_file()}
+    if kept != record:
+        record_path.parent.mkdir(parents=True, exist_ok=True)
+        record_path.write_text(json.dumps(kept, indent=1, sort_keys=True) + '\n', encoding='utf-8')
 
 
 # ── 6. The .gitkeep markers ──
