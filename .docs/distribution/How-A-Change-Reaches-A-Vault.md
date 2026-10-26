@@ -46,7 +46,9 @@ only here: initialisation deletes them from every vault, so a vault syncs from t
 **The second hop: this template into a vault.** A merge to the default branch here reaches no vault.
 🏷️ Cut Release, dispatched with a version `vX.Y.Z`, publishes the release and moves `v1` to it, after
 checking that `.github/template-sync` and the Template Sync stub exist and that
-`validate-repository.py` passes. A vault follows `v1`: when its owner runs 🔄 Template Sync, every file
+`validate-repository.py` passes. Every earlier version stays, page and tag, because
+tannergolden/intelligence copies the faculty skills from one version, named in full, and checks its
+copy against that version's tag. A vault follows `v1`: when its owner runs 🔄 Template Sync, every file
 the template changed that the vault's list keeps current arrives as one pull request on
 `chore/template-sync`, merged with the owner's own changes. A vault never follows `v2` until its owner
 changes `ref:` in its stub.

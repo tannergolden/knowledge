@@ -55,3 +55,9 @@ jobs:
       # rather than discovered by the first sync that tries.
       required-files: '.github/template-sync .github/workflows/template-sync.yml'
       check-command: 'python3 .github/scripts/validate-repository.py'
+      # Every version stays. tannergolden/intelligence copies the faculty
+      # skills from one version of this template, named in full, and
+      # downloads them again at its tag to check its copy, so pruning the
+      # versions a release supersedes would delete the tag its pin names. A
+      # template made from this one that nothing pins by version can drop it.
+      keep-versions: true
