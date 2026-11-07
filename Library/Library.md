@@ -39,13 +39,13 @@ The ten classes: **Information & Computing · Philosophy & Mind · Religion & Sp
 - **Frontmatter and search are the catalog, for the AI.** A file is reachable from many angles at once (subject, freshness, form, place, period) without ever moving. One location, many access points.
 - **The AI is the cataloger and reference librarian.** Classifying and cataloging happen at filing time, done by the AI, not as a chore for the owner.
 
-## The Librarian
+## Stewardship
 
-The Library is kept by the **Librarian**, a seat on the `research` skill's team, which the home kit installs from tannergolden/intelligence; the vault holds no agent spec of its own. Cataloging, curation, and reference are one stewardship role, done by one mind in one pass.
+The Library has no agent of its own: whichever AI is working in the vault keeps it, by the rules in this note, and the `research` skill grounds a question here before the web. Cataloging, curation, and reference are one stewardship role, done by one mind in one pass.
 
-The Librarian acquires, classifies, catalogs, curates, weeds, preserves, and serves every holding, to one overriding standard: **every holding earns its place**. The collection is judged by what it excludes as much as what it serves, and findability is the purpose that curation serves. By demand the Librarian also does deep per-class subject work, a link and authority-control integrity pass (via `.github/scripts/check-vault.py`), and a Conspectus-style depth assessment per class; a genuinely contested class, weed, or tier goes to the Founder.
+The steward acquires, classifies, catalogs, curates, weeds, preserves, and serves every holding, to one overriding standard: **every holding earns its place**. The collection is judged by what it excludes as much as what it serves, and findability is the purpose that curation serves. By demand the steward also does deep per-class subject work, a link and authority-control integrity pass (via `.github/scripts/check-vault.py`), and a Conspectus-style depth assessment per class; a genuinely contested class, weed, or tier goes to the Founder.
 
-Boundaries: the rest of the Research team gathers evidence and files reports to `Inbox/Reports/`, and the single handoff is the promotion of a finding into a `Library/` doc; the Librarian owns the durable collection here and commissions research to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the Librarian makes the authoritative tier and class assignment at catalog time.
+Boundaries: the Research team gathers evidence and files reports to `Inbox/Reports/`, and the single handoff is the promotion of a finding into a `Library/` doc; the steward owns the durable collection here and commissions research to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the steward makes the authoritative tier and class assignment at catalog time.
 
 ## Why classification matters for AI (not just humans)
 

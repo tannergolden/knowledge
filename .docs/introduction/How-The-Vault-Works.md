@@ -117,7 +117,7 @@ agent fires the one whose description matches the request, without asking.
 The skills are universal: they hardcode no vault path. `AGENTS.md`, under Where the skills write,
 gives them this vault's layout instead: where `board` keeps a venture, where reports, ideas and visuals
 are held, how `identify` fills the Profile, and which checks run after a write. The venture workforce
-is the `board` skill's own team, and the Library's Librarian is a seat on the `research` skill's team.
+is the `board` skill's own team, and whichever AI works in the vault keeps the Library by its rules.
 
 ---
 
