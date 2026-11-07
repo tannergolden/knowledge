@@ -10,7 +10,7 @@ INSTANTIATION (copy this file to Memory/Entities/Places/<Name>.md, then):
 - Set type to "record", and give the copy its real title and description.
 - Keep the emoji H1; replace [Place Name] with the place's name.
 - Fill only what is known. Never fabricate - leave a field blank or omit its line rather than guessing.
-- Surface sensitive details (precise address) only when relevant to the work at hand (`Profile/Profile.md`, Rules).
+- Surface sensitive details (precise address) only when relevant to the work at hand (`Profile/README.md`, Rules).
 - Record provenance: As of (when the facts became true) and Recorded (today).
 - Cross-reference with plain-path Related lines. No wikilinks in entries.
 -->

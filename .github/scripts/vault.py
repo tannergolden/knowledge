@@ -43,8 +43,9 @@ MAX_KEYWORDS = 8
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 EM_DASH = '\u2014'
 
-# The notes every session reads first (AGENTS.md, Start here), stable before volatile.
-STARTUP = ('Profile/Working Style.md', 'Memory/Log.md')
+# The files every session reads first (the root README.md, How A Session Goes), stable before
+# volatile: the vault's own guide, then the owner's working style, then the Log.
+STARTUP = ('README.md', 'Profile/Working Style.md', 'Memory/Log.md')
 
 # ── Where things live ──
 
@@ -54,7 +55,7 @@ CATALOG = 'System/Data/catalog.ndjson'
 # overflow moves to Archive/<year>/, which has no cap.
 TIERS = (('Current', 3, 'Memory/Context/Current'), ('Recent', 6, 'Memory/Context/Recent'))
 ARCHIVE = 'Memory/Context/Archive'
-# Per-entry collections: a folder of one file per entry, whose namesake lists them.
+# Per-entry collections: a folder of one file per entry, whose README.md lists them.
 COLLECTIONS = (
     ('People', 'Memory/Entities/People'),
     ('Organizations', 'Memory/Entities/Organizations'),
@@ -69,13 +70,14 @@ INBOX = 'Inbox'
 # Inbox sub-homes that are kept, never sorted.
 INBOX_HELD = frozenset({'Backups', 'Reports', 'Visuals', 'Ideas'})
 
-# Folders never walked, and files that are never notes or link targets. A
-# README.md is a top folder's GitHub page and AGENTS.md the agents' rules:
-# both are pages, in the hidden frontmatter standards' styling guide asks for.
+# Folders never walked, and files that are never notes or link targets.
 SKIP_DIRS = frozenset({'Backups', '__pycache__'})
-SKIP_FILES = frozenset({'.DS_Store', '.gitkeep', '.localized', 'LICENSE', 'README.md', 'AGENTS.md'})
-# The only folders that carry a README.md: the seven top folders.
-TOP_FOLDERS = ('Inbox', 'Library', 'Memory', 'Profile', 'Projects', 'System', 'Ventures')
+SKIP_FILES = frozenset({'.DS_Store', '.gitkeep', '.localized', 'LICENSE'})
+# Each folder explains itself in its README.md, which is the folder's note. The
+# README.md at the vault root is a page, not a note: it explains the whole vault
+# and names the top folders with Markdown links, so the walk passes over it.
+README = 'README.md'
+ROOT_PAGES = frozenset({README})
 TRANSIENT_SUFFIXES = ('.part', '.tmp', '.aria2', '.tmp~')
 
 
@@ -87,11 +89,15 @@ def _keep_dir(name: str) -> bool:
 
 
 def walk_files(root: pathlib.Path) -> Iterator[pathlib.Path]:
-    """Every file in the vault a note could link to, in a stable order."""
+    """Every file in the vault a note could link to, in a stable order: each folder's
+    README.md included, the root's README.md, a page, left out."""
     for folder, dirs, files in os.walk(root):
         dirs[:] = sorted(d for d in dirs if _keep_dir(d))
+        at_root = pathlib.Path(folder) == root
         for name in sorted(files):
             if name.startswith('.') or name in SKIP_FILES or name.endswith(TRANSIENT_SUFFIXES):
+                continue
+            if at_root and name in ROOT_PAGES:
                 continue
             yield pathlib.Path(folder) / name
 
@@ -105,7 +111,7 @@ def walk_notes(root: pathlib.Path) -> Iterator[pathlib.Path]:
 
 def in_walk(root: pathlib.Path, path: pathlib.Path) -> bool:
     """True when walk_files would visit this path: inside the root, outside hidden
-    folders other than .template/, and not a dotfile or junk file."""
+    folders other than .template/, not the root's README.md, and not a dotfile or junk file."""
     try:
         parts = path.resolve().relative_to(root.resolve()).parts
     except (OSError, ValueError):
@@ -113,25 +119,19 @@ def in_walk(root: pathlib.Path, path: pathlib.Path) -> bool:
     if not parts or not all(_keep_dir(part) for part in parts[:-1]):
         return False
     name = parts[-1]
+    if len(parts) == 1 and name in ROOT_PAGES:
+        return False
     return not (name.startswith('.') or name in SKIP_FILES or name.endswith(TRANSIENT_SUFFIXES))
 
 
-def stray_readmes(root: pathlib.Path) -> list[pathlib.Path]:
-    """Every README.md the vault walks past but the seven top folders' own.
+def namesake_notes(root: pathlib.Path) -> list[pathlib.Path]:
+    """Every note the vault walks that is named after its own folder, such as Memory/Memory.md.
 
-    A README is a folder's GitHub page, and only a top folder has one: deeper
-    folders are described by their notes, so a README there is a second,
-    drifting copy of what the note already says.
+    A folder explains itself in its README.md, so a note named after the folder
+    is a second, drifting copy of what the README already says: the old place
+    of a folder's note, or a scaffold for one copied under the wrong name.
     """
-    out = []
-    for folder, dirs, files in os.walk(root):
-        dirs[:] = sorted(d for d in dirs if _keep_dir(d))
-        if 'README.md' in files:
-            path = pathlib.Path(folder) / 'README.md'
-            parts = path.relative_to(root).parts
-            if not (len(parts) == 2 and parts[0] in TOP_FOLDERS):
-                out.append(path)
-    return out
+    return [path for path in walk_notes(root) if path.parent != root and is_namesake(path)]
 
 
 def rel(root: pathlib.Path, path: pathlib.Path) -> str:
@@ -153,8 +153,24 @@ def is_template(parts: tuple[str, ...]) -> bool:
 
 
 def is_folder_note(path: pathlib.Path) -> bool:
-    """A folder's own note: Memory/Memory.md, Library/Arts & Recreation/Arts & Recreation.md."""
+    """A folder's own note: its README.md, such as Memory/README.md."""
+    return path.name == README
+
+
+def is_namesake(path: pathlib.Path) -> bool:
+    """A note named after its folder, such as Memory/Memory.md: never a folder's note now."""
     return path.suffix == '.md' and path.stem == path.parent.name
+
+
+def folder_note(folder: pathlib.Path) -> pathlib.Path:
+    """Where a folder's own note lives: its README.md."""
+    return folder / README
+
+
+def _own_note(path: pathlib.Path) -> bool:
+    """A folder's README.md, or a note named after the folder that lint-notes.py flags:
+    either way the folder's own description, never an entry, a summary or a drop."""
+    return is_folder_note(path) or is_namesake(path)
 
 
 # ── Frontmatter ──
@@ -453,25 +469,25 @@ def redraw_block(text: str, name: str, body: str) -> str | None:
 # ── Memory and the Inbox ──
 
 def tier_summaries(folder: pathlib.Path) -> list[pathlib.Path]:
-    """The session summaries in one tier folder, oldest first. The tier's own note is not one."""
+    """The session summaries in one tier folder, oldest first. The tier's README.md is not one."""
     if not folder.is_dir():
         return []
     return sorted(p for p in folder.iterdir()
-                  if p.is_file() and p.suffix == '.md' and p.stem != folder.name
+                  if p.is_file() and p.suffix == '.md' and not _own_note(p)
                   and not p.name.startswith('.'))
 
 
 def entry_files(folder: pathlib.Path) -> list[pathlib.Path]:
-    """The entries of a per-entry collection, in name order. The folder's own note is not one."""
+    """The entries of a per-entry collection, in name order. The folder's README.md is not one."""
     if not folder.is_dir():
         return []
     return sorted(p for p in folder.iterdir()
-                  if p.is_file() and p.suffix == '.md' and p.stem != folder.name
+                  if p.is_file() and p.suffix == '.md' and not _own_note(p)
                   and not p.name.startswith('.'))
 
 
 def startup_notes(root: pathlib.Path) -> list[pathlib.Path]:
-    """The notes every session reads first, stable before volatile, as many as the vault holds."""
+    """The files every session reads first, stable before volatile, as many as the vault holds."""
     return [root / name for name in STARTUP if (root / name).is_file()]
 
 
@@ -485,8 +501,8 @@ def inbox_drops(root: pathlib.Path) -> list[pathlib.Path]:
         if not path.is_file() or path.name.startswith('.'):
             continue
         parts = path.relative_to(inbox).parts
-        # The Inbox's own note and its GitHub page are the folder, never a drop.
-        if parts[0] in INBOX_HELD or parts[0].startswith('.') or (len(parts) == 1 and path.name in ('Inbox.md', 'README.md')):
+        # The Inbox's own README.md is the folder, never a drop.
+        if parts[0] in INBOX_HELD or parts[0].startswith('.') or (len(parts) == 1 and _own_note(path)):
             continue
         out.append(path)
     return out

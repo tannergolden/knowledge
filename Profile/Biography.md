@@ -72,7 +72,7 @@ Stable physical characteristics worth holding - appearance, height, distinguishi
 
 ## Identity Documents
 
-The existence and location of core identity documents and certificates - passport, driver's license, national ID, birth and other certificates. Record that they exist and where they are kept, never the numbers themselves (`Profile/Profile.md`, Rules).
+The existence and location of core identity documents and certificates - passport, driver's license, national ID, birth and other certificates. Record that they exist and where they are kept, never the numbers themselves (`Profile/README.md`, Rules).
 
 ## Digital Identity
 

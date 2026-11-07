@@ -12,7 +12,7 @@ FILING INSTRUCTIONS (copy this file to Profile/Health/<Title>.md, then) (one hea
 - Save as Profile/Health/[Condition or Need].md.
 - Frontmatter: set type "reference", and give the copy its real title and description.
 - Give the H1 a fitting emoji. NO wikilinks - plain paths only.
-- For AI awareness, NOT diagnostic use. Record the minimum the AI needs to be considerate, not a medical history. Surface only when directly relevant (`Profile/Profile.md`, Rules).
+- For AI awareness, NOT diagnostic use. Record the minimum the AI needs to be considerate, not a medical history. Surface only when directly relevant (`Profile/README.md`, Rules).
 -->
 
 ## Condition

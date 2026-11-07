@@ -1,8 +1,8 @@
 <!--
 title: '🧭 HOW THE VAULT WORKS'
-description: 'How the parts of a BRAIN vault fit together: the rules an agent reads and which wins, the shapes its notes take, how information moves between folders, where the skills come from, and the machinery that checks and redraws it all. Read it first, before any other page here.'
+description: 'How the parts of a BRAIN vault fit together: where its rules live and which wins, the shapes its notes take, how information moves between folders, where an AI assistant''s own rules and skills come from, and the machinery that checks and redraws it all. Read it first, before any other page here.'
 type: guide
-keywords: [overview, architecture, agents-md, folder notes, skills, catalogs, onboarding]
+keywords: [overview, architecture, readmes, folder readmes, home kit, catalogs, onboarding]
 -->
 
 <div align="center">
@@ -11,7 +11,7 @@ keywords: [overview, architecture, agents-md, folder notes, skills, catalogs, on
 
 <a name="top"></a>
 
-**The rules an agent reads, the notes it keeps, and the scripts that check both.**
+**The rules the vault explains, the notes it keeps, and the scripts that check both.**
 
 _Plain files, read in order, checked on every change._
 
@@ -25,34 +25,40 @@ A vault is plain Markdown in one git repository, in three layers:
 
 | Layer             | What it is                                             | Where it lives                                                                                                               |
 | :---------------- | :----------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| **The rules**     | How an agent works here                                | `AGENTS.md`, the Rules in each folder note, the `System/` settings and `Profile/Working Style.md`                            |
+| **The rules**     | How anyone works here                                  | The root `README.md`, the `README.md` at the root of each folder, the `System/` settings and `Profile/Working Style.md`      |
 | **The notes**     | What the vault knows about its owner and the world     | The seven top folders, each note opening with the hidden frontmatter of the [note schema](../technical/vault/Note-Schema.md) |
 | **The machinery** | What checks the notes and draws what derives from them | The scripts in `.github/scripts/`, and the workflows that run them                                                           |
 
-There is no database and no service to run: any agent that can read files reads the vault, and git
-history is both its backup and its record of every change.
+There is no database and no service to run: anyone, and any AI, that can read files reads the vault,
+and git history is both its backup and its record of every change.
 
 ---
 
 ## 📜 The Rules, In The Order They Win
 
-[`AGENTS.md`](../../AGENTS.md) is the one root file every agent reads first. Its sealed block, between
-the `INTELLIGENCE` markers, is the universal Constitution from
-[tannergolden/intelligence](https://github.com/tannergolden/intelligence), which 🔁 Intelligence Sync
-keeps current and nobody edits by hand; the sections after it are the vault's own rules. Each top
-folder's note opens with that folder's Rules, and before an agent creates, edits, moves or deletes
-anything in a folder, it reads the Rules in that folder's note and in every folder note above it.
+The vault explains itself in README files, written for anyone who works in it, a person or any AI.
+The root [`README.md`](../../README.md) is read first: the vault's own rules, how a session goes, the
+commands, what done means and where each kind of work goes. Every folder then explains itself in a
+`README.md` at its root, which is that folder's note: its purpose, what belongs in it, how to name
+and file things there, and its rules. Before anything in a folder is created, edited, moved or
+deleted, the README of that folder, and of every folder above it, is read.
 
 ```mermaid
 graph TD
-    A["AGENTS.md: the Constitution, then the vault's own rules"] --> B["Each folder note's Rules: add to AGENTS.md, never loosen it"]
+    A["The root README.md: the vault's own rules"] --> B["Each folder's README.md: adds to them, never loosens them"]
     B --> C["System/ files: the settings an owner adds"]
     C --> D["Profile/Working Style.md: how the owner likes to work"]
 ```
 
-Where two disagree, the higher wins, in the order `System/System.md` sets out under Priority Order.
+Where two disagree, the higher wins, in the order `System/README.md` sets out under Priority Order.
 `Profile/Working Style.md` decides every choice the others leave open, which is why each session
 reads it first.
+
+The vault holds no instructions for any one AI and no agents. The universal rules an AI assistant
+follows, from [tannergolden/intelligence](https://github.com/tannergolden/intelligence), reach every
+session from the home kit installed on each machine, not from this repository, and nothing here
+loosens them. So that the hub's sync leaves the vault alone, the template carries the
+`no-intelligence` topic on GitHub, and each vault is given it when it is set up.
 
 ---
 
@@ -61,18 +67,23 @@ reads it first.
 The same few kinds of file recur across the folders. The [Glossary](../references/Glossary.md)
 defines each term.
 
-| Shape             | What it is                                                                                                        | Example                          |
-| :---------------- | :---------------------------------------------------------------------------------------------------------------- | :------------------------------- |
-| **Folder note**   | The note named after its folder: the folder's Rules and how it works, and the only kind of note that may wikilink | `Memory/Memory.md`               |
-| **README**        | A top folder's GitHub page; only the seven top folders carry one                                                  | `Memory/README.md`               |
-| **Scaffold**      | A file in a `.template/` folder, copied to make a new note and never edited in place                              | `Projects/.template/Overview.md` |
-| **Collection**    | A folder of one file per entry, whose folder note lists the entries                                               | `Memory/Entities/People/`        |
-| **Held sub-home** | A folder of `Inbox/` that is kept, never sorted                                                                   | `Inbox/Reports/`                 |
+| Shape             | What it is                                                                                                                         | Example                          |
+| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------- | :------------------------------- |
+| **Folder README** | The `README.md` at a folder's root, which is the folder's note: its purpose and rules, and the only kind of note that may wikilink | `Memory/README.md`               |
+| **Root README**   | The vault's guide, read first by everyone: a page, not a note                                                                      | `README.md`                      |
+| **Scaffold**      | A file in a `.template/` folder, copied to make a new note and never edited in place                                               | `Projects/.template/Overview.md` |
+| **Collection**    | A folder of one file per entry, whose README lists the entries                                                                     | `Memory/Entities/People/`        |
+| **Held sub-home** | A folder of `Inbox/` that is kept, never sorted                                                                                    | `Inbox/Reports/`                 |
+
+A `.template/` folder has a README too. Where its scaffolds are copied one at a time, as in
+`Memory/.template/`, the README explains them and is never copied. Where the folder is copied whole,
+as a venture's or a project's is, its README is written for the folder it becomes, with the
+template's placeholders, and becomes that folder's own.
 
 Each fact has one home. Who the owner is lives in `Profile/` alone; what happened, who is around them,
 what they decided and what is due live in `Memory/`; knowledge about the world lives in `Library/`;
-their companies live in `Ventures/` and their own initiatives in `Projects/`. The folder notes settle
-the close calls.
+their companies live in `Ventures/` and their own initiatives in `Projects/`. The folder READMEs
+settle the close calls.
 
 ---
 
@@ -90,14 +101,14 @@ graph LR
 
 - **The Inbox is sorted first.** A loose file waiting there is sorted before other work: each move
   is proposed with its destination and a clean name, and none is made without a yes
-  (`Inbox/Inbox.md`).
+  (`Inbox/README.md`).
 - **The Log is where memory lands.** An observation enters `Memory/Log.md` as a dated entry with an
-  importance from 1 to 5, then is promoted into its collection or ages out (`Memory/Memory.md`).
-- **Profile changes only with a yes.** What an agent learns about its owner is proposed, never
-  written on inference alone, and the `identify` skill interviews the owner to fill it
-  (`Profile/Profile.md`).
+  importance from 1 to 5, then is promoted into its collection or ages out (`Memory/README.md`).
+- **Profile changes only with a yes.** What is learned about the owner is proposed, never written on
+  inference alone, and an identity interview, such as the `identify` skill's, fills it
+  (`Profile/README.md`).
 - **The Library keeps what lasts.** A holding is filed with a freshness token, and anything that will
-  not stay true for five years goes elsewhere (`Library/Library.md`).
+  not stay true for five years goes elsewhere (`Library/README.md`).
 - **Sessions leave summaries.** A session's summary goes to `Memory/Context/Current/`, and
   `update-vault.py` moves the oldest down the tiers as they fill:
   [Sessions & The Memory Cascade](../technical/vault/Sessions-&-The-Memory-Cascade.md) has the whole
@@ -105,19 +116,21 @@ graph LR
 
 ---
 
-## 🤖 Skills & Agent Teams
+## 🤖 AI Assistants & Skills
 
-The vault holds no skills and no agent specs. Every skill (`board`, `discover`, `editorial`,
-`finance`, `identify`, `research` and `visualize`, and `develop`, which builds and fixes skills) lives
-in [tannergolden/intelligence](https://github.com/tannergolden/intelligence) under `kit/skills/`, each
-with its own team in its `agents/` folder. The home kit installs them into each AI app's skills folder
-on every machine and in every Claude Code cloud session, so they reach the vault from there, and an
-agent fires the one whose description matches the request, without asking.
+An AI assistant works in the vault the way a person does: it reads the root `README.md`, then the
+README of each folder it works in. The vault holds no skills, no agent specs and no file addressed
+to any one AI. The skills an assistant may bring (`board`, `discover`, `editorial`, `finance`,
+`identify`, `research` and `visualize`, and `develop`, which builds and fixes skills) live in
+[tannergolden/intelligence](https://github.com/tannergolden/intelligence) under `kit/skills/`, and the
+home kit installs them, with the universal rules, into each AI app on every machine and in every
+Claude Code cloud session.
 
-The skills are universal: they hardcode no vault path. `AGENTS.md`, under Where the skills write,
-gives them this vault's layout instead: where `board` keeps a venture, where reports, ideas and visuals
-are held, how `identify` fills the Profile, and which checks run after a write. The venture workforce
-is the `board` skill's own team, and whichever AI works in the vault keeps the Library by its rules.
+The skills are universal: they hardcode no vault path. The root `README.md`, under Where Each Kind Of
+Work Goes, gives this vault's layout to whoever writes here: where a venture is kept, where each
+department's records go, where reports, ideas and visuals are held, how the Profile is filled, and
+which checks run after a write. Each of those folders' own README says which work lands there and by
+what rules.
 
 ---
 
@@ -127,9 +140,8 @@ Some text in the vault is drawn by a machine and never edited by hand: change it
 
 | Machine-owned                                                                                                  | Drawn by                                  | When                                                     |
 | :------------------------------------------------------------------------------------------------------------- | :---------------------------------------- | :------------------------------------------------------- |
-| The blocks between `brain:` markers, the memory cascade, the catalog in `System/Data/`, the `.gitkeep` markers | `python3 .github/scripts/update-vault.py` | After a change, run by the agent or the owner            |
+| The blocks between `brain:` markers, the memory cascade, the catalog in `System/Data/`, the `.gitkeep` markers | `python3 .github/scripts/update-vault.py` | After a change, run by whoever made it                   |
 | The folder logs between `AUTO-INDEX` markers                                                                   | 🗂️ Machined Indexes                       | After each push to the default branch, as a pull request |
-| The block between the `INTELLIGENCE` markers in `AGENTS.md`                                                    | 🔁 Intelligence Sync                      | Every Monday and on request, as a pull request           |
 
 `python3 .github/scripts/check-vault.py` runs every vault check: the notes, the links, the scan for
 personal numbers and the generated parts. 🧠 Vault runs it, with the scripts' own
@@ -141,11 +153,11 @@ one fails.
 
 ## 🌿 What Keeps It Current
 
-Three automations bring change from outside, each as a pull request the owner merges, and none
+Two automations bring change from outside, each as a pull request the owner merges, and neither
 pushes to a branch: 🔄 Template Sync, when the owner runs it, carries the template's released fixes;
-🔁 Intelligence Sync carries the universal rules; 🗂️ Machined Indexes redraws the folder logs. A sync
-never touches a note the template does not ship, nor a file the list leaves to the owner, such as
-`Memory/Log.md` and `Profile/Working Style.md`.
+🗂️ Machined Indexes redraws the folder logs. A sync never touches a note the template does not ship,
+nor a file the list leaves to the owner, such as `Memory/Log.md` and `Profile/Working Style.md`. The
+universal rules for AI assistants change with the home kit, outside the repository.
 [How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md) follows a change from
 its first commit to a vault.
 

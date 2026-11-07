@@ -4,15 +4,16 @@
 WHY THIS EXISTS. Every note in the vault opens with the account's hidden
 frontmatter (.docs/technical/vault/Note-Schema.md): a title, a description and a type,
 with keywords and a status where they say something. Retrieval, the catalog
-and every agent that routes by a note's head read those fields, so a note
-that drifts from the schema misleads every one of them, quietly. This is the
+and anyone who routes by a note's head read those fields, so a note that
+drifts from the schema misleads every one of them, quietly. This is the
 gate: run it on a note after an edit, and CI runs it on every note.
 
 With no arguments it checks every note the vault walks: every folder but
-hidden ones, plus the .template/ scaffolds. Given files, it checks only
-those. A file outside the walk, such as one under .github/, is not a note and
-is skipped. A README.md belongs only in the seven top folders, as their
-GitHub page, so one anywhere else is flagged.
+hidden ones, plus the .template/ scaffolds, with each folder's README.md,
+which is that folder's note. Given files, it checks only those. A file
+outside the walk, such as one under .github/ or the README.md at the vault
+root, is not a note and is skipped. A folder explains itself in its
+README.md alone, so a note named after its folder is flagged.
 
 Run it:
 
@@ -30,15 +31,15 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import vault  # noqa: E402  (vault.py sits beside this file)
 
 # Retired on every note: tags and category, which type and keywords replace, and per-file
-# versions, which git replaces (AGENTS.md, Conventions).
+# versions, which git replaces (the root README.md, Conventions).
 RETIRED = frozenset({'tags', 'category', 'version'})
 # The rest of the old two-band schema, each field now said by the path or git. A record or
 # a template may still define one of these names as a field of its own kind.
 RETIRED_UNLESS_OWN = frozenset({'aliases', 'created', 'updated', 'folder', 'layer', 'policy',
                                 'author', 'path', 'id'})
-# A Library holding's estimated lifespan, one token among its keywords (Library/Library.md, Rules).
+# A Library holding's estimated lifespan, one token among its keywords (Library/README.md, Rules).
 FRESHNESS = ('freshness/timeless', 'freshness/enduring', 'freshness/current')
-# GitHub's five alerts, the only callouts a note uses (AGENTS.md, Conventions), each marker alone on its line.
+# GitHub's five alerts, the only callouts a note uses (the root README.md, Conventions), each marker alone on its line.
 ALERTS = ('NOTE', 'TIP', 'IMPORTANT', 'WARNING', 'CAUTION')
 CALLOUT = re.compile(r'^[ \t]*(?:>[ \t]*)+\[!([^\]\n]*)\]([^\n]*)$', re.M)
 
@@ -88,14 +89,16 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> list[str]:
     parts = path.relative_to(root).parts
     template = vault.is_template(parts)
     if not text.strip():
-        problems.append('the note is empty, and a note is never emptied (AGENTS.md, Ask first); restore it from git history or delete it')
+        problems.append('the note is empty, and a note is never emptied (the root README.md, Ask First); '
+                        'restore it from git history or delete it')
     if '_' in path.name:
-        problems.append('the file name has an underscore (AGENTS.md, Conventions); use spaces or hyphens')
+        problems.append('the file name has an underscore (the root README.md, Conventions); use spaces or hyphens')
     if vault.EM_DASH in text:
-        problems.append(f'{text.count(vault.EM_DASH)} em dash(es) (DOC-002); use a comma, colon, parentheses or a hyphen')
+        problems.append(f'{text.count(vault.EM_DASH)} em dash(es) (the root README.md, Conventions); '
+                        'use a comma, colon, parentheses or a hyphen')
     for kind, rest in CALLOUT.findall(vault.strip_code(text)):
         if kind not in ALERTS or rest.strip():
-            problems.append(f'callout [!{kind}]{rest.rstrip()} does not render on GitHub (AGENTS.md, Conventions); use one of '
+            problems.append(f'callout [!{kind}]{rest.rstrip()} does not render on GitHub (the root README.md, Conventions); use one of '
                             f"{', '.join(ALERTS)}, alone on its line, with any title as a bold first line")
     if template and '[[' in text:
         problems.append('a scaffold carries no wikilinks (Link-Topology.md)')
@@ -114,7 +117,7 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> list[str]:
         tokens = [w for w in vault.as_list(fields.get('keywords')) if w.startswith('freshness/')]
         if len(tokens) != 1 or tokens[0] not in FRESHNESS:
             problems.append('a Library holding carries one freshness token among its keywords: '
-                            f"{', '.join(FRESHNESS)} (Library/Library.md, Rules)")
+                            f"{', '.join(FRESHNESS)} (Library/README.md, Rules)")
     return problems
 
 
@@ -134,13 +137,14 @@ def main(argv: list[str] | None = None) -> int:
             if path.suffix == '.md' and vault.in_walk(root, path):
                 targets.append(path)
         given = {(n if n.is_absolute() else root / n).resolve() for n in args.files}
-        strays = [path for path in vault.stray_readmes(root) if path.resolve() in given]
+        strays = [path for path in vault.namesake_notes(root) if path.resolve() in given]
     else:
         targets = list(vault.walk_notes(root))
-        strays = vault.stray_readmes(root)
+        strays = vault.namesake_notes(root)
     for path in strays:
-        report.error(path, 'a README.md belongs only in the seven top folders (AGENTS.md, Conventions); '
-                           "describe this folder in its own note")
+        report.error(path, "a note named after its folder repeats the folder's README.md, which is the "
+                           'folder\'s note (the root README.md, Conventions); move what it says into '
+                           'README.md, then delete it')
     for path in targets:
         for problem in check_note(root, path):
             report.error(path, problem)

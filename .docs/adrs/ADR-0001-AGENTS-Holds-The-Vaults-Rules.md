@@ -3,7 +3,7 @@ title: '🧭 ADR-0001: AGENTS.MD HOLDS THE VAULT''S RULES'
 description: 'The vault''s Constitution and Instructions dissolve into AGENTS.md, the folder notes and reference pages, and standards owns every repository convention.'
 type: record
 keywords: [governance]
-status: 'Accepted'
+status: 'Superseded'
 date: '2026-10-19'
 evidence: 'N/A'
 -->
@@ -28,6 +28,12 @@ _One root file for agents, each folder's rules where its work happens._
 > [!NOTE]
 > **Status**, **Date**, and **Evidence** live in the frontmatter above and feed the
 > [ADR index](README.md).
+
+> [!IMPORTANT]
+> **Superseded** by [ADR-0005](ADR-0005-Each-Folder-Explains-Itself-In-A-README.md) on 2026-11-07:
+> the vault holds no AI instructions now. `AGENTS.md` and its Intelligence Sync stub are gone, each
+> folder explains itself in a `README.md` at its root, written for anyone, and the root `README.md`
+> holds the vault's rules. The record below is kept as it was decided.
 
 | Attribute     | Specification                                     |
 | :------------ | :------------------------------------------------ |
@@ -141,7 +147,7 @@ Every amendment the deleted files recorded stays in the git history.
 
 ## 🔗 Traceability & Links
 
-- [`AGENTS.md`](../../AGENTS.md), the vault's rules
+- `AGENTS.md`, the vault's rules until [ADR-0005](ADR-0005-Each-Folder-Explains-Itself-In-A-README.md) removed it
 - [Vault reference](../technical/vault/README.md): the schema, the tag vocabulary, the link topology and
   context assembly
 - The universal rules:

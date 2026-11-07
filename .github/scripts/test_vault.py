@@ -125,36 +125,53 @@ class TestLayout(unittest.TestCase):
         self.vault.cleanup()
 
     def test_the_walk_skips_hidden_folders_but_not_scaffolds(self) -> None:
-        for rel in ('A.md', 'Library/B.md', 'Library/.template/C.md', '.github/D.md', 'System/Backups/E.md',
-                    'Memory/.hidden.md', 'Memory/F.txt'):
+        for rel in ('A.md', 'README.md', 'Library/B.md', 'Library/README.md', 'Library/.template/C.md',
+                    '.github/D.md', 'System/Backups/E.md', 'Memory/.hidden.md', 'Memory/F.txt'):
             self.vault.write(rel, 'x')
         notes = [vault.rel(self.vault.root, p) for p in vault.walk_notes(self.vault.root)]
-        self.assertEqual(notes, ['A.md', 'Library/B.md', 'Library/.template/C.md'])
+        self.assertEqual(notes, ['A.md', 'Library/B.md', 'Library/README.md', 'Library/.template/C.md'])
         self.assertTrue(vault.in_walk(self.vault.root, self.vault.path('Library/.template/C.md')))
+        self.assertTrue(vault.in_walk(self.vault.root, self.vault.path('Library/README.md')))
         self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('.github/D.md')))
+        self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('README.md')))
 
     def test_startup_notes_run_stable_before_volatile(self) -> None:
         self.vault.note('Memory/Log.md')
         self.vault.note('Profile/Working Style.md')
         self.vault.note('Profile/Other.md')
+        self.vault.write('README.md', '# The vault\n')
         names = [vault.rel(self.vault.root, p) for p in vault.startup_notes(self.vault.root)]
-        self.assertEqual(names, ['Profile/Working Style.md', 'Memory/Log.md'])
+        self.assertEqual(names, ['README.md', 'Profile/Working Style.md', 'Memory/Log.md'])
 
-    def test_pages_are_not_notes(self) -> None:
-        # AGENTS.md and the top folders' READMEs are GitHub pages, never walked as notes.
-        for rel in ('AGENTS.md', 'Memory/README.md', 'Memory/Memory.md'):
+    def test_a_folders_readme_is_its_note_and_the_roots_is_a_page(self) -> None:
+        # Each folder explains itself in its README.md; the root's README.md, and any
+        # README.md in a hidden folder, is a page, never walked as a note.
+        for rel in ('README.md', 'Memory/README.md', 'Memory/Log.md', '.github/README.md'):
             self.vault.write(rel, 'x')
         notes = [vault.rel(self.vault.root, p) for p in vault.walk_notes(self.vault.root)]
-        self.assertEqual(notes, ['Memory/Memory.md'])
+        self.assertEqual(notes, ['Memory/Log.md', 'Memory/README.md'])
+        self.assertTrue(vault.is_folder_note(self.vault.path('Memory/README.md')))
+        self.assertFalse(vault.is_folder_note(self.vault.path('Memory/Log.md')))
+        self.assertEqual(vault.folder_note(self.vault.path('Memory')), self.vault.path('Memory/README.md'))
 
-    def test_only_the_top_folders_carry_a_readme(self) -> None:
-        for rel in ('README.md', 'Memory/README.md', 'Memory/Context/README.md', '.github/README.md',
-                    'Memory/.template/README.md'):
+    def test_a_note_named_after_its_folder_is_a_namesake(self) -> None:
+        for rel in ('Library/README.md', 'Library/.template/Division.md', 'Library/Division/Division.md',
+                    'Memory/README.md', 'Memory/Memory.md', 'Memory/Context/Context.md', 'Vault.md'):
             self.vault.write(rel, 'x')
-        strays = [vault.rel(self.vault.root, p) for p in vault.stray_readmes(self.vault.root)]
-        self.assertEqual(strays, ['README.md', 'Memory/.template/README.md', 'Memory/Context/README.md'])
+        namesakes = [vault.rel(self.vault.root, p) for p in vault.namesake_notes(self.vault.root)]
+        self.assertEqual(namesakes, ['Library/Division/Division.md', 'Memory/Memory.md', 'Memory/Context/Context.md'])
+        self.assertFalse(vault.is_folder_note(self.vault.path('Memory/Memory.md')))
+
+    def test_a_folders_own_note_is_never_an_entry_or_a_summary(self) -> None:
+        for rel in ('Memory/Events/README.md', 'Memory/Events/Events.md', 'Memory/Events/Party.md',
+                    'Memory/Context/Current/README.md', 'Memory/Context/Current/20260101-000000.md'):
+            self.vault.write(rel, 'x')
+        self.assertEqual([p.name for p in vault.entry_files(self.vault.path('Memory/Events'))], ['Party.md'])
+        self.assertEqual([p.name for p in vault.tier_summaries(self.vault.path('Memory/Context/Current'))],
+                         ['20260101-000000.md'])
 
     def test_inbox_drops_leave_the_kept_homes_alone(self) -> None:
+        # The Inbox's README.md is the folder, and so is a leftover Inbox.md, which lint-notes.py flags.
         for rel in ('Inbox/Inbox.md', 'Inbox/README.md', 'Inbox/drop.pdf', 'Inbox/Reports/r.md', 'Inbox/Visuals/v.md',
                     'Inbox/sub/x.md'):
             self.vault.write(rel, 'x')

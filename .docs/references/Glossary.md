@@ -1,8 +1,8 @@
 <!--
 title: '📖 GLOSSARY'
-description: 'The vault''s own terms, from folder note and scaffold to held, skill and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account''s shared engineering terms are in the standards'' glossary.'
+description: 'The vault''s own terms, from folder README and scaffold to held, skill and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account''s shared engineering terms are in the standards'' glossary.'
 type: reference
-keywords: [terms, definitions, vocabulary, held, scaffold, skill, venture, folder note]
+keywords: [terms, definitions, vocabulary, held, scaffold, skill, venture, folder readme]
 -->
 
 <div align="center">
@@ -32,33 +32,44 @@ Conventional Commits, are in the standards'
 
 - **BRAIN**: Behavioral Recursive Augmented Intelligence Network, the name of a vault made from this
   template (`.github/README.md`).
-- **Collection**: a folder of one file per entry, whose folder note lists the entries in a generated
+- **Collection**: a folder of one file per entry, whose README lists the entries in a generated
   block: `People/`, `Organizations/` and `Places/` under `Memory/Entities/`, and `Decisions/`,
   `Events/` and `Insights/` under `Memory/`. Profile's folder facets work the same way
   (`.github/scripts/vault.py`).
 - **Drop**: a loose file waiting at the `Inbox/` root, outside the held sub-homes; the start card
   lists each one on an `INBOX` line (`.github/scripts/session.py`).
 - **Enrichment**: what a file gets before it leaves the Inbox: hidden frontmatter for a note, and a
-  clean name for anything else (`Inbox/Inbox.md`).
+  clean name for anything else (`Inbox/README.md`).
 - **Entry**: one file in a collection or a folder facet, copied from its scaffold.
-- **Folder note**: the note named after its folder, such as `Memory/Memory.md`, typed `index`. It
-  describes its folder, holds the folder's Rules where it has any, and is the only kind of note that
-  may carry wikilinks, which is why it is also called the folder's hub ([Link Topology](../technical/vault/Link-Topology.md)).
+- **Folder note**: a folder's own note, which is its README. Before every folder explained itself in
+  its README, it was a note named after the folder, such as `Memory/Memory.md`; `lint-notes.py` now
+  flags one.
+- **Folder README**: the `README.md` at a folder's root, such as `Memory/README.md`, which is the
+  folder's note, typed `index` (a Profile folder facet's is typed `reference`). It says what the folder
+  is for and what belongs in it, holds the folder's rules where it has any, and is the only kind of
+  note that may carry wikilinks, which is why it is also called the folder's hub
+  ([Link Topology](../technical/vault/Link-Topology.md)). No note is named after its folder.
 - **Held**: kept at the Inbox's path but never sorted. `Reports/`, `Visuals/`, `Ideas/` and
-  `Backups/` are the held sub-homes; they are still linted and cataloged (`Inbox/Inbox.md`).
-- **Note**: any `.md` file in the seven top folders, scaffolds included. It opens with the hidden
-  frontmatter of the [Note Schema](../technical/vault/Note-Schema.md), and carries a single H1 and no
-  decorative header or footer.
-- **Page**: a file that is not a note: a top folder's `README.md`, `AGENTS.md`, or anything in a
-  hidden folder, such as this one. A page follows the account's styling standard in full.
-- **Rules**: the section a top folder's note opens with. Folder Rules add to `AGENTS.md` and never
-  loosen it (`AGENTS.md`, Start here).
+  `Backups/` are the held sub-homes; they are still linted and cataloged (`Inbox/README.md`).
+- **Note**: any `.md` file in the seven top folders, each folder's `README.md` and the scaffolds
+  included. It opens with the hidden frontmatter of the [Note Schema](../technical/vault/Note-Schema.md),
+  and carries a single H1 and no decorative header or footer.
+- **Page**: a file that is not a note: the root `README.md`, or anything in a hidden folder, such as
+  this one. A page follows the account's styling standard in full.
+- **Root README**: the `README.md` at the vault root, the vault's guide for anyone who works in it:
+  the top folders, how a session goes, the commands, what done means, where each kind of work goes,
+  and the conventions every folder shares. A page, read first.
+- **Rules**: the section a top folder's README opens with. A folder's rules add to the root
+  `README.md` and never loosen it (the root `README.md`, How A Session Goes).
 - **Scaffold**: a file in a `.template/` folder, typed `template`, copied to make a new note and never
-  edited in place. A scaffold carries no wikilinks, receives none, and is left out of the catalog.
+  edited in place. A scaffold carries no wikilinks, receives none, and is left out of the catalog. A
+  `.template/` folder's own README explains its scaffolds, typed `index` and never copied, or, where
+  the folder is copied whole, as a venture's or a project's is, is a scaffold itself, written for the
+  folder it becomes.
 - **Sort**: moving a drop out of the Inbox to its home, with its destination and clean name proposed
-  first and nothing moved without a yes (`Inbox/Inbox.md`).
-- **Top folder**: one of the seven, Inbox, Library, Memory, Profile, Projects, System and Ventures,
-  and the only folders that carry a `README.md`. They and the vault root are the owner's to change.
+  first and nothing moved without a yes (`Inbox/README.md`).
+- **Top folder**: one of the seven, Inbox, Library, Memory, Profile, Projects, System and Ventures.
+  They and the vault root are the owner's to change.
 - **Wikilink**: `[[Target]]`, the notes' one addition to GitHub's Markdown, allowed only where the
   link topology allows the edge.
 
@@ -72,25 +83,26 @@ Conventional Commits, are in the standards'
   `update-vault.py`; nothing is deleted
   ([Sessions & The Memory Cascade](../technical/vault/Sessions-&-The-Memory-Cascade.md)).
 - **Checkpoint**: updating the running session summary at a task boundary, and writing one before the
-  context runs short (`Memory/Memory.md`, Rules).
+  context runs short (`Memory/README.md`, Rules).
 - **Consolidation**: the periodic pass that promotes, merges and supersedes Log entries, run when
   about ten wait unpromoted, monthly, or on request (`System/Workflows.md`).
 - **Current**: the entry tier, `Memory/Context/Current/`, holding up to three summaries, the two
   newest of which every session reads at its start.
 - **Importance**: the 1 to 5 score an entry gets when it is captured, from routine to pivotal, used to
-  rank recall and to decide when to reflect (`Memory/Memory.md`).
+  rank recall and to decide when to reflect (`Memory/README.md`).
 - **Open loop**: a Log entry still marked `**Status:** Open`; the Log's Open Loops block lists every
   one (`Memory/Log.md`).
 - **Promotion**: moving a Log entry into the collection or file where it lasts.
 - **Recent**: the mid tier, `Memory/Context/Recent/`, holding up to six summaries, read on request.
 - **Reflection**: writing `Insights/` that answer questions posed over recent memory, once the summed
-  importance captured since the last reflection crosses about 25 (`Memory/Memory.md`).
+  importance captured since the last reflection crosses about 25 (`Memory/README.md`).
 - **Session summary**: the delta-update record of one session, filed in `Memory/Context/Current/` as
   `YYYYMMDD-HHMMSS.md` from `Memory/.template/Session Summary.md`.
-- **Startup set**: what every session reads first: the startup notes, `Profile/Working Style.md` and
-  `Memory/Log.md` (`STARTUP` in `.github/scripts/vault.py`), then the two newest summaries.
+- **Startup set**: what every session reads first: the root `README.md`, `Profile/Working Style.md`
+  and `Memory/Log.md` (`STARTUP` in `.github/scripts/vault.py`), then the two newest summaries, and,
+  when files wait at the Inbox, `Inbox/README.md`.
 - **Supersede**: to mark an entry replaced, with a pointer to the entry that replaces it, rather than
-  rewrite it in place (`Memory/Memory.md`).
+  rewrite it in place (`Memory/README.md`).
 - **Tier**: one of Current, Recent and Archive.
 
 ---
@@ -99,12 +111,12 @@ Conventional Commits, are in the standards'
 
 - **Facet**: one of the twelve parts of `Profile/`. A flat facet is one file, such as `Biography.md`;
   a folder facet is an overview note plus one entry per item: Values, Goals, Skills and Health
-  (`Profile/Profile.md`).
+  (`Profile/README.md`).
 - **Focus**: the one dynamic facet, for what is true only now: current priorities, routines and the
   current life chapter.
 - **Provenance marker**: the inline comment on a Profile line the AI inferred, such as
   `<!-- observed 2026-06-19 · confidence: medium · unconfirmed -->`, shortened to `confirmed` once the
-  owner approves it (`Profile/Profile.md`).
+  owner approves it (`Profile/README.md`).
 - **Unconfirmed**: a proposal that waits for the owner's approval, and is never treated as
   established.
 
@@ -113,7 +125,7 @@ Conventional Commits, are in the standards'
 ## 📚 Library
 
 - **Catalog card**: the companion note a source document, such as a book or a paper, gets in the
-  Library, holding its bibliography (`Library/Library.md`).
+  Library, holding its bibliography (`Library/README.md`).
 - **Class**: one of the Library's ten top subjects, each a folder; a **division** is a recognized
   sub-discipline, one folder below its class.
 - **Controlled token**: a slash-namespaced keyword a script can filter on exactly: `freshness/`,
@@ -122,7 +134,7 @@ Conventional Commits, are in the standards'
 - **Freshness token**: how long a holding stays true: `freshness/timeless` for 25 years or more,
   `freshness/enduring` for 10 to 25, `freshness/current` for 5 to 10. Every holding carries exactly
   one, and anything shorter-lived stays out of the Library.
-- **Holding**: a Library note other than a folder note, a record or a scaffold: the reference
+- **Holding**: a Library note other than a folder's README, a record or a scaffold: the reference
   knowledge itself.
 - **Knowledge base**: an offline reference work, such as Wikipedia, kept as a ZIM file in
   `Library/Reference & Encyclopedia/` and read with `.github/scripts/knowledge-base.py`.
@@ -131,18 +143,23 @@ Conventional Commits, are in the standards'
 
 ## 🤖 Skills
 
-- **Founder**: the owner, as the `board` skill's agents know them, above its whole workforce.
-- **Home kit**: tannergolden/intelligence's installer, which puts every skill in its `kit/skills/`
-  into each AI app's skills folder on every machine and in every Claude Code cloud session. The vault
-  holds no skill or agent of its own.
-- **Skill**: a capability with a `SKILL.md`, most with a team of agents in its own `agents/` folder,
-  kept in tannergolden/intelligence and installed by the home kit. `AGENTS.md`, Where the skills
-  write, gives the skills this vault's layout.
+- **Founder**: the owner, as a venture's own records name them: the one whose yes money, contracts,
+  outside communication and deletions need.
+- **Home kit**: tannergolden/intelligence's installer, which puts every skill in its `kit/skills/`,
+  with the universal rules an AI assistant follows, into each AI app on every machine and in every
+  Claude Code cloud session. The vault holds no skill, no agent and no rules for any one AI.
+- **no-intelligence**: the GitHub topic that keeps the hub's own sync away from a repository. The
+  template carries it, and each vault is given it when it is set up
+  ([Setting Up A Vault](../introduction/Setting-Up-A-Vault.md)).
+- **Skill**: a capability with a `SKILL.md`, kept in tannergolden/intelligence and installed by the
+  home kit. The root `README.md`, under Where Each Kind Of Work Goes, gives this vault's layout to
+  whoever writes here, a skill included.
 - **Venture**: a company the owner owns or runs, with clients, employees, revenue or a brand, kept in
   a folder of `Ventures/` copied from its scaffold. A personal initiative without them is a
-  **project**, in `Projects/` (`Ventures/Ventures.md`).
-- **Write-gate**: the `board` skill's check before it writes to a venture: internal drafts go ahead,
-  while money, contracts, outside communication and deletions need the Founder.
+  **project**, in `Projects/` (`Ventures/README.md`).
+- **Write-gate**: the check before board work writes to a venture's strategic core: internal drafts
+  go ahead, while money, contracts, outside communication and deletions need the owner's yes
+  (`Ventures/README.md`).
 
 ---
 
@@ -158,8 +175,6 @@ Conventional Commits, are in the standards'
   current in a vault.
 - **Machined index**: a folder log between `AUTO-INDEX` markers, drawn by the standards' indexer.
 - **Only ever in the template**: the files initialisation deletes from every vault.
-- **Sealed block**: the block between the `INTELLIGENCE` markers in `AGENTS.md`, delivered by
-  tannergolden/intelligence and kept current by 🔁 Intelligence Sync.
 - **Session helper**: one of `session.py`'s `start`, `after-edit` and `stop`.
 - **The developer** and **the user**: the developer designed and built the template, and is named on
   the landing page; the user is whoever `Profile/` describes (`.github/README.md`).

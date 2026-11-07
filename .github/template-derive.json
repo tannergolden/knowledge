@@ -7,6 +7,7 @@
   "exclude": [
     ".github/ISSUE_TEMPLATE/Vulnerability-Report.yaml",
     ".github/actions/README.md",
+    ".github/workflows/intelligence-sync.yml",
     "CHANGELOG.md",
     "LICENSE",
     "README.md",

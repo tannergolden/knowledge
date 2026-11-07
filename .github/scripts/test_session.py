@@ -39,31 +39,48 @@ class TestStart(unittest.TestCase):
     def tearDown(self) -> None:
         self.vault.cleanup()
 
-    def test_the_card_lists_startup_notes_summaries_and_the_inbox(self) -> None:
+    def test_the_card_lists_the_readmes_startup_notes_summaries_and_the_inbox(self) -> None:
+        self.vault.write('README.md', '# The vault\n')
         self.vault.note('Profile/Working Style.md')
         self.vault.note('Memory/Log.md')
         for name, status in (('20260101-000000', 'active'), ('20260102-000000', 'active'),
                              ('20260103-000000', 'deprecated'), ('20251231-000000', 'active')):
             self.vault.note(f'Memory/Context/Current/{name}.md', type='record', status=status)
+        self.vault.note('Memory/Context/Current/README.md')
+        self.vault.note('Inbox/README.md')
         self.vault.write('Inbox/scan.pdf', 'pdf')
         self.vault.write('Inbox/Reports/kept.md', 'kept')
         result = self.vault.run(SCRIPT, 'start')
         self.assertEqual(result.returncode, 0)
         lines = result.stdout.splitlines()
-        self.assertIn('READ Profile/Working Style.md', lines)
+        # The root README.md, the vault's own guide, comes first, then the stable before the volatile.
+        self.assertIn('README.md', result.stdout.split('\n', 1)[0])
+        self.assertLess(lines.index('READ README.md'), lines.index('READ Profile/Working Style.md'))
         self.assertLess(lines.index('READ Profile/Working Style.md'), lines.index('READ Memory/Log.md'))
         self.assertIn('READ Memory/Context/Current/20260102-000000.md  (session summary)', lines)
         self.assertIn('READ Memory/Context/Current/20260101-000000.md  (session summary)', lines)
+        self.assertNotIn('Current/README.md', result.stdout)
         self.assertNotIn('20260103', result.stdout)
         self.assertNotIn('20251231', result.stdout)
-        self.assertIn('INBOX Inbox/scan.pdf', lines)
+        # A file waits, so the Inbox's README.md, the sorting protocol, is read before it.
+        self.assertLess(lines.index('READ Inbox/README.md  (how to sort the Inbox)'), lines.index('INBOX Inbox/scan.pdf'))
+        self.assertNotIn('INBOX Inbox/README.md', lines)
+        self.assertIn('1 file waits at the Inbox; sort them per Inbox/README.md before other work.', lines)
         self.assertNotIn('kept.md', result.stdout)
+        self.assertIn('read its README.md and the README.md of each folder above it', result.stdout)
+        self.assertNotIn('AGENTS', result.stdout)
 
     def test_an_empty_vault_still_gets_a_card(self) -> None:
         result = self.vault.run(SCRIPT, 'start')
         self.assertEqual(result.returncode, 0)
         self.assertIn('Inbox clear.', result.stdout)
         self.assertLess(len(result.stdout), 1500)
+
+    def test_a_clear_inbox_lists_no_inbox_readme(self) -> None:
+        self.vault.note('Inbox/README.md')
+        result = self.vault.run(SCRIPT, 'start')
+        self.assertIn('Inbox clear.', result.stdout)
+        self.assertNotIn('Inbox/README.md', result.stdout)
 
 
 class TestWithStandIns(unittest.TestCase):

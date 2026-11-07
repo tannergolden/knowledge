@@ -32,12 +32,13 @@ from a low-attention position.
 
 ## 📥 Retrieve Lean, Not Whole
 
-- **Load the smallest set that answers the task, never the whole vault.** Use the folder notes,
+- **Load the smallest set that answers the task, never the whole vault.** Use the folders' READMEs,
   the catalog (`System/Data/catalog.ndjson`) and the frontmatter filters in
   [Note Schema](Note-Schema.md) to pull only what the task turns on.
 - **Prefer many small reads to one large one.** Read the section you need, not the whole file.
 - **Never assemble a full-vault context**, even for a fresh agent. Orientation comes from
-  [`AGENTS.md`](../../../AGENTS.md) and its start-of-session list; everything else loads on demand.
+  the root [`README.md`](../../../README.md) and its start-of-session list; everything else loads on
+  demand.
 
 ---
 
@@ -45,8 +46,8 @@ from a low-attention position.
 
 Place material by attention, not by convenience:
 
-- **Front:** the rules and the task's key files: `AGENTS.md`, `Profile/Working Style.md`, and the
-  notes the task turns on.
+- **Front:** the rules and the task's key files: the root `README.md`, the README of each folder the
+  task touches, `Profile/Working Style.md`, and the notes the task turns on.
 - **Middle:** bulk reference material, such as `Library/`, whose exact wording is least likely to
   be needed word for word.
 - **End:** the single most important constraint, open loop or next step, restated last so it lands

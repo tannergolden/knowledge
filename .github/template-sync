@@ -151,7 +151,7 @@
 
 # --- The vault: kept current --------------------------------------------------
 # This template's own files. Every vault generated from it keeps them current:
-# the scripts, governance, folder notes and scaffolds.
+# the scripts, the root README.md, each folder's README.md and the scaffolds.
 /.docs/distribution/How-A-Change-Reaches-A-Vault.md
 /.docs/introduction/How-The-Vault-Works.md
 /.docs/introduction/Setting-Up-A-Vault.md
@@ -183,41 +183,35 @@
 /.github/scripts/vault.py
 /.github/workflows/vault.yml
 /.typos.toml
-/AGENTS.md
-/Inbox/Ideas/Ideas.md
-/Inbox/Inbox.md
+/Inbox/Ideas/README.md
 /Inbox/README.md
-/Inbox/Reports/Reports.md
-/Inbox/Visuals/Visuals.md
+/Inbox/Reports/README.md
+/Inbox/Visuals/README.md
 /Library/**
 /Memory/.template/**
 /Memory/Context/**
-/Memory/Decisions/Decisions.md
-/Memory/Entities/Entities.md
-/Memory/Entities/Organizations/Organizations.md
-/Memory/Entities/People/People.md
-/Memory/Entities/Places/Places.md
-/Memory/Events/Events.md
-/Memory/Insights/Insights.md
-/Memory/Memory.md
+/Memory/Decisions/README.md
+/Memory/Entities/Organizations/README.md
+/Memory/Entities/People/README.md
+/Memory/Entities/Places/README.md
+/Memory/Entities/README.md
+/Memory/Events/README.md
+/Memory/Insights/README.md
 /Memory/README.md
 /Profile/.template/**
-/Profile/Goals/Goals.md
-/Profile/Health/Health.md
-/Profile/Profile.md
+/Profile/Goals/README.md
+/Profile/Health/README.md
 /Profile/README.md
-/Profile/Skills/Skills.md
-/Profile/Values/Values.md
+/Profile/Skills/README.md
+/Profile/Values/README.md
 /Projects/.template/**
-/Projects/Projects.md
 /Projects/README.md
-/System/Data/Data.md
+/README.md
+/System/Data/README.md
 /System/README.md
-/System/System.md
 /System/Workflows.md
 /Ventures/.template/**
 /Ventures/README.md
-/Ventures/Ventures.md
 
 # --- Yours: seeded once, never synced -----------------------------------------
 #/LICENSE
@@ -229,9 +223,7 @@
 
 # --- The vault: yours ---------------------------------------------------------
 # Each vault's own: what its owner writes about themselves, the logs they keep,
-# the catalog drawn from their notes, and the stub that keeps the universal
-# rules in AGENTS.md current.
-#/.github/workflows/intelligence-sync.yml
+# and the catalog drawn from their notes.
 #/Memory/Dates.md
 #/Memory/Log.md
 #/Profile/Biography.md
@@ -253,6 +245,7 @@
 #/.docs/adrs/ADR-0002-Notes-Take-The-Hidden-Frontmatter.md
 #/.docs/adrs/ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md
 #/.docs/adrs/ADR-0004-The-Skills-Live-In-The-Home-Kit.md
+#/.docs/adrs/ADR-0005-Each-Folder-Explains-Itself-In-A-README.md
 #/.github/TEMPLATE_INIT
 #/.github/template-derive.json
 #/.github/template-derive.lock

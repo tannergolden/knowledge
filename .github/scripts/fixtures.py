@@ -43,8 +43,10 @@ class Vault:
 
     def note(self, rel: str, body: str = '', **fields: object) -> pathlib.Path:
         """A note whose hidden frontmatter passes lint-notes.py, unless a field given here says
-        otherwise. A field set to None is left out."""
-        stem = pathlib.PurePosixPath(rel).stem
+        otherwise. A field set to None is left out. A README.md, a folder's note, takes the
+        folder's name as its title."""
+        path = pathlib.PurePosixPath(rel)
+        stem = path.parent.name if path.name == 'README.md' and path.parent.name else path.stem
         values: dict[str, object] = {'title': stem, 'description': f'The note at {rel}.', 'type': 'index'}
         values.update(fields)
         return self.write(rel, block('<!--', '-->', values) + '\n\n' + (body or f'# {stem}\n'))

@@ -23,14 +23,15 @@ _One hidden block, every note, checked on every edit._
 ## 🎯 The Rule
 
 Every note in the vault opens with hidden frontmatter: an HTML comment holding a few flat fields
-that tell an agent what the note is before it reads the body. The fields are the account's own
+that tell a reader, or any tool, what the note is before the body is read. The fields are the account's own
 standard,
 [Frontmatter Metadata](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md#-frontmatter-metadata)
 in the Document Styling guide, so a note reads the same way as every document in every repository.
 
-A note is any `.md` file in the seven top folders, their `.template/` scaffolds included. The
-`README.md` pages, [`AGENTS.md`](../../../AGENTS.md) and everything under a hidden folder are not
-notes; they carry the same hidden block, as the styling guide asks of every page.
+A note is any `.md` file in the seven top folders, their `.template/` scaffolds included. Each
+folder's `README.md` is that folder's note, and carries this schema like any other. The `README.md`
+at the vault root and everything under a hidden folder are not notes but pages: they carry the same
+hidden block, as the styling guide asks of every page, and keep the rules they follow as pages.
 
 `.github/scripts/lint-notes.py` checks every note against this page. Run it on a note after
 changing it; CI runs it on every note, beside the account's frontmatter check over every document.
@@ -68,12 +69,17 @@ say, and a field that only repeats them drifts. A note's subject is its path, ne
 
 | Type        | Use for                                                                                      |
 | :---------- | :------------------------------------------------------------------------------------------- |
-| `index`     | A folder's own note, named after the folder (`Memory/Memory.md`)                             |
+| `index`     | A folder's own note, its `README.md` (`Memory/README.md`)                                    |
 | `guide`     | An operating manual or a how-to                                                              |
 | `standard`  | Rules a reader must obey                                                                     |
 | `reference` | Material to look up: Library holdings, and the Profile's facts about your user               |
 | `record`    | A dated account: the Log, session summaries, decisions, entities, events, reports and ideas |
 | `template`  | A scaffold inside a `.template/` folder; the copy takes its own type                         |
+
+A `.template/` folder's own `README.md` is `index` when it explains a folder of scaffolds and is
+never copied, such as `Memory/.template/README.md`, and `template` when its folder is copied whole,
+such as a venture's or a project's, whose copy becomes that folder's `index`. A Profile folder facet's
+`README.md` holds the facet itself, so it is `reference`.
 
 ### Fields Of A Kind
 
@@ -85,15 +91,14 @@ lives only on its kind and is never added to this page.
 ### No Per-File Versions
 
 No note carries a `version` field, and the linter rejects one. The vault's history is its git
-history: `git log -- <path>` says when a note last changed. The vault holds no skills or agent
-specs: they live in tannergolden/intelligence, which versions them.
+history: `git log -- <path>` says when a note last changed.
 
 ---
 
 ## 🖼️ Files That Cannot Carry Frontmatter
 
 An image, a PDF, a script, audio, video or an archive carries none of its own. Its folder places
-it, and the folder's note describes it, so name it so its subject is plain from the name.
+it, and the folder's `README.md` describes it, so name it so its subject is plain from the name.
 
 ---
 
@@ -109,8 +114,8 @@ The fields narrow a search before any note is opened:
 | `status: deprecated` or `archived` | Superseded notes, which retrieval reads last                        |
 | Anything under `Profile/`          | Personal data about your user: surface it with discretion           |
 
-The notes an agent reads at the start of every session are `STARTUP` in `.github/scripts/vault.py`,
-listed in [`AGENTS.md`](../../../AGENTS.md), Start here. `System/Data/catalog.ndjson` holds every
+The files every session reads first are `STARTUP` in `.github/scripts/vault.py`, listed in the root
+[`README.md`](../../../README.md), How A Session Goes. `System/Data/catalog.ndjson` holds every
 note's path, title, type, keywords, description and status, one line each, for a search that reads
 no note at all.
 

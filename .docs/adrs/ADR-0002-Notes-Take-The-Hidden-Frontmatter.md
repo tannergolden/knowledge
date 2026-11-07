@@ -46,7 +46,7 @@ On GitHub, where the vault lives, that block renders as a table at the top of ev
 callouts render as raw text, and seven of the fifteen fields repeat what the path or git already
 say. Claude Code hooks in `.claude/` ran the session start, the lint after each edit and the
 end-of-turn redraw, for Claude Code alone, while the agent rules now come from the intelligence
-stub in [`AGENTS.md`](../../AGENTS.md).
+stub in `AGENTS.md`.
 
 ---
 

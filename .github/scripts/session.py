@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """The vault's session helpers: orient a session, check a note after an edit, and tidy up when a turn ends.
 
-WHY THIS EXISTS. These began as the vault's Claude Code hooks. The vault no
-longer carries an agent configuration of its own, so nothing wires them;
-each runs by hand, and an agent's own hook settings may call one:
+WHY THIS EXISTS. These began as the vault's Claude Code hooks. The vault
+carries no agent configuration of its own, so nothing wires them; each runs
+by hand, and any app's own hook settings may call one:
 
-- start: a short orientation card. It lists the startup notes, the two
-  newest session summaries and anything waiting at the Inbox, as paths to
-  read rather than whole files, so the card stays short.
+- start: a short orientation card. It lists the files every session reads
+  first (the root README.md, Profile/Working Style.md and Memory/Log.md), the
+  two newest session summaries, and, when files wait at the Inbox, the
+  Inbox's README.md and each waiting file, as paths to read rather than whole
+  files, so the card stays short.
 - after-edit: given a hook's JSON on stdin naming the file just written,
   checks it with lint-notes.py and reports any problem, so a mistake is
   fixed in the same turn.
@@ -40,7 +42,7 @@ CURRENT = 'Memory/Context/Current'
 
 
 def start(root: pathlib.Path) -> None:
-    print('Vault startup (AGENTS.md, Start here). The startup set is listed, not inlined:')
+    print('Vault startup (README.md, How A Session Goes). The startup set is listed, not inlined:')
     print('Read every file on a READ line before substantive work.')
     for path in vault.startup_notes(root):
         print(f'READ {vault.rel(root, path)}')
@@ -50,13 +52,17 @@ def start(root: pathlib.Path) -> None:
     if not summaries:
         print(f'No session summaries in {CURRENT} yet.')
     drops = vault.inbox_drops(root)
+    protocol = vault.folder_note(root / vault.INBOX)
+    if drops and protocol.is_file():
+        print(f'READ {vault.rel(root, protocol)}  (how to sort the Inbox)')
     for path in drops:
         print(f'INBOX {vault.rel(root, path)}')
     if drops:
         noun = 'file waits' if len(drops) == 1 else 'files wait'
-        print(f'{len(drops)} {noun} at the Inbox; sort them per Inbox/Inbox.md before other work.')
+        print(f'{len(drops)} {noun} at the Inbox; sort them per {vault.rel(root, protocol)} before other work.')
     else:
         print('Inbox clear.')
+    print("Before changing anything in a folder, read its README.md and the README.md of each folder above it.")
 
 
 def run(script: str, *args: str, timeout: int = 120) -> subprocess.CompletedProcess[str] | None:

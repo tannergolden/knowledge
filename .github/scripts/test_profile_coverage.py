@@ -67,24 +67,33 @@ class TestProfileCoverage(unittest.TestCase):
         self.assertEqual((focus['substantive'], focus['unconfirmed'], focus['depth']), (1, 1, 0))
 
     def test_a_folder_facet_counts_its_entries(self) -> None:
-        self.vault.note('Profile/Values/Values.md', body='# Values\n')
+        self.vault.note('Profile/Values/README.md', body='# Values\n')
         self.vault.note('Profile/Values/Honesty.md', body='# Honesty\nTell the truth even when it costs.\n')
         values = self.vault.run(SCRIPT, 'Values', '--json')
         row = json.loads(values.stdout)
+        # The facet's README.md is the facet itself, never one of its entries.
+        self.assertEqual(row['path'], 'Profile/Values/README.md')
         self.assertEqual((row['files'], row['entries'], row['substantive']), (2, 1, 1))
-        self.assertEqual(row['entry_files'][0]['name'], 'Honesty.md')
+        self.assertEqual([entry['name'] for entry in row['entry_files']], ['Honesty.md'])
         self.assertIn('sections', row)
 
     def test_lines_in_the_generated_entries_block_do_not_count(self) -> None:
-        self.vault.note('Profile/Goals/Goals.md', body='# Goals\n<!-- brain:profile-entries (x) -->\n- [[Profile/Goals/Run|Run]]\n'
-                                                        '<!-- /brain:profile-entries -->\n')
+        self.vault.note('Profile/Goals/README.md', body='# Goals\n<!-- brain:profile-entries (x) -->\n- [[Profile/Goals/Run|Run]]\n'
+                                                         '<!-- /brain:profile-entries -->\n')
         self.assertEqual(self.facet(self.report(), 'Goals')['substantive'], 0)
 
     def test_the_template_folder_counts_as_scaffold(self) -> None:
         self.vault.write('Profile/.template/Entry.md', '---\ntitle: x\n---\nDescribe the entry here.\n')
-        self.vault.note('Profile/Skills/Skills.md', body='# Skills\n')
+        self.vault.note('Profile/Skills/README.md', body='# Skills\n')
         self.vault.note('Profile/Skills/Cooking.md', body='# Cooking\nDescribe the entry here.\n')
         self.assertEqual(self.facet(self.report(), 'Skills')['substantive'], 0)
+
+    def test_the_template_folders_readme_is_no_scaffold(self) -> None:
+        # The README.md explains the scaffolds and is never copied, so its lines say nothing about an entry.
+        self.vault.write('Profile/.template/README.md', '<!--\ntitle: x\n-->\nEach scaffold makes one entry.\n')
+        self.vault.note('Profile/Skills/README.md', body='# Skills\n')
+        self.vault.note('Profile/Skills/Cooking.md', body='# Cooking\nEach scaffold makes one entry.\n')
+        self.assertEqual(self.facet(self.report(), 'Skills')['substantive'], 1)
 
     def test_working_style_leads_until_it_holds_something(self) -> None:
         self.vault.note('Profile/Biography.md', body='# Biography\nA real line.\n')

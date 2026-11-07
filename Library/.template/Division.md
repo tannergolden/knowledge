@@ -7,7 +7,7 @@ keywords: ["[sub-discipline]", "[synonym]", "template"]
 
 # 📁 Library / [Class] / [Division Name] /
 
-> Folder doc for a division, added when the division accumulates enough content to need a finding aid (literary warrant - do not pre-create one for an empty folder). On filing: set `type: index`, and give the copy its real title, description and keywords.
+> The README for a division folder, added when the division accumulates enough content to need a finding aid (literary warrant - do not pre-create one for an empty folder). On filing: save it in the division's folder as `README.md`, never as a note named after the folder; set `type: index`, and give the copy its real title, description and keywords.
 
 ## Purpose
 
@@ -19,4 +19,4 @@ keywords: ["[sub-discipline]", "[synonym]", "template"]
 
 ## Conventions
 
-Inherits tagging, the freshness model, the catalog-record model, and the classification rules from `Library/Library.md` and the parent class doc. This doc adds no rules of its own.
+Inherits tagging, the freshness model, the catalog-record model, and the classification rules from `Library/README.md` and the parent class's README. This README adds no rules of its own.

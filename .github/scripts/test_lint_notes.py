@@ -41,13 +41,13 @@ class TestLintNotes(unittest.TestCase):
         self.assertIn(needle, result.stdout)
 
     def test_a_valid_note_passes(self) -> None:
-        self.vault.note('Library/Library.md')
+        self.vault.note('Library/README.md')
         result = self.lint()
         self.assertEqual(result.returncode, 0, result.stdout)
         self.assertIn('1 note passes.', result.stdout)
 
     def test_a_missing_field(self) -> None:
-        self.vault.note('Library/Library.md', description=None)
+        self.vault.note('Library/README.md', description=None)
         self.assert_flags('missing field: description')
 
     def test_no_frontmatter_and_an_empty_note(self) -> None:
@@ -58,16 +58,16 @@ class TestLintNotes(unittest.TestCase):
         self.assertIn('the note is empty', result.stdout)
 
     def test_values_outside_the_schema(self) -> None:
-        self.vault.note('Library/Library.md', type='essay', status='done', keywords=['Cooking', 'x', 'x'])
+        self.vault.note('Library/README.md', type='essay', status='done', keywords=['Cooking', 'x', 'x'])
         result = self.lint()
         for needle in ("type 'essay'", "status 'done'", "keyword 'Cooking' is not lowercase",
                        'a keyword appears twice'):
             self.assertIn(needle, result.stdout)
 
     def test_status_is_left_out_while_a_note_is_current(self) -> None:
-        self.vault.note('Library/Library.md', status='active')
+        self.vault.note('Library/README.md', status='active')
         self.assert_flags('leave it out while the note is current')
-        self.vault.note('Library/Library.md', status='deprecated')
+        self.vault.note('Library/README.md', status='deprecated')
         self.assertEqual(self.lint().returncode, 0)
 
     def test_a_fenced_note_is_caught(self) -> None:
@@ -81,38 +81,57 @@ class TestLintNotes(unittest.TestCase):
         self.vault.note('Projects/Site/Overview.md', type='template')
         self.assert_flags("type 'template' outside a .template/ folder")
 
+    def test_a_copied_readme_takes_its_real_type(self) -> None:
+        # A venture's README.md is copied from the scaffold's, which is typed template; the copy is the folder's note.
+        self.vault.note('Ventures/.template/README.md', type='template')
+        self.assertEqual(self.lint().returncode, 0)
+        self.vault.note('Ventures/Acme/README.md', type='template')
+        self.assert_flags("type 'template' outside a .template/ folder")
+
     def test_the_old_schema_is_retired(self) -> None:
-        self.vault.note('Library/Library.md', tags=['library'], layer=1, version='01.00.00')
+        self.vault.note('Library/README.md', tags=['library'], layer=1, version='01.00.00')
         result = self.lint()
         for field in ('tags', 'layer', 'version'):
             self.assertIn(f"'{field}' is retired", result.stdout)
 
-    def test_a_readme_outside_the_top_folders_fails(self) -> None:
-        self.vault.note('Memory/Memory.md')
-        self.vault.write('Memory/README.md', 'The GitHub page.\n')
-        self.assertEqual(self.lint().returncode, 0, 'a top folder carries a README')
-        self.vault.write('Memory/Context/README.md', 'A second copy.\n')
-        self.assert_flags('a README.md belongs only in the seven top folders')
-        self.assert_flags('a README.md belongs only in the seven top folders', 'Memory/Context/README.md')
+    def test_a_note_named_after_its_folder_fails(self) -> None:
+        self.vault.note('Memory/README.md')
+        self.vault.note('Memory/Context/README.md')
+        self.vault.note('Library/.template/Division.md', type='template')
+        self.assertEqual(self.lint().returncode, 0, 'every folder explains itself in its README.md')
+        self.vault.note('Memory/Context/Context.md')
+        self.assert_flags("a note named after its folder repeats the folder's README.md")
+        self.assert_flags("a note named after its folder repeats the folder's README.md", 'Memory/Context/Context.md')
+
+    def test_a_readme_is_a_note_held_to_the_schema(self) -> None:
+        self.vault.write('Memory/README.md', '# Memory\n')
+        self.assert_flags('no frontmatter block')
+        self.assert_flags('no frontmatter block', 'Memory/README.md')
 
     def test_only_a_record_or_a_template_adds_fields(self) -> None:
-        self.vault.note('Library/Library.md', lens='wide')
+        self.vault.note('Library/README.md', lens='wide')
         self.assert_flags("'lens' is not one of a note's fields")
-        self.vault.note('Library/Library.md', type='record', lens='wide', id='in-idea-1')
+        self.vault.note('Library/README.md', type='record', lens='wide', id='in-idea-1')
         self.assertEqual(self.lint().returncode, 0)
 
     def test_keywords_stay_few(self) -> None:
-        self.vault.note('Library/Library.md', keywords=[f'term {i}' for i in range(9)])
+        self.vault.note('Library/README.md', keywords=[f'term {i}' for i in range(9)])
         self.assert_flags('9 keywords')
 
     def test_a_library_holding_carries_one_freshness_token(self) -> None:
         self.vault.note('Library/Arts/Paint.md', type='reference', keywords=['pigment'])
         self.assert_flags('a Library holding carries one freshness token')
         self.vault.note('Library/Arts/Paint.md', type='reference', keywords=['freshness/timeless', 'pigment'])
-        self.assertEqual(self.lint().returncode, 0)
+        self.vault.note('Library/Arts/README.md', keywords=['painting'])
+        self.assertEqual(self.lint().returncode, 0, "a folder's README.md is no holding")
 
     def test_a_scaffold_carries_no_wikilinks(self) -> None:
         self.vault.note('Library/.template/Card.md', body='See [[Library]].\n', type='template')
+        self.assert_flags('a scaffold carries no wikilinks')
+
+    def test_a_scaffold_folders_readme_carries_no_wikilinks(self) -> None:
+        self.vault.note('Ventures/.template/Sales/README.md', body='See [[Ventures/README|Ventures]].\n',
+                        type='template')
         self.assert_flags('a scaffold carries no wikilinks')
 
     def test_underscores_and_em_dashes(self) -> None:
@@ -139,9 +158,11 @@ class TestLintNotes(unittest.TestCase):
 
     def test_a_file_outside_the_walk_is_skipped(self) -> None:
         self.vault.write('.github/README.md', '# not a note\n')
-        result = self.lint('.github/README.md')
+        self.vault.write('README.md', '# the vault root, a page\n')
+        result = self.lint('.github/README.md', 'README.md')
         self.assertEqual(result.returncode, 0)
         self.assertIn('0 notes pass.', result.stdout)
+        self.assertEqual(self.lint().returncode, 0)
 
     def test_a_missing_file_is_a_usage_error(self) -> None:
         self.assertEqual(self.lint('Nope.md').returncode, 2)

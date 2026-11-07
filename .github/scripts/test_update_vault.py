@@ -41,14 +41,14 @@ class Base(unittest.TestCase):
     def setUp(self) -> None:
         self.vault = fixtures.Vault()
         v = self.vault
-        v.note('Memory/Context/Current/Current.md', body='# Current\n\n' + block('tier-summaries'))
-        v.note('Memory/Context/Recent/Recent.md', body='# Recent\n\n' + block('tier-summaries'))
+        v.note('Memory/Context/Current/README.md', body='# Current\n\n' + block('tier-summaries'))
+        v.note('Memory/Context/Recent/README.md', body='# Recent\n\n' + block('tier-summaries'))
         for name, folder in (('People', 'Memory/Entities/People'), ('Organizations', 'Memory/Entities/Organizations'),
                              ('Places', 'Memory/Entities/Places'), ('Decisions', 'Memory/Decisions'),
                              ('Events', 'Memory/Events'), ('Insights', 'Memory/Insights')):
-            v.note(f'{folder}/{name}.md', body=f'# {name}\n\n' + block('collection-entries'))
+            v.note(f'{folder}/README.md', body=f'# {name}\n\n' + block('collection-entries'))
         for name in ('Values', 'Goals', 'Skills', 'Health'):
-            v.note(f'Profile/{name}/{name}.md', body=f'# {name}\n\n' + block('profile-entries'))
+            v.note(f'Profile/{name}/README.md', body=f'# {name}\n\n' + block('profile-entries'))
         v.note('Memory/Log.md', body='# Log\n\n## Open Loops\n\n' + block('open-loops') + '\n## Log Entries\n\n')
 
     def tearDown(self) -> None:
@@ -99,15 +99,15 @@ class TestBlocks(Base):
         self.vault.note('Memory/Entities/People/Ada Lovelace.md')
         self.vault.note('Profile/Values/Honesty.md')
         self.update()
-        self.assertIn(drawn('tier-summaries', '- [[20260101-000000]]'), self.vault.read('Memory/Context/Current/Current.md'))
+        self.assertIn(drawn('tier-summaries', '- [[20260101-000000]]'), self.vault.read('Memory/Context/Current/README.md'))
         self.assertIn(drawn('tier-summaries', '_No summaries in this tier right now._'),
-                      self.vault.read('Memory/Context/Recent/Recent.md'))
+                      self.vault.read('Memory/Context/Recent/README.md'))
         self.assertIn(drawn('collection-entries', '- [[Memory/Entities/People/Ada Lovelace|Ada Lovelace]]'),
-                      self.vault.read('Memory/Entities/People/People.md'))
+                      self.vault.read('Memory/Entities/People/README.md'))
         self.assertIn(drawn('collection-entries', '_No places recorded yet._'),
-                      self.vault.read('Memory/Entities/Places/Places.md'))
+                      self.vault.read('Memory/Entities/Places/README.md'))
         self.assertIn(drawn('profile-entries', '- [[Profile/Values/Honesty|Honesty]]'),
-                      self.vault.read('Profile/Values/Values.md'))
+                      self.vault.read('Profile/Values/README.md'))
 
     def test_open_loops_come_from_the_log(self) -> None:
         log = self.vault.read('Memory/Log.md') + (
@@ -117,43 +117,58 @@ class TestBlocks(Base):
         self.update()
         self.assertIn(drawn('open-loops', '- Call the bank  (opened 2026-01-02)'), self.vault.read('Memory/Log.md'))
 
-    def test_children_only_where_a_folder_note_asks(self) -> None:
-        self.vault.note('Library/Arts/Arts.md', body='# Arts\n\n' + block('children'))
-        self.vault.note('Library/Arts/Painting/Painting.md')
-        self.vault.note('Library/Science/Science.md')
-        self.vault.note('Library/Science/Physics/Physics.md')
+    def test_children_only_where_a_folders_readme_asks(self) -> None:
+        self.vault.note('Library/Arts/README.md', body='# Arts\n\n' + block('children'))
+        self.vault.note('Library/Arts/Painting/README.md')
+        self.vault.note('Library/Arts/Sculpture/Notes.md')
+        self.vault.note('Library/Science/README.md')
+        self.vault.note('Library/Science/Physics/README.md')
         self.update()
-        self.assertIn(drawn('children', '- [[Library/Arts/Painting/Painting|Painting]]'),
-                      self.vault.read('Library/Arts/Arts.md'))
-        self.assertNotIn('brain:children', self.vault.read('Library/Science/Science.md'))
+        # A subfolder is listed by its README.md, named after the folder; one with no README.md is not.
+        self.assertIn(drawn('children', '- [[Library/Arts/Painting/README|Painting]]'),
+                      self.vault.read('Library/Arts/README.md'))
+        self.assertNotIn('brain:children', self.vault.read('Library/Science/README.md'))
+
+    def test_a_scaffolds_readme_is_never_drawn(self) -> None:
+        text = '# [Company]\n\n' + block('children')
+        self.vault.note('Ventures/.template/README.md', body=text, type='template')
+        self.vault.note('Ventures/.template/Sales/README.md', type='template')
+        self.update()
+        self.assertIn(text, self.vault.read('Ventures/.template/README.md'))
 
     def test_a_registered_note_without_its_block_is_an_error(self) -> None:
-        self.vault.note('Memory/Events/Events.md', body='# Events\n')
+        self.vault.note('Memory/Events/README.md', body='# Events\n')
         result = self.update()
         self.assertEqual(result.returncode, 1)
-        self.assertIn('Memory/Events/Events.md: has no <!-- brain:collection-entries --> block', result.stdout)
+        self.assertIn('Memory/Events/README.md: has no <!-- brain:collection-entries --> block', result.stdout)
 
     def test_an_old_marker_counts_as_stale_and_is_migrated(self) -> None:
         self.update()
-        text = self.vault.read('Memory/Events/Events.md').replace(NOTE, 'auto-maintained by brain.command')
-        self.vault.write('Memory/Events/Events.md', text)
+        text = self.vault.read('Memory/Events/README.md').replace(NOTE, 'auto-maintained by brain.command')
+        self.vault.write('Memory/Events/README.md', text)
         self.assertEqual(self.update('--check').returncode, 1)
         self.update()
-        self.assertIn(NOTE, self.vault.read('Memory/Events/Events.md'))
+        self.assertIn(NOTE, self.vault.read('Memory/Events/README.md'))
         self.assertEqual(self.update('--check').returncode, 0)
 
 
 class TestCatalogs(Base):
     def test_the_note_catalog(self) -> None:
         self.vault.note('Library/.template/Card.md', type='template')
-        self.vault.note('Library/Library.md', keywords=['books'])
+        self.vault.note('Library/.template/README.md', title='[Company]')
+        self.vault.note('Library/README.md', keywords=['books'])
+        self.vault.write('README.md', '# The vault\n')
         self.update()
         lines = self.vault.read('System/Data/catalog.ndjson').splitlines()
         records = [json.loads(line) for line in lines]
         paths = [r['path'] for r in records]
         self.assertEqual(paths, sorted(paths))
+        # No scaffold is cataloged, a scaffold folder's README.md included, and the root's README.md is a page.
         self.assertNotIn('BRAIN/Library/.template/Card.md', paths)
-        library = next(r for r in records if r['path'] == 'BRAIN/Library/Library.md')
+        self.assertNotIn('BRAIN/Library/.template/README.md', paths)
+        self.assertNotIn('BRAIN/README.md', paths)
+        self.assertNotIn('[Company]', [r['title'] for r in records])
+        library = next(r for r in records if r['path'] == 'BRAIN/Library/README.md')
         self.assertEqual(sorted(library), ['description', 'keywords', 'path', 'status', 'title', 'type'])
         self.assertEqual(library['keywords'], ['books'])
         self.assertEqual(library['type'], 'index')

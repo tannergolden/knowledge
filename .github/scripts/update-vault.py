@@ -9,8 +9,10 @@ an AI keeping it by hand would let it drift. This script owns all of it:
    overflow moves to Archive/<year>/. Nothing is ever deleted.
 2. The generated blocks, between <!-- brain:NAME --> and <!-- /brain:NAME -->:
    each tier's list of summaries, each Memory collection's and Profile
-   facet's list of entries, the subfolder list in any folder note that asks
-   for one, and the Open Loops view of Memory/Log.md.
+   facet's list of entries, the list of subfolders in any folder's README.md
+   that asks for one, and the Open Loops view of Memory/Log.md. A folder's
+   README.md is its note, so every one of these lists lives in a README but
+   the Open Loops view.
 3. The catalog: System/Data/catalog.ndjson, one record per note.
 4. The .gitkeep markers: an empty folder keeps one, a folder with files loses it.
 
@@ -140,30 +142,29 @@ def open_loops(text: str) -> str:
 
 
 def children(root: pathlib.Path, note: pathlib.Path) -> str:
-    """Links to the notes of a folder's immediate subfolders."""
+    """Links to the README.md of each of a folder's immediate subfolders, named by the subfolder."""
     docs = []
     for sub in sorted(note.parent.iterdir(), key=lambda p: p.name):
-        if sub.is_dir() and not sub.name.startswith('.') and sub.name != 'Template' and (sub / f'{sub.name}.md').is_file():
-            docs.append(sub / f'{sub.name}.md')
+        if sub.is_dir() and not sub.name.startswith('.') and sub.name != 'Template' and vault.folder_note(sub).is_file():
+            docs.append(vault.folder_note(sub))
     if not docs:
         return '_No subfolders yet._'
-    return '\n'.join(f'- [[{vault.rel(root, d.parent)}/{d.stem}|{d.stem}]]' for d in docs)
+    return '\n'.join(f'- [[{vault.rel(root, d.parent)}/{d.stem}|{d.parent.name}]]' for d in docs)
 
 
 def registered_blocks(root: pathlib.Path) -> list[tuple[pathlib.Path, str, object]]:
     """Each (note, block, how to draw it) the vault requires."""
     out: list[tuple[pathlib.Path, str, object]] = []
     for _name, _cap, folder in vault.TIERS:
-        note = root / folder / f'{pathlib.PurePosixPath(folder).name}.md'
+        note = vault.folder_note(root / folder)
         body = '\n'.join(f'- [[{p.stem}]]' for p in vault.tier_summaries(root / folder)) \
             or '_No summaries in this tier right now._'
         out.append((note, 'tier-summaries', body))
     for name, folder in vault.COLLECTIONS:
-        out.append((root / folder / f'{name}.md', 'collection-entries',
+        out.append((vault.folder_note(root / folder), 'collection-entries',
                     link_list(folder, vault.entry_files(root / folder), f'_No {name.lower()} recorded yet._')))
     for folder in vault.PROFILE_COLLECTIONS:
-        name = pathlib.PurePosixPath(folder).name
-        out.append((root / folder / f'{name}.md', 'profile-entries',
+        out.append((vault.folder_note(root / folder), 'profile-entries',
                     link_list(folder, vault.entry_files(root / folder), '_None recorded yet._')))
     out.append((root / vault.LOG, 'open-loops', open_loops))
     return out

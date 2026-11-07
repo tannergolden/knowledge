@@ -12,7 +12,10 @@ reads, and never writes.
 A line counts as scaffold when its fingerprint is in the frozen table below,
 taken from the blank facets, or in the live Profile/.template/ files. Refreeze
 the table with --print-scaffold only on the blank template: run on a filled
-Profile, it would publish checksums of personal lines.
+Profile, it would publish checksums of personal lines. A refreeze keeps every
+fingerprint the table already holds and adds the blank facets' current lines,
+because the flat facets are each vault's own and never synced: a vault whose
+blank facet still holds an older scaffold's line keeps scoring it as scaffold.
 
 Run it:
 
@@ -34,8 +37,8 @@ import zlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import vault  # noqa: E402  (vault.py sits beside this file)
 
-# The twelve facets in Profile.md's order. A flat facet is one file; a folder
-# facet is its namesake plus one file per entry.
+# The twelve facets in Profile/README.md's order. A flat facet is one file; a
+# folder facet is its README.md plus one file per entry.
 FACETS = (
     ('Working Style', 'flat'), ('Biography', 'flat'), ('Personality', 'flat'), ('Values', 'folder'),
     ('Goals', 'folder'), ('Relationships', 'flat'), ('Finances', 'flat'), ('Lifestyle', 'flat'),
@@ -54,7 +57,8 @@ BLOCK_START = re.compile(r'<!--\s*brain:profile-entries\b')
 BLOCK_END = re.compile(r'<!--\s*/brain:profile-entries\s*-->')
 
 # The frozen scaffold fingerprint: per facet file, the CRC32 of each normalized
-# body line of the blank facet. Refreeze with --print-scaffold, on the blank template only.
+# body line of the blank facet, in this release and the ones before it. Refreeze
+# with --print-scaffold, on the blank template only.
 SCAFFOLD = {
     'Working Style.md': frozenset({
         225209147, 442933976, 567785087, 872849886, 1473648760, 1528284317, 1639605086, 1763157381,
@@ -64,43 +68,44 @@ SCAFFOLD = {
     'Biography.md': frozenset({
         310840053, 354147002, 401978619, 453334733, 482937417, 519194785, 549516871, 658314844,
         762757395, 831918062, 941151755, 1029135874, 1051983102, 1139149987, 1171063423, 1242860332,
-        1445288146, 1537616239, 1707618477, 2038284520, 2124765175, 2155206015, 2293530323,
-        2328447477, 2352517808, 2467674828, 2527877439, 2690999041, 2701507878, 2821568757,
-        3095903692, 3166980710, 3280337304, 3326179636, 3349361925, 3375409968, 3533523800,
-        3557068584, 3707757044, 3965579265, 4267856163
+        1445288146, 1537616239, 1707618477, 2038284520, 2089378971, 2124765175, 2155206015,
+        2293530323, 2328447477, 2352517808, 2467674828, 2527877439, 2690999041, 2701507878,
+        2821568757, 3095903692, 3166980710, 3280337304, 3326179636, 3349361925, 3375409968,
+        3533523800, 3557068584, 3707757044, 3965579265, 4267856163
     }),
     'Personality.md': frozenset({
         43106626, 172949556, 263251845, 385762225, 414789057, 453011166, 597959258, 766929257,
         787799655, 868917294, 940583144, 988814532, 1286581933, 1336166355, 1440537495, 1469418942,
         1502783263, 1574938528, 1660748535, 1718235761, 1769595493, 1918441090, 1947656589,
         1983469875, 2272899200, 2340378090, 2511452218, 2570411252, 2678175334, 2731067632,
-        2774464729, 2881780122, 2908505410, 2972041163, 2994267298, 3164336382, 3329436946,
-        3344212629, 3377343814, 3377466330, 3442278076, 3492840022, 3517038197, 3633935119,
-        4094835117, 4106442123, 4147376602
+        2774464729, 2881780122, 2908505410, 2972041163, 2982020050, 2994267298, 3164336382,
+        3329436946, 3344212629, 3377343814, 3377466330, 3442278076, 3492840022, 3517038197,
+        3633935119, 4094835117, 4106442123, 4147376602
     }),
-    'Values/Values.md': frozenset({
+    'Values/README.md': frozenset({
         64571753, 133184907, 567585524, 849332693, 1100624917, 1242869265, 1393933323, 1541944181,
-        1692748845, 1791513285, 1964396377, 2030850315, 2146954983, 2195606387, 2215321892,
-        2460764168, 2470841111, 2536750863, 2547483114, 2970584590, 3447046022, 3863433903,
-        4015021805, 4054868288, 4131442375, 4208915591, 4289391736
+        1692748845, 1770499243, 1791513285, 1842859433, 1964396377, 2030850315, 2146954983,
+        2195606387, 2215321892, 2460764168, 2470841111, 2536750863, 2547483114, 2970584590,
+        3447046022, 3863433903, 4015021805, 4054868288, 4131442375, 4208915591, 4289391736
     }),
-    'Goals/Goals.md': frozenset({
+    'Goals/README.md': frozenset({
         537310124, 833632538, 1509716455, 1541944181, 1555809486, 3357936836
     }),
     'Relationships.md': frozenset({
-        45720942, 400581226, 909950840, 1493176178, 1589068732, 3705302770, 3712249236, 4100675524
+        45720942, 400581226, 909950840, 1098543220, 1493176178, 1589068732, 3705302770, 3712249236,
+        4100675524
     }),
     'Finances.md': frozenset({
-        158731507, 640776382, 1543356404, 1637126693, 2161504222, 3032485432, 3519053553,
-        3622255849, 4162862514, 4165506174, 4215442947
+        158731507, 640776382, 1543356404, 1637126693, 2161504222, 2451098709, 3032485432,
+        3519053553, 3622255849, 4162862514, 4165506174, 4215442947
     }),
     'Lifestyle.md': frozenset({
-        347189939, 501402642, 818900200, 1442215377, 2008339254, 2452350216, 2590878688, 2728366794,
-        3642232629, 3999570569
+        251181226, 347189939, 501402642, 818900200, 1442215377, 2008339254, 2452350216, 2590878688,
+        2728366794, 3642232629, 3999570569
     }),
-    'Skills/Skills.md': frozenset({
-        1541944181, 1695391521, 2435509755, 2820437041, 3164114714, 3191792892, 3315365580,
-        3669970215, 3697358632
+    'Skills/README.md': frozenset({
+        1256340403, 1541944181, 1695391521, 1861054185, 2435509755, 2820437041, 3164114714,
+        3191792892, 3315365580, 3669970215, 3697358632
     }),
     'Preferences.md': frozenset({
         124895376, 315944096, 322728521, 522087176, 693982146, 1053336049, 1066299920, 1242246075,
@@ -108,14 +113,20 @@ SCAFFOLD = {
         2869907037, 2874091983, 2874497879, 2881929483, 3280393706, 3634789523, 3859953358,
         4140291926
     }),
-    'Health/Health.md': frozenset({
-        134704662, 248177932, 1423946993, 1541944181, 2750784822, 2970566443, 3376311458
+    'Health/README.md': frozenset({
+        134704662, 248177932, 1423946993, 1541944181, 2748034427, 2750784822, 2970566443,
+        3374826145, 3376311458, 3801061885
     }),
     'Focus.md': frozenset({
         904439264, 949487940, 1041995441, 1104286287, 1112599439, 1848870927, 2495542468,
         2659992988, 2887700068, 3278924594, 4067029393, 4086500816
     }),
 }
+
+
+def facet_key(name: str, kind: str) -> str:
+    """A facet's file under Profile/: the flat file itself, or a folder facet's README.md."""
+    return f'{name}.md' if kind == 'flat' else f'{name}/{vault.README}'
 
 
 def fingerprint(line: str) -> int:
@@ -140,11 +151,14 @@ def scaffold_lines(text: str) -> set[int]:
 
 
 def template_lines(root: pathlib.Path) -> frozenset[int]:
-    """The live Profile/.template/ bodies, so a freshly copied entry scores empty until it is filled."""
+    """The live Profile/.template/ bodies, so a freshly copied entry scores empty until it is filled.
+    The folder's README.md explains the scaffolds and is never copied, so it is not one of them."""
     out: set[int] = set()
     folder = root / 'Profile' / '.template'
     if folder.is_dir():
         for path in sorted(folder.glob('*.md')):
+            if vault.is_folder_note(path):
+                continue
             try:
                 out |= scaffold_lines(vault.read_text(path))
             except OSError:
@@ -210,7 +224,7 @@ def coverage(root: pathlib.Path) -> tuple[list[dict[str, object]], str]:
     live = template_lines(root)
     facets = []
     for name, kind in FACETS:
-        key = f'{name}.md' if kind == 'flat' else f'{name}/{name}.md'
+        key = facet_key(name, kind)
         path = root / 'Profile' / key
         scaffold = frozenset(SCAFFOLD.get(key, frozenset()) | live)
         files = substantive = unconfirmed = 0
@@ -223,10 +237,8 @@ def coverage(root: pathlib.Path) -> tuple[list[dict[str, object]], str]:
             substantive += int(result['substantive'])
             unconfirmed += int(result['unconfirmed'])
             sections = list(result['sections'])  # type: ignore[arg-type]
-        if kind == 'folder' and (root / 'Profile' / name).is_dir():
-            for entry in sorted((root / 'Profile' / name).glob('*.md')):
-                if entry.name == f'{name}.md' or entry.name.startswith('.'):
-                    continue
+        if kind == 'folder':
+            for entry in vault.entry_files(root / 'Profile' / name):
                 scored = score(entry, scaffold) or {'substantive': 0, 'unconfirmed': 0}
                 files += 1
                 entries.append({'name': entry.name, 'substantive': scored['substantive'],
@@ -270,9 +282,10 @@ def table(facets: list[dict[str, object]]) -> None:
 def print_scaffold(root: pathlib.Path) -> None:
     print('SCAFFOLD = {')
     for name, kind in FACETS:
-        key = f'{name}.md' if kind == 'flat' else f'{name}/{name}.md'
+        key = facet_key(name, kind)
         path = root / 'Profile' / key
-        hashes = sorted(scaffold_lines(vault.read_text(path))) if path.is_file() else []
+        current = scaffold_lines(vault.read_text(path)) if path.is_file() else set()
+        hashes = sorted(set(SCAFFOLD.get(key, frozenset())) | current)
         print(f"    '{key}': frozenset({{")
         line = '       '
         for i, value in enumerate(hashes):

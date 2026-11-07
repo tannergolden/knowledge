@@ -47,7 +47,7 @@ class TestCheckVault(unittest.TestCase):
         self.assertIn('All 4 vault checks pass.', result.stdout)
 
     def test_one_failing_check_fails_the_run_and_is_named(self) -> None:
-        self.vault.write('Memory/Memory.md', '# no frontmatter, and [[Nowhere]]\n')
+        self.vault.write('Memory/README.md', '# no frontmatter, and [[Nowhere]]\n')
         self.vault.init_git()
         result = self.vault.run(SCRIPT)
         self.assertEqual(result.returncode, 1)

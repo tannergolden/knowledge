@@ -2,10 +2,10 @@
 """Check the wikilink graph: every link resolves, and links follow the hub topology.
 
 WHY THIS EXISTS. The vault is a knowledge graph of wikilinks, and its links
-follow one shape (.docs/technical/vault/Link-Topology.md). A folder's own note links
-the files in its folder and the notes of its immediate subfolders, and every
-other note links nothing and names files by plain path. Links
-flow downhill and never back. A broken link is a lie in the graph, and a link
+follow one shape (.docs/technical/vault/Link-Topology.md). A folder's own note,
+its README.md, links the files in its folder and the README.md of each
+immediate subfolder, and every other note links nothing and names files by
+plain path. Links flow downhill and never back. A broken link is a lie in the graph, and a link
 out of place makes the graph, and every note's backlinks, say something
 untrue, and nothing else would notice either one. Link checkers that read Markdown links
 do not read wikilinks, so this does.
@@ -13,7 +13,8 @@ do not read wikilinks, so this does.
 It fails on a link that resolves to no file, a link the topology does not
 allow, a link into a .template/ scaffold, and two notes that link each other.
 It warns on a link that matches several files (give it a path) and on longer
-cycles. Links inside code and inside %% comments are not links.
+cycles. Links inside code and inside %% comments are not links. Every folder
+has a README.md, so a link to one names its folder: [[Library/README|Library]].
 
 Run it:
 
@@ -48,16 +49,16 @@ def allowed(source: str, target: str) -> tuple[bool, str]:
     """Whether the hub topology lets `source` link `target`, and why not."""
     src, dst = source.split('/'), target.split('/')
     if len(src) == 1:
-        return False, ('the vault root holds no notes; AGENTS.md names the top folder notes '
+        return False, ('the vault root holds no notes; its README.md names the top folders '
                        'with Markdown links (Link-Topology.md)')
-    if src[-1].rsplit('.', 1)[0] == src[-2]:
+    if src[-1] == vault.README:
         folder = src[:-1]
         sibling = dst[:-1] == folder
-        child = (len(dst) == len(folder) + 2 and dst[:len(folder)] == folder
-                 and dst[-1].rsplit('.', 1)[0] == dst[-2])
-        return sibling or child, ("a folder's note links the files in its folder and its "
-                                  "subfolders' notes, nothing else (Link-Topology.md)")
-    return False, 'a note that is not a folder note carries no wikilinks; name the file by plain path (Link-Topology.md)'
+        child = len(dst) == len(folder) + 2 and dst[:len(folder)] == folder and dst[-1] == vault.README
+        return sibling or child, ("a folder's README.md links the files in its folder and its "
+                                  "subfolders' README.md files, nothing else (Link-Topology.md)")
+    return False, ("a note that is not a folder's README.md carries no wikilinks; "
+                   'name the file by plain path (Link-Topology.md)')
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -70,7 +71,10 @@ def main(argv: list[str] | None = None) -> int:
     for path in vault.walk_files(root):
         name = vault.rel(root, path)
         if vault.is_template(path.relative_to(root).parts):
-            scaffolds.update({path.stem.lower(), path.name.lower()})
+            # Every folder has a README.md, so that name alone says nothing about a scaffold;
+            # a link into one by path is still caught below, by its .template/ folder.
+            if not vault.is_folder_note(path):
+                scaffolds.update({path.stem.lower(), path.name.lower()})
             continue
         files.append(name)
         for key in {path.name.lower()} | ({path.stem.lower()} if path.suffix == '.md' else set()):

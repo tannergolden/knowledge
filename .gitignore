@@ -242,11 +242,11 @@ _site/
 System/.backups/
 System/Backups/
 
-# System/Data/ holds its folder doc and the catalog update-vault.py draws.
+# System/Data/ holds its README.md and the catalog update-vault.py draws.
 # Anything else there is a leftover of the retired engine or the retired agent
 # catalog: its index, logs and state.
 System/Data/*
-!System/Data/Data.md
+!System/Data/README.md
 !System/Data/catalog.ndjson
 
 # Offline knowledge bases (ZIM files in Library/Reference & Encyclopedia/):

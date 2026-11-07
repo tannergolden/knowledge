@@ -105,7 +105,7 @@ Top VIA strengths (e.g. curiosity, perseverance, judgment) - the traits the user
 
 ## Weaknesses & Blind Spots
 
-Honest dispositional weaknesses and blind spots the user wants help noticing or compensating for. Held with discretion (`Profile/Profile.md`, Rules).
+Honest dispositional weaknesses and blind spots the user wants help noticing or compensating for. Held with discretion (`Profile/README.md`, Rules).
 
 ## Humor
 

@@ -7,7 +7,7 @@ keywords: ["social world", "relational self", "family and friends", "family", "h
 
 # 🫂 Relationships
 
-The user's **relational self** - the social dimension of who they are. This is the "social" of the biopsychosocial model and the relationships domain of the Wheel of Life. Boundary (`Profile/Profile.md`, Rules): the **individual people** in the user's life are records in `Memory/Entities/People/`; this facet holds the user's own relational *structure, roles, and style*, and points to Memory for the actual people rather than duplicating them.
+The user's **relational self** - the social dimension of who they are. This is the "social" of the biopsychosocial model and the relationships domain of the Wheel of Life. Boundary (`Profile/README.md`, Rules): the **individual people** in the user's life are records in `Memory/Entities/People/`; this facet holds the user's own relational *structure, roles, and style*, and points to Memory for the actual people rather than duplicating them.
 
 ## Snapshot
 

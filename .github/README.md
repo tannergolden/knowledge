@@ -2,7 +2,7 @@
 title: '🧠 BRAIN'
 description: 'A public template for a personal knowledge vault: plain Markdown that gives any AI lasting, structured knowledge of one person.'
 type: index
-keywords: [knowledge-vault, ai-agents, template]
+keywords: [knowledge-vault, ai-context, template]
 -->
 
 <!-- markdownlint-disable MD041 -->
@@ -45,13 +45,15 @@ a custom agent all read it the same way.
 - [ ] **Let initialisation run.** It makes the vault yours (the licence holder and the code owner)
       and removes what only the template needs. If nothing happens, dispatch
       🎯 Standards Lifecycle from the Actions tab.
-- [ ] **Open the folder with an AI agent**, and work with it there. Every agent reads
-      [`AGENTS.md`](../AGENTS.md) first.
+- [ ] **Open the folder with any AI assistant, or in an editor**, and work in it there. The root
+      [`README.md`](../README.md) says how to work in the vault, and each folder's own `README.md`
+      how to work in that folder.
 - [ ] **Fill in `Profile/`** with the `/identify` skill, which the home kit in
       `tannergolden/intelligence` installs, and which interviews you and writes only what you confirm.
-- [ ] **Stay current.** Run 🔄 Template Sync when you want this template's improvements, and let
-      🔁 Intelligence Sync keep the universal rules in `AGENTS.md` up to date. Both open a pull
-      request; neither changes anything you have not merged.
+- [ ] **Stay current.** Run 🔄 Template Sync when you want this template's improvements. It opens a
+      pull request, and changes nothing you have not merged. The universal rules for AI assistants
+      come with the home kit, not with this repository: give the vault the `no-intelligence` topic so
+      the hub's sync leaves it alone.
 
 [Setting Up A Vault](../.docs/introduction/Setting-Up-A-Vault.md) takes each step in turn, with the
 settings the automation needs.
@@ -62,10 +64,14 @@ settings the automation needs.
 
 | Where                                                                 | What it holds                                                                                                    |
 | :-------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
-| [`AGENTS.md`](../AGENTS.md)                                           | The rules every agent follows: the universal Constitution from `tannergolden/intelligence`, then the vault's own |
-| Each folder's note                                                    | That folder's rules and procedures, read before working there                                                    |
+| [`README.md`](../README.md) at the root                               | How to work in the vault: the top folders, a session, the commands and where each kind of work goes              |
+| Each folder's `README.md`                                             | That folder's purpose, rules and procedures, read before working there                                           |
 | [`.docs/technical/vault/`](../.docs/technical/vault/README.md)        | The note schema, the keywords, the link topology, how to assemble context and how a session runs                 |
 | [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                          |
+
+The vault holds no instructions for any one AI and no agents: it explains itself, folder by folder,
+to whoever works in it. The universal rules an AI assistant follows come with the home kit from
+`tannergolden/intelligence`, not from this repository.
 
 ---
 
@@ -73,7 +79,7 @@ settings the automation needs.
 
 ```bash
 .
-├── AGENTS.md    # The rules every agent reads first
+├── README.md    # How to work in the vault: read it first
 ├── Inbox/       # Staging for unsorted files, plus the held reports, visuals and ideas
 ├── Library/     # Reference knowledge in ten classes, never personal
 ├── Memory/      # What happened, who is around you, what you decided, what is due
@@ -83,7 +89,8 @@ settings the automation needs.
 └── Ventures/    # Each company you run, one folder each
 ```
 
-Each top folder has a `README.md` for GitHub and a note named after it for the AI.
+Every folder explains itself in a `README.md` at its root, which is also its note, written for
+anyone who works there.
 [How The Vault Works](../.docs/introduction/How-The-Vault-Works.md) says how the parts fit together,
 and the [Glossary](../.docs/references/Glossary.md) defines the vault's own terms.
 
@@ -123,7 +130,7 @@ do when one fails.
 ## 👤 The Developer
 
 The BRAIN was designed and built by **Tanner Golden**: its folder structure, naming conventions,
-agent instructions and scripts all originate with him, and "the developer" means him. "The user"
+documentation and scripts all originate with him, and "the developer" means him. "The user"
 means whoever `Profile/` describes: the vault is portable, so the user is whoever adopts it.
 
 <!-- The domain is capitalised on purpose: initialisation rewrites the template owner's

@@ -24,8 +24,8 @@ _Links flow downhill. Backlinks carry the way back._
 
 Whenever a note names an entity the vault has a file for (a project, a venture, a person, a
 concept), it uses a wikilink, `[[Filename]]`, wherever the topology below allows the edge, and a
-plain code-style path where it does not. The links make the vault a knowledge graph that an agent
-and `check-links.py` can walk.
+plain code-style path where it does not. The links make the vault a knowledge graph that a reader,
+Obsidian and `check-links.py` can walk.
 
 `.github/scripts/check-links.py` enforces the topology: it fails on a link to nothing, a link the
 topology does not allow, a link into a scaffold and two notes that link each other, and warns on a
@@ -36,37 +36,42 @@ comment, are not links.
 
 ## 🌳 Hub-Only Tree
 
-The graph mirrors the file tree, and only folder notes carry edges:
+The graph mirrors the file tree, and only a folder's `README.md`, its note, carries edges:
 
-| From                               | May wikilink                                                                                     |
-| :--------------------------------- | :----------------------------------------------------------------------------------------------- |
-| A folder note (`Memory/Memory.md`) | The files in its own folder, and the notes of its immediate subfolders, one level down           |
-| Any other note                     | **Nothing.** Every reference is a plain code-style path; its hub's link already leads to it      |
-| A file at the vault root           | Nothing. The root holds no notes: `AGENTS.md` names the top folder notes with Markdown links     |
+| From                                   | May wikilink                                                                                            |
+| :------------------------------------- | :------------------------------------------------------------------------------------------------------ |
+| A folder's README (`Memory/README.md`) | The files in its own folder, and the `README.md` of each immediate subfolder, one level down            |
+| Any other note                         | **Nothing.** Every reference is a plain code-style path; its hub's link already leads to it             |
+| A file at the vault root               | Nothing. The root holds no notes: its `README.md` is a page, naming the top folders with Markdown links |
 
 - **Links cascade, never reciprocate.** Links run from the top folders down to their files, from
   the general to the specific. A note never links back to a note that links to it: the
   forward link already records the edge. Where two notes both want the edge, the one nearer the root carries
   it, and the graph stays acyclic.
 - **Related folders connect through their common parent**, never sideways.
-- **The memory tiers are ordinary.** `Memory/Memory.md` links `Context/Context.md`, which links the
-  tier notes (`Current`, `Recent`, `Archive`); the tiers do not link each other, and the cascade
-  between them is described in prose. Each tier note links the summaries in its own folder, and
+- **The memory tiers are ordinary.** `Memory/README.md` links `Context/README.md`, which links the
+  tiers' READMEs (`Current`, `Recent`, `Archive`); the tiers do not link each other, and the cascade
+  between them is described in prose. Each tier's README links the summaries in its own folder, and
   `update-vault.py` keeps those links current as summaries move.
 
 ---
 
 ## 🚫 Where Wikilinks Never Go
 
-- **A `.template/` folder** neither contains wikilinks nor receives them. A scaffold is not a
-  graph node, and a link to one drags it into the graph. Name a scaffold by plain
-  path.
+- **A `.template/` folder** neither contains wikilinks nor receives them, its own `README.md`
+  included. A scaffold is not a graph node, and a link to one drags it into the graph. Name a
+  scaffold by plain path. A venture's or a project's README, copied from a scaffold, takes its links
+  once it is copied: `update-vault.py` draws its list of subfolders.
 
 ---
 
 ## ✍️ Writing A Link
 
 - **Leave off the extension:** `[[Log]]`, not `[[Log.md]]`.
+- **Name a folder by its README:** a folder's note is its `README.md`, and every folder has one, so a
+  link to a folder gives the README's path and the folder's name as the alias:
+  `[[Library/README|Library]]`, `[[Memory/Entities/People/README|People]]`. A bare `[[README]]`
+  matches every folder's README, and the checker warns that it needs a path.
 - **Give a common name its folder:** `[[Memory/Log|Log]]` or `[[Ventures/Company/Log|Company Log]]`
   for names such as `Log.md` and `Overview.md` that many folders share.
 - **Alias for reading:** `the [[Profile/Working Style|user's preferences]]`.

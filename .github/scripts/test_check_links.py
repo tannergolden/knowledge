@@ -28,9 +28,9 @@ SCRIPT = 'check-links.py'
 class TestCheckLinks(unittest.TestCase):
     def setUp(self) -> None:
         self.vault = fixtures.Vault()
-        self.vault.write('Memory/Memory.md', '# Memory\n')
+        self.vault.write('Memory/README.md', '# Memory\n')
         self.vault.write('Memory/Log.md', '# Log\n')
-        self.vault.write('Memory/Events/Events.md', '# Events\n')
+        self.vault.write('Memory/Events/README.md', '# Events\n')
         self.vault.write('Memory/Events/Party.md', '# Party\n')
 
     def tearDown(self) -> None:
@@ -39,45 +39,52 @@ class TestCheckLinks(unittest.TestCase):
     def check(self):
         return self.vault.run(SCRIPT)
 
-    def test_a_folder_note_links_its_files_and_its_subfolders_notes(self) -> None:
-        self.vault.write('Memory/Memory.md', '[[Log]] [[Memory/Events/Events|Events]]\n')
-        self.vault.write('Memory/Events/Events.md', '[[Memory/Events/Party|Party]]\n')
+    def test_a_folders_readme_links_its_files_and_its_subfolders_readmes(self) -> None:
+        self.vault.write('Memory/README.md', '[[Log]] [[Memory/Events/README|Events]]\n')
+        self.vault.write('Memory/Events/README.md', '[[Memory/Events/Party|Party]]\n')
         result = self.check()
         self.assertEqual(result.returncode, 0, result.stdout)
         self.assertIn('All 3 wikilinks resolve', result.stdout)
 
     def test_a_broken_link(self) -> None:
-        self.vault.write('Memory/Memory.md', '[[Nowhere]]\n')
+        self.vault.write('Memory/README.md', '[[Nowhere]]\n')
         result = self.check()
         self.assertEqual(result.returncode, 1)
         self.assertIn('[[Nowhere]] resolves to no file', result.stdout)
 
+    def test_a_link_to_a_folders_old_namesake_resolves_to_nothing(self) -> None:
+        # A folder's note is its README.md, so a link still naming Events/Events is broken.
+        self.vault.write('Memory/README.md', '[[Memory/Events/Events|Events]]\n')
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('[[Memory/Events/Events]] resolves to no file', result.stdout)
+
     def test_a_content_note_links_nothing(self) -> None:
-        self.vault.write('Memory/Log.md', 'see [[Memory]]\n')
+        self.vault.write('Memory/Log.md', 'see [[Memory/README|Memory]]\n')
         result = self.check()
         self.assertEqual(result.returncode, 1)
         self.assertIn('carries no wikilinks', result.stdout)
 
-    def test_a_folder_note_may_not_skip_a_level(self) -> None:
-        self.vault.write('Memory/Memory.md', '[[Memory/Events/Party|Party]]\n')
-        self.assertIn("a folder's note links the files in its folder", self.check().stdout)
+    def test_a_folders_readme_may_not_skip_a_level(self) -> None:
+        self.vault.write('Memory/README.md', '[[Memory/Events/Party|Party]]\n')
+        self.assertIn("a folder's README.md links the files in its folder", self.check().stdout)
 
     def test_the_root_holds_no_notes_and_its_pages_are_not_walked(self) -> None:
-        # AGENTS.md and a top folder's README.md are pages: never walked, so their
-        # links are Markdown links the topology does not govern.
-        self.vault.write('AGENTS.md', '[Memory](Memory/Memory.md) [[Memory/Events/Party|Party]]\n')
-        self.vault.write('Memory/README.md', '[[Memory/Events/Party|Party]]\n')
+        # The root's README.md and a hidden folder's README.md are pages: never walked, so
+        # their links are Markdown links the topology does not govern.
+        self.vault.write('README.md', '[Memory](Memory/README.md) [[Memory/Events/Party|Party]]\n')
+        self.vault.write('.github/README.md', '[[Memory/Events/Party|Party]]\n')
         self.assertEqual(self.check().returncode, 0)
-        self.vault.write('Notes.md', '[[Memory/Memory|Memory]]\n')
+        self.vault.write('Notes.md', '[[Memory/README|Memory]]\n')
         self.assertIn('the vault root holds no notes', self.check().stdout)
 
     def test_a_link_back_up_the_tree_fails(self) -> None:
-        # Links flow downhill: a folder note links its children, and a child never links its parent.
-        self.vault.write('Memory/Memory.md', '[[Memory/Events/Events|Events]]\n')
-        self.vault.write('Memory/Events/Events.md', '[[Memory/Events/Party|Party]] [[Memory/Memory|Memory]]\n')
+        # Links flow downhill: a folder's README links its children, and a child never links its parent.
+        self.vault.write('Memory/README.md', '[[Memory/Events/README|Events]]\n')
+        self.vault.write('Memory/Events/README.md', '[[Memory/Events/Party|Party]] [[Memory/README|Memory]]\n')
         result = self.check()
         self.assertEqual(result.returncode, 1)
-        self.assertIn("a folder's note links the files in its folder", result.stdout)
+        self.assertIn("a folder's README.md links the files in its folder", result.stdout)
 
     def test_links_inside_code_or_comments_do_not_count(self) -> None:
         self.vault.write('Memory/Log.md', '`[[Memory]]` and %% [[Memory]] %%\n')
@@ -85,20 +92,24 @@ class TestCheckLinks(unittest.TestCase):
 
     def test_a_link_into_a_scaffold(self) -> None:
         self.vault.write('Memory/.template/Entry.md', '# Entry\n')
-        self.vault.write('Memory/Memory.md', '[[Entry]]\n')
+        self.vault.write('Memory/.template/README.md', '# Memory templates\n')
+        self.vault.write('Memory/README.md', '[[Entry]]\n')
         result = self.check()
         self.assertEqual(result.returncode, 1)
         self.assertIn('links a scaffold', result.stdout)
+        # A scaffold folder's README.md is a scaffold too: no link reaches it by its path.
+        self.vault.write('Memory/README.md', '[[Memory/.template/README|Templates]]\n')
+        self.assertIn('links a scaffold', self.check().stdout)
 
     def test_an_ambiguous_link_warns(self) -> None:
         self.vault.write('Memory/Party.md', '# another party\n')
-        self.vault.write('Memory/Memory.md', '[[party]]\n')
+        self.vault.write('Memory/README.md', '[[party]]\n')
         result = self.check()
         self.assertIn('matches 2 files', result.stdout)
 
     def test_a_link_to_a_binary_resolves(self) -> None:
         self.vault.write('Memory/photo.png', 'png')
-        self.vault.write('Memory/Memory.md', '![[photo.png]]\n')
+        self.vault.write('Memory/README.md', '![[photo.png]]\n')
         self.assertEqual(self.check().returncode, 0)
 
     def test_the_real_vault(self) -> None:

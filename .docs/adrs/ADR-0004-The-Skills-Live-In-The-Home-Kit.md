@@ -128,7 +128,9 @@ leaves every other repository a skill that writes to folders it does not have.
 ## 🔗 Traceability & Links
 
 - [ADR-0003](ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md), which this supersedes
-- [`AGENTS.md`](../../AGENTS.md), Where the skills write: the vault's layout for the universal skills
+- `AGENTS.md`, Where the skills write: the vault's layout for the universal skills, now in the root
+  [`README.md`](../../README.md), Where Each Kind Of Work Goes
+  ([ADR-0005](ADR-0005-Each-Folder-Explains-Itself-In-A-README.md))
 - [Moving A Vault Off Its Own Skills](../distribution/How-A-Change-Reaches-A-Vault.md#-moving-a-vault-off-its-own-skills):
   the steps for a vault made before this change
 - tannergolden/intelligence, `kit/skills/`: every skill and its team, and the home kit that installs

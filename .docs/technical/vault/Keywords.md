@@ -46,23 +46,23 @@ phrase the problem.
 A few keywords are controlled tokens, slash-namespaced so a script can filter on an exact match.
 They come first in the list:
 
-| Token                                                           | Carried by                           | Means                                                       |
-| :-------------------------------------------------------------- | :----------------------------------- | :---------------------------------------------------------- |
-| `freshness/timeless`, `freshness/enduring`, `freshness/current` | Every Library holding, exactly one   | How long it stays true (`Library/Library.md`, Rules)        |
-| `form/`, `level/`, `period/`, `place/`, `class/`, `div/`        | A Library holding, where they help   | The catalog facets `Library/Library.md` defines             |
+| Token                                                           | Carried by                         | Means                                               |
+| :-------------------------------------------------------------- | :--------------------------------- | :-------------------------------------------------- |
+| `freshness/timeless`, `freshness/enduring`, `freshness/current` | Every Library holding, exactly one | How long it stays true (`Library/README.md`, Rules) |
+| `form/`, `level/`, `period/`, `place/`, `class/`, `div/`        | A Library holding, where they help | The catalog facets `Library/README.md` defines      |
 
 ---
 
 ## 🧭 Where The Tags Went
 
-| Tag             | Now                                                                                |
-| :-------------- | :--------------------------------------------------------------------------------- |
-| Folder          | The path                                                                           |
-| File Role       | `type` ([Note Schema](Note-Schema.md))                                             |
-| `startup`       | `STARTUP` in `.github/scripts/vault.py`, listed in `AGENTS.md`, Start here         |
-| `sensitive`     | The path: everything under `Profile/` is personal                                  |
-| Freshness       | A `freshness/` token, on Library holdings                                          |
-| `policy` field  | The note's own Rules section says when it holds a policy                           |
+| Tag            | Now                                                                                         |
+| :------------- | :------------------------------------------------------------------------------------------ |
+| Folder         | The path                                                                                    |
+| File Role      | `type` ([Note Schema](Note-Schema.md))                                                      |
+| `startup`      | `STARTUP` in `.github/scripts/vault.py`, listed in the root `README.md`, How A Session Goes |
+| `sensitive`    | The path: everything under `Profile/` is personal                                           |
+| Freshness      | A `freshness/` token, on Library holdings                                                   |
+| `policy` field | The note's own Rules section says when it holds a policy                                    |
 
 ---
 

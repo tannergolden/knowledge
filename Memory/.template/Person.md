@@ -10,7 +10,7 @@ INSTANTIATION (copy this file to Memory/Entities/People/<First Last>.md, then):
 - Set type to "record", and give the copy its real title and description.
 - Keep the emoji H1; replace [Person Name] with the person's name.
 - Fill only what is known. Never fabricate - leave a field blank or omit its line rather than guessing.
-- Surface sensitive sections (DOB, contact, family) only when relevant to the work at hand (`Profile/Profile.md`, Rules).
+- Surface sensitive sections (DOB, contact, family) only when relevant to the work at hand (`Profile/README.md`, Rules).
 - Record provenance: As of (when the facts became true) and Recorded (today).
 - Cross-reference with plain-path Related lines. No wikilinks in entries.
 -->
