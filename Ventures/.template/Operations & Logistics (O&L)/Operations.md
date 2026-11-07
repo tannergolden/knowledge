@@ -123,4 +123,4 @@ keywords: ["sops", "sop", "processes", "vendors", "operational infrastructure", 
 
 ## Notes
 
-<!-- Operational nuances, exceptions, seasonal factors, or anything the AI should know when helping with ops. -->
+<!-- Operational nuances, exceptions, seasonal factors, or anything else worth knowing when working on operations. -->

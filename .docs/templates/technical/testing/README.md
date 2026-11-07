@@ -29,7 +29,7 @@ The binding strategy is the canonical
 [Testing Strategy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Testing-Strategy.md).
 These documents record your project's own conventions inside it.
 
-Copy a file out to `docs/technical/testing/` under the same name, then replace
+Copy a file out to `.docs/technical/testing/` under the same name, then replace
 every bracket. The seed here stays pristine. Performance budgets are a separate
 area, in [`../benchmarks/`](../benchmarks/README.md).
 

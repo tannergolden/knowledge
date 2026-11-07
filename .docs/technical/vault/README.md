@@ -22,10 +22,10 @@ _The rules say what to do. These pages say exactly how._
 
 ## 💡 What This Folder Is For
 
-The root [`README.md`](../../../README.md) holds the vault's rules in one line each, and each folder's
-`README.md` holds its folder's. The long reference parts those lines point to live here, read when a
-task needs them rather than at the start of every session. They are pages, not notes: the vault's
-walk skips this folder, and the vault's checks read the same rules from `.github/scripts/vault.py`.
+The root [`README.md`](../../../README.md) holds the vault's rules, and each folder's `README.md`
+holds its folder's. The long reference parts those rules point to live here, read when a task needs
+them rather than at the start of every session. They are pages, not notes: the vault's walk skips
+this folder, and the vault's checks read the same rules from `.github/scripts/vault.py`.
 
 ---
 
@@ -35,7 +35,7 @@ walk skips this folder, and the vault's checks read the same rules from `.github
 
 | Entry                                                                  | Purpose                                                                                                                                                                                                                                                                                                               |
 | :--------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Context-Assembly.md`](Context-Assembly.md)                           | How an agent assembles context from the vault so nothing it must remember sits where models forget.                                                                                                                                                                                                                   |
+| [`Context-Assembly.md`](Context-Assembly.md)                           | How context is assembled from the vault for a model, so nothing it must remember sits where models forget. Read it before loading the vault into a long context, or building tooling that does.                                                                                                                       |
 | [`Keywords.md`](Keywords.md)                                           | How a note is found without tags: its path, its title and a few keywords, and the controlled tokens the Library filters on.                                                                                                                                                                                           |
 | [`Link-Topology.md`](Link-Topology.md)                                 | Which notes may wikilink which, so the vault's graph mirrors its folder tree and never loops.                                                                                                                                                                                                                         |
 | [`Note-Schema.md`](Note-Schema.md)                                     | The frontmatter every note in the vault carries, field by field, and how a change to it reaches every note.                                                                                                                                                                                                           |
@@ -44,7 +44,16 @@ walk skips this folder, and the vault's checks read the same rules from `.github
 
 <!-- AUTO-INDEX:END -->
 
-🗂️ Machined Indexes redraws this log after every push.
+🗂️ Machined Indexes redraws this log after every push to the default branch,
+from each page's own frontmatter.
+
+---
+
+## 🔗 See also
+
+- [Technical](../README.md) - the level above: how this repository is built
+- [Vault Scripts](../Vault-Scripts.md) - the scripts that hold every note to these pages
+- [How To Work In This Vault](../../../README.md) - the rules these pages explain in full
 
 ---
 

@@ -21,8 +21,8 @@ One line: the belief itself, stated plainly.
 
 ## How I Hold It
 
-How strongly, and how open to other views - this shapes how the AI should frame advice that touches it.
+How strongly, and how open to other views - this shapes how advice that touches it is framed.
 
 ## Origin
 
-Optional: where it comes from, if it helps the AI understand it.
+Optional: where it comes from, if that helps to understand it.

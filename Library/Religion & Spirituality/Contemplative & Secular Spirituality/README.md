@@ -2,19 +2,19 @@
 title: "Contemplative & Secular Spirituality - Folder Information"
 description: "Meditation, mysticism, and nonreligious spiritual practice."
 type: "index"
-keywords: ["meditation", "mysticism", "nonreligious"]
+keywords: ["meditation", "mysticism", "mindfulness", "contemplative prayer", "spiritual experience", "nonreligious spirituality", "retreats"]
 -->
 
 # 📁 Library / Religion & Spirituality / Contemplative & Secular Spirituality /
 
 ## Purpose
 
-Meditation, mysticism, and nonreligious spiritual practice. For how this division relates to the rest of religion and spirituality and where adjacent topics go, see `Library/Religion & Spirituality/README.md`.
+Contemplative practice and spirituality beyond any one tradition: meditation and mindfulness, mysticism compared across faiths, and nonreligious and secular spiritual practice. The contemplative practice of one tradition, such as Zen or Sufism, goes to that tradition's division; meditation as an everyday wellbeing practice to Life & Practice / Health & Wellness; its psychology to Philosophy & Mind / Psychology.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Religion & Spirituality/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Religion & Spirituality/README.md`. This README adds no rules of its own.

@@ -1,6 +1,6 @@
 <!--
 title: '🔬 REPOSITORY SCRIPTS'
-description: 'The checks this repository runs on its own configuration, and the tests that guard them.'
+description: 'The vault''s checks and generators, the checks this repository runs on its own configuration, and the tests that guard them all.'
 type: index
 -->
 
@@ -10,9 +10,9 @@ type: index
 
 <a name="top"></a>
 
-**The checks a new repository runs before it has any code of its own.**
+**The vault's checks and generators, and the checks on the repository's own configuration.**
 
-_The first gates you have, every one under test._
+_Plain Python, every script under test._
 
 </div>
 
@@ -20,15 +20,27 @@ _The first gates you have, every one under test._
 
 ## 💡 What This Folder Is For
 
-A new repository has no source code to lint, but it already has configuration
-that decides how it behaves: workflows, Dependabot, forms, editor settings. A
-typo in any of them breaks something quietly. The scripts here check those files
-from the first commit, and the tests beside them check the scripts.
+Two kinds of script live here, each beside the tests that check it:
 
-They live under `.github/` so the root of the repository stays yours. Each needs
-only Python 3, plus the one package pinned in
-[`requirements.txt`](requirements.txt), PyYAML, for the ones that read YAML.
+- **The vault's scripts** check its notes and draw what derives from them.
+  `check-vault.py` runs every vault check, `update-vault.py` redraws everything
+  generated, `lint-notes.py`, `check-links.py` and `scan-pii.py` each check one
+  part, `session.py` serves a session, `profile-coverage.py` scores the Profile,
+  and `knowledge-base.py` reads the offline reference works. They share
+  `vault.py`, and their tests build throwaway vaults with `fixtures.py`. Each
+  needs only Python 3.9's standard library, but for the optional `libzim`, which
+  `knowledge-base.py` needs to search and read.
+  [Vault Scripts](../../.docs/technical/Vault-Scripts.md) says how they fit
+  together, and what to do when one fails.
+- **The repository's own checks**, which this template takes from the golden
+  path template. A typo in the configuration that decides how the repository
+  behaves (workflows, Dependabot, forms, editor settings) breaks something
+  quietly, so `validate-repository.py` checks those files from the first commit,
+  and `verify-stub-ceilings.py` checks each workflow stub's permissions against
+  the workflow it calls. Both read YAML with PyYAML, the one package pinned in
+  [`requirements.txt`](requirements.txt).
 
+They live under `.github/` so the root of the repository stays the vault's.
 [`hooks/`](hooks/README.md) holds the git hooks that run the commit-message,
 sign-off and secret checks on your machine before a commit exists, so a pull
 request is not the first place you hear about them.
@@ -73,16 +85,18 @@ request is not the first place you hear about them.
 <!-- AUTO-INDEX:END -->
 
 🗂️ Machined Indexes redraws this log after every push to the default branch,
-from each docstring. Who runs them:
+from what each file says about itself. Who runs them:
 
+- `vault.yml` runs `check-vault.py`, then every `test_*.py` here, through the
+  action in [`../actions/vault/`](../actions/vault/README.md), on every pull
+  request and every push to the default branch.
 - `checks.yml` runs `validate-repository.py` as the `ci` job's `lint-command`,
   and every `test_*.py` here as its `test-command`. That discovers a test
   added beside a new script without anyone remembering to list it.
 - `verify-stubs.yml` installs `requirements.txt` and runs
   `verify-stub-ceilings.py`.
 - `cut-release.yml` runs `validate-repository.py` before it tags a release, so
-  a release the validator fails is refused. In the template, that includes a
-  change to the owner's half of `docs/Prompts.md`.
+  a release the validator fails is refused.
 - Git runs the hooks in `hooks/` once `core.hooksPath` points at them, which
   the development container does for you; `test_hooks.py` holds them to the
   same rules CI applies.
@@ -97,9 +111,12 @@ from each docstring. Who runs them:
 
 ## 🚀 Running Them Locally
 
-From the root of the repository:
+From the root of the repository, the vault's checks, then the repository's,
+then every test. The root [`README.md`](../../README.md), under Commands, gives
+the command for each vault script.
 
 ```bash
+python3 .github/scripts/check-vault.py
 python3 -m pip install --require-hashes --requirement .github/scripts/requirements.txt
 python3 .github/scripts/validate-repository.py
 python3 -m unittest discover -s .github/scripts -p 'test_*.py'

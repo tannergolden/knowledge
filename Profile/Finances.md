@@ -1,17 +1,17 @@
 <!--
 title: "Finances"
-description: "The user's stable personal financial picture and money-management self: financial situation, assets and liabilities, insurance, risk posture, money style, financial goals, and the existence and location of legal and estate documents. Sensitive; records the picture and pointers, never secret numbers."
+description: "The owner's stable personal financial picture and money-management self: financial situation, assets and liabilities, insurance, risk posture, money style, financial goals, and the existence and location of legal and estate documents. Sensitive; records the picture and pointers, never secret numbers."
 type: "reference"
 keywords: ["money", "financial profile", "personal finances", "income", "assets", "net worth", "insurance", "risk tolerance"]
 -->
 
 # 💰 Finances
 
-The user's **personal financial self** - their stable financial picture and how they relate to money. The financial dimension of wellness. Boundary: a *business's* finances live in `Ventures/`; dated transactions and bills live in `Memory/`; this holds the durable personal picture. **Sensitive (`Profile/README.md`, Rules), and secrets are pointers, not values:** record that an account, document, or policy *exists and where it lives*, never the account number, SSN, password, or balance to the dollar. Surface only when directly relevant.
+The owner's **personal financial self** - their stable financial picture and how they relate to money. The financial dimension of wellness. Boundary: a *business's* finances live in `Ventures/`; dated transactions and bills live in `Memory/`; this holds the durable personal picture. **Sensitive (`Profile/README.md`, Rules), and secrets are pointers, not values:** record that an account, document, or policy *exists and where it lives*, never the account number, SSN, password, or balance to the dollar. Surface only when directly relevant.
 
 ## Snapshot
 
-A few lines on the user's overall financial situation. Fill last.
+A few lines on the owner's overall financial situation. Fill last.
 
 ## Financial Situation
 
@@ -31,11 +31,11 @@ A rough overall picture, updated on change.
 
 ## Insurance
 
-Policies the user holds (life, health, disability, long-term care, home, auto) by carrier and type, with the policy location, not the number.
+Policies the owner holds (life, health, disability, long-term care, home, auto) by carrier and type, with the policy location, not the number.
 
 ## Money Management Style
 
-How the user handles money day to day: spending and saving habits, budgeting approach, and risk tolerance. Their money *values and orientation* live in `Profile/Values/`; this is the behavior.
+How the owner handles money day to day: spending and saving habits, budgeting approach, and risk tolerance. Their money *values and orientation* live in `Profile/Values/`; this is the behavior.
 
 ## Financial Goals & Constraints
 
@@ -43,7 +43,7 @@ Standing financial aims and hard limits (cross-reference the stable goals in `Pr
 
 ## Legal & Estate
 
-The existence and location of estate and legal instruments - will, trust, power of attorney, beneficiaries, advance directives (cross-reference `Profile/Health/`) - and the named executor. Record that they exist and where, never their contents. Funeral or final wishes, if the user records them, go here too.
+The existence and location of estate and legal instruments - will, trust, power of attorney, beneficiaries, advance directives (cross-reference `Profile/Health/`) - and the named executor. Record that they exist and where, never their contents. Funeral or final wishes, if the owner records them, go here too.
 
 ## Subscriptions & Recurring
 

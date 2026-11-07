@@ -60,17 +60,17 @@ from each form's own `name:` and `description:`.
 
 ## 🛡️ Vulnerabilities Stay Private
 
-The Vulnerability Report form is for **private** repositories only. On a public
-repository a vulnerability never goes in an issue, where anyone can read it: it
-goes through private vulnerability reporting, as [`SECURITY.md`](../SECURITY.md)
-explains. GitHub adds **Report a vulnerability** to the chooser by itself once
-that is enabled, which is why `config.yml` carries no security link of its own.
+A vulnerability never goes in an issue on a public repository, where anyone can
+read it: it goes through private vulnerability reporting, as
+[`SECURITY.md`](../SECURITY.md) explains. GitHub adds **Report a vulnerability**
+to the chooser by itself once that is enabled, which is why `config.yml` carries
+no security link of its own, and the private report asks its questions through
+[`VULNERABILITY_REPORT.yml`](../VULNERABILITY_REPORT.yml).
 
-So that the form cannot invite a public report, **initialisation deletes it
-from a public repository**, and the private report asks the same questions
-through [`VULNERABILITY_REPORT.yml`](../VULNERABILITY_REPORT.yml) instead. A
-private repository keeps it. If you make a private repository public later,
-delete the form yourself.
+The golden path template also ships a Vulnerability Report issue form, for
+private repositories only. **This folder has none**: this template is public, so
+its derivation leaves the form out, and no vault made from it receives one
+either.
 
 ---
 

@@ -19,11 +19,11 @@ The executive office of [Company]: its strategy, its decision record and its ope
 
 ## Rules
 
-- The `administration` skill is the sole writer of these files, behind a write-gate: internal files are drafted directly; money, contracts, outside communication and deletions need the owner's yes.
+- The `administration` skill is the sole writer of these files, behind the write-gate (`Ventures/README.md`, Structure).
 - A decision is recorded in `Decisions.md`, with a one-line entry in the venture's `Log.md`; one that must outlive the record is promoted into `Overview.md` or `Strategy.md`.
 - A decision that no longer holds is marked superseded or reversed, never rewritten, and the minority view is recorded by name.
 
 ## What Goes Elsewhere
 
 - Current priorities and OKRs live in the venture's `Goals.md`, and the company profile in its `Overview.md`, which the same skill keeps current.
-- The user's own decisions, dates and commitments, outside any venture, go to `Memory/`.
+- The owner's own decisions, dates and commitments, outside any venture, go to `Memory/`.

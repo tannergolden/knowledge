@@ -2,19 +2,19 @@
 title: "Self-Development - Folder Information"
 description: "Habits, productivity, learning, and personal growth methods."
 type: "index"
-keywords: ["self-development", "habits", "productivity", "learning", "personal", "growth"]
+keywords: ["habits", "productivity", "time management", "goal setting", "motivation", "learning how to learn", "personal growth", "mindset"]
 -->
 
 # 📁 Library / Life & Practice / Self-Development /
 
 ## Purpose
 
-Habits, productivity, learning, and personal growth methods. For how this division relates to the rest of practical knowledge for living and where adjacent topics go, see `Library/Life & Practice/README.md`.
+Methods for personal growth: habits, productivity and time management, goal setting, motivation, and learning how to learn. Work-specific skills go to Life & Practice / Career & Work; the psychology behind them to Philosophy & Mind / Psychology; the owner's own goals to `Profile/`, and a learning plan to `Projects/`.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Life & Practice/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Life & Practice/README.md`. This README adds no rules of its own.

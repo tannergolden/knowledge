@@ -1,6 +1,6 @@
 <!--
 title: "Insight"
-description: "Template for a single synthesized insight about the user's external world, with evidence and provenance."
+description: "Template for a single synthesized insight about the owner's outside world, with evidence and provenance."
 type: "template"
 keywords: ["synthesis", "pattern", "observation", "evidence", "confidence", "template"]
 -->
@@ -10,8 +10,8 @@ Instantiation: copy this file into Memory/Insights/ to record an insight.
 - Set type to "record", and give the copy its real title and description.
 - Replace the emoji H1 title with the real insight.
 - Name the file YYYY-MM-slug.md so insights sort chronologically.
-- Boundary reminder: an Insight is about the external world only. Nothing
-  about the user themselves - their traits, values, habits, preferences, or
+- Boundary reminder: an Insight is about the outside world only. Nothing
+  about the owner themselves - their traits, values, habits, preferences, or
   goals. That is Profile, and is proposed there (`Profile/README.md`, Rules), never
   stored here.
 - Supersede, never rewrite.

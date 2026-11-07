@@ -100,6 +100,6 @@ keywords: ["kpis", "kpi", "dashboards", "data sources", "reporting cadence", "bu
 
 ## Notes
 
-<!-- How data is collected, gaps in tracking, known data quality issues, or anything the AI should know when analyzing performance. -->
+<!-- How data is collected, gaps in tracking, known data quality issues, or anything else worth knowing when analyzing performance. -->
 
 **Retention:** This file is a current-state snapshot - update metric values in place rather than appending new rows. Do not accumulate historical snapshots here; that belongs in dashboards or a BI tool. If a metric category is no longer tracked, remove it rather than leaving it blank.

@@ -1,17 +1,17 @@
 <!--
 title: "Biography"
-description: "The user's life facts and life story: name, contact, location, work, education, family, formative years, key events, and the McAdams narrative themes that give the facts meaning."
+description: "The owner's life facts and life story: name, contact, location, work, education, family, formative years, key events, and the McAdams narrative themes that give the facts meaning."
 type: "reference"
 keywords: ["life story", "background", "bio", "life history", "where they live", "career history", "education", "family"]
 -->
 
 # 📖 Biography
 
-The factual record of the user's life and the narrative that gives it meaning. Two registers: structured **facts** (high-frequency retrieval) and a thematic **life story** (the through-line the facts do not carry). Boundary: current priorities and routines live in `Profile/Focus/`; competencies live in `Profile/Skills/`; stable health attributes live in `Profile/Health/`; dated happenings live in `Memory/Events/`; the people around the user live in `Memory/Entities/People/`. This holds only what is durable about the user themselves.
+The factual record of the owner's life and the narrative that gives it meaning. Two registers: structured **facts** (high-frequency retrieval) and a thematic **life story** (the through-line the facts do not carry). Boundary: current priorities and routines live in `Profile/Focus.md`; competencies live in `Profile/Skills/`; stable health attributes live in `Profile/Health/`; dated happenings live in `Memory/Events/`; the people around the owner live in `Memory/Entities/People/`. This holds only what is durable about the owner themselves.
 
 ## Snapshot
 
-One short paragraph: who the user is in a nutshell. Fill last.
+One short paragraph: who the owner is in a nutshell. Fill last.
 
 ## Personal
 
@@ -60,11 +60,11 @@ Current role/title, company or business, industry, employment type, and what the
 
 ## Family
 
-Relationship status, partner, children, parents, siblings, extended dynamic, pets - the user's family roles and relational identity, not contact records (those are `Memory/Entities/People/`).
+Relationship status, partner, children, parents, siblings, extended dynamic, pets - the owner's family roles and relational identity, not contact records (those are `Memory/Entities/People/`).
 
 ## Formative Environment
 
-Where and how the user grew up: place, era and cultural context, economic context (if relevant), key influences, and challenges faced early on.
+Where and how the owner grew up: place, era and cultural context, economic context (if relevant), key influences, and challenges faced early on.
 
 ## Physical Description
 
@@ -76,11 +76,11 @@ The existence and location of core identity documents and certificates - passpor
 
 ## Digital Identity
 
-The user's online presence: primary handles and usernames, the key accounts that define their digital life, and any digital-legacy plan (designated contact, recovery arrangements). References and locations, never passwords or credentials.
+The owner's online presence: primary handles and usernames, the key accounts that define their digital life, and any digital-legacy plan (designated contact, recovery arrangements). References and locations, never passwords or credentials.
 
 ## Life Stage
 
-The psychosocial life stage the user is in and its central tension (Erikson - for example intimacy, generativity, or integrity), which reframes everything else. Distinct from chronological age.
+The psychosocial life stage the owner is in and its central tension (Erikson - for example intimacy, generativity, or integrity), which reframes everything else. Distinct from chronological age.
 
 ## Key Life Events
 
@@ -90,17 +90,17 @@ The psychosocial life stage the user is in and its central tension (Erikson - fo
 
 ## Life Story (Narrative Themes)
 
-How the user makes sense of their life as a story (McAdams' narrative identity) - this carries information traits and facts do not. Prose, not scores:
+How the owner makes sense of their life as a story (McAdams' narrative identity) - this carries information traits and facts do not. Prose, not scores:
 
-- **Agency:** where the user has authored their own story (control, achievement, influence).
+- **Agency:** where the owner has authored their own story (control, achievement, influence).
 - **Communion:** where love, friendship, belonging, and care define the story.
 - **Redemption sequences:** hard chapters that turned into something good, or were grown from.
 - **Contamination sequences:** good chapters that turned painful, or losses that still color things.
-- **Coherence / through-line:** the thread tying the chapters together; how today connects to where the user has been.
+- **Coherence / through-line:** the thread tying the chapters together; how today connects to where the owner has been.
 
 ## Current Life Chapter
 
-A one-line anchor for the era the user is in and how they got here (kept current in `Profile/Focus/`; the durable arc lives here).
+A one-line anchor for the era the owner is in and how they got here (kept current in `Profile/Focus.md`; the durable arc lives here).
 
 ## Additional Context
 

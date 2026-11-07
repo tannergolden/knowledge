@@ -11,15 +11,11 @@ keywords: ["generated artifacts", "note catalog", "ndjson", "machine-written", "
 
 `System/Data/` holds the vault's **generated catalog**: one file `.github/scripts/update-vault.py` draws from the notes and commits. Nothing here is human-authored; nothing here is ever edited by hand. This README is the folder's one human-readable file; the catalog is its other file, linked from here.
 
----
-
 ## Contents
 
 | File | Drawn from | Holds |
 |------|-----------|-------|
-| [[catalog.ndjson]] | Every note's frontmatter | One JSON record per note, one per line for clean diffs, sorted by path: path, title, type, keywords, description and status. `.template/` scaffolds are left out. The live listing of what exists: the Projects and Ventures hubs, the Library's finding aids and any tool read it instead of walking the tree. |
-
----
+| [[catalog.ndjson]] | Every note's frontmatter | One JSON record per note, one per line for clean diffs, sorted by path: path (from `BRAIN/`, the vault root), title, type, keywords, description and status. `.template/` scaffolds are left out. The live listing of what exists, which the Projects and Ventures hubs and the Library point to, and which any tool can read instead of walking the tree. |
 
 ## Rules
 

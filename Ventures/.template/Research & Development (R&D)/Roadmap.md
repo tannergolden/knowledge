@@ -82,4 +82,4 @@ keywords: ["product roadmap", "active development", "upcoming work", "feature pl
 
 ## Notes
 
-<!-- Dependencies, blockers, constraints, or anything the AI should know when discussing the roadmap. -->
+<!-- Dependencies, blockers, constraints, or anything else worth knowing about the roadmap. -->

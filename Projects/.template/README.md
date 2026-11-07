@@ -24,7 +24,7 @@ These four always stay at the root of this folder, beside this README. Everythin
 
 ## Rules
 
-- Only what the user says or confirms is written here; nothing is guessed or invented.
+- Only what the owner says or confirms is written here; nothing is guessed or invented.
 - When work happens on the project, `Overview.md` takes its current status and `Log.md` gains an entry.
-- A fact about the user goes to `Profile/`, an event or decision worth remembering to `Memory/`, and reference knowledge to `Library/`, never here.
+- A fact about the owner goes to `Profile/`, an event or decision worth remembering to `Memory/`, and reference knowledge to `Library/`, never here.
 - When the project closes, `Overview.md` says so. The folder is kept, and archiving or removing anything in it takes a yes.

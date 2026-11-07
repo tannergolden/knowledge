@@ -7,15 +7,15 @@ keywords: ["mid tier", "on request", "lookback", "summaries", "importance aware"
 
 # 🗂️ Recent Context
 
-The mid tier of context memory: recent history one step back from the entry tier. It stays available without inflating every session's base context, so it is reached on request rather than auto-loaded.
+The mid tier of context memory: recent history one step back from the entry tier. It stays available without inflating what every session reads at its start, so it is reached on request rather than read at start.
 
 ## Cap and cascade
 
-This tier holds a larger ceiling than Current (default a session-or-two's worth, about 6 summaries). When it overflows, the oldest relocates to `Memory/Context/Archive/<year>/` via `update-vault.py`. Nothing is deleted (the root `README.md`, Ask First).
+This tier holds at most 6 summaries, a larger lookback than Current's 3. When it overflows, `update-vault.py` moves the oldest to `Memory/Context/Archive/<year>/`, the year read from the start of its name, and lists the summaries currently here. Nothing is deleted (the root `README.md`, Ask First).
 
 ## Recall here is scored, not just listed
 
-A look back beyond the auto-load set does not read this tier top to bottom. It ranks the summaries by **recency + importance + relevance** to the current need (the model in `Memory/README.md`), so a more relevant or more important older summary outranks a fresher trivial one. Tier membership sets what is cheap to reach; the score sets what actually surfaces.
+A look back beyond the two summaries every session reads does not read this tier top to bottom. It ranks the summaries by **recency + importance + relevance** to the current need (`Memory/README.md`, Operations), so a more relevant or more important older summary outranks a fresher trivial one. Tier membership sets what is cheap to reach; the score sets what actually surfaces.
 
 ## Summaries in this tier
 
@@ -26,4 +26,4 @@ _No summaries in this tier right now._
 ## Notes
 
 - Files keep their `YYYYMMDD-HHMMSS.md` names so they remain sortable by time.
-- A high-importance summary remains a retrieval candidate even after it cascades to Archive.
+- A high-importance summary remains a retrieval candidate even after it cascades to Archive (`Memory/Context/README.md`).

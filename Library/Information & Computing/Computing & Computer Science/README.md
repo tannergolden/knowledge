@@ -2,19 +2,19 @@
 title: "Computing & Computer Science - Folder Information"
 description: "Algorithms, computation theory, programming languages, data structures as a field of study."
 type: "index"
-keywords: ["algorithms", "computation", "theory"]
+keywords: ["algorithms", "data structures", "theory of computation", "complexity theory", "programming languages", "computer architecture", "artificial intelligence", "compilers"]
 -->
 
 # 📁 Library / Information & Computing / Computing & Computer Science /
 
 ## Purpose
 
-Algorithms, computation theory, programming languages, data structures as a field of study. For how this division relates to the rest of information, computing, and reference and where adjacent topics go, see `Library/Information & Computing/README.md`.
+Computer science as a field of study: algorithms and data structures, the theory of computation and complexity, programming languages and compilers, computer architecture, and artificial intelligence as a science. Building and deploying software goes to Technology & Applied Science / Applied Computing & Software; the internet and its protocols to Information & Computing / Internet & Web; the ethics of AI to Philosophy & Mind / Ethics & Moral Philosophy.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Information & Computing/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Information & Computing/README.md`. This README adds no rules of its own.

@@ -1,20 +1,20 @@
 <!--
 title: "Recreation & Leisure - Folder Information"
-description: "Outdoor recreation, leisure, and play in general."
+description: "Outdoor recreation and leisure as activity and culture."
 type: "index"
-keywords: ["outdoor", "play", "general"]
+keywords: ["outdoor activities", "hiking", "camping", "climbing", "parks", "amusements", "festivals", "leisure studies"]
 -->
 
 # 📁 Library / Arts & Recreation / Recreation & Leisure /
 
 ## Purpose
 
-Outdoor recreation, leisure, and play in general. For how this division relates to the rest of the arts, sport, and play and where adjacent topics go, see `Library/Arts & Recreation/README.md`.
+Recreation and leisure as activity and culture: outdoor pursuits such as hiking, camping and climbing, parks and amusements, festivals and pastimes, and the study of leisure. Games and play go to Arts & Recreation / Games & Play; competitive sport to Arts & Recreation / Sport & Athletics; a hobby learned for oneself to Life & Practice / Hobbies & Skills; travel to History & Geography / Travel & Exploration.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Arts & Recreation/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Arts & Recreation/README.md`. This README adds no rules of its own.

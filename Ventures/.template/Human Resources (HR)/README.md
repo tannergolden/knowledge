@@ -22,5 +22,5 @@ The people of [Company]: its org structure, reporting lines, roles and key peopl
 
 ## What Goes Elsewhere
 
-- Someone in the user's personal life goes to `Memory/Entities/People/`, and employment contracts to `Legal & Compliance (L&C)/`.
-- The user's own career, skills, health and wellbeing, which the same skill helps with, go to `Profile/`.
+- Someone in the owner's personal life goes to `Memory/Entities/People/`, and employment contracts to `Legal & Compliance (L&C)/`.
+- The owner's own career, skills, health and wellbeing, which the same skill helps with, go to `Profile/`.

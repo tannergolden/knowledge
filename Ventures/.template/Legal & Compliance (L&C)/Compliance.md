@@ -7,7 +7,7 @@ keywords: ["legal structure", "contracts", "licenses", "intellectual property", 
 
 # 📜 [Company] - Legal & Compliance
 
-> Legal structure, active contracts, licenses, IP, and compliance requirements. This file informs the AI when helping with legal questions, contracts, or regulatory matters. Always consult a qualified attorney for legal decisions - this file is for context only.
+> Legal structure, active contracts, licenses, IP, and compliance requirements, as context for legal questions, contracts, or regulatory matters. Always consult a qualified attorney for legal decisions - this file is for context only.
 
 ---
 
@@ -114,4 +114,4 @@ keywords: ["legal structure", "contracts", "licenses", "intellectual property", 
 
 ## Notes
 
-<!-- Pending legal matters, disputes, litigation holds, or anything sensitive the AI should know when working on legal-adjacent tasks. -->
+<!-- Pending legal matters, disputes, litigation holds, or anything else sensitive worth knowing for legal work. -->

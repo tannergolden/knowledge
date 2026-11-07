@@ -1,17 +1,17 @@
 <!--
 title: "Skills"
-description: "The user's competencies and the per-domain expertise map that calibrates how much to explain: skip the basics where the user is expert, define terms where they are new."
+description: "The owner's competencies and the per-domain expertise map that calibrates how much to explain: skip the basics where the owner is expert, define terms where they are new."
 type: "reference"
 keywords: ["expertise", "competencies", "abilities", "proficiency", "what they know", "explanation depth", "calibration"]
 -->
 
 # 🛠️ Skills
 
-What the user is competent at, and - most usefully - **how much to explain in each domain**. Calibrating explanation depth to expertise matters because detailed guidance written for a novice becomes redundant and even counterproductive for an expert (the expertise-reversal effect). Use absolute, per-domain levels, not a single global "smart user" flag. Areas of genuine depth get their own entry; casual interests are `Profile/Preferences/`, not here.
+What the owner is competent at, and - most usefully - **how much to explain in each domain**. Calibrating explanation depth to expertise matters because detailed guidance written for a novice becomes redundant and even counterproductive for an expert (the expertise-reversal effect). Use absolute, per-domain levels, not a single global rating of the owner. Areas of genuine depth get their own entry; casual interests are `Profile/Preferences.md`, not here.
 
 ## Snapshot
 
-A few lines on the user's core competencies. Fill last.
+A few lines on the owner's core competencies. Fill last.
 
 ## Expertise Map
 

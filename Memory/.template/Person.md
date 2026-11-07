@@ -1,6 +1,6 @@
 <!--
 title: "Person"
-description: "Template for a person in the user's personal orbit - a Biography-depth profile entry."
+description: "Template for a person in the owner's personal orbit - a Biography-depth profile entry."
 type: "template"
 keywords: ["person template", "people entry", "relationship profile", "contact", "who someone is", "personal orbit", "biography"]
 -->

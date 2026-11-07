@@ -2,19 +2,19 @@
 title: "Oral & Folk Literature - Folder Information"
 description: "Folktales, proverbs, and oral verbal art."
 type: "index"
-keywords: ["folktales", "proverbs", "verbal"]
+keywords: ["folktales", "fairy tales", "proverbs", "riddles", "ballads", "storytelling", "oral tradition", "nursery rhymes"]
 -->
 
 # 📁 Library / Language & Literature / Oral & Folk Literature /
 
 ## Purpose
 
-Folktales, proverbs, and oral verbal art. For how this division relates to the rest of language and written art and where adjacent topics go, see `Library/Language & Literature/README.md`.
+Verbal art passed on by voice and tradition: folktales and fairy tales, proverbs, riddles, ballads, oral epics and storytelling, as literature. Myths and legends as belief go to Religion & Spirituality / Mythology & Folklore; a written poem to Language & Literature / Poetry.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Language & Literature/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Language & Literature/README.md`. This README adds no rules of its own.

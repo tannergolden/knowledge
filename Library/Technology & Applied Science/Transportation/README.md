@@ -2,19 +2,19 @@
 title: "Transportation - Folder Information"
 description: "Vehicles, logistics, and transport systems."
 type: "index"
-keywords: ["vehicles", "logistics", "transport", "systems"]
+keywords: ["vehicles", "automobiles", "aviation", "railways", "shipping", "freight", "logistics", "public transit"]
 -->
 
 # 📁 Library / Technology & Applied Science / Transportation /
 
 ## Purpose
 
-Vehicles, logistics, and transport systems. For how this division relates to the rest of applied science and engineering and where adjacent topics go, see `Library/Technology & Applied Science/README.md`.
+Moving people and goods: vehicles and their operation, road, rail, air and sea transport, freight and logistics, traffic and public transit. The engineering disciplines behind vehicles go to Technology & Applied Science / Engineering; roads, rail lines and ports as built works to Technology & Applied Science / Infrastructure & Built Environment; supply chain management to Technology & Applied Science / Operations & Management.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Technology & Applied Science/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Technology & Applied Science/README.md`. This README adds no rules of its own.

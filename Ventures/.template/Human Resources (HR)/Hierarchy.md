@@ -99,5 +99,5 @@ keywords: ["org chart", "reporting structure", "leadership", "team roster", "con
 
 ## Notes
 
-<!-- Sensitive context the AI should know - e.g., a key person leaving, a planned hire, a role in flux. -->
+<!-- Sensitive context worth knowing - e.g., a key person leaving, a planned hire, a role in flux. -->
 

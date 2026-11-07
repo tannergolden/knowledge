@@ -22,7 +22,7 @@ _Four folders to start. A name ready for the rest._
 something to show: a logo, a screenshot, a diagram. And every repository that
 draws its README with the [Markdown
 Kit](https://github.com/tannergolden/markdown) needs a home for each file the
-kit generates. So `assets/` is here from the first commit, holding only the
+kit generates. So `.assets/` is here from the first commit, holding only the
 essentials, and a file never has to wonder where it goes.
 
 ---
@@ -125,11 +125,11 @@ A light and a dark image, as a page shows them:
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
-    srcset="assets/screenshots/dashboard-dark.png"
+    srcset=".assets/screenshots/dashboard-dark.png"
   />
   <img
     alt="The dashboard, with three healthy services"
-    src="assets/screenshots/dashboard.png"
+    src=".assets/screenshots/dashboard.png"
   />
 </picture>
 ```
@@ -139,13 +139,13 @@ A light and a dark image, as a page shows them:
 ## 🔗 Referencing An Asset
 
 Use a **repository-relative** path from the document doing the referencing. A
-document at `docs/technical/Architecture.md` reaches a diagram here as
-`../../assets/diagrams/ingest-pipeline.svg`, written as an image with alt text:
+document at `.docs/technical/Architecture.md` reaches a diagram here as
+`../../.assets/diagrams/ingest-pipeline.svg`, written as an image with alt text:
 
 <!-- Shown as inline code rather than a live image: a link checker follows a
      real markdown image, and this example names a file that does not exist. -->
 
-`![Architecture of the ingest pipeline](../../assets/diagrams/ingest-pipeline.svg)`
+`![Architecture of the ingest pipeline](../../.assets/diagrams/ingest-pipeline.svg)`
 
 > [!IMPORTANT]
 > **A profile README is the exception.** It renders off-repository, where a
@@ -164,6 +164,11 @@ costs nothing to meet.
 - **Assets the code loads.** An icon in an application bundle, a web page's
   stylesheet, a game's sprites: they live with the code that loads them. This
   folder holds what presents the project.
+- **What the vault keeps.** An image, a PDF or a visual that belongs to the
+  vault is filed in its folders like any note, by that folder's README: a file
+  waiting to be sorted in `Inbox/`, a standalone visual in `Inbox/Visuals/`, a
+  source document with its catalog card in `Library/`. This folder presents the
+  repository, never its contents.
 - **Build output.** Compiled or bundled images belong in the build directory and
   stay out of version control. The kit's drawings are the one exception,
   committed on purpose, because a README can show only what its repository

@@ -2,19 +2,19 @@
 title: "Poetry - Folder Information"
 description: "Poetry across languages and eras."
 type: "index"
-keywords: ["languages", "eras"]
+keywords: ["poems", "verse", "poets", "epic", "lyric", "sonnets", "prosody", "anthologies"]
 -->
 
 # 📁 Library / Language & Literature / Poetry /
 
 ## Purpose
 
-Poetry across languages and eras. For how this division relates to the rest of language and written art and where adjacent topics go, see `Library/Language & Literature/README.md`.
+Poetry across languages and eras: poems and anthologies, poets, forms such as the epic, the lyric and the sonnet, prosody, and the criticism of one poet or poem. Song as music goes to Arts & Recreation / Music; verse drama to Language & Literature / Drama; oral and folk verse to Language & Literature / Oral & Folk Literature.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Language & Literature/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Language & Literature/README.md`. This README adds no rules of its own.

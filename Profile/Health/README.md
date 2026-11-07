@@ -31,4 +31,4 @@ The durable medical background to be aware of: allergies, significant past condi
 
 ## Insurance & Advance Directives
 
-Health insurance (carrier and coverage, by reference) and any advance directives - living will, healthcare proxy, DNR - their existence and location only (estate-side documents live in `Profile/Finances/`). Pointers, never contents.
+Health insurance (carrier and coverage, by reference) and any advance directives - living will, healthcare proxy, DNR - their existence and location only (estate-side documents live in `Profile/Finances.md`). Pointers, never contents.

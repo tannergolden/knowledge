@@ -20,9 +20,9 @@ keywords: ["brainstorming", "freeform capture", "ideas", "research findings", "s
 | Research findings incorporated into the project | Until project closes | Remove once the learning is reflected in the work |
 | Research findings still relevant | Permanent while project is active | Keep |
 | Random thoughts / scratchpad entries | 30 days | Prune freely - this is a capture space, not a record |
-| Entire file | Archive when project closes | Keep with the project folder as historical context |
+| Entire file | Kept when the project closes | Kept with the project folder as historical context |
 
-**AI Instruction:** Notes.md is a capture space - it's meant to be messy and temporary. It's the first place ideas land, not where they live forever. Prune aggressively: if an idea was acted on, remove it. If a research finding made it into the work, remove it. If a random thought hasn't been referenced in 30 days, remove it. What remains should be ideas and findings that are still open and potentially useful. When the project closes, archive the file as-is - it's a useful record of how the project was thought through.
+**How this file is kept:** Notes.md is a capture space, meant to be messy and temporary: the first place ideas land, not where they live forever. It is pruned hard: an idea that was acted on is removed, a research finding that made it into the work is removed, and a random thought not referenced in 30 days is removed. What remains are the ideas and findings still open and potentially useful. When the project closes, the file is kept as it is, a useful record of how the project was thought through.
 
 ---
 

@@ -7,36 +7,35 @@ keywords: ["decision", "choice", "rationale", "tradeoff", "outcome", "lesson", "
 
 # 🧭 Decisions
 
-The reflective record of significant decisions in the user's life - career, financial, and personal. This is where a real choice and the thinking behind it are preserved, so that future reasoning can stand on what was already decided instead of relitigating it from scratch.
+The reflective record of significant decisions in the owner's own life: career, financial, and personal. This is where a real choice and the thinking behind it are preserved, so that future reasoning can stand on what was already decided instead of relitigating it from scratch.
 
-## What lives here
+## What belongs here
 
-One file per significant decision. Each record is named `YYYY-MM-slug.md` so that records sort chronologically when listed. A decision earns a file when it is consequential and worth remembering: a job change, a major purchase, a relocation, a relationship turning point, a commitment of real time or money.
+- **Consequential choices.** A decision earns a file when it is consequential and worth remembering: a job change, a major purchase, a relocation, a relationship turning point, a commitment of real time or money.
+- **The owner's own life only.** A decision for one of the owner's ventures is recorded in that venture's `Administration/Decisions.md` (`Ventures/README.md`), never here.
+- **Principles belong to the profile.** A principle that recurs across the owner's decisions, a heuristic or value that shows up again and again in how choices get made, is about who the owner is: it is proposed for `Profile/` with the records it was drawn from (`Profile/README.md`, Rules), not kept here.
 
-Each record holds:
+## Each entry
 
-- **Context** - the situation that forced the choice.
-- **Options Considered** - the alternatives that were genuinely on the table.
-- **Decision** - what was actually chosen.
-- **Rationale** - why that option won.
-- **Expected Outcome** - what was predicted at the time.
-- **Actual Outcome** - what really happened, filled in later.
-- **Lessons** - what the decision taught, in hindsight.
-- **Status** - one of `Active`, `Superseded`, or `Reversed`.
+One file per decision, named `YYYY-MM-slug.md` so records sort chronologically when listed. Each record holds:
 
-## How records are created
+- **Context**: the situation that forced the choice.
+- **Options Considered**: the alternatives that were genuinely on the table.
+- **Decision**: what was actually chosen.
+- **Rationale**: why that option won.
+- **Expected Outcome**: what was predicted at the time.
+- **Actual Outcome**: what really happened, filled in later.
+- **Lessons**: what the decision taught, in hindsight.
+- **Status**: one of `Active`, `Superseded`, or `Reversed`.
+- **Provenance**: `As of:` and `Recorded:` lines (`Memory/README.md`).
 
-Copy the Decision template (`Memory/.template/Decision.md`) to this folder as a new dated record and follow its instantiation note; `update-vault.py` lists it below.
+## Writing an entry
 
-## Decision-Making Principles Observed
+`Memory/.template/Decision.md` is copied into this folder as a new dated record and its instantiation note followed. `update-vault.py` lists it below; this index is never edited by hand.
 
-This index also carries a living list of the principles that recur across the user's decisions - the heuristics and values that show up again and again in how choices get made. It is appended to over time as patterns emerge across the records below. Keep it short, evidence-backed, and current.
+## Provenance and superseding
 
-- (none recorded yet)
-
-## Superseding, never rewriting
-
-Decisions are part of the record and are not edited away. When a decision no longer holds, supersede it: set the old record's `**Status:**` line to `Superseded` (or `Reversed`) and link it forward to its replacement with a plain-path `Superseded-by:` line. Records are never silently rewritten or deleted (the root `README.md`, Ask First).
+Decisions are part of the record and are not edited away. When a decision no longer holds, it is superseded: the old record's Status becomes `Superseded` (or `Reversed`), with a plain-path pointer to the record that replaces it. Records are never silently rewritten or deleted (`Memory/README.md`).
 
 ## Entries
 

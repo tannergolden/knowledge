@@ -30,8 +30,9 @@ scaffold does not know what you are about to build, and a toolchain nobody
 needs costs every contributor a slow rebuild.
 
 **Python is the one exception, and it is not a language choice.** The checks
-this repository runs on its own configuration are Python: the validator, the
-stub checker, the commit-message hook and their tests. So the container
+this repository runs are Python: the vault's own scripts, which need only the
+standard library, and the checks on its configuration (the validator, the stub
+checker and the commit-message hook), with their tests. So the container
 installs Python and the scripts' one requirement, PyYAML, and switches on the
 [git hooks](../.github/scripts/hooks/README.md) when it is created. A
 container that cannot run those checks cannot tell you whether CI will pass.

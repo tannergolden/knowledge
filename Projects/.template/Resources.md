@@ -7,7 +7,7 @@ keywords: ["tools", "reference links", "assets", "contacts", "books", "reference
 
 # 🔗 [Project Name] - Resources
 
-<!-- Links, tools, references, and assets being used for this project. Organized so the AI can understand what's available and what's already been consulted. -->
+<!-- Links, tools, references, and assets being used for this project, organized to show what is available and what has already been consulted. -->
 
 ---
 
@@ -22,9 +22,9 @@ keywords: ["tools", "reference links", "assets", "contacts", "books", "reference
 | Books & articles | Permanent while project is active | Keep - reading history is useful context |
 | Assets & files | Permanent while project is active | Keep and update locations if files move |
 | People & contacts | Permanent while project is active | Keep - relationships outlast individual tasks |
-| Entire file | Archive when project closes | Keep with the project folder |
+| Entire file | Kept when the project closes | Kept with the project folder |
 
-**AI Instruction:** Resources.md is a reference shelf - keep it current and accurate. Remove tools that were abandoned, and prune links that are no longer relevant. Books, articles, people, and active assets should stay for the life of the project. If a file moves or a URL changes, update the entry rather than adding a duplicate. When the project closes, archive the file alongside the rest of the project folder.
+**How this file is kept:** Resources.md is a reference shelf, kept current and accurate. An abandoned tool is removed, and a link that is no longer relevant is pruned. Books, articles, people, and active assets stay for the life of the project. When a file moves or a URL changes, its entry is updated rather than duplicated. When the project closes, the file is kept with the rest of the project folder.
 
 ---
 

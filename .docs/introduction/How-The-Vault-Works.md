@@ -156,11 +156,12 @@ one fails.
 
 ## 🌿 What Keeps It Current
 
-Two automations bring change from outside, each as a pull request the owner merges, and neither
-pushes to a branch: 🔄 Template Sync, when the owner runs it, carries the template's released fixes;
-🗂️ Machined Indexes redraws the folder logs. A sync never touches a note the template does not ship,
-nor a file the list leaves to the owner, such as `Memory/Log.md` and `Profile/Working Style.md`. The
-universal rules for AI assistants change with the home kit, outside the repository.
+Two automations keep it current, each as a pull request the owner merges, and neither pushes to a
+branch: 🔄 Template Sync, when the owner runs it, carries the template's released fixes; 🗂️ Machined
+Indexes, after each push to the default branch, redraws the folder logs. A sync never touches a note
+the template does not ship, nor a file the list leaves to the owner, such as `Memory/Log.md` and
+`Profile/Working Style.md`. The universal rules for AI assistants change with the home kit, outside
+the repository.
 [How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md) follows a change from
 its first commit to a vault.
 

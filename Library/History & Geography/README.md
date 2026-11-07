@@ -2,15 +2,17 @@
 title: "History & Geography - Folder Information"
 description: "The human record across time and place."
 type: "index"
-keywords: ["biography", "archaeology", "area studies", "travel", "heritage"]
+keywords: ["biography", "archaeology", "area studies", "travel", "heritage", "maps"]
 -->
 
 # 🗺️ Library / History & Geography /
 
 ## Purpose
-The human record across time and place. The social-science theory of how societies work goes to Society & Social Sciences; historical fiction goes to Language & Literature.
+
+The human record across time and place: history at every scale, the lives of individuals, geography and maps, travel and exploration, archaeology, and genealogy and heritage.
 
 ## Divisions
+
 | Division (Layer 3) | Scope |
 |--------------------|-------|
 | World History | History across regions and eras at world scale |
@@ -34,20 +36,25 @@ The human record across time and place. The social-science theory of how societi
 <!-- /brain:children -->
 
 ## Class here / not here
+
 - Class here: History at any scale, and biography
 - Class here: Geography, cartography, and place
 - Class here: Archaeology and heritage
 - Not here: The theory of how societies work - goes to Society & Social Sciences
 - Not here: Cultural anthropology of living peoples - goes to Society & Social Sciences / Anthropology
+- Not here: The history of an art, a sport, philosophy, or a science, which travels with its field (`Library/README.md`, Boundary rulings)
 - Not here: Historical fiction as literature - goes to Language & Literature / Fiction & Prose
 
 ## See also
+
 - `Library/Society & Social Sciences/README.md` - how societies work
 - `Library/Religion & Spirituality/README.md` - religion and spirituality
-- `Library/Language & Literature/README.md` - language and written art
+- `Library/Language & Literature/README.md` - language and literature
 
 ## Library cross-walk
-Dewey 900, UDC 9, LCC C, D, E, F, G. Reference only.
+
+Dewey 900, UDC 9, LCC C, D, E, F and G. Reference only.
 
 ## Conventions
-Classification rules, the boundary-rulings and worked-examples tables, the controlled facet keywords, the freshness model, and weeding all live in `Library/README.md`. This README adds no rules of its own.
+
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.

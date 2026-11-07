@@ -48,7 +48,7 @@ a custom agent all read it the same way.
 - [ ] **Open the folder with any AI assistant, or in an editor**, and work in it there. The root
       [`README.md`](../README.md) says how to work in the vault, and each folder's own `README.md`
       how to work in that folder.
-- [ ] **Fill in `Profile/`** with the profile interview of the `/human-resources` skill, which the
+- [ ] **Fill in `Profile/`** with the profile interview of the `human-resources` skill, which the
       home kit in `tannergolden/intelligence` installs: it interviews you and writes only what you
       confirm.
 - [ ] **Stay current.** Run 🔄 Template Sync when you want this template's improvements. It opens a
@@ -86,12 +86,12 @@ to whoever works in it. The universal rules an AI assistant follows come with th
 ├── Memory/      # What happened, who is around you, what you decided, what is due
 ├── Profile/     # Who you are: values, goals, skills, working style
 ├── Projects/    # Personal projects, one folder each
-├── System/      # Workflows and the generated catalog
+├── System/      # Standing settings, the workflow map and the generated catalog
 └── Ventures/    # Each company you run, one folder each
 ```
 
-Every folder explains itself in a `README.md` at its root, which is also its note, written for
-anyone who works there.
+Every folder explains itself in a `README.md` at its root, written for anyone who works there; in
+the seven top folders and below, that README is also the folder's note.
 [How The Vault Works](../.docs/introduction/How-The-Vault-Works.md) says how the parts fit together,
 and the [Glossary](../.docs/references/Glossary.md) defines the vault's own terms.
 
@@ -101,12 +101,12 @@ and the [Glossary](../.docs/references/Glossary.md) defines the vault's own term
 
 The vault's checks and generators are small Python scripts in
 [`.github/scripts/`](scripts/README.md). Each finds the vault from its own location, so the vault
-works wherever it is placed, and [`vault.yml`](workflows/vault.yml) runs them all on every pull
-request.
+works wherever it is placed, and [`vault.yml`](workflows/vault.yml) runs every check, with the
+scripts' own tests, on every pull request and every push to the default branch.
 
 ```bash
 python3 .github/scripts/check-vault.py    # every check: notes, links, personal data, generated parts
-python3 .github/scripts/update-vault.py   # redraw everything generated: memory tiers, link blocks, the catalog
+python3 .github/scripts/update-vault.py   # redraw everything generated: memory tiers, lists, the catalog
 python3 .github/scripts/lint-notes.py X   # one note against the schema
 ```
 
@@ -131,8 +131,9 @@ do when one fails.
 ## 👤 The Developer
 
 The BRAIN was designed and built by **Tanner Golden**: its folder structure, naming conventions,
-documentation and scripts all originate with him, and "the developer" means him. "The user"
-means whoever `Profile/` describes: the vault is portable, so the user is whoever adopts it.
+documentation and scripts all originate with him, and "the developer" means him. "The owner",
+called "the user" in some notes, means whoever `Profile/` describes: the vault is portable, so its
+owner is whoever adopts it.
 
 <!-- The domain is capitalised on purpose: initialisation rewrites the template owner's
 handle wherever it stands alone, and this address must survive in every vault. -->

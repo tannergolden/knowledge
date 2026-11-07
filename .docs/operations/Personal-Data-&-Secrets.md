@@ -35,10 +35,11 @@ pointer to where it lives. The rules and the scans that enforce them are the sta
 
 - [The golden rules of secrets](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md#-the-golden-rules-of-secrets)
 - [The automated guardians](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md#-automated-guardians),
-  which include the gitleaks scan `checks.yml` runs on every push and pull request.
+  which include the gitleaks scan `checks.yml` runs on every pull request and every push to the
+  default branch.
 
-The vault adds one scan of its own: `python3 .github/scripts/scan-pii.py` checks every tracked file
-for Social Security and card numbers, and CI runs it through `check-vault.py`.
+The vault adds one scan of its own: `python3 .github/scripts/scan-pii.py` checks every tracked text
+file for Social Security and card numbers, and CI runs it through `check-vault.py`.
 
 ---
 
@@ -47,8 +48,8 @@ for Social Security and card numbers, and CI runs it through `check-vault.py`.
 > [!IMPORTANT]
 > Never report a vulnerability in a public issue.
 
-A vulnerability goes through the account's security policy, which GitHub serves to this repository
-from the account's `.github` repository and shows on its Security tab.
+A vulnerability goes through this repository's [security policy](../../.github/SECURITY.md), which
+GitHub shows on its Security tab and which says how to report one privately.
 
 If a secret is ever committed, follow the standards'
 [incident response protocol](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md#-incident-response-protocol).

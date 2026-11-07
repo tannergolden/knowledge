@@ -7,7 +7,7 @@ keywords: ["goal", "scope", "current status", "blockers", "key decisions", "proj
 
 # 🧭 [Project Name] - Overview
 
-<!-- Replace [Project Name] with the actual project name. Fill in every field. This file is the AI's primary reference for understanding what this project is and where it stands. -->
+<!-- Replace [Project Name] with the actual project name, and fill in what is known. This file is the first one read to understand what this project is and where it stands. -->
 
 ---
 
@@ -19,9 +19,9 @@ keywords: ["goal", "scope", "current status", "blockers", "key decisions", "proj
 | Status & progress summary | Permanent while project exists | Update in place - don't accumulate old statuses, just overwrite |
 | Resolved blockers | Remove once resolved | Delete from the table - resolved history belongs in Log.md |
 | Key decisions | Permanent while project exists | Keep - decisions explain why things are the way they are |
-| Entire file | Archive when project closes | When project completes or is abandoned, keep the folder as a record |
+| Entire file | Kept when the project closes | When the project completes or is abandoned, the folder is kept as the record |
 
-**AI Instruction:** Overview.md is a living document - it reflects the current state of the project, not a history of it. Update the Status, Phase, Progress Summary, and Blockers sections in place whenever things change. Don't append old statuses; overwrite them. Resolved blockers should be removed from this file and noted in Log.md instead. Key decisions are permanent - they explain the "why" behind how the project was built. When a project closes, archive the entire folder rather than deleting it.
+**How this file is kept:** Overview.md is a living document: it reflects the current state of the project, not a history of it. The Status, Phase, Progress Summary, and Blockers sections are updated in place whenever things change, and old statuses are overwritten, never appended. A resolved blocker is removed from this file and noted in Log.md instead. Key decisions are permanent: they explain the "why" behind how the project was built. When the project closes, its status says so and the whole folder is kept, never deleted without a yes.
 
 ---
 
@@ -54,7 +54,7 @@ keywords: ["goal", "scope", "current status", "blockers", "key decisions", "proj
 
 ## Status
 
-**Current Status:** <!-- Idea / In Progress / On Hold / Complete -->
+**Current Status:** <!-- Idea / In Progress / On Hold / Complete / Abandoned -->
 **Phase:** <!-- e.g. Planning / Building / Testing / Shipping / Maintaining -->
 **Started:**
 **Target Completion:** <!-- or "Ongoing" if open-ended -->

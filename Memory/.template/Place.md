@@ -1,6 +1,6 @@
 <!--
 title: "Place"
-description: "Template for a place of personal significance to the user."
+description: "Template for a place of personal significance to the owner."
 type: "template"
 keywords: ["place template", "location entry", "home hometown", "significant place", "geography", "where", "meaningful location"]
 -->
@@ -19,7 +19,7 @@ INSTANTIATION (copy this file to Memory/Entities/Places/<Name>.md, then):
 
 ## Relationship
 
-- **Significance to the user:**
+- **Significance to the owner:**
 - **Current status:**
 - **First mentioned:**
 
@@ -33,9 +33,9 @@ INSTANTIATION (copy this file to Memory/Entities/Places/<Name>.md, then):
 
 <!-- Distinctive facts worth remembering about this place. -->
 
-## History with the User
+## History with the Owner
 
-<!-- Most recent first. The user's history and associations with this place. -->
+<!-- Most recent first. The owner's history and associations with this place. -->
 
 ## Provenance
 

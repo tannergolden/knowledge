@@ -2,19 +2,19 @@
 title: "Travel & Exploration - Folder Information"
 description: "Travel, exploration, and accounts of places."
 type: "index"
-keywords: ["accounts", "places"]
+keywords: ["travel writing", "travel guides", "voyages", "expeditions", "explorers", "age of discovery", "journeys"]
 -->
 
 # 📁 Library / History & Geography / Travel & Exploration /
 
 ## Purpose
 
-Travel, exploration, and accounts of places. For how this division relates to the rest of the human record in time and place and where adjacent topics go, see `Library/History & Geography/README.md`.
+Travel and exploration: travel guides and travel writing, voyages and expeditions, explorers, and accounts of places. A trip the owner plans goes to `Projects/`, and its dates to `Memory/`; the geography of a place to History & Geography / Geography & Cartography; pilgrimage as religious practice to Religion & Spirituality / Ritual & Practice.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/History & Geography/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/History & Geography/README.md`. This README adds no rules of its own.

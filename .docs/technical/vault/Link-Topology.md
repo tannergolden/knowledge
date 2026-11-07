@@ -60,8 +60,9 @@ The graph mirrors the file tree, and only a folder's `README.md`, its note, carr
 
 - **A `.template/` folder** neither contains wikilinks nor receives them, its own `README.md`
   included. A scaffold is not a graph node, and a link to one drags it into the graph. Name a
-  scaffold by plain path. A venture's or a project's README, copied from a scaffold, takes its links
-  once it is copied: `update-vault.py` draws its list of subfolders.
+  scaffold by plain path. A venture's or a project's README, copied from a scaffold, may link once it
+  is copied, as any folder's README does, and a venture's carries the block in which
+  `update-vault.py` draws its list of subfolders.
 
 ---
 

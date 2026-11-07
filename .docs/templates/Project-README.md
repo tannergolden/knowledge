@@ -1,6 +1,6 @@
 <!--
 title: '📘 PROJECT README'
-description: 'The front page of a project generated from this template: what it is, how to install and use it, and where to get help, report a vulnerability or contribute. Copy it over the README at the repository root once the project has a purpose, and keep it current with each release.'
+description: 'The front page for a project''s own repository: what it is, how to install and use it, and where to get help, report a vulnerability or contribute. Copy it to the README at the root of that repository, never over this vault''s root README, which is the vault''s guide, and keep it current with each release.'
 type: template
 -->
 
@@ -21,7 +21,7 @@ _[A second line, if it earns its place.]_
 ---
 
 > [!NOTE]
-> **How to use**: copy this file over `README.md` at the repository root, replace every `[bracket]` (the links that wait in brackets point at documents a seed becomes, so add them as you fill those in), and in the comment at the top set `title` to the project's name in capitals, `description` to one sentence, and `type` to `index`. The seed here stays pristine. Delete a section that does not apply rather than leaving it empty, and keep **Security** and **Licence**: every project needs them.
+> **How to use**: copy this file to `README.md` at the root of the project's own repository, never over this vault's root `README.md`, which is the vault's guide. Replace every `[bracket]` (the links that wait in brackets point at documents a seed becomes, so add them as you fill those in), and in the comment at the top set `title` to the project's name in capitals, `description` to one sentence, and `type` to `index`. The seed here stays pristine. Delete a section that does not apply rather than leaving it empty, and keep **Security** and **Licence**: every project needs them.
 
 ---
 

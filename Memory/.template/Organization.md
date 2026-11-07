@@ -1,6 +1,6 @@
 <!--
 title: "Organization"
-description: "Template for an organization in the user's personal life that is not one of their ventures."
+description: "Template for an organization in the owner's personal life that is not one of their ventures."
 type: "template"
 keywords: ["organization template", "institution entry", "gym clinic school", "club company", "personal life", "membership", "customer of"]
 -->
@@ -19,8 +19,8 @@ INSTANTIATION (copy this file to Memory/Entities/Organizations/<Name>.md, then):
 
 ## Relationship
 
-- **What it is to the user:**
-- **User's role:**
+- **What it is to the owner:**
+- **Owner's role:**
 - **Current status:**
 - **First mentioned:**
 
@@ -33,9 +33,9 @@ INSTANTIATION (copy this file to Memory/Entities/Organizations/<Name>.md, then):
 
 ## Key People
 
-<!-- People the user knows here. Plain-path refs to People entries, e.g. Memory/Entities/People/Jane Doe.md -->
+<!-- People the owner knows here. Plain-path refs to People entries, e.g. Memory/Entities/People/Jane Doe.md -->
 
-## History with the User
+## History with the Owner
 
 <!-- Most recent first. How the relationship has developed. -->
 

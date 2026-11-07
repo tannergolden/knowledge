@@ -23,7 +23,7 @@ _Standards are followed. Templates are filled in._
 | Kind          | Where it lives                                                                                        | What you do with it        |
 | :------------ | :---------------------------------------------------------------------------------------------------- | :------------------------- |
 | **Standards** | [`tannergolden/standards`](https://github.com/tannergolden/standards/blob/Development/docs/README.md) | Follow by link, never copy |
-| **Templates** | [`docs/templates/`](templates/README.md)                                                              | Copy out, fill in, own     |
+| **Templates** | [`.docs/templates/`](templates/README.md)                                                             | Copy out, fill in, own     |
 
 A standard describes how every repository works: branching, reviews, releases,
 secrets, hygiene. It is shared, it changes centrally, and copying it here would
@@ -39,18 +39,18 @@ why they ship as seed content rather than as law.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                                     | Purpose                                                                                                                                                                                                                 |
-| :---------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`adrs/`](adrs/README.md)                 | Architecture decision records, one file per decision, each logged with its status, date and evidence.                                                                                                                   |
-| [`distribution/`](distribution/README.md) | From a branch to a release: how a change moves through this project and how a release reaches its users, wherever this project adds to the shared workflow.                                                             |
-| [`introduction/`](introduction/README.md) | Where to start: what this project is and how its parts fit together, the principles it holds to, how to get ready to work on it, and where it is going.                                                                 |
-| [`library/`](library/README.md)           | What to learn, and where: guides, background and further reading for anyone new to this project's domain or its tools.                                                                                                  |
-| [`operations/`](operations/README.md)     | Keeping this project healthy and safe once it runs: runbooks, incident response, post-mortems, security, and the risks it still carries.                                                                                |
-| [`references/`](references/README.md)     | Things to look up: the glossary, catalogues, settings and formats, the pages this project consults rather than reads through.                                                                                           |
-| [`technical/`](technical/README.md)       | How this project is built: its architecture, stack and source, one document for each part that needs one, and the designs, plans and research behind them.                                                              |
-| [`templates/`](templates/README.md)       | Index of the reusable document templates and when to use each one.                                                                                                                                                      |
-| [`Prompts.md`](Prompts.md)                | Ready-made prompts for working in this repository with an AI agent, in two sections kept apart: the Golden Path's own, which &#x1F504; Template Sync keeps current, and this repository's, which only its owner writes. |
-| [`README.md`](README.md)                  | This file.                                                                                                                                                                                                              |
+| Entry                                     | Purpose                                                                                                                                                                                                                                                          |
+| :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`adrs/`](adrs/README.md)                 | Architecture decision records, one file per decision, each logged with its status, date and evidence.                                                                                                                                                            |
+| [`distribution/`](distribution/README.md) | From a branch to a release: how a change moves through this project and how a release reaches its users, wherever this project adds to the shared workflow.                                                                                                      |
+| [`introduction/`](introduction/README.md) | Where to start: what this project is and how its parts fit together, the principles it holds to, how to get ready to work on it, and where it is going.                                                                                                          |
+| [`library/`](library/README.md)           | What to learn, and where: guides, background and further reading for anyone new to this project's domain or its tools.                                                                                                                                           |
+| [`operations/`](operations/README.md)     | Keeping this project healthy and safe once it runs: runbooks, incident response, post-mortems, security, and the risks it still carries.                                                                                                                         |
+| [`references/`](references/README.md)     | Things to look up: the glossary, catalogues, settings and formats, the pages this project consults rather than reads through.                                                                                                                                    |
+| [`technical/`](technical/README.md)       | How this project is built: its architecture, stack and source, one document for each part that needs one, and the designs, plans and research behind them.                                                                                                       |
+| [`templates/`](templates/README.md)       | Index of the reusable document templates and when to use each one.                                                                                                                                                                                               |
+| [`Prompts.md`](Prompts.md)                | Ready-made prompts for working in this repository with an AI agent, in two sections kept apart: the Golden Path's own, and this repository's, which opens with the prompts for using and keeping a vault. &#x1F504; Template Sync keeps both current in a vault. |
+| [`README.md`](README.md)                  | This file.                                                                                                                                                                                                                                                       |
 
 <!-- AUTO-INDEX:END -->
 
@@ -62,13 +62,13 @@ so the tree reads one level at a time.
 
 ## 🌱 Using A Template
 
-Copy it out of `docs/templates/` to the matching path **without** `templates/`,
+Copy it out of `.docs/templates/` to the matching path **without** `templates/`,
 then edit it until it describes your project:
 
 ```txt
-docs/templates/technical/backend/API-Design-Standards.md
+.docs/templates/technical/backend/API-Design-Standards.md
         ↓
-docs/technical/backend/API-Design-Standards.md
+.docs/technical/backend/API-Design-Standards.md
 ```
 
 **Anything in `[square brackets]` is yours to replace** - a bare `[REPLACE_ME]`,
@@ -87,13 +87,13 @@ to keep that seed exactly as it is.
 
 ## 📁 The Seven Folders
 
-`docs/` is where your own documents go: the pages you write and the seeds you
+`.docs/` is where your own documents go: the pages you write and the seeds you
 copy out, not the tree the seeds sit in. It arrives in the same seven folders
 as the standards' own documentation, so every repository on the standards
 reads the same way:
 
 ```bash
-docs/
+.docs/
 ├── introduction/        # where to start: overview, principles, setup, roadmap
 ├── distribution/        # from a branch to a release: releasing, delivery
 ├── technical/           # how it is built: architecture, source, designs, plans
@@ -105,23 +105,25 @@ docs/
 ```
 
 Beside the seven folders sits [`Prompts.md`](Prompts.md): ready-made prompts for
-working here with an AI agent, in two sections kept apart. 🔄 Template Sync keeps
-the Golden Path's section current, and the section after it is this
-repository's own, which nothing upstream ever writes.
+working here with an AI agent, in two sections kept apart: the Golden Path's,
+which tannergolden/path writes, and this repository's, which opens with this
+template's prompts for using and keeping a vault. 🔄 Template Sync keeps the
+whole page current in a vault, merged with any prompt its owner adds.
 
-Each folder arrives empty but for a `README.md` that says what belongs in it
-and logs its files. Put each document you write in the folder its kind names,
-and add folders below them as you grow: give each one a `README.md` that logs
-its files, the way every seeded folder does, and update it in the same change
-that adds a file. `templates/` is not copied across: the seeds stay where they
-are and you take what you want.
+Each folder arrives with a `README.md` that says what belongs in it and logs its
+files, beside any page this template ships there. Put each document you write in
+the folder its kind names, and add folders below them as you grow: give each one
+a `README.md` with a folder log between `AUTO-INDEX` markers, the way every
+seeded folder does, and 🗂️ Machined Indexes keeps the log current. `templates/`
+is not copied across: the seeds stay where they are and you take what you want.
 
 **Use these folders unless your project needs its own.** They fit any project,
-which is why the standards use the same seven. If yours keeps its documents
-another way - a notes vault whose folders are its documents, say - keep that
-way, and add `!/docs/**` under **Your rules** in `.github/template-sync`. Every
-README in these folders is kept current, so 🔄 Template Sync would otherwise
-overwrite any of them you put to a different use the next time you run it.
+which is why the standards use the same seven. A vault keeps its notes in its
+seven top folders, each explained by its own README, and keeps `.docs/` for the
+pages about the vault and its machinery, which 🔄 Template Sync keeps current
+with every README here. Put a `#` in front of a README's line in
+`.github/template-sync` before you put its folder to another use, or the next
+sync overwrites it.
 
 ---
 

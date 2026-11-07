@@ -1,20 +1,20 @@
 <!--
 title: "Practical How-To - Folder Information"
-description: "General step-by-step guides not covered above (kept narrow)."
+description: "General step-by-step guides that fit no other Life & Practice division (kept narrow)."
 type: "index"
-keywords: ["how-to", "general", "step-by-step", "guides", "covered"]
+keywords: ["step-by-step guides", "life skills", "car care", "emergency preparedness", "packing", "errands", "everyday tasks"]
 -->
 
 # 📁 Library / Life & Practice / Practical How-To /
 
 ## Purpose
 
-General step-by-step guides not covered above (kept narrow). For how this division relates to the rest of practical knowledge for living and where adjacent topics go, see `Library/Life & Practice/README.md`.
+Step-by-step guides for everyday tasks that fit no other Life & Practice division, such as basic car care or emergency preparedness. It is kept narrow: a guide that fits a division goes there, such as a home repair to Life & Practice / Home & Habitation.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Life & Practice/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Life & Practice/README.md`. This README adds no rules of its own.

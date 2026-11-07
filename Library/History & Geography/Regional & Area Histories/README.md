@@ -2,19 +2,19 @@
 title: "Regional & Area Histories - Folder Information"
 description: "Histories of specific regions, nations, and peoples."
 type: "index"
-keywords: ["specific", "regions", "nations"]
+keywords: ["national history", "local history", "area studies", "colonial history", "history of peoples", "dynasties", "civil wars"]
 -->
 
 # 📁 Library / History & Geography / Regional & Area Histories /
 
 ## Purpose
 
-Histories of specific regions, nations, and peoples. For how this division relates to the rest of the human record in time and place and where adjacent topics go, see `Library/History & Geography/README.md`.
+The history of one region, nation, people or place, from local history to a continent, with the area studies that frame it. History told across the world goes to History & Geography / World History; the geography of a place to History & Geography / Geography & Cartography; a living people's culture, studied by ethnography, to Society & Social Sciences / Anthropology.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/History & Geography/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/History & Geography/README.md`. This README adds no rules of its own.

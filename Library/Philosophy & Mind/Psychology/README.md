@@ -2,19 +2,19 @@
 title: "Psychology - Folder Information"
 description: "The scientific and clinical study of mind and behavior."
 type: "index"
-keywords: ["scientific", "clinical", "study", "mind", "behavior"]
+keywords: ["behavior", "cognitive psychology", "developmental psychology", "social psychology", "personality", "clinical psychology", "psychotherapy", "child development"]
 -->
 
 # 📁 Library / Philosophy & Mind / Psychology /
 
 ## Purpose
 
-The scientific and clinical study of mind and behavior. For how this division relates to the rest of reason, value, and the mind and where adjacent topics go, see `Library/Philosophy & Mind/README.md`.
+The science of mind and behavior and its clinical practice: cognitive, developmental, social and personality psychology, psychological research, clinical psychology and psychotherapy. Psychiatry and drug treatment go to Technology & Applied Science / Medicine & Health Sciences; self-help and everyday wellbeing to Life & Practice / Health & Wellness; cognition studied across fields to Philosophy & Mind / Cognitive Science.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Philosophy & Mind/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Philosophy & Mind/README.md`. This README adds no rules of its own.

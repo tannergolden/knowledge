@@ -2,15 +2,17 @@
 title: "Philosophy & Mind - Folder Information"
 description: "The examined questions of reason, value, beauty, and mind, and the science of mind and behavior."
 type: "index"
-keywords: ["logic", "ethics", "metaphysics", "psychology", "cognitive science"]
+keywords: ["logic", "ethics", "metaphysics", "epistemology", "psychology", "cognitive science"]
 -->
 
 # 💭 Library / Philosophy & Mind /
 
 ## Purpose
-The examined questions of reason, value, beauty, and mind, and the science of mind and behavior. Religious thought argued within a tradition goes to Religion & Spirituality; the everyday application of psychology to wellbeing goes to Life & Practice.
+
+The examined questions of reason, value, beauty, and mind, and the science of mind and behavior: philosophy by question and by school, and psychology and cognitive science.
 
 ## Divisions
+
 | Division (Layer 3) | Scope |
 |--------------------|-------|
 | Logic | Formal and informal logic, reasoning, argumentation |
@@ -36,20 +38,26 @@ The examined questions of reason, value, beauty, and mind, and the science of mi
 <!-- /brain:children -->
 
 ## Class here / not here
+
 - Class here: Philosophical argument and the theory of knowledge, value, and mind
 - Class here: The scientific and clinical study of psychology and cognition
 - Class here: The ethics of any subject (AI ethics, bioethics) unless it is operational professional conduct
+- Not here: Religious thought argued within a tradition - goes to Religion & Spirituality
+- Not here: The philosophy of science, or of a specific science - goes to Science & Mathematics / Philosophy & Method of Science
 - Not here: Everyday wellbeing and self-help - goes to Life & Practice / Health & Wellness
-- Not here: Medical psychiatry and treatment - goes to Technology & Applied Science / Medicine & Health Sciences
+- Not here: Medical psychiatry and drug treatment - goes to Technology & Applied Science / Medicine & Health Sciences
 - Not here: Criticism internal to a specific art form - goes to the relevant Arts & Recreation or Language & Literature division
 
 ## See also
+
 - `Library/Religion & Spirituality/README.md` - religion and spirituality
 - `Library/Science & Mathematics/README.md` - the formal and natural sciences
 - `Library/Life & Practice/README.md` - practical knowledge for living
 
 ## Library cross-walk
-Dewey 100 (incl. 150 psychology), UDC 1, LCC B and BF. Reference only.
+
+Dewey 100 (incl. 150 psychology), UDC 1, LCC B-BJ. Reference only.
 
 ## Conventions
-Classification rules, the boundary-rulings and worked-examples tables, the controlled facet keywords, the freshness model, and weeding all live in `Library/README.md`. This README adds no rules of its own.
+
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.

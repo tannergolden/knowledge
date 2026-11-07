@@ -7,25 +7,33 @@ keywords: ["companies", "businesses", "company subfolders", "department folders"
 
 # 🏢 Ventures/
 
-Each company the user owns or runs, one folder each, copied from `.template/`: an `Overview.md`, `Goals.md` and `Log.md`, the `Administration/` executive office, and a folder for each department, from Sales & Marketing to Legal & Compliance. Read this README before changing anything in this folder; its rules add to the root `README.md` and never loosen it.
+Each company the owner runs, one folder each, copied from `.template/`: an `Overview.md`, `Goals.md` and `Log.md`, the `Administration/` executive office, and a folder for each department, from Sales & Marketing to Legal & Compliance. Read this README before changing anything in this folder; its rules add to the root `README.md` and never loosen it.
 
 ## Rules
 
 - Venture work starts by looking in `Ventures/` for the company's folder: whether one exists is checked, never assumed.
-- A venture folder is created only with a yes, by copying `Ventures/.template/` whole and giving the copy a short hyphenated name (`Golden-Media`). A business with clients, employees, revenue or a brand is a venture; one without them is a project.
-- Every copied file gets its real `title`, `description` and `type`, and `[Company]` the venture's name: each copied `README.md` becomes its folder's note, typed `index`, so no placeholder reaches the catalog.
-- A venture's files hold only what the user says, confirmed before it is written. Nothing is guessed or invented.
-- Ventures stay apart: two ventures' context is never merged or cross-referenced unless the user asks.
+- A venture folder is created only with a yes, by copying `Ventures/.template/` whole and giving the copy a short hyphenated name (`Acme-Corp`). A business with clients, employees, revenue or a brand is a venture; one without them is a project.
+- Every copied file gets its real `title`, `description` and `type`, its keywords lose `template`, and `[Company]` becomes the venture's name: each copied `README.md` becomes its folder's note, typed `index`, so no placeholder reaches the catalog.
+- A venture's files hold only what the owner says, confirmed before it is written. Nothing is guessed or invented.
+- Ventures stay apart: two ventures' context is never merged or cross-referenced unless the owner asks.
 - Personal information goes to `Profile/` or `Memory/`, and general business knowledge to `Library/`, never here.
+- The strategic core is written only behind the write-gate (Structure, below).
 - Each venture's `Overview.md` keeps its stage and status current, and its `Log.md` records meaningful work.
 
-## Purpose
+## What Belongs Here
 
-`Ventures/` holds context and working files for every company or business the user owns or operates. Each venture gets its own named subfolder containing company-wide `.md` context files at the root, an `Administration/` executive office, 11 standard department folders, and a `Miscellaneous/` catch-all, for organizing assets, data, and documents.
+`Ventures/` holds the context and working files of every company the owner owns or operates: company-specific context and materials only. Each venture's folder holds its company-wide `.md` context files at the root, the `Administration/` executive office, a folder for each of the other 11 departments, and a `Miscellaneous/` catch-all. A department folder holds both `.md` context files and other working files (assets, decks, exports, documents): it is a working folder, not just notes.
 
-This folder is for **company-specific** context and materials. General domain knowledge belongs in `Library/`. Personal context belongs in `Profile/` or `Memory/`.
-
----
+| Content Type | Belongs In |
+|-------------|-----------|
+| A venture's profile, goals and running log | `Ventures/[Company]/Overview.md`, `Goals.md` and `Log.md` |
+| A venture's team, pipeline, products, brand or other department records | `Ventures/[Company]/[Department]/` |
+| Sales decks, contracts, data exports for a venture | `Ventures/[Company]/[Department]/` |
+| A decision for a venture | `Ventures/[Company]/Administration/Decisions.md` |
+| How org structures generally work | `Library/` |
+| The owner's personal career history | `Profile/Biography.md` |
+| A decision in the owner's own life | `Memory/Decisions/` (an entry from `Memory/.template/Decision.md`) |
+| A personal project not tied to a venture | `Projects/` |
 
 ## What Lands Here
 
@@ -47,15 +55,11 @@ A company's work lands here from the twelve department skills the home kit insta
 | `Research & Development (R&D)/` | `research-and-development`: research, ideas, and the building of products, skills and software, with the roadmap |
 | `Miscellaneous/` | Anything for the venture that fits no department |
 
-The same skills' work in the user's own life never lands here: the root `README.md`, Where Each Kind Of Work Goes, gives its homes.
-
-A department folder holds both `.md` context files and other working files (assets, decks, exports, documents): it is a working folder, not just notes.
-
----
+The same skills' work in the owner's own life never lands here: the root `README.md`, Where Each Kind Of Work Goes, gives its homes.
 
 ## Structure
 
-Each venture follows the template defined in `Ventures/.template/`:
+Each venture follows the template in `Ventures/.template/`:
 
 <details>
 <summary>The venture template, folder by folder</summary>
@@ -65,7 +69,7 @@ Ventures/
 └── Company-Name/
     │
     ├── README.md                                The venture's folder note, copied from the template's
-    ├── Overview.md                              Company profile, mission, vision, industry, stage
+    ├── Overview.md                              Company profile, mission, vision, industry, stage, status
     ├── Goals.md                                 OKRs, strategic goals, north star metric, milestones
     ├── Log.md                                   Session log: decisions, milestones, progress over time
     │
@@ -75,6 +79,7 @@ Ventures/
     │   └── Cadence.md                           Weekly / monthly / quarterly / annual operating rhythm
     │
     ├── Sales & Marketing (S&M)/
+    │   ├── Pipeline.md                          Open prospects: stage, value, owner, next step, close
     │   ├── Brand.md                             Voice, tone, visual identity, messaging guidelines
     │   ├── Products.md                          Product catalog: descriptions, pricing, status, roadmap
     │   └── Services.md                          Services catalog: scope, pricing, delivery, capacity
@@ -118,110 +123,55 @@ Every department folder also holds its own `README.md`, copied with it, saying w
 
 </details>
 
-Subfolder names are short and hyphenated (for example `Golden-Media` or `Acme-Corp`). When a venture is created, `Ventures/.template/` is copied whole and **each copied file gets its real `title`, `description` and `type`**: the `[Company]` placeholder becomes the venture's name, and `template` the type the copy is (`index` for each `README.md`), so the catalog stays clean.
-
-The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the governance record; `Cadence.md`, the operating rhythm) and, in Finance & Accounting, a forward `Financial-Model.md` and a real `Cap-Table.md`. These files are written only behind a write-gate, by the `administration` skill, or by `finance-and-accounting` for the model and the cap table: internal files are drafted directly; money, contracts, outside communication and deletions need the owner's yes.
-
----
+The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the governance record; `Cadence.md`, the operating rhythm) and, in Finance & Accounting, a forward `Financial-Model.md` and a real `Cap-Table.md`. These files are written only behind the **write-gate**: the `administration` skill writes them, or `finance-and-accounting` the model and the cap table. Internal drafts go ahead directly; moving money, contracts, outside communication, a change to equity and deletions need the owner's yes.
 
 ## Creating A Venture Folder
 
-A venture folder is made when the user mentions a company they own, operate, or are starting, and only once they say yes to the question:
+A venture folder is made when the owner mentions a company they own, operate, or are starting, and only once they say yes to the question:
 
 > _"Create a venture folder for [Company]?"_
 
-It is made by copying the `.template/` structure whole and naming the copy in short hyphenated form (for example `Golden-Media` or `Acme-Corp`). The new folder is picked up automatically by the catalog (`System/Data/catalog.ndjson`, drawn by `update-vault.py`): there is no hand-maintained index to update.
+It is made by copying `.template/` whole and naming the copy in short hyphenated form (Rules, above). `update-vault.py` lists it under Ventures, below, and the catalog (`System/Data/catalog.ndjson`) picks up its notes: there is no hand-maintained index to update.
 
 **Signs a venture folder is needed:**
 
-- The user mentions a company they own, operate, co-found, or actively run
+- The owner mentions a company they own, operate, co-found, or actively run
 - The work is clearly a business, not just a personal project
-- The user refers, across sessions, to a company that has no folder yet
-- The user asks to set up a company in the BRAIN
+- The owner refers, across sessions, to a company that has no folder yet
+- The owner asks to set up a company in the BRAIN
 - The nature of the work (clients, revenue, employees, brand) makes it clear a venture context is needed
 
-**Venture or project:** if it involves clients, employees, revenue, or a brand operating independently in the market, it is a venture. If it is something the user is personally building or exploring without that organizational dimension, it is a project.
-
----
-
-## Filling Out Context Over Time
-
-**A venture's `Overview.md` and `Sales & Marketing (S&M)/Brand.md` are living documents, not one-time forms.** They are not filled out in a single session: they build up gradually as the user works on the venture and talks it through.
-
-When a venture folder is first created, the most essential baseline comes first:
-
-> _"What does [Company] do, and what stage is it at?"_
-
-Only what the user provides is filled in. Everything else stays blank: nothing is fabricated or guessed.
-
-As later sessions touch on the venture:
-
-- Information the conversation reveals that belongs in a context file is noticed,
-- surfaced before it is written:
-  > _"[Company]'s target customer is X: add that to `Ventures/[Company]/Overview.md`?"_
-- and written to the relevant fields after confirmation.
-
-**`Overview.md` builds from conversations about:** the company's mission, what it does, its stage, target customers, business model, revenue, key hires, strategic priorities, competitive landscape, and founding story.
-
-**`Sales & Marketing (S&M)/Brand.md` builds from conversations about:** marketing, copywriting, messaging, visual identity, tone of voice, target audience, what the brand stands for, and any session that writes on behalf of the company.
-
-**`Goals.md` builds from conversations about:** strategic priorities, OKRs, targets, milestones, north star metrics, and any session where the user discusses what the company is trying to accomplish this quarter or year.
-
-**`Log.md` gains an entry** at the end of any session where meaningful work was done on the venture: decisions made, milestones hit, pivots, hires, launches. Entries stay concise: a date and 2 to 5 bullet points. Routine questions and answers are not logged.
-
-**The other department files** (`Human Resources (HR)/Hierarchy.md`, `Customer Experience (CX)/Clients.md`, `Sales & Marketing (S&M)/Products.md`, `Sales & Marketing (S&M)/Services.md`, `Finance & Accounting (F&A)/Financials.md`, `Information Technology (IT)/Stack.md`, `Business Intelligence (BI)/Metrics.md`, `Research & Development (R&D)/Roadmap.md`, `Operations & Logistics (O&L)/Operations.md`, `Legal & Compliance (L&C)/Compliance.md`, `Public Relations (PR)/Press.md`, `Quality Assurance (QA)/Standards.md`) follow the same pattern: they are updated when relevant information surfaces, always with the user's confirmation.
-
----
+**Venture or project:** if it involves clients, employees, revenue, or a brand operating independently in the market, it is a venture. If it is something the owner is personally building or exploring without that organizational dimension, it is a project.
 
 ## Working Within A Venture
 
-**An existing folder is always looked for before any venture work.** When the user mentions or starts work on a specific company, the first step is to check whether a folder for it already exists under `Ventures/`, by looking at the actual directory rather than assuming.
+The folder is looked for every time a venture comes up, not just on first mention, in the actual directory rather than from memory: folders may have been renamed or restructured.
 
 - **The folder exists:** work happens inside it. Its `Overview.md` is read first, then `Goals.md` and `Log.md` for current priorities and recent context, then the department files the task needs, each department's `README.md` saying what its folder holds.
-- **No folder exists:** the user is asked:
+- **No folder exists:** the owner is asked:
   > _"There is no venture folder for [Company] yet. Create one?"_
-  With a yes, it is created from `Ventures/.template/` and cataloged automatically. With a no, the conversation goes on without a folder.
+  With a yes, it is created from `Ventures/.template/`. With a no, the work goes on without a folder.
 
-The check runs every time a venture comes up, not just on first mention: the user may have renamed or restructured folders.
+A venture's files are **living documents, not one-time forms**: they build up as the owner works on the venture and talks it through. When a venture folder is first created, the most essential baseline comes first:
 
-- Department folders hold both `.md` context files and other working files (assets, decks, exports, documents): they are working folders, not just notes
-- Two ventures' context is never merged or cross-referenced unless the user explicitly asks
-- Personal (non-work) information is never stored here: it belongs in `Profile/` or `Memory/`
-- General business knowledge is never stored here: it belongs in `Library/`
-- Each venture's `Overview.md` is kept current: its stage and status change as the venture evolves
+> _"What does [Company] do, and what stage is it at?"_
 
----
+Only what the owner provides is filled in. Everything else stays blank: nothing is fabricated or guessed. As later work touches the venture, information that belongs in a context file is noticed, proposed before it is written, and written after a yes:
 
-## What Belongs Here vs. Elsewhere
+> _"[Company]'s target customer is X: add that to `Ventures/[Company]/Overview.md`?"_
 
-| Content Type | Belongs In |
-|-------------|-----------|
-| A venture's team, products, or brand context | `Ventures/[Company]/*.md` |
-| Sales decks, contracts, data exports for a venture | `Ventures/[Company]/[Department]/` |
-| How org structures generally work | `Library/` |
-| The user's personal career history | `Profile/Biography.md` |
-| A business decision the user made | `Memory/Decisions/` (an entry from `Memory/.template/Decision.md`) |
-| A personal project not tied to a venture | `Projects/` |
-
----
-
-## Ventures
-
-Each venture folder's README, listed by `update-vault.py` from the folders here:
-
-<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
-_No subfolders yet._
-<!-- /brain:children -->
+- **`Overview.md`** builds from the company's mission, what it does, its stage and status, target customers, business model, revenue, key hires, strategic priorities, competitive landscape, and founding story.
+- **`Sales & Marketing (S&M)/Brand.md`** builds from marketing, copywriting, messaging, visual identity, tone of voice, target audience, what the brand stands for, and any work that writes on behalf of the company.
+- **`Goals.md`** builds from strategic priorities, OKRs, targets, milestones, north star metrics, and any discussion of what the company is trying to accomplish this quarter or year.
+- **`Log.md`** gains an entry at the end of any session where meaningful work was done on the venture: decisions made, milestones hit, pivots, hires, launches. Entries stay concise: a date and 2 to 5 bullet points. Routine questions and answers are not logged.
+- **The other department files** (`Sales & Marketing (S&M)/Pipeline.md`, `Products.md` and `Services.md`, `Customer Experience (CX)/Clients.md`, `Human Resources (HR)/Hierarchy.md`, `Finance & Accounting (F&A)/Financials.md`, `Information Technology (IT)/Stack.md`, `Business Intelligence (BI)/Metrics.md`, `Research & Development (R&D)/Roadmap.md`, `Operations & Logistics (O&L)/Operations.md`, `Legal & Compliance (L&C)/Compliance.md`, `Public Relations (PR)/Press.md` and `Quality Assurance (QA)/Standards.md`) follow the same pattern: they are updated when relevant information surfaces, always with the owner's confirmation.
 
 ## Venture Stage & Status
 
-There is no hand-maintained index. Each venture is a folder whose `Overview.md` says its stage and status; the live list comes from the catalog: the `BRAIN/Ventures/` records of the committed `System/Data/catalog.ndjson`.
+Each venture's `Overview.md` says its stage and its status, and stays current:
 
-**Each venture's `Overview.md` stays current:**
-
-- A new venture folder is created: it is cataloged automatically
-- A venture's stage changes (for example Pre-revenue to Early Revenue): the Stage in its `Overview.md` is updated
-- A venture goes on hold, closes, or is sold: its Status (and Outcome) in its `Overview.md` is updated
+- A venture's stage changes (for example Pre-revenue to Early Revenue): its **Current Stage** is updated.
+- A venture goes on hold, closes, or is sold: its **Status**, and once it is closed its **Outcome**, are updated.
 
 **Stage values** (used consistently):
 
@@ -238,10 +188,18 @@ There is no hand-maintained index. Each venture is a folder whose `Overview.md` 
 | `Plateau`       | Growth has stalled: may signal a need to pivot or reinvent            |
 | `Decline`       | Revenue or market share actively shrinking                            |
 
-For a closed or exited venture, the Outcome is one of:
+The **Status** is `Active`, `On Hold` or `Closed`. For a closed or exited venture, the **Outcome** is one of:
 `Acquired` · `IPO` · `Wind-down` · `Merged` · `Sold`
 
-A venture is referred to by its folder name exactly as it appears under `Ventures/` (for example `Golden-Media`).
+A venture is referred to by its folder name exactly as it appears under `Ventures/` (for example `Acme-Corp`).
+
+## Ventures
+
+Each venture folder's README, listed by `update-vault.py` from the folders here; the catalog's `BRAIN/Ventures/` records list every note inside them.
+
+<!-- brain:children (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
+_No subfolders yet._
+<!-- /brain:children -->
 
 ## File Log
 
@@ -254,4 +212,4 @@ A venture is referred to by its folder name exactly as it appears under `Venture
 
 <!-- AUTO-INDEX:END -->
 
-🗂️ Machined Indexes redraws this log after every push.
+🗂️ Machined Indexes redraws this log after every push to the default branch.

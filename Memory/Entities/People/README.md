@@ -1,29 +1,31 @@
 <!--
 title: "People"
-description: "Registry of the people in the user's personal orbit, one Biography-depth file per person."
+description: "Registry of the people in the owner's personal orbit, one Biography-depth file per person."
 type: "index"
 keywords: ["relationships", "contacts", "friends family", "personal orbit", "person entries", "who someone is"]
 -->
 
 # 🧑‍🤝‍🧑 People
 
-The registry of people in the user's **personal orbit**: family, friends, mentors, and the recurring individuals who populate the user's life. One file per person, named `First Last.md`, holding a Biography-depth profile - relationship, contact, history, open threads, and the dates that matter.
+The registry of people in the owner's **personal orbit**: family, friends, mentors, and the recurring individuals who populate the owner's life.
 
-## Scope
+## What belongs here
 
-- **Personal relationships only.** A person known purely through business - a client, vendor, or coworker with no personal tie - belongs in `Ventures/`, not here. Someone who is both gets a personal entry here that cross-references the venture.
-- **Not the user.** This registry is about *other people*; who the user is lives in `Profile/`.
-- **Earns a file when real or recurring.** A name mentioned once stays a `Log.md` line; it becomes an entry only when the relationship is real or the person recurs.
+- **Personal relationships only.** A person known purely through business, such as a client, vendor, or coworker with no personal tie, belongs in their venture in `Ventures/`, not here. Someone who is both gets a personal entry here that names the venture by plain path.
+- **Not the owner.** This registry is about *other people*: who the owner is lives in `Profile/`, and the owner's relational self (family structure, roles, relational style) in `Profile/Relationships.md`.
+- **Earns a file when real or recurring.** A name mentioned once stays a `Memory/Log.md` line; it becomes an entry only when the relationship is real or the person recurs.
 
-## How entries are made
+## Each entry
 
-Copy `Memory/.template/Person.md` to this folder as `First Last.md` and follow its instantiation note. `update-vault.py` lists it below; this index is never edited by hand.
+One file per person, named `First Last.md`, holding a Biography-depth profile: the relationship, personal facts, contact, location, occupation, family and connections, personality and communication, interests, the dates that matter, key shared history, and open threads. Sensitive sections (date of birth, contact, family) are surfaced only when the work needs them (`Profile/README.md`, Rules).
 
-## Provenance
+## Writing an entry
 
-Each profile carries `As of:` / `Recorded:` provenance in its body, and changing facts are superseded rather than overwritten (see `Memory/README.md`). Cross-references use plain-path `Related:` lines (for example `Related: Memory/Entities/Organizations/Some Org.md`).
+`Memory/.template/Person.md` is copied into this folder as `First Last.md` and its instantiation note followed. `update-vault.py` lists it below; this index is never edited by hand.
 
----
+## Provenance and superseding
+
+Each entry carries `As of:` and `Recorded:` provenance in its body, and a fact that changes is superseded rather than overwritten (`Memory/README.md`). Cross-references use plain-path `Related:` lines (for example `Related: Memory/Entities/Organizations/Some Org.md`).
 
 ## Entries
 

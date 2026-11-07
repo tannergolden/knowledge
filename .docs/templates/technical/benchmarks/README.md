@@ -24,7 +24,7 @@ The fill-in standard for performance: a budget for each critical path, the
 method that produces a trustworthy measurement, and where every result is kept.
 Each decision is marked by `[square brackets]` until your project makes it.
 
-Copy the file out to `docs/technical/benchmarks/` under the same name, then
+Copy the file out to `.docs/technical/benchmarks/` under the same name, then
 replace every bracket. Each run is recorded with the
 [Research Log](../../Research-Log.md) template, so a disagreement about speed
 always ends at a dated, sourced number.

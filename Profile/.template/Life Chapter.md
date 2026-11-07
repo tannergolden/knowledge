@@ -1,6 +1,6 @@
 <!--
 title: "[Life Chapter]"
-description: "[One-line description of a chapter of the user's life story.]"
+description: "[One-line description of a chapter of the owner's life story.]"
 type: "template"
 keywords: ["life chapter", "life story", "narrative", "period", "era", "template"]
 -->
@@ -27,4 +27,4 @@ A few sentences: the period, and what defined it.
 
 ## Through-line
 
-What this chapter contributed to who the user is now - the meaning the facts alone do not carry.
+What this chapter contributed to who the owner is now - the meaning the facts alone do not carry.

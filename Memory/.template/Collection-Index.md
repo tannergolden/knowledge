@@ -10,7 +10,7 @@ INSTANTIATION (when scaffolding a new per-entry collection: copy this file into 
 - Set type to "index", and give the copy its real title and description.
 - Keep the emoji H1; replace [Collection] with the collection's name and pick a fitting emoji.
 - Fill purpose and retention for the specific collection; never fabricate.
-- Leave the Entries block to `.github/scripts/update-vault.py`; it is never edited by hand.
+- Leave the Entries block to `.github/scripts/update-vault.py`, which draws it once the collection's folder is added to COLLECTIONS in `.github/scripts/vault.py`; it is never edited by hand.
 -->
 
 # 🗂️ [Collection]
@@ -33,8 +33,6 @@ Copy the entry template into this folder and follow its instantiation note; `upd
 
 ## Entries
 
-<!-- Drawn by update-vault.py. One line per entry. -->
-
-| Name | Notes | Updated |
-|------|-------|---------|
-|      |       |         |
+<!-- brain:collection-entries (drawn by .github/scripts/update-vault.py - do not edit by hand) -->
+_No entries recorded yet._
+<!-- /brain:collection-entries -->

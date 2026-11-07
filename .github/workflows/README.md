@@ -25,10 +25,12 @@ So almost every file here is a **stub**: it names the events it answers and the
 permissions it allows, then calls a reusable workflow in
 [`tannergolden/standards`](https://github.com/tannergolden/standards/blob/Development/.github/workflows/README.md)
 pinned to `@v1`. The logic lives there, so a fix published once arrives here
-without a pull request. Two files run steps of their own instead:
-`verify-stubs.yml`, which checks the stubs against the standards, and
+without a pull request. Three files run steps of their own instead:
+`verify-stubs.yml`, which checks the stubs against the standards,
 `scorecard.yml`, whose score is only accepted from a workflow that keeps to
-OpenSSF Scorecard's rules about its own steps.
+OpenSSF Scorecard's rules about its own steps, and `vault.yml`, which runs the
+vault's own checks through the action in
+[`../actions/vault/`](../actions/vault/README.md).
 
 The stubs are **grouped by concern** - every read-only gate in `checks.yml`,
 everything that reacts to people in `governance.yml` - so one push produces one
@@ -121,7 +123,8 @@ called workflow declares the secrets it reads under `secrets:` in its
 - **The checks run everywhere; most jobs that act on a repository do not run
   in the golden path template.** Everything in `checks.yml`, the `pr` check
   in `semantic-pr.yml`, `verify-stubs.yml`, `scorecard.yml`, `prune-runs.yml`
-  and `auto-index.yml` run in the template as they do here. A job whose guard
+  and `auto-index.yml` run in the template as they do here, and so does this
+  template's own `vault.yml`. A job whose guard
   names the golden path template alongside `is_template` does nothing there
   and comes alive in every other repository, a template derived from it
   included. Initialisation and `release.yml` stay silent in every template: a

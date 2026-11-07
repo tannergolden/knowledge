@@ -7,7 +7,7 @@ keywords: ["revenue", "expenses", "burn rate", "runway", "financial metrics", "f
 
 # 💰 [Company] - Financials
 
-> Financial context for this venture. Fill in what's known; leave the rest blank. This file informs the AI when helping with pricing, runway analysis, financial planning, or any task where company finances are relevant.
+> Financial context for this venture. Fill in what's known; leave the rest blank. Read it for pricing, runway analysis, financial planning, or any work where company finances are relevant.
 
 ---
 
@@ -110,4 +110,4 @@ keywords: ["revenue", "expenses", "burn rate", "runway", "financial metrics", "f
 
 ## Notes
 
-<!-- Tax structure, accounting method, fiscal year, accountant/bookkeeper, any financial nuance the AI should know. -->
+<!-- Tax structure, accounting method, fiscal year, accountant/bookkeeper, and any other financial nuance worth knowing. -->

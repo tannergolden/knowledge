@@ -8,7 +8,7 @@ keywords: ["ledger", "delta", "record", "scaffold", "context"]
 # 🧾 Session Summary - [YYYY-MM-DD]
 
 <!--
-FILING INSTRUCTIONS (do this when you save the summary):
+FILING INSTRUCTIONS (when the summary is saved):
 - Save into Memory/Context/Current/ named YYYYMMDD-HHMMSS.md (timestamp of filing).
 - In frontmatter: set type "record", and give the copy its real title and description.
 - Give the H1 a fitting emoji for the session and replace [YYYY-MM-DD] with the real date.

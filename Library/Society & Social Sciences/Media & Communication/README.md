@@ -2,19 +2,19 @@
 title: "Media & Communication - Folder Information"
 description: "Mass communication, journalism, and media studies as social phenomena."
 type: "index"
-keywords: ["mass", "journalism", "studies", "social"]
+keywords: ["mass communication", "journalism", "media studies", "news media", "propaganda", "advertising", "social media", "public opinion"]
 -->
 
 # 📁 Library / Society & Social Sciences / Media & Communication /
 
 ## Purpose
 
-Mass communication, journalism, and media studies as social phenomena. For how this division relates to the rest of how societies work and where adjacent topics go, see `Library/Society & Social Sciences/README.md`.
+Mass communication and media as social phenomena: journalism and the news, media studies, propaganda, advertising and public opinion, and social media in society. Publishing and broadcasting as institutions go to Information & Computing / Publishing & Broadcasting; film and television as art to Arts & Recreation / Film & Media Arts; the craft of persuasion to Language & Literature / Writing & Rhetoric.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Society & Social Sciences/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Society & Social Sciences/README.md`. This README adds no rules of its own.

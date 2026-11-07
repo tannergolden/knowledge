@@ -24,7 +24,7 @@ The fill-in standards for the backend: how its interfaces are shaped, how it
 decides who may do what, and how it checks everything that crosses its edge.
 Each decision is marked by `[square brackets]` until your project makes it.
 
-Copy a file out to `docs/technical/backend/` under the same name, then replace
+Copy a file out to `.docs/technical/backend/` under the same name, then replace
 every bracket. The seed here stays pristine.
 
 ---

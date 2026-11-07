@@ -25,7 +25,7 @@ core entities are and how they relate, and the rules every change to the schema
 follows. Each decision is marked by `[square brackets]` until your project makes
 it.
 
-Copy a file out to `docs/technical/database/` under the same name, then replace
+Copy a file out to `.docs/technical/database/` under the same name, then replace
 every bracket. The seed here stays pristine.
 
 ---

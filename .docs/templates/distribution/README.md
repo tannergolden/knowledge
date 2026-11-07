@@ -30,7 +30,7 @@ in the standards'
 [Releases & Versioning](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md),
 and followed by link. These documents record what your project does with them.
 
-Copy a file out to `docs/distribution/` under the same name, then replace every
+Copy a file out to `.docs/distribution/` under the same name, then replace every
 bracket. The seed here stays pristine.
 
 ---

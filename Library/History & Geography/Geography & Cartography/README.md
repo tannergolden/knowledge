@@ -2,19 +2,19 @@
 title: "Geography & Cartography - Folder Information"
 description: "Physical and human geography, maps, and place."
 type: "index"
-keywords: ["physical", "human", "maps", "place"]
+keywords: ["physical geography", "human geography", "maps", "map making", "regions", "places", "atlases", "gis"]
 -->
 
 # 📁 Library / History & Geography / Geography & Cartography /
 
 ## Purpose
 
-Physical and human geography, maps, and place. For how this division relates to the rest of the human record in time and place and where adjacent topics go, see `Library/History & Geography/README.md`.
+The earth as places and regions: physical geography, the surface of the earth region by region; human geography, how people settle and use the land; and maps, atlases and map-making. The processes that shape the earth go to Science & Mathematics / Earth Sciences; journeys and accounts of places to History & Geography / Travel & Exploration; urban planning to Technology & Applied Science / Infrastructure & Built Environment.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/History & Geography/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/History & Geography/README.md`. This README adds no rules of its own.

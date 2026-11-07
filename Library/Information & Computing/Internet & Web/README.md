@@ -2,19 +2,19 @@
 title: "Internet & Web - Folder Information"
 description: "The internet, the web, networks, protocols, online platforms."
 type: "index"
-keywords: ["networks", "protocols", "online", "platforms"]
+keywords: ["computer networks", "internet protocols", "web standards", "online platforms", "domain names", "internet governance", "internet history"]
 -->
 
 # 📁 Library / Information & Computing / Internet & Web /
 
 ## Purpose
 
-The internet, the web, networks, protocols, online platforms. For how this division relates to the rest of information, computing, and reference and where adjacent topics go, see `Library/Information & Computing/README.md`.
+The internet and the web as systems: computer networks and protocols, web standards, how online platforms work, and their history and governance. Building websites, network services and their security goes to Technology & Applied Science / Applied Computing & Software; online media and culture as social phenomena to Society & Social Sciences / Media & Communication.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Information & Computing/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Information & Computing/README.md`. This README adds no rules of its own.

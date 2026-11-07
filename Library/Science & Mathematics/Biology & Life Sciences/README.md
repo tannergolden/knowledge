@@ -1,20 +1,20 @@
 <!--
 title: "Biology & Life Sciences - Folder Information"
-description: "Life, organisms, genetics, ecology, evolution, paleontology."
+description: "Life, organisms, genetics, ecology, evolution, neuroscience, paleontology."
 type: "index"
-keywords: ["organisms", "genetics", "ecology"]
+keywords: ["organisms", "cells", "genetics", "evolution", "botany", "zoology", "microbiology", "human anatomy"]
 -->
 
 # 📁 Library / Science & Mathematics / Biology & Life Sciences /
 
 ## Purpose
 
-Life, organisms, genetics, ecology, evolution, paleontology. For how this division relates to the rest of the formal and natural sciences and where adjacent topics go, see `Library/Science & Mathematics/README.md`.
+Life and living things: cells, molecular biology and biochemistry, genetics, evolution, organisms from microbes to plants and animals, ecology, human anatomy and physiology, neuroscience, and paleontology. Human health and its treatment go to Technology & Applied Science / Medicine & Health Sciences; farming and animal husbandry to Technology & Applied Science / Agriculture & Food Science; ecosystems as environmental systems to Science & Mathematics / Environmental Science; human evolution to Society & Social Sciences / Anthropology.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Science & Mathematics/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Science & Mathematics/README.md`. This README adds no rules of its own.

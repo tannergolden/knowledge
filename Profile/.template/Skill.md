@@ -12,7 +12,7 @@ FILING INSTRUCTIONS (copy this file to Profile/Skills/<Title>.md, then) (one are
 - Save as Profile/Skills/[Skill].md. Casual interests are Preferences, not Skills.
 - Frontmatter: set type "reference", and give the copy its real title and description.
 - Give the H1 a fitting emoji. NO wikilinks - plain paths only.
-- The "Proficiency" line feeds the expertise map in Profile/Skills/README.md: it tells the AI how much to explain in this domain.
+- The "Proficiency" line feeds the expertise map in Profile/Skills/README.md: it says how much to explain in this domain.
 -->
 
 ## Summary
@@ -29,7 +29,7 @@ Brief origin: study, work, years of practice.
 
 ## Evidence / Applications
 
-Where this shows up - so the AI can ground claims about it.
+Where this shows up - so claims about it can be grounded.
 
 ## Related
 

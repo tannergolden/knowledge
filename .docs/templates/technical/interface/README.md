@@ -25,7 +25,7 @@ code follows, the design system it is styled from, and the environment it is
 developed in. Each decision is marked by `[square brackets]` until your project
 makes it.
 
-Copy a file out to `docs/technical/interface/` under the same name, then replace
+Copy a file out to `.docs/technical/interface/` under the same name, then replace
 every bracket. The seed here stays pristine.
 
 ---

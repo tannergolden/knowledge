@@ -25,7 +25,7 @@ when something breaks, who is told, and a threat model that names what the
 project protects, who could attack it, and which control answers each threat.
 Each decision is marked by `[square brackets]` until your project makes it.
 
-Copy a file out to `docs/operations/` under the same name, then replace every
+Copy a file out to `.docs/operations/` under the same name, then replace every
 bracket. The seed here stays pristine.
 
 Two forms that fill up over time sit one level up: a [Runbook](../Runbook.md)

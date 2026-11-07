@@ -112,4 +112,4 @@ keywords: ["okrs", "okr", "strategic goals", "key initiatives", "priorities", "c
 
 ## Notes
 
-<!-- Context on goal-setting approach, constraints, or anything the AI should know when helping with planning. -->
+<!-- Context on goal-setting approach, constraints, or anything else worth knowing for planning. -->

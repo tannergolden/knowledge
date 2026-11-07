@@ -86,6 +86,8 @@ keywords: ["company profile", "business model", "market", "strategy", "operating
 ## Stage & Traction
 
 **Current Stage:** (Idea / Validation / Pre-revenue / Early Revenue / Growth / Scaling / Established / Mature / Plateau / Decline)
+**Status:** (Active / On Hold / Closed)
+**Outcome:** (once Closed: Acquired / IPO / Wind-down / Merged / Sold)
 **Founded / Launched:**
 **Employees / Contractors:**
 **Annual Revenue (ARR/MRR):**
@@ -147,5 +149,5 @@ keywords: ["company profile", "business model", "market", "strategy", "operating
 
 ## Notes
 
-<!-- Anything else the AI should know about this company that doesn't fit above. -->
+<!-- Anything else worth knowing about this company that doesn't fit above. -->
 

@@ -2,19 +2,19 @@
 title: "Architecture - Folder Information"
 description: "Architecture as art and history."
 type: "index"
-keywords: ["art", "history"]
+keywords: ["architectural history", "architectural styles", "architects", "landmark buildings", "landscape architecture", "architectural theory", "vernacular buildings"]
 -->
 
 # 📁 Library / Arts & Recreation / Architecture /
 
 ## Purpose
 
-Architecture as art and history. For how this division relates to the rest of the arts, sport, and play and where adjacent topics go, see `Library/Arts & Recreation/README.md`.
+Architecture as an art and its history: styles and movements, architects, landmark buildings, architectural theory and landscape architecture. The engineering and construction of buildings, and urban planning, go to Technology & Applied Science / Infrastructure & Built Environment; interior design to Arts & Recreation / Design.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Arts & Recreation/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Arts & Recreation/README.md`. This README adds no rules of its own.

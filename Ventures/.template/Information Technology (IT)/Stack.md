@@ -113,4 +113,4 @@ keywords: ["tech stack", "tools", "infrastructure", "integrations", "platforms",
 
 ## Notes
 
-<!-- Technical debt, migration plans, anything the AI should know when making tech recommendations. -->
+<!-- Technical debt, migration plans, and anything else worth knowing before a technical recommendation. -->

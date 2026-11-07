@@ -8,9 +8,11 @@ keywords: ["sociology", "politics", "law", "economics", "anthropology", "educati
 # 👥 Library / Society & Social Sciences /
 
 ## Purpose
-How human societies are structured, governed, and sustained. The human record across time and place goes to History & Geography; applied management technique goes to Technology; the individual's personal finances or career how-to go to Life & Practice.
+
+How human societies are structured, governed, and sustained: sociology and anthropology, politics and law, economics and commerce, education and media, social policy, and military and security studies.
 
 ## Divisions
+
 | Division (Layer 3) | Scope |
 |--------------------|-------|
 | Sociology | Social structure, institutions, groups, social theory |
@@ -38,20 +40,25 @@ How human societies are structured, governed, and sustained. The human record ac
 <!-- /brain:children -->
 
 ## Class here / not here
+
 - Class here: The study of how societies work - social, political, legal, economic
 - Class here: Media and journalism as social phenomena
 - Class here: Military science, strategy, and security studies
+- Not here: The human record across time and place, human geography, and area studies - goes to History & Geography
 - Not here: Applied operations, project, or quality management technique - goes to Technology & Applied Science / Operations & Management
-- Not here: Human geography, area studies, and the history of events - goes to History & Geography
-- Not here: The individual's personal finances or career how-to - goes to Life & Practice
+- Not here: The individual's personal finances or career how-to - goes to Life & Practice / Personal Finance or Career & Work
+- Not here: Psychology, social psychology included - goes to Philosophy & Mind / Psychology
 
 ## See also
+
 - `Library/History & Geography/README.md` - the human record in time and place
 - `Library/Technology & Applied Science/README.md` - applied science and engineering
 - `Library/Life & Practice/README.md` - practical knowledge for living
 
 ## Library cross-walk
-Dewey 300 (incl. 355 military science), UDC 3, LCC H, J, K, L, U. Reference only.
+
+Dewey 300 (incl. 355 military science), UDC 3, LCC H, J, K, L, U and V. Reference only.
 
 ## Conventions
-Classification rules, the boundary-rulings and worked-examples tables, the controlled facet keywords, the freshness model, and weeding all live in `Library/README.md`. This README adds no rules of its own.
+
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.

@@ -2,19 +2,19 @@
 title: "Career & Work - Folder Information"
 description: "Job searching, workplace skills, and professional development how-to."
 type: "index"
-keywords: ["job", "searching", "workplace", "skills"]
+keywords: ["job search", "resumes", "interviews", "workplace skills", "professional development", "negotiation", "career change", "leadership skills"]
 -->
 
 # 📁 Library / Life & Practice / Career & Work /
 
 ## Purpose
 
-Job searching, workplace skills, and professional development how-to. For how this division relates to the rest of practical knowledge for living and where adjacent topics go, see `Library/Life & Practice/README.md`.
+Work from the individual's side, as how-to: job searching, resumes and interviews, workplace and leadership skills, negotiation, and professional development. Management as a discipline goes to Society & Social Sciences / Commerce & Organizations, and as technique to Technology & Applied Science / Operations & Management; the owner's own job search to `Projects/`.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Life & Practice/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Life & Practice/README.md`. This README adds no rules of its own.

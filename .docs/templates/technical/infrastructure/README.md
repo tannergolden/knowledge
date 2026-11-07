@@ -25,7 +25,7 @@ system: the environments and their configuration, the pipeline that certifies a
 change, and the protocol that promotes and rolls back a release. Each decision
 is marked by `[square brackets]` until your project makes it.
 
-Copy a file out to `docs/technical/infrastructure/` under the same name, then
+Copy a file out to `.docs/technical/infrastructure/` under the same name, then
 replace every bracket. The seed here stays pristine.
 
 The shared workflows already run the checks and the release chain. These

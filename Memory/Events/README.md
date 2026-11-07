@@ -7,32 +7,35 @@ keywords: ["atomic episode", "what happened", "dated experience", "milestone mom
 
 # 📌 Events
 
-The atomic grain of the record of what happened: discrete, dated happenings worth remembering precisely on their own - "got the job offer," "moved to Austin," "first met Dana," "closed the house." Where session context (`Memory/Context/`) captures a whole session's gist, an event captures one occurrence exactly, so a specific moment can be recalled without depending on which session it was mentioned in.
+The atomic grain of the record of what happened: discrete, dated happenings worth remembering precisely on their own, such as "got the job offer", "moved to Austin", "first met Dana" or "closed the house". Where session context (`Memory/Context/`) captures a whole session's gist, an event captures one occurrence exactly, so a specific moment can be recalled without depending on which session it was mentioned in.
 
-## What earns an event
+## What belongs here
 
-A specific, dated occurrence with continuity value: a milestone, a turning point, a first or a last. One file per event, named `YYYY-MM-DD-slug.md` so events sort chronologically. Keep them atomic - one happening per file.
+A specific, dated occurrence with continuity value earns an event: a milestone, a turning point, a first or a last. What lives nearby goes there instead:
 
-## What lives here vs. nearby
+- A whole session's running state: a session summary in `Memory/Context/`.
+- A choice and the reasoning behind it: `Memory/Decisions/`.
+- A future date, deadline, or recurring event: `Memory/Dates.md`.
+- A durable fact about a person, organization, or place: `Memory/Entities/`.
+- A pattern distilled across several events: `Memory/Insights/`.
 
-- A discrete dated happening -> here.
-- A whole session's running state -> a session summary in `Memory/Context/`.
-- A choice and the reasoning behind it -> `Memory/Decisions/`.
-- A future date, deadline, or recurring event -> `Memory/Dates.md`.
-- A durable fact about a person, organization, or place -> `Memory/Entities/`.
-- A pattern distilled across several events -> `Memory/Insights/`.
+## Each entry
 
-## Each event carries
+One file per event, named `YYYY-MM-DD-slug.md` so events sort chronologically, and atomic: one happening per file. Each carries:
 
-- **What happened** - the occurrence, stated factually.
-- **When** - `As of:` the event date, `Recorded:` when it was logged (bitemporal).
-- **Importance** - 1 to 5, set at capture; it governs how long the event stays hot in recall.
-- **Who and what** - plain-path `Related:` links to the People, Organizations, and Places involved.
-- **Why it matters** - the continuity significance for future sessions.
+- **What happened**: the occurrence, stated factually.
+- **When**: `As of:` the event date, `Recorded:` when it was logged (bitemporal).
+- **Importance**: 1 to 5, set at capture; it governs how long the event stays hot in recall.
+- **Who and what**: plain-path `Related:` lines to the People, Organizations, and Places involved.
+- **Why it matters**: the continuity significance for future sessions.
 
-## Creating and keeping
+## Writing an entry
 
-Copy `Memory/.template/Event.md` to this folder and follow its instantiation note; `update-vault.py` lists it here. Events are importance-weighted in recall (recency + importance + relevance, see `Memory/README.md`): a high-importance event stays a retrieval candidate for the life of the BRAIN and never ages out of reach. A superseded event is marked, not rewritten (the root `README.md`, Ask First).
+`Memory/.template/Event.md` is copied into this folder and its instantiation note followed. `update-vault.py` lists it below; this index is never edited by hand.
+
+## Provenance and superseding
+
+Events are importance-weighted in recall (recency + importance + relevance, `Memory/README.md`): a high-importance event stays a retrieval candidate for the life of the BRAIN and never ages out of reach. A superseded event is marked, never rewritten or deleted (`Memory/README.md`).
 
 ## Entries
 

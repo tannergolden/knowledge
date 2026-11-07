@@ -2,19 +2,19 @@
 title: "Knowledge Organization - Folder Information"
 description: "Classification, cataloging, taxonomies, ontologies, metadata."
 type: "index"
-keywords: ["classification", "cataloging", "taxonomies", "ontologies"]
+keywords: ["classification schemes", "cataloging", "taxonomies", "ontologies", "metadata", "controlled vocabularies", "thesauri", "subject headings"]
 -->
 
 # 📁 Library / Information & Computing / Knowledge Organization /
 
 ## Purpose
 
-Classification, cataloging, taxonomies, ontologies, metadata. For how this division relates to the rest of information, computing, and reference and where adjacent topics go, see `Library/Information & Computing/README.md`.
+How knowledge is organized for finding: classification schemes, cataloging, taxonomies, ontologies, controlled vocabularies and metadata, this Library's own discipline. Libraries and archives as institutions go to Information & Computing / Libraries & Archives; database design to Information & Computing / Data & Information Management; ontology as the philosophy of being to Philosophy & Mind / Metaphysics.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Information & Computing/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Information & Computing/README.md`. This README adds no rules of its own.

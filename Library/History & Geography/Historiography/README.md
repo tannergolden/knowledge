@@ -2,19 +2,19 @@
 title: "Historiography - Folder Information"
 description: "The theory, method, and philosophy of history."
 type: "index"
-keywords: ["theory", "method", "philosophy", "history"]
+keywords: ["historical method", "philosophy of history", "historians", "historical evidence", "primary sources", "schools of history", "history writing"]
 -->
 
 # 📁 Library / History & Geography / Historiography /
 
 ## Purpose
 
-The theory, method, and philosophy of history. For how this division relates to the rest of the human record in time and place and where adjacent topics go, see `Library/History & Geography/README.md`.
+How history is known and written: historical method and evidence, primary sources, historians and their schools, and the theory and philosophy of history. The method of science goes to Science & Mathematics / Philosophy & Method of Science; knowledge and evidence in general to Philosophy & Mind / Epistemology; archives as institutions to Information & Computing / Libraries & Archives.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/History & Geography/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/History & Geography/README.md`. This README adds no rules of its own.

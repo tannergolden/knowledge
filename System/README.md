@@ -2,7 +2,7 @@
 title: "System - Folder Information"
 description: "Explains the purpose of the System/ folder: the owner's standing settings, the workflow map and the generated catalog. The vault's scripts live in .github/scripts/."
 type: "index"
-keywords: ["settings", "persona settings", "operating context", "control panel", "vault scripts", "workflow map", "folder overview"]
+keywords: ["settings", "operating context", "control panel", "vault scripts", "workflow map", "folder overview"]
 -->
 
 # ⚙️ System/
@@ -16,39 +16,41 @@ The vault's control panel: standing settings the owner adds, the map of recurrin
 - A vault script lives in `.github/scripts/`, finds the vault from its own location (`__file__`, two folders up) and never holds an absolute path: an index or manifest it stores uses paths from the vault root. Writing Scripts, below, says the rest.
 - A report on working on the vault itself ends with a copy-paste prompt that fixes what it found (Reports On The Vault, below).
 
-## Purpose
+## What Belongs Here
 
-`System/` is the settings layer of this BRAIN: the owner's standing settings for how work here is done (a persona, the operating context of their environment, the integrations in use), the map of recurring workflows, and the generated catalog. Settings here take precedence over general defaults where they overlap.
-
-Think of this folder as the control panel: the root `README.md` and each folder's README are the rulebook, and `System/` holds the specific dials and settings.
-
----
-
-## Folder Structure
-
-`System/` is a flat **operating surface** at the root (the files to read) and the generated `Data/` folder. The vault's scripts are not here: they live in `.github/scripts/`, beside the CI that runs them. So `System/` holds only settings, the workflow map and the catalog.
-
-### Operating surface (`System/` root)
+`System/` is the settings layer of this BRAIN: the owner's standing settings for how work here is done (the operating context of their environment, the integrations in use), the map of recurring workflows, and the generated catalog. The root `README.md` and each folder's README are the rulebook; `System/` holds the specific dials and settings. It is a flat surface of files to read, plus the generated `Data/` folder:
 
 | Path | Purpose |
 |------|---------|
 | `README.md` | This file. |
 | [[System/Workflows\|Workflows.md]] | The map of recurring workflows: strategy, capture and consolidation loops. |
-| `Persona.md` · `Context.md` · `Integrations.md` | Optional settings files *(created as needed)*. |
+| `Context.md` · `Integrations.md` | Optional settings files *(created as needed)*. |
+| [[System/Data/README\|Data/]] | Generated files, never hand-edited: `catalog.ndjson`, one JSON record per note (`.template/` scaffolds excluded) with its path, title, type, keywords, description and status. `update-vault.py` draws it, and CI fails when it is out of date. |
 
-### `Data/` - generated files
+What goes elsewhere:
 
-Machine-written and never hand-edited; `.github/scripts/update-vault.py` draws it, and CI fails when it is out of date. Group overview: [[System/Data/README|Data/README.md]].
+| Content Type | Belongs In |
+|-------------|-----------|
+| How the owner likes to be worked with, and their natural communication preferences | `Profile/Working Style.md` |
+| The vault's rules, and where each kind of work goes | The root `README.md` |
+| A folder's rules and procedures | That folder's `README.md` |
+| Project-specific workflows | `Projects/[project]/` |
+| A vault script and its tests | `.github/scripts/` (Writing Scripts, below) |
 
-| Path | Purpose |
-|------|---------|
-| `Data/catalog.ndjson` | One JSON record per note (`.template/` scaffolds excluded): path, title, type, keywords, description and status. The vault's live listing of what exists, readable by any tool. |
+## Priority Order
 
----
+When `System/` files conflict with other parts of the BRAIN:
+
+1. The root `README.md`: the vault's own rules. Always wins.
+2. The rules in each folder's README, which add to the root `README.md` and never loosen it.
+3. `System/` files, which win over Profile and general defaults on how work is done.
+4. `Profile/Working Style.md`, where no `System/` file says otherwise.
+
+The universal rules that come with the home kit from tannergolden/intelligence are not kept in this repository, and nothing here loosens them.
 
 ## Tooling
 
-The vault's checks and generators are scripts in `.github/scripts/`, run from the vault root as `python3 .github/scripts/<script>`. Each one finds the vault from its own location (Rules, above), needs only Python 3's standard library, and exits non-zero on a finding. `.github/workflows/vault.yml` runs every check, through the action in `.github/actions/vault/`, on each pull request and each push to the default branch.
+The vault's checks and generators are scripts in `.github/scripts/`, run from the vault root as `python3 .github/scripts/<script>`. Each one finds the vault from its own location (Rules, above) and needs only Python 3's standard library, but for the optional `libzim` that `knowledge-base.py` reads with; each check exits non-zero on a finding. `.github/workflows/vault.yml` runs every check, and the scripts' tests, through the action in `.github/actions/vault/`, on each pull request and each push to the default branch.
 
 | Script | What it does |
 |--------|--------------|
@@ -59,56 +61,28 @@ The vault's checks and generators are scripts in `.github/scripts/`, run from th
 | `update-vault.py` | Draws everything generated: the memory cascade, every `brain:` block, the catalog and the `.gitkeep` markers. `--check` writes nothing and fails when anything is stale. |
 | `session.py` | The session helpers, run by hand: the session-start card, the check after a note is written, and the end-of-turn redraw. |
 | `profile-coverage.py` | How filled in each Profile facet is; its `--json` names the facet to ask about next. |
-| `knowledge-base.py` | Offline reference works (Wikipedia and more) in `Library/Reference & Encyclopedia/`: `list`, `enable`, `refresh`, `search`, `read`. Every source ships off. |
+| `knowledge-base.py` | Offline reference works (Wikipedia and more) in `Library/Reference & Encyclopedia/`: `list`, `enable`, `disable`, `refresh`, `search`, `read`. Every source ships off. |
 
-Each script is tested by the `test_*.py` file beside it, and `.github/scripts/README.md` lists them all. The writes the retired engine once made, such as a memory entry, a session summary or a new note, are made directly now, in the format each folder's README documents (the root `README.md`, How A Session Goes).
-
----
-
-## Reports On The Vault
-
-Any report about working on the vault itself (its structure, rules, checks or tooling), as distinct from a report made by using the vault, ends with one copy-paste prompt in a fenced code block. Pasted into a fresh session, it fixes what the report found, highest priority first.
-
-Scope the prompt to concrete, bounded fixes the next session can make directly: a test to add, a command to run, a file to correct. Leave out open-ended authoring, such as filling in Profile or writing Memory entries: that belongs in the report's body as a recommendation. Lead with the most important fix, name the report and the fixes chosen, and restate the standing safeguards: commit before editing, and run `check-vault.py` when done.
-
-Separate the prompt's sections (the opening line, each numbered fix and the closing rules) with a line holding one zero-width space (U+200B) and nothing else, exactly one between sections. A chat composer collapses empty lines on paste; that line survives, so the sections stay apart.
-
----
+Each script is tested by the `test_*.py` file beside it, and `.github/scripts/README.md` lists them all. A memory entry, a session summary or a new note is written directly, in the format its folder's README documents (the root `README.md`, How A Session Goes).
 
 ## Writing Scripts
 
 A new vault script goes in `.github/scripts/`, beside the others, and follows them:
 
 - One job per script, named verb-noun with hyphens (`check-links.py`); its tests go in `test_<name>.py` beside it, which CI discovers on its own.
-- Standard library only, and runnable on Python 3.9 (`from __future__ import annotations`), because they run on whatever `python3` the machine has.
+- Standard library only, and runnable on Python 3.9 (`from __future__ import annotations`), because the scripts run on whatever `python3` the machine has.
 - The module docstring's first line is the script's purpose, since the folder's File Log reads it; the rest says why it exists and how to run it.
-- Self-locating: import `vault.py` from the script's own folder, take the vault root from `--root` (the repository by default), and never hardcode a path (Rules, above).
-- Exit 0 when clean, 1 on findings, 2 on misuse, and print one finding per line; `vault.Report` does both, with GitHub annotations under Actions.
+- Self-locating: it imports `vault.py` from its own folder, takes the vault root from `--root` (the repository by default), and never hardcodes a path (Rules, above).
+- It exits 0 when clean, 1 on findings and 2 on misuse, and prints one finding per line; `vault.Report` does both, with GitHub annotations under Actions.
 - Generated output is deterministic (sorted, no timestamps), so CI can tell a stale file from a fresh one.
 
----
+## Reports On The Vault
 
-## Priority Order
+Any report about working on the vault itself (its structure, rules, checks or tooling), as distinct from a report made by using the vault, ends with one copy-paste prompt in a fenced code block. Pasted into a fresh session, it fixes what the report found, highest priority first.
 
-When `System/` files conflict with other parts of the BRAIN:
-1. The root `README.md`: the vault's own rules. Always wins.
-2. The rules in each folder's README, which add to the root `README.md` and never loosen it.
-3. `System/` files, which win over Profile and general defaults on how work is done.
-4. `Profile/Working Style.md`, where no `System/` file says otherwise.
+The prompt is scoped to concrete, bounded fixes the next session can make directly: a test to add, a command to run, a file to correct. Open-ended authoring, such as filling in Profile or writing Memory entries, stays out of it: that belongs in the report's body as a recommendation. The prompt leads with the most important fix, names the report and the fixes chosen, and restates the standing safeguards: commit before editing, and run `check-vault.py` when done.
 
-The universal rules that come with the home kit from tannergolden/intelligence are not kept in this repository, and nothing here loosens them.
-
----
-
-## What Belongs Here vs. Elsewhere
-
-| Content Type | Belongs In |
-|-------------|-----------|
-| A standing setting for how work here is done, such as a persona | `System/Persona.md` *(created as needed)* |
-| The user's natural communication preferences | `Profile/Working Style.md` |
-| The vault's rules, and where each kind of work goes | The root `README.md` |
-| A folder's rules and procedures | That folder's `README.md` |
-| Project-specific workflows | `Projects/[project]/` |
+The prompt's sections (the opening line, each numbered fix and the closing rules) are separated by a line holding one zero-width space (U+200B) and nothing else, exactly one between sections. A chat composer collapses empty lines on paste; that line survives, so the sections stay apart.
 
 ## File Log
 
@@ -122,4 +96,4 @@ The universal rules that come with the home kit from tannergolden/intelligence a
 
 <!-- AUTO-INDEX:END -->
 
-🗂️ Machined Indexes redraws this log after every push.
+🗂️ Machined Indexes redraws this log after every push to the default branch.

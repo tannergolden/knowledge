@@ -1,6 +1,6 @@
 <!--
 title: '🤖 CONTEXT ASSEMBLY'
-description: 'How an agent assembles context from the vault so nothing it must remember sits where models forget.'
+description: 'How context is assembled from the vault for a model, so nothing it must remember sits where models forget. Read it before loading the vault into a long context, or building tooling that does.'
 type: guide
 keywords: [context-window, retrieval, ai-agents]
 -->
@@ -12,7 +12,7 @@ keywords: [context-window, retrieval, ai-agents]
 
 <a name="top"></a>
 
-**How an agent loads the vault so nothing it must remember sits where models forget.**
+**How the vault is loaded into a model's context, so nothing it must remember sits where models forget.**
 
 _A short context has no middle to lose._
 
@@ -24,9 +24,9 @@ _A short context has no middle to lose._
 
 Language models attend reliably to the **beginning** and the **end** of a long context and
 under-weight what sits in the **middle**: a fact buried mid-context is often missed although it is
-present. The vault's structure is the main defence: it lets an agent load only what a task needs.
-This page says how to assemble context so the vault never depends on a model recalling something
-from a low-attention position.
+present. The vault's structure is the main defence: it lets whoever assembles a context load only
+what a task needs. This page says how to assemble context so the vault never depends on a model
+recalling something from a low-attention position.
 
 ---
 
@@ -36,7 +36,7 @@ from a low-attention position.
   the catalog (`System/Data/catalog.ndjson`) and the frontmatter filters in
   [Note Schema](Note-Schema.md) to pull only what the task turns on.
 - **Prefer many small reads to one large one.** Read the section you need, not the whole file.
-- **Never assemble a full-vault context**, even for a fresh agent. Orientation comes from
+- **Never assemble a full-vault context**, even for a fresh session. Orientation comes from
   the root [`README.md`](../../../README.md) and its start-of-session list; everything else loads on
   demand.
 
@@ -69,7 +69,7 @@ earlier one. Without that, a model facing two versions picks one unpredictably.
   rewards: an identical stable prefix is cached, and a timestamp or a session value placed early
   breaks it. Never open an assembled context, or a note loaded often, with anything that changes
   each session.
-- **ASCII over decoration in anything an agent reads.** Box-drawing characters cost several times
+- **ASCII over decoration in anything a model reads.** Box-drawing characters cost several times
   their ASCII equivalents in common tokenizers. The vault's scripts print plain ASCII for that
   reason; do the same in generated reports and tool output.
 - **Pick the cheap format for the data's shape.** For bulk tables, CSV or TSV costs about a third

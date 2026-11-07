@@ -18,10 +18,10 @@ The customers of [Company]: their onboarding, their success and their support, w
 
 ## Rules
 
-- Contact details are recorded only as the user provides them, and sensitive values as pointers to where they are kept.
-- A client known only through the business stays here; someone in the user's personal life goes to `Memory/Entities/People/`.
+- Contact details are recorded only as the owner provides them, and sensitive values as pointers to where they are kept.
+- A client known only through the business stays here; someone in the owner's personal life goes to `Memory/Entities/People/`.
 
 ## What Goes Elsewhere
 
-- Sales assets, offers and the pipeline live in `Sales & Marketing (S&M)/`, and contracts in `Legal & Compliance (L&C)/`.
-- The user's own dealings as a customer of another company, such as a complaint, a return or a warranty, go to `Memory/`.
+- The pipeline of prospects lives in `Sales & Marketing (S&M)/Pipeline.md`, sales assets and offers elsewhere in `Sales & Marketing (S&M)/`, and contracts in `Legal & Compliance (L&C)/`.
+- The owner's own dealings as a customer of another company, such as a complaint, a return or a warranty, go to `Memory/`.

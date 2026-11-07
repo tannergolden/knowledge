@@ -61,7 +61,7 @@ none here for them.
 from the prose each form opens with.
 
 > [!IMPORTANT]
-> **A form applies only to a category whose slug matches its file name.** Four
+> **A form applies only to a category whose slug matches its file name.** Three
 > of these match a category every repository starts with. The other six do
 > nothing until you create the category, named so that its slug comes out the
 > same: _Tooling & Setup_ for `tooling-setup`, for example. A rename that

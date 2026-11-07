@@ -28,8 +28,8 @@ them. The four files at this level span the whole codebase, starting with the
 Each folder below holds the standards for one technical area.
 
 A copy's destination mirrors its path minus `templates/`: `Source-Code.md` here
-becomes `docs/technical/Source-Code.md`, and a file in `backend/` lands in
-`docs/technical/backend/`. The seed stays pristine and the copy is yours.
+becomes `.docs/technical/Source-Code.md`, and a file in `backend/` lands in
+`.docs/technical/backend/`. The seed stays pristine and the copy is yours.
 
 ---
 

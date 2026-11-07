@@ -131,5 +131,5 @@ keywords: ["services catalog", "scope", "pricing", "delivery process", "capacity
 
 ## Notes
 
-<!-- Bundling rules, referral programs, exceptions, partnership delivery arrangements, or anything else the AI should know. -->
+<!-- Bundling rules, referral programs, exceptions, partnership delivery arrangements, or anything else worth knowing. -->
 

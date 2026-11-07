@@ -25,7 +25,7 @@ then closes. The glossary comes first, because every other document leans on
 the words it defines. Each decision is marked by `[square brackets]` until your
 project makes it.
 
-Copy a file out to `docs/references/` under the same name, then replace every
+Copy a file out to `.docs/references/` under the same name, then replace every
 bracket. The seed here stays pristine.
 
 Terms every repository on the standards shares are already defined in the

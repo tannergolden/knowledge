@@ -2,19 +2,19 @@
 title: "Genealogy & Heritage - Folder Information"
 description: "Family history, genealogy, and cultural heritage."
 type: "index"
-keywords: ["family", "history", "cultural"]
+keywords: ["family history", "family trees", "ancestry", "surnames", "records research", "heritage sites", "cultural heritage", "preservation"]
 -->
 
 # 📁 Library / History & Geography / Genealogy & Heritage /
 
 ## Purpose
 
-Family history, genealogy, and cultural heritage. For how this division relates to the rest of the human record in time and place and where adjacent topics go, see `Library/History & Geography/README.md`.
+Genealogy as a discipline, from family history and ancestry research to surnames and records, and cultural heritage: heritage sites, traditions and their preservation. The owner's own family and ancestors go to `Profile/` or `Memory/`, never here; libraries, archives and museums as institutions to Information & Computing / Libraries & Archives.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/History & Geography/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/History & Geography/README.md`. This README adds no rules of its own.

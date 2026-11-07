@@ -1,6 +1,6 @@
 <!--
 title: '💬 PROMPTS'
-description: 'Ready-made prompts for working in this repository with an AI agent, in two sections kept apart: the Golden Path''s own, which 🔄 Template Sync keeps current, and this repository''s, which only its owner writes.'
+description: 'Ready-made prompts for working in this repository with an AI agent, in two sections kept apart: the Golden Path''s own, and this repository''s, which opens with the prompts for using and keeping a vault. 🔄 Template Sync keeps both current in a vault.'
 type: reference
 -->
 
@@ -30,8 +30,10 @@ This page holds two kinds of prompt, and each section has one author:
 **The template only ever writes above your section.** It never changes anything
 from **✍️ This Repository's Prompts** to the end of this page, and its own
 release check refuses a release that would, so a sync has nothing to bring into
-your section. 🔁 Intelligence Sync leaves this page as it is too. A prompt you
-write there stays exactly as you wrote it.
+your section. A prompt you write there stays exactly as you wrote it. In a vault,
+though, the template is tannergolden/knowledge, whose prompts for using and
+keeping a vault fill that section: 🔄 Template Sync keeps them current there,
+merged with any prompt you add.
 
 To use a prompt, copy it whole, replace each placeholder in double braces, and
 paste it into an AI agent that can open this repository's files and run its
@@ -132,20 +134,22 @@ Ask me which of this repository's community health files to remove, and wait for
 </done_when>
 ```
 
-<!-- The Golden Path prompts end here. Everything below this comment is this repository's own, and no template writes to it. -->
+<!-- The Golden Path prompts end here. Everything below this comment is this repository's own, and the golden path template never writes to it. -->
 
 ---
 
 ## ✍️ This Repository's Prompts
 
 > [!TIP]
-> **Write this repository's own prompts here**: prompts that only make sense in
-> it, such as ones for using it, changing it or understanding how it works. Give
-> each a `###` heading, a **Use when** line, a **Fill in** line if it has
-> placeholders, and the prompt in one `text` block. If you have many, group them
-> under `##` sections of your own after this one. Nothing upstream ever writes
-> here. Prompts that work in any repository, and how to write a good one, are in
-> the [universal prompts](https://github.com/tannergolden/intelligence/blob/Development/docs/Prompts.md).
+> **This repository's own prompts**: prompts that only make sense in it, such as
+> ones for using it, changing it or understanding how it works. The golden path
+> template never writes here. The prompts below are tannergolden/knowledge's, for
+> using and keeping a vault, and a vault made from it keeps them current with
+> 🔄 Template Sync. Add your own after them, under `##` sections of your own:
+> give each a `###` heading, a **Use when** line, a **Fill in** line if it has
+> placeholders, and the prompt in one `text` block. Prompts that work in any
+> repository, and how to write a good one, are in the
+> [universal prompts](https://github.com/tannergolden/intelligence/blob/Development/docs/Prompts.md).
 
 **Find a prompt.** Each runs as it is, except those marked ✏️, which ask for your details.
 

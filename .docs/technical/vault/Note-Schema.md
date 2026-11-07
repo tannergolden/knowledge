@@ -50,13 +50,13 @@ keywords: ["working memory", "capture stream", "open loops", "quick capture"]
 -->
 ```
 
-| Field         | Required | Rule                                                                                                                                                                                                        |
-| :------------ | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`       | Yes      | The plain title, with no emoji: the note's H1 carries the emoji                                                                                                                                             |
-| `description` | Yes      | One or two specific, task-shaped sentences: what the note is and when to use it. Do not echo the title or stuff keywords                                                                                   |
-| `type`        | Yes      | One of the six types below                                                                                                                                                                                  |
-| `keywords`    | No       | Up to eight distinct, lowercase search terms that are not already in the title ([Keywords](Keywords.md))                                                                                                   |
-| `status`      | No       | `draft`, `deprecated` or `archived`; left out while the note is current. Retrieval reads `deprecated` and `archived` notes last, and they stay kept and searchable, never deleted                          |
+| Field         | Required | Rule                                                                                                                                                                              |
+| :------------ | :------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | Yes      | The plain title, with no emoji: the note's H1 carries the emoji                                                                                                                   |
+| `description` | Yes      | One or two specific, task-shaped sentences: what the note is and when to use it. Do not echo the title or stuff keywords                                                          |
+| `type`        | Yes      | One of the six types below                                                                                                                                                        |
+| `keywords`    | No       | Up to eight distinct, lowercase search terms that are not already in the title ([Keywords](Keywords.md))                                                                          |
+| `status`      | No       | `draft`, `deprecated` or `archived`; left out while the note is current. Retrieval reads `deprecated` and `archived` notes last, and they stay kept and searchable, never deleted |
 
 The block opens the file with `<!--` alone on the first line and closes with `-->` alone on its own
 line. It is never fenced with `---`, which GitHub shows as a table at the top of the page. One field
@@ -67,14 +67,14 @@ say, and a field that only repeats them drifts. A note's subject is its path, ne
 
 ### Types
 
-| Type        | Use for                                                                                      |
-| :---------- | :------------------------------------------------------------------------------------------- |
-| `index`     | A folder's own note, its `README.md` (`Memory/README.md`)                                    |
-| `guide`     | An operating manual or a how-to                                                              |
-| `standard`  | Rules a reader must obey                                                                     |
-| `reference` | Material to look up: Library holdings, and the Profile's facts about your user               |
+| Type        | Use for                                                                                     |
+| :---------- | :------------------------------------------------------------------------------------------ |
+| `index`     | A folder's own note, its `README.md` (`Memory/README.md`)                                   |
+| `guide`     | An operating manual or a how-to                                                             |
+| `standard`  | Rules a reader must obey                                                                    |
+| `reference` | Material to look up: Library holdings, and the Profile's facts about the owner              |
 | `record`    | A dated account: the Log, session summaries, decisions, entities, events, reports and ideas |
-| `template`  | A scaffold inside a `.template/` folder; the copy takes its own type                         |
+| `template`  | A scaffold inside a `.template/` folder; the copy takes its own type                        |
 
 A `.template/` folder's own `README.md` is `index` when it explains a folder of scaffolds and is
 never copied, such as `Memory/.template/README.md`, and `template` when its folder is copied whole,
@@ -106,13 +106,13 @@ it, and the folder's `README.md` describes it, so name it so its subject is plai
 
 The fields narrow a search before any note is opened:
 
-| Field or path                      | Narrows to                                                          |
-| :--------------------------------- | :------------------------------------------------------------------ |
-| The path                           | One top folder, then one subject                                    |
-| `type`                             | The kind of note, before you open it                                |
+| Field or path                      | Narrows to                                                           |
+| :--------------------------------- | :------------------------------------------------------------------- |
+| The path                           | One top folder, then one subject                                     |
+| `type`                             | The kind of note, before you open it                                 |
 | `keywords`                         | Other names and the words a person types; in the Library, its facets |
-| `status: deprecated` or `archived` | Superseded notes, which retrieval reads last                        |
-| Anything under `Profile/`          | Personal data about your user: surface it with discretion           |
+| `status: deprecated` or `archived` | Superseded notes, which retrieval reads last                         |
+| Anything under `Profile/`          | Personal data about the owner: surfaced with discretion              |
 
 The files every session reads first are `STARTUP` in `.github/scripts/vault.py`, listed in the root
 [`README.md`](../../../README.md), How A Session Goes. `System/Data/catalog.ndjson` holds every

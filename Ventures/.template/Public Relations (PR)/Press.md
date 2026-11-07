@@ -100,6 +100,6 @@ keywords: ["media contacts", "coverage", "press kit", "pr strategy", "public rel
 
 ## Notes
 
-<!-- PR strategy, embargo policies, spokesperson guidelines, or anything the AI should know when handling media-related tasks. -->
+<!-- PR strategy, embargo policies, spokesperson guidelines, or anything else worth knowing when handling the media. -->
 
 **Retention:** Coverage log entries can be kept indefinitely - press coverage is a permanent record. Media contacts not reached out to or responded in 2+ years should be flagged for review and removed if no longer relevant. Upcoming pitches that are more than 6 months old with no activity should be removed or moved to Notes.

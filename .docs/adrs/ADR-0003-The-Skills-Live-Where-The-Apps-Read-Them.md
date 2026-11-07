@@ -139,13 +139,15 @@ vault, and splits a faculty from the vault layout it names.
 
 ## 🔗 Traceability & Links
 
-- [Skills](../../System/Skills/Skills.md): the layout, the hand-over and how to keep a skill of
-  your own
+- `System/Skills/Skills.md`, removed under [ADR-0004](ADR-0004-The-Skills-Live-In-The-Home-Kit.md):
+  the layout, the hand-over and how to keep a skill of your own
 - `.github/scripts/check-skills.py` and `.github/scripts/update-vault.py`: the check and the copy
 - [ADR-0002](ADR-0002-Notes-Take-The-Hidden-Frontmatter.md), whose removal of `.claude/` this
   narrows to one generated folder
-- [Moving An Older Vault To This Layout](../distribution/How-A-Change-Reaches-A-Vault.md#-moving-an-older-vault-to-this-layout):
-  the steps the owner of a vault made before v1.0.0 who changed or deleted a skill takes first
+- Moving An Older Vault To This Layout, a section of
+  [How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md) since replaced by
+  Moving A Vault Off Its Own Skills: the steps the owner of a vault made before v1.0.0 who changed
+  or deleted a skill takes first
 - tannergolden/intelligence keeps the pinned copy of the five faculties for its home kit
 
 ### 🔗 See also

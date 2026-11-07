@@ -96,4 +96,4 @@ keywords: ["quality standards", "review processes", "checklists", "quality assur
 
 ## Notes
 
-<!-- Edge cases, exceptions to standards, known quality gaps, or anything the AI should know when reviewing work for this company. -->
+<!-- Edge cases, exceptions to standards, known quality gaps, or anything else worth knowing when reviewing work for this company. -->

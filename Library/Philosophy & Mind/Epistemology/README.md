@@ -2,19 +2,19 @@
 title: "Epistemology - Folder Information"
 description: "Knowledge, justification, truth, the theory of inquiry."
 type: "index"
-keywords: ["knowledge", "justification", "truth", "theory", "inquiry"]
+keywords: ["theory of knowledge", "justification", "truth", "belief", "skepticism", "evidence", "inquiry", "rationality"]
 -->
 
 # 📁 Library / Philosophy & Mind / Epistemology /
 
 ## Purpose
 
-Knowledge, justification, truth, the theory of inquiry. For how this division relates to the rest of reason, value, and the mind and where adjacent topics go, see `Library/Philosophy & Mind/README.md`.
+The theory of knowledge: what knowledge is, justification and evidence, truth and belief, skepticism, and the theory of inquiry. Scientific method and the philosophy of science go to Science & Mathematics / Philosophy & Method of Science; the method of history to History & Geography / Historiography; how minds actually form beliefs to Philosophy & Mind / Psychology.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Philosophy & Mind/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Philosophy & Mind/README.md`. This README adds no rules of its own.

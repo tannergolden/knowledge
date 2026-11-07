@@ -26,10 +26,11 @@ Every record lives in this folder, one file per decision, and the log below is
 their index.
 
 The folder is a living record, not a fill-in form, and its records are **yours
-from the first commit**: nothing upstream ever writes, moves or removes one. It
-arrives with no decisions in it and gains a row each time a record is written.
-Only this README is ever updated from the template - when you run
-🔄 Template Sync - merged with the rows your records add.
+from the first commit**: nothing upstream ever writes, moves or removes one. In
+a vault it arrives with no decisions in it, since the records here are this
+template's own and initialisation deletes them, and it gains a row each time a
+record is written. Only this README is ever updated from the template - when you
+run 🔄 Template Sync - merged with the rows your records add.
 
 ---
 

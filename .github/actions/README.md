@@ -23,8 +23,9 @@ _A step written once, beside the workflows that run it._
 
 A composite action bundles steps, and any script or config they need, into one
 `uses:` line. Each one gets a folder of its own here, as
-`.github/actions/<name>/action.yml`. None ships with the template: the folder is
-here so every repository keeps its actions in the same place.
+`.github/actions/<name>/action.yml`, so every repository keeps its actions in the
+same place. This template ships one, [`vault/`](vault/README.md), which runs every
+vault check and the scripts' tests as one step.
 
 A workflow in this repository calls one by its path, `./.github/actions/<name>`,
 after `actions/checkout`. Another repository calls it by address and tag, as
@@ -49,7 +50,8 @@ repository calls from nowhere else.
 
 <!-- AUTO-INDEX:END -->
 
-🗂️ Machined Indexes redraws this log after every push.
+🗂️ Machined Indexes redraws this log after every push to the default branch,
+from each action's own README.
 
 ---
 

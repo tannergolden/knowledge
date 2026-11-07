@@ -67,15 +67,13 @@ At the start of every session, before other work:
    `Inbox/README.md`.
 3. **Read `Memory/Log.md`** and the two newest summaries in `Memory/Context/Current/`.
 4. **Read the README of each folder the task touches**, and of each folder above it, before
-   changing anything there, or read the catalog, `System/Data/catalog.ndjson`, to see what exists.
+   anything there is created, edited, moved or deleted. A folder's rules add to this page and never
+   loosen it. The catalog, `System/Data/catalog.ndjson`, says what exists without walking the tree.
 
 `python3 .github/scripts/session.py start` lists what to read: this page, `Profile/Working Style.md`,
-`Memory/Log.md` and the newest summaries, then, when files wait, `Inbox/README.md` and each waiting
-file.
+`Memory/Log.md` and the two newest summaries, then, when files wait, `Inbox/README.md` and each
+waiting file.
 
-- **Folder rules.** Before anything in a folder is created, edited, moved or deleted, the README of
-  that folder, and of each folder above it, is read. A folder's rules add to this page and never
-  loosen it.
 - **Retrieval order.** A fact is grounded in the closest source that holds it: the vault (its notes
   and the catalog), then an offline knowledge base when one is installed
   (`python3 .github/scripts/knowledge-base.py search`), then the web. Anything about the owner stops
@@ -84,8 +82,9 @@ file.
   is written in the format its folder's README shows; the scripts check the result and redraw what
   derives from it.
 - **Keeping the vault current is part of every task.** What happened, was decided or is due is
-  recorded in Memory and the Log without waiting to be asked. This is the vault's override of
-  WORK-001, the universal rule that keeps work to the task asked.
+  recorded in Memory and the Log without waiting to be asked. It is one of this vault's own rules,
+  so it is part of the task asked, as the home kit's universal rule on scope, WORK-001, counts what
+  a repository's rules require.
 - **Checkpoints.** The running session summary is updated after each finished task, and one is
   written before the context runs short (`Memory/README.md`, Rules).
 
@@ -106,8 +105,9 @@ the optional `libzim`, which only `knowledge-base.py` needs to search and read:
 | `python3 .github/scripts/knowledge-base.py`                      | Turns on, fetches, searches and reads the offline reference works                                              |
 | `python3 -m unittest discover -s .github/scripts -p 'test_*.py'` | The scripts' own tests                                                                                         |
 
-`lint-notes.py` runs on each note written, and `update-vault.py` after a change. Each script's
-purpose is in [`.github/scripts/README.md`](.github/scripts/README.md).
+After any write, whatever makes it, `lint-notes.py` runs on each note written, then
+`update-vault.py`, then `check-vault.py`. Each script's purpose is in
+[`.github/scripts/README.md`](.github/scripts/README.md).
 
 ---
 
@@ -165,12 +165,11 @@ goes to the folders of this vault, each by its README's rules:
   `Profile/Finances.md`: an account, a policy or a document is recorded as where it is kept, never
   its number.
 - **The Library** is the reference collection in `Library/`, with its rules in `Library/README.md`:
-  what is learned about the world, never anything personal. It is searched with
-  `python3 .github/scripts/knowledge-base.py search`.
+  what is learned about the world, never anything personal. Its notes are found by search and by
+  the catalog's `BRAIN/Library/` records, and the offline reference works it keeps are searched
+  with `python3 .github/scripts/knowledge-base.py search`.
 - **A skill** that `research-and-development` builds is not vault content: it lives in
   tannergolden/intelligence or an AI app's own skills folder (`Inbox/README.md`, System Assets).
-- **Every note**, whatever writes it, follows [the note schema](.docs/technical/vault/Note-Schema.md).
-- **After any write**, `lint-notes.py` runs on the note, then `update-vault.py`, then `check-vault.py`.
 
 The README of each of these folders says which skill's work lands there and by what rules, so
 whoever writes there learns it from that folder.
@@ -227,8 +226,10 @@ These need the owner's yes before they happen:
 
 - **Deleting any file.** After the owner says yes, the file is removed with `git rm`, and anything git
   could not bring back is committed first. A file is never emptied in place of being deleted.
-- **A new folder directly inside a top folder**, which is suggested first. A folder deeper down is
-  created only while sorting the Inbox, when no folder fits, and with a yes.
+- **A new folder below a top folder**: one directly inside a top folder is suggested first, and one
+  deeper down, such as a project's subfolder or one an Inbox sort needs when no folder fits, is
+  proposed first. The folders a copied `.template/` brings, and the year folders `update-vault.py`
+  makes in the archive, need no yes of their own.
 - **Moving a file out of `Inbox/`**, whose destination and clean name are proposed first.
 - **Writing to `Profile/`**, which is read-only unless the owner asks or confirms.
 - **Removing anything a retention policy flags**: the policy says what may go, and the owner decides.
@@ -242,8 +243,9 @@ Transient junk (`__pycache__/`, `*.pyc`, `._*` files) needs no yes to clear.
 
 ## ⚠️ Gotchas
 
-- **Hidden folders are infrastructure**: `.git/`, `.github/`, `.docs/` and each `.template/`. None is
-  deleted, empty or not. `.DS_Store` is ignored completely: never deleted, moved, reported or counted.
+- **Hidden folders are infrastructure**: `.assets/`, `.devcontainer/`, `.docs/`, `.git/`, `.github/`,
+  `.vscode/` and each `.template/`. None is deleted, empty or not. `.DS_Store` is ignored completely:
+  never deleted, moved, reported or counted.
 - **Some text is machine-owned.** The `.gitkeep` markers and the blocks between `<!-- brain:` markers
   are `update-vault.py`'s, the `AUTO-INDEX` folder logs are the indexer's, and the catalog is
   generated. Change the source and redraw; they are never edited by hand.

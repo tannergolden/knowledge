@@ -50,7 +50,9 @@ Conventional Commits, are in the standards'
   note that may carry wikilinks, which is why it is also called the folder's hub
   ([Link Topology](../technical/vault/Link-Topology.md)). No note is named after its folder.
 - **Held**: kept at the Inbox's path but never sorted. `Reports/`, `Visuals/`, `Ideas/` and
-  `Backups/` are the held sub-homes; they are still linted and cataloged (`Inbox/README.md`).
+  `Backups/` are the held sub-homes (`Inbox/README.md`). The first three are still linted and
+  cataloged; `Backups/`, which keeps the originals copied before a cleanup, is never walked
+  (`SKIP_DIRS` in `.github/scripts/vault.py`).
 - **Note**: any `.md` file in the seven top folders, each folder's `README.md` and the scaffolds
   included. It opens with the hidden frontmatter of the [Note Schema](../technical/vault/Note-Schema.md),
   and carries a single H1 and no decorative header or footer.
@@ -114,7 +116,7 @@ Conventional Commits, are in the standards'
   (`Profile/README.md`).
 - **Focus**: the one dynamic facet, for what is true only now: current priorities, routines and the
   current life chapter.
-- **Provenance marker**: the inline comment on a Profile line the AI inferred, such as
+- **Provenance marker**: the inline comment on a Profile line inferred rather than stated, such as
   `<!-- observed 2026-06-19 · confidence: medium · unconfirmed -->`, shortened to `confirmed` once the
   owner approves it (`Profile/README.md`).
 - **Unconfirmed**: a proposal that waits for the owner's approval, and is never treated as
@@ -147,7 +149,7 @@ Conventional Commits, are in the standards'
   Relations, each with a folder in the venture and a skill named for it, which also covers that part
   of the owner's own life (the root `README.md`, Where Each Kind Of Work Goes).
 - **Founder**: the owner, as a venture's own records name them: the one whose yes money, contracts,
-  outside communication and deletions need.
+  outside communication, a change to equity and deletions need.
 - **Home kit**: tannergolden/intelligence's installer, which puts every skill in its `kit/skills/`,
   with the universal rules an AI assistant follows, into each AI app on every machine and in every
   Claude Code cloud session. The vault holds no skill, no agent and no rules for any one AI.
@@ -161,8 +163,8 @@ Conventional Commits, are in the standards'
   a folder of `Ventures/` copied from its scaffold. A personal initiative without them is a
   **project**, in `Projects/` (`Ventures/README.md`).
 - **Write-gate**: the check before a skill writes to a venture's strategic core: internal drafts go
-  ahead, while money, contracts, outside communication and deletions need the owner's yes
-  (`Ventures/README.md`).
+  ahead, while moving money, contracts, outside communication, a change to equity and deletions
+  need the owner's yes (`Ventures/README.md`).
 
 ---
 
@@ -179,8 +181,9 @@ Conventional Commits, are in the standards'
 - **Machined index**: a folder log between `AUTO-INDEX` markers, drawn by the standards' indexer.
 - **Only ever in the template**: the files initialisation deletes from every vault.
 - **Session helper**: one of `session.py`'s `start`, `after-edit` and `stop`.
-- **The developer** and **the user**: the developer designed and built the template, and is named on
-  the landing page; the user is whoever `Profile/` describes (`.github/README.md`).
+- **The developer** and **the owner**: the developer designed and built the template, and is named
+  on the landing page; the owner, called the user in some notes, is whoever `Profile/` describes,
+  whose vault it is (`.github/README.md`).
 - **Yours**: a path `.github/template-sync` switches off with `#`, seeded once and never synced.
 
 ---

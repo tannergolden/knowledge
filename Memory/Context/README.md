@@ -1,27 +1,27 @@
 <!--
-title: "Memory / Context"
+title: "Context"
 description: "Session context: the tiered cascade of session summaries (Current to Recent to Archive) that carries what happened across working sessions. The gist grain of context memory; recall is importance-aware."
 type: "index"
 keywords: ["session context", "session summaries", "tiered cascade", "current recent archive", "importance aware recall", "period digest", "continuity"]
 -->
 
-# 🗓️ Memory / Context /
+# 🗓️ Context
 
-Session context: the running record of what happened across working sessions, kept as session summaries that consolidate when a session nears its context limit and age through a three-tier cascade. This is the **gist grain** of the record of what happened; the **atomic grain** - discrete dated events - lives alongside it in `Memory/Events/`.
+Session context: the running record of what happened across working sessions, kept as session summaries that age through a three-tier cascade. A summary is updated after each finished task and written before the context runs short (`Memory/README.md`, Session Summaries). This is the **gist grain** of the record of what happened; the **atomic grain**, discrete dated events, lives alongside it in `Memory/Events/`.
 
 ## The tiers
 
-- [[Memory/Context/Current/README|Current]] - the entry tier; the newest summaries, auto-loaded at session start.
-- [[Memory/Context/Recent/README|Recent]] - recent history, reached on request.
-- [[Memory/Context/Archive/README|Archive]] - lifetime cold storage by year, search-only, with optional period digests.
+- [[Memory/Context/Current/README|Current]]: the entry tier, up to 3 summaries, the two newest of which are read at the start of every session.
+- [[Memory/Context/Recent/README|Recent]]: recent history, up to 6 summaries, reached on request.
+- [[Memory/Context/Archive/README|Archive]]: lifetime cold storage by year, with no cap, reached by search, with optional period digests.
 
 ## Why the tiers are sized the way they are
 
-The tiers are derived from the cost of recall, not chosen as round numbers. The entry tier is kept small so the session-start auto-load stays cheap (the two newest summaries load at session start); the mid tier is a larger on-request lookback; the archive is unbounded. The per-tier caps are **ceilings on auto-load and working cost** (sensible defaults: a few in Current, a session-or-two's worth in Recent), tunable, not magic constants. `.github/scripts/update-vault.py` enforces them by relocating the oldest outward, never deleting (the root `README.md`, Ask First).
+The tiers are sized by the cost of recall, not chosen as round numbers. The entry tier is kept small so the start of every session stays cheap; the mid tier is a larger on-request lookback; the archive is unbounded. The caps are **ceilings on what every session reads and on what is cheap to reach**, tunable rather than magic constants: they are `TIERS` in `.github/scripts/vault.py`, and the tier READMEs state them, so a change to one changes both. `update-vault.py` enforces them by moving the oldest summary down a tier, never deleting one (the root `README.md`, Ask First).
 
 ## Recall is importance-aware, not pure recency
 
-Tiers order summaries by age, but recall does not stop at age. On-demand retrieval over Recent and Archive ranks by **recency + importance + relevance** (the model in `Memory/README.md`), not by folder order. A high-importance summary stays a live retrieval candidate no matter how deep in the archive it has cascaded - importance keeps it **hot**, so a pivotal session surfaces even years later while the routine sinks quietly into cold storage.
+Tiers order summaries by age, but recall does not stop at age. On-demand retrieval over Recent and Archive ranks by **recency + importance + relevance** (`Memory/README.md`, Operations), not by folder order. A high-importance summary stays a live retrieval candidate no matter how deep in the archive it has cascaded: importance keeps it **hot**, so a pivotal session surfaces even years later while the routine sinks quietly into cold storage.
 
 ## Format
 

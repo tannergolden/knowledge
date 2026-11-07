@@ -34,16 +34,19 @@ one.
   them out.
 - **Designs, plans and research**: `designs/`, `plans/` and `research/`, from
   the Technical Design, Implementation Plan and Research Log templates.
+- **The vault's machinery**: how its scripts fit together, in
+  [Vault Scripts](Vault-Scripts.md), and the reference pages behind its rules,
+  in [`vault/`](vault/README.md).
 
 The fill-in standards in [`templates/technical/`](../templates/technical/README.md)
 copy out to the same path here, without `templates/`:
-`docs/templates/technical/backend/API-Design-Standards.md` becomes
-`docs/technical/backend/API-Design-Standards.md`.
+`.docs/templates/technical/backend/API-Design-Standards.md` becomes
+`.docs/technical/backend/API-Design-Standards.md`.
 
 Its documents are **yours from the first commit**: nothing upstream ever
-writes, moves or removes one. Only this README is ever updated from the
-template, when you run 🔄 Template Sync, and its log is redrawn from the files
-the folder holds.
+writes, moves or removes one, but for the pages about the vault this template
+ships, which a vault's 🔄 Template Sync keeps current like this README. Its log
+is redrawn from the files the folder holds.
 
 ---
 

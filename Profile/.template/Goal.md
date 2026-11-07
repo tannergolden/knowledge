@@ -9,7 +9,7 @@ keywords: ["aspiration", "ambition", "objective", "direction", "template"]
 
 <!--
 FILING INSTRUCTIONS (copy this file to Profile/Goals/<Title>.md, then) (one enduring goal):
-- Save as Profile/Goals/[Goal].md. This is the STABLE aspiration; current status and next actions live in Profile/Focus/, not here.
+- Save as Profile/Goals/[Goal].md. This is the STABLE aspiration; current status and next actions live in Profile/Focus.md, not here.
 - Frontmatter: set type "reference", and give the copy its real title and description.
 - Give the H1 a fitting emoji. NO wikilinks - plain paths only.
 -->

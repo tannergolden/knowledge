@@ -1,8 +1,8 @@
 <!--
 title: "[Company] - Clients"
-description: "Complete client roster for [Company]: active accounts, key contacts, contract details, health, history, and pipeline."
+description: "Complete client roster for [Company]: active accounts, key contacts, contract details, health and history."
 type: "template"
-keywords: ["accounts", "client roster", "key contacts", "contracts", "account health", "pipeline", "customer experience", "template"]
+keywords: ["accounts", "client roster", "key contacts", "contracts", "account health", "customer experience", "template"]
 -->
 
 # 🤝 [Company] - Clients
@@ -64,16 +64,6 @@ keywords: ["accounts", "client roster", "key contacts", "contracts", "account he
 
 ---
 
-## Pipeline / Prospects
-
-| Prospect | Industry | Stage | Est. Value | Owner | Next Step | Target Close |
-|---------|---------|-------|-----------|-------|-----------|-------------|
-|          |         |       |           |       |           |              |
-
-**Pipeline Stages:** Lead → Qualified → Proposal Sent → Negotiation → Closed Won / Closed Lost
-
----
-
 ## Client Metrics
 
 **Total Active Clients:**
@@ -107,5 +97,5 @@ keywords: ["accounts", "client roster", "key contacts", "contracts", "account he
 
 ## Notes
 
-<!-- Patterns, exceptions, preferred communication norms, or anything else the AI should know when working on client-related tasks. -->
+<!-- Patterns, exceptions, preferred communication norms, or anything else worth knowing when working with clients. -->
 

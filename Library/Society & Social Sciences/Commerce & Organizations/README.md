@@ -2,19 +2,19 @@
 title: "Commerce & Organizations - Folder Information"
 description: "Business, trade, organizational theory, and accounting."
 type: "index"
-keywords: ["business", "trade", "organizational", "theory"]
+keywords: ["business", "management theory", "organizational behavior", "marketing", "entrepreneurship", "corporate finance", "accounting", "trade practice"]
 -->
 
 # 📁 Library / Society & Social Sciences / Commerce & Organizations /
 
 ## Purpose
 
-Business, trade, organizational theory, and accounting. For how this division relates to the rest of how societies work and where adjacent topics go, see `Library/Society & Social Sciences/README.md`.
+Business and organizations as a discipline: business and trade practice, management and organizational theory, organizational behavior, marketing, entrepreneurship, corporate finance and accounting. Economies and markets go to Society & Social Sciences / Economics; management technique in practice to Technology & Applied Science / Operations & Management; a company's own records to its venture in `Ventures/`.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Society & Social Sciences/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Society & Social Sciences/README.md`. This README adds no rules of its own.

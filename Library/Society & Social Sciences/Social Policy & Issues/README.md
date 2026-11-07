@@ -2,19 +2,19 @@
 title: "Social Policy & Issues - Folder Information"
 description: "Welfare, public policy, social problems, activism, environmental policy."
 type: "index"
-keywords: ["welfare", "public", "problems"]
+keywords: ["public policy", "welfare", "social problems", "poverty", "housing policy", "health policy", "environmental policy", "activism"]
 -->
 
 # 📁 Library / Society & Social Sciences / Social Policy & Issues /
 
 ## Purpose
 
-Welfare, public policy, social problems, activism, environmental policy. For how this division relates to the rest of how societies work and where adjacent topics go, see `Library/Society & Social Sciences/README.md`.
+Social problems and the policy that answers them: welfare and poverty, housing, health and environmental policy, and activism and social movements. How government works goes to Society & Social Sciences / Politics & Government; economic policy to Society & Social Sciences / Economics; education policy to Society & Social Sciences / Education; the science behind a policy to its own division, such as Science & Mathematics / Environmental Science.
 
 ## Subdivisions
 
-No subdivisions yet. Add Layer-4 subfolders only under literary warrant, each with its own README.md.
+No subdivisions yet. A subdivision (Layer 4) is added only under literary warrant and with the owner's yes (`Library/README.md`, Subfolder convention), with its own README.md.
 
 ## Conventions
 
-Classification rules, the facet keywords, the freshness model, and weeding live in `Library/README.md`; this division inherits the scope and boundary rulings of `Library/Society & Social Sciences/README.md`. This README adds no rules of its own.
+Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding; the class's scope and its class here / not here list are in `Library/Society & Social Sciences/README.md`. This README adds no rules of its own.

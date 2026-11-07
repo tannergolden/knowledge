@@ -7,7 +7,7 @@ keywords: ["[author]", "[topic]", "[synonym]", "template"]
 
 # 📇 [Work Title]
 
-> Catalog card for a source document (book, paper, article, report, media) held in or referenced by the Library. The card is authored by the cataloger; the work's own authorship lives in the Bibliographic Record below. This pattern adds **no new frontmatter fields** - the bibliography is body content. On filing: set `type: reference`; fill `keywords` with its freshness token and search terms; give the H1 a fitting leading emoji (the root `README.md`, Conventions); file it in one class and division. If a binary (PDF/EPUB) sits beside this card, record its filename under Held Copy. An optional library cross-walk (Dewey / UDC / LCC) may be noted here, never in frontmatter.
+> Catalog card for a source document (book, paper, article, report, media) held in or referenced by the Library. The card is authored by the cataloger; the work's own authorship lives in the Bibliographic Record below. This pattern adds **no new frontmatter fields** - the bibliography is body content. On filing: set `type: reference`; lead `keywords` with its freshness token, then its search terms; give the H1 a fitting leading emoji (the root `README.md`, Conventions); file it in one class and division. If a binary (PDF/EPUB) sits beside this card, record its filename under Held Copy. An optional library cross-walk (Dewey / UDC / LCC) may be noted here, never in frontmatter. Delete this note from the copy.
 
 ## Bibliographic Record
 
@@ -24,11 +24,11 @@ keywords: ["[author]", "[topic]", "[synonym]", "template"]
 
 ## Summary
 
-What the work says, in your own words - the part you will actually want recalled.
+[What the work says, in the cataloger's own words: the part worth recalling.]
 
 ## Why It Is Here / How To Use
 
-Why it earned a place in the reference layer and which questions it answers.
+[Why it earned a place in the Library, and which questions it answers.]
 
 ## Key Takeaways
 

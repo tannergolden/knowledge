@@ -62,8 +62,9 @@ copies none of it here:
   which gives the vault's notes the hidden frontmatter and spares them the decorative header.
 - **Secrets:** [security and secrets](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md).
 
-The code of conduct, the contributing guide and the security policy are the account's own, which
-GitHub serves to every repository that keeps none of its own.
+The [code of conduct](../../.github/CODE_OF_CONDUCT.md), the
+[contributing guide](../../.github/CONTRIBUTING.md) and the
+[security policy](../../.github/SECURITY.md) sit in `.github/`, kept current from tannergolden/path.
 
 ---
 

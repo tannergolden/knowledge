@@ -21,7 +21,7 @@ _Background, not rules._
 ## 💡 What This Folder Is For
 
 Learning material for anyone new to this project's domain or its tools. Nothing
-here is binding: what the project requires is in the rest of `docs/`, and the
+here is binding: what the project requires is in the rest of `.docs/`, and the
 standards it follows are in the
 [Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md).
 
@@ -29,10 +29,14 @@ standards it follows are in the
 - **Background**: the ideas and the domain a contributor needs, explained once.
 - **Further reading**: the sources worth keeping, each with a line on why.
 
+It is not the vault's `Library/`, the reference collection of what is learned
+about the world, which `Library/README.md` keeps by its own rules: this folder
+holds only guides to the repository and its tools.
+
 Its documents are **yours from the first commit**: nothing upstream ever
-writes, moves or removes one. Only this README is ever updated from the
-template, when you run 🔄 Template Sync, and its log is redrawn from the files
-the folder holds.
+writes, moves or removes one, but for the pages about the vault this template
+ships, which a vault's 🔄 Template Sync keeps current like this README. Its log
+is redrawn from the files the folder holds.
 
 ---
 

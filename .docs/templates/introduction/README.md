@@ -25,7 +25,7 @@ clean machine to a passing test run, and where the project is heading over the
 next year. Each decision is marked by `[square brackets]` until your project
 makes it.
 
-Copy a file out to `docs/introduction/` under the same name, then replace every
+Copy a file out to `.docs/introduction/` under the same name, then replace every
 bracket. The seed here stays pristine.
 
 The commands in Getting Started are the ones CI runs, taken from

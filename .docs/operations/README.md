@@ -38,9 +38,9 @@ something goes wrong.
   [Dependency Policy](../templates/operations/Dependency-Policy.md) seed.
 
 Its documents are **yours from the first commit**: nothing upstream ever
-writes, moves or removes one. Only this README is ever updated from the
-template, when you run 🔄 Template Sync, and its log is redrawn from the files
-the folder holds.
+writes, moves or removes one, but for the pages about the vault this template
+ships, which a vault's 🔄 Template Sync keeps current like this README. Its log
+is redrawn from the files the folder holds.
 
 ---
 
