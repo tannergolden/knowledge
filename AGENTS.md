@@ -184,8 +184,10 @@ In short:
   [keywords](.docs/technical/vault/Keywords.md), never by tags.
 - **Markdown is GitHub's**, with its five alerts and wikilinks as the one addition, linked as
   [the link topology](.docs/technical/vault/Link-Topology.md) allows.
-- **Every folder's note is its `README.md`**, and the scaffolds new notes are copied from live in
-  `.template/` folders.
+- **Every folder's note is its `README.md`**, a page as well: it follows the account's
+  [document styling](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md)
+  in full, centered header and footer included, while every other note carries neither. The
+  scaffolds new notes are copied from live in `.template/` folders.
 - **Names are plain**: spaces or hyphens, never underscores.
 - **Paths are relative to the vault root**; nothing holds an absolute path.
 - **History is git**: no hand-kept changelog and no per-file versions.

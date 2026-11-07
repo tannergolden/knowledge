@@ -54,4 +54,8 @@ This project is maintained on a best-effort basis. Complete, well-formed reports
 
 [↑ Back to Top](#top)
 
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
 </div>

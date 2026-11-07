@@ -52,7 +52,7 @@ keywords: ["working memory", "capture stream", "open loops", "quick capture"]
 
 | Field         | Required | Rule                                                                                                                                                                              |
 | :------------ | :------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`       | Yes      | The plain title, with no emoji: the note's H1 carries the emoji                                                                                                                   |
+| `title`       | Yes      | The plain title, with no emoji: the note's H1 carries the emoji. A folder's `README.md` is the exception: a page, its title is its display title, as its H1 shows it              |
 | `description` | Yes      | One or two specific, task-shaped sentences: what the note is and when to use it. Do not echo the title or stuff keywords                                                          |
 | `type`        | Yes      | One of the six types below                                                                                                                                                        |
 | `keywords`    | No       | Up to eight distinct, lowercase search terms that are not already in the title ([Keywords](Keywords.md))                                                                          |
@@ -64,6 +64,15 @@ to a line, flat, with a list written inline (`["a", "b"]`).
 
 Nothing else is written. The folder, the author and the dates are what the path and git already
 say, and a field that only repeats them drifts. A note's subject is its path, never a tag.
+
+> [!IMPORTANT]
+> **A folder's `README.md` is a page as well as its folder's note.** The account's
+> [Document Styling & Formatting](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md)
+> spares a vault's notes the decorative header and footer, and holds its `README.md` pages to the
+> whole specification. So each folder's README opens with the centered header (one emoji and the
+> folder's name, fully capped, as its H1 and its `title`, the top anchor, a one-line description and
+> a tagline of its own), parts its sections with rules, opens each section heading with an emoji, and
+> closes with the centered footer. Every other note keeps the plain title and carries neither.
 
 ### Types
 

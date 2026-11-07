@@ -196,7 +196,9 @@ What it does differently, and why:
   [the note schema](.docs/technical/vault/Note-Schema.md), the account's own standard, and is found
   by its path, its title and a few [keywords](.docs/technical/vault/Keywords.md), never by tags, with
   no decorative header or footer. A note's single H1 opens with one fitting emoji and then its title;
-  the `title` field stays plain.
+  the `title` field stays plain. A folder's `README.md` is the exception: it is a page as well as its
+  folder's note, so it follows the account's document styling in full, its centered header, fully
+  capped title and footer included ([the note schema](.docs/technical/vault/Note-Schema.md)).
 - **Markdown is GitHub's**: CommonMark plus GitHub-Flavored Markdown, with its five alerts
   (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]` and `[!CAUTION]`, each marker alone on its
   line), and wikilinks as the notes' one addition. Embeds, highlights, `%%` comments, block
@@ -273,6 +275,6 @@ Transient junk (`__pycache__/`, `*.pyc`, `._*` files) needs no yes to clear.
 
 <br />
 
-Distributed under the terms in [LICENSE](/LICENSE).
+Built with ❤️ by [@tannergolden](https://github.com/tannergolden). Distributed under the terms in [LICENSE](/LICENSE).
 
 </div>

@@ -57,10 +57,12 @@ Conventional Commits, are in the standards'
   cataloged; `Backups/`, which keeps the originals copied before a cleanup, is never walked
   (`SKIP_DIRS` in `.github/scripts/vault.py`).
 - **Note**: any `.md` file in the seven top folders, each folder's `README.md` and the scaffolds
-  included. It opens with the hidden frontmatter of the [Note Schema](../technical/vault/Note-Schema.md),
-  and carries a single H1 and no decorative header or footer.
-- **Page**: a file that is not a note: the root `README.md` and `AGENTS.md`, or anything in a hidden
-  folder, such as this one. A page follows the account's styling standard in full.
+  included. It opens with the hidden frontmatter of the [Note Schema](../technical/vault/Note-Schema.md)
+  and carries a single H1. Every note but a folder's `README.md` carries no decorative header or
+  footer.
+- **Page**: a document that follows the account's styling standard in full, its centered header and
+  footer included: the root `README.md` and `AGENTS.md`, anything in a hidden folder, such as this
+  one, and every folder's `README.md`, which is both a page and its folder's note.
 - **Root README**: the `README.md` at the vault root, the vault's guide for anyone who works in it:
   the top folders, how a session goes, the commands, what done means, where each kind of work goes,
   and the conventions every folder shares. A page, read first.

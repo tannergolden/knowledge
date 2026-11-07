@@ -60,7 +60,8 @@ copies none of it here:
 - **Branches:** the [branching strategy](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Branching-Strategy-&-Workflow.md).
 - **Pull requests:** [pull requests and code reviews](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Pull-Requests-&-Code-Reviews.md).
 - **Documents:** [document styling and formatting](https://github.com/tannergolden/standards/blob/Development/docs/technical/interface/Document-Styling-&-Formatting.md),
-  which gives the vault's notes the hidden frontmatter and spares them the decorative header.
+  which gives the vault's notes the hidden frontmatter and spares them the decorative header, and
+  holds every folder's `README.md`, a page as well as a note, to the whole specification.
 - **Secrets:** [security and secrets](https://github.com/tannergolden/standards/blob/Development/docs/operations/Security-&-Secrets.md).
 
 The [code of conduct](../../.github/CODE_OF_CONDUCT.md), the
