@@ -33,7 +33,9 @@ _One root file for agents, each folder's rules where its work happens._
 > **Superseded** by [ADR-0005](ADR-0005-Each-Folder-Explains-Itself-In-A-README.md) on 2026-11-07:
 > the vault holds no AI instructions now. `AGENTS.md` and its Intelligence Sync stub are gone, each
 > folder explains itself in a `README.md` at its root, written for anyone, and the root `README.md`
-> holds the vault's rules. The record below is kept as it was decided.
+> holds the vault's rules. [ADR-0006](ADR-0006-AGENTS-Returns-With-The-Rules-For-Personal-Knowledge.md)
+> then brings `AGENTS.md` and the stub back, with rules that hold an AI to each folder's `README.md`.
+> The record below is kept as it was decided.
 
 | Attribute     | Specification                                     |
 | :------------ | :------------------------------------------------ |

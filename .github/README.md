@@ -46,15 +46,15 @@ a custom agent all read it the same way.
       and removes what only the template needs. If nothing happens, dispatch
       🎯 Standards Lifecycle from the Actions tab.
 - [ ] **Open the folder with any AI assistant, or in an editor**, and work in it there. The root
-      [`README.md`](../README.md) says how to work in the vault, and each folder's own `README.md`
-      how to work in that folder.
+      [`README.md`](../README.md) says how to work in the vault, each folder's own `README.md` how
+      to work in that folder, and [`AGENTS.md`](../AGENTS.md) the rules every AI follows here.
 - [ ] **Fill in `Profile/`** with the profile interview of the `human-resources` skill, which the
       home kit in `tannergolden/intelligence` installs: it interviews you and writes only what you
       confirm.
 - [ ] **Stay current.** Run 🔄 Template Sync when you want this template's improvements. It opens a
-      pull request, and changes nothing you have not merged. The universal rules for AI assistants
-      come with the home kit, not with this repository: give the vault the `no-intelligence` topic so
-      the hub's sync leaves it alone.
+      pull request, and changes nothing you have not merged. 🔁 Intelligence Sync keeps the universal
+      rules in `AGENTS.md` current on its own, with a pull request each time
+      `tannergolden/intelligence` releases new ones.
 
 [Setting Up A Vault](../.docs/introduction/Setting-Up-A-Vault.md) takes each step in turn, with the
 settings the automation needs.
@@ -63,16 +63,20 @@ settings the automation needs.
 
 ## 🧭 How It Is Governed
 
-| Where                                                                 | What it holds                                                                                                    |
-| :-------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
-| [`README.md`](../README.md) at the root                               | How to work in the vault: the top folders, a session, the commands and where each kind of work goes              |
-| Each folder's `README.md`                                             | That folder's purpose, rules and procedures, read before working there                                           |
-| [`.docs/technical/vault/`](../.docs/technical/vault/README.md)        | The note schema, the keywords, the link topology, how to assemble context and how a session runs                 |
-| [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                          |
+| Where                                                                 | What it holds                                                                                            |
+| :-------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------- |
+| [`README.md`](../README.md) at the root                               | How to work in the vault: the top folders, a session, the commands and where each kind of work goes      |
+| [`AGENTS.md`](../AGENTS.md) at the root                               | The rules every AI follows here: the universal rules, then the rules for working with personal knowledge |
+| Each folder's `README.md`                                             | That folder's purpose, rules and procedures, read before working there                                   |
+| [`.docs/technical/vault/`](../.docs/technical/vault/README.md)        | The note schema, the keywords, the link topology, how to assemble context and how a session runs         |
+| [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                  |
 
-The vault holds no instructions for any one AI and no agents: it explains itself, folder by folder,
-to whoever works in it. The universal rules an AI assistant follows come with the home kit from
-`tannergolden/intelligence`, not from this repository.
+The vault explains itself, folder by folder, to whoever works in it, and holds no agents: the
+skills come with the home kit from `tannergolden/intelligence`. `AGENTS.md` is the one page written
+for AI alone. Above it, between the `INTELLIGENCE` markers, are the universal rules every AI follows
+in any repository, which the hub renders and 🔁 Intelligence Sync keeps current; below them are the
+rules every AI follows in a personal knowledge vault, which hold it to the root README and each
+folder's README. Every vault generated from this template starts with both.
 
 ---
 
@@ -80,6 +84,7 @@ to whoever works in it. The universal rules an AI assistant follows come with th
 
 ```bash
 .
+├── AGENTS.md    # The rules every AI follows here: the universal ones, then the vault's
 ├── README.md    # How to work in the vault: read it first
 ├── Inbox/       # Staging for unsorted files, plus the held reports, visuals and ideas
 ├── Library/     # Reference knowledge in ten classes, never personal

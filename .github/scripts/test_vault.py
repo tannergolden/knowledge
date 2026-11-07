@@ -125,7 +125,7 @@ class TestLayout(unittest.TestCase):
         self.vault.cleanup()
 
     def test_the_walk_skips_hidden_folders_but_not_scaffolds(self) -> None:
-        for rel in ('A.md', 'README.md', 'Library/B.md', 'Library/README.md', 'Library/.template/C.md',
+        for rel in ('A.md', 'AGENTS.md', 'README.md', 'Library/B.md', 'Library/README.md', 'Library/.template/C.md',
                     '.github/D.md', 'System/Backups/E.md', 'Memory/.hidden.md', 'Memory/F.txt'):
             self.vault.write(rel, 'x')
         notes = [vault.rel(self.vault.root, p) for p in vault.walk_notes(self.vault.root)]
@@ -133,7 +133,9 @@ class TestLayout(unittest.TestCase):
         self.assertTrue(vault.in_walk(self.vault.root, self.vault.path('Library/.template/C.md')))
         self.assertTrue(vault.in_walk(self.vault.root, self.vault.path('Library/README.md')))
         self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('.github/D.md')))
+        # The root's two pages, README.md and AGENTS.md, are not notes.
         self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('README.md')))
+        self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('AGENTS.md')))
 
     def test_startup_notes_run_stable_before_volatile(self) -> None:
         self.vault.note('Memory/Log.md')

@@ -27,12 +27,12 @@ _Generated private, claimed once, filled in by interview._
   standard library; the repository validator also needs PyYAML, and the offline reference works need
   `libzim`.
 - **An editor, or any AI assistant that reads files.** The root `README.md` says how to work in the
-  vault, and each folder's `README.md` how to work in that folder.
+  vault, each folder's `README.md` how to work in that folder, and `AGENTS.md` the rules every AI
+  follows here, which most AI apps load by themselves.
 - **The home kit** from [tannergolden/intelligence](https://github.com/tannergolden/intelligence) on
-  each machine you work from, if you work with an AI assistant. The vault holds no skills and no
-  rules for any one AI: the kit installs the skills, with the universal rules every assistant
-  follows, into each AI app and every Claude Code cloud session, and the root `README.md` says where
-  each kind of work goes.
+  each machine you work from, if you work with an AI assistant. The vault holds no skills: the kit
+  installs them into each AI app and every Claude Code cloud session, and the root `README.md` says
+  where each kind of work goes.
 
 The steps every repository on the standards shares, such as the admin token, 🎯 Apply Standards and
 signed commits, are in the standards'
@@ -75,12 +75,11 @@ and `.github/template-derive.lock`.
 
 ## ⚙️ Settings The Automation Needs
 
-| Setting                                                                                                                                | Lets                                                                                                                                     | Without it                                                                                                     |
-| :------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
-| **Settings → Actions → General: allow GitHub Actions to create and approve pull requests**                                             | 🔄 Template Sync and 🗂️ Machined Indexes open their pull requests with the repository's own token                                        | Unless a `BOT_ACCESS_TOKEN` opens them, neither can open its pull request                                      |
-| **A `BOT_ACCESS_TOKEN` secret**: the `repo` and `workflow` scopes, or fine-grained Contents, Pull requests, Issues and Workflows write | 🔄 Template Sync writes the stubs under `.github/workflows/`, and the checks run on its pull requests                                    | Workflow files wait, named in an issue, and the checks on a pull request the default token opened wait for you |
-| **The `no-intelligence` topic**: Settings → General → Topics, or `gh repo edit --add-topic no-intelligence`                            | The hub's sync in tannergolden/intelligence leaves the vault alone: an AI assistant's rules come from the home kit, not from a file here | The hub's sync may propose an `AGENTS.md` and a `docs/Prompts.md` the vault does not keep                      |
-| **🎯 Apply Standards**, dispatched after initialisation                                                                                | The shared labels and, with an `ADMIN_TOKEN`, the repository settings and the branch and tag rulesets                                    | Labels and protection stay unset                                                                               |
+| Setting                                                                                                                                | Lets                                                                                                                    | Without it                                                                                                     |
+| :------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| **Settings → Actions → General: allow GitHub Actions to create and approve pull requests**                                             | 🔄 Template Sync, 🗂️ Machined Indexes and 🔁 Intelligence Sync open their pull requests with the repository's own token | Unless a `BOT_ACCESS_TOKEN` opens them, none can open its pull request                                         |
+| **A `BOT_ACCESS_TOKEN` secret**: the `repo` and `workflow` scopes, or fine-grained Contents, Pull requests, Issues and Workflows write | 🔄 Template Sync writes the stubs under `.github/workflows/`, and the checks run on its pull requests                   | Workflow files wait, named in an issue, and the checks on a pull request the default token opened wait for you |
+| **🎯 Apply Standards**, dispatched after initialisation                                                                                | The shared labels and, with an `ADMIN_TOKEN`, the repository settings and the branch and tag rulesets                   | Labels and protection stay unset                                                                               |
 
 🧠 Vault runs every vault check and the scripts' tests, and 🚦 Checks the repository validator, so
 a vault's CI checks something real from its first commit.
@@ -118,16 +117,18 @@ A session commits what it writes, and pushing stays yours.
 
 ## 🌿 Staying Current
 
-Two automations keep your vault current, each as a pull request you merge:
+Three automations keep your vault current, each as a pull request you merge:
 
 - **🔄 Template Sync**, when you run it, brings the template's released fixes, each file merged with
   your changes. Put a `#` before a line in `.github/template-sync` to keep that file as yours.
 - **🗂️ Machined Indexes**, after each push to the default branch, proposes the redrawn folder logs.
 
-The universal rules for an AI assistant change with the home kit, outside the vault: the
-`no-intelligence` topic keeps the hub's own sync away. No sync touches the notes you write, nor the
-files the list leaves to you: `Memory/Log.md`, `Memory/Dates.md`, the eight flat Profile facets and
-the catalog.
+- **🔁 Intelligence Sync**, every Monday, proposes the universal rules of each new
+  tannergolden/intelligence release for the block at the top of `AGENTS.md`, and leaves the rest of
+  the file alone.
+
+No sync touches the notes you write, nor the files the list leaves to you: `Memory/Log.md`,
+`Memory/Dates.md`, the eight flat Profile facets, the catalog and the Intelligence Sync stub.
 [Template Sync](../../.github/template-sync.md) explains every outcome a sync pull request reports,
 and [How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md) follows a change
 from the template to your vault.

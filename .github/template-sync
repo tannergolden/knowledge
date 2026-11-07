@@ -183,6 +183,7 @@
 /.github/scripts/vault.py
 /.github/workflows/vault.yml
 /.typos.toml
+/AGENTS.md
 /Inbox/Ideas/README.md
 /Inbox/README.md
 /Inbox/Reports/README.md
@@ -223,7 +224,9 @@
 
 # --- The vault: yours ---------------------------------------------------------
 # Each vault's own: what its owner writes about themselves, the logs they keep,
-# and the catalog drawn from their notes.
+# the catalog drawn from their notes, and the stub that keeps the universal
+# rules in AGENTS.md current.
+#/.github/workflows/intelligence-sync.yml
 #/Memory/Dates.md
 #/Memory/Log.md
 #/Profile/Biography.md
@@ -246,6 +249,7 @@
 #/.docs/adrs/ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md
 #/.docs/adrs/ADR-0004-The-Skills-Live-In-The-Home-Kit.md
 #/.docs/adrs/ADR-0005-Each-Folder-Explains-Itself-In-A-README.md
+#/.docs/adrs/ADR-0006-AGENTS-Returns-With-The-Rules-For-Personal-Knowledge.md
 #/.github/TEMPLATE_INIT
 #/.github/template-derive.json
 #/.github/template-derive.lock

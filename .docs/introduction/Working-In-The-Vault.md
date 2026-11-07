@@ -23,7 +23,8 @@ _Read the rules, keep the schema, commit the standard way._
 
 1. The root [`README.md`](../../README.md): how to work in the vault, for anyone who does, a person
    or any AI: the top folders, how a session goes, the commands, what done means, where each kind of
-   work goes, and the vault's conventions.
+   work goes, and the vault's conventions. An AI reads [`AGENTS.md`](../../AGENTS.md) before it: the
+   universal rules, then the rules every AI follows in this vault.
 2. The `README.md` at the root of each folder you change, and of each folder above it
    (`Memory/README.md`): its rules add to the root README's and never loosen them.
 3. [`technical/vault/`](../technical/vault/README.md): the note schema, the keywords and the link

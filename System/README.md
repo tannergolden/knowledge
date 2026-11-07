@@ -41,12 +41,12 @@ What goes elsewhere:
 
 When `System/` files conflict with other parts of the BRAIN:
 
-1. The root `README.md`: the vault's own rules. Always wins.
+1. The root `README.md`, with the rules `AGENTS.md` gives every AI below its universal block: the vault's own rules. Always wins.
 2. The rules in each folder's README, which add to the root `README.md` and never loosen it.
 3. `System/` files, which win over Profile and general defaults on how work is done.
 4. `Profile/Working Style.md`, where no `System/` file says otherwise.
 
-The universal rules that come with the home kit from tannergolden/intelligence are not kept in this repository, and nothing here loosens them.
+The universal rules between the `INTELLIGENCE` markers in `AGENTS.md` come from tannergolden/intelligence and are never edited here: their Invariants hold over everything above, and their Defaults give way to the owner's explicit request, to an entry under `AGENTS.md`'s Overrides, and to the vault's own rules.
 
 ## Tooling
 

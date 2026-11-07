@@ -25,7 +25,7 @@ A vault is plain Markdown in one git repository, in three layers:
 
 | Layer             | What it is                                             | Where it lives                                                                                                               |
 | :---------------- | :----------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| **The rules**     | How anyone works here                                  | The root `README.md`, the `README.md` at the root of each folder, the `System/` settings and `Profile/Working Style.md`      |
+| **The rules**     | How anyone works here                                  | `AGENTS.md` and the root `README.md`, the `README.md` of each folder, the `System/` settings and `Profile/Working Style.md`  |
 | **The notes**     | What the vault knows about its owner and the world     | The seven top folders, each note opening with the hidden frontmatter of the [note schema](../technical/vault/Note-Schema.md) |
 | **The machinery** | What checks the notes and draws what derives from them | The scripts in `.github/scripts/`, and the workflows that run them                                                           |
 
@@ -45,7 +45,7 @@ deleted, the README of that folder, and of every folder above it, is read.
 
 ```mermaid
 graph TD
-    A["The root README.md: the vault's own rules"] --> B["Each folder's README.md: adds to them, never loosens them"]
+    A["The root README.md and AGENTS.md: the vault's own rules"] --> B["Each folder's README.md: adds to them, never loosens them"]
     B --> C["System/ files: the settings an owner adds"]
     C --> D["Profile/Working Style.md: how the owner likes to work"]
 ```
@@ -54,11 +54,15 @@ Where two disagree, the higher wins, in the order `System/README.md` sets out un
 `Profile/Working Style.md` decides every choice the others leave open, which is why each session
 reads it first.
 
-The vault holds no instructions for any one AI and no agents. The universal rules an AI assistant
-follows, from [tannergolden/intelligence](https://github.com/tannergolden/intelligence), reach every
-session from the home kit installed on each machine, not from this repository, and nothing here
-loosens them. So that the hub's sync leaves the vault alone, the template carries the
-`no-intelligence` topic on GitHub, and each vault is given it when it is set up.
+An AI reads [`AGENTS.md`](../../AGENTS.md), at the vault root, before anything else, and most AI apps
+load it by themselves. It opens with the universal rules every AI follows in any repository, between
+`INTELLIGENCE` markers, which [tannergolden/intelligence](https://github.com/tannergolden/intelligence)
+renders and 🔁 Intelligence Sync keeps current, with a pull request for each release. Their
+Invariants hold everywhere, and nothing waives one; their Defaults give way to the owner's explicit
+request, to an entry under the file's Overrides, and to the vault's own rules. Below the block come
+the vault's rules for every AI: how a session starts, how personal knowledge is kept private and
+true, and what waits for the owner's yes. They hold an AI to the root `README.md` and each folder's
+README, and every vault generated from the template starts with them.
 
 ---
 
@@ -118,15 +122,16 @@ graph LR
 
 ## 🤖 AI Assistants & Skills
 
-An AI assistant works in the vault the way a person does: it reads the root `README.md`, then the
-README of each folder it works in. The vault holds no skills, no agent specs and no file addressed
-to any one AI. The skills an assistant may bring are twelve, one for each department and named for
+An AI assistant works in the vault the way a person does, after reading `AGENTS.md`: it reads the
+root `README.md`, then the README of each folder it works in. The vault holds no skills, no agent
+specs and no file for any one AI app: `AGENTS.md` is the one file every app shares, and most load it
+by themselves. The skills an assistant may bring are twelve, one for each department and named for
 it: `administration`, `finance-and-accounting`, `legal-and-compliance`, `sales-and-marketing`,
 `operations-and-logistics`, `human-resources`, `information-technology`, `research-and-development`,
 `business-intelligence`, `quality-assurance`, `customer-experience` and `public-relations`. Each
 covers both a company the owner runs and the owner's own life. They live in
-[tannergolden/intelligence](https://github.com/tannergolden/intelligence) under `kit/skills/`, and the
-home kit installs them, with the universal rules, into each AI app on every machine and in every
+[tannergolden/intelligence](https://github.com/tannergolden/intelligence) under `kit/skills/`, and
+the home kit installs them, with the universal rules, into each AI app on every machine and in every
 Claude Code cloud session.
 
 The skills are universal: they hardcode no vault path. The root `README.md`, under Where Each Kind Of

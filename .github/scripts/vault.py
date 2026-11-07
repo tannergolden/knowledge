@@ -74,10 +74,13 @@ INBOX_HELD = frozenset({'Backups', 'Reports', 'Visuals', 'Ideas'})
 SKIP_DIRS = frozenset({'Backups', '__pycache__'})
 SKIP_FILES = frozenset({'.DS_Store', '.gitkeep', '.localized', 'LICENSE'})
 # Each folder explains itself in its README.md, which is the folder's note. The
-# README.md at the vault root is a page, not a note: it explains the whole vault
-# and names the top folders with Markdown links, so the walk passes over it.
+# two files at the vault root are pages, not notes, so the walk passes over both:
+# README.md explains the whole vault and names the top folders with Markdown
+# links, and AGENTS.md holds the rules every AI follows here, the hub's
+# INTELLIGENCE block first and the vault's own after it.
 README = 'README.md'
-ROOT_PAGES = frozenset({README})
+AGENTS = 'AGENTS.md'
+ROOT_PAGES = frozenset({README, AGENTS})
 TRANSIENT_SUFFIXES = ('.part', '.tmp', '.aria2', '.tmp~')
 
 
@@ -90,7 +93,7 @@ def _keep_dir(name: str) -> bool:
 
 def walk_files(root: pathlib.Path) -> Iterator[pathlib.Path]:
     """Every file in the vault a note could link to, in a stable order: each folder's
-    README.md included, the root's README.md, a page, left out."""
+    README.md included, the root's two pages, README.md and AGENTS.md, left out."""
     for folder, dirs, files in os.walk(root):
         dirs[:] = sorted(d for d in dirs if _keep_dir(d))
         at_root = pathlib.Path(folder) == root
@@ -111,7 +114,7 @@ def walk_notes(root: pathlib.Path) -> Iterator[pathlib.Path]:
 
 def in_walk(root: pathlib.Path, path: pathlib.Path) -> bool:
     """True when walk_files would visit this path: inside the root, outside hidden
-    folders other than .template/, not the root's README.md, and not a dotfile or junk file."""
+    folders other than .template/, not one of the root's two pages, and not a dotfile or junk file."""
     try:
         parts = path.resolve().relative_to(root.resolve()).parts
     except (OSError, ValueError):

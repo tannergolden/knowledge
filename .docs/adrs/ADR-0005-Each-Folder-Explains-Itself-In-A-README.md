@@ -30,6 +30,12 @@ _One description per folder, where every reader looks first._
 > [ADR index](README.md). This record supersedes
 > [ADR-0001](ADR-0001-AGENTS-Holds-The-Vaults-Rules.md).
 
+> [!IMPORTANT]
+> **Amended** by [ADR-0006](ADR-0006-AGENTS-Returns-With-The-Rules-For-Personal-Knowledge.md) on
+> 2026-11-07: `AGENTS.md` and its Intelligence Sync stub return, with the universal rules and the
+> rules every AI follows in a personal knowledge vault. Each folder still explains itself in its
+> `README.md`, written for anyone. The record below is kept as it was decided.
+
 | Attribute     | Specification                                     |
 | :------------ | :------------------------------------------------ |
 | **Deciders**  | The vault's owner                                 |

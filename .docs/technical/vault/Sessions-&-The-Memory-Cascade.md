@@ -22,9 +22,9 @@ _Two summaries read at the start, none ever deleted._
 
 ## 💡 A Session, Start To Finish
 
-The root [`README.md`](../../../README.md) sets the steps, and `.github/scripts/session.py` takes the
-three a script can: it lists what to read, checks a note once it is written, and tidies up when the work
-stops.
+The root [`README.md`](../../../README.md) sets the steps, [`AGENTS.md`](../../../AGENTS.md) holds every
+AI to them, and `.github/scripts/session.py` takes the three a script can: it lists what to read,
+checks a note once it is written, and tidies up when the work stops.
 
 ```mermaid
 graph LR
@@ -78,8 +78,9 @@ Before changing anything in a folder, read its README.md and the README.md of ea
 ## 🤖 The Helpers' Contract
 
 The helpers began as the vault's Claude Code hooks. The vault carries no configuration for any one
-AI app, so nothing wires the helpers: each runs by hand, or from an app's own hook settings. Every helper exits 0 whatever happens, so a
-helper never breaks a session.
+AI app, only `AGENTS.md`, which every app can read, so nothing wires the helpers: each runs by hand,
+or from an app's own hook settings. Every helper exits 0 whatever happens, so a helper never breaks a
+session.
 
 | Helper       | Reads                                                                                                          | Does                                                                                                                    | Prints                                                                                                                                                         |
 | :----------- | :------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |

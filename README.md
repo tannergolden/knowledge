@@ -33,8 +33,10 @@ repository made to hold its owner's personal context**, and kept private.
 Every folder explains itself in a `README.md` at its root: what the folder is for, what belongs in
 it, how to name and file things there, what not to do there, and how the checks enforce it. That
 README is the folder's note. This page holds the rules for the whole vault, and a folder's README
-adds to them and never loosens them. The vault holds no instructions for any particular assistant
-and no agents: whoever works here reads the same pages.
+adds to them and never loosens them. Every AI that works here also reads [`AGENTS.md`](AGENTS.md)
+first: the universal rules for AI agents, which 🔁 Intelligence Sync keeps current from
+`tannergolden/intelligence`, then the rules for working with personal knowledge, which hold an AI to
+this page and to each folder's README. The vault holds no agents: the skills come with the home kit.
 
 ---
 
@@ -72,7 +74,8 @@ At the start of every session, before other work:
 
 `python3 .github/scripts/session.py start` lists what to read: this page, `Profile/Working Style.md`,
 `Memory/Log.md` and the two newest summaries, then, when files wait, `Inbox/README.md` and each
-waiting file.
+waiting file. An AI reads `AGENTS.md` before any of it, and most AI apps load that file by
+themselves: it holds these steps too, with the rules every AI follows here.
 
 - **Retrieval order.** A fact is grounded in the closest source that holds it: the vault (its notes
   and the catalog), then an offline knowledge base when one is installed
@@ -233,8 +236,8 @@ These need the owner's yes before they happen:
 - **Moving a file out of `Inbox/`**, whose destination and clean name are proposed first.
 - **Writing to `Profile/`**, which is read-only unless the owner asks or confirms.
 - **Removing anything a retention policy flags**: the policy says what may go, and the owner decides.
-- **Changing this page's rules or a folder README's rules**: the change is proposed on its own, never
-  made as a side effect of other work.
+- **Changing the rules of this page, of `AGENTS.md` or of a folder's README**: the change is proposed
+  on its own, never made as a side effect of other work.
 
 A top folder, or a file at the vault root, is created, renamed, moved or deleted by the owner alone.
 Transient junk (`__pycache__/`, `*.pyc`, `._*` files) needs no yes to clear.
@@ -247,8 +250,9 @@ Transient junk (`__pycache__/`, `*.pyc`, `._*` files) needs no yes to clear.
   `.vscode/` and each `.template/`. None is deleted, empty or not. `.DS_Store` is ignored completely:
   never deleted, moved, reported or counted.
 - **Some text is machine-owned.** The `.gitkeep` markers and the blocks between `<!-- brain:` markers
-  are `update-vault.py`'s, the `AUTO-INDEX` folder logs are the indexer's, and the catalog is
-  generated. Change the source and redraw; they are never edited by hand.
+  are `update-vault.py`'s, the `AUTO-INDEX` folder logs are the indexer's, the block between the
+  `INTELLIGENCE` markers in `AGENTS.md` is the hub's, and the catalog is generated. Change the source
+  and redraw; they are never edited by hand.
 - **The public template stays blank.** In it, every note about a person is a blank scaffold, and none
   is ever filled in there.
 - **Memory is checked before a premise is.** A premise is checked against Memory before it is acted

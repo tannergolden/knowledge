@@ -32,11 +32,11 @@ tannergolden/path, the golden path template, and follows it as a template derive
 dispatch of 🔄 Template Sync here takes that template's latest release as a mapped sync, through
 `.github/template-derive.json`:
 
-| The mapping  | What it does                                                                                                                                                                                                                                                                                                                                |
-| :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Relocates    | Its `docs/` to `.docs/`, and its `assets/` to `.assets/`                                                                                                                                                                                                                                                                                    |
-| Excludes     | What a vault has no use for: `src/`, `tests/`, `packages/`, `benchmarks/` and `examples/`, its changelog, its seed decision record, whose number this template's own records took, the vulnerability report issue form, which a public repository must not carry, and the Intelligence Sync stub, since a vault takes no rules from the hub |
-| Leaves alone | This template's own `LICENSE`, `.github/actions/README.md` and root `README.md`, the vault's guide; its front page is `.github/README.md`, which GitHub shows ahead of a root `README.md`                                                                                                                                                   |
+| The mapping  | What it does                                                                                                                                                                                                                                                                                                                           |
+| :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Relocates    | Its `docs/` to `.docs/`, and its `assets/` to `.assets/`                                                                                                                                                                                                                                                                               |
+| Excludes     | What a vault has no use for: `src/`, `tests/`, `packages/`, `benchmarks/` and `examples/`, its changelog, its seed decision record, whose number this template's own records took, the vulnerability report issue form, which a public repository must not carry, and the Intelligence Sync stub, which this template keeps as its own |
+| Leaves alone | This template's own `LICENSE`, `.github/actions/README.md` and root `README.md`, the vault's guide; its front page is `.github/README.md`, which GitHub shows ahead of a root `README.md`                                                                                                                                              |
 
 `.github/template-derive.lock` records where each file was last synced from. Both files are needed
 only here: initialisation deletes them from every vault, so a vault syncs from this template alone.
@@ -51,11 +51,13 @@ the template changed that the vault's list keeps current arrives as one pull req
 `chore/template-sync`, merged with the owner's own changes. A vault never follows `v2` until its owner
 changes `ref:` in its stub.
 
-**No road for the universal rules.** The universal rules an AI assistant follows reach every
-session from the home kit installed from tannergolden/intelligence, not from this repository: the
-template keeps no `AGENTS.md` and no Intelligence Sync stub, nor does a vault made from it. The hub's own
-sync leaves alone a repository with the `no-intelligence` topic, which the template carries and each
-vault is given when it is set up.
+**The universal rules take their own road.** The block between the `INTELLIGENCE` markers in
+`AGENTS.md` comes from tannergolden/intelligence, not from the golden path template: this template's
+🔁 Intelligence Sync, and every vault's, proposes the hub's latest release as a pull request on
+`chore/intelligence`, and leaves the rest of the file alone. Everything below the block, the rules
+every AI follows in a personal knowledge vault, reaches a vault by the second hop, like any file its
+list keeps current, merged with what its owner added. The block arrives by both roads, and a pull
+request that brings a block the vault already has changes nothing in it.
 
 ---
 
@@ -67,9 +69,9 @@ the owner's own rules:
 | Section                          | In a vault                | What it holds here                                                                                                                                                                                                                              |
 | :------------------------------- | :------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Kept current                     | Synced                    | The repository files this template takes from tannergolden/path: the workflow stubs, the repository scripts, the editor and container settings, the community files and forms, and the `.docs/` folder READMEs, seed templates and prompts page |
-| The vault: kept current          | Synced                    | The vault itself: its scripts and action, the root `README.md`, the landing page, each folder's `README.md` and the scaffolds, the Library and the `.docs/` pages written for the vault                                                         |
+| The vault: kept current          | Synced                    | The vault itself: its scripts and action, the root `README.md` and `AGENTS.md`, the landing page, each folder's `README.md` and the scaffolds, the Library and the `.docs/` pages written for the vault                                         |
 | Yours: seeded once, never synced | Arrives once              | `LICENSE`, `.git-blame-ignore-revs`, `.github/CODEOWNERS`, `.github/FUNDING.yml`, `cut-release.yml` and `.assets/`                                                                                                                              |
-| The vault: yours                 | Arrives once              | `Memory/Log.md`, `Memory/Dates.md`, the eight flat Profile facets and the catalog                                                                                                                                                               |
+| The vault: yours                 | Arrives once              | `Memory/Log.md`, `Memory/Dates.md`, the eight flat Profile facets, the catalog and the Intelligence Sync stub                                                                                                                                   |
 | Only ever in the template        | Deleted at initialisation | The sentinel, the derivation and its lock, and the template's own decision records                                                                                                                                                              |
 
 A sync never touches a file the template does not ship, which is every note an owner writes, nor a
@@ -139,9 +141,10 @@ tannergolden/intelligence under `kit/skills/`, and the home kit installs them.
 
 A vault made before every folder explained itself in a README explained each folder in a note named
 after it (`Memory/Memory.md`), kept a `README.md` only in its seven top
-folders, and kept its rules in `AGENTS.md`, synced by 🔁 Intelligence Sync. Now every folder explains
-itself in its `README.md`, the root `README.md` says how to work in the vault, and the vault holds no
-`AGENTS.md` and no Intelligence Sync stub. The change renames files every vault keeps current, so it
+folders, and kept its rules in `AGENTS.md`, below the universal rules. Now every folder explains
+itself in its `README.md`, written for anyone, the root `README.md` says how to work in the vault, and
+`AGENTS.md` keeps the universal rules with the rules every AI follows in a personal knowledge vault,
+rewritten to hold an AI to those READMEs. The change renames files every vault keeps current, so it
 ships in a new major release: a vault takes it when its owner changes `ref:` in
 `.github/workflows/template-sync.yml` to that major.
 
@@ -163,12 +166,12 @@ give the new names in place of the old ones, such as `board`, `research`, `disco
   `[[Library/Arts & Recreation/README|Arts]]`. A plain path in a file of your own, such as
   `Profile/Profile.md` in `Profile/Biography.md`, is not checked: search for each old name and
   update it.
-- **Retire the hub's files.** `git rm` `AGENTS.md`, which the sync keeps as yours once
-  🔁 Intelligence Sync had changed it, and `.github/workflows/intelligence-sync.yml`, which was yours
-  from the start, then delete the `#/.github/workflows/intelligence-sync.yml` line under The vault:
-  yours in `.github/template-sync`. Add the `no-intelligence` topic, so the hub's sync leaves the vault
-  alone. Anything you had added to `AGENTS.md` that the vault still needs belongs in the root
-  `README.md` or a folder's README.
+- **Take the new `AGENTS.md`.** The sync merges the template's with yours: the rules below the
+  universal block are rewritten, and what you added under a section of your own stays. Where both
+  changed the same lines, such as the block, which your 🔁 Intelligence Sync may have moved to a newer
+  release, your file stays as it was and the pull request shows the template's: take the template's
+  sections below the block, keep your additions and your block, then let the next Intelligence Sync
+  bring the block current. Keep `.github/workflows/intelligence-sync.yml`, yours from the start.
 - **Rename each venture's own folder.** The sync renames the template's folder, never a venture made
   from it: in each venture, `git mv` its `Client Experience (CX)/` to `Customer Experience (CX)/`,
   give that folder's `README.md` the new name in its title and heading, and update the row in its

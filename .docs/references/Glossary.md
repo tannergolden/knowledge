@@ -30,6 +30,9 @@ Conventional Commits, are in the standards'
 
 ## 📦 Notes & Folders
 
+- **AGENTS.md**: the page at the vault root that every AI reads first: the universal rules for AI
+  agents, between `INTELLIGENCE` markers, then the rules every AI follows in a personal knowledge
+  vault, which hold it to the root `README.md` and each folder's README (`AGENTS.md`).
 - **BRAIN**: Behavioral Recursive Augmented Intelligence Network, the name of a vault made from this
   template (`.github/README.md`).
 - **Collection**: a folder of one file per entry, whose README lists the entries in a generated
@@ -56,8 +59,8 @@ Conventional Commits, are in the standards'
 - **Note**: any `.md` file in the seven top folders, each folder's `README.md` and the scaffolds
   included. It opens with the hidden frontmatter of the [Note Schema](../technical/vault/Note-Schema.md),
   and carries a single H1 and no decorative header or footer.
-- **Page**: a file that is not a note: the root `README.md`, or anything in a hidden folder, such as
-  this one. A page follows the account's styling standard in full.
+- **Page**: a file that is not a note: the root `README.md` and `AGENTS.md`, or anything in a hidden
+  folder, such as this one. A page follows the account's styling standard in full.
 - **Root README**: the `README.md` at the vault root, the vault's guide for anyone who works in it:
   the top folders, how a session goes, the commands, what done means, where each kind of work goes,
   and the conventions every folder shares. A page, read first.
@@ -152,10 +155,8 @@ Conventional Commits, are in the standards'
   outside communication, a change to equity and deletions need.
 - **Home kit**: tannergolden/intelligence's installer, which puts every skill in its `kit/skills/`,
   with the universal rules an AI assistant follows, into each AI app on every machine and in every
-  Claude Code cloud session. The vault holds no skill, no agent and no rules for any one AI.
-- **no-intelligence**: the GitHub topic that keeps the hub's own sync away from a repository. The
-  template carries it, and each vault is given it when it is set up
-  ([Setting Up A Vault](../introduction/Setting-Up-A-Vault.md)).
+  Claude Code cloud session. The vault holds no skill and no agent; its `AGENTS.md` carries the
+  universal rules for any AI app.
 - **Skill**: a capability with a `SKILL.md`, kept in tannergolden/intelligence and installed by the
   home kit. The root `README.md`, under Where Each Kind Of Work Goes, gives this vault's layout to
   whoever writes here, a skill included.
@@ -176,6 +177,10 @@ Conventional Commits, are in the standards'
   note, which only `update-vault.py` writes ([Vault Scripts](../technical/Vault-Scripts.md)).
 - **Initialisation**: the one run that claims a newly generated vault for its owner, then removes its
   own sentinel ([Setting Up A Vault](../introduction/Setting-Up-A-Vault.md)).
+- **Intelligence Sync**: the workflow `.github/workflows/intelligence-sync.yml`, each vault's own,
+  which proposes the universal rules of each tannergolden/intelligence release for the block in
+  `AGENTS.md`, as a pull request
+  ([How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md)).
 - **Kept current**: a path `.github/template-sync` names without a `#`, so 🔄 Template Sync keeps it
   current in a vault.
 - **Machined index**: a folder log between `AUTO-INDEX` markers, drawn by the standards' indexer.

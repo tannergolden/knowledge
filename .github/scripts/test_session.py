@@ -68,7 +68,6 @@ class TestStart(unittest.TestCase):
         self.assertIn('1 file waits at the Inbox; sort them per Inbox/README.md before other work.', lines)
         self.assertNotIn('kept.md', result.stdout)
         self.assertIn('read its README.md and the README.md of each folder above it', result.stdout)
-        self.assertNotIn('AGENTS', result.stdout)
 
     def test_an_empty_vault_still_gets_a_card(self) -> None:
         result = self.vault.run(SCRIPT, 'start')

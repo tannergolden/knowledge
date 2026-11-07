@@ -867,22 +867,22 @@ A verdict first: ready, or what is missing. Then each step with its state and th
 
 ```text
 <context>
-The vault carries no configuration and no instructions for any one AI app: the root README.md says how to work in it, each folder's README.md how to work in that folder, and the helpers in .github/scripts/session.py can be wired into an app's own hook settings, as .docs/technical/vault/Sessions-&-The-Memory-Cascade.md describes. Apps differ in what they read by themselves, and the vault adds no file for any one of them.
+AGENTS.md, at the vault root, holds the rules every AI follows here: the universal rules between the INTELLIGENCE markers, then the vault's own, which start every session with its Start here steps. Apps differ in whether they load AGENTS.md by themselves. The helpers in .github/scripts/session.py can be wired into an app's own hook settings, as .docs/technical/vault/Sessions-&-The-Memory-Cascade.md describes.
 </context>
 
 <task>
-Find from {{APP}}'s current documentation how it loads instructions and runs hooks. Then propose the setup that has it read the root README.md at the start of every session here, by running the start helper, which lists it, and, if it runs hooks, call the start, after-edit and stop helpers.
+Find from {{APP}}'s current documentation whether it loads AGENTS.md by itself and how it runs hooks. Then propose the setup that has it read AGENTS.md at the start of every session here and, if it runs hooks, call the start, after-edit and stop helpers.
 </task>
 
 <constraints>
-- Keep the setup in the app's own settings, outside the vault, which holds no instructions for any one app.
+- Keep the vault to AGENTS.md: add no file for one app, such as a CLAUDE.md, which makes Claude Code skip AGENTS.md. Put the setup in the app's own settings, outside the vault.
 - Change no setting before my yes, and show each file and line you will change first.
 - Cite the documentation you used, and say which parts you could not confirm.
 - If any detail above is still a placeholder in double braces, ask me for it before you start.
 </constraints>
 
 <done_when>
-- The approved setup is in place, and you show how I can confirm it: a new session of {{APP}} in this vault that names the How A Session Goes steps of the root README.md before other work.
+- The approved setup is in place, and you show how I can confirm it: a new session of {{APP}} in this vault that names the Start here steps of AGENTS.md before other work.
 - You list each file you changed outside the vault, and what I must do in the app myself.
 </done_when>
 ```
