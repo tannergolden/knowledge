@@ -3,7 +3,7 @@ title: '🧭 ADR-0003: THE SKILLS LIVE WHERE THE APPS READ THEM'
 description: 'The vault keeps its seven skills in .agents/skills/, each faculty with its team inside, draws a copy into .claude/skills/ for Claude Code, and lets a home install of a faculty hand over to the vault''s own copy.'
 type: record
 keywords: [skills, faculties, agent teams, home kit, claude code]
-status: 'Accepted'
+status: 'Superseded'
 date: '2026-10-26'
 evidence: 'N/A'
 -->
@@ -28,6 +28,11 @@ _One source in the template, a copy for Claude Code, and a home install that han
 > [!NOTE]
 > **Status**, **Date**, and **Evidence** live in the frontmatter above and feed the
 > [ADR index](README.md).
+
+> [!IMPORTANT]
+> **Superseded** by [ADR-0004](ADR-0004-The-Skills-Live-In-The-Home-Kit.md) on 2026-11-07: the vault
+> holds no skills or agents now, and the home kit brings them from tannergolden/intelligence. The
+> record below is kept as it was decided.
 
 | Attribute     | Specification                                     |
 | :------------ | :------------------------------------------------ |

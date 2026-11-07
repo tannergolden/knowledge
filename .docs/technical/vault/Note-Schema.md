@@ -79,23 +79,14 @@ say, and a field that only repeats them drifts. A note's subject is its path, ne
 
 A record or a template may add the fields its own kind needs, defined once in its template and
 documented where that kind is defined: an idea record's lineage `id`, `lifecycle` and scores (the
-Discovery team's roster, `.agents/skills/discover/agents/Discovery.md`), or a research report's `review_by` date
-(the research skill). Such a field lives only on its kind and is never added to this page.
-
-### Agent Specs
-
-An agent spec is the one exception: it opens with the `---` block its loader reads, holding its
-spoken `name`, its `description` (the routing key) and its `tools`, and nothing else. Its role is
-its file name. A team is the specs in its folder, its lead is the one whose file name is starred
-(`★`), and the folder's own note describes the team. `check-agents.py` holds every spec and every
-team to that.
+`discover` skill), or a research report's `review_by` date (the `research` skill). Such a field
+lives only on its kind and is never added to this page.
 
 ### No Per-File Versions
 
 No note carries a `version` field, and the linter rejects one. The vault's history is its git
-history: `git log -- <path>` says when a note last changed. A skill keeps its own version, in its
-`SKILL.md` and its `Changelog.md`, because a skill ships outside the vault
-(`System/Skills/Skills.md`).
+history: `git log -- <path>` says when a note last changed. The vault holds no skills or agent
+specs: they live in tannergolden/intelligence, which versions them.
 
 ---
 

@@ -11,7 +11,7 @@ The held library for finished reports. The Research team files its research repo
 
 ## Held, not sorted
 
-Reports live here and stay here. They are not sorted into the BRAIN's permanent layers (the Library, a venture, a project): a report is a working artifact, produced, held, used, and eventually cleared, not durable reference knowledge. The session-start Inbox sweep skips this folder the way it skips the team homes, so a report is never proposed for re-sorting. Reports stay fully linted and cataloged like any other vault file.
+Reports live here and stay here. They are not sorted into the BRAIN's permanent layers (the Library, a venture, a project): a report is a working artifact, produced, held, used, and eventually cleared, not durable reference knowledge. The session-start Inbox sweep skips this folder, as it skips the Visuals and Ideas libraries, so a report is never proposed for re-sorting. Reports stay fully linted and cataloged like any other vault file.
 
 ## Good for three months, then verify
 

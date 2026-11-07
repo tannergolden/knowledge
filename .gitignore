@@ -242,12 +242,12 @@ _site/
 System/.backups/
 System/Backups/
 
-# System/Data/ holds its folder doc and the two catalogs update-vault.py draws.
-# Anything else there is a leftover of the retired engine: its index, logs and state.
+# System/Data/ holds its folder doc and the catalog update-vault.py draws.
+# Anything else there is a leftover of the retired engine or the retired agent
+# catalog: its index, logs and state.
 System/Data/*
 !System/Data/Data.md
 !System/Data/catalog.ndjson
-!System/Data/agent-catalog.json
 
 # Offline knowledge bases (ZIM files in Library/Reference & Encyclopedia/):
 # large, re-downloadable Kiwix binaries, fetched by `knowledge-base.py refresh`.

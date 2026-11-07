@@ -46,9 +46,9 @@ only here: initialisation deletes them from every vault, so a vault syncs from t
 **The second hop: this template into a vault.** A merge to the default branch here reaches no vault.
 🏷️ Cut Release, dispatched with a version `vX.Y.Z`, publishes the release and moves `v1` to it, after
 checking that `.github/template-sync` and the Template Sync stub exist and that
-`validate-repository.py` passes. Every earlier version stays, page and tag, because
-tannergolden/intelligence copies the faculty skills from one version, named in full, and checks its
-copy against that version's tag. A vault follows `v1`: when its owner runs 🔄 Template Sync, every file
+`validate-repository.py` passes. Every earlier version stays, page and tag, so a vault that names
+one in full in its stub's `ref:` still finds it; tannergolden/intelligence no longer pins one, since
+the skills live there now. A vault follows `v1`: when its owner runs 🔄 Template Sync, every file
 the template changed that the vault's list keeps current arrives as one pull request on
 `chore/template-sync`, merged with the owner's own changes. A vault never follows `v2` until its owner
 changes `ref:` in its stub.
@@ -68,21 +68,19 @@ the owner's own rules:
 | Section                          | In a vault                | What it holds here                                                                                                                                                                             |
 | :------------------------------- | :------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Kept current                     | Synced                    | The repository files this template takes from tannergolden/path: the workflow stubs, the repository scripts, the editor and container settings, the `.docs/` folder READMEs and seed templates |
-| The vault: kept current          | Synced                    | The vault itself: its scripts and action, `AGENTS.md`, the landing page, the folder notes and scaffolds, the Library, the skills, the agent teams and the `.docs/` pages written for the vault |
+| The vault: kept current          | Synced                    | The vault itself: its scripts and action, `AGENTS.md`, the landing page, the folder notes and scaffolds, the Library and the `.docs/` pages written for the vault                              |
 | Yours: seeded once, never synced | Arrives once              | `LICENSE`, `.git-blame-ignore-revs`, `.github/CODEOWNERS`, `.github/FUNDING.yml`, `cut-release.yml` and `.assets/`                                                                             |
-| The vault: yours                 | Arrives once              | The intelligence stub, `Memory/Log.md`, `Memory/Dates.md`, the eight flat Profile facets and the two catalogs                                                                                  |
+| The vault: yours                 | Arrives once              | The intelligence stub, `Memory/Log.md`, `Memory/Dates.md`, the eight flat Profile facets and the catalog                                                                                       |
 | Only ever in the template        | Deleted at initialisation | The sentinel, the derivation and its lock, and the template's own decision records                                                                                                             |
 
 A sync never touches a file the template does not ship, which is every note an owner writes, nor a
 file the list leaves to its owner. A file both changed is merged; where both changed the same lines,
 the owner's file stays exactly as it was and the pull request shows the template's change. An owner
 puts a `#` before a line to keep that file, or writes `# keep mine: /path` under Your rules to keep
-their own lines and take the rest. To keep a skill of their own, they add five lines under Your
-rules, so the skill, its Claude Code copy and its archive all stay theirs: `!/.agents/skills/<skill>/`
-and `!/.agents/skills/<skill>/**`, the same two for `.claude/skills/`, and
-`!/System/Skills/<skill>.skill`. A folder takes a line of its own beside the one for what it holds,
-because the sync reads the list with git's matcher, which cannot switch off a file inside a folder a
-line above keeps current. [Template Sync](../../.github/template-sync.md) explains every
+their own lines and take the rest. To keep a whole folder the list keeps current, they add two
+lines under Your rules, such as `!/Library/Life & Practice/` and `!/Library/Life & Practice/**`. A
+folder takes a line of its own beside the one for what it holds, because the sync reads the list with
+git's matcher, which cannot switch off a file inside a folder a line above keeps current. [Template Sync](../../.github/template-sync.md) explains every
 outcome a sync pull request reports.
 
 ---
@@ -116,46 +114,25 @@ The full standard for templates, derived ones included, is the standards'
 
 ---
 
-## 🚚 Moving An Older Vault To This Layout
+## 🚚 Moving A Vault Off Its Own Skills
 
-v1.0.0, the template's first release, keeps the skills in `.agents/skills/`, each faculty's team in
-its skill's own `agents/`, and Claude Code's copy in `.claude/skills/`
-([ADR-0003](../adrs/ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md)). A vault generated before
-it holds the older layout, with the skills in `System/Skills/.unpackaged/` and the teams in
-`Inbox/Faculties/`, and its first sync moves every file. A vault that kept the template's skills as
-they came needs only that sync. A sync does not carry an owner's choice from an old path to a new
-one, so a vault whose owner changed the skills takes two steps of its own.
+A vault made before the skills moved to tannergolden/intelligence kept them and their agents itself: the skills in
+`.agents/skills/` with a copy in `.claude/skills/` and archives in `System/Skills/`, the venture
+workforce in `Ventures/Agent Resources (AR)/`, the Librarian in `Library/`, and
+`System/Data/agent-catalog.json`; one older still kept them in `System/Skills/.unpackaged/` and
+`Inbox/Faculties/`. The template ships none of them now: every skill and its team live in
+tannergolden/intelligence under `kit/skills/`, and the home kit installs them.
 
-**Before the sync**, in `.github/template-sync`:
-
-- If you kept your own skills or teams with a `#` before `/System/Skills/**` or
-  `/Inbox/Faculties/**`, take the `#` off, so the sync moves the template's other skills and teams
-  to their new homes; deleting those lines instead leaves them behind at the old paths, where
-  nothing reads them. Then add, under Your rules, the five lines that keep a skill yours (above)
-  for each skill you changed.
-- If you deleted a skill, add the same five lines for it, or it comes back at the new paths. Add
-  `# keep mine: /System/Skills/Skills.md` too: that note links each skill's archive, and the line
-  keeps your copy of it, without the deleted skill's link, which `check-links.py` needs gone.
-
-Commit that, and run 🔄 Template Sync.
-
-**On the sync pull request's branch**, then merge it as soon as its checks pass: each run of 🔄
-Template Sync replaces that branch, so run it again only once you have merged.
-
-- Move each skill you kept to `.agents/skills/<skill>/`, and its team's files into
-  `.agents/skills/<skill>/agents/`, from wherever your version is now: its old path, or the commit
-  before the sync if the sync took it away. Delete what is left at the old paths, empty folders
-  included. Then run `python3 .github/scripts/check-skills.py <skill>` and fix what it reports: it
-  now holds every skill to one frontmatter key a line, a description that says "Use when" and read-only
-  `allowed-tools`, and each faculty to the hand-over rule.
-- Where the sync reports a conflict in a file you edited, move your file to its new path and carry
-  in the template's change, which the pull request shows. Then add `# keep mine: /<new path>`
-  under Your rules, such as `# keep mine: /.agents/skills/research/agents/Research.md`, or every
-  later sync reports the same file again. An `Inbox/Faculties/` note you edited stays behind the
-  same way; delete it once nothing you need is left in it.
-- Run `python3 .github/scripts/update-vault.py` and commit what it draws: your skills' copies and
-  archives, and the two catalogs in `System/Data/`, which are yours, so `check-vault.py` fails
-  until they are redrawn.
+- **Install the home kit** on each machine you work from, so the skills keep reaching the vault.
+- **Run 🔄 Template Sync.** It removes each of those files you had not changed, and keeps one you had
+  changed as yours.
+- **On the sync pull request's branch**, carry any change you made to a skill or an agent into your
+  own copy of tannergolden/intelligence, or your AI app's own skills folder, then `git rm` what the
+  sync kept, empty folders included. Delete `System/Data/agent-catalog.json` too: it was yours, so the
+  sync leaves it. Remove the lines under Your rules in `.github/template-sync` that name a skill path,
+  such as `!/.agents/skills/<skill>/**`, since they now name nothing.
+- Run `python3 .github/scripts/update-vault.py` and commit the catalog it redraws, then merge once
+  `python3 .github/scripts/check-vault.py` passes.
 
 ---
 

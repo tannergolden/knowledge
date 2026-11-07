@@ -42,10 +42,8 @@ request is not the first place you hear about them.
 | Entry                                                          | Purpose                                                                                                        |
 | :------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
 | [`hooks/`](hooks/README.md)                                    | The git hooks this repository ships, what each catches before a commit is recorded, and how to switch them on. |
-| [`check-agents.py`](check-agents.py)                           | Check the agent library: each agent spec, each team roster, and names unique across every home.                |
 | [`check-links.py`](check-links.py)                             | Check the wikilink graph: every link resolves, and links follow the hub topology.                              |
-| [`check-skills.py`](check-skills.py)                           | Check each skill against the Agent Skills format and the vault's skill layout.                                 |
-| [`check-vault.py`](check-vault.py)                             | Run every vault check, as CI does: notes, links, skills, agents, personal data and generated parts.            |
+| [`check-vault.py`](check-vault.py)                             | Run every vault check, as CI does: notes, links, personal data and generated parts.                            |
 | [`fixtures.py`](fixtures.py)                                   | Throwaway vaults for the vault scripts' tests, built in a temporary folder.                                    |
 | [`knowledge-base.py`](knowledge-base.py)                       | Search and read offline reference works, such as Wikipedia, kept as ZIM files beside the vault's notes.        |
 | [`lint-notes.py`](lint-notes.py)                               | Check each note's frontmatter and naming against the vault's schema.                                           |
@@ -54,9 +52,7 @@ request is not the first place you hear about them.
 | [`requirements.txt`](requirements.txt)                         | The Python packages the scripts beside this file need, and nothing else.                                       |
 | [`scan-pii.py`](scan-pii.py)                                   | Find US Social Security numbers and payment card numbers in the files git tracks.                              |
 | [`session.py`](session.py)                                     | The vault's session helpers: orient a session, check a note after an edit, and tidy up when a turn ends.       |
-| [`test_check_agents.py`](test_check_agents.py)                 | Tests for check-agents.py, the agent library check.                                                            |
 | [`test_check_links.py`](test_check_links.py)                   | Tests for check-links.py, the wikilink graph check.                                                            |
-| [`test_check_skills.py`](test_check_skills.py)                 | Tests for check-skills.py, the skill source check.                                                             |
 | [`test_check_vault.py`](test_check_vault.py)                   | Tests for check-vault.py, and for the wiring that runs the vault scripts.                                      |
 | [`test_gitignore.py`](test_gitignore.py)                       | Tests for this repository's .gitignore.                                                                        |
 | [`test_hooks.py`](test_hooks.py)                               | Tests for the git hooks in .github/scripts/hooks/.                                                             |

@@ -70,11 +70,12 @@ class TestLintNotes(unittest.TestCase):
         self.vault.note('Library/Library.md', status='deprecated')
         self.assertEqual(self.lint().returncode, 0)
 
-    def test_a_fenced_note_is_caught_and_an_agent_spec_is_not(self) -> None:
+    def test_a_fenced_note_is_caught(self) -> None:
         self.vault.write('Library/Fenced.md', '---\ntitle: "Fenced"\ndescription: "A note."\ntype: "index"\n---\n')
         self.assert_flags('fenced with ---, which GitHub shows as a table')
+        # The vault holds no agent specs, so a --- block that names an agent is a fenced note too.
         self.vault.write('Library/Fenced.md', '---\nname: "Ada"\ndescription: "An agent."\ntools: Read\n---\n')
-        self.assertEqual(self.lint().returncode, 0)
+        self.assert_flags('fenced with ---, which GitHub shows as a table')
 
     def test_a_template_type_outside_a_scaffold(self) -> None:
         self.vault.note('Projects/Site/Overview.md', type='template')

@@ -1,8 +1,8 @@
 <!--
 title: '📖 GLOSSARY'
-description: 'The vault''s own terms, from folder note and scaffold to held, faculty and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account''s shared engineering terms are in the standards'' glossary.'
+description: 'The vault''s own terms, from folder note and scaffold to held, skill and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account''s shared engineering terms are in the standards'' glossary.'
 type: reference
-keywords: [terms, definitions, vocabulary, held, scaffold, faculty, venture, folder note]
+keywords: [terms, definitions, vocabulary, held, scaffold, skill, venture, folder note]
 -->
 
 <div align="center">
@@ -122,39 +122,22 @@ Conventional Commits, are in the standards'
 - **Freshness token**: how long a holding stays true: `freshness/timeless` for 25 years or more,
   `freshness/enduring` for 10 to 25, `freshness/current` for 5 to 10. Every holding carries exactly
   one, and anything shorter-lived stays out of the Library.
-- **Holding**: a Library note other than a folder note, a record, a scaffold or the Librarian's own
-  spec: the reference knowledge itself.
+- **Holding**: a Library note other than a folder note, a record or a scaffold: the reference
+  knowledge itself.
 - **Knowledge base**: an offline reference work, such as Wikipedia, kept as a ZIM file in
   `Library/Reference & Encyclopedia/` and read with `.github/scripts/knowledge-base.py`.
 
 ---
 
-## 🤖 Agents & Skills
+## 🤖 Skills
 
-- **Agent home**: a folder of agent teams. The three are `Ventures/Agent Resources (AR)/`,
-  `.agents/skills/`, where each faculty keeps its team in its skill's `agents/`, and `Library/`, whose
-  one agent is the Librarian; together they make one library with one namespace
-  (`.github/scripts/vault.py`).
-- **Agent Resources (AR)**: the shared corporate workforce in `Ventures/`, one team per department,
-  that serves every venture.
-- **Agent spec**: one agent's file, opening with the `---` block its loader reads: `name`,
-  `description` and `tools`.
-- **Faculty**: one of the five standing teams that serve the owner's own work: Research, Discovery,
-  Editorial, Design and Finance, each kept in the `agents/` folder of the skill that dispatches it.
-- **Founder**: the owner, as the agents know them: named in `Profile/Biography.md` and above the whole
-  workforce.
-- **Lead**: the one member of a team whose file name opens with ★ and a space. A lead orchestrates and
-  holds only `Read`, `Grep`, `Glob` and `Task`; the Librarian, a team of one, also holds `Write`,
-  `Edit` and `Bash` (`.github/scripts/check-agents.py`).
-- **Role**: an agent's file name, unique across the library.
-- **Roster**: a team folder's own note, which describes the team.
-- **Skill**: a capability with a `SKILL.md`, kept in `.agents/skills/<name>/`, where the agent apps
-  read it, copied to `.claude/skills/<name>/` for Claude Code, and packed into the `<name>.skill`
-  archive for the Claude app (`System/Skills/Skills.md`).
-- **Spoken name**: an agent's `name`, by which the owner addresses it, unique across the library.
-- **Team**: the agent specs in one folder, with its roster.
-- **Vendoring**: copying a team's roster and members into a skill's archive as it is built, so an
-  installed skill carries its agents.
+- **Founder**: the owner, as the `board` skill's agents know them, above its whole workforce.
+- **Home kit**: tannergolden/intelligence's installer, which puts every skill in its `kit/skills/`
+  into each AI app's skills folder on every machine and in every Claude Code cloud session. The vault
+  holds no skill or agent of its own.
+- **Skill**: a capability with a `SKILL.md`, most with a team of agents in its own `agents/` folder,
+  kept in tannergolden/intelligence and installed by the home kit. `AGENTS.md`, Where the skills
+  write, gives the skills this vault's layout.
 - **Venture**: a company the owner owns or runs, with clients, employees, revenue or a brand, kept in
   a folder of `Ventures/` copied from its scaffold. A personal initiative without them is a
   **project**, in `Projects/` (`Ventures/Ventures.md`).
@@ -166,8 +149,7 @@ Conventional Commits, are in the standards'
 ## ⚙️ Machinery & Sync
 
 - **Catalog**: `System/Data/catalog.ndjson`, one line per note but the scaffolds, holding its path,
-  title, type, keywords, description and status. The **agent catalog**,
-  `System/Data/agent-catalog.json`, lists every agent and team. `update-vault.py` draws both.
+  title, type, keywords, description and status. `update-vault.py` draws it.
 - **Generated block**: the text between `<!-- brain:NAME ... -->` and `<!-- /brain:NAME -->` in a
   note, which only `update-vault.py` writes ([Vault Scripts](../technical/Vault-Scripts.md)).
 - **Initialisation**: the one run that claims a newly generated vault for its owner, then removes its

@@ -4,8 +4,8 @@
 # does here.
 name: 'Vault Checks'
 description: >-
-  Checks every note, wikilink, skill, agent and generated part of the vault,
-  scans the tracked files for personal numbers, and tests the scripts that do it.
+  Checks every note, wikilink and generated part of the vault, scans the
+  tracked files for personal numbers, and tests the scripts that do it.
 author: 'Tanner Golden'
 branding:
   icon: 'check-circle'

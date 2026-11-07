@@ -1,6 +1,6 @@
 <!--
 title: '🧭 HOW THE VAULT WORKS'
-description: 'How the parts of a BRAIN vault fit together: the rules an agent reads and which wins, the shapes its notes take, how information moves between folders, the skills and their agent teams, and the machinery that checks and redraws it all. Read it first, before any other page here.'
+description: 'How the parts of a BRAIN vault fit together: the rules an agent reads and which wins, the shapes its notes take, how information moves between folders, where the skills come from, and the machinery that checks and redraws it all. Read it first, before any other page here.'
 type: guide
 keywords: [overview, architecture, agents-md, folder notes, skills, catalogs, onboarding]
 -->
@@ -61,14 +61,13 @@ reads it first.
 The same few kinds of file recur across the folders. The [Glossary](../references/Glossary.md)
 defines each term.
 
-| Shape             | What it is                                                                                                        | Example                                          |
-| :---------------- | :---------------------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
-| **Folder note**   | The note named after its folder: the folder's Rules and how it works, and the only kind of note that may wikilink | `Memory/Memory.md`                               |
-| **README**        | A top folder's GitHub page; only the seven top folders carry one                                                  | `Memory/README.md`                               |
-| **Scaffold**      | A file in a `.template/` folder, copied to make a new note and never edited in place                              | `Projects/.template/Overview.md`                 |
-| **Collection**    | A folder of one file per entry, whose folder note lists the entries                                               | `Memory/Entities/People/`                        |
-| **Held sub-home** | A folder of `Inbox/` that is kept, never sorted                                                                   | `Inbox/Reports/`                                 |
-| **Agent spec**    | One agent, opening with the `---` block its loader reads                                                          | `.agents/skills/research/agents/Fact-Checker.md` |
+| Shape             | What it is                                                                                                        | Example                          |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------- | :------------------------------- |
+| **Folder note**   | The note named after its folder: the folder's Rules and how it works, and the only kind of note that may wikilink | `Memory/Memory.md`               |
+| **README**        | A top folder's GitHub page; only the seven top folders carry one                                                  | `Memory/README.md`               |
+| **Scaffold**      | A file in a `.template/` folder, copied to make a new note and never edited in place                              | `Projects/.template/Overview.md` |
+| **Collection**    | A folder of one file per entry, whose folder note lists the entries                                               | `Memory/Entities/People/`        |
+| **Held sub-home** | A folder of `Inbox/` that is kept, never sorted                                                                   | `Inbox/Reports/`                 |
 
 Each fact has one home. Who the owner is lives in `Profile/` alone; what happened, who is around them,
 what they decided and what is due live in `Memory/`; knowledge about the world lives in `Library/`;
@@ -108,34 +107,17 @@ graph LR
 
 ## 🤖 Skills & Agent Teams
 
-The vault's seven skills live in `.agents/skills/<name>/`, where Codex, Copilot, Cursor, Gemini and
-Antigravity read a repository's skills. `update-vault.py` copies each into `.claude/skills/<name>/`
-for Claude Code, which reads nothing under `.agents/`, and builds its `<name>.skill` archive in
-`System/Skills/` for the Claude app. An app that reads both folders, as VS Code's Copilot does, may
-list each skill twice. The copy never overwrites a change made to it by hand, and never touches a
-skill in `.claude/skills/` that has no source. An agent fires the skill whose description matches the request,
-without asking. A skill names its team in its `metadata.team`: a faculty keeps that team in its own
-`agents/` folder, and `board` and `identify` call on a department of the venture workforce.
+The vault holds no skills and no agent specs. Every skill (`board`, `discover`, `editorial`,
+`finance`, `identify`, `research` and `visualize`, and `develop`, which builds and fixes skills) lives
+in [tannergolden/intelligence](https://github.com/tannergolden/intelligence) under `kit/skills/`, each
+with its own team in its `agents/` folder. The home kit installs them into each AI app's skills folder
+on every machine and in every Claude Code cloud session, so they reach the vault from there, and an
+agent fires the one whose description matches the request, without asking.
 
-| Skill       | Dispatches                   | From                             |
-| :---------- | :--------------------------- | :------------------------------- |
-| `board`     | Administration               | `Ventures/Agent Resources (AR)/` |
-| `discover`  | Discovery                    | Its own `agents/`                |
-| `editorial` | Editorial                    | Its own `agents/`                |
-| `finance`   | Finance                      | Its own `agents/`                |
-| `identify`  | Research & Development (R&D) | `Ventures/Agent Resources (AR)/` |
-| `research`  | Research                     | Its own `agents/`                |
-| `visualize` | Design                       | Its own `agents/`                |
-
-The faculties' teams, the venture workforce and `Library/`, where the Librarian works alone, make one
-library with one namespace:
-no two agents share a spoken name or a role, and `System/Data/agent-catalog.json` lists them all. A team is
-the specs in its folder, led by the one whose file name carries a star. A lead orchestrates and holds
-only `Read`, `Grep`, `Glob` and `Task`, and no agent but the Librarian holds `Write` or `Edit`, so the
-skill that dispatched a team writes what the team returns. `develop`, which builds and fixes skills,
-is universal: it comes from tannergolden/intelligence, and the vault keeps no copy. The five faculties
-travel from here the other way: the home kit carries a copy pinned to a release of this template to
-every repository on its owner's machines, and in a vault that copy hands over to the vault's own.
+The skills are universal: they hardcode no vault path. `AGENTS.md`, under Where the skills write,
+gives them this vault's layout instead: where `board` keeps a venture, where reports, ideas and visuals
+are held, how `identify` fills the Profile, and which checks run after a write. The venture workforce
+is the `board` skill's own team, and the Library's Librarian is a seat on the `research` skill's team.
 
 ---
 
@@ -143,14 +125,14 @@ every repository on its owner's machines, and in a vault that copy hands over to
 
 Some text in the vault is drawn by a machine and never edited by hand: change its source, then redraw.
 
-| Machine-owned                                                                                                                                                       | Drawn by                                  | When                                                     |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------- | :------------------------------------------------------- |
-| The blocks between `brain:` markers, the memory cascade, both catalogs in `System/Data/`, the `.skill` archives, the `.claude/skills/` copy, the `.gitkeep` markers | `python3 .github/scripts/update-vault.py` | After a change, run by the agent or the owner            |
-| The folder logs between `AUTO-INDEX` markers                                                                                                                        | 🗂️ Machined Indexes                       | After each push to the default branch, as a pull request |
-| The block between the `INTELLIGENCE` markers in `AGENTS.md`                                                                                                         | 🔁 Intelligence Sync                      | Every Monday and on request, as a pull request           |
+| Machine-owned                                                                                                  | Drawn by                                  | When                                                     |
+| :------------------------------------------------------------------------------------------------------------- | :---------------------------------------- | :------------------------------------------------------- |
+| The blocks between `brain:` markers, the memory cascade, the catalog in `System/Data/`, the `.gitkeep` markers | `python3 .github/scripts/update-vault.py` | After a change, run by the agent or the owner            |
+| The folder logs between `AUTO-INDEX` markers                                                                   | 🗂️ Machined Indexes                       | After each push to the default branch, as a pull request |
+| The block between the `INTELLIGENCE` markers in `AGENTS.md`                                                    | 🔁 Intelligence Sync                      | Every Monday and on request, as a pull request           |
 
-`python3 .github/scripts/check-vault.py` runs every vault check: the notes, the links, the skills, the
-agents, the scan for personal numbers and the generated parts. 🧠 Vault runs it, with the scripts' own
+`python3 .github/scripts/check-vault.py` runs every vault check: the notes, the links, the scan for
+personal numbers and the generated parts. 🧠 Vault runs it, with the scripts' own
 tests, on every pull request and every push to the default branch, in the template as in every vault.
 [Vault Scripts](../technical/Vault-Scripts.md) says how the scripts fit together and what to do when
 one fails.

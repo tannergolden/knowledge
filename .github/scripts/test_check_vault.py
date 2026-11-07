@@ -29,8 +29,7 @@ import fixtures  # noqa: E402
 SCRIPT = 'check-vault.py'
 ROOT = fixtures.SCRIPTS.parents[1]
 DASHES = re.compile('[\u2013\u2014\u2015]')
-VAULT_SCRIPTS = ('vault.py', 'lint-notes.py', 'check-links.py', 'check-skills.py', 'check-agents.py',
-                 'scan-pii.py', 'update-vault.py', 'check-vault.py', 'session.py', 'profile-coverage.py',
+VAULT_SCRIPTS = ('vault.py', 'lint-notes.py', 'check-links.py', 'scan-pii.py', 'update-vault.py', 'check-vault.py', 'session.py', 'profile-coverage.py',
                  'knowledge-base.py', 'fixtures.py')
 
 
@@ -45,7 +44,7 @@ class TestCheckVault(unittest.TestCase):
         self.vault.init_git()
         result = self.vault.run(SCRIPT)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn('All 6 vault checks pass.', result.stdout)
+        self.assertIn('All 4 vault checks pass.', result.stdout)
 
     def test_one_failing_check_fails_the_run_and_is_named(self) -> None:
         self.vault.write('Memory/Memory.md', '# no frontmatter, and [[Nowhere]]\n')
@@ -53,7 +52,7 @@ class TestCheckVault(unittest.TestCase):
         result = self.vault.run(SCRIPT)
         self.assertEqual(result.returncode, 1)
         # A note with no catalog drawn yet also leaves the generated parts stale.
-        self.assertIn('3 of 6 vault checks fail: notes, links, generated parts.', result.stderr)
+        self.assertIn('3 of 4 vault checks fail: notes, links, generated parts.', result.stderr)
 
     def test_the_real_vault_passes(self) -> None:
         result = fixtures.subprocess.run([sys.executable, str(fixtures.SCRIPTS / SCRIPT)],
@@ -74,8 +73,7 @@ class TestWiring(unittest.TestCase):
 
     def test_check_vault_runs_every_check_script(self) -> None:
         source = (fixtures.SCRIPTS / SCRIPT).read_text(encoding='utf-8')
-        for name in ('lint-notes.py', 'check-links.py', 'check-skills.py', 'check-agents.py', 'scan-pii.py',
-                     'update-vault.py'):
+        for name in ('lint-notes.py', 'check-links.py', 'scan-pii.py', 'update-vault.py'):
             self.assertIn(f"'{name}'", source)
 
     def test_every_script_reads_well_in_the_file_log(self) -> None:

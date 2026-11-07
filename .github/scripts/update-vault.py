@@ -11,22 +11,11 @@ an AI keeping it by hand would let it drift. This script owns all of it:
    each tier's list of summaries, each Memory collection's and Profile
    facet's list of entries, the subfolder list in any folder note that asks
    for one, and the Open Loops view of Memory/Log.md.
-3. The catalogs: System/Data/catalog.ndjson, one record per note, and
-   System/Data/agent-catalog.json, every agent and team in the library.
-4. The skill archives: System/Skills/<name>.skill, each built from its source
-   in .agents/skills/ with its team, so an installed skill carries its agents.
-   A skill that keeps its team in agents/ already holds it; for one that names
-   an Agent Resources (AR) department, the department is vendored in.
-5. The skill mirror: .claude/skills/, a copy of .agents/skills/ for Claude
-   Code, which reads nothing under .agents/. It leaves alone a skill there
-   with no source, and never overwrites a copy changed by hand: it says so,
-   and the change belongs in the source.
-6. The .gitkeep markers: an empty folder keeps one, a folder with files loses it.
+3. The catalog: System/Data/catalog.ndjson, one record per note.
+4. The .gitkeep markers: an empty folder keeps one, a folder with files loses it.
 
 Run it after a change. With --check it
 writes nothing and fails when anything is out of date, which is what CI runs.
-Archives are compared by their contents, never their bytes, since two zlib
-builds compress the same files differently.
 
 Run it:
 
@@ -36,24 +25,16 @@ Run it:
 
 from __future__ import annotations
 
-import hashlib
-import io
 import json
 import os
 import pathlib
 import re
 import shutil
-import subprocess
 import sys
-import zipfile
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import vault  # noqa: E402  (vault.py sits beside this file)
 
-FIXED_DATE = (1980, 1, 1, 0, 0, 0)  # the earliest a zip records, so a rebuild changes nothing
-JUNK_DIRS = frozenset({'__pycache__', '.git', '.obsidian', '.trash'})
-JUNK_FILES = frozenset({'.DS_Store', 'Thumbs.db'})
-JUNK_SUFFIXES = frozenset({'.pyc', '.pyo', '.skill', '.swp'})
 CATALOG_FIELDS = ('path', 'title', 'type', 'keywords', 'description', 'status')
 STATUS_OPEN = re.compile(r'(?im)^\s*\*\*Status:\*\*\s*Open\b')
 LOG_HEADING = re.compile(r'###\s+(\S+)\s+-\s+(.+)')
@@ -213,7 +194,7 @@ def blocks(run: Run) -> None:
             run.write(note, drawn, 'a generated block is out of date')
 
 
-# ── 3. The catalogs ──
+# ── 3. The catalog ──
 
 def catalog(root: pathlib.Path) -> str:
     records = []
@@ -238,263 +219,18 @@ def catalog(root: pathlib.Path) -> str:
     return '\n'.join(lines) + '\n' if lines else ''
 
 
-def agent_catalog(root: pathlib.Path) -> str:
-    agents, teams, labels = [], [], []
-    for home in vault.homes(root):
-        label = vault.HOME_LABELS.get(vault.rel(root, home), vault.rel(root, home))
-        labels.append(label)
-        for path, team in vault.agent_files(home):
-            fields = vault.note_fields(path)
-            agents.append({
-                'name': str(fields.get('name', '') or '').strip(),
-                'role': path.stem,
-                'home': label,
-                'team': team,
-                'description': str(fields.get('description', '') or '').strip(),
-                'path': 'BRAIN/' + vault.rel(root, path),
-            })
-        for path, team in vault.roster_files(home):
-            fields = vault.note_fields(path)
-            teams.append({
-                'team': team,
-                'home': label,
-                'lead': vault.lead(path.parent),
-                'members': vault.members(path.parent),
-                'description': str(fields.get('description', '') or '').strip(),
-                'path': 'BRAIN/' + vault.rel(root, path),
-            })
-    agents.sort(key=lambda a: (a['home'], a['team'], a['role'].lstrip(vault.STAR + ' ')))
-    teams.sort(key=lambda t: (t['home'], t['team']))
-    body = {
-        'schema_version': 1,
-        'home_count': len(labels),
-        'team_count': len(teams),
-        'agent_count': len(agents),
-        'homes': labels,
-        'agents': agents,
-        'teams': teams,
-    }
-    return json.dumps(body, indent=2, ensure_ascii=False) + '\n'
-
-
-def catalogs(run: Run) -> None:
+def catalog_file(run: Run) -> None:
     root = run.root
-    # A vault with nothing to catalog needs no catalog file, so a fresh one stays clean.
-    wanted = ((vault.CATALOG, catalog(root), any(True for _ in vault.walk_notes(root))),
-              (vault.AGENT_CATALOG, agent_catalog(root), bool(vault.homes(root))))
-    for relative, drawn, needed in wanted:
-        path = root / relative
-        current = path.read_text(encoding='utf-8') if path.is_file() else None
-        if current != drawn and (needed or current is not None):
-            run.write(path, drawn, 'the catalog is out of date')
+    path = root / vault.CATALOG
+    drawn = catalog(root)
+    current = path.read_text(encoding='utf-8') if path.is_file() else None
+    # A vault with no notes needs no catalog file, so a fresh one stays clean.
+    needed = any(True for _ in vault.walk_notes(root))
+    if current != drawn and (needed or current is not None):
+        run.write(path, drawn, 'the catalog is out of date')
 
 
-# ── 4. The skill archives ──
-
-def junk(relative: pathlib.Path) -> bool:
-    return (any(part in JUNK_DIRS for part in relative.parts) or relative.name in JUNK_FILES
-            or relative.name.startswith('._') or relative.suffix.lower() in JUNK_SUFFIXES)
-
-
-def archive_entries(root: pathlib.Path, folder: pathlib.Path, report: vault.Report) -> dict[str, bytes]:
-    """Each entry the skill's archive holds, and its bytes."""
-    name = folder.name
-    entries: dict[str, bytes] = {}
-    for path in sorted(folder.rglob('*')):
-        relative = path.relative_to(folder)
-        if path.is_dir() or path.is_symlink() or junk(relative):
-            continue
-        data = path.read_bytes()
-        if len(relative.parts) == 1 and path.suffix == '.md' and path.name != 'SKILL.md' \
-                and path.stem.lower() == name.lower():
-            # The namesake travels without its vault frontmatter: the guide ships, the metadata stays.
-            text = data.decode('utf-8', 'replace')
-            data = text[vault.body_start(text):].lstrip('\n').encode('utf-8')
-        entries[f'{name}/{relative.as_posix()}'] = data
-    manifest = folder / 'SKILL.md'
-    fields = (vault.parse_frontmatter(vault.read_text(manifest)) or {}) if manifest.is_file() else {}
-    meta = fields.get('metadata')
-    team = str(meta.get('team', '') or '').strip() if isinstance(meta, dict) else ''
-    if team and not (folder / 'agents').is_dir():
-        roster = vault.find_roster(root, team)
-        if roster is None:
-            report.error(folder / 'SKILL.md', f"metadata.team names '{team}', which no roster defines, "
-                                             'so the archive cannot carry its team')
-            return entries
-        by_role = {path.stem: path for home in vault.homes(root) for path, _team in vault.agent_files(home)}
-        entries[f'{name}/agents/{roster.name}'] = roster.read_bytes()
-        for member in vault.members(roster.parent):
-            path = by_role.get(member)
-            if path is None:
-                report.error(roster, f"names '{member}', which no agent file in the library is named")
-                continue
-            entries[f'{name}/agents/{path.name}'] = path.read_bytes()
-    return dict(sorted(entries.items()))
-
-
-def zipped(entries: dict[str, bytes]) -> bytes:
-    buffer = io.BytesIO()
-    with zipfile.ZipFile(buffer, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
-        for name, data in entries.items():
-            info = zipfile.ZipInfo(name, date_time=FIXED_DATE)
-            info.compress_type = zipfile.ZIP_DEFLATED
-            info.external_attr = 0o644 << 16
-            archive.writestr(info, data)
-    return buffer.getvalue()
-
-
-def unzipped(path: pathlib.Path) -> dict[str, bytes] | None:
-    try:
-        with zipfile.ZipFile(path) as archive:
-            return {name: archive.read(name) for name in sorted(archive.namelist()) if not name.endswith('/')}
-    except (OSError, zipfile.BadZipFile):
-        return None
-
-
-def archives(run: Run) -> None:
-    root = run.root
-    sources = vault.skill_dirs(root)
-    for folder in sources:
-        entries = archive_entries(root, folder, run.report)
-        path = root / vault.SKILLS / f'{folder.name}.skill'
-        if unzipped(path) != entries:
-            run.write(path, zipped(entries), "the archive differs from its source")
-    built = {folder.name for folder in sources}
-    skills = root / vault.SKILLS
-    if skills.is_dir():
-        for path in sorted(skills.glob('*.skill')):
-            if path.stem not in built:
-                run.report.error(path, f'has no source in {vault.SKILL_SOURCES}/; delete it or restore the source')
-
-
-# ── 5. The skill mirror ──
-#
-# .claude/skills/ is Claude Code's copy of each skill in .agents/skills/, and
-# it is the owner's folder too: a skill kept there with no source is left
-# alone, and a copy changed by hand is never overwritten. A file in a copy is
-# the mirror's own while its bytes are what git last committed for it, or
-# what a run in this checkout last wrote, which the run records in the git
-# folder, outside the vault's files.
-
-MIRROR_RECORD = 'vault-skill-copy.json'
-
-
-def skill_files(folder: pathlib.Path) -> dict[str, bytes]:
-    """Each file a skill's copy holds, by its path inside the skill, and its bytes: the source's, exactly."""
-    files: dict[str, bytes] = {}
-    for path in sorted(folder.rglob('*')):
-        relative = path.relative_to(folder)
-        if path.is_dir() or path.is_symlink() or junk(relative):
-            continue
-        files[relative.as_posix()] = path.read_bytes()
-    return files
-
-
-def git_output(root: pathlib.Path, *args: str) -> bytes | None:
-    """What a git command prints in the vault, or None outside a checkout or when it fails."""
-    try:
-        result = subprocess.run(['git', '-C', str(root), *args], capture_output=True, timeout=60, check=False)
-    except (OSError, subprocess.SubprocessError):
-        return None
-    return result.stdout if result.returncode == 0 else None
-
-
-def blob_ids(data: bytes) -> set[str]:
-    """The ids git could hold for these bytes: as they are, and with the LF endings text=auto stores."""
-    return {hashlib.sha1(b'blob %d\0' % len(body) + body).hexdigest()
-            for body in (data, data.replace(b'\r\n', b'\n'))}
-
-
-def mirror_history(root: pathlib.Path) -> tuple[dict[str, str], pathlib.Path | None, dict[str, str]]:
-    """Each copy file's committed blob id, by its path inside the mirror; where this checkout's record lives; the record."""
-    committed: dict[str, str] = {}
-    prefix = vault.SKILL_MIRROR + '/'
-    for entry in (git_output(root, 'ls-tree', '-r', '-z', 'HEAD', '--', vault.SKILL_MIRROR) or b'').split(b'\0'):
-        meta, _, name = entry.partition(b'\t')
-        fields = meta.split()
-        path = name.decode('utf-8', 'replace')
-        if len(fields) == 3 and fields[1] == b'blob' and path.startswith(prefix):
-            committed[path[len(prefix):]] = fields[2].decode('ascii', 'replace')
-    where = git_output(root, 'rev-parse', '--git-path', MIRROR_RECORD)
-    if where is None:
-        return committed, None, {}
-    record_path = root / where.decode('utf-8', 'replace').strip()
-    try:
-        record = json.loads(record_path.read_text(encoding='utf-8'))
-    except (OSError, ValueError):
-        record = {}
-    return committed, record_path, record if isinstance(record, dict) else {}
-
-
-def mirror(run: Run) -> None:
-    root = run.root
-    target = root / vault.SKILL_MIRROR
-    sources = {folder.name: folder for folder in vault.skill_dirs(root)}
-    if target.is_dir():
-        for folder in sorted(p for p in target.iterdir() if p.is_dir() and p.name not in sources):
-            if not junk(folder.relative_to(target)):
-                run.report.warn(folder, f'has no source in {vault.SKILL_SOURCES}/, so update-vault.py leaves it as it '
-                                        'is; Claude Code still loads it, so delete it if its source was removed')
-    committed, record_path, record = mirror_history(root)
-    kept = dict(record)
-
-    def own(key: str, path: pathlib.Path) -> bool:
-        if path.is_symlink():
-            return False
-        data = path.read_bytes()
-        return committed.get(key) in blob_ids(data) or kept.get(key) == hashlib.sha256(data).hexdigest()
-
-    for name, folder in sources.items():
-        copy = target / name
-        wanted = skill_files(folder)
-        present: dict[str, pathlib.Path] = {}
-        if copy.is_dir():
-            for path in sorted(copy.rglob('*')):
-                relative = path.relative_to(copy)
-                if (path.is_file() or path.is_symlink()) and not junk(relative):
-                    present[relative.as_posix()] = path
-        changed = sorted(rel for rel, data in wanted.items()
-                         if rel not in present or present[rel].is_symlink() or present[rel].read_bytes() != data)
-        extra = sorted(rel for rel in present if rel not in wanted)
-        if not changed and not extra:
-            continue
-        by_hand = {rel for rel in changed + extra if rel in present and not own(f'{name}/{rel}', present[rel])}
-        if record_path is None:
-            hand = (f'update-vault.py cannot tell outside a git checkout whether this file of the copy was changed by '
-                    f'hand, so it leaves {vault.SKILL_MIRROR}/{name}/ as it is: delete this file and run it again to '
-                    f'draw it from {vault.SKILL_SOURCES}/{name}/')
-        else:
-            hand = (f'changed by hand, so update-vault.py leaves {vault.SKILL_MIRROR}/{name}/ as it is: make the change '
-                    f'in {vault.SKILL_SOURCES}/{name}/, its source, then delete this file and run update-vault.py again')
-        if run.check or by_hand:
-            for rel in sorted(set(changed) | set(extra)):
-                if rel in by_hand:
-                    run.report.error(copy / rel, hand if rel in wanted else hand.replace('changed by hand', 'added by hand'))
-                elif run.check:
-                    run.stale(copy / rel, f'the copy differs from {vault.SKILL_SOURCES}/' if rel in wanted
-                              else f'the copy holds a file {vault.SKILL_SOURCES}/ does not')
-            continue
-        # Removals first, so a rename that only changes a letter's case is not undone on a case-blind disk.
-        for rel in extra:
-            present[rel].unlink()
-            kept.pop(f'{name}/{rel}', None)
-            run.changes.append(f'removed: {vault.rel(root, present[rel])}')
-        for rel in changed:
-            run.write(copy / rel, wanted[rel], f'the copy differs from {vault.SKILL_SOURCES}/')
-            kept[f'{name}/{rel}'] = hashlib.sha256(wanted[rel]).hexdigest()
-        # A file removed from a source can leave an empty folder behind; clear those, deepest first.
-        for sub in sorted((p for p in copy.rglob('*') if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
-            if not any(sub.iterdir()):
-                sub.rmdir()
-    if run.check or record_path is None:
-        return
-    kept = {key: digest for key, digest in kept.items() if (target / key).is_file()}
-    if kept != record:
-        record_path.parent.mkdir(parents=True, exist_ok=True)
-        record_path.write_text(json.dumps(kept, indent=1, sort_keys=True) + '\n', encoding='utf-8')
-
-
-# ── 6. The .gitkeep markers ──
+# ── 4. The .gitkeep markers ──
 
 def keeps(run: Run) -> None:
     root = run.root
@@ -524,7 +260,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--check', action='store_true', help='write nothing; fail when anything is out of date')
     args = parser.parse_args(argv)
     run = Run(args.root.resolve(), args.check)
-    for step in (cascade, blocks, catalogs, archives, mirror, keeps):
+    for step in (cascade, blocks, catalog_file, keeps):
         step(run)
     for line in run.changes:
         print(line)

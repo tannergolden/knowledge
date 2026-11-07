@@ -11,8 +11,7 @@ gate: run it on a note after an edit, and CI runs it on every note.
 With no arguments it checks every note the vault walks: every folder but
 hidden ones, plus the .template/ scaffolds. Given files, it checks only
 those. A file outside the walk, such as one under .github/, is not a note and
-is skipped, and an agent spec, whose --- block its loader reads, is left to
-check-agents.py. A README.md belongs only in the seven top folders, as their
+is skipped. A README.md belongs only in the seven top folders, as their
 GitHub page, so one anywhere else is flagged.
 
 Run it:
@@ -106,9 +105,8 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> list[str]:
             problems.append('no frontmatter block')
         return problems
     if vault.is_fenced(text):
-        if 'name' not in fields:
-            problems.append('the frontmatter is fenced with ---, which GitHub shows as a table; '
-                            'wrap the fields in <!-- and --> (Note-Schema.md)')
+        problems.append('the frontmatter is fenced with ---, which GitHub shows as a table; '
+                        'wrap the fields in <!-- and --> (Note-Schema.md)')
         return problems
     check_fields(fields, template, problems)
     kind = str(fields.get('type', '') or '')

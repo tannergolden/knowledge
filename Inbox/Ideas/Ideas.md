@@ -11,15 +11,15 @@ The held idea pool. The Discovery team, dispatched by the `discover` skill, file
 
 ## Held, not sorted
 
-Like the Reports library, the Visuals library, and the team homes, the session-start card leaves Ideas out of the sort sweep, so an idea record is never proposed for re-sorting. It stays fully linted and cataloged like any other vault content. Only the loose files at the `Inbox/` root are sorted.
+Like the Reports library and the Visuals library, the session-start card leaves Ideas out of the sort sweep, so an idea record is never proposed for re-sorting. It stays fully linted and cataloged like any other vault content. Only the loose files at the `Inbox/` root are sorted.
 
 ## A living pool, governed by status not time
 
 Unlike Reports (good for three months) and Visuals (archival snapshots), the idea pool is a living competitive selector. An idea persists with a lifecycle status: raw, shortlisted, developed, promoted, parked, or killed. Killed and parked ideas are kept on purpose: the team dedups every new idea against the whole pool, including killed ones, so it never re-treads a rejected dead end. Most ideas end killed, by design; the pool is a competitive selector, not an archive of everything. A promoted idea is handed off to its venture or project, and the pool keeps the record and its lineage.
 
-## One idea, one record (the schema lives with the team)
+## One idea, one record (the schema lives with the skill)
 
-Each idea is one Markdown file, `type: record`, carrying a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and the `serves` path for the venture, project, or topic it is for. The full schema, the ICE and Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the Discovery team's method, defined in its roster, `.agents/skills/discover/agents/Discovery.md`. This folder is the home where the records live; that doc is how they are made and scored.
+Each idea is one Markdown file, `type: record`, carrying a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and the `serves` path for the venture, project, or topic it is for. The full schema, the ICE and Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the Discovery team's method, defined in the `discover` skill, which the home kit installs from tannergolden/intelligence. This folder is the home where the records live; the skill is how they are made and scored.
 
 ## Idea files are leaves
 

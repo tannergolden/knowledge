@@ -41,11 +41,11 @@ The ten classes: **Information & Computing · Philosophy & Mind · Religion & Sp
 
 ## The Librarian
 
-The Library is kept by a single resident **Librarian** ([[★ Librarian]], Marian) who lives here at the Library's root and runs the whole collection single-handed, modeled on the one-person librarian. Unlike the Faculties (the Founder's cognitive teams) or Agent Resources (the venture workforce), the Library needs no team: cataloging, curation, and reference are one coherent stewardship role, done by one mind in one pass, with no independent-verification split to staff.
+The Library is kept by the **Librarian**, a seat on the `research` skill's team, which the home kit installs from tannergolden/intelligence; the vault holds no agent spec of its own. Cataloging, curation, and reference are one stewardship role, done by one mind in one pass.
 
 The Librarian acquires, classifies, catalogs, curates, weeds, preserves, and serves every holding, to one overriding standard: **every holding earns its place**. The collection is judged by what it excludes as much as what it serves, and findability is the purpose that curation serves. By demand the Librarian also does deep per-class subject work, a link and authority-control integrity pass (via `.github/scripts/check-vault.py`), and a Conspectus-style depth assessment per class; a genuinely contested class, weed, or tier goes to the Founder.
 
-Boundaries: the Research team (in the research skill, `.agents/skills/research/agents/`) gathers evidence and files reports to `Inbox/Reports/`, and the single handoff is the promotion of a finding into a `Library/` doc; the Librarian owns the durable collection here and commissions the Research team to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the Librarian makes the authoritative tier and class assignment at catalog time.
+Boundaries: the rest of the Research team gathers evidence and files reports to `Inbox/Reports/`, and the single handoff is the promotion of a finding into a `Library/` doc; the Librarian owns the durable collection here and commissions research to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the Librarian makes the authoritative tier and class assignment at catalog time.
 
 ## Why classification matters for AI (not just humans)
 

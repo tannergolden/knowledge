@@ -9,10 +9,8 @@ each runs by hand, and an agent's own hook settings may call one:
   newest session summaries and anything waiting at the Inbox, as paths to
   read rather than whole files, so the card stays short.
 - after-edit: given a hook's JSON on stdin naming the file just written,
-  checks it with lint-notes.py (and a skill source with check-skills.py),
-  and reports any problem, so a mistake is fixed in the same turn. An edit
-  to a skill's Claude Code copy is reported too, since its source is the
-  place to change it.
+  checks it with lint-notes.py and reports any problem, so a mistake is
+  fixed in the same turn.
 - stop: when the working tree has changes, redraws everything generated
   with update-vault.py, runs check-vault.py, and says what changed and what
   fails.
@@ -85,7 +83,7 @@ def after_edit(root: pathlib.Path, payload: str) -> None:
     path = pathlib.Path(name)
     path = (path if path.is_absolute() else root / path).resolve()
     try:
-        parts = path.relative_to(root).parts
+        path.relative_to(root)
     except ValueError:
         return
     flagged = []
@@ -93,18 +91,6 @@ def after_edit(root: pathlib.Path, payload: str) -> None:
         result = run('lint-notes.py', '--root', str(root), str(path), timeout=60)
         if result is not None and result.returncode != 0:
             flagged.append(('lint-notes.py', (result.stdout + result.stderr).strip()))
-    sources = tuple(vault.SKILL_SOURCES.split('/'))
-    if parts[:len(sources)] == sources and len(parts) > len(sources) + 1:
-        result = run('check-skills.py', '--root', str(root), parts[len(sources)], timeout=60)
-        if result is not None and result.returncode != 0:
-            flagged.append(('check-skills.py', (result.stdout + result.stderr).strip()))
-    copies = tuple(vault.SKILL_MIRROR.split('/'))
-    if parts[:len(copies)] == copies and len(parts) > len(copies) + 1:
-        skill = parts[len(copies)]
-        if (root / vault.SKILL_SOURCES / skill).is_dir():
-            flagged.append(('session.py', f'this is the Claude Code copy of a skill, which update-vault.py writes from '
-                                          f'{vault.SKILL_SOURCES}/{skill}/; make the change there, and leave the copy '
-                                          'to update-vault.py, which never overwrites a copy changed by hand'))
     if flagged:
         where = vault.rel(root, path)
         context = '\n\n'.join(f'{script} flagged {where}:\n{output}' for script, output in flagged)

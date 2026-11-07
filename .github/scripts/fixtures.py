@@ -49,14 +49,6 @@ class Vault:
         values.update(fields)
         return self.write(rel, block('<!--', '-->', values) + '\n\n' + (body or f'# {stem}\n'))
 
-    def agent(self, rel: str, body: str = '', **fields: object) -> pathlib.Path:
-        """An agent spec: the --- block its loader reads, naming the agent."""
-        stem = pathlib.PurePosixPath(rel).stem
-        values: dict[str, object] = {'name': stem.lstrip('★ ').split()[0], 'description': f'The agent {stem}.',
-                                     'tools': 'Read, Grep, Glob'}
-        values.update(fields)
-        return self.write(rel, block('---', '---', values) + '\n\n' + (body or f'# {stem}\n'))
-
     def run(self, script: str, *args: str, stdin: str | None = None,
             scripts: pathlib.Path | None = None) -> subprocess.CompletedProcess[str]:
         """Run a vault script on this vault, the way CI runs it."""
@@ -84,7 +76,7 @@ def block(opener: str, closer: str, values: dict[str, object]) -> str:
             lines.append(f'{key}: {str(value).lower()}')
         elif isinstance(value, list):
             lines.append(f'{key}: [' + ', '.join(f'"{item}"' for item in value) + ']')
-        elif isinstance(value, int) or key == 'tools':
+        elif isinstance(value, int):
             lines.append(f'{key}: {value}')
         else:
             lines.append(f'{key}: "{value}"')

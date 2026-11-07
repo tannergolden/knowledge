@@ -28,7 +28,7 @@ keywords: ["operating rhythm", "operating cadence", "business review", "qbr", "o
 
 **Frequency:** (monthly when founding, quarterly at scale)
 **Standing agenda:** financials and runway, the health metrics, the asks/decisions, the risks. A written pre-read goes out ahead; the meeting opens with silent reading.
-**Committees:** Audit, Compensation, Nominating & Governance, Risk convene as needed (see `Agent Resources (AR).md`).
+**Committees:** Audit, Compensation, Nominating & Governance, Risk convene as needed, staffed by the `board` skill's team.
 
 ---
 

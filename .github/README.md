@@ -47,8 +47,8 @@ a custom agent all read it the same way.
       🎯 Standards Lifecycle from the Actions tab.
 - [ ] **Open the folder with an AI agent**, and work with it there. Every agent reads
       [`AGENTS.md`](../AGENTS.md) first.
-- [ ] **Fill in `Profile/`** with the `/identify` skill, which interviews you and writes only what you
-      confirm.
+- [ ] **Fill in `Profile/`** with the `/identify` skill, which the home kit in
+      `tannergolden/intelligence` installs, and which interviews you and writes only what you confirm.
 - [ ] **Stay current.** Run 🔄 Template Sync when you want this template's improvements, and let
       🔁 Intelligence Sync keep the universal rules in `AGENTS.md` up to date. Both open a pull
       request; neither changes anything you have not merged.
@@ -74,13 +74,13 @@ settings the automation needs.
 ```bash
 .
 ├── AGENTS.md    # The rules every agent reads first
-├── Inbox/       # Staging for unsorted files, plus the standing agent teams
+├── Inbox/       # Staging for unsorted files, plus the held reports, visuals and ideas
 ├── Library/     # Reference knowledge in ten classes, never personal
 ├── Memory/      # What happened, who is around you, what you decided, what is due
 ├── Profile/     # Who you are: values, goals, skills, working style
 ├── Projects/    # Personal projects, one folder each
-├── System/      # Workflows, the skills and the generated catalogs
-└── Ventures/    # Each company you run, plus a shared agent workforce
+├── System/      # Workflows and the generated catalog
+└── Ventures/    # Each company you run, one folder each
 ```
 
 Each top folder has a `README.md` for GitHub and a note named after it for the AI.
@@ -97,8 +97,8 @@ works wherever it is placed, and [`vault.yml`](workflows/vault.yml) runs them al
 request.
 
 ```bash
-python3 .github/scripts/check-vault.py    # every check: notes, links, skills, agents, personal data, generated parts
-python3 .github/scripts/update-vault.py   # redraw everything generated: memory tiers, link blocks, catalogs, skill archives
+python3 .github/scripts/check-vault.py    # every check: notes, links, personal data, generated parts
+python3 .github/scripts/update-vault.py   # redraw everything generated: memory tiers, link blocks, the catalog
 python3 .github/scripts/lint-notes.py X   # one note against the schema
 ```
 

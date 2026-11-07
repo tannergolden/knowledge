@@ -11,7 +11,7 @@ The held library for finished visuals. The Design team, dispatched by the `visua
 
 ## Held, not sorted
 
-Visuals live here and stay here. They are not sorted into the BRAIN's permanent layers: a saved visual is a rendered artifact, produced, held, used, and eventually cleared or superseded, not durable reference knowledge. The session-start Inbox sweep skips this folder the way it skips the Reports library and the team homes, so a visual is never proposed for re-sorting. Visuals stay fully linted and cataloged like any other vault file.
+Visuals live here and stay here. They are not sorted into the BRAIN's permanent layers: a saved visual is a rendered artifact, produced, held, used, and eventually cleared or superseded, not durable reference knowledge. The session-start Inbox sweep skips this folder the way it skips the Reports library and the idea pool, so a visual is never proposed for re-sorting. Visuals stay fully linted and cataloged like any other vault file.
 
 ## Archival, kept until superseded
 

@@ -26,8 +26,10 @@ _Generated private, claimed once, filled in by interview._
 - **git and Python 3.9 or later** on the machine you work from. The vault scripts need only Python's
   standard library; the repository validator also needs PyYAML, and the offline reference works need
   `libzim`.
-- **An AI agent that reads files.** Every agent reads `AGENTS.md` first. The vault's skills sit
-  where the apps look for them: `.agents/skills/`, with a copy in `.claude/skills/` for Claude Code.
+- **An AI agent that reads files.** Every agent reads `AGENTS.md` first.
+- **The home kit** from [tannergolden/intelligence](https://github.com/tannergolden/intelligence) on
+  each machine you work from. The vault holds no skills: the kit installs them into each AI app's
+  skills folder, and in every Claude Code cloud session, and `AGENTS.md` tells them where to write.
 
 The steps every repository on the standards shares, such as the admin token, 🎯 Apply Standards and
 signed commits, are in the standards'
@@ -120,7 +122,7 @@ Three automations bring outside change to your vault, each as a pull request you
 - **🗂️ Machined Indexes**, after each push to the default branch, proposes the redrawn folder logs.
 
 No sync touches the notes you write, nor the files the list leaves to you: `Memory/Log.md`,
-`Memory/Dates.md`, the eight flat Profile facets and the two catalogs.
+`Memory/Dates.md`, the eight flat Profile facets and the catalog.
 [Template Sync](../../.github/template-sync.md) explains every outcome a sync pull request reports,
 and [How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md) follows a change
 from the template to your vault.

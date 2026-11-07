@@ -1,6 +1,6 @@
 <!--
 title: "System - Folder Information"
-description: "Explains the purpose of the System/ folder: AI behavior configuration, persona settings, workflow loops, the skill library, and the generated catalogs. The vault's scripts live in .github/scripts/."
+description: "Explains the purpose of the System/ folder: AI behavior configuration, persona settings, workflow loops, and the generated catalog. The vault's scripts live in .github/scripts/, and its skills come from the home kit."
 type: "index"
 keywords: ["ai configuration", "persona settings", "operating context", "control panel", "vault scripts", "behavior config", "folder overview"]
 -->
@@ -24,7 +24,7 @@ Think of this folder as the control panel: `AGENTS.md` is the rulebook, and `Sys
 
 ## Folder Structure
 
-`System/` is a flat **operating surface** at the root (the docs you read), the `Skills/` library of installable capabilities, and the generated `Data/` folder. The vault's scripts are not here: they live in `.github/scripts/`, beside the CI that runs them, so `System/` holds only what the vault reads.
+`System/` is a flat **operating surface** at the root (the docs you read) and the generated `Data/` folder. The vault's scripts are not here: they live in `.github/scripts/`, beside the CI that runs them. Nor are any skills or agents: the vault holds none, and they arrive through the home kit from tannergolden/intelligence (`AGENTS.md`, Start here). So `System/` holds only what the vault reads.
 
 ### Operating surface (`System/` root)
 
@@ -34,20 +34,13 @@ Think of this folder as the control panel: `AGENTS.md` is the rulebook, and `Sys
 | [[System/Workflows\|Workflows.md]] | Strategy and capture loops the AI follows. |
 | `Persona.md` · `Context.md` · `Integrations.md` | Optional config files *(create as needed)*. |
 
-### `Skills/` - installable capabilities
-
-| Path | Purpose |
-|------|---------|
-| [[System/Skills/Skills\|Skills/Skills.md]] | Packaged `.skill` artifacts for the Claude app, built from the skills in `.agents/skills/` (external format, no wikilinks, not walked as notes), where the agent apps read them, with a copy in `.claude/skills/` for Claude Code. A faculty keeps its team in its own `agents/`; a skill that names an Agent Resources (AR) department has it vendored into its archive. |
-
 ### `Data/` - generated files
 
-Machine-written and never hand-edited; `.github/scripts/update-vault.py` draws both, and CI fails when either is out of date. Group overview: [[System/Data/Data|Data/Data.md]].
+Machine-written and never hand-edited; `.github/scripts/update-vault.py` draws it, and CI fails when it is out of date. Group overview: [[System/Data/Data|Data/Data.md]].
 
 | Path | Purpose |
 |------|---------|
 | `Data/catalog.ndjson` | One JSON record per note (`.template/` scaffolds excluded): path, title, type, keywords, description and status. The vault's live listing of what exists, readable by any AI or tool. |
-| `Data/agent-catalog.json` | Every agent (spoken name, role, home, team, description) and every team roster in the federated agent library. The agents themselves are the source of truth; skills check a name against this before dispatching it. |
 
 ---
 
@@ -60,10 +53,8 @@ The vault's checks and generators are scripts in `.github/scripts/`, run from th
 | `check-vault.py` | Runs every check below, as CI does. The one command to run before a commit. |
 | `lint-notes.py` | Every note's frontmatter and naming against the schema (`.docs/technical/vault/Note-Schema.md`) and its keywords (`.docs/technical/vault/Keywords.md`). |
 | `check-links.py` | The wikilink graph: every link resolves and follows the hub topology (`.docs/technical/vault/Link-Topology.md`). |
-| `check-skills.py` | Each skill in `.agents/skills/` against the Agent Skills format, the home kit's stricter reading of it, and the layout in `Skills/Skills.md`. |
-| `check-agents.py` | Each agent spec and team roster, and one namespace across every home. |
 | `scan-pii.py` | Social Security and card numbers in tracked files. Keys and tokens are the gitleaks scan's job in `checks.yml`. |
-| `update-vault.py` | Draws everything generated: the memory cascade, every `brain:` block, both catalogs, the skill archives, the `.claude/skills/` copy and the `.gitkeep` markers. `--check` writes nothing and fails when anything is stale. |
+| `update-vault.py` | Draws everything generated: the memory cascade, every `brain:` block, the catalog and the `.gitkeep` markers. `--check` writes nothing and fails when anything is stale. |
 | `session.py` | The session helpers, run by hand: the session-start card, the check after a note is written, and the end-of-turn redraw. |
 | `profile-coverage.py` | How filled in each Profile facet is; the identify skill reads its `--json`. |
 | `knowledge-base.py` | Offline reference works (Wikipedia and more) in `Library/Reference & Encyclopedia/`: `list`, `enable`, `refresh`, `search`, `read`. Every source ships off. |

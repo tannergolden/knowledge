@@ -1,6 +1,6 @@
 <!--
 title: '🧠 VAULT CHECKS ACTION'
-description: 'Checks every note, wikilink, skill, agent and generated part of the vault, and tests the scripts that do it.'
+description: 'Checks every note, wikilink and generated part of the vault, scans for personal numbers, and tests the scripts that do it.'
 type: index
 keywords: [github-actions, composite-action, validation]
 -->
@@ -22,8 +22,8 @@ _The scripts check the vault. The action runs them. The workflow runs the action
 ## 💡 What This Folder Is For
 
 `action.yml` runs [`check-vault.py`](../../scripts/check-vault.py), which runs
-each vault check in turn: the note schema, the wikilink graph, the skills, the
-agent library, the scan for personal numbers, and `update-vault.py --check`,
+each vault check in turn: the note schema, the wikilink graph, the scan for
+personal numbers, and `update-vault.py --check`,
 which fails when a generated part is out of date. It then runs the unit tests
 of every script in [`.github/scripts/`](../../scripts/README.md). Set the
 `tests` input to `'false'` to skip the tests.

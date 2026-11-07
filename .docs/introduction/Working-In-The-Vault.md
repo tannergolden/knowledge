@@ -71,7 +71,7 @@ GitHub serves to every repository that keeps none of its own.
 - [ ] Run every vault check and make sure it is green:
 
 ```bash
-python3 .github/scripts/check-vault.py   # notes, links, skills, agents, personal data, generated parts
+python3 .github/scripts/check-vault.py   # notes, links, personal data, generated parts
 ```
 
 - [ ] Redraw anything it reports as stale with `python3 .github/scripts/update-vault.py`.

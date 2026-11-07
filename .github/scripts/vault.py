@@ -48,23 +48,7 @@ STARTUP = ('Profile/Working Style.md', 'Memory/Log.md')
 
 # ── Where things live ──
 
-SKILLS = 'System/Skills'
-# A skill's source sits where the agent apps read a repository's skills, and
-# Claude Code, which reads nothing under .agents/, gets a copy update-vault.py draws.
-SKILL_SOURCES = '.agents/skills'
-SKILL_MIRROR = '.claude/skills'
-# The folder in a skill that holds the team it dispatches, when the skill keeps its own.
-TEAM_FOLDER = 'agents'
 CATALOG = 'System/Data/catalog.ndjson'
-AGENT_CATALOG = 'System/Data/agent-catalog.json'
-AGENT_HOMES = ('Ventures/Agent Resources (AR)', SKILL_SOURCES, 'Library')
-HOME_LABELS = {
-    'Ventures/Agent Resources (AR)': 'Agent Resources (AR)',
-    SKILL_SOURCES: 'Faculties',
-    'Library': 'Library',
-}
-NON_TEAM_DIRS = frozenset({'assets', 'references', 'templates', 'scripts'})
-STAR = '★'
 
 # The session-summary tiers, newest first, each with its cap; Recent's
 # overflow moves to Archive/<year>/, which has no cap.
@@ -176,7 +160,7 @@ def is_folder_note(path: pathlib.Path) -> bool:
 # ── Frontmatter ──
 #
 # The vault's frontmatter is flat YAML: scalars, flow lists such as
-# ["a", "b"], block lists, and the one-level maps a SKILL.md's metadata uses.
+# ["a", "b"], block lists, and one-level maps of `key: value` lines.
 # This reads exactly that subset, keeps every scalar as a string, as the
 # schema compares them, and never guesses at anything else.
 
@@ -184,8 +168,8 @@ _KEY = re.compile(r'^([A-Za-z_][\w-]*)[ \t]*:(?:[ \t]+(.*))?[ \t]*$')
 _ESCAPES = {'"': '"', '\\': '\\', '/': '/', 'n': '\n', 't': '\t', 'r': '\r', '0': '\0'}
 
 
-# A note's block is hidden in an HTML comment, as the account's standard asks;
-# an agent spec or a skill keeps the --- block its loader reads.
+# A note's block is hidden in an HTML comment, as the account's standard asks.
+# A --- block is read too, so lint-notes.py can find one and ask for the comment.
 _CLOSERS = {'<!--': ('-->',), '---': ('---', '...')}
 
 
@@ -403,7 +387,7 @@ def is_stale(fields: dict[str, object]) -> bool:
 
 
 def is_fenced(text: str) -> bool:
-    """A --- block: an agent spec's or a skill's, the format its loader reads."""
+    """A --- block, which GitHub shows as a table, where a note's frontmatter is a hidden comment."""
     return text.split('\n', 1)[0].rstrip('\r').rstrip() == '---'
 
 
@@ -464,111 +448,6 @@ def redraw_block(text: str, name: str, body: str) -> str | None:
         return None
     drawn = f'<!-- brain:{name} ({BLOCK_NOTE}) -->\n{body}\n<!-- /brain:{name} -->'
     return text[:match.start()] + drawn + text[match.end():]
-
-
-# ── The agent library ──
-#
-# One library, three homes. A home is a folder of team folders, or, when it
-# holds agent specs itself, a single team. A team folder holds one spec per
-# agent, the --- block naming it, and a roster: the folder's own note. The
-# team's members are the specs in its folder, and its lead the starred one.
-# The skills are the third home: a skill that keeps its own team holds it in
-# its agents/ folder, whose roster is the one note there named for the team.
-
-def is_agent(path: pathlib.Path) -> bool:
-    """An agent spec: a note whose --- block names its agent or its tools."""
-    try:
-        text = read_text(path)
-    except OSError:
-        return False
-    return is_fenced(text) and bool({'name', 'tools'} & set(parse_frontmatter(text) or {}))
-
-
-def _specs(folder: pathlib.Path) -> list[pathlib.Path]:
-    return [p for p in sorted(folder.glob('*.md')) if p.stem.lower() != folder.name.lower() and is_agent(p)]
-
-
-def _holds_skills(home: pathlib.Path) -> bool:
-    """The skills folder, where each skill that keeps a team keeps it in its agents/."""
-    return home.as_posix().endswith('/' + SKILL_SOURCES)
-
-
-def team_dirs(home: pathlib.Path) -> list[pathlib.Path]:
-    if not home.is_dir():
-        return []
-    if _holds_skills(home):
-        return [d / TEAM_FOLDER for d in sorted(home.iterdir(), key=lambda d: d.name.lower())
-                if d.is_dir() and not d.name.startswith('.') and (d / TEAM_FOLDER).is_dir()]
-    if _specs(home):
-        return [home]
-    return [d for d in sorted(home.iterdir())
-            if d.is_dir() and not d.name.startswith('.') and d.name.lower() not in NON_TEAM_DIRS]
-
-
-def team_rosters(team: pathlib.Path) -> list[pathlib.Path]:
-    """The notes in a skill's agents/ folder that are not agent specs: its roster, when there is exactly one."""
-    return [p for p in sorted(team.glob('*.md')) if not is_agent(p)]
-
-
-def team_name(team: pathlib.Path) -> str:
-    """A team's name: its folder's, or, for a team a skill keeps in agents/, its roster's."""
-    if team.name == TEAM_FOLDER:
-        notes = team_rosters(team)
-        if len(notes) == 1:
-            return notes[0].stem
-    return team.name
-
-
-def agent_files(home: pathlib.Path) -> list[tuple[pathlib.Path, str]]:
-    """Each agent spec in a home, with the team it belongs to."""
-    return [(path, team_name(team)) for team in team_dirs(home) for path in _specs(team)]
-
-
-def roster_files(home: pathlib.Path) -> list[tuple[pathlib.Path, str]]:
-    """Each team's roster in a home: the note of a team folder that holds specs."""
-    out = []
-    for team in team_dirs(home):
-        name = team_name(team)
-        roster = team / f'{name}.md'
-        if roster.is_file() and _specs(team):
-            out.append((roster, name))
-    return out
-
-
-def members(team: pathlib.Path) -> list[str]:
-    """A team's members by role, its file name: the lead first, then the rest in name order."""
-    roles = [p.stem for p in _specs(team)]
-    return sorted(roles, key=lambda role: (not role.startswith(STAR), role.lstrip(STAR + ' ').lower()))
-
-
-def lead(team: pathlib.Path) -> str:
-    """The team's lead: its one starred member, or '' when it has none."""
-    starred = [role for role in members(team) if role.startswith(STAR)]
-    return starred[0] if len(starred) == 1 else ''
-
-
-def homes(root: pathlib.Path) -> list[pathlib.Path]:
-    return [root / home for home in AGENT_HOMES if (root / home).is_dir()]
-
-
-def find_roster(root: pathlib.Path, team: str) -> pathlib.Path | None:
-    """The roster of the team named `team`, in any home."""
-    for home in homes(root):
-        for roster, name in roster_files(home):
-            if name == team:
-                return roster
-    return None
-
-
-# ── Skills ──
-
-def skill_dirs(root: pathlib.Path) -> list[pathlib.Path]:
-    """Each skill source folder, in name order."""
-    sources = root / SKILL_SOURCES
-    if not sources.is_dir():
-        return []
-    return sorted((d for d in sources.iterdir() if d.is_dir() and not d.name.startswith('.')),
-                  key=lambda d: d.name.lower())
 
 
 # ── Memory and the Inbox ──

@@ -2,8 +2,8 @@
 """Tests for update-vault.py, which draws every generated part of the vault.
 
 WHY THIS EXISTS. update-vault.py moves session summaries, rewrites blocks
-inside notes, rebuilds two catalogs and every skill archive, and adds and
-removes .gitkeep markers, often with nobody watching. A mistake in
+inside notes, rebuilds the catalog, and adds and removes .gitkeep markers,
+often with nobody watching. A mistake in
 any of those changes the vault behind someone's back. Each test builds a
 small vault, runs the real script (and its --check), and checks the files it
 leaves. The last test checks, read only, that the vault this repository holds
@@ -20,14 +20,12 @@ import json
 import pathlib
 import sys
 import unittest
-import zipfile
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import fixtures  # noqa: E402
 
 SCRIPT = 'update-vault.py'
-STAR = '★'
 NOTE = 'drawn by .github/scripts/update-vault.py - do not edit by hand'
 
 
@@ -159,196 +157,6 @@ class TestCatalogs(Base):
         self.assertEqual(sorted(library), ['description', 'keywords', 'path', 'status', 'title', 'type'])
         self.assertEqual(library['keywords'], ['books'])
         self.assertEqual(library['type'], 'index')
-
-    def test_the_agent_catalog(self) -> None:
-        self.vault.write('.agents/skills/research/SKILL.md', '---\nname: research\n---\n# Research\n')
-        self.vault.note('.agents/skills/research/agents/Research.md')
-        self.vault.agent(f'.agents/skills/research/agents/{STAR} Lead.md', name='Bea')
-        self.vault.agent('.agents/skills/research/agents/Analyst.md', name='Al')
-        self.update()
-        first = self.vault.read('System/Data/agent-catalog.json')
-        catalog = json.loads(first)
-        self.assertEqual(catalog['agent_count'], 2)
-        self.assertEqual(catalog['homes'], ['Faculties'])
-        self.assertEqual([a['role'] for a in catalog['agents']], ['Analyst', f'{STAR} Lead'])
-        self.assertEqual({a['team'] for a in catalog['agents']}, {'Research'})
-        self.assertEqual(catalog['agents'][0]['path'], 'BRAIN/.agents/skills/research/agents/Analyst.md')
-        self.assertEqual(catalog['teams'][0]['members'], [f'{STAR} Lead', 'Analyst'])
-        self.assertEqual(catalog['teams'][0]['lead'], f'{STAR} Lead')
-        self.assertNotIn('generated', catalog)
-        self.update()
-        self.assertEqual(self.vault.read('System/Data/agent-catalog.json'), first)
-
-
-class TestArchives(Base):
-    SOURCE = '.agents/skills/demo'
-    TEAM = 'Ventures/Agent Resources (AR)/Research'
-
-    def setUp(self) -> None:
-        super().setUp()
-        v = self.vault
-        v.write(f'{self.SOURCE}/SKILL.md', '---\nname: demo\nmetadata:\n  team: Research\n  version: "01.00.00"\n---\n# Demo\n')
-        v.write(f'{self.SOURCE}/Demo.md', '<!--\ntitle: Demo\n-->\n\n# Demo guide\n')
-        v.write(f'{self.SOURCE}/references/guide.md', 'guide\n')
-        v.write(f'{self.SOURCE}/assets/.gitkeep', '')
-        v.write(f'{self.SOURCE}/.DS_Store', 'junk')
-        v.write(f'{self.SOURCE}/__pycache__/x.pyc', 'junk')
-        v.note(f'{self.TEAM}/Research.md')
-        v.agent(f'{self.TEAM}/{STAR} Lead.md')
-
-    def entries(self) -> dict[str, bytes]:
-        with zipfile.ZipFile(self.vault.path('System/Skills/demo.skill')) as archive:
-            return {name: archive.read(name) for name in archive.namelist()}
-
-    def test_the_archive_holds_the_source_and_its_team(self) -> None:
-        self.assertEqual(self.update().returncode, 0)
-        entries = self.entries()
-        self.assertEqual(sorted(entries), sorted([
-            'demo/Demo.md', 'demo/SKILL.md', 'demo/assets/.gitkeep', 'demo/references/guide.md',
-            'demo/agents/Research.md', f'demo/agents/{STAR} Lead.md']))
-        self.assertEqual(entries['demo/Demo.md'], b'# Demo guide\n')
-        with zipfile.ZipFile(self.vault.path('System/Skills/demo.skill')) as archive:
-            self.assertEqual({info.date_time for info in archive.infolist()}, {(1980, 1, 1, 0, 0, 0)})
-
-    def test_an_unchanged_archive_is_left_alone_even_when_compressed_differently(self) -> None:
-        self.update()
-        path = self.vault.path('System/Skills/demo.skill')
-        contents = self.entries()
-        with zipfile.ZipFile(path, 'w', compression=zipfile.ZIP_STORED) as archive:
-            for name, data in contents.items():
-                archive.writestr(name, data)
-        stored = path.read_bytes()
-        self.assertEqual(self.update('--check').returncode, 0)
-        self.update()
-        self.assertEqual(path.read_bytes(), stored)
-
-    def test_a_changed_source_is_stale(self) -> None:
-        self.update()
-        self.vault.write(f'{self.SOURCE}/references/guide.md', 'changed\n')
-        result = self.update('--check')
-        self.assertEqual(result.returncode, 1)
-        self.assertIn('System/Skills/demo.skill: the archive differs from its source', result.stdout)
-
-    def test_the_team_is_every_spec_in_its_folder(self) -> None:
-        self.vault.agent(f'{self.TEAM}/Analyst.md', name='Al')
-        self.assertEqual(self.update().returncode, 0)
-        self.assertIn('demo/agents/Analyst.md', self.entries())
-
-    def test_a_skill_that_keeps_its_team_ships_it_as_it_is(self) -> None:
-        self.vault.note(f'{self.SOURCE}/agents/Research.md')
-        self.vault.agent(f'{self.SOURCE}/agents/{STAR} Own Lead.md', name='Own')
-        self.assertEqual(self.update().returncode, 0)
-        entries = self.entries()
-        self.assertIn(f'demo/agents/{STAR} Own Lead.md', entries)
-        self.assertNotIn(f'demo/agents/{STAR} Lead.md', entries)
-
-    def test_an_archive_without_a_source(self) -> None:
-        self.vault.write('System/Skills/orphan.skill', 'x')
-        self.assertIn('has no source', self.update().stdout)
-
-
-class TestMirror(Base):
-    SOURCE = '.agents/skills/demo'
-    MIRROR = '.claude/skills/demo'
-
-    def setUp(self) -> None:
-        super().setUp()
-        v = self.vault
-        v.write(f'{self.SOURCE}/SKILL.md', '---\nname: demo\n---\n# Demo\n')
-        v.write(f'{self.SOURCE}/Demo.md', '<!--\ntitle: Demo\n-->\n\n# Demo guide\n')
-        v.write(f'{self.SOURCE}/references/guide.md', 'guide\n')
-        v.write(f'{self.SOURCE}/.DS_Store', 'junk')
-
-    def test_the_mirror_copies_every_skill_exactly(self) -> None:
-        self.assertEqual(self.update().returncode, 0)
-        for name in ('SKILL.md', 'Demo.md', 'references/guide.md'):
-            self.assertEqual(self.vault.path(f'{self.MIRROR}/{name}').read_bytes(),
-                             self.vault.path(f'{self.SOURCE}/{name}').read_bytes(), name)
-        self.assertFalse(self.vault.path(f'{self.MIRROR}/.DS_Store').exists())
-        self.assertIn('Everything generated is up to date.', self.update().stdout)
-
-    def test_a_change_to_a_source_reaches_its_committed_copy(self) -> None:
-        self.update()
-        self.vault.init_git()
-        self.vault.write(f'{self.SOURCE}/references/guide.md', 'changed\n')
-        self.vault.path(f'{self.SOURCE}/Demo.md').unlink()
-        result = self.update('--check')
-        self.assertEqual(result.returncode, 1)
-        self.assertIn('.claude/skills/demo/references/guide.md: the copy differs from .agents/skills/', result.stdout)
-        self.assertIn('.claude/skills/demo/Demo.md: the copy holds a file .agents/skills/ does not', result.stdout)
-        self.assertEqual(self.update().returncode, 0)
-        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'changed\n')
-        self.assertFalse(self.vault.path(f'{self.MIRROR}/Demo.md').exists())
-        self.assertEqual(self.update('--check').returncode, 0)
-
-    def test_a_change_to_a_new_skill_reaches_the_copy_this_checkout_wrote(self) -> None:
-        # Nothing is committed yet, as while a skill is being built: the run's record says the copy is its own.
-        self.vault.init_git()
-        self.update()
-        self.vault.write(f'{self.SOURCE}/references/guide.md', 'second draft\n')
-        result = self.update()
-        self.assertEqual(result.returncode, 0, result.stdout)
-        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'second draft\n')
-
-    def test_a_copy_changed_by_hand_is_never_overwritten(self) -> None:
-        self.update()
-        self.vault.init_git()
-        self.vault.write(f'{self.MIRROR}/SKILL.md', '---\nname: demo\n---\n# Demo, edited in the copy\n')
-        self.vault.write(f'{self.SOURCE}/references/guide.md', 'changed\n')
-        self.assertIn('.claude/skills/demo/SKILL.md: changed by hand', self.update('--check').stdout)
-        result = self.update()
-        self.assertEqual(result.returncode, 1)
-        self.assertIn('.claude/skills/demo/SKILL.md: changed by hand, so update-vault.py leaves .claude/skills/demo/ '
-                      'as it is: make the change in .agents/skills/demo/', result.stdout)
-        self.assertIn('edited in the copy', self.vault.read(f'{self.MIRROR}/SKILL.md'))
-        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'guide\n', 'the skill is left whole')
-        self.vault.path(f'{self.MIRROR}/SKILL.md').unlink()
-        self.assertEqual(self.update().returncode, 0)
-        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'changed\n')
-
-    def test_a_file_added_to_a_copy_by_hand_is_kept(self) -> None:
-        self.update()
-        self.vault.init_git()
-        self.vault.write(f'{self.MIRROR}/references/mine.md', 'my notes\n')
-        self.assertIn('.claude/skills/demo/references/mine.md: added by hand', self.update('--check').stdout)
-        result = self.update()
-        self.assertEqual(result.returncode, 1)
-        self.assertIn('.claude/skills/demo/references/mine.md: added by hand', result.stdout)
-        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/mine.md'), 'my notes\n')
-
-    def test_outside_git_a_differing_copy_is_kept_until_deleted(self) -> None:
-        self.update()
-        self.vault.write(f'{self.SOURCE}/references/guide.md', 'changed\n')
-        result = self.update()
-        self.assertEqual(result.returncode, 1)
-        self.assertIn('cannot tell outside a git checkout whether this file of the copy was changed by hand', result.stdout)
-        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'guide\n')
-        self.vault.path(f'{self.MIRROR}/references/guide.md').unlink()
-        self.assertEqual(self.update().returncode, 0)
-        self.assertEqual(self.vault.read(f'{self.MIRROR}/references/guide.md'), 'changed\n')
-
-    def test_a_skill_of_your_own_in_the_copy_folder_is_left_alone(self) -> None:
-        self.vault.write('.claude/skills/mine/SKILL.md', '---\nname: mine\n---\n# Mine\n')
-        self.vault.init_git()
-        self.vault.write('.claude/skills/scratch/SKILL.md', '---\nname: scratch\n---\n# Not committed\n')
-        result = self.update()
-        self.assertEqual(result.returncode, 0, result.stdout)
-        self.assertIn('.claude/skills/mine: has no source in .agents/skills/, so update-vault.py leaves it as it is',
-                      result.stdout)
-        self.assertTrue(self.vault.path('.claude/skills/mine/SKILL.md').is_file())
-        self.assertTrue(self.vault.path('.claude/skills/scratch/SKILL.md').is_file())
-        self.assertEqual(self.update('--check').returncode, 0)
-
-    def test_a_skill_removed_from_the_sources_leaves_its_copy_with_a_warning(self) -> None:
-        self.update()
-        for path in sorted(self.vault.path(self.SOURCE).rglob('*'), reverse=True):
-            path.unlink() if path.is_file() else path.rmdir()
-        self.vault.path(self.SOURCE).rmdir()
-        self.vault.path('System/Skills/demo.skill').unlink()
-        result = self.update()
-        self.assertEqual(result.returncode, 0, result.stdout)
-        self.assertTrue(self.vault.path(f'{self.MIRROR}/SKILL.md').is_file())
-        self.assertIn('delete it if its source was removed', result.stdout)
 
 
 class TestKeepsAndCheck(Base):

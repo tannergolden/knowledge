@@ -42,10 +42,10 @@ repository calls from nowhere else.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                       | Purpose                                                                                                      |
-| :-------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| [`vault/`](vault/README.md) | Checks every note, wikilink, skill, agent and generated part of the vault, and tests the scripts that do it. |
-| [`README.md`](README.md)    | This file.                                                                                                   |
+| Entry                       | Purpose                                                                                                                    |
+| :-------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| [`vault/`](vault/README.md) | Checks every note, wikilink and generated part of the vault, scans for personal numbers, and tests the scripts that do it. |
+| [`README.md`](README.md)    | This file.                                                                                                                 |
 
 <!-- AUTO-INDEX:END -->
 

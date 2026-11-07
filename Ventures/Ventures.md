@@ -22,8 +22,6 @@ keywords: ["companies", "businesses", "company subfolders", "department folders"
 
 This folder is for **company-specific** context and materials. General domain knowledge belongs in `Library/`. Personal context belongs in `Profile/` or `Memory/`.
 
-One subfolder of `Ventures/` is not a venture. [[Ventures/Agent Resources (AR)/Agent Resources (AR)|Agent Resources (AR)/]] is the shared corporate agent workforce: the standing organization of named, persona-rich AI agents arranged by department, that every skill and every venture staffs from. It spans all ventures rather than belonging to one, and it is federated with the other agent homes as a single logical library. See its folder doc for the model.
-
 ---
 
 ## Structure
@@ -90,7 +88,7 @@ Ventures/
 
 Subfolder names should be short and hyphenated (e.g., `Golden-Media`, `Acme-Corp`). When creating a new venture, copy `Ventures/.template/` and **give each copied file its real `title`, `description` and `type`** (replace the `[Company]` placeholder with the venture's name, and `template` with the type the copy is), so the catalog stays clean; the `board` skill does this in its found mode.
 
-The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the governance record; `Cadence.md`, the operating rhythm) and, in Finance, a forward `Financial-Model.md` and a real `Cap-Table.md`. The Agent Resources (AR) workforce produces a venture's deliverables by **composing** content for these files and returning it; the `board` skill is the **sole writer** that persists it, behind its write-gate (AR drafts internal files autonomously; money, contracts, external comms, and deletes need the Founder). See [[Ventures/Agent Resources (AR)/Agent Resources (AR)|Agent Resources (AR)]].
+The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the governance record; `Cadence.md`, the operating rhythm) and, in Finance, a forward `Financial-Model.md` and a real `Cap-Table.md`. The `board` skill, which the home kit installs from tannergolden/intelligence with its own agent team, is the **sole writer** of these files, behind its write-gate: internal files it drafts on its own; money, contracts, external comms, and deletes need the Founder.
 
 ---
 

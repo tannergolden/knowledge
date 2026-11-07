@@ -37,7 +37,7 @@ jobs:
         uses: tannergolden/standards/.github/actions/harden@v1
         with:
           egress-policy: audit
-          notice: '🧠 Checking the notes, links, skills, agents and generated parts of the vault.'
+          notice: '🧠 Checking the notes, links, personal data and generated parts of the vault.'
 
       - name: '📂 Checkout'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

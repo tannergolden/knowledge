@@ -223,11 +223,11 @@ If no existing folder is a reasonable fit for a file, you may request permission
 
 **Strict constraint:** You may never create or propose a new folder at Layer 0 (root) or Layer 1. Layer 2 folders require explicit user confirmation before creation (`AGENTS.md`, Ask first). For the Inbox sorting protocol specifically, proposed new folders must be Layer 3 or deeper unless the user explicitly directs a Layer 2 creation.
 
-### 10. Routing System Assets (Skills, Utilities)
+### 10. Routing System Assets (Utilities, Skills)
 
 Some Inbox items are system assets rather than personal content. Route them into the `System/` subfolders `System/System.md` describes:
 
-- **Skill directories** (a folder containing `SKILL.md` and its supporting files) → `System/Skills/`, preserved as a folder, never flattened. Subagents live inside the skill's own `agents/` folder.
+- **Skill directories** (a folder containing `SKILL.md` and its supporting files) are not filed in the vault: it holds no skills or agents, which live in tannergolden/intelligence's `kit/skills/` and arrive through the home kit. Tell your user, and leave the folder at the `Inbox/` root until they move it out or confirm its deletion.
 - **General prompt snippets, workflows, or loose templates** → `System/Utilities/`
 
-Follow the standard sorting protocol: confirm the move, fully move the item out of `Inbox/` so no duplicate is left behind, and apply naming hygiene - strictly no underscores anywhere in the file or folder name (`AGENTS.md`, Conventions); use kebab-case, spaces, or PascalCase. Skill directories keep the external `SKILL.md` format and are exempt from BRAIN frontmatter (the note schema does not apply to them); utility `.md` files take standard BRAIN frontmatter.
+Follow the standard sorting protocol: confirm the move, fully move the item out of `Inbox/` so no duplicate is left behind, and apply naming hygiene - strictly no underscores anywhere in the file or folder name (`AGENTS.md`, Conventions); use kebab-case, spaces, or PascalCase. Utility `.md` files take standard BRAIN frontmatter.
