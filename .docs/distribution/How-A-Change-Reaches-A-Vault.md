@@ -42,14 +42,16 @@ dispatch of 🔄 Template Sync here takes that template's latest release as a ma
 only here: initialisation deletes them from every vault, so a vault syncs from this template alone.
 
 **The second hop: this template into a vault.** A merge to the default branch here reaches no vault.
-🏷️ Cut Release, dispatched with a version `vX.Y.Z`, publishes the release and moves `v1` to it, after
-checking that `.github/template-sync` and the Template Sync stub exist and that
+🏷️ Cut Release, dispatched with a version `vX.Y.Z`, publishes the release and moves its major, such as
+`v2`, to it, after checking that `.github/template-sync` and the Template Sync stub exist and that
 `validate-repository.py` passes. Every earlier version stays, page and tag, so a vault that names
 one in full in its stub's `ref:` still finds it; tannergolden/intelligence no longer pins one, since
-the skills live there now. A vault follows `v1`: when its owner runs 🔄 Template Sync, every file
-the template changed that the vault's list keeps current arrives as one pull request on
-`chore/template-sync`, merged with the owner's own changes. A vault never follows `v2` until its owner
-changes `ref:` in its stub.
+the skills live there now. A vault follows the major its stub's `ref:` names: `v2` for a vault
+generated since v2.0.0, `v1` for one generated before. When its owner runs 🔄 Template Sync, every
+file the template changed that the vault's list keeps current arrives as one pull request on
+`chore/template-sync`, merged with the owner's own changes. A vault never follows a new major until
+its owner changes `ref:` in its stub. This template's own stub names `v1` for itself, the major of
+tannergolden/path it derives from.
 
 **The universal rules take their own road.** The block between the `INTELLIGENCE` markers in
 `AGENTS.md` comes from tannergolden/intelligence, not from the golden path template: this template's
@@ -145,8 +147,8 @@ folders, and kept its rules in `AGENTS.md`, below the universal rules. Now every
 itself in its `README.md`, written for anyone, the root `README.md` says how to work in the vault, and
 `AGENTS.md` keeps the universal rules with the rules every AI follows in a personal knowledge vault,
 rewritten to hold an AI to those READMEs. The change renames files every vault keeps current, so it
-ships in a new major release: a vault takes it when its owner changes `ref:` in
-`.github/workflows/template-sync.yml` to that major.
+ships in a new major, v2.0.0: a vault made before it takes it when its owner sets `ref: 'v2'` under
+`with:` in `.github/workflows/template-sync.yml`, then runs 🔄 Template Sync.
 
 The same major release carries two more changes. The venture template's `Client Experience (CX)/`
 becomes `Customer Experience (CX)/`. And the skills are named as the home kit now names them, twelve

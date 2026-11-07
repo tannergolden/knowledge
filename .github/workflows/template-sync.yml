@@ -76,9 +76,10 @@ jobs:
       pull-requests: write # open or update the sync pull request
     uses: tannergolden/standards/.github/workflows/template-sync.yml@v1
     secrets: inherit # zizmor: ignore[secrets-inherit] - first-party callee at the ref pinned above.
-    # Uncomment to follow a new major of the template - a decision, never
-    # automatic - or to merge clean syncs once their checks pass:
-    #
-    # with:
-    #   ref: 'v2'
-    #   automerge: true
+    # The major to follow, which never moves on its own. A vault follows v2,
+    # the major of tannergolden/knowledge it was generated from; this
+    # template itself follows v1 of tannergolden/path, the golden path
+    # template it derives from. Add `automerge: true` to merge clean syncs
+    # once their checks pass.
+    with:
+      ref: ${{ github.event.repository.is_template && 'v1' || 'v2' }}
