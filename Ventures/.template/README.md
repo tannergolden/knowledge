@@ -21,29 +21,29 @@ Then the department files the task needs: each department's `README.md` says wha
 
 ## Where Each Kind Of Work Goes
 
-| Folder | The work that lands there |
-| ------ | ------------------------- |
-| `Administration/` | Board work's own records: the strategy, the decision record and the operating cadence |
-| `Legal & Compliance (L&C)/` | Legal work, such as the legal skill's: the entity, contracts, IP, licenses, compliance and insurance |
-| `Sales & Marketing (S&M)/` | Sales and marketing: the brand, the products and the services |
-| `Operations & Logistics (O&L)/` | Operations: core processes, SOPs, vendors and recurring tasks |
-| `Human Resources (HR)/` | People: the org structure, reporting lines, roles and key people |
-| `Information Technology (IT)/` | Systems, security included: the stack, tools, infrastructure and integrations |
-| `Business Intelligence (BI)/` | Analytics: KPIs, dashboards, data sources and reporting |
-| `Quality Assurance (QA)/` | Quality: standards, review processes, checklists and quality metrics |
-| `Client Experience (CX)/` | Customers: the client roster, accounts, contacts and status |
-| `Public Relations (PR)/` | Communications: media contacts, coverage, the press kit and PR strategy |
-| `Finance & Accounting (F&A)/` | The company's money, such as the finance skill's: financials, the financial model and the cap table |
-| `Research & Development (R&D)/` | Product work, from research, discovery and development: the roadmap and what is being built |
+| Folder | The skill whose work lands there |
+| ------ | -------------------------------- |
+| `Administration/` | `administration`: the founding, the strategy, the decision record and the operating cadence |
+| `Legal & Compliance (L&C)/` | `legal-and-compliance`: formation, the entity, contracts, IP, licenses, compliance, privacy and insurance |
+| `Sales & Marketing (S&M)/` | `sales-and-marketing`: the pipeline and deals, positioning and demand, with the brand, the products and the services |
+| `Operations & Logistics (O&L)/` | `operations-and-logistics`: processes, programs and vendors, from the SOPs to the recurring tasks |
+| `Human Resources (HR)/` | `human-resources`: roles, hiring, pay, onboarding and the people records, with the org structure and key people |
+| `Information Technology (IT)/` | `information-technology`: the internal systems and their security, from the stack and tools to infrastructure and integrations |
+| `Business Intelligence (BI)/` | `business-intelligence`: metrics, data, dashboards and reporting, and any chart or diagram |
+| `Quality Assurance (QA)/` | `quality-assurance`: independent verification of consequential work, with the standards, review processes, checklists and quality metrics |
+| `Customer Experience (CX)/` | `customer-experience`: onboarding, success and support, with the client roster, accounts, contacts and status |
+| `Public Relations (PR)/` | `public-relations`: announcements, press and crises, with media contacts, coverage and the press kit |
+| `Finance & Accounting (F&A)/` | `finance-and-accounting`: the books, the financial model, the cap table and company tax |
+| `Research & Development (R&D)/` | `research-and-development`: research, ideas, and the building of products, skills and software, with the roadmap |
 | `Miscellaneous/` | Anything for [Company] that fits no department |
 
-Board work records each decision in `Administration/Decisions.md` and logs its work in `Log.md`.
+Each skill named is that department's own, installed with the home kit. The `administration` skill also keeps `Overview.md`, `Goals.md` and `Log.md` current, records each decision in `Administration/Decisions.md` and logs its work in `Log.md`.
 
 ## Rules
 
 - Only what the user says or confirms is written here; nothing is guessed or invented.
 - [Company]'s context stays apart from every other venture's, unless the user asks to connect them.
-- Board work is the sole writer of the strategic core (`Administration/`, and in Finance `Financial-Model.md` and `Cap-Table.md`), behind a write-gate: internal files are drafted directly; money, contracts, outside communication and deletions need the owner's yes.
+- The strategic core (`Administration/`, and in Finance & Accounting `Financial-Model.md` and `Cap-Table.md`) is written only behind a write-gate, by the `administration` skill, or by `finance-and-accounting` for its two files: internal files are drafted directly; money, contracts, outside communication and deletions need the owner's yes.
 - `Overview.md` keeps the stage and status current, and `Log.md` gains an entry after meaningful work: a date and 2 to 5 bullet points.
 - Personal information goes to `Profile/` or `Memory/`, and general business knowledge to `Library/`, never here.
 

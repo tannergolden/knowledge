@@ -9,7 +9,7 @@ keywords: ["systems", "security", "tech stack", "infrastructure", "integrations"
 
 # 🖥️ [Company] - Information Technology (IT)
 
-The systems of [Company], security included: its stack, tools, infrastructure, integrations and domains. Systems work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The systems of [Company], security included: its stack, tools, infrastructure, integrations and domains. The `information-technology` skill's company work lands here: the internal systems and their security. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 

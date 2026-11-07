@@ -7,7 +7,7 @@ keywords: ["visuals library", "visualization gallery", "saved visuals", "visuali
 
 # 📊 Visuals
 
-The held library for finished visuals. Standalone visuals (such as the `visualize` skill's) land here, by the rules below: charts, diagrams, dashboards, interactive widgets, and explanatory illustration. Visuals are deliverables, rendered and kept here for reference, the visual counterpart to the Reports library (`Inbox/Reports/`).
+The held library for finished visuals. Standalone visuals land here, such as the `business-intelligence` skill's, by the rules below: charts, diagrams, dashboards, interactive widgets, and explanatory illustration. Visuals are deliverables, rendered and kept here for reference, the visual counterpart to the Reports library (`Inbox/Reports/`).
 
 ## Held, not sorted
 

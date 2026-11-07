@@ -9,12 +9,12 @@ keywords: ["analytics", "kpis", "dashboards", "data sources", "reporting", "depa
 
 # 📊 [Company] - Business Intelligence (BI)
 
-Analytics for [Company]: its KPIs, dashboards, data sources and reporting cadence. Analytics work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Analytics for [Company]: its KPIs, dashboards, data sources and reporting cadence. The `business-intelligence` skill's company work lands here: metrics, data, dashboards, and any chart or diagram made for [Company]. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 
 - `Metrics.md`: the key performance indicators, where each comes from and how often it is reported.
-- Working files: dashboard exports, data extracts and reports, each named for what it shows and the date of its data.
+- Working files: dashboard exports, data extracts, reports, charts and diagrams, each named for what it shows and the date of its data.
 
 ## Rules
 

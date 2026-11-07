@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Score how filled in each Profile facet is, and name the one the identify skill should ask about next.
+"""Score how filled in each Profile facet is, and name the one the profile interview should ask about next.
 
-WHY THIS EXISTS. The identify skill fills the Profile by interviewing the
-person about themselves, one facet at a time, and it needs to know which facet
-is thinnest. This reads the twelve facets, counts the lines that say something
-real about the person (not the scaffold's own prose, not a placeholder, not an
-empty field), counts the proposals still marked unconfirmed, and ranks the
-facets. The --json form is the contract the identify skill reads. It only
-reads, and never writes.
+WHY THIS EXISTS. The profile interview, which the human-resources skill runs,
+fills the Profile by asking the person about themselves, one facet at a time,
+and it needs to know which facet is thinnest. This reads the twelve facets,
+counts the lines that say something real about the person (not the scaffold's
+own prose, not a placeholder, not an empty field), counts the proposals still
+marked unconfirmed, and ranks the facets. The --json form is the contract the
+human-resources skill reads. It only reads, and never writes.
 
 A line counts as scaffold when its fingerprint is in the frozen table below,
 taken from the blank facets, or in the live Profile/.template/ files. Refreeze
@@ -302,7 +302,7 @@ def print_scaffold(root: pathlib.Path) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = vault.arguments((__doc__ or '').split('\n', 1)[0])
     parser.add_argument('facet', nargs='*', help='one facet to report in detail, such as "Working Style"')
-    parser.add_argument('--json', action='store_true', help='print the JSON the identify skill reads')
+    parser.add_argument('--json', action='store_true', help='print the JSON the human-resources skill reads')
     parser.add_argument('--print-scaffold', action='store_true',
                         help='print a fresh scaffold table from the facets (on the blank template only)')
     args = parser.parse_args(argv)

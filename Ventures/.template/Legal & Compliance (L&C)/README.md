@@ -9,7 +9,7 @@ keywords: ["legal", "compliance", "contracts", "intellectual property", "license
 
 # 📜 [Company] - Legal & Compliance (L&C)
 
-The legal and compliance records of [Company]: its legal entity, ownership, contracts, licenses and permits, intellectual property, compliance obligations, legal counsel and insurance. Legal work lands here, such as the legal skill's. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The legal and compliance records of [Company]: its legal entity, ownership, contracts, licenses and permits, intellectual property, compliance obligations, legal counsel and insurance. The `legal-and-compliance` skill's company work lands here: formation, contracts, IP, compliance and privacy. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 

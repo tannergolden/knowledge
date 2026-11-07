@@ -9,12 +9,12 @@ keywords: ["communications", "press", "media contacts", "press kit", "coverage",
 
 # 📰 [Company] - Public Relations (PR)
 
-The communications of [Company]: its media contacts, coverage, press kit and PR positioning. Communications work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The public voice of [Company]: its announcements, press and crisis communications, with its media contacts, coverage, press kit and PR positioning. The `public-relations` skill's company work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 
 - `Press.md`: media contacts, the coverage log, the press kit and the PR strategy.
-- Working files: press releases, media kit assets and drafts of outside communication.
+- Working files: announcements, press releases, crisis statements, media kit assets and drafts of outside communication.
 
 ## Rules
 
@@ -23,4 +23,4 @@ The communications of [Company]: its media contacts, coverage, press kit and PR 
 
 ## What Goes Elsewhere
 
-- Brand voice and messaging live in `Sales & Marketing (S&M)/`, and customer communication in `Client Experience (CX)/`.
+- Brand voice and messaging live in `Sales & Marketing (S&M)/`, and customer communication in `Customer Experience (CX)/`.

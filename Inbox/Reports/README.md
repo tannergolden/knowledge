@@ -7,7 +7,7 @@ keywords: ["report library", "research reports", "discovery reports", "report fr
 
 # 📑 Reports
 
-The held library for finished reports. Research reports (such as the `research` skill's) and discovery reports (such as the `discover` skill's) land here, and this is where both kinds are kept, by the rules below. Reports are deliverables, held for reference.
+The held library for finished reports. Research and discovery reports land here, such as the `research-and-development` skill's, whether for a company the owner runs or for the owner's own questions, and this is where both kinds are kept, by the rules below. Reports are deliverables, held for reference.
 
 ## Held, not sorted
 

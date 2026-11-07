@@ -7,7 +7,7 @@ keywords: ["operating rhythm", "operating cadence", "business review", "qbr", "o
 
 # 🗓️ [Company] - Cadence
 
-> The rhythm that runs the company. The `board` skill (review mode) drives these loops and keeps `Goals.md`, `Metrics.md`, and `Log.md` current against them. The cadence scales to the venture's stage (lighter when founding, fuller at scale).
+> The rhythm that runs the company. The `administration` skill (review mode) drives these loops and keeps `Goals.md`, `Metrics.md`, and `Log.md` current against them. The cadence scales to the venture's stage (lighter when founding, fuller at scale).
 
 ---
 
@@ -28,7 +28,7 @@ keywords: ["operating rhythm", "operating cadence", "business review", "qbr", "o
 
 **Frequency:** (monthly when founding, quarterly at scale)
 **Standing agenda:** financials and runway, the health metrics, the asks/decisions, the risks. A written pre-read goes out ahead; the meeting opens with silent reading.
-**Committees:** Audit, Compensation, Nominating & Governance, Risk convene as needed, staffed by the `board` skill's team.
+**Committees:** Audit, Compensation, Nominating & Governance, Risk convene as needed, through the `administration` skill.
 
 ---
 

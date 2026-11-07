@@ -47,7 +47,7 @@ request is not the first place you hear about them.
 | [`fixtures.py`](fixtures.py)                                   | Throwaway vaults for the vault scripts' tests, built in a temporary folder.                                    |
 | [`knowledge-base.py`](knowledge-base.py)                       | Search and read offline reference works, such as Wikipedia, kept as ZIM files beside the vault's notes.        |
 | [`lint-notes.py`](lint-notes.py)                               | Check each note's frontmatter and naming against the vault's schema.                                           |
-| [`profile-coverage.py`](profile-coverage.py)                   | Score how filled in each Profile facet is, and name the one the identify skill should ask about next.          |
+| [`profile-coverage.py`](profile-coverage.py)                   | Score how filled in each Profile facet is, and name the one the profile interview should ask about next.       |
 | [`README.md`](README.md)                                       | This file.                                                                                                     |
 | [`requirements.txt`](requirements.txt)                         | The Python packages the scripts beside this file need, and nothing else.                                       |
 | [`scan-pii.py`](scan-pii.py)                                   | Find US Social Security numbers and payment card numbers in the files git tracks.                              |
@@ -58,7 +58,7 @@ request is not the first place you hear about them.
 | [`test_hooks.py`](test_hooks.py)                               | Tests for the git hooks in .github/scripts/hooks/.                                                             |
 | [`test_knowledge_base.py`](test_knowledge_base.py)             | Tests for knowledge-base.py, the offline reference works.                                                      |
 | [`test_lint_notes.py`](test_lint_notes.py)                     | Tests for lint-notes.py, the note schema check.                                                                |
-| [`test_profile_coverage.py`](test_profile_coverage.py)         | Tests for profile-coverage.py, the report the identify skill reads.                                            |
+| [`test_profile_coverage.py`](test_profile_coverage.py)         | Tests for profile-coverage.py, the report the profile interview reads.                                         |
 | [`test_scan_pii.py`](test_scan_pii.py)                         | Tests for scan-pii.py, the personal number scan.                                                               |
 | [`test_session.py`](test_session.py)                           | Tests for session.py, the vault's three session helpers.                                                       |
 | [`test_update_vault.py`](test_update_vault.py)                 | Tests for update-vault.py, which draws every generated part of the vault.                                      |

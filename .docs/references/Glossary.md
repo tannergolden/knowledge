@@ -143,6 +143,9 @@ Conventional Commits, are in the standards'
 
 ## 🤖 Skills
 
+- **Department**: one of the twelve a venture is organized into, from Administration to Public
+  Relations, each with a folder in the venture and a skill named for it, which also covers that part
+  of the owner's own life (the root `README.md`, Where Each Kind Of Work Goes).
 - **Founder**: the owner, as a venture's own records name them: the one whose yes money, contracts,
   outside communication and deletions need.
 - **Home kit**: tannergolden/intelligence's installer, which puts every skill in its `kit/skills/`,
@@ -157,8 +160,8 @@ Conventional Commits, are in the standards'
 - **Venture**: a company the owner owns or runs, with clients, employees, revenue or a brand, kept in
   a folder of `Ventures/` copied from its scaffold. A personal initiative without them is a
   **project**, in `Projects/` (`Ventures/README.md`).
-- **Write-gate**: the check before board work writes to a venture's strategic core: internal drafts
-  go ahead, while money, contracts, outside communication and deletions need the owner's yes
+- **Write-gate**: the check before a skill writes to a venture's strategic core: internal drafts go
+  ahead, while money, contracts, outside communication and deletions need the owner's yes
   (`Ventures/README.md`).
 
 ---

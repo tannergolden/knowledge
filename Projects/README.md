@@ -22,6 +22,18 @@ What the user builds, makes, learns or explores on their own: side projects, cre
 
 `Projects/` tracks personal initiatives: things the user is building, creating, learning, or exploring independently. It is not for work tasks or organizational projects. It is for side projects, creative work, passion builds, learning initiatives, and anything else the user is personally driving.
 
+## What Lands Here
+
+Any skill's work in the user's own life lands here once it is an initiative of its own, each project created only with a yes (Rules, above):
+
+- a side project or a learning plan, from the `research-and-development` skill;
+- a household plan, a trip or a move, from `operations-and-logistics`;
+- a job search or a personal brand, from `sales-and-marketing`;
+- a body of the user's own writing, from `public-relations`;
+- a habit or a metric the user tracks, from `business-intelligence`.
+
+A check of a project's work, such as the `quality-assurance` skill's, is logged in that project's `Log.md`. An event or decision worth remembering still goes to `Memory/`, and reference knowledge to `Library/`, as each project's own README says.
+
 ---
 
 ## Structure

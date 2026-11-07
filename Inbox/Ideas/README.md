@@ -7,7 +7,7 @@ keywords: ["the idea pool", "idea backlog", "ideation pool", "idea pool", "idea 
 
 # 💡 Ideas
 
-The held idea pool. Idea records from discovery work (such as the `discover` skill's) land here, one idea per file, by the rules below. It is the ideation counterpart to the Reports library (`Inbox/Reports/`), where Reports holds finished reports and Ideas holds the living raw material that discovery generates and ranks.
+The held idea pool. Idea records from discovery work land here, such as the `research-and-development` skill's, one idea per file, by the rules below. It is the ideation counterpart to the Reports library (`Inbox/Reports/`), where Reports holds finished reports and Ideas holds the living raw material that discovery generates and ranks.
 
 ## Held, not sorted
 
@@ -19,7 +19,7 @@ Unlike Reports (good for three months) and Visuals (archival snapshots), the ide
 
 ## One idea, one record (the schema lives with the method)
 
-Each idea is one Markdown file, `type: record`, carrying a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and the `serves` path for the venture, project, or topic it is for. The full schema, the ICE and Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the discovery method's, defined with the `discover` skill in tannergolden/intelligence rather than in this vault. This folder is the home where the records live; the method is how they are made and scored.
+Each idea is one Markdown file, `type: record`, carrying a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and the `serves` path for the venture, project, or topic it is for. The full schema, the ICE and Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the discovery method's, defined with the `research-and-development` skill in tannergolden/intelligence rather than in this vault. This folder is the home where the records live; the method is how they are made and scored.
 
 ## Idea files are leaves
 

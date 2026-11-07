@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Tests for profile-coverage.py, the report the identify skill reads.
+"""Tests for profile-coverage.py, the report the profile interview reads.
 
-WHY THIS EXISTS. The identify skill decides which part of a person's Profile to
-ask about from this report, so a line counted wrongly sends the interview to
-the wrong place, and a change to the JSON breaks the skill outright. These
-score small Profiles in a throwaway vault, pin the JSON contract's keys, and
-read the real vault's report, which never writes. In the blank template they
-also check that every facet still scores as scaffold, so a reworded facet
-fails here until the frozen table is refrozen.
+WHY THIS EXISTS. The human-resources skill's profile interview decides which
+part of a person's Profile to ask about from this report, so a line counted
+wrongly sends the interview to the wrong place, and a change to the JSON breaks
+the skill outright. These score small Profiles in a throwaway vault, pin the
+JSON contract's keys, and read the real vault's report, which never writes. In
+the blank template they also check that every facet still scores as scaffold,
+so a reworded facet fails here until the frozen table is refrozen.
 
 Run it:
 

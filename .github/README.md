@@ -48,8 +48,9 @@ a custom agent all read it the same way.
 - [ ] **Open the folder with any AI assistant, or in an editor**, and work in it there. The root
       [`README.md`](../README.md) says how to work in the vault, and each folder's own `README.md`
       how to work in that folder.
-- [ ] **Fill in `Profile/`** with the `/identify` skill, which the home kit in
-      `tannergolden/intelligence` installs, and which interviews you and writes only what you confirm.
+- [ ] **Fill in `Profile/`** with the profile interview of the `/human-resources` skill, which the
+      home kit in `tannergolden/intelligence` installs: it interviews you and writes only what you
+      confirm.
 - [ ] **Stay current.** Run 🔄 Template Sync when you want this template's improvements. It opens a
       pull request, and changes nothing you have not merged. The universal rules for AI assistants
       come with the home kit, not with this repository: give the vault the `no-intelligence` topic so

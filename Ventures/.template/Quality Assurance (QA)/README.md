@@ -9,7 +9,7 @@ keywords: ["quality", "standards", "review processes", "checklists", "quality me
 
 # ✅ [Company] - Quality Assurance (QA)
 
-Quality at [Company]: its standards, review processes, checklists and quality metrics. Quality work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Quality at [Company]: its standards, review processes, checklists and quality metrics. The `quality-assurance` skill's company work lands here: the independent verification of consequential work before it goes out. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 

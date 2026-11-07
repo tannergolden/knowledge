@@ -105,7 +105,7 @@ graph LR
 - **The Log is where memory lands.** An observation enters `Memory/Log.md` as a dated entry with an
   importance from 1 to 5, then is promoted into its collection or ages out (`Memory/README.md`).
 - **Profile changes only with a yes.** What is learned about the owner is proposed, never written on
-  inference alone, and an identity interview, such as the `identify` skill's, fills it
+  inference alone, and a profile interview, such as the `human-resources` skill's, fills it
   (`Profile/README.md`).
 - **The Library keeps what lasts.** A holding is filed with a freshness token, and anything that will
   not stay true for five years goes elsewhere (`Library/README.md`).
@@ -120,17 +120,20 @@ graph LR
 
 An AI assistant works in the vault the way a person does: it reads the root `README.md`, then the
 README of each folder it works in. The vault holds no skills, no agent specs and no file addressed
-to any one AI. The skills an assistant may bring (`board`, `discover`, `editorial`, `finance`,
-`identify`, `research` and `visualize`, and `develop`, which builds and fixes skills) live in
+to any one AI. The skills an assistant may bring are twelve, one for each department and named for
+it: `administration`, `finance-and-accounting`, `legal-and-compliance`, `sales-and-marketing`,
+`operations-and-logistics`, `human-resources`, `information-technology`, `research-and-development`,
+`business-intelligence`, `quality-assurance`, `customer-experience` and `public-relations`. Each
+covers both a company the owner runs and the owner's own life. They live in
 [tannergolden/intelligence](https://github.com/tannergolden/intelligence) under `kit/skills/`, and the
 home kit installs them, with the universal rules, into each AI app on every machine and in every
 Claude Code cloud session.
 
 The skills are universal: they hardcode no vault path. The root `README.md`, under Where Each Kind Of
-Work Goes, gives this vault's layout to whoever writes here: where a venture is kept, where each
-department's records go, where reports, ideas and visuals are held, how the Profile is filled, and
-which checks run after a write. Each of those folders' own README says which work lands there and by
-what rules.
+Work Goes, gives this vault's layout to whoever writes here: for each skill, where a company's records
+go in its venture folder and where its work in the owner's own life goes, where reports, ideas and
+visuals are held, how the Profile is filled, and which checks run after a write. Each of those
+folders' own README says which skill's work lands there and by what rules.
 
 ---
 

@@ -9,14 +9,14 @@ keywords: ["sales", "marketing", "brand", "products", "services", "messaging", "
 
 # 📣 [Company] - Sales & Marketing (S&M)
 
-Sales and marketing for [Company]: its brand, its products and its services. Sales and marketing work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Sales and marketing for [Company]: its brand, its products and its services. The `sales-and-marketing` skill's company work lands here: the pipeline and deals, positioning and demand. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 
 - `Brand.md`: voice, tone, visual identity and messaging; read it before writing anything on the company's behalf.
 - `Products.md`: the product catalog, with descriptions, pricing, status and roadmap.
 - `Services.md`: the services catalog, with scope, pricing, delivery and capacity.
-- Working files: decks, campaign assets and copy drafts.
+- Working files: the pipeline and forecast, deal notes, decks, campaign assets and copy drafts.
 
 ## Rules
 
@@ -24,4 +24,4 @@ Sales and marketing for [Company]: its brand, its products and its services. Sal
 
 ## What Goes Elsewhere
 
-- Customer accounts live in `Client Experience (CX)/`, press in `Public Relations (PR)/`, and the product's development in `Research & Development (R&D)/`.
+- Customer accounts, once a deal is won, live in `Customer Experience (CX)/`, press in `Public Relations (PR)/`, and the product's development in `Research & Development (R&D)/`.

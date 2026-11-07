@@ -9,7 +9,7 @@ keywords: ["executive office", "strategy", "decision record", "operating cadence
 
 # 🗄️ [Company] - Administration
 
-The executive office of [Company]: its strategy, its decision record and its operating rhythm. Board work's own records land here: its strategy, its decisions and its reviews. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The executive office of [Company]: its strategy, its decision record and its operating rhythm. The `administration` skill's company work lands here: the founding, the strategy, the decisions that cross departments, and the reviews of the operating cadence. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 
@@ -19,10 +19,11 @@ The executive office of [Company]: its strategy, its decision record and its ope
 
 ## Rules
 
-- Board work is the sole writer of these files, behind a write-gate: internal files are drafted directly; money, contracts, outside communication and deletions need the owner's yes.
+- The `administration` skill is the sole writer of these files, behind a write-gate: internal files are drafted directly; money, contracts, outside communication and deletions need the owner's yes.
 - A decision is recorded in `Decisions.md`, with a one-line entry in the venture's `Log.md`; one that must outlive the record is promoted into `Overview.md` or `Strategy.md`.
 - A decision that no longer holds is marked superseded or reversed, never rewritten, and the minority view is recorded by name.
 
 ## What Goes Elsewhere
 
-- Current priorities and OKRs live in the venture's `Goals.md`, and the company profile in its `Overview.md`.
+- Current priorities and OKRs live in the venture's `Goals.md`, and the company profile in its `Overview.md`, which the same skill keeps current.
+- The user's own decisions, dates and commitments, outside any venture, go to `Memory/`.

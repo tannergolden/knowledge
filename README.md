@@ -128,40 +128,51 @@ Every kind of work has a fixed home here, whoever does it. A vault generated fro
 private repository made to hold its owner's personal context; in the public template nothing
 personal is written.
 
-- **Board work** (strategy, reviews, plans and decisions, such as the `board` skill's) keeps each
-  venture in `Ventures/<Venture>/`, copied whole from `Ventures/.template/`, records its decisions in
-  that venture's `Administration/Decisions.md`, and logs its work in the venture's `Log.md`.
-- **Each department's records** go in that venture's department folder:
+The skills the home kit installs are twelve, one for each department and named for it, and each
+covers both a company the owner runs and the owner's own life. A company's records go in its venture
+folder, `Ventures/<Venture>/`, each department's in the folder named for it; the owner's own life
+goes to the folders of this vault, each by its README's rules:
 
-  | Department folder               | Its work                                                     |
-  | :------------------------------ | :----------------------------------------------------------- |
-  | `Legal & Compliance (L&C)/`     | Legal work, such as the legal skill's                        |
-  | `Sales & Marketing (S&M)/`      | Sales and marketing                                          |
-  | `Operations & Logistics (O&L)/` | Operations                                                   |
-  | `Human Resources (HR)/`         | People                                                       |
-  | `Information Technology (IT)/`  | Systems, security included                                   |
-  | `Business Intelligence (BI)/`   | Analytics                                                    |
-  | `Quality Assurance (QA)/`       | Quality                                                      |
-  | `Client Experience (CX)/`       | Customers                                                    |
-  | `Public Relations (PR)/`        | Communications                                               |
-  | `Finance & Accounting (F&A)/`   | The company's money, such as the finance skill's             |
-  | `Research & Development (R&D)/` | Product work, from the research, discover and develop skills |
-  | `Administration/`               | Board work's own records: strategy, decisions and cadence    |
+| Skill                      | A company's records, in `Ventures/<Venture>/`                                                                                                            | The owner's own life, in this vault                                                                                                                          |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `administration`           | `Administration/`, with the venture's `Overview.md`, `Goals.md` and `Log.md`: founding, strategy, decisions across departments and the operating cadence | Decisions in `Memory/Decisions/`, dates and commitments in `Memory/Dates.md`, and goals and priorities proposed for `Profile/Goals/` and `Profile/Focus.md`  |
+| `finance-and-accounting`   | `Finance & Accounting (F&A)/`: the books, the financial model, the cap table and company tax                                                             | Budget, debt, taxes, investing, insurance and estate as the picture in `Profile/Finances.md`, and dated bills in `Memory/`                                   |
+| `legal-and-compliance`     | `Legal & Compliance (L&C)/`: formation, contracts, IP, compliance and privacy                                                                            | Leases, contracts and wills by reference only, where each is kept, in `Profile/Finances.md`, and a dispute's dates and open loops in `Memory/`               |
+| `sales-and-marketing`      | `Sales & Marketing (S&M)/`: the pipeline and deals, positioning and demand                                                                               | A job search or a personal brand as a project in `Projects/`, the people met networking in `Memory/`, and what a negotiation settles in `Memory/Decisions/`  |
+| `operations-and-logistics` | `Operations & Logistics (O&L)/`: processes, programs and vendors                                                                                         | A household plan, a trip or a move as a project in `Projects/`, its dates, contractors and events in `Memory/`, and routines proposed for `Profile/Focus.md` |
+| `human-resources`          | `Human Resources (HR)/`: roles, hiring, pay, onboarding and the people records                                                                           | The profile interview, career and skills, health and wellbeing, in `Profile/` by `Profile/README.md`'s rules                                                 |
+| `information-technology`   | `Information Technology (IT)/`: the internal systems and their security                                                                                  | The devices, accounts and tools the owner uses, proposed for `Profile/Preferences.md` and never with a password or key, and a security incident in `Memory/` |
+| `research-and-development` | `Research & Development (R&D)/`: research, ideas, and the building of products, skills and software                                                      | Reports in `Inbox/Reports/`, ideas in `Inbox/Ideas/`, learning in `Library/`, and side projects in `Projects/`                                               |
+| `business-intelligence`    | `Business Intelligence (BI)/`: metrics, data, dashboards, and any chart or diagram                                                                       | Visuals in `Inbox/Visuals/`, and a habit or metric the owner tracks as a project in `Projects/`                                                              |
+| `quality-assurance`        | `Quality Assurance (QA)/`: the independent verification of consequential work                                                                            | A check of an important document or plan, logged with what it checked, such as in its project's `Log.md`                                                     |
+| `customer-experience`      | `Customer Experience (CX)/`: onboarding, success and support                                                                                             | A complaint, a return or a warranty as an open loop in `Memory/Log.md` and a date in `Memory/Dates.md`, and the company in `Memory/Entities/Organizations/`  |
+| `public-relations`         | `Public Relations (PR)/`: announcements, press and crises                                                                                                | The owner's writing as a project in `Projects/`, and what an email commits them to, or a moment that touches their reputation, in `Memory/`                  |
 
-- **Reports** are held in `Inbox/Reports/`, **ideas** in `Inbox/Ideas/` and **visuals** in
-  `Inbox/Visuals/`, each by that folder's README.
-- **The owner's profile**, such as the identity interview the `identify` skill runs, is written in
-  `Profile/` from `Profile/.template/`, the next facet picked with
-  `python3 .github/scripts/profile-coverage.py --json`; the people, events, dates and decisions it
+- **A venture** is created only with the owner's yes, by copying `Ventures/.template/` whole, as
+  `Ventures/README.md` says. The `administration` skill keeps its strategy in
+  `Administration/Strategy.md`, records each of its decisions in `Administration/Decisions.md`, and
+  logs its work in the venture's `Log.md`.
+- **Reports** are held in `Inbox/Reports/` and **ideas** in `Inbox/Ideas/`, a company's as well as
+  the owner's, until what must outlive them is promoted, such as into a venture's
+  `Research & Development (R&D)/`, and a standalone **visual** is held in `Inbox/Visuals/`, each by
+  that folder's README.
+- **The owner's profile** is written in `Profile/` from `Profile/.template/`, by
+  `Profile/README.md`'s rules, and is read-only until the owner asks or confirms. The profile
+  interview, such as the `human-resources` skill's, picks the next facet with
+  `python3 .github/scripts/profile-coverage.py --json`, and the people, events, dates and decisions it
   learns are promoted to `Memory/` by `Memory/README.md`.
 - **The owner's own money facts** go only where `Profile/` and its rules allow, in
-  `Profile/Finances.md`.
-- **The Library** is the reference collection in `Library/`, with its rules in `Library/README.md`;
-  it is searched with `python3 .github/scripts/knowledge-base.py search`.
+  `Profile/Finances.md`: an account, a policy or a document is recorded as where it is kept, never
+  its number.
+- **The Library** is the reference collection in `Library/`, with its rules in `Library/README.md`:
+  what is learned about the world, never anything personal. It is searched with
+  `python3 .github/scripts/knowledge-base.py search`.
+- **A skill** that `research-and-development` builds is not vault content: it lives in
+  tannergolden/intelligence or an AI app's own skills folder (`Inbox/README.md`, System Assets).
 - **Every note**, whatever writes it, follows [the note schema](.docs/technical/vault/Note-Schema.md).
 - **After any write**, `lint-notes.py` runs on the note, then `update-vault.py`, then `check-vault.py`.
 
-The README of each of these folders says which kind of work lands there and by what rules, so
+The README of each of these folders says which skill's work lands there and by what rules, so
 whoever writes there learns it from that folder.
 
 ---

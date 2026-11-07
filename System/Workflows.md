@@ -53,7 +53,7 @@ Workflows marked *owned here* are specified in full lower in this file; all othe
 |----------|--------------|--------------------------|
 | New project | A personal initiative begins (ask first) | `Projects/README.md` · copy `Projects/.template/` |
 | New venture | A company the user owns or operates | `Ventures/README.md` · copy `Ventures/.template/` |
-| Identity interview | Filling or deepening the `Profile/` files | `Profile/README.md` · an identity interview, such as the `identify` skill's (`/identify`) |
+| Profile interview | Filling or deepening the `Profile/` files | `Profile/README.md` · a profile interview, such as the `human-resources` skill's (`/human-resources`) |
 
 ### Reporting
 

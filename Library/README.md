@@ -33,6 +33,7 @@ Reference knowledge about the world, in ten classes, never personal. Read this R
 
 - **A source filed from `Inbox/`**: classified, checked for freshness and shelved in one class and division, by the Inbox's sorting protocol (`Inbox/README.md`) and the rules on this page.
 - **A finding promoted from a held report** (`Inbox/Reports/`) when it must outlive the report: it becomes a holding here, written from `.template/Reference Note.md`.
+- **What is learned about the world**, such as what the `research-and-development` skill learns for the owner, written as a holding from `.template/Reference Note.md`. The owner's own progress and competence are not holdings: a learning plan goes to `Projects/`, and what the owner can do to `Profile/Skills/`.
 - **An offline reference work**, such as Wikipedia, kept in `Reference & Encyclopedia/` and managed with `python3 .github/scripts/knowledge-base.py`; every source ships off.
 
 A question about the world is answered here before the web: search the notes and the catalog's `BRAIN/Library/` records, then an installed reference work with `python3 .github/scripts/knowledge-base.py search`, and cite what was used.
@@ -55,7 +56,7 @@ The Library is kept by the rules on this page, by whoever works in it, and a res
 
 The steward acquires, classifies, catalogs, curates, weeds, preserves, and serves every holding, to one overriding standard: **every holding earns its place**. The collection is judged by what it excludes as much as what it serves, and findability is the purpose that curation serves. By demand the steward also does deep per-class subject work, a link and authority-control integrity pass (via `.github/scripts/check-vault.py`), and a Conspectus-style depth assessment per class; a genuinely contested class, weed, or tier goes to the owner.
 
-Boundaries: research gathers evidence and files reports to `Inbox/Reports/`, and the single handoff is the promotion of a finding into a `Library/` holding; the steward owns the durable collection here and commissions research to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the steward makes the authoritative tier and class assignment at catalog time.
+Boundaries: the `research-and-development` skill gathers evidence and files reports to `Inbox/Reports/`, and hands the Library only holdings: a finding promoted from a report, or what it learns about the world for the owner; the steward owns the durable collection here and commissions research to fill thin classes. The Inbox sort protocol makes a coarse provisional freshness screen and routes Library-bound files; the steward makes the authoritative tier and class assignment at catalog time.
 
 ## Why classification matters for retrieval (not just for people)
 

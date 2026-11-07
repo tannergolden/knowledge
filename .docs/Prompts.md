@@ -532,13 +532,13 @@ Compare each Profile facet, Focus first, with what Memory, the projects and the 
 - Change nothing before my yes: propose each change with its evidence by path and the line it would replace.
 - Mark each change you inferred as Profile/README.md describes, and write my own words unmarked.
 - Open Health, Finances, Values and Relationships only if I ask.
-- Where a facet is thin rather than out of date, say so and suggest the identify skill, rather than interview me here.
+- Where a facet is thin rather than out of date, say so and suggest the human-resources skill's profile interview, rather than interview me here.
 - If .github/TEMPLATE_INIT exists, stop and tell me to run this in my private vault.
 </constraints>
 
 <done_when>
 - Each approved change is written, lint-notes.py passes on each facet you changed, and update-vault.py has nothing left to redraw.
-- You list what changed, what I declined, and the facets you suggest for the identify skill.
+- You list what changed, what I declined, and the facets you suggest for the profile interview.
 </done_when>
 ```
 
@@ -756,7 +756,7 @@ List the reports past their review_by date and the visuals whose data has moved 
 
 <constraints>
 - Change nothing before my yes: propose each clearing, refresh and promotion.
-- Re-verify a stale report only if I ask, through the research skill, and move its review_by date only once it is verified.
+- Re-verify a stale report only if I ask, through the research-and-development skill, and move its review_by date only once it is verified.
 - Keep each index in step with its folder, in the same edit.
 - Make each promotion by its destination's rules, such as Library/README.md's for a holding.
 </constraints>

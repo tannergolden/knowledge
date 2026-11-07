@@ -9,7 +9,7 @@ keywords: ["product work", "roadmap", "development", "product vision", "specs", 
 
 # 🔬 [Company] - Research & Development (R&D)
 
-Product work at [Company]: what is being built, what comes next, and where the product or service is headed. Product work from research, discovery and development lands here, such as the research, discover and develop skills'. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Product work at [Company]: what is being built, what comes next, and where the product or service is headed. The `research-and-development` skill's company work lands here: research, ideas, and the building of products, skills and software. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 
@@ -24,3 +24,4 @@ Product work at [Company]: what is being built, what comes next, and where the p
 ## What Goes Elsewhere
 
 - Reference knowledge that is not specific to [Company] goes to `Library/`.
+- A skill built for [Company] is not vault content: it lives outside the vault (`Inbox/README.md`, System Assets).

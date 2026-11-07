@@ -25,6 +25,14 @@ These govern every write to `Profile/`, and every write to `Memory/` that touche
 
 `Profile/` is the **stable self**: the durable, slowly-changing facts about who the user is. It is organized the way personality and identity are described in both psychology and modern AI personalization research - **by facet of the self** (background, traits, values, goals, skills, tastes, working style, health) - with one dynamic exception, [[Profile/Focus|Focus]], for what is true only right now.
 
+## What Lands Here
+
+Every write here follows the Rules above, whichever skill makes it:
+
+- **The `human-resources` skill's work for the user's own life**: the profile interview (Filling These Files, below), their career and skills (`Biography.md`, `Skills/`, `Goals/`) and their health and wellbeing (`Health/`, `Lifestyle.md`).
+- **The `finance-and-accounting` skill's money facts** about the user, in `Finances.md` alone: the picture and pointers, never a secret number.
+- **What any other skill learns about who the user is**, proposed first: a goal or priority the `administration` skill helps set (`Goals/`, `Focus.md`), where a will or a lease the `legal-and-compliance` skill handles is kept (`Finances.md`, Legal & Estate), the routines `operations-and-logistics` plans (`Focus.md`), and the devices, accounts and tools `information-technology` sets up (`Preferences.md`), never a password or a key.
+
 ## Frontmatter here
 
 The facet files describing the user carry `type: "reference"`; this hub carries `index`, and the scaffolds `template` (`.docs/technical/vault/Note-Schema.md`). No field marks a file personal: everything under `Profile/` is personal by its path (`.docs/technical/vault/Keywords.md`).
@@ -88,9 +96,9 @@ The whole `Profile/` tree is **sensitive by default**, by its path (`.docs/techn
 
 Facets come in two shapes, the same split as `Memory/`. A facet read as a whole is a single **flat file** at `Profile/` root (Biography, Personality, Preferences, Working Style, Focus). A facet that accretes many independent items is a **folder** whose `README.md` is the facet's overview, plus one **entry file per item** (Values holds belief entries; Goals, Skills, and Health hold one entry per goal, skill, or condition). A flat facet is promoted to a folder only if it later grows entries (for example, Biography gaining life-chapter entries) - never speculatively. Write each independently-answerable fact as its own `## H2` so it chunks cleanly for retrieval, restate the subject in the heading, and keep discrete facts in tables and lists. Discovery is by folder path plus `keywords`, never tags (`.docs/technical/vault/Keywords.md`).
 
-## Filling These Files: The Identity Interview
+## Filling These Files: The Profile Interview
 
-The recommended way to fill or deepen these files is a structured interview rather than hand-editing, such as the one the `identify` skill runs (installed with the home kit from tannergolden/intelligence, not kept in this vault). `python3 .github/scripts/profile-coverage.py --json` scores each facet and names the next one to ask about, starting with `Working Style.md`. The interview reads what each file holds, targets what is thin or unconfirmed, and asks structured questions drawn from validated frameworks: **Big Five** for Personality, **Schwartz's basic values** for Values, the **McAdams life-story** method for Biography, mixing direct questions for facts with indirect ones that surface traits the user would not think to state. What it writes follows the rules on this page: an inference is **marked, evidence-cited, confidence-rated and left unconfirmed until approved**, sensitive topics come with skip options, and each file's last state is committed before it is written. A new entry is copied from `.template/`, whose `README.md` says which scaffold makes what. Hand-editing is fine for a quick correction, but misses the inference layer and those safeguards.
+The recommended way to fill or deepen these files is a structured interview rather than hand-editing, such as the profile interview the `human-resources` skill runs (installed with the home kit from tannergolden/intelligence, not kept in this vault). `python3 .github/scripts/profile-coverage.py --json` scores each facet and names the next one to ask about, starting with `Working Style.md`. The interview reads what each file holds, targets what is thin or unconfirmed, and asks structured questions drawn from validated frameworks: **Big Five** for Personality, **Schwartz's basic values** for Values, the **McAdams life-story** method for Biography, mixing direct questions for facts with indirect ones that surface traits the user would not think to state. What it writes follows the rules on this page: an inference is **marked, evidence-cited, confidence-rated and left unconfirmed until approved**, sensitive topics come with skip options, and each file's last state is committed before it is written. A new entry is copied from `.template/`, whose `README.md` says which scaffold makes what. Hand-editing is fine for a quick correction, but misses the inference layer and those safeguards.
 
 ## File Log
 

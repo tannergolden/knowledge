@@ -29,23 +29,25 @@ This folder is for **company-specific** context and materials. General domain kn
 
 ## What Lands Here
 
-Board work (strategy, reviews, plans and decisions, such as the `board` skill's) keeps each venture in `Ventures/<Venture>/`, copied from `Ventures/.template/`, records each decision in the venture's `Administration/Decisions.md`, and logs its work in the venture's `Log.md`. Every department's records go in that venture's department folder, whose own `README.md` says what belongs there:
+A company's work lands here from the twelve department skills the home kit installs, each named for its department. The `administration` skill (founding, strategy, decisions across departments and the operating cadence) keeps each venture in `Ventures/<Venture>/`, copied from `Ventures/.template/`, records each decision in the venture's `Administration/Decisions.md`, logs its work in the venture's `Log.md`, and keeps its `Overview.md` and `Goals.md` current. Every department's records go in that venture's department folder, whose own `README.md` says what belongs there:
 
-| Department folder | The work that lands there |
-|-------------------|---------------------------|
-| `Administration/` | Board work's own records: the strategy, the decision record and the operating cadence |
-| `Legal & Compliance (L&C)/` | Legal work, such as the legal skill's: the entity, contracts, IP, licenses, compliance and insurance |
-| `Sales & Marketing (S&M)/` | Sales and marketing: the brand, the products and the services |
-| `Operations & Logistics (O&L)/` | Operations: core processes, SOPs, vendors and recurring tasks |
-| `Human Resources (HR)/` | People: the org structure, reporting lines, roles and key people |
-| `Information Technology (IT)/` | Systems, security included: the stack, tools, infrastructure and integrations |
-| `Business Intelligence (BI)/` | Analytics: KPIs, dashboards, data sources and reporting |
-| `Quality Assurance (QA)/` | Quality: standards, review processes, checklists and quality metrics |
-| `Client Experience (CX)/` | Customers: the client roster, accounts, contacts and status |
-| `Public Relations (PR)/` | Communications: media contacts, coverage, the press kit and PR strategy |
-| `Finance & Accounting (F&A)/` | The company's money, such as the finance skill's: financials, the financial model and the cap table |
-| `Research & Development (R&D)/` | Product work, from research, discovery and development: the roadmap and what is being built |
+| Department folder | The skill whose work lands there |
+|-------------------|----------------------------------|
+| `Administration/` | `administration`: the founding, the strategy, the decision record and the operating cadence |
+| `Legal & Compliance (L&C)/` | `legal-and-compliance`: formation, the entity, contracts, IP, licenses, compliance, privacy and insurance |
+| `Sales & Marketing (S&M)/` | `sales-and-marketing`: the pipeline and deals, positioning and demand, with the brand, the products and the services |
+| `Operations & Logistics (O&L)/` | `operations-and-logistics`: processes, programs and vendors, from the SOPs to the recurring tasks |
+| `Human Resources (HR)/` | `human-resources`: roles, hiring, pay, onboarding and the people records, with the org structure and key people |
+| `Information Technology (IT)/` | `information-technology`: the internal systems and their security, from the stack and tools to infrastructure and integrations |
+| `Business Intelligence (BI)/` | `business-intelligence`: metrics, data, dashboards and reporting, and any chart or diagram |
+| `Quality Assurance (QA)/` | `quality-assurance`: independent verification of consequential work, with the standards, review processes, checklists and quality metrics |
+| `Customer Experience (CX)/` | `customer-experience`: onboarding, success and support, with the client roster, accounts, contacts and status |
+| `Public Relations (PR)/` | `public-relations`: announcements, press and crises, with media contacts, coverage and the press kit |
+| `Finance & Accounting (F&A)/` | `finance-and-accounting`: the books, the financial model, the cap table and company tax |
+| `Research & Development (R&D)/` | `research-and-development`: research, ideas, and the building of products, skills and software, with the roadmap |
 | `Miscellaneous/` | Anything for the venture that fits no department |
+
+The same skills' work in the user's own life never lands here: the root `README.md`, Where Each Kind Of Work Goes, gives its homes.
 
 A department folder holds both `.md` context files and other working files (assets, decks, exports, documents): it is a working folder, not just notes.
 
@@ -69,7 +71,7 @@ Ventures/
     │
     ├── Administration/                          Executive office: strategy, decisions, operating cadence
     │   ├── Strategy.md                          Company thesis, market and competition, strategic bets
-    │   ├── Decisions.md                         Governance and decision record (the board's memos)
+    │   ├── Decisions.md                         Governance and decision record, with its decision memos
     │   └── Cadence.md                           Weekly / monthly / quarterly / annual operating rhythm
     │
     ├── Sales & Marketing (S&M)/
@@ -105,7 +107,7 @@ Ventures/
     │   ├── Financial-Model.md                   Forward projections, scenarios, runway, unit economics
     │   └── Cap-Table.md                         Ownership, share classes, option pool, funding rounds
     │
-    ├── Client Experience (CX)/
+    ├── Customer Experience (CX)/
     │   └── Clients.md                           Client roster: accounts, contacts, status
     │
     └── Business Intelligence (BI)/
@@ -118,7 +120,7 @@ Every department folder also holds its own `README.md`, copied with it, saying w
 
 Subfolder names are short and hyphenated (for example `Golden-Media` or `Acme-Corp`). When a venture is created, `Ventures/.template/` is copied whole and **each copied file gets its real `title`, `description` and `type`**: the `[Company]` placeholder becomes the venture's name, and `template` the type the copy is (`index` for each `README.md`), so the catalog stays clean.
 
-The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the governance record; `Cadence.md`, the operating rhythm) and, in Finance, a forward `Financial-Model.md` and a real `Cap-Table.md`. Board work is the **sole writer** of these files, behind a write-gate: internal files are drafted directly; money, contracts, outside communication and deletions need the owner's yes.
+The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the governance record; `Cadence.md`, the operating rhythm) and, in Finance & Accounting, a forward `Financial-Model.md` and a real `Cap-Table.md`. These files are written only behind a write-gate, by the `administration` skill, or by `finance-and-accounting` for the model and the cap table: internal files are drafted directly; money, contracts, outside communication and deletions need the owner's yes.
 
 ---
 
@@ -167,7 +169,7 @@ As later sessions touch on the venture:
 
 **`Log.md` gains an entry** at the end of any session where meaningful work was done on the venture: decisions made, milestones hit, pivots, hires, launches. Entries stay concise: a date and 2 to 5 bullet points. Routine questions and answers are not logged.
 
-**The other department files** (`Human Resources (HR)/Hierarchy.md`, `Client Experience (CX)/Clients.md`, `Sales & Marketing (S&M)/Products.md`, `Sales & Marketing (S&M)/Services.md`, `Finance & Accounting (F&A)/Financials.md`, `Information Technology (IT)/Stack.md`, `Business Intelligence (BI)/Metrics.md`, `Research & Development (R&D)/Roadmap.md`, `Operations & Logistics (O&L)/Operations.md`, `Legal & Compliance (L&C)/Compliance.md`, `Public Relations (PR)/Press.md`, `Quality Assurance (QA)/Standards.md`) follow the same pattern: they are updated when relevant information surfaces, always with the user's confirmation.
+**The other department files** (`Human Resources (HR)/Hierarchy.md`, `Customer Experience (CX)/Clients.md`, `Sales & Marketing (S&M)/Products.md`, `Sales & Marketing (S&M)/Services.md`, `Finance & Accounting (F&A)/Financials.md`, `Information Technology (IT)/Stack.md`, `Business Intelligence (BI)/Metrics.md`, `Research & Development (R&D)/Roadmap.md`, `Operations & Logistics (O&L)/Operations.md`, `Legal & Compliance (L&C)/Compliance.md`, `Public Relations (PR)/Press.md`, `Quality Assurance (QA)/Standards.md`) follow the same pattern: they are updated when relevant information surfaces, always with the user's confirmation.
 
 ---
 

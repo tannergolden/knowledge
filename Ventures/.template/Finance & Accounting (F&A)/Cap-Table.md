@@ -7,7 +7,7 @@ keywords: ["capitalization table", "ownership", "cap table", "capitalization", "
 
 # 🥧 [Company] - Cap Table
 
-> The actual ownership record (not just a pointer). Sensitive. Owned by Finance with Legal; updated on every equity event (issuance, option grant, round, transfer). The board skill never executes an equity transaction; it composes and the Founder authorizes.
+> The actual ownership record (not just a pointer). Sensitive. Owned by Finance & Accounting with Legal & Compliance; updated on every equity event (issuance, option grant, round, transfer). No skill executes an equity transaction: the `finance-and-accounting` skill composes it, and the Founder authorizes it.
 
 ---
 

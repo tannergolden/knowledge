@@ -37,11 +37,11 @@ graph TD
     SE --> CV
 ```
 
-`profile-coverage.py`, whose `--json` report the `identify` skill reads, and `knowledge-base.py`, for
-the offline reference works, stand alone. `validate-repository.py`, `verify-stub-ceilings.py` and the
-git hooks in `hooks/` are not vault scripts: they check the repository's own configuration and each
-commit, and this template takes them, with the workflow stubs, from tannergolden/path, the golden
-path template it follows. The
+`profile-coverage.py`, whose `--json` report the `human-resources` skill's profile interview reads,
+and `knowledge-base.py`, for the offline reference works, stand alone. `validate-repository.py`,
+`verify-stub-ceilings.py` and the git hooks in `hooks/` are not vault scripts: they check the
+repository's own configuration and each commit, and this template takes them, with the workflow
+stubs, from tannergolden/path, the golden path template it follows. The
 [scripts' folder log](../../.github/scripts/README.md) gives each file's purpose, and
 [Sessions & The Memory Cascade](vault/Sessions-&-The-Memory-Cascade.md) covers `session.py`.
 

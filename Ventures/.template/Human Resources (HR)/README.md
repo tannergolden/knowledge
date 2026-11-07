@@ -9,12 +9,12 @@ keywords: ["people", "org structure", "reporting lines", "roles", "hiring", "dep
 
 # 👥 [Company] - Human Resources (HR)
 
-The people of [Company]: its org structure, reporting lines, roles and key people. People work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The people of [Company]: its org structure, reporting lines, roles and key people. The `human-resources` skill's company work lands here: roles, hiring, pay, onboarding and the people records. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 
 - `Hierarchy.md`: the org structure, reporting lines and the key people in each role.
-- Working files: role descriptions, hiring plans, policies and onboarding material.
+- Working files: role descriptions, hiring plans, pay bands, policies and onboarding material.
 
 ## Rules
 
@@ -23,3 +23,4 @@ The people of [Company]: its org structure, reporting lines, roles and key peopl
 ## What Goes Elsewhere
 
 - Someone in the user's personal life goes to `Memory/Entities/People/`, and employment contracts to `Legal & Compliance (L&C)/`.
+- The user's own career, skills, health and wellbeing, which the same skill helps with, go to `Profile/`.

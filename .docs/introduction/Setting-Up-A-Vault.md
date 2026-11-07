@@ -2,7 +2,7 @@
 title: '🚀 SETTING UP A VAULT'
 description: 'How to make your own vault from this template: generating it private, what initialisation changes and leaves alone, the settings its automation needs, the first session, and how it stays current. Read it when you generate a vault, and again if initialisation or a sync pull request fails.'
 type: guide
-keywords: [setup, initialisation, generate, private repository, first session, identify, onboarding]
+keywords: [setup, initialisation, generate, private repository, first session, profile interview, onboarding]
 -->
 
 <div align="center">
@@ -103,10 +103,10 @@ python3 .github/scripts/profile-coverage.py
 - **`check-vault.py`** runs every check CI runs, so your machine sees what 🧠 Vault sees.
 - **`profile-coverage.py`** scores each of the twelve Profile facets and names the one to ask about
   next. Every facet starts as a blank scaffold.
-- **Fill `Profile/` with `/identify`.** The skill reads that report, interviews you about one facet at
-  a time, and writes only the proposals you approve; it opens Health, Finances, Values and
-  Relationships only when you choose to. It starts with `Profile/Working Style.md`, which says how you
-  want to be helped.
+- **Fill `Profile/` with `/human-resources`.** Its profile interview reads that report, interviews
+  you about one facet at a time, and writes only the proposals you approve; it opens Health,
+  Finances, Values and Relationships only when you choose to. It starts with
+  `Profile/Working Style.md`, which says how you want to be helped.
 - **Drop files into `Inbox/`** to have them sorted into the vault, with your yes for each move.
 - **Turn on an offline reference work** if you want one:
   `Library/Reference & Encyclopedia/README.md` lists the sources, every one off at

@@ -7,7 +7,7 @@ keywords: ["decision log", "governance record", "governance", "board record", "d
 
 # ⚖️ [Company] - Decisions
 
-> The corporate record of consequential decisions. The Corporate Secretary keeps this current. The `board` skill (decide mode) appends here when it makes a call, and a one-line entry is also logged to `Log.md`. Read this before re-opening a question, so a settled decision is not re-litigated.
+> The corporate record of consequential decisions. The Corporate Secretary keeps this current. The `administration` skill (decide mode) appends here when it makes a call, and a one-line entry is also logged to `Log.md`. Read this before re-opening a question, so a settled decision is not re-litigated.
 
 ---
 
@@ -30,4 +30,4 @@ keywords: ["decision log", "governance record", "governance", "board record", "d
 
 ## Decision memos
 
-<!-- The full board-style memos (recommendation up front, options, each function's view, risks and pre-mortem, decision and owner, next steps, minority view). One per consequential decision, newest first. The board skill fills these from templates/decision-memo.md. -->
+<!-- The full board-style memos (recommendation up front, options, each function's view, risks and pre-mortem, decision and owner, next steps, minority view). One per consequential decision, newest first. The administration skill fills these from its templates/decision-memo.md. -->

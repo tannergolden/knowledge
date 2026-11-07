@@ -9,12 +9,12 @@ keywords: ["operations", "processes", "sops", "vendors", "recurring tasks", "dep
 
 # 📦 [Company] - Operations & Logistics (O&L)
 
-How [Company] runs day to day: its core processes, SOPs, vendors and recurring tasks. Operations work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+How [Company] runs day to day: its core processes, SOPs, vendors and recurring tasks. The `operations-and-logistics` skill's company work lands here: processes, programs and vendors. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 ## What Goes Here
 
 - `Operations.md`: the core processes, standard operating procedures, vendors and operational infrastructure.
-- Working files: SOP documents, checklists, schedules and vendor material.
+- Working files: SOP documents, checklists, schedules, program plans and vendor material.
 
 ## Rules
 

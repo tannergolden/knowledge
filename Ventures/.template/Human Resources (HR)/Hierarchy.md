@@ -59,7 +59,7 @@ keywords: ["org chart", "reporting structure", "leadership", "team roster", "con
 | Information Technology (IT) | | |
 | Human Resources (HR) | | |
 | Finance & Accounting (F&A) | | |
-| Client Experience (CX) | | |
+| Customer Experience (CX) | | |
 | Business Intelligence (BI) | | |
 
 ---

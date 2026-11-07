@@ -145,6 +145,12 @@ itself in its `README.md`, the root `README.md` says how to work in the vault, a
 ships in a new major release: a vault takes it when its owner changes `ref:` in
 `.github/workflows/template-sync.yml` to that major.
 
+The same major release carries two more changes. The venture template's `Client Experience (CX)/`
+becomes `Customer Experience (CX)/`. And the skills are named as the home kit now names them, twelve
+department skills from `administration` to `public-relations`, each covering both a company and the
+owner's own life: the root `README.md`, under Where Each Kind Of Work Goes, and each folder's README
+give the new names in place of the old ones, such as `board`, `research`, `discover` and `identify`.
+
 - **Run 🔄 Template Sync.** Each folder note the template ships moves to its `README.md`, your
   changes with it, and each top folder's note and README arrive as one `README.md`. A note you had
   changed, and the template removed, stays as yours: `lint-notes.py` names it, as a note named after
@@ -163,6 +169,12 @@ ships in a new major release: a vault takes it when its owner changes `ref:` in
   yours in `.github/template-sync`. Add the `no-intelligence` topic, so the hub's sync leaves the vault
   alone. Anything you had added to `AGENTS.md` that the vault still needs belongs in the root
   `README.md` or a folder's README.
+- **Rename each venture's own folder.** The sync renames the template's folder, never a venture made
+  from it: in each venture, `git mv` its `Client Experience (CX)/` to `Customer Experience (CX)/`,
+  give that folder's `README.md` the new name in its title and heading, and update the row in its
+  `Human Resources (HR)/Hierarchy.md` and every other mention in your own notes. The files copied
+  into a venture are yours too, so the sync leaves the old skill names in them: compare its READMEs,
+  its `Administration/` files and its `Cap-Table.md` with the template's, and take the new names.
 - Run `python3 .github/scripts/update-vault.py` and commit what it redraws, then merge once
   `python3 .github/scripts/check-vault.py` passes.
 
