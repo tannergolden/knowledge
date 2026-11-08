@@ -24,7 +24,7 @@ body:
         **Don’t use this template for:**
         - Product bugs or broken features → use 🐛 Bug Report
         - Usability or design improvements → use 📝 Feedback Report
-        - Documentation gaps or errors → use 📖 Documentation Report
+        - Documentation gaps or errors → use 📚 Documentation Report
         - Accessibility-specific issues → use ♿ Accessibility Report
         - New functionality requests → use ✨ Feature Request
         - Security vulnerabilities → follow SECURITY.md (responsible disclosure)
@@ -34,7 +34,7 @@ body:
     attributes:
       label: '✍️ Summary'
       description: 'One or two sentences describing the performance concern.'
-      placeholder: 'Example: Dashboard takes ~6–8s to become interactive on first load over 4G.'
+      placeholder: 'Example: Dashboard takes about 6 to 8 s to become interactive on first load over 4G.'
     validations:
       required: true
 

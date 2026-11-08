@@ -11,17 +11,19 @@
 # else's discussions - and once .github/TEMPLATE_INIT is gone, the repository
 # validator fails the `ci` check until it is replaced.
 #
-# There is deliberately NO security contact link. GitHub adds "Report a
-# vulnerability" to this chooser on its own once private vulnerability
-# reporting is enabled (Settings → Advanced Security → Private vulnerability
-# reporting), and this repository ships its own SECURITY.md and the private
-# report form, .github/VULNERABILITY_REPORT.yml. A hand-written link would
-# duplicate that and go stale.
+# There is deliberately NO security contact link. On a PUBLIC repository,
+# GitHub adds "Report a vulnerability" to this chooser on its own once private
+# vulnerability reporting is enabled (Settings → Advanced Security → Private
+# vulnerability reporting), and this repository ships its own SECURITY.md and
+# the private report form, .github/VULNERABILITY_REPORT.yml. A hand-written
+# link would duplicate that and go stale.
 #
-# NOTE: the "Vulnerability Report" issue form beside this file is for PRIVATE
-# repositories only, and initialisation deletes it from a public one. On a
-# public repository, reporters use the private intake above rather than an
-# issue anyone could read.
+# NOTE: no "Vulnerability Report" issue form sits beside this file. The golden
+# path template ships one for private repositories only, and this template's
+# derivation from it leaves the form out, so neither this public template nor
+# a private vault made from it has one. GitHub offers private vulnerability
+# reporting on public repositories only, so a private vault shows no "Report a
+# vulnerability" button either: SECURITY.md says what to do there.
 
 blank_issues_enabled: false
 

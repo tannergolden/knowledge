@@ -29,7 +29,7 @@ body:
         - Media / captions / transcripts / audio descriptions
         - Motion / animations / prefers-reduced-motion
         - Pointer gestures / drag-and-drop / target size
-        - Zoom / reflow / responsive (200–400%)
+        - Zoom / reflow / responsive (200% to 400%)
         - High contrast / forced-colors mode
         - Timing / timeouts
         - Cognitive load / authentication

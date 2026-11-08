@@ -70,7 +70,9 @@ no security link of its own, and the private report asks its questions through
 The golden path template also ships a Vulnerability Report issue form, for
 private repositories only. **This folder has none**: this template is public, so
 its derivation leaves the form out, and no vault made from it receives one
-either.
+either. GitHub offers private vulnerability reporting on public repositories
+only, so a private vault has no **Report a vulnerability** button: its
+[`SECURITY.md`](../SECURITY.md) says what to do there instead.
 
 ---
 

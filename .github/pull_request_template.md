@@ -38,6 +38,7 @@ mark it N/A.
 ## ✅ Validation
 
 - [ ] Local gates green: this project's own lint, test, and build commands (the ones `.github/workflows/checks.yml` runs)
+- [ ] The vault's checks green: `python3 .github/scripts/check-vault.py` passes (🧠 Vault runs it), and `python3 .github/scripts/update-vault.py` has nothing left to redraw
 - **Tests** (required for behavior changes; say what each new test pins down, and add a regression test for bug fixes):
 - **Coverage**: [ ] Unit · [ ] Integration · [ ] E2E · [ ] N/A
 - **Manual steps** a reviewer can follow to reproduce the result:
@@ -65,11 +66,12 @@ mark it N/A.
 
 - [ ] One intent, sized for review (explain if the labeler tags it `size: large` or bigger)
 - [ ] Conventional Commit **title**, and commits **signed off** for DCO (`git commit -s`)
-- [ ] Local gates green (lint, test, build)
+- [ ] Local gates green (lint, test, build, and the vault's checks)
 - [ ] Tests added or updated for logic changes; documented above
 - [ ] No secrets committed; scanner alerts resolved
+- [ ] Nothing personal in a public repository: in the public template, every note about a person stays a blank scaffold
 - [ ] Docs updated when behavior or setup changed
-- [ ] Any AI-assisted work followed this project's agent instructions, if it has any
+- [ ] Any AI-assisted work followed `AGENTS.md`
 - [ ] Targeting `Development`; ready to **squash merge** on green CI
 
 <!--

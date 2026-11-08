@@ -39,20 +39,27 @@ GitHub's private vulnerability reporting keeps the report between you and the
 maintainers, needs no email, and lets us work on the fix with you in a private
 advisory.
 
-**If there is no Report a vulnerability button**, private reporting has not been
-switched on yet. Do not describe the problem anywhere public. Either contact a
-maintainer through the private contact listed under **Maintainers** in
-[GOVERNANCE.md](GOVERNANCE.md), or open an issue titled
+**If a public repository has no Report a vulnerability button**, private
+reporting has not been switched on yet. Do not describe the problem anywhere
+public. Either contact a maintainer through the private contact listed under
+**Maintainers** in [GOVERNANCE.md](GOVERNANCE.md), or open an issue titled
 `Security contact request` containing nothing else, and a maintainer will open a
 private advisory and invite you to it.
 
-On a **private** repository, where issues are already closed to the public, the
-🛡️ Vulnerability Report issue form is the intake instead.
+On a **private** repository, such as a vault made from this template, there is
+no such button: GitHub offers private vulnerability reporting on public
+repositories only, and this template ships no issue form for vulnerabilities.
+Only the people its owner has let in can read a private repository, so tell the
+owner directly, or open an issue there. A vulnerability in what a vault
+takes from this template, such as its scripts, checks and workflows, is fixed in
+the template: report it with the **Report a vulnerability** button of
+`tannergolden/knowledge`, and the fix reaches each vault through
+🔄 Template Sync.
 
 ### 2. What to include
 
-The report form asks for these; the more of them you give, the faster we can
-act:
+The private report form asks for these, and a report made any other way needs
+them too; the more of them you give, the faster we can act:
 
 - What is affected, and what an attacker can achieve.
 - The steps to reproduce it, from a clean clone or a released version.
@@ -92,6 +99,9 @@ like to be credited when you report.
   Dependabot can tell everyone affected.
 - The release notes list it under **🔒 Security**, and they are kept: release
   pages are this repository's changelog and are never deleted on their own.
+- A fix to what a vault takes from this template is published on the template,
+  `tannergolden/knowledge`, and reaches each vault the next time its owner runs
+  🔄 Template Sync.
 
 ---
 
@@ -152,10 +162,16 @@ Each of these is configured by the files in this repository or by
 - **Supply-chain score**: OpenSSF Scorecard rates the repository weekly and
   files its findings under code scanning (public repositories).
 - **Hardened runners**: every job starts by auditing its network egress.
-- **Release integrity**: every release carries a CycloneDX SBOM, and on a
-  public repository its build archive also carries a build provenance
-  attestation. How to check them is in the project's Release Verification
-  document, seeded from `docs/templates/distribution/Release-Verification.md`.
+- **Personal numbers**: 🧠 Vault runs the vault's checks on every pull request
+  and every push to the default branch, among them `scan-pii.py`, which fails
+  on a number shaped like a US Social Security number or a payment card number.
+- **Release integrity**: a release published through 📦 Release carries a
+  CycloneDX SBOM, and on a public repository its build archive also carries a
+  build provenance attestation, which `gh attestation verify` checks, as the
+  standards'
+  [Releases & Versioning](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Releases-&-Versioning.md)
+  guide describes. A template releases with 🏷️ Cut Release instead: a version
+  tag and its notes, with no build to attest.
 
 ---
 

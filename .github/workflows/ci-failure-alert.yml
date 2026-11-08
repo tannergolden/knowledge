@@ -42,6 +42,12 @@ on:
       # The weekly supply-chain score. A failure here is a broken publish or
       # a broken upload, and nothing else would ever mention it.
       - '🛡️ OpenSSF Scorecard'
+      # The vault's own checks: its notes, links, personal data and generated
+      # parts. A failure on the default branch is a broken vault.
+      - '🧠 Vault'
+      # The weekly proposal of the universal rules in AGENTS.md. It runs on a
+      # schedule and blocks nothing, so a failure is silent unless watched.
+      - '🔁 Intelligence Sync'
       # Add any workflow whose silent failure would cost something.
       #
       # ⚠️ NEVER ADD THIS WORKFLOW TO ITS OWN LIST. It cannot escalate its

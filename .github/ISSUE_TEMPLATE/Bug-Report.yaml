@@ -24,10 +24,13 @@ body:
         **Don’t use this template for:**
         - Usability or design suggestions → use 📝 Feedback Report
         - Performance concerns (lag, memory usage) → use 🚀 Performance Report
-        - Documentation issues → use 📖 Documentation Report
+        - Documentation issues → use 📚 Documentation Report
         - Accessibility-specific problems → use ♿ Accessibility Report
         - Feature ideas or enhancements → use ✨ Feature Request
         - Security vulnerabilities → follow SECURITY.md (responsible disclosure)
+
+        **An issue on a public repository is public.** Never paste a note from your own vault, a
+        secret or anyone's personal data into it: show the problem with a made-up note instead.
 
   - type: textarea
     id: summary

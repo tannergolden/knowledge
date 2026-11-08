@@ -31,12 +31,19 @@ _Ask once. Ask in the right place._
 | A security vulnerability   | 🛡️ **[SECURITY.md](SECURITY.md)** - private disclosure only, never a public issue  |
 | A setup or tooling problem | 🧰 **Discussions → Tooling & Setup**                                               |
 
+> [!IMPORTANT]
+> **Nothing from your own vault goes into an issue or a discussion on a public repository**, where
+> anyone can read it: show a problem with a made-up note, never one of yours, and never a secret.
+
 ---
 
 ## 📚 Self-Serve First
 
-- **[README](README.md)** - quick start and repository map.
-- **[Documentation index](https://github.com/tannergolden/standards/blob/Development/docs/README.md)** - every canonical guide, from branching to releases (lives in the template home).
+- **[Front page](README.md)** - what a BRAIN is, how to make one, and how it is governed.
+- **[How to work in the vault](../README.md)** - the top folders, how a session goes, the commands and where each kind of work goes.
+- **[Setting Up A Vault](../.docs/introduction/Setting-Up-A-Vault.md)** - each step from generating a vault to its first session, and what to do when initialisation or a sync fails.
+- **[Vault Scripts](../.docs/technical/Vault-Scripts.md)** - what each check fails on, and what to do when one fails.
+- **[Documentation index](https://github.com/tannergolden/standards/blob/Development/docs/README.md)** - every canonical guide, from branching to releases, in tannergolden/standards.
 - **[Troubleshooting](https://github.com/tannergolden/standards/blob/Development/docs/operations/Troubleshooting.md)** - the 90-second triage for common failures.
 - **[Contributing guide](CONTRIBUTING.md)** - standards for changes and pull requests.
 

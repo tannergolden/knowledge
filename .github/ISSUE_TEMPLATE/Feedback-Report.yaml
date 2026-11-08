@@ -23,7 +23,7 @@ body:
         **Don’t use this template for:**
         - Reproducible product bugs → use 🐛 Bug Report
         - Performance issues → use 🚀 Performance Report
-        - Documentation corrections → use 📖 Documentation Report
+        - Documentation corrections → use 📚 Documentation Report
         - Accessibility problems → use ♿ Accessibility Report
         - Requests for new features → use ✨ Feature Request
         - Security vulnerabilities → follow SECURITY.md (responsible disclosure)

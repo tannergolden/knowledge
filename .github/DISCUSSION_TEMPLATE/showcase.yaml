@@ -83,7 +83,7 @@ body:
     attributes:
       label: '🧰 Tech stack / approach'
       description: 'Architecture notes, libraries, services, and patterns used.'
-      placeholder: 'Frontend, backend, data stores, infra, notable patterns.'
+      placeholder: 'Frontend, backend, data stores, infra, and the patterns worth copying.'
 
   - type: textarea
     id: media

@@ -1,19 +1,21 @@
 // Development container - deliberately language-neutral.
 //
-// This scaffold does not know what you are about to write, so it installs
-// nothing for your project's language. The base image plus git and the common
-// utilities is enough to clone, read, edit, and commit in any language.
+// The BRAIN container, for working in the vault: its notes are plain
+// Markdown, and the base image plus git and the common utilities is enough to
+// read, edit and commit them. Nothing is installed for any language but one.
 //
-// Python is the one exception, and it is not a language choice: the checks
-// this repository runs on its own configuration - the validator, the stub
-// checker, the commit-message hook and their tests - are Python, and a
-// container that cannot run them cannot tell you whether CI will pass.
+// Python is that one, and it is not a language choice: the vault's own
+// scripts, which need only the standard library, and the checks on the
+// repository's configuration - the validator, the stub checker, the
+// commit-message hook and their tests - are Python, and a container that
+// cannot run them cannot tell you whether CI will pass.
 //
-// ADD YOUR OWN TOOLCHAIN below. The commented features cover the common ones;
-// the full catalogue is at https://containers.dev/features. Installing one
-// nobody needs costs a slow rebuild for everybody, which is why none is on.
+// A TOOLCHAIN IS ONLY FOR CODE a project or a venture keeps in the vault. The
+// commented features below cover the common ones; the full catalogue is at
+// https://containers.dev/features. Installing one nobody needs costs a slow
+// rebuild for everybody, which is why none is on.
 {
-  "name": "Golden Path",
+  "name": "BRAIN",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
   "features": {
@@ -28,7 +30,7 @@
       "installTools": false
     }
 
-    // --- Uncomment what this project actually uses --------------------------
+    // --- Uncomment only what the code kept in the vault uses ----------------
     //
     // "ghcr.io/devcontainers/features/node:1":   { "version": "lts" },
     // "ghcr.io/devcontainers/features/go:1":     { "version": "latest" },
@@ -69,8 +71,10 @@
   // Installs what the repository's own checks need, switches on the git hooks
   // in .github/scripts/hooks, which check a commit message before git records
   // it, and sets the commit message template that spells out the format.
-  // Append your project's bootstrap command once it has one, for example
-  // `&& npm ci`, `&& pip install -e .`, `&& go mod download`, or
+  // To search and read the offline knowledge bases here, append
+  // `&& python3 -m pip install --user libzim`, which knowledge-base.py alone
+  // needs. Code kept in the vault appends its bootstrap step the same way, for
+  // example `&& npm ci`, `&& pip install -e .`, `&& go mod download`, or
   // `&& cargo fetch`.
   "postCreateCommand": "python3 -m pip install --user --require-hashes --requirement .github/scripts/requirements.txt && git config core.hooksPath .github/scripts/hooks && git config commit.template .github/commit-template.txt"
 }

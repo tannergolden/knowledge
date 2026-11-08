@@ -31,6 +31,7 @@ We value **small, frequent, and high-quality** contributions that adhere to our 
 
 ### 1. Prepare Your Environment
 
+- Read [Working In The Vault](../.docs/introduction/Working-In-The-Vault.md) first: what to read before a change, the rules the checks enforce, and how commits and reviews work here.
 - Fork the repository (for external contributors).
 - Set up your local toolchain so it matches CI. The exact command is this project's own - whatever `.github/workflows/checks.yml` is configured to run is the authority, so start there if you are unsure. The [development container](../.devcontainer/README.md) does the repository's part of this for you.
 - Switch on the git hooks, once per clone. They check each commit message and sign-off, and scan what you stage for secrets, before git records anything - the same checks a pull request runs, while fixing a mistake still costs nothing:
@@ -69,7 +70,9 @@ We strictly enforce **Conventional Commits** (`type(scope): summary`). This is c
 
 - **Linting**: All code must pass the linter before submission. Run this project's lint command locally - the one configured as `lint-command` in `.github/workflows/checks.yml`.
 - **Testing**: Unit tests are required for all logic updates. Run the `test-command` from the same file to verify.
-- **Documentation**: Update the relevant `docs/` files if your change impacts project behavior or setup instructions.
+- **The vault's checks**: `python3 .github/scripts/check-vault.py` passes, as 🧠 Vault checks on every pull request, and `python3 .github/scripts/update-vault.py` has nothing left to redraw.
+- **Documentation**: Update the relevant pages in `.docs/`, and the README of each folder the change touches, if your change affects how the vault works or how it is set up.
+- **No personal data**: the public template holds blank scaffolds only. Never fill one in here, and never paste a note from a vault into a change, an issue or a pull request ([Personal Data & Secrets](../.docs/operations/Personal-Data-&-Secrets.md)).
 
 ### Test Policy (required)
 
@@ -82,14 +85,14 @@ This is a **mandated policy**, not a preference:
 
 ### Coding Style
 
-- **Formatting**: this project's formatter is the authority, and its lint command must pass. Record which one it is in `docs/technical/` so the choice is written down somewhere rather than inferred.
+- **Formatting**: this project's formatter is the authority, and its lint command must pass. Record which one it is in `.docs/technical/` so the choice is written down somewhere rather than inferred.
 - **Naming**: follow the prevailing convention of the language you are writing in. Consistency with the surrounding file beats consistency with any other project.
 - **Types**: where the language has a strict mode, use it. Prefer an explicit type at a public boundary over an inferred one.
 - **Logic**: favour pure functions and immutability; use guard clauses rather than deep nesting; raise errors with enough context to act on and handle them at a boundary.
 
 ### Testing Standards
 
-- **Location**: unit tests go in `tests/unit/`, unless your language's convention keeps them beside the source (`foo_test.go`, `foo.test.ts`); integration and end-to-end suites go in `tests/integration/` and `tests/e2e/`. Record which in `docs/technical/testing/Unit-Test-Standards.md`, instantiated from its seed.
+- **Location**: each test file sits beside the scripts it covers in `.github/scripts/`, named `test_*.py`, where the `test-command` above finds it.
 - **Mocking**: always mock network/API calls; isolate pure logic from heavy dependencies.
 - **Naming**: name each test for the behaviour it pins down - `<unit> should <behaviour> when <condition>` - in whatever structure your test framework uses, with assertions that say what failed.
 - **Gate**: the test suite must pass before merge; add meaningful tests for every logic change, not assertions that cannot fail.
@@ -130,7 +133,7 @@ AI tools are welcome here, and the rules for what they produce are the rules for
 - **Review and test it as your own.** Generated code meets the same test policy, and you must be able to explain every line of it.
 - **Never paste secrets, credentials, or anything private into a tool** that sends it elsewhere.
 
-If this project gives AI agents instructions of their own, an agent working here follows them too.
+An agent working here also follows [`AGENTS.md`](../AGENTS.md): the universal rules, then the rules every AI follows in a personal knowledge vault.
 
 ### 4. Review Etiquette
 
@@ -150,6 +153,7 @@ logic it calls lives in `tannergolden/standards`.
 | Task                       | Handling     | Tooling                                                      |
 | :------------------------- | :----------- | :----------------------------------------------------------- |
 | **Lint, Test & Build**     | 🤖 Automated | `checks.yml` (required check `ci`)                           |
+| **Vault Checks**           | 🤖 Automated | `vault.yml` (notes, links, personal data, scripts' tests)    |
 | **Dependency Review**      | 🤖 Automated | `checks.yml` (required check `ci`; public repositories)      |
 | **Secret Scanning**        | 🤖 Automated | `checks.yml` (required check `secrets`)                      |
 | **Static Analysis**        | 🤖 Automated | `checks.yml` (CodeQL, advisory)                              |
@@ -166,6 +170,8 @@ logic it calls lives in `tannergolden/standards`.
 | **Dependency Updates**     | 🤖 Automated | Dependabot + `dependabot-automerge.yml` (patch & minor only) |
 | **CI Failure Escalation**  | 🤖 Automated | `ci-failure-alert.yml`                                       |
 | **Stub Ceiling Checks**    | 🤖 Automated | `verify-stubs.yml` (daily)                                   |
+| **Template Sync**          | 🤖 Automated | `template-sync.yml` (when run; a template checks its list)   |
+| **Intelligence Sync**      | 🤖 Automated | `intelligence-sync.yml` (weekly: the rules in `AGENTS.md`)   |
 | **Branch Protection**      | 🤖 Automated | Rulesets, applied by dispatching `apply-standards.yml`       |
 | **Merge Gate (green CI)**  | 🤖 Automated | Required status checks, set by those rulesets                |
 | **Priority Assessment**    | 🧑‍💻 Manual    | Human Review                                                 |
