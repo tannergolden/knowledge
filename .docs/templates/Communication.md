@@ -1,82 +1,88 @@
 <!--
-title: '💬 COMMUNICATION GUIDELINES'
-description: 'Channels, expectations, and etiquette for communicating across issues, discussions, and reviews.'
-type: template
+title: '💬 COMMUNICATION FORMATS'
+description: 'The formats for meeting notes and status updates written in this repository''s issues, discussions and pull requests, and where each kind of message goes. A meeting in the owner''s own life is a Memory event, and a project''s progress goes in its Log, never these.'
+type: 'template'
+keywords: ['meeting notes', 'status update', 'issues', 'discussions', 'pull requests', 'template']
 -->
+
+<!-- On copying: paste the format you need into the issue, the discussion or the pull request it belongs to, and replace every [bracketed] placeholder; none of these is copied to a file. A meeting or an event in the owner's own life is a Memory event, made from Memory/.template/Event.md; a project's progress goes in its Log.md, and a venture's in its own Log.md; a decision about the vault is an ADR in .docs/adrs/. Keep the owner's personal context out of an issue or a discussion on a public repository. Delete this note from the copy. -->
 
 <div align="center">
 
-# 💬 COMMUNICATION GUIDELINES
+# 💬 COMMUNICATION FORMATS
 
 <a name="top"></a>
 
-**Guidelines and templates for maintaining clear, transparent, and high-velocity team communication.**
+**Short formats for the notes and updates written in issues, discussions and pull requests.**
 
-_Transparent flow. Rapid alignment. Global scale._
+_Say what changed, what comes next and what is in the way._
 
 </div>
 
 ---
 
-> [!IMPORTANT]
-> **AI AGENT DIRECTIVE**: Use these formats to summarize meetings and share progress. Transparency reduces rework and ensures everyone (including AI agents) has context.
+## 📅 Meeting Notes
+
+For a call about the repository's work, posted to the issue or the discussion it concerns:
+
+```markdown
+### [Meeting name] - [YYYY-MM-DD]
+
+- **Participants**: [@handle, @handle]
+- **Objective**: [What the meeting was for]
+- **Decisions**:
+  - [Decision]
+- **Action items**:
+  - [ ] [@handle]: [Task]
+```
 
 ---
 
-## 📅 Meeting Notes Template
+## 💓 Status Update
 
-Use this format for recording meeting outcomes.
+For a change that takes more than a day, posted to its issue or its draft pull request:
 
-### [Meeting Name] - [YYYY-MM-DD]
+```markdown
+### Status: [The change] - [YYYY-MM-DD]
 
-- **Participants**: @user1, @user2
-- **Objective**: Discuss [Topic]
-- **Key Decisions**:
-  - [Decision 1]
-  - [Decision 2]
-- **Action Items**:
-  - [ ] @user1: Complete [Task]
-  - [ ] @user2: Review [Document]
+- **State**: [On track / At risk / Blocked]
+- **Done**: [What landed since the last update]
+- **Next**: [What comes next]
+- **Blocked by**: [What is in the way, or nothing]
+```
 
 ---
 
-## 📢 Project Heartbeats / Status Updates
+## 📣 Who Hears About A Change
 
-Standardized weekly update format:
-
-### 💓 Heartbeat: [Project Name] - Week of [Date]
-
-- **Summary**: High-level status (On Track / At Risk / Blocked).
-- **Achievements**: What was completed this week.
-- **Focus**: What is the priority for next week.
-- **Blockers**: Anything preventing progress.
+- **The owner** is told which files changed and what is not yet committed, at the end of every
+  task, as the root [`README.md`](/README.md) says under What Done Means.
+- **Everyone who uses the template** reads each version's release notes; a change that asks them to
+  act is also announced in Discussions, under Announcements, where Discussions are switched on.
+- **A decision about the vault** is recorded as an ADR in `.docs/adrs/`, made from the
+  [ADR form](/.docs/templates/ADR.md), and linked from the pull request that carries it.
 
 ---
 
-## 🤝 Stakeholder Communication
+## 🧰 Where Each Conversation Goes
 
-- **Updates**: Provide bi-weekly summaries to stakeholders.
-- **Escalation**: If a project is at risk, notify stakeholders immediately with a mitigation plan.
-- **Transparency**: Keep all technical decisions documented in ADRs (Architecture Decision Records).
-
----
-
-## 🧰 Tools
-
-- **Slack/Discord**: For real-time chat.
-- **GitHub Discussions**: For async design talks.
-- **GitHub Issues**: For tracking work and feedback.
+- **Issues**: a problem or a request, opened from one of the forms.
+- **Discussions**: questions and ideas, where they are switched on.
+- **Pull requests**: every change, with a summary of what changed and why.
+- **Memory and the Log**: in a vault, what happened in the owner's own world, never an issue.
 
 ### 🔗 See also
 
 > [!TIP]
-> Every canonical guide is indexed in the [&#x1F4DA; Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md). If you rename or move a file, update every reference to it across the repository to prevent link drift.
+> [`SUPPORT.md`](/.github/SUPPORT.md) says which channel answers which question. Every canonical
+> guide is indexed in the
+> [&#x1F4DA; Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md).
 
 ---
 
 <div align="center">
 
-**Connected teams. Accelerated delivery.**
+**Written once, where the next reader will look.**
 
 [↑ Back to Top](#top)
 

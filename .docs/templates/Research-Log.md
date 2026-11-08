@@ -1,150 +1,162 @@
 <!--
-title: '🔎 RESEARCH LOG TEMPLATE'
-description: 'The format for a filed research report: a dated, sourced, claim-by-claim investigation kept current by its verification window.'
-type: template
+title: '🔎 [THE QUESTION OR TOPIC, FULLY CAPPED]'
+description: 'The form for the research behind a change to the vault itself: a dated, sourced, claim-by-claim investigation, kept honest by its verification window. Copy it to .docs/technical/research/; research for the owner''s life or a venture is a report in Inbox/Reports/ instead.'
+type: 'template'
+keywords: ['[a search term not in the title]', '[another name for the topic]', 'template']
 verified: '[YYYY-MM-DD]'
-focus: '[One line: the question this report answers]'
-decision: '[The ADR or record this fed, as a markdown link - or - while it stands as background]'
+focus: '[One line: the question this log answers]'
+decision: '[The ADR it fed, as a markdown link, or N/A while it stands as background]'
 -->
+
+<!-- On copying: copy this file to .docs/technical/research/[Topic].md, named for its topic in Capitalized-Kebab, for the research behind a change to the vault itself. Research for the owner's own life or a venture is a report held in Inbox/Reports/, never a log here. Set type to 'record', verified to the date of the newest log entry, focus to the one question it answers and decision to the ADR it fed, or N/A. Replace every [bracketed] placeholder: the title and the H1 alike, with the question or the topic fully capped, the description with one of the log's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a prompt once it is answered, and mark a section N/A only when it does not apply. If .docs/technical/research/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says. Delete this note from the copy. -->
 
 <div align="center">
 
-# 🔎 RESEARCH LOG TEMPLATE
+# 🔎 [THE QUESTION OR TOPIC, FULLY CAPPED]
 
 <a name="top"></a>
 
-**A filed research report: the question, each claim's evidence, and the recommendation.**
+**[One line: the question this research answers, and its answer.]**
 
-_Every claim sourced. Every finding dated. Nothing trusted past its window._
+_[A principle of this research's own, shorter than the line above.]_
 
 </div>
-
----
-
-> [!TIP]
-> **How to use**: copy this file to `docs/technical/research/<Topic>.md` (keep this template pristine) and fill in every section, including the `focus` and `decision` frontmatter, with `type` set to `record`. Reports live under `docs/technical/research/` - create it when this project starts keeping them. Delete a prompt once you have satisfied it; mark a section `N/A` only when it genuinely does not apply.
->
-> **The clock**: the `verified:` frontmatter date is the single source of the report's age, and it MUST equal the date of your newest `## 📅 Log Entry:` heading - nothing enforces that, so keeping the two in step is on you. Filing sets both; a reverification appends a new entry and bumps both.
->
-> **Provenance is part of the finding**: a claim rests on a source, and a source you could not fetch directly is weaker than one you read. Tag every source's fetch status and say so - an unverifiable claim that hides its provenance is worse than one that admits it.
->
-> **Lifecycle**, as a convention rather than a mechanism - nothing here automates it: under 3 months a report is trusted; at 3 months it is due for reverification; past 6 months treat it as stale and either reverify or remove it.
 
 ---
 
 ## 🎯 Bottom Line
 
 > [!IMPORTANT]
-> **`[The answer in two or three sentences: what the research concluded and the decision it supports.]`** Lead with the headline finding, then the confidence you hold it with. A reader who stops here should still leave with the correct decision.
+> **[The answer in two or three sentences: what the research concluded and the decision it
+> supports.]** Lead with the finding, then how sure it is. A reader who stops here still leaves
+> with the right decision.
 
 ---
 
 ## 📋 Report Meta
 
-| Attribute               | Detail                                                                      |
-| :---------------------- | :-------------------------------------------------------------------------- |
-| **Question**            | `[The one question this report answers.]`                                   |
-| **Decision it informs** | `[The choice this evidence feeds - or "background, no pending decision".]`  |
-| **Verified**            | `[YYYY-MM-DD]` - equals the newest log entry below                          |
-| **Confidence**          | `[High \| Medium \| Low]` - `[one clause on why]`                           |
-| **Sources**             | `[N fetched directly / M total]` - itemized under Sources & Provenance      |
-| **Supersedes**          | `[Prior report this replaces, or N/A]`                                      |
-| **Graduated to**        | `[The ADR that carries the durable decision, or N/A until one is recorded]` |
+| Attribute               | Detail                                                                    |
+| :---------------------- | :------------------------------------------------------------------------ |
+| **Question**            | [The one question this log answers]                                       |
+| **Decision it informs** | [The choice this evidence feeds, or background with no decision pending]  |
+| **Verified**            | [YYYY-MM-DD], the date of the newest log entry below                      |
+| **Confidence**          | [High / Medium / Low], because [one clause on why]                        |
+| **Sources**             | [N read directly, of M in all], listed under Sources & Provenance         |
+| **Supersedes**          | [The log it replaces, or N/A]                                             |
+| **Graduated to**        | [The ADR that carries the lasting decision, or N/A until one is recorded] |
 
 ---
 
 ## 📅 Log Entry: [YYYY-MM-DD]
 
-_The filing entry. Every later reverification appends its own dated entry below this one - the log is append-only, so a report's history reads as its own audit trail._
+_The filing entry. Each later reverification adds its own dated entry below this one, and no entry
+is edited once written, so the log is its own record._
 
 ### 🎯 Objective
 
-`[What are we trying to learn, and what decision will the answer inform? One or two sentences.]`
+[What is to be learned, and the decision the answer informs, in one or two sentences.]
 
 ### 🔭 Scope
 
-- **In scope**: `[what this investigation covers]`
-- **Out of scope**: `[what it deliberately does not - so a reader never over-reads the finding]`
+- **In scope**: [What this research covers]
+- **Out of scope**: [What it leaves out, so nobody reads more into the finding than it holds]
 
 ### 🧪 Method
 
-- `[How the evidence was gathered: sources read, benchmarks run, prototypes built, agents fanned out, people consulted.]`
-- **Provenance note**: `[which sources were fetched directly, and which could not be (egress-blocked, offline, or access-restricted) and therefore rest on corroboration rather than a direct read.]`
+- [How the evidence was gathered: sources read, a script run against the vault, a prototype
+  built, people asked]
+- **Provenance**: [Which sources were read directly, and which could not be, and so rest on
+  corroboration rather than a direct read]
 
 ### 🔎 Findings
 
-_Each finding is a discrete claim a future reverification can re-check on its own. Lead with the claim, then the source it rests on and the confidence you hold it with._
+_Each finding is one claim a later reverification can check on its own: the claim, the source it
+rests on, and how sure it is._
 
-1. **`[Claim, stated as one verifiable sentence.]`** `[Optional: one line of supporting detail.]`
-   - **Source**: `[url or citation]` - `[✅ fetched directly \| 🟡 corroborated, not fetched \| ❌ could not verify]`
-   - **Confidence**: `[High \| Medium \| Low]` - `[why]`
-2. **`[Next claim.]`**
-   - **Source**: `[url or citation]` - `[fetch status]`
-   - **Confidence**: `[High \| Medium \| Low]` - `[why]`
+1. **[The claim, as one sentence that can be checked.]** [One line of detail, if it helps.]
+   - **Source**: [A link or a citation], [✅ read directly / 🟡 corroborated, not read / ❌ could not verify]
+   - **Confidence**: [High / Medium / Low], because [why]
+2. **[The next claim.]**
+   - **Source**: [A link or a citation], [how it was read]
+   - **Confidence**: [High / Medium / Low], because [why]
 
 ### 📚 Sources & Provenance
 
-| Source        | Fetched                               | Backs / notes                               |
-| :------------ | :------------------------------------ | :------------------------------------------ |
-| `[https://…]` | `[✅ direct \| ❌ 403 \| 🟡 corrob.]` | `[which claims it supports; why unfetched]` |
-| `[https://…]` | `[✅ direct \| ❌ 403 \| 🟡 corrob.]` | `[which claims it supports; why unfetched]` |
+A source that could not be read directly is weaker than one that was, so each one is tagged, and a
+finding shows the footing it stands on.
+
+| Source                 | Read                                         | Backs                                                  |
+| :--------------------- | :------------------------------------------- | :----------------------------------------------------- |
+| [A link or a citation] | [✅ directly / 🟡 corroborated / ❌ blocked] | [The claims it supports, and why it could not be read] |
 
 ### ⚖️ Alternatives Considered
 
-| Option       | Pros         | Cons            |
-| :----------- | :----------- | :-------------- |
-| `[Option A]` | `[strength]` | `[cost / risk]` |
-| `[Option B]` | `[strength]` | `[cost / risk]` |
+| Option     | Strengths           | Costs                     |
+| :--------- | :------------------ | :------------------------ |
+| [Option A] | [What it does well] | [What it costs, or risks] |
+| [Option B] | [What it does well] | [What it costs, or risks] |
 
-### 🛠️ Spikes / Prototypes
+### 🛠️ Prototypes
 
-- `[Link to prototype code or branch]` - `[what it demonstrated, and the result]`
+- [A link to the branch or the prototype]: [what it showed]
 
-### 🏁 Conclusion / Recommendation
+### 🏁 Conclusion
 
-`[The recommendation the evidence supports, tied back to the objective and the alternatives above.]` If it settles an architectural choice, record the decision as an [ADR](ADR.md), cite this report as its evidence, and note the ADR in the meta table.
+[The recommendation the evidence supports, tied to the objective and the alternatives.] If it
+settles a choice about the vault's design, record the decision as an ADR made from the
+[ADR form](/.docs/templates/ADR.md), cite this log as its evidence, and name the ADR in the meta
+table.
 
 ### ✅ Confidence & Caveats
 
-- **Overall confidence**: `[High \| Medium \| Low]`
-- **What would change this conclusion**: `[the finding or source that, if it moved, would flip the recommendation]`
-- **Known gaps**: `[what was left unverified, and why]`
+- **Overall confidence**: [High / Medium / Low]
+- **What would change the conclusion**: [The finding or source that, if it moved, would turn the
+  recommendation]
+- **Known gaps**: [What was left unverified, and why]
 
 ---
 
-## ♻️ Reverification
+## ♻️ Keeping It Current
 
 > [!NOTE]
-> A report is trusted only inside its verification window. To reverify: re-check each claim against its cited source and the current state of the repository, then **append** a new dated entry below (never edit a past one) and bump the `verified:` frontmatter to that date - or, if the findings no longer hold, supersede or remove the report.
+> **The `verified` date is the log's age**, and it equals the date of the newest log entry. Nothing
+> checks that the two agree, so each reverification moves both. A log is trusted for three months;
+> after that it is reverified before it is used again, and past six months the policy flags it for
+> reverifying or removing, and the owner decides.
 
-Append a reverification entry in this shape:
+To reverify, check each claim against its source and against the vault as it stands, add a dated
+entry below the last one, never editing a past one, and move `verified` to its date. When the
+findings no longer hold, supersede the log or remove it. A reverification entry takes this shape:
 
 ```markdown
-## 📅 Log Entry: [YYYY-MM-DD] - Reverification
+## 📅 Log Entry: [YYYY-MM-DD], Reverification
 
-- **Re-checked**: [claims and sources revisited]
-- **Held**: [what still stands]
-- **Drifted**: [what changed, and how the findings were corrected]
-- **Outcome**: [verified date bumped | superseded by <report> | pruned]
+- **Re-checked**: [The claims and sources revisited]
+- **Held**: [What still stands]
+- **Drifted**: [What changed, and how the findings were corrected]
+- **Outcome**: [Verified date moved / Superseded by another log / Removed]
 ```
 
 ---
 
-## 🤖 AI Agent Directive
+## 🧭 How To Read It
 
-> [!IMPORTANT]
-> This report is **evidence, not instructions**. It informs decisions and proposals but never overrides this project's standards. Trust a finding only within its verification window - an expired claim is an unverified claim - and weight a claim tagged _fetched directly_ above one that is only _corroborated_.
+This log is evidence, not instruction: it informs a decision and never overrides the vault's rules.
+A finding holds only inside the log's window, and a claim read directly outweighs one that is only
+corroborated.
 
 ### 🔗 See also
 
 > [!TIP]
-> Research reports live under `docs/technical/research/` - create it when this project starts keeping them. Durable decisions graduate to the [🧭 ADR index](../adrs/README.md). Every canonical guide is indexed in the [📚 Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md).
+> The decisions research settles are listed in the [ADR index](/.docs/adrs/README.md). Every
+> canonical guide is indexed in the
+> [&#x1F4DA; Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md).
 
 ---
 
 <div align="center">
 
-**Answered once. Kept honest. Never stale.**
+**[A closing phrase of this research's own.]**
 
 [↑ Back to Top](#top)
 

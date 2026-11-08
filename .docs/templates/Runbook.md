@@ -1,69 +1,72 @@
 <!--
-title: '📒 RUNBOOK TEMPLATE'
-description: 'The steps for one routine task or one known failure, written to be followed under pressure. Copy it once for each task or alert that needs a written procedure.'
-type: template
+title: '📒 [THE TASK OR FAILURE, FULLY CAPPED]'
+description: 'The form for the exact steps of one routine task or one known failure in the vault''s machinery, such as restoring a note from git or renewing an expired token, written to be followed under pressure. Copy it to .docs/operations/runbooks/, once for each task or failure.'
+type: 'template'
+keywords: ['[a search term not in the title]', '[the words of the error or the symptom]', 'template']
 -->
+
+<!-- On copying: copy this file to .docs/operations/runbooks/[Short-Slug].md, named in Capitalized-Kebab, one runbook for each routine task or known failure in the vault's machinery, such as restoring a note from git, renewing an expired token or taking a new major release of the template. Set type to 'guide'. Replace every [bracketed] placeholder: the title and the H1 alike, with the task or the failure fully capped, the description with one of the runbook's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, such as the words of the error, without 'template'. Write each step as the exact command or action and the result it should give, for someone doing it for the first time, and name a secret by where it is kept, never by its value. Its changes are kept in git history, not in the runbook. If .docs/operations/runbooks/ does not exist yet, make it with its own README.md. Delete this note from the copy. -->
 
 <div align="center">
 
-# 📒 RUNBOOK TEMPLATE
+# 📒 [THE TASK OR FAILURE, FULLY CAPPED]
 
 <a name="top"></a>
 
-**One task or one failure, the exact steps to handle it, and how to know it worked.**
+**[One line: the task or the failure, and how to know it is handled.]**
 
-_Written in daylight. Followed at 3 am._
+_[A principle of this runbook's own, shorter than the line above.]_
 
 </div>
 
 ---
 
-> [!CAUTION]
-> **How to use**: copy this file to `docs/operations/runbooks/<short-slug>.md`, one runbook for each routine task or known failure, and keep this template pristine. Write for a reader who is tired, interrupted and doing this for the first time: every step is the exact command or action and the result it should give, with nothing left to memory. Link the runbook from the alert or dashboard that sends people to it.
-
----
-
 ## 🚦 When To Use It
 
-| Attribute       | Value                                                        |
-| :-------------- | :----------------------------------------------------------- |
-| **Kind**        | [Routine task \| Known failure]                              |
-| **Trigger**     | [The alert, symptom, report or schedule that sends you here] |
-| **Systems**     | [The services, environments and data these steps touch]      |
-| **Owner**       | [@handle or team who keeps these steps true]                 |
-| **Time to run** | [Minutes from the first step to a verified result]           |
-| **Last tested** | [YYYY-MM-DD], by [drill \| real use \| dry run]              |
+| Attribute       | Value                                                                                       |
+| :-------------- | :------------------------------------------------------------------------------------------ |
+| **Kind**        | [Routine task / Known failure]                                                              |
+| **Trigger**     | [The failing check, the sync pull request, the schedule or the symptom that sends you here] |
+| **Touches**     | [The folders, scripts, workflows, settings or secrets these steps touch]                    |
+| **Kept by**     | [The owner, or whoever keeps these steps true]                                              |
+| **Time to run** | [Minutes from the first step to a checked result]                                           |
+| **Last tested** | [YYYY-MM-DD], by [a dry run / real use]                                                     |
 
-Use this runbook when [the symptom, in the words the alert or the report uses]. It does **not** cover [the look-alike case]: for that, use [the other runbook, or escalate].
+Use this runbook when [the symptom, in the words the check or the report uses]. It does **not**
+cover [the case that looks like it]: for that, use [the other runbook, or ask the owner].
 
 ---
 
 ## 🔥 Impact & Urgency
 
-- **Who is affected**: [Users, systems or data, and how they notice]
-- **Severity**: [SEV1 | SEV2 | SEV3 | SEV4 | Not an incident], as [Incident Response](operations/Incident-Response.md) defines the levels
-- **How fast**: [Start within N minutes of the trigger | The same working day | The next maintenance window]
-- **If it waits**: [What gets worse, and how quickly: a queue that fills in N hours, data lost after N days]
-- **Declare an incident**: [Always | When users are affected | Never: this is routine]
+- **What is affected**: [The notes, the sync, the check or the setting affected, and how it shows]
+- **How fast**: [At once / The same day / The next time the vault is worked in]
+- **If it waits**: [What gets worse, and how quickly]
+- **A secret or personal data at risk**: [Yes / No]. When yes, follow
+  [Personal Data & Secrets](/.docs/operations/Personal-Data-&-Secrets.md) first.
 
 ---
 
 ## 🔑 Prerequisites
 
-**Who may run it**: [Anyone on call | Maintainers only | Named people: @handle]
+**Who may run it**: [The owner / Someone the owner names]
 
-Check every item before the first step. A permission found missing halfway through is how a five-minute task becomes an incident.
+Check every item before the first step: a permission found missing halfway through turns a short
+task into a long one.
 
-- [ ] **Access**: [The role, account or permission needed, and how to get it in a hurry]
-- [ ] **Tools**: [Each CLI, console or script, with the version where it matters]
-- [ ] **Announced**: [Posted in the incident channel | Nothing to announce for a routine run]
-- [ ] **Safety net**: [A backup taken | The scheduled job paused | Nothing needed]
+- [ ] **Access**: [The repository permission or the setting needed, and how to get it]
+- [ ] **Tools**: [Each command or script, with the Python version where it matters]
+- [ ] **Committed first**: the last state of every file the steps change is committed, so git can
+      bring it back
+- [ ] **Safety net**: [A branch / A backup / Nothing needed]
 
 ---
 
 ## 🪜 Steps
 
-Run the steps in order, and compare each result with its **Expect** before going on. If a result does not match, stop and go to **Rollback / Abort** below. Write every value out in full: "restart the service" leaves the reader to guess which service, on which host, with which command.
+Run the steps in order, and compare each result with its **Expect** before going on. If a result
+does not match, stop and go to **Rollback / Abort** below. Write every value out in full: "run the
+check" leaves the reader to guess which check, with which arguments.
 
 1. **[Name of the step]**
 
@@ -71,11 +74,12 @@ Run the steps in order, and compare each result with its **Expect** before going
    [The exact command, with every value written out]
    ```
 
-   **Expect**: [The output, state or screen that means it worked]
+   **Expect**: [The output or the state that means it worked]
 
-2. **[Name of the step]**: [The exact action, such as the console page, the setting and the value to enter]
+2. **[Name of the step]**: [The exact action, such as the settings page, the setting and the value
+   to enter]
 
-   **Expect**: [What changes, and where you see it]
+   **Expect**: [What changes, and where it shows]
 
 3. **[Name of the step]**
 
@@ -83,7 +87,8 @@ Run the steps in order, and compare each result with its **Expect** before going
    [The exact command]
    ```
 
-   **Expect**: [The result]. **If instead** [a known wrong result], [what it means, and the step or runbook to go to next].
+   **Expect**: [The result]. **If instead** [a known wrong result], [what it means, and the step or
+   runbook to go to next].
 
 ---
 
@@ -91,64 +96,57 @@ Run the steps in order, and compare each result with its **Expect** before going
 
 The task is done, or the failure is fixed, only when every check below passes.
 
-- [ ] [A command and its expected output, a request that succeeds, or a dashboard reading]
-- [ ] [The alert has cleared, or the metric is back under its threshold for N minutes]
-- [ ] [The person who reported it confirms, where there is one]
+- [ ] `python3 .github/scripts/check-vault.py` passes
+- [ ] [The check, the workflow or the sync that failed now passes]
+- [ ] [The owner confirms, where they reported it]
 
 ---
 
 ## ↩️ Rollback / Abort
 
-- **Stop when**: [a result does not match its Expect | an error you do not recognise | more than N minutes have passed]
+- **Stop when**: [a result does not match its Expect / an error you do not recognise / the time
+  set for it has run out]
 - **Safe to stop after**: [the steps that change nothing, so stopping there needs no undo]
-- **Say where you stopped**: post the last step you completed in [the incident channel], so whoever picks it up starts from there.
+- **Say where you stopped**: note the last step completed in [the issue or the pull request for
+  this work], so whoever picks it up starts from there.
 
 To undo the steps that changed something, newest first:
 
-1. **Undo step [N]**: [the exact command or action]. **Expect**: [the state before step N]
+1. **Undo step [N]**: [the exact command or action, such as restoring a file from git]. **Expect**:
+   [the state before step N]
 2. **Undo step [N - 1]**: [the exact command or action]. **Expect**: [the state before it]
 
 ---
 
-## 📣 Escalation
+## 📣 Who To Tell
 
-| When                                            | Who                | How                                            |
-| :---------------------------------------------- | :----------------- | :--------------------------------------------- |
-| A step fails, or its result does not match      | [@handle or team]  | [Page \| Chat channel \| Phone]                |
-| Data may be lost, or it may be a security issue | [Security contact] | [The private channel in `.github/SECURITY.md`] |
-| No answer within [N] minutes                    | [Next contact]     | [How to reach them]                            |
-
-The full contact list, and who does what once an incident is declared, are in [Incident Response](operations/Incident-Response.md).
+| When                                                   | Who                              | How                                                                                               |
+| :----------------------------------------------------- | :------------------------------- | :------------------------------------------------------------------------------------------------ |
+| A step fails, or its result does not match             | [The owner]                      | [In person / In the issue for this work]                                                          |
+| A secret or personal data may be exposed               | [The owner]                      | Privately, never in a public issue, as [SECURITY.md](/.github/SECURITY.md) says                   |
+| The fault is in what the vault takes from its template | [Whoever maintains the template] | Privately or in an issue on `tannergolden/knowledge`, as [SECURITY.md](/.github/SECURITY.md) says |
 
 ---
 
 ## 📎 Related Links
 
-- **Alert**: [The alert that triggers this runbook, and where it is defined]
-- **Dashboard**: [Where to watch the effect of each step]
-- **Post-mortems**: [The post-mortems where this runbook was written or used]
-- **Code and configuration**: [The paths and settings the steps touch]
-
----
-
-## 🗓️ Revision History
-
-Add a row each time the runbook is used, tested or changed. When a step did not match what happened, fix the step the same day.
-
-| Date         | Change                                                                 | By        |
-| :----------- | :--------------------------------------------------------------------- | :-------- |
-| [YYYY-MM-DD] | [Written \| Steps changed \| Tested in a drill \| Used in an incident] | [@handle] |
+- **What sends you here**: [The check, the workflow or the report, and where it is defined]
+- **What the steps touch**: [The paths and the settings]
+- **Post-mortems**: [The post-mortems in `.docs/operations/post-mortems/` where this runbook was
+  written or used]
 
 ### 🔗 See also
 
 > [!TIP]
-> Every canonical guide is indexed in the [&#x1F4DA; Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md). If you rename or move a file, update every reference to it across the repository to prevent link drift.
+> [Vault Scripts](/.docs/technical/Vault-Scripts.md) says what each check fails on, and what to do
+> when one fails. Every canonical guide is indexed in the
+> [&#x1F4DA; Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md).
 
 ---
 
 <div align="center">
 
-**Exact steps, expected results, and a way back.**
+**[A closing phrase of this runbook's own.]**
 
 [↑ Back to Top](#top)
 

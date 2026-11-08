@@ -1,106 +1,114 @@
 <!--
-title: '📄 ADR TEMPLATE'
-description: 'The standard template for recording an architecture decision.'
-type: template
-status: '[Proposed | Accepted | Superseded | Deprecated]'
+title: '🧭 ADR-[NNNN]: [THE DECISION, FULLY CAPPED]'
+description: 'The form for one decision about the vault itself, such as its layout, its rules, its scripts or its automation: the context, the options weighed, the outcome and its consequences. Copy it to .docs/adrs/ when such a decision is made.'
+type: 'template'
+keywords: ['[a search term not in the title]', '[another name for the decision]', 'template']
+status: '[Proposed / Accepted / Superseded / Deprecated]'
 date: '[YYYY-MM-DD]'
-evidence: '[Commit-pinned permalink to the research report(s) that informed this, as a markdown link - or N/A]'
+evidence: '[A commit-pinned permalink to each research log behind it, as a markdown link, or N/A]'
 -->
+
+<!-- On copying: copy this file to .docs/adrs/ADR-[NNNN]-[Short-Slug].md, taking the next number and naming it in Capitalized-Kebab, to record one decision about the vault itself: its layout, its rules, its scripts or its automation. A decision in the owner's own life is a record in Memory/Decisions/, made from Memory/.template/Decision.md, and a venture's goes in its Administration/Decisions.md. Set type to 'record', status to the one that holds, date to the day it was decided, and evidence to a commit-pinned permalink to each research log behind it, or N/A; evidence never links a report in Inbox/Reports/, which only that folder's index links. Replace every [bracketed] placeholder: the title and the H1 alike, with the number and the decision fully capped, the description with one of the record's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a section or a row that does not apply. A later decision supersedes this one rather than rewriting it: this record is marked Superseded and links the one that replaces it. Delete this note from the copy. -->
 
 <div align="center">
 
-# 📄 ADR TEMPLATE
+# 🧭 ADR-[NNNN]: [THE DECISION, FULLY CAPPED]
 
 <a name="top"></a>
 
-**The standard template for recording an architecture decision.**
+**[One line: what was decided, as a reader should remember it.]**
 
-_Formalized rationale. Transparent intent. Auditable evolution._
+_[A principle of this decision's own, shorter than the line above.]_
 
 </div>
-
----
-
-> [!TIP]
-> **How to use**: copy this file to `docs/adrs/ADR-NNNN-Short-Slug.md` using the next sequential number (Capitalized-Kebab, keep this template itself pristine) and fill in every section. Set `type` to `record`, and `status`, `date`, and `evidence`, in the frontmatter above, and its row in the [ADR index](../adrs/README.md) is drawn from that frontmatter on the next push. Link the new record from the pull request that implements the decision. One decision per record; supersede rather than rewrite.
 
 ---
 
 ## 📋 Meta Information
 
 > [!NOTE]
-> **Status**, **Date**, and **Evidence** live in the frontmatter above - they feed the generated [ADR index](../adrs/README.md), so they are recorded once. This table records who was involved.
+> **Status**, **Date** and **Evidence** live in the frontmatter above and feed the
+> [ADR index](/.docs/adrs/README.md), so they are recorded once. This table records who took part.
 
-| Attribute     | Specification                               |
-| :------------ | :------------------------------------------ |
-| **Deciders**  | `[List of key stakeholders and architects]` |
-| **Consulted** | `[SMEs and external reviewers]`             |
-| **Informed**  | `[Affected engineering teams]`              |
+| Attribute     | Specification                                                             |
+| :------------ | :------------------------------------------------------------------------ |
+| **Deciders**  | [Who decided: the owner, and anyone they decided with]                    |
+| **Consulted** | [Who or what was asked: a person, an AI, a research log]                  |
+| **Informed**  | [Who it reaches: this vault alone, or every vault made from the template] |
+| **Amends**    | [The record this one amends or supersedes, as a link, or delete this row] |
 
 ---
 
 ## 🎯 Context & Problem Statement
 
-> [!NOTE]
-> Describe the technical context and the specific problem or requirement that necessitated this architectural decision. What constraints were we operating under?
+[The situation that called for a decision, the problem it solves and the limits it was made
+within, in a few short paragraphs.]
 
 ---
 
 ## 🚦 Decision Drivers
 
-- **Driver 1**: `[e.g., Scalability requirements for Peak Load]`
-- **Driver 2**: `[e.g., Team familiarity with specific technology stacks]`
-- **Driver 3**: `[e.g., Time-to-market constraints]`
+- **[Driver]**: [such as: every AI finds the rules without the home kit]
+- **[Driver]**: [such as: nothing about the owner leaves the vault]
+- **[Driver]**: [such as: a vault made before the change can still take it]
 
 ---
 
 ## 🏗️ Considered Options
 
-1. **Option A**: `[Description of the first architectural path]`
-2. **Option B**: `[Description of the second architectural path]`
-3. **Option C**: `[Description of the third architectural path]`
+1. **[Option A]**: [The first option, in one sentence]
+2. **[Option B]**: [The second option]
+3. **[Option C]**: [The third option]
 
 ---
 
 ## ✅ Decision Outcome
 
-**Chosen Option**: `[Option Name]`
+**Chosen Option**: [The option's name]
 
 ### Rationale for Selection
 
-`[Detailed explanation of why this option was selected over the alternatives, referencing the drivers above.]`
+[Why this option won over the others, against the drivers above.]
+
+### What Changed
+
+| Was | Is now |
+| :-- | :----- |
+| [How it was before] | [How it is now] |
+
+[Delete this table when the decision changes nothing already in the vault.]
 
 ---
 
 ## 📈 Consequence Matrix
 
-| Category         | Impact / Consequence                                          |
-| :--------------- | :------------------------------------------------------------ |
-| **Positive (+)** | `[e.g., Improved latency, reduced operational overhead]`      |
-| **Negative (-)** | `[e.g., Increased setup complexity, specific vendor lock-in]` |
-| **Neutral (~)**  | `[e.g., No change to existing CI/CD pipelines]`               |
+| Category         | Impact / Consequence                                            |
+| :--------------- | :-------------------------------------------------------------- |
+| **Positive (+)** | [such as: one description per folder, where every reader looks] |
+| **Negative (-)** | [such as: a vault made before the change takes a manual step]   |
+| **Neutral (~)**  | [such as: the note schema is unchanged]                         |
 
 ---
 
 ## ⚖️ Trade-off Comparative
 
-### Option A: `[Name]`
+### Option A: [Name]
 
-- ✅ `[Pro]`
-- ❌ `[Con]`
+- ✅ [What it does well]
+- ❌ [What it costs]
 
-### Option B: `[Name]`
+### Option B: [Name]
 
-- ✅ `[Pro]`
-- ❌ `[Con]`
+- ✅ [What it does well]
+- ❌ [What it costs]
 
 ---
 
 ## 🔗 Traceability & Links
 
-- `[Link to relevant Issue or PR]`
-- `[Link to technical documentation or RFC]`
-- `[Link to parent or related ADRs]`
+- [The pull request that carries the change]
+- [The research log, design or plan behind it, in `.docs/technical/`]
+- [The records it supersedes or amends, or that amend it]
 
 ### 🔗 See also
 
@@ -111,7 +119,7 @@ _Formalized rationale. Transparent intent. Auditable evolution._
 
 <div align="center">
 
-**One decision. One record. Zero ambiguity.**
+**[A closing phrase of this decision's own.]**
 
 [↑ Back to Top](#top)
 
