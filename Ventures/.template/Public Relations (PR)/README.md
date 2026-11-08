@@ -1,11 +1,11 @@
 <!--
 title: '📰 PUBLIC RELATIONS (PR)'
-description: 'The blueprint for a venture''s Public Relations (PR) folder, copied whole with the venture: this README becomes the folder''s own, with [Company] replaced. Read it before filing or looking for a venture''s announcements, press, media contacts, coverage or press kit.'
+description: '[Company]''s public voice: the messaging house, the press kit and the public log of what it has said, its communications plans, its crisis plan, and its media relationships and coverage. Read it before anything [Company] says in public, to the press or in a crisis.'
 type: 'template'
-keywords: ["communications", "press", "media contacts", "press kit", "coverage", "department folder", "template"]
+keywords: ["[the name of the company's press page or newsroom]", "template"]
 -->
 
-<!-- On copying: this README comes with the venture's folder. Replace [Company] with the venture's name, set type to "index", and give the copy its real title and description (Ventures/README.md, Rules). -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Public Relations (PR)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -23,23 +23,26 @@ _Nothing leaves [Company] for the press without a yes._
 
 ## 📂 What Goes Here
 
-The public voice of [Company]: its announcements, press and crisis communications, with its media contacts, coverage, press kit and PR positioning. The `public-relations` skill's company work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The public voice of [Company]: what it says, to whom and when, and how it answers in a crisis. The `public-relations` skill's company work lands here: announcements, press and crises. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
-- `Press.md`: media contacts, the coverage log, the press kit and the PR strategy.
-- Working files: announcements, press releases, crisis statements, media kit assets and drafts of outside communication.
+- `Press.md`: the messaging house and the spokesperson lines, the press kit, the public log of every statement released, the communications plans, the crisis plan, the media relationships and the coverage.
+- Working files: press releases and other drafts marked DRAFT, NOT FOR RELEASE, communications plans, live crisis responses with their update logs, interview briefings, and the press kit's assets, each named for what it covers and its date (`Press Release YYYY-MM-DD.md`).
 
 ---
 
 ## ↪️ What Goes Elsewhere
 
-- Brand voice and messaging live in `Sales & Marketing (S&M)/`, and customer communication in `Customer Experience (CX)/`.
+- Positioning and the brand voice live in `Sales & Marketing (S&M)/Brand.md`, and the campaign around a launch is the `sales-and-marketing` skill's; customer communication belongs to `Customer Experience (CX)/`.
+- Whether [Company] speaks at all on a company-level matter is decided in `Administration/Decisions.md`, and an agency's cost and contract are in the vendor register in `Operations & Logistics (O&L)/Operations.md`.
 
 ---
 
 ## 📏 Rules
 
-- Outside communication is sent only with the owner's yes.
-- What is said publicly about the company follows the voice in `Sales & Marketing (S&M)/Brand.md`.
+- Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- A statement enters the public log only after the owner confirms it went out, and what [Company] says publicly follows the voice in `Sales & Marketing (S&M)/Brand.md` and squares with that log.
+- A statement that names a person or discloses anyone's personal data passes the `legal-and-compliance` skill's review first.
+- A reporter's contact details stay in [Company]'s own systems: `Press.md` names each reporter and where their details are kept, never the details.
 
 ---
 

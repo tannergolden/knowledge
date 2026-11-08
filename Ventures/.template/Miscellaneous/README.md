@@ -1,11 +1,11 @@
 <!--
 title: '🗃️ MISCELLANEOUS'
-description: 'The blueprint for a venture''s Miscellaneous folder, copied whole with the venture: this README becomes the folder''s own, with [Company] replaced. Read it before putting a venture''s file that fits no department here, or moving one on to where it belongs.'
+description: '[Company]''s catch-all: files that belong to the venture but to none of its departments yet. Read it before filing such a file here, or when moving one on to where it belongs.'
 type: 'template'
-keywords: ["catch-all", "unfiled", "other files", "department folder", "template"]
+keywords: ["[the kind of files kept here]", "template"]
 -->
 
-<!-- On copying: this README comes with the venture's folder. Replace [Company] with the venture's name, set type to "index", and give the copy its real title and description (Ventures/README.md, Rules). -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Miscellaneous/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -37,6 +37,7 @@ Anything for [Company] that fits no department yet. It starts empty. Read this R
 
 ## 📏 Rules
 
+- Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
 - A file that belongs to a department moves there; once several files here share a subject, a fitting home is proposed for them.
 - Nothing personal and nothing general: personal information goes to `Profile/` or `Memory/`, and general knowledge to `Library/`.
 

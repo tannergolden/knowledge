@@ -1,11 +1,11 @@
 <!--
 title: '📊 BUSINESS INTELLIGENCE (BI)'
-description: 'The blueprint for a venture''s Business Intelligence (BI) folder, copied whole with the venture: this README becomes the folder''s own, with [Company] replaced. Read it before filing or looking for a venture''s KPIs, dashboards, data sources or reports.'
+description: '[Company]''s analytics: the governed definition of every metric, the north star, the scorecard, and the data sources, dashboards and charts behind them. Read it before defining, reporting or charting any [Company] number.'
 type: 'template'
-keywords: ["analytics", "kpis", "dashboards", "data sources", "reporting", "department folder", "template"]
+keywords: ["[the reporting tool the company uses]", "template"]
 -->
 
-<!-- On copying: this README comes with the venture's folder. Replace [Company] with the venture's name, set type to "index", and give the copy its real title and description (Ventures/README.md, Rules). -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Business Intelligence (BI)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -23,23 +23,26 @@ _Every [Company] number dated and sourced._
 
 ## 📂 What Goes Here
 
-Analytics for [Company]: its KPIs, dashboards, data sources and reporting cadence. The `business-intelligence` skill's company work lands here: metrics, data, dashboards, and any chart or diagram made for [Company]. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Analytics for [Company]: the one definition of each metric, the scorecard of current values, and the data sources and dashboards behind them. The `business-intelligence` skill's company work lands here: metrics, data, dashboards, and any chart or diagram made for [Company]. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
-- `Metrics.md`: the key performance indicators, where each comes from and how often it is reported.
-- Working files: dashboard exports, data extracts, reports, charts and diagrams, each named for what it shows and the date of its data.
+- `Metrics.md`: the governed definition of each metric, the north star and the one metric that matters now, the scorecard of current values, and the data sources and dashboards behind them.
+- Working files: dashboard specifications, reports and analyses, and the charts and diagrams kept for [Company] as `.svg` or self-contained `.html` files, each named for what it shows and the date of its data.
 
 ---
 
 ## ↪️ What Goes Elsewhere
 
-- The financial picture lives in `Finance & Accounting (F&A)/`, and targets in the venture's `Goals.md`.
+- Every financial figure lives in `Finance & Accounting (F&A)/`, and the targets in the venture's `Goals.md`; both use the definitions kept here.
+- Raw data extracts, queries and scripts are not kept in the vault: they stay where the company's data lives.
 
 ---
 
 ## 📏 Rules
 
+- Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- A metric is defined once, in `Metrics.md`; a definition in use changes only as a new version the owner approves.
 - A metric's value carries the date it was true and the source it came from.
-- Data about identifiable people is kept only when the work needs it, and never as raw personal numbers.
+- No row about a person is kept here: analyses and reports show aggregates.
 
 ---
 

@@ -1,11 +1,11 @@
 <!--
 title: '🤝 CUSTOMER EXPERIENCE (CX)'
-description: 'The blueprint for a venture''s Customer Experience (CX) folder, copied whole with the venture: this README becomes the folder''s own, with [Company] replaced. Read it before filing or looking for a venture''s client roster, onboarding, success or support records.'
+description: '[Company]''s customers after the sale: each account''s health and renewal, the onboarding and success playbooks, support, and the voice of the customer. Read it before any work on a [Company] account or its support.'
 type: 'template'
-keywords: ["customers", "client roster", "onboarding", "customer success", "support", "accounts", "department folder", "template"]
+keywords: ["[the name of the customer team]", "template"]
 -->
 
-<!-- On copying: this README comes with the venture's folder. Replace [Company] with the venture's name, set type to "index", and give the copy its real title and description (Ventures/README.md, Rules). -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Customer Experience (CX)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -23,24 +23,26 @@ _[Company]'s clients, recorded only as the owner provides them._
 
 ## 📂 What Goes Here
 
-The customers of [Company]: their onboarding, their success and their support, with the client roster, accounts, contacts and status. The `customer-experience` skill's company work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The customers of [Company] after the sale: their onboarding, their success and their support, with each account's health and renewal and what customers tell the company. The `customer-experience` skill's company work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
-- `Clients.md`: the client roster, with each account's contacts, health and status, and the onboarding and offboarding steps.
-- Working files: client briefs, onboarding plans, feedback, support exports and account notes.
+- `Clients.md`: each account's health, renewal and contacts, named with where their details are kept; the onboarding, success and offboarding playbooks; the support record; and the voice of the customer.
+- Working files: account reviews, onboarding plans, knowledge-base drafts and voice-of-the-customer reports, none of them holding a customer's personal data.
 
 ---
 
 ## ↪️ What Goes Elsewhere
 
-- The pipeline of prospects lives in `Sales & Marketing (S&M)/Pipeline.md`, sales assets and offers elsewhere in `Sales & Marketing (S&M)/`, and contracts in `Legal & Compliance (L&C)/`.
+- The pipeline of prospects lives in `Sales & Marketing (S&M)/Pipeline.md`, renewal pricing and expansion deals in `Sales & Marketing (S&M)/`, and contracts in `Legal & Compliance (L&C)/`.
 - The owner's own dealings as a customer of another company, such as a complaint, a return or a warranty, go to `Memory/`.
 
 ---
 
 ## 📏 Rules
 
-- Contact details are recorded only as the owner provides them, and sensitive values as pointers to where they are kept.
+- Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- A customer's personal data stays in the company's own systems, such as its CRM or helpdesk: `Clients.md` names each contact and where their details are kept, never the details.
 - A client known only through the business stays here; someone in the owner's personal life goes to `Memory/Entities/People/`.
+- A feature request is evidence for a product decision, never a promise to the customer.
 
 ---
 

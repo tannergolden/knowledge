@@ -1,11 +1,11 @@
 <!--
 title: '📣 SALES & MARKETING (S&M)'
-description: 'The blueprint for a venture''s Sales & Marketing (S&M) folder, copied whole with the venture: this README becomes the folder''s own, with [Company] replaced. Read it before filing or looking for a venture''s pipeline, brand, products, services or campaign assets.'
+description: '[Company]''s sales and marketing: the brand and positioning, the products and services, the sales plan, the pipeline and forecast, and the revenue plan. Read it before selling, pricing, positioning or forecasting for [Company].'
 type: 'template'
-keywords: ["sales", "marketing", "pipeline", "brand", "products", "services", "department folder", "template"]
+keywords: ["[the name of the sales or marketing team]", "template"]
 -->
 
-<!-- On copying: this README comes with the venture's folder. Replace [Company] with the venture's name, set type to "index", and give the copy its real title and description (Ventures/README.md, Rules). -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -23,25 +23,31 @@ _Every word for [Company] in its brand voice, sent on a yes._
 
 ## 📂 What Goes Here
 
-Sales and marketing for [Company]: its pipeline, its brand, its products and its services. The `sales-and-marketing` skill's company work lands here: the pipeline and deals, positioning and demand. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Sales and marketing for [Company]: how it is positioned, what it sells, how it sells, and the number it all adds up to. The `sales-and-marketing` skill's company work lands here: the pipeline and deals, positioning and demand. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
-- `Pipeline.md`: the sales pipeline, each open prospect with its stage, estimated value, owner, next step and target close, and the stages a deal moves through.
-- `Brand.md`: voice, tone, visual identity and messaging; read it before writing anything on the company's behalf.
-- `Products.md`: the product catalog, with descriptions, pricing, status and roadmap.
+- `Brand.md`: the positioning, voice and tone, messaging and visual identity; read it before writing anything on the company's behalf.
+- `Products.md`: the product catalog, with each product's shipped capability, pricing and go-to-market.
 - `Services.md`: the services catalog, with scope, pricing, delivery and capacity.
-- Working files: the forecast, deal notes, decks, campaign assets and copy drafts.
+- `Sales-Plan.md`: how [Company] sells: the stages and their exit criteria, the close motion, territory and quota, and revenue operations.
+- `Pipeline.md`: the open deals, each forecast call with its accuracy, and the pricing exceptions.
+- `Revenue.md`: the revenue plan, reconciled across demand, the close and renewal, and the demand plan with its programs and email sequences.
+- Working files: decks, campaign assets, proposals and copy, each marked as a draft until the owner says it may go out.
 
 ---
 
 ## ↪️ What Goes Elsewhere
 
 - A customer's account, once a deal is won, lives in `Customer Experience (CX)/Clients.md`, press in `Public Relations (PR)/`, and the product's development in `Research & Development (R&D)/`.
+- The pricing policy is a company decision, recorded in `Administration/Decisions.md`; each metric's definition is in `Business Intelligence (BI)/Metrics.md`; and the revenue line of the financial model is kept in `Finance & Accounting (F&A)/Financial-Model.md`.
 
 ---
 
 ## 📏 Rules
 
-- Copy written for the company follows `Brand.md`, and anything published or sent needs the owner's yes.
+- Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- Copy written for the company follows `Brand.md`, and only shipped capability is described as present.
+- A prospect's or a contact's personal data stays in the system that holds it, read in place.
+- A forecast below target is recorded below target, with the gap named; it is never rounded up.
 
 ---
 

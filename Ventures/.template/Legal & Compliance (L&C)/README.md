@@ -1,11 +1,11 @@
 <!--
 title: '📜 LEGAL & COMPLIANCE (L&C)'
-description: 'The blueprint for a venture''s Legal & Compliance (L&C) folder, copied whole with the venture: this README becomes the folder''s own, with [Company] replaced. Read it before filing or looking for a venture''s entity, contracts, IP, licenses, compliance or insurance records.'
+description: '[Company]''s legal record: its entity and IP, its contracts and their deadlines, its filings calendar and policies, its privacy record, its open matters, its insurance and the risks the owner has accepted. Read it before any work on a [Company] contract, filing, policy, privacy question or dispute.'
 type: 'template'
-keywords: ["legal", "compliance", "contracts", "intellectual property", "licenses", "insurance", "department folder", "template"]
+keywords: ["[the company's legal name, where it differs from its trading name]", "template"]
 -->
 
-<!-- On copying: this README comes with the venture's folder. Replace [Company] with the venture's name, set type to "index", and give the copy its real title and description (Ventures/README.md, Rules). -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Legal & Compliance (L&C)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -23,24 +23,26 @@ _[Company]'s legal context, never its legal advice._
 
 ## 📂 What Goes Here
 
-The legal and compliance records of [Company]: its legal entity, ownership, contracts, licenses and permits, intellectual property, compliance obligations, legal counsel and insurance. The `legal-and-compliance` skill's company work lands here: formation, contracts, IP, compliance and privacy. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The legal and compliance records of [Company]: its entity, its intellectual property, its contracts, its licenses and filings, its policies and privacy duties, its open matters, its insurance and the legal risks the owner has accepted. The `legal-and-compliance` skill's company work lands here: formation, contracts, IP, compliance and privacy. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
-- `Compliance.md`: the legal entity, ownership and equity, key contracts, licenses and permits, intellectual property, compliance obligations, counsel and insurance, as context.
-- Working files: signed agreements, filings, certificates and registrations, named plainly (`Operating Agreement 2026-03.pdf`).
+- `Compliance.md`: the entity and its formation documents, the IP chain and the marks, the contracts with their notice deadlines and obligations, the obligations and filings calendar, the policies, the privacy record, the matters, the accepted risks, counsel and insurance.
+- Working files: signed agreements, filings and certificates, named plainly (`Operating Agreement YYYY-MM.pdf`), and the contract reviews, redlines, privacy assessments and dispute triages the skill drafts.
 
 ---
 
 ## ↪️ What Goes Elsewhere
 
-- The cap table lives in `Finance & Accounting (F&A)/Cap-Table.md`, and the full domain list in `Information Technology (IT)/Stack.md`.
+- Who owns [Company] is recorded in `Finance & Accounting (F&A)/Cap-Table.md` alone, and the tax filings are on the finance deadline list in `Finance & Accounting (F&A)/Financials.md`.
+- The full domain list is in `Information Technology (IT)/Stack.md`, and a decision about a legal matter in `Administration/Decisions.md`, which points to each risk accepted here.
 
 ---
 
 ## 📏 Rules
 
-- `Compliance.md` is context, not legal advice: a decision with legal weight goes to a qualified attorney.
-- A sensitive identifier, such as a tax ID or a registration number, is recorded as a pointer to where it is kept, never as the value itself.
-- Signing or sending a contract needs the owner's yes.
+- Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- `Compliance.md` is context, not legal advice: each record says when a licensed lawyer must review, and the skill never signs, sends or files anything.
+- No tax ID, registration, license or patent number, and no government ID, is written in a note here: each is recorded as where it is kept, never as the value.
+- Contracts, a counterparty's terms and a dispute's facts are confidential: they never leave [Company]'s private records for a public repository.
 
 ---
 

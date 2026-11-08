@@ -1,161 +1,156 @@
 <!--
-title: "[Company] - Brand"
-description: "Complete brand identity for [Company]: voice, tone, personality, messaging, visual identity, and writing guidelines."
-type: "template"
-keywords: ["brand identity", "voice and tone", "messaging", "visual identity", "writing guidelines", "brand personality", "copywriting", "template"]
+title: '[Company] - Brand'
+description: '[Company]''s brand: its positioning, personality, voice and tone, messaging pillars, writing rules and visual identity. Read it before writing or designing anything on behalf of [Company].'
+type: 'template'
+keywords: ["[the tagline]", "[a trading name, if it differs]", "template"]
 -->
+
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/Brand.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "standard"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The sales-and-marketing skill keeps the positioning and the messaging, and the public-relations skill checks a public piece's voice against them. A regulated or comparative claim passes the legal-and-compliance skill's review before it is published, and anything published or sent waits for the owner's yes. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🎨 [Company] - Brand
 
-> Use this file whenever writing copy, content, or communications on behalf of this company.
+> How [Company] sounds and looks, and what it claims. Every piece written on [Company]'s behalf follows it, and the messaging house in `Public Relations (PR)/Press.md` is built on the positioning here, never redefining it.
+
+---
+
+## Positioning
+
+**Buyer:** <!-- the ideal customer, specific and bounded -->
+**Job to be done:**
+**The alternative they compare against:** <!-- a competitor, a workaround, or doing nothing; the full landscape is in Administration/Strategy.md -->
+**Why we win:** <!-- the true, material difference, with its evidence -->
+**Positioning statement:** <!-- one sentence a stranger can repeat -->
 
 ---
 
 ## Brand Essence
 
 **Tagline:**
-**One-sentence positioning statement:**
-**Elevator pitch (30 seconds):**
+**Elevator pitch:**
 
 ---
 
 ## Personality
 
-<!-- How would you describe this brand if it were a person? Pick 4 to 6 traits. -->
+<!-- Four to six traits, each with what it means in practice. -->
 
-| Trait | What It Means in Practice |
-|-------|--------------------------|
-|       |                          |
+| Trait | What it means in practice |
+| ----- | ------------------------- |
+|       |                           |
 
-**We are:** (e.g., direct, warm, expert, playful)
-**We are not:** (e.g., corporate, condescending, overly casual)
+**We are:** [for example: direct, warm, expert]
+**We are not:** [for example: stiff, condescending, careless]
 
 ---
 
 ## Voice & Tone
 
-**Voice** (consistent - who we are):
+**Voice:** <!-- what stays the same everywhere -->
 
-**Tone** (varies by context):
+**Tone by context:**
 
-| Context | Tone Shift |
-|---------|-----------|
+| Context | How the tone shifts |
+| ------- | ------------------- |
 | Marketing copy | |
 | Customer support | |
-| Executive communications | |
+| Executive communication | |
 | Social media | |
-| Error messages / bad news | |
+| Bad news and errors | |
 
 ---
 
 ## Messaging Pillars
 
-<!-- 3 to 5 core things we always communicate. Every piece of content should connect to at least one. -->
+<!-- Three to five things [Company] always communicates, each with the proof that backs it. Every piece connects to at least one. -->
 
-1. **[Pillar 1]** -
-2. **[Pillar 2]** -
-3. **[Pillar 3]** -
+1. **[Pillar]:** [what it says, and its proof]
+2. **[Pillar]:** [what it says, and its proof]
+3. **[Pillar]:** [what it says, and its proof]
 
 ---
 
-## Target Audience (Who We're Talking To)
+## Audience
 
-**Primary Audience:**
-**Secondary Audience:**
+**Primary audience:**
+**Secondary audience:**
 **What they care about:**
-**What they're skeptical of:**
+**What they doubt:**
 **How we earn their trust:**
 
 ---
 
-## Writing Guidelines
+## Writing Rules
 
-**Sentence style:** (short and punchy / longer and detailed / mixed)
-**Person:** (first-person plural "we" / second-person "you" / third-person)
-**Capitalization:** (title case headlines / sentence case / etc.)
-**Numbers:** (spell out under 10 / always use numerals / etc.)
-**Oxford comma:** (yes / no)
-**Exclamation points:** (use sparingly / never / freely)
-**Jargon:** (avoid / use with explanation / industry-standard OK)
+**Sentence style:** [short / long / mixed]
+**Person:** [we / you / third person]
+**Capitalization:** [title case headlines / sentence case]
+**Numbers:** [spelled out under ten / always numerals]
+**Serial comma:** [yes / no]
+**Exclamation points:** [never / sparingly / freely]
+**Jargon:** [avoided / explained / industry terms allowed]
 
 ### Words We Use
 
-<!-- Preferred terminology for key concepts. Consistency matters. -->
-
 | Instead of | We say |
-|-----------|--------|
+| ---------- | ------ |
 |            |        |
 
 ### Words We Avoid
-
-<!-- Language that's off-brand, overused, or inaccurate for us. -->
 
 -
 
 ---
 
-## Do / Don't
+## Do and Don't
 
-### ✅ Do
--
--
+### Do
+
 -
 
-### ❌ Don't
--
--
+### Don't
+
 -
 
 ---
 
 ## Visual Identity
 
-**Primary Colors:**
+**Primary colors:**
 
 | Color | Hex | Usage |
-|-------|-----|-------|
+| ----- | --- | ----- |
 |       |     |       |
 
-**Secondary / Accent Colors:**
+**Secondary and accent colors:**
 
 | Color | Hex | Usage |
-|-------|-----|-------|
+| ----- | --- | ----- |
 |       |     |       |
 
 **Typography:**
 
 | Use | Font | Weight | Notes |
-|-----|------|--------|-------|
+| --- | ---- | ------ | ----- |
 | Headlines | | | |
 | Body | | | |
-| UI / Labels | | | |
+| Interface labels | | | |
 
 **Logo:**
-- Primary version:
-- Alternate versions:
-- Clear space rules:
-- Where NOT to use the logo:
 
-**Imagery Style:**
-<!-- Photography style, illustration style, iconography - what to use and avoid. -->
+- **Primary version:**
+- **Alternate versions:**
+- **Clear space:**
+- **Where it is never used:**
 
-**Asset Location:** `Sales & Marketing (S&M)/` (brand assets, logos, fonts)
+**Imagery:** <!-- the photography, illustration and icon style: what to use and what to avoid -->
 
----
-
-## Competitive Positioning
-
-<!-- How we compare to alternatives in the market. Relevant when writing positioning copy. -->
-
-| Competitor | How We're Different |
-|-----------|-------------------|
-|            |                    |
+**Assets kept in:** [where the logos, fonts and brand files are kept]
 
 ---
 
 ## Brand Promises
 
-<!-- What customers can always count on from us. -->
+<!-- What customers can always count on from [Company]. -->
 
 -
 
@@ -163,5 +158,4 @@ keywords: ["brand identity", "voice and tone", "messaging", "visual identity", "
 
 ## Notes
 
-<!-- Any brand nuances, recent changes, or exceptions to the above. -->
-
+<!-- Recent changes, exceptions, and anything else about the brand. -->

@@ -1,29 +1,33 @@
 <!--
-title: "[Company] - Log"
-description: "Chronological record of sessions, decisions, milestones, and significant events for [Company]."
-type: "template"
-keywords: ["chronological record", "sessions", "milestones", "decisions", "venture history", "recent context", "events", "template"]
+title: '[Company] - Log'
+description: '[Company]''s running record: each session''s decisions, milestones and progress, dated, with the acts the owner confirmed. Read it for recent context before any work for [Company].'
+type: 'template'
+keywords: ["[a launch, hire or deal the log records]", "template"]
 -->
+
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Log.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "record"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". An entry is appended after any session or run that did meaningful work for [Company], and never rewritten: a correction is a new entry that names the one it corrects. Write only what the owner says or confirms, or what [Company]'s own records show (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 📓 [Company] - Log
 
-> Chronological record of what happened with this venture over time. Add an entry at the end of any session where meaningful work was done, a decision was made, or a milestone was reached. Read this file for recent context before diving into venture-specific work.
+> [Company]'s running record, newest entry last. Read the last few entries for recent context before any work for the venture.
 
 ---
 
-## How to Use This Log
+## How This Log Is Kept
 
-- **One entry per session** - append at the bottom, newest entries last
-- **Entry format:** date + brief summary of what was discussed, decided, or accomplished
-- **Include:** decisions made, strategic pivots, key milestones, hires, launches, closings, open loops
-- **Exclude:** raw brainstorming, meeting transcripts, detailed notes (those belong in department folders)
+- **One entry per session or run** that did meaningful work, appended at the bottom: a dated heading and two to five bullets.
+- **What goes in:** decisions, one line each with the full entry in `Administration/Decisions.md`; milestones, pivots, hires, launches and closings; a stage change and its evidence; each review's grade; and open loops.
+- **A gated act** the owner confirmed (moving money, a contract, outside communication, a change to equity, a deletion) is logged with the confirmation noted.
+- **What stays out:** raw brainstorming, transcripts and detailed notes, which belong in the department folders.
+- **An entry is never rewritten:** a correction is a new entry that names the one it corrects.
 
-**Retention:** Entries older than 12 months should be reviewed quarterly. Archive or condense entries that no longer have active relevance - move detailed historical context to Overview.md or the relevant department file.
+**Retention:** entries more than twelve months old are reviewed once a quarter, and what still matters is carried into `Overview.md` or its department file; an entry is condensed or removed only on the owner's yes. The policy flags; the owner decides.
 
 ---
 
 ## Log
 
-<!-- Format: ### YYYY-MM-DD - [Brief title of session/event]
-Content: 2 to 5 bullet points summarizing what happened. -->
-
+<!-- Each entry:
+### YYYY-MM-DD - [what happened, in a few words]
+- [two to five bullets]
+-->

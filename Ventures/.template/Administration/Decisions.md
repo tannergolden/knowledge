@@ -1,33 +1,55 @@
 <!--
-title: "[Company] - Decisions"
-description: "The governance and decision record for [Company]: the running log of board-style decisions, each with its owner, and the full decision memos behind them."
-type: "template"
-keywords: ["decision log", "governance record", "governance", "board record", "decision memo", "accountable owner", "minority view", "template"]
+title: '[Company] - Decisions'
+description: '[Company]''s decision record: one entry for each consequential decision, with its decider, its accountable owner and the memo behind it. Read it before reopening a question about [Company], so a settled decision is not decided again.'
+type: 'template'
+keywords: ["[the subject of a key decision]", "template"]
 -->
+
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Administration/Decisions.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "record"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The administration skill adds an entry after each decide run; the index row and the entry under Decisions are the shapes each new decision follows. An entry is never rewritten: a decision that changes is marked superseded or reversed, and the new entry names the one it replaces. Write only what the owner says or confirms, or what [Company]'s own records show (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # ⚖️ [Company] - Decisions
 
-> The corporate record of consequential decisions. The Corporate Secretary keeps this current. The `administration` skill (decide mode) appends here when it makes a call, and a one-line entry is also logged to `Log.md`. Read this before re-opening a question, so a settled decision is not re-litigated.
+> [Company]'s record of consequential decisions. Read it before reopening a question: a settled decision is not decided again, and one that changes is superseded or reversed here, never rewritten.
 
 ---
 
-## How this log works
+## How This Record Is Kept
 
-- Every consequential decision gets a row in the index below and, if it carried a full deliberation, a memo under "Decision memos."
-- Each decision names ONE accountable owner and records its decider (the CEO for reversible in-mandate calls, the Founder for irreversible or major ones).
-- The minority view is recorded by name, never buried.
-- A decision that must outlive this log (a standing policy, a committed direction) is also promoted into `Overview.md` or `Strategy.md`.
+- The `administration` skill records each decision from a decide run here, checked against the earlier entries, and adds a one-line entry to `Log.md`.
+- One decision, one entry: the call, the rationale, the departments heard, the decider, the one accountable owner, the success measure, the reversibility, and the minority view by role.
+- The decider is the `administration` skill's Chief Executive Officer for a reversible call within its mandate, and the owner for an irreversible or major one.
+- A product decision (what to build, for whom and when) and the pricing policy are decided and recorded here; the roadmap a product decision sets goes to `Research & Development (R&D)/Roadmap.md`.
+- An accepted legal risk lives in `Legal & Compliance (L&C)/Compliance.md`, and a choice of system in `Information Technology (IT)/Stack.md`: each has a one-line entry here that points to it.
+- A decision that must outlive this record, such as a standing policy or a committed direction, is also promoted into `Overview.md` or `Administration/Strategy.md`.
 
 ---
 
 ## Decision Index
 
-| Date | Decision | Decider | Accountable owner | Status | Memo |
-|------|----------|---------|-------------------|--------|------|
-|      |          |         |                   | (decided / escalated / revisit) |  |
+| Date | Decision | Decider | Owner | Reversibility | Status | Where it is kept |
+| ---- | -------- | ------- | ----- | ------------- | ------ | ---------------- |
+| [YYYY-MM-DD] | [the decision, in a few words] | [Chief Executive Officer / the owner] | | [reversible / irreversible] | [decided / escalated / revisit / superseded / reversed] | [its entry below / Compliance.md, Accepted Risks / Stack.md, System Choices] |
 
 ---
 
-## Decision memos
+## Decisions
 
-<!-- The full board-style memos (recommendation up front, options, each function's view, risks and pre-mortem, decision and owner, next steps, minority view). One per consequential decision, newest first. The administration skill fills these from its templates/decision-memo.md. -->
+<!-- One entry per decision, newest first. A decision that carried a full deliberation keeps its memo under its entry: the recommendation first, the situation and what changed, the question and the criteria, the options scored, each department's view, the risks and the pre-mortem, the decision and its owner, the next steps, and the minority view. -->
+
+### [YYYY-MM-DD] - [The Decision, In A Few Words]
+
+- **Call:**
+- **Rationale:**
+- **Departments heard:**
+- **Decider:** [Chief Executive Officer / the owner]
+- **Accountable owner:**
+- **Success measure:**
+- **Reversibility:** [reversible / irreversible]
+- **Minority view:** [the dissent, by role and reason, or none recorded and why]
+- **Status:** [decided / escalated / revisit / superseded / reversed]
+- **Replaces:** [the date and title of the entry it supersedes or reverses, or none]
+- **Next steps:** [each action, its owner and its date]
+
+#### Memo
+
+<!-- The full memo, when the decision carried one. -->

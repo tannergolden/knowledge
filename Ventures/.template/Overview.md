@@ -1,24 +1,24 @@
 <!--
-title: "[Company] - Overview"
-description: "Master company profile for [Company]: identity, business model, market, financials, strategy, and operating context."
-type: "template"
-keywords: ["company profile", "business model", "market", "strategy", "operating context", "venture summary", "company identity", "template"]
+title: '[Company] - Overview'
+description: '[Company]''s company profile: what it does and for whom, its business model and market, its stage and status, and who owns and governs it. Read it first on any work for [Company].'
+type: 'template'
+keywords: ["[the industry]", "[what the company sells]", "[a trading or former name]", "template"]
 -->
+
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Overview.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The administration skill keeps it current: a change of stage or status is proposed with its evidence and written only on the owner's yes, and the rest is written as the owner tells it. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🧭 [Company] - Overview
 
-> Read this file first when working on anything related to this company.
+> Read this file first on any work for [Company], then `Goals.md` and `Log.md`.
 
 ---
 
 ## Identity
 
-**Legal Name:**
-**Operating Name / DBA:**
-**Legal Structure:** (LLC / S-Corp / C-Corp / Sole Prop / etc.)
-**Founded:**
-**Headquarters / Location:**
-**Remote, In-person, or Hybrid:**
+**Operating Name:**
+**Legal Entity:** its legal name, entity type, formation date and formation documents are in `Legal & Compliance (L&C)/Compliance.md`, Entity
+**Location:**
+**Work Model:** [remote / in person / hybrid]
 **Website:**
 **Primary Social:**
 
@@ -26,31 +26,25 @@ keywords: ["company profile", "business model", "market", "strategy", "operating
 
 ## What It Does
 
-<!-- 2 to 4 sentence plain-language description of what this company does and who it serves. -->
-
+<!-- Two to four plain sentences: what [Company] does and who it serves. -->
 
 ---
 
 ## Mission
 
-<!-- Why the company exists - the problem it's solving or the change it wants to make. -->
-
+<!-- Why [Company] exists: the problem it solves or the change it wants to make. -->
 
 ---
 
 ## Vision
 
-<!-- Where the company is headed long-term - the world it's trying to create. -->
-
+<!-- Where [Company] is headed in the long run: the world it is trying to create. -->
 
 ---
 
 ## Core Values
 
-<!--
-- Value 1 - brief explanation
-- Value 2 - brief explanation
--->
+<!-- One line each: the value, and what it means in practice. -->
 
 ---
 
@@ -58,62 +52,67 @@ keywords: ["company profile", "business model", "market", "strategy", "operating
 
 **Industry:**
 **Market Segment:**
-**Market Size / Opportunity:**
-**Key Trends Affecting the Market:**
+**Market Size:**
+**Key Trends:**
+
+<!-- The full market and competitor analysis is in Administration/Strategy.md; this is its summary. -->
 
 ---
 
 ## Target Customer
 
-**Ideal Customer Profile (ICP):**
+**Ideal Customer:**
 **Customer Segments:**
 **Geography:**
-**Key Customer Pain Points:**
+**Their Main Pain Points:**
 
 ---
 
 ## Business Model
 
-<!-- How the company creates and captures value. -->
+<!-- How [Company] creates and captures value. -->
 
-**Revenue Model:** (subscription / project-based / retainer / product sales / marketplace / etc.)
+**Revenue Model:** [subscription / project-based / retainer / product sales / marketplace / other]
 **Primary Revenue Streams:**
 **Pricing Summary:**
-**Unit Economics:** (CAC, LTV, margins - populate as known)
+
+<!-- Unit economics are kept in Finance & Accounting (F&A)/Financials.md, on the definitions in Business Intelligence (BI)/Metrics.md. -->
 
 ---
 
-## Stage & Traction
+## Stage & Status
 
-**Current Stage:** (Idea / Validation / Pre-revenue / Early Revenue / Growth / Scaling / Established / Mature / Plateau / Decline)
-**Status:** (Active / On Hold / Closed)
-**Outcome:** (once Closed: Acquired / IPO / Wind-down / Merged / Sold)
-**Founded / Launched:**
-**Employees / Contractors:**
-**Annual Revenue (ARR/MRR):**
+**Current Stage:** [Idea / Validation / Pre-revenue / Early Revenue / Growth / Scaling / Established / Mature / Plateau / Decline]
+**Operating Stage:** [found / scale / maintain]
+**Stage Evidence:** <!-- the signals behind the stage (revenue, headcount, retention, the last round) and the date they were read -->
+**Status:** [Active / On Hold / Closed]
+**Outcome:** [once Closed: Acquired / IPO / Wind-down / Merged / Sold]
+**Launched:** [YYYY-MM-DD]
+**Team:** <!-- employees and contractors, as Human Resources (HR)/Hierarchy.md counts them -->
+
 **Key Metrics:**
 
-| Metric | Value | As Of |
-|--------|-------|-------|
-|        |       |       |
+| Metric | Value | As Of | Source |
+| ------ | ----- | ----- | ------ |
+|        |       |       |        |
+
+<!-- Each value is read from the record that owns it (Business Intelligence (BI)/Metrics.md, Finance & Accounting (F&A)/Financials.md) and dated, never estimated here. -->
 
 ---
 
 ## Competitive Advantage
 
 **Key Differentiators:**
-**Moat / Defensibility:**
+**Moat:**
 **Primary Competitors:**
 
-| Competitor | How We Differ |
-|-----------|--------------|
-|            |               |
+<!-- The competitive landscape in full, competitor by competitor, is in Administration/Strategy.md. -->
 
 ---
 
 ## Current Strategic Priorities
 
-<!-- Top 3 to 5 things the company is focused on right now. Update each quarter. -->
+<!-- The three to five things [Company] is focused on this quarter, as Goals.md sets them. -->
 
 1.
 2.
@@ -123,31 +122,29 @@ keywords: ["company profile", "business model", "market", "strategy", "operating
 
 ## Founding Story
 
-<!-- Brief origin story - why it was started, how it came to be. -->
-
+<!-- Briefly: why [Company] was started and how it came to be. -->
 
 ---
 
-## Ownership & Structure
+## Ownership & Governance
 
-**Owner(s) / Founder(s):**
-**Equity Split:**
-**Investors / Backers:**
-**Board / Advisors:**
+**Owners:**
+**Board:**
+
+<!-- Who holds what, the option pool and every round are recorded in Finance & Accounting (F&A)/Cap-Table.md alone, and the advisors in Human Resources (HR)/Hierarchy.md: this section names who owns and governs [Company], never the percentages. -->
 
 ---
 
 ## Key Relationships & Partners
 
-<!-- Agencies, vendors, strategic partners, integrations - anyone critical to operations. -->
+<!-- Agencies, vendors, strategic partners and integrations [Company] depends on. A vendor's cost and renewal are in Operations & Logistics (O&L)/Operations.md, and its contract in Legal & Compliance (L&C)/Compliance.md. -->
 
 | Name | Type | Role | Notes |
-|------|------|------|-------|
+| ---- | ---- | ---- | ----- |
 |      |      |      |       |
 
 ---
 
 ## Notes
 
-<!-- Anything else worth knowing about this company that doesn't fit above. -->
-
+<!-- Anything else worth knowing about [Company] that fits nowhere above. -->
