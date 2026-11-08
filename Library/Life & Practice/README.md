@@ -1,17 +1,31 @@
 <!--
-title: "Life & Practice - Folder Information"
-description: "General practical knowledge for the business of living, written for anyone."
-type: "index"
+title: '🧰 LIFE & PRACTICE'
+description: 'General practical knowledge for the business of living, written for anyone: health, food, the home, money, work, relationships and personal growth. Read it to file a how-to holding, to choose among its divisions, or to keep the owner''s own data out of the Library.'
+type: 'index'
 keywords: ["health", "cooking", "home", "personal finance", "career", "relationships", "self-development"]
 -->
 
-# 🧰 Library / Life & Practice /
+<div align="center">
 
-## Purpose
+# 🧰 LIFE & PRACTICE
+
+<a name="top"></a>
+
+**The Library class for practical knowledge of everyday living, written for anyone.**
+
+_General method for anyone, never the owner's own data._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 General practical knowledge for the business of living, written for anyone: how health, food, the home, money, work, relationships and personal growth are generally managed. It is general reference (how budgeting works), never the owner's own data.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -39,7 +53,9 @@ General practical knowledge for the business of living, written for anyone: how 
 - [[Library/Life & Practice/Self-Development/README|Self-Development]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: How-to and practical reference for living, written for anyone
 - Class here: General method (budgeting, a balanced diet), never the owner's own data
@@ -49,16 +65,36 @@ General practical knowledge for the business of living, written for anyone: how 
 - Not here: Clinical medicine and treatment - goes to Technology & Applied Science / Medicine & Health Sciences
 - Not here: An activity as an art form or sport culture - goes to Arts & Recreation
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/Science & Mathematics/README.md` - the formal and natural sciences
 - `Library/Society & Social Sciences/README.md` - how societies work
 - `Library/Arts & Recreation/README.md` - the arts, sport, and play
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Approximates BISAC practical and self-help (Health & Fitness, Cooking, House & Home, Family & Relationships, Self-Help). Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**Practical for anyone, personal for no one.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

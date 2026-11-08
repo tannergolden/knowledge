@@ -1,15 +1,33 @@
 <!--
-title: "Library - Folder Information"
-description: "A universal, discipline-based reference library built to hold all of human knowledge: 10 plain-named classes as the shelf order, a controlled-keyword faceted catalog, boundary rulings and a routing table for hard cases, cataloging at intake, freshness weeding, and a vector-ready design. Classification is what keeps retrieval precise at scale."
-type: "index"
+title: '📚 LIBRARY'
+description: 'A universal, discipline-based reference library built to hold all of human knowledge: 10 plain-named classes as the shelf order, a controlled-keyword faceted catalog, boundary rulings and a routing table for hard cases, cataloging at intake, freshness weeding, and a vector-ready design. Classification is what keeps retrieval precise at scale, so read it before filing, cataloging, weeding or changing anything here.'
+type: 'index'
 keywords: ["universal classification", "ten classes", "routing table", "boundary rulings", "controlled facet keywords", "shelf vs catalog", "retrieval at scale", "freshness weeding"]
 -->
 
-# 📚 Library/
+<div align="center">
+
+# 📚 LIBRARY
+
+<a name="top"></a>
+
+**The vault's reference library: all of human knowledge, in ten classes.**
+
+_Each work on one shelf, found from every angle._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 Reference knowledge about the world, in ten classes, never personal. Read this README before changing anything in this folder; its rules add to the root `README.md` and never loosen it.
 
-## Rules
+`Library/` is the reference library of this BRAIN: a universal collection built to hold **all of human knowledge**, organized by discipline so it can be drawn on to answer questions and reason. It holds general practical knowledge too (how budgeting works), but never anything personal (Rules, below).
+
+---
+
+## 📜 Rules
 
 - **Not personal.** `Library/` holds reference knowledge about the world, never the owner's own data, identity, memory or company specifics: those live in `Profile/`, `Memory/` and `Ventures/`.
 - **No opinion.** A holding is factual, of reference quality: it never holds personal opinions, the owner's preferences or a company's context.
@@ -25,42 +43,50 @@ Reference knowledge about the world, in ten classes, never personal. Read this R
   Five years is the floor: ephemeral content never enters `Library/`; it goes to `Projects/`, `Ventures/`, `Memory/` or a confirmed deletion instead. Only a holding carries a freshness token: a folder's README.md, a record and a template carry none, and neither does a note outside `Library/`, since freshness is how the Library is weeded.
 - **The scheme changes only with a yes.** Adding, renaming or removing a class or division is a structural change the owner approves (the root `README.md`, Ask First).
 
-## Purpose
+---
 
-`Library/` is the reference library of this BRAIN: a universal collection built to hold **all of human knowledge**, organized by discipline so it can be drawn on to answer questions and reason. It holds general practical knowledge too (how budgeting works), but never anything personal (Rules, above).
-
-## What Lands Here
+## 📥 What Lands Here
 
 - **A source filed from `Inbox/`**: checked for freshness, classified, cataloged and shelved in one class and division, by the Inbox's sorting protocol (`Inbox/README.md`) and the rules on this page. An outside source gets a catalog card (The catalog record, below).
 - **A finding promoted from a held report** (`Inbox/Reports/`) when it must outlive the report: it becomes a holding here, written from `Library/.template/Reference Note.md`.
 - **What is learned about the world**, such as what the `research-and-development` skill learns for the owner, written as a holding from `Library/.template/Reference Note.md`. The owner's own progress and competence are not holdings: a learning plan goes to `Projects/`, and what the owner can do to `Profile/Skills/`.
 - **An offline reference work**, such as Wikipedia, kept in `Library/Reference & Encyclopedia/` and managed with `python3 .github/scripts/knowledge-base.py`; every source ships turned off (`Library/Reference & Encyclopedia/README.md`).
 
-## Quick reference
+---
+
+## 🚀 Quick reference
 
 To file something: (1) check that it stays true for five years or more, and give it its freshness tier (Rules, above); (2) pick the **one** class it most belongs to; (3) pick a division in that class; (4) catalog it: its frontmatter, plus a catalog card if it is an outside source; (5) shelve it, then run `lint-notes.py` on it, then `update-vault.py` and `check-vault.py` (the root `README.md`, Commands). A hard call is settled by the **Classification rules**, then the **Boundary rulings** and **Worked examples** below. Weeding uses the freshness tiers plus **MUSTIE**.
 
 The ten classes, in reading order: **Information & Computing · Philosophy & Mind · Religion & Spirituality · Society & Social Sciences · Science & Mathematics · Technology & Applied Science · Arts & Recreation · Language & Literature · History & Geography · Life & Practice.** Each is a subfolder whose README.md lists its divisions and what belongs elsewhere (The ten classes, below); live listings come from the catalog (`System/Data/catalog.ndjson`, its `BRAIN/Library/` records).
 
-## How this Library works
+---
+
+## ⚙️ How this Library works
 
 - **Folders are the shelf order, for people.** A file lives in exactly one folder, its single subject home, like a call number. People browse better by navigating folders than by search alone.
 - **Frontmatter and search are the catalog, for retrieval.** A file is reachable from many angles at once (subject, freshness, form, level, period, place) without ever moving. One location, many access points.
 - **Cataloging happens at filing time.** Whoever files a holding classifies and catalogs it in the same pass, so it is never left as a chore for later.
 - **The Library answers before the web.** A question about the world is grounded here first: in the notes and the catalog's `BRAIN/Library/` records, then in an installed reference work (`python3 .github/scripts/knowledge-base.py search` to find an article, then `read` for its text), citing what was used. Anything current goes straight to the web (the root `README.md`, How A Session Goes).
 
-## Stewardship
+---
+
+## 🤝 Stewardship
 
 The Library has no keeper of its own: whoever works in the vault, a person or any AI, keeps it by the rules on this page. Cataloging, curation and reference are one job, done in one pass, to one overriding standard: **every holding earns its place**. Each holding is acquired, classified, cataloged, curated, weeded, preserved and served to that standard; the collection is judged by what it leaves out as much as by what it serves, and findability is what curation is for. On request, a class gets deeper work: a subject review, a link and authority-control pass (`.github/scripts/check-vault.py`), and a Conspectus-style assessment of its depth. A genuinely contested class, weed or tier goes to the owner.
 
 - **The `research-and-development` skill** grounds a question about the world here before the web, files its reports in `Inbox/Reports/`, and adds to the Library only holdings: a finding promoted from a report, or what it learns about the world for the owner. A class found thin is a question for it to research.
 - **The Inbox sort** files a source here by this page's rules: the source's freshness is assessed, and it is classified and cataloged, before it moves (`Inbox/README.md`, Pre-Sorting Enrichment).
 
-## Why classification matters for retrieval (not just for people)
+---
+
+## 🎯 Why classification matters for retrieval (not just for people)
 
 A flat pile plus pure vector search degrades as the collection grows: dense similarity loses discriminative power and returns plausible-but-wrong matches ("vector search dilution": in one 2026 study, growing a corpus from 54 to 1,128 documents cut retrieval precision by 63%, from 0.76 to 0.28; Subedi et al., arXiv:2606.11350). The fix is not better embeddings, it is **domain scoping**: filter by class and facet first, then search within (the same study's domain-scoped retrieval shrank each search space by 65 to 98%). So the ten-class spine and the controlled facet keywords are not decoration; they are what keep retrieval precise at scale. Hybrid retrieval (keyword plus semantic) over a classified, metadata-rich corpus is the target.
 
-## The ten classes
+---
+
+## 🗂️ The ten classes
 
 A universal, discipline-first scheme, deliberately de-biased (one neutral class per domain, no religious or geographic center, explicitly revisable), with one addition - **Life & Practice** - for the practical knowledge the library schemes scatter or omit. The classes are listed in reading order.
 
@@ -79,7 +105,9 @@ A universal, discipline-first scheme, deliberately de-biased (one neutral class 
 
 Beyond the ten classes, [[Library/Reference & Encyclopedia/README|Reference & Encyclopedia]] is a special-purpose folder rather than a class: it stores offline reference works (Wikipedia and other Kiwix knowledge bases) as read-only ZIM files, searched with `.github/scripts/knowledge-base.py`. The works it holds span every class, so it is the store, not a shelf.
 
-## Classification rules
+---
+
+## 📐 Classification rules
 
 A work goes on exactly one shelf. To choose its class:
 
@@ -90,7 +118,9 @@ A work goes on exactly one shelf. To choose its class:
 
 Then record every other aspect as a facet keyword, or as a plain-path pointer in the holding's own See Also. One shelf, many catalog entries.
 
-## Boundary rulings
+---
+
+## ⚖️ Boundary rulings
 
 The predictable seams, each with the rule that decides them:
 
@@ -103,7 +133,9 @@ The predictable seams, each with the rule that decides them:
 - **Tradition vs aspect:** in Religion & Spirituality, a work on one tradition files with that tradition, whatever its aspect; theology, myth, ritual or contemplative practice in general, or across traditions, files with that aspect's division.
 - **Tie:** when two fit equally, the first class in reading order wins; record the rest as facets and see-also pointers.
 
-## Worked examples
+---
+
+## 🧩 Worked examples
 
 | Topic | Files under | Because |
 |-------|-------------|---------|
@@ -136,7 +168,9 @@ The predictable seams, each with the rule that decides them:
 | History or philosophy of a science | Science & Mathematics / Philosophy & Method of Science | metascience travels with the science, not History & Geography |
 | Semiotics | Language & Literature / Linguistics | the study of signs as language |
 
-## Facets and controlled keywords
+---
+
+## 🏷️ Facets and controlled keywords
 
 Six orthogonal facets. Subject is the folder; the other five, freshness, form, level, period and place, live in the `keywords` field (`.docs/technical/vault/Keywords.md`) as **slash-namespaced tokens**, so a search or a script can filter by exact match. Freshness is required on every holding (Rules, above); use the others when they add retrieval value:
 
@@ -149,11 +183,15 @@ Six orthogonal facets. Subject is the folder; the other five, freshness, form, l
 
 The scope tokens are what make "filter by class, then search within" executable: a search narrows to a `class/...` set first, then runs semantically inside it.
 
-## Naming and notation
+---
+
+## 🔤 Naming and notation
 
 Folders use **plain-language names**, never call numbers: plain words are what keyword and semantic search match on and what carries information scent, while a notation like `510` is a near-dead token for retrieval. A library cross-walk (Dewey / UDC / LCC) is optional and lives in each class's README.md as a note, never as a frontmatter field and never in the path.
 
-## Subfolder convention
+---
+
+## 📂 Subfolder convention
 
 The named hierarchy stays shallow; specificity lives in facets, not depth.
 
@@ -163,51 +201,77 @@ The named hierarchy stays shallow; specificity lives in facets, not depth.
 - Each folder explains itself in its own `README.md`.
 - No underscores anywhere (the root `README.md`, Conventions).
 
-## The catalog record
+---
+
+## 🗃️ The catalog record
 
 Every holding carries a catalog record, with no new brain-wide frontmatter fields:
 
 - **A synthesized note** is already a complete record under the standard schema (`.docs/technical/vault/Note-Schema.md`): `title`, `description`, `type: reference`, and `keywords` with its facet tokens. Its path is its shelf mark, and git keeps its dates. Template: `Library/.template/Reference Note.md`.
 - **A source document** (an external book, paper, or media) gets a companion **catalog card** note, filed beside any held copy of the work; the work's own bibliography lives in the card body. Template: `Library/.template/Source Catalog Card.md`.
 
-## Acquisition, weeding, and finding aids
+---
+
+## ♻️ Acquisition, weeding, and finding aids
 
 - **Acquisition:** material lands in `Inbox/`, is appraised against the freshness floor (Rules, above), classified into one class and division, cataloged, and shelved.
 - **Weeding:** the freshness tiers plus **MUSTIE** - weed what is **M**isleading, **U**gly (too badly formed to repair), **S**uperseded, **T**rivial, **I**rrelevant, or available **E**lsewhere. A weeded item is removed only with the owner's confirmation, as a `git rm` that history keeps (the root `README.md`, Ask First).
 - **Finding aids:** each class's README.md is a finding aid (scope, divisions, "class here / not here", see-also, cross-walk), and each division's README.md gives its scope and its nearest neighbors; the generated catalog view (OPAC) is `System/Data/catalog.ndjson`, one record per note, drawn by `update-vault.py`; filter its `BRAIN/Library/` records.
 
-## Engine-agnostic and vector-ready
+---
+
+## 📦 Engine-agnostic and vector-ready
 
 Source of truth is the markdown plus frontmatter, human-readable and portable. Any future vector index is a derived, disposable artifact built from these files. Clean headings double as chunk boundaries; the path is each item's key, and a move is a git rename that history follows; hybrid retrieval scoped by class and facet is the target.
 
-## Revisability
+---
+
+## 🔄 Revisability
 
 No enumerated scheme is provably complete; it is a snapshot that must be revised. New and cross-disciplinary fields are placed by the rules above and surfaced through facets and see-also pointers until, if warranted, the scheme itself is amended. Adding, renaming, or removing a class or division is a structural change made only with the owner's yes (Rules, above). The scheme is intentionally neutral: no privileged religion, no geographic or cultural center.
 
-## Templates
+---
+
+## 📝 Templates
 
 `Library/.template/` holds the cataloging templates (no wikilinks; `.docs/technical/vault/Link-Topology.md`), and its own `README.md` says how each is copied: `Reference Note.md` (the standard holding), `Source Catalog Card.md` (an external source), and `Division.md` (the `README.md` of a new division, written when the division is added).
 
-## File Log
+---
+
+## 📋 File Log
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                                                                       | Purpose                                                                                                                                                             |
-| :-------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`.template/`](.template/README.md)                                         | The cataloging scaffolds: a reference note, a source catalog card and a division README. Each is copied on its own to make one new note, and never edited in place. |
-| [`Arts & Recreation/`](<Arts & Recreation/README.md>)                       | What people create as art and how they play.                                                                                                                        |
-| [`History & Geography/`](<History & Geography/README.md>)                   | The human record across time and place.                                                                                                                             |
-| [`Information & Computing/`](<Information & Computing/README.md>)           | How knowledge and information are organized, stored, computed, and transmitted, plus the general reference works that span every subject.                           |
-| [`Language & Literature/`](<Language & Literature/README.md>)               | Human language and its literature, written and oral.                                                                                                                |
-| [`Life & Practice/`](<Life & Practice/README.md>)                           | General practical knowledge for the business of living, written for anyone.                                                                                         |
-| [`Philosophy & Mind/`](<Philosophy & Mind/README.md>)                       | The examined questions of reason, value, beauty, and mind, and the science of mind and behavior.                                                                    |
-| [`Reference & Encyclopedia/`](<Reference & Encyclopedia/README.md>)         | Offline reference works (Wikipedia and other Kiwix knowledge bases) stored as read-only ZIM files and searched through .github/scripts/knowledge-base.py.           |
-| [`Religion & Spirituality/`](<Religion & Spirituality/README.md>)           | Religion and spirituality studied neutrally, with every tradition treated as a peer and none privileged.                                                            |
-| [`Science & Mathematics/`](<Science & Mathematics/README.md>)               | The formal and natural sciences and how scientific knowledge is made.                                                                                               |
-| [`Society & Social Sciences/`](<Society & Social Sciences/README.md>)       | How human societies are structured, governed, and sustained.                                                                                                        |
-| [`Technology & Applied Science/`](<Technology & Applied Science/README.md>) | Knowledge applied to practical ends: the making of working things and the running of operations.                                                                    |
-| [`README.md`](README.md)                                                    | This file.                                                                                                                                                          |
+| Entry                                                                       | Purpose                                                                                                                                                                                                                                                                                    |
+| :-------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`.template/`](.template/README.md)                                         | The cataloging scaffolds: a reference note, a source catalog card and a division README. Read it before copying one to make a new Library note; each is copied on its own and never edited in place.                                                                                       |
+| [`Arts & Recreation/`](<Arts & Recreation/README.md>)                       | What people create as art and how they play: the arts by form, architecture, sport, games and recreation. Read it to file a holding in this class or to choose among its divisions.                                                                                                        |
+| [`History & Geography/`](<History & Geography/README.md>)                   | The human record across time and place: history at every scale, biography, geography and maps, travel and exploration, archaeology, and genealogy and heritage. Read it to file a holding in this class or to choose among its divisions.                                                  |
+| [`Information & Computing/`](<Information & Computing/README.md>)           | How knowledge and information are organized, stored, computed, and transmitted, plus the general reference works that span every subject. Read it to file a holding in this class or to choose among its divisions.                                                                        |
+| [`Language & Literature/`](<Language & Literature/README.md>)               | Human language and its literature, written and oral: linguistics, the world's languages, writing and rhetoric, translation, and literature by form. Read it to file a holding on language or literature, or to choose among its divisions.                                                 |
+| [`Life & Practice/`](<Life & Practice/README.md>)                           | General practical knowledge for the business of living, written for anyone: health, food, the home, money, work, relationships and personal growth. Read it to file a how-to holding, to choose among its divisions, or to keep the owner's own data out of the Library.                   |
+| [`Philosophy & Mind/`](<Philosophy & Mind/README.md>)                       | The examined questions of reason, value, beauty, and mind, and the science of mind and behavior. Read it to file a holding on philosophy, psychology or cognitive science, or to choose among its divisions.                                                                               |
+| [`Reference & Encyclopedia/`](<Reference & Encyclopedia/README.md>)         | Offline reference works (Wikipedia and other Kiwix knowledge bases) stored as read-only ZIM files and searched through .github/scripts/knowledge-base.py. Read it before enabling, refreshing or searching a knowledge base, or to judge what the set covers offline and what it does not. |
+| [`Religion & Spirituality/`](<Religion & Spirituality/README.md>)           | Religion and spirituality studied neutrally, with every tradition treated as a peer and none privileged. Read it to file a holding in this class, or to choose between a tradition's own division and the one for a theme that spans traditions.                                           |
+| [`Science & Mathematics/`](<Science & Mathematics/README.md>)               | The formal and natural sciences and how scientific knowledge is made. Read it to file a holding in this class, or to tell science apart from engineering, medicine, computing and environmental policy.                                                                                    |
+| [`Society & Social Sciences/`](<Society & Social Sciences/README.md>)       | How human societies are structured, governed, and sustained. Read it to file a holding in this class, or to tell the study of society apart from history, management technique, personal finance and psychology.                                                                           |
+| [`Technology & Applied Science/`](<Technology & Applied Science/README.md>) | Knowledge applied to practical ends: the making of working things and the running of operations.                                                                                                                                                                                           |
+| [`README.md`](README.md)                                                    | This file.                                                                                                                                                                                                                                                                                 |
 
 <!-- AUTO-INDEX:END -->
 
 🗂️ Machined Indexes redraws this log after every push to the default branch.
+
+---
+
+<div align="center">
+
+**Every holding earns its place on the shelf.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

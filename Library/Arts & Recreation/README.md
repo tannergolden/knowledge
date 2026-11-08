@@ -1,17 +1,31 @@
 <!--
-title: "Arts & Recreation - Folder Information"
-description: "What people create as art and how they play."
-type: "index"
+title: '🎨 ARTS & RECREATION'
+description: 'What people create as art and how they play: the arts by form, architecture, sport, games and recreation. Read it to file a holding in this class or to choose among its divisions.'
+type: 'index'
 keywords: ["fine art", "music", "performing arts", "design", "architecture", "sport", "games", "leisure"]
 -->
 
-# 🎨 Library / Arts & Recreation /
+<div align="center">
 
-## Purpose
+# 🎨 ARTS & RECREATION
+
+<a name="top"></a>
+
+**The Library class for what people create as art and how they play.**
+
+_Art by its form, play as practice and culture._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 What people create as art and how they play: the visual, performing and screen arts, music, design, architecture and craft, with their history and criticism, and sport, games and recreation as activity and culture.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -39,7 +53,9 @@ What people create as art and how they play: the visual, performing and screen a
 - [[Library/Arts & Recreation/Visual Arts/README|Visual Arts]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: The arts by form, with their history and criticism
 - Class here: Architecture as an art, and its history
@@ -49,16 +65,36 @@ What people create as art and how they play: the visual, performing and screen a
 - Not here: The engineering and construction of buildings - goes to Technology & Applied Science / Infrastructure & Built Environment
 - Not here: Personal hobby how-to and skill-building - goes to Life & Practice / Hobbies & Skills
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/Language & Literature/README.md` - language and literature
 - `Library/Technology & Applied Science/README.md` - applied science and engineering
 - `Library/Life & Practice/README.md` - practical knowledge for living
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Dewey 700, UDC 7, LCC M, N and GV. Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**Every art by its form, every game by its play.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

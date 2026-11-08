@@ -1,17 +1,31 @@
 <!--
-title: "History & Geography - Folder Information"
-description: "The human record across time and place."
-type: "index"
+title: '🗺️ HISTORY & GEOGRAPHY'
+description: 'The human record across time and place: history at every scale, biography, geography and maps, travel and exploration, archaeology, and genealogy and heritage. Read it to file a holding in this class or to choose among its divisions.'
+type: 'index'
 keywords: ["biography", "archaeology", "area studies", "travel", "heritage", "maps"]
 -->
 
-# 🗺️ Library / History & Geography /
+<div align="center">
 
-## Purpose
+# 🗺️ HISTORY & GEOGRAPHY
+
+<a name="top"></a>
+
+**The Library class for the human record across time and place.**
+
+_What happened, to whom, and where._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 The human record across time and place: history at every scale, the lives of individuals, geography and maps, travel and exploration, archaeology, and genealogy and heritage.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -35,7 +49,9 @@ The human record across time and place: history at every scale, the lives of ind
 - [[Library/History & Geography/World History/README|World History]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: History at any scale, and biography
 - Class here: Geography, cartography, and place
@@ -45,16 +61,36 @@ The human record across time and place: history at every scale, the lives of ind
 - Not here: The history of an art, a sport, philosophy, or a science, which travels with its field (`Library/README.md`, Boundary rulings)
 - Not here: Historical fiction as literature - goes to Language & Literature / Fiction & Prose
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/Society & Social Sciences/README.md` - how societies work
 - `Library/Religion & Spirituality/README.md` - religion and spirituality
 - `Library/Language & Literature/README.md` - language and literature
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Dewey 900, UDC 9, LCC C, D, E, F and G. Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**Every era, every life, every map.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

@@ -1,17 +1,31 @@
 <!--
-title: "Information & Computing - Folder Information"
-description: "How knowledge and information are organized, stored, computed, and transmitted, plus the general reference works that span every subject."
-type: "index"
+title: '🗂️ INFORMATION & COMPUTING'
+description: 'How knowledge and information are organized, stored, computed, and transmitted, plus the general reference works that span every subject. Read it to file a holding in this class or to choose among its divisions.'
+type: 'index'
 keywords: ["information science", "data", "knowledge organization", "reference", "internet", "systems"]
 -->
 
-# 🗂️ Library / Information & Computing /
+<div align="center">
 
-## Purpose
+# 🗂️ INFORMATION & COMPUTING
+
+<a name="top"></a>
+
+**The Library class for information, computing and the works that span every subject.**
+
+_How knowledge is kept, computed and found._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 How knowledge and information are organized, stored, computed, and transmitted, plus the general reference works that span every subject. It holds the discipline of information itself, including cataloging and classification, this Library's own discipline.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -37,7 +51,9 @@ How knowledge and information are organized, stored, computed, and transmitted, 
 - [[Library/Information & Computing/Systems & Cybernetics/README|Systems & Cybernetics]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: The study of information, computing, and how knowledge is organized
 - Class here: General cross-subject reference works (encyclopedias, dictionaries)
@@ -48,16 +64,36 @@ How knowledge and information are organized, stored, computed, and transmitted, 
 - Not here: The owner's own data - goes to `Profile/` or `Memory/`
 - Not here: The offline reference works themselves, as ZIM files, which are kept in `Library/Reference & Encyclopedia/`
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/Technology & Applied Science/README.md` - applied science and engineering
 - `Library/Science & Mathematics/README.md` - the formal and natural sciences
 - `Library/Society & Social Sciences/README.md` - how societies work
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Dewey 000, UDC 0, LCC A and Z. Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**Where the Library studies itself.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

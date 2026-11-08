@@ -1,17 +1,31 @@
 <!--
-title: "Society & Social Sciences - Folder Information"
-description: "How human societies are structured, governed, and sustained."
-type: "index"
+title: '👥 SOCIETY & SOCIAL SCIENCES'
+description: 'How human societies are structured, governed, and sustained. Read it to file a holding in this class, or to tell the study of society apart from history, management technique, personal finance and psychology.'
+type: 'index'
 keywords: ["sociology", "politics", "law", "economics", "anthropology", "education"]
 -->
 
-# 👥 Library / Society & Social Sciences /
+<div align="center">
 
-## Purpose
+# 👥 SOCIETY & SOCIAL SCIENCES
+
+<a name="top"></a>
+
+**The Library class for how human societies are structured, governed and sustained.**
+
+_How people live together, studied as a science._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 How human societies are structured, governed, and sustained: sociology and anthropology, politics and law, economics and commerce, education and media, social policy, and military and security studies.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -39,7 +53,9 @@ How human societies are structured, governed, and sustained: sociology and anthr
 - [[Library/Society & Social Sciences/Sociology/README|Sociology]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: The study of how societies work - social, political, legal, economic
 - Class here: Media and journalism as social phenomena
@@ -49,16 +65,36 @@ How human societies are structured, governed, and sustained: sociology and anthr
 - Not here: The individual's personal finances or career how-to - goes to Life & Practice / Personal Finance or Career & Work
 - Not here: Psychology, social psychology included - goes to Philosophy & Mind / Psychology
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/History & Geography/README.md` - the human record in time and place
 - `Library/Technology & Applied Science/README.md` - applied science and engineering
 - `Library/Life & Practice/README.md` - practical knowledge for living
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Dewey 300 (incl. 355 military science), UDC 3, LCC H, J, K, L, U and V. Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**Study the society, not the self.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

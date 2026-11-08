@@ -1,17 +1,31 @@
 <!--
-title: "Philosophy & Mind - Folder Information"
-description: "The examined questions of reason, value, beauty, and mind, and the science of mind and behavior."
-type: "index"
+title: '💭 PHILOSOPHY & MIND'
+description: 'The examined questions of reason, value, beauty, and mind, and the science of mind and behavior. Read it to file a holding on philosophy, psychology or cognitive science, or to choose among its divisions.'
+type: 'index'
 keywords: ["logic", "ethics", "metaphysics", "epistemology", "psychology", "cognitive science"]
 -->
 
-# 💭 Library / Philosophy & Mind /
+<div align="center">
 
-## Purpose
+# 💭 PHILOSOPHY & MIND
+
+<a name="top"></a>
+
+**The Library class for philosophy by question and school, and the science of mind.**
+
+_Questions argued as philosophy, minds tested as science._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 The examined questions of reason, value, beauty, and mind, and the science of mind and behavior: philosophy by question and by school, and psychology and cognitive science.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -37,7 +51,9 @@ The examined questions of reason, value, beauty, and mind, and the science of mi
 - [[Library/Philosophy & Mind/Psychology/README|Psychology]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: Philosophical argument and the theory of knowledge, value, and mind
 - Class here: The scientific and clinical study of psychology and cognition
@@ -48,16 +64,36 @@ The examined questions of reason, value, beauty, and mind, and the science of mi
 - Not here: Medical psychiatry and drug treatment - goes to Technology & Applied Science / Medicine & Health Sciences
 - Not here: Criticism internal to a specific art form - goes to the relevant Arts & Recreation or Language & Literature division
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/Religion & Spirituality/README.md` - religion and spirituality
 - `Library/Science & Mathematics/README.md` - the formal and natural sciences
 - `Library/Life & Practice/README.md` - practical knowledge for living
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Dewey 100 (incl. 150 psychology), UDC 1, LCC B-BJ. Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**Every question examined, every mind studied.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

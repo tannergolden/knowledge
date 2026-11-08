@@ -1,17 +1,31 @@
 <!--
-title: "Science & Mathematics - Folder Information"
-description: "The formal and natural sciences and how scientific knowledge is made."
-type: "index"
+title: '🔬 SCIENCE & MATHEMATICS'
+description: 'The formal and natural sciences and how scientific knowledge is made. Read it to file a holding in this class, or to tell science apart from engineering, medicine, computing and environmental policy.'
+type: 'index'
 keywords: ["physics", "chemistry", "biology", "statistics", "earth science", "astronomy"]
 -->
 
-# 🔬 Library / Science & Mathematics /
+<div align="center">
 
-## Purpose
+# 🔬 SCIENCE & MATHEMATICS
+
+<a name="top"></a>
+
+**The Library class for the formal and natural sciences and their method.**
+
+_What can be proved, measured or tested._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 The formal and natural sciences and how scientific knowledge is made: mathematics and statistics, the physical, life, earth and space sciences, and the method, philosophy and history of science.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -37,7 +51,9 @@ The formal and natural sciences and how scientific knowledge is made: mathematic
 - [[Library/Science & Mathematics/Statistics & Probability/README|Statistics & Probability]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: Mathematics and the natural sciences
 - Class here: The theory of statistics and probability
@@ -48,16 +64,36 @@ The formal and natural sciences and how scientific knowledge is made: mathematic
 - Not here: Data management and applied analytics - goes to Information & Computing / Data & Information Management
 - Not here: Environmental policy and activism - goes to Society & Social Sciences / Social Policy & Issues
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/Technology & Applied Science/README.md` - applied science and engineering
 - `Library/Information & Computing/README.md` - information, computing, and reference
 - `Library/Society & Social Sciences/README.md` - how societies work
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Dewey 500, UDC 5, LCC Q. Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**Numbers, nature, and the method that joins them.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

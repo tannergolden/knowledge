@@ -1,17 +1,31 @@
 <!--
-title: "Language & Literature - Folder Information"
-description: "Human language and its literature, written and oral."
-type: "index"
+title: '📖 LANGUAGE & LITERATURE'
+description: 'Human language and its literature, written and oral: linguistics, the world''s languages, writing and rhetoric, translation, and literature by form. Read it to file a holding on language or literature, or to choose among its divisions.'
+type: 'index'
 keywords: ["linguistics", "world languages", "poetry", "fiction", "drama", "rhetoric", "translation"]
 -->
 
-# 📖 Library / Language & Literature /
+<div align="center">
 
-## Purpose
+# 📖 LANGUAGE & LITERATURE
+
+<a name="top"></a>
+
+**The Library class for human language and its literature, written and oral.**
+
+_Language studied as a whole, literature shelved by its form._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 Human language and its literature, written and oral: the science of language and the world's languages, writing and rhetoric, translation, and literature by form, with its criticism and history.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -37,7 +51,9 @@ Human language and its literature, written and oral: the science of language and
 - [[Library/Language & Literature/Writing & Rhetoric/README|Writing & Rhetoric]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: Language and linguistics, including sign language
 - Class here: Literature by form, with its criticism and history
@@ -47,16 +63,36 @@ Human language and its literature, written and oral: the science of language and
 - Not here: Drama in live performance - goes to Arts & Recreation / Performing Arts
 - Not here: Building machine translation and other language software - goes to Technology & Applied Science / Applied Computing & Software
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/Arts & Recreation/README.md` - the arts, sport, and play
 - `Library/Society & Social Sciences/README.md` - how societies work
 - `Library/Religion & Spirituality/README.md` - religion and spirituality
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Dewey 400 and 800, UDC 8, LCC P. Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**Every tongue and every text, written or told.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>
