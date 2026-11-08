@@ -77,6 +77,16 @@ class TestProfileCoverage(unittest.TestCase):
         self.assertEqual([entry['name'] for entry in row['entry_files']], ['Honesty.md'])
         self.assertIn('sections', row)
 
+    def test_a_page_shaped_facet_names_its_sections_plainly(self) -> None:
+        # A folder facet's README.md is a page: emoji section headings, and an opening section on what the
+        # folder is for, which holds no fact about the owner and is never scored or asked about.
+        self.vault.note('Profile/Values/README.md', body='# 🧭 VALUES\n\n## 💡 What This Folder Is For\n\n'
+                                                          'Core values, ranked.\n\n## 📸 Snapshot\n\n'
+                                                          'Honesty first.\n')
+        sections = json.loads(self.vault.run(SCRIPT, 'Values', '--json').stdout)['sections']
+        self.assertEqual([section['heading'] for section in sections], ['Snapshot'])
+        self.assertEqual(sections[0]['substantive'], 1)
+
     def test_lines_in_the_generated_entries_block_do_not_count(self) -> None:
         self.vault.note('Profile/Goals/README.md', body='# Goals\n<!-- brain:profile-entries (x) -->\n- [[Profile/Goals/Run|Run]]\n'
                                                          '<!-- /brain:profile-entries -->\n')

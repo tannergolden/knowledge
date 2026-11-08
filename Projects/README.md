@@ -1,28 +1,29 @@
 <!--
-title: "Projects - Folder Information"
-description: "Explains the purpose of the Projects/ folder: personal project tracking, one folder per project copied whole from a standard template, created only with a yes, with each project's status in its own Overview.md."
-type: "index"
+title: '🛠️ PROJECTS'
+description: 'Explains the purpose of the Projects/ folder: personal project tracking, one folder per project copied whole from a standard template, created only with a yes, with each project''s status in its own Overview.md. Read it before starting, filing or updating a personal project.'
+type: 'index'
 keywords: ["personal initiatives", "side projects", "passion builds", "folder overview", "project templates", "creative work", "learning initiatives"]
 -->
 
-# 🛠️ Projects/
+<div align="center">
 
-What the owner builds, makes, learns or explores on their own: side projects, creative work, learning goals. Each project is a folder copied from `.template/`, with an `Overview.md` for its goal and status, a `Log.md` of progress, `Notes.md` and `Resources.md`. Work for an employer, a client or one of the owner's companies belongs in `Ventures/`. Read this README before changing anything in this folder; its rules add to the root `README.md` and never loosen it.
+# 🛠️ PROJECTS
 
-## Rules
+<a name="top"></a>
 
-- `Projects/` holds the owner's personal initiatives only. Work for an employer, a client or one of their companies goes to `Ventures/`.
-- A project folder is created only with a yes, by copying `Projects/.template/` whole and giving the folder a short hyphenated name (`Personal-Site`). When it is unclear whether something is a project, the owner is asked first.
-- Every copied file gets its real `title`, `description` and `type`, its keywords lose `template`, and `[Project Name]` becomes the project's name: the copied `README.md` becomes the project folder's note, typed `index`, so the template's placeholders never reach the catalog.
-- A project's four core files, `Overview.md`, `Log.md`, `Notes.md` and `Resources.md`, always stay at its root, beside its `README.md`.
-- A subfolder is proposed first and created only with a yes, never silently.
-- When work happens on a project, its `Overview.md` status is updated and its `Log.md` gains an entry.
+**Side projects, creative work and learning, each in a folder of its own.**
 
-## What Belongs Here
+_Never an employer's work, and never a folder without a yes._
 
-`Projects/` tracks personal initiatives: things the owner is building, creating, learning, or exploring independently, such as side projects, creative work, passion builds and learning initiatives. It is not for work tasks or organizational projects.
+</div>
 
-Any skill's work in the owner's own life lands here once it is an initiative of its own, each project created only with a yes (Rules, above):
+---
+
+## ⚖️ What Belongs Here
+
+`Projects/` tracks personal initiatives: what the owner builds, makes, learns or explores on their own, such as side projects, creative work, passion builds and learning initiatives. Each project is a folder copied from `.template/`, with an `Overview.md` for its goal and status, a `Log.md` of progress, `Notes.md` and `Resources.md`. It is not for work tasks or organizational projects: work for an employer, a client or one of the owner's companies belongs in `Ventures/`. Read this README before changing anything in this folder; its rules add to the root `README.md` and never loosen it.
+
+Any skill's work in the owner's own life lands here once it is an initiative of its own, each project created only with a yes (Rules, below):
 
 - a side project or a learning plan, from the `research-and-development` skill;
 - a household plan, a trip or a move, from `operations-and-logistics`;
@@ -40,7 +41,20 @@ A check of a project's work, such as the `quality-assurance` skill's, is logged 
 | Reference material for a project topic | `Library/` |
 | A pattern or trait observed about the owner | `Profile/Personality.md`, proposed first (`Profile/README.md`, Rules) |
 
-## Structure
+---
+
+## 📏 Rules
+
+- `Projects/` holds the owner's personal initiatives only. Work for an employer, a client or one of their companies goes to `Ventures/`.
+- A project folder is created only with a yes, by copying `Projects/.template/` whole and giving the folder a short hyphenated name (`Personal-Site`). When it is unclear whether something is a project, the owner is asked first.
+- Every copied file gets its real `title`, `description` and `type`, its keywords lose `template`, and `[Project Name]` becomes the project's name: the copied `README.md` becomes the project folder's note, typed `index`, so the template's placeholders never reach the catalog.
+- A project's four core files, `Overview.md`, `Log.md`, `Notes.md` and `Resources.md`, always stay at its root, beside its `README.md`.
+- A subfolder is proposed first and created only with a yes, never silently.
+- When work happens on a project, its `Overview.md` status is updated and its `Log.md` gains an entry.
+
+---
+
+## 🏗️ Structure
 
 ```bash
 Projects/
@@ -60,7 +74,9 @@ Projects/
     └── [Subfolder]/    ← added for more content as needed, with a yes
 ```
 
-## Creating A Project Folder
+---
+
+## 🌱 Creating A Project Folder
 
 A project folder is made when the owner starts something that sounds like a personal project, and only once they say yes to the question:
 
@@ -75,7 +91,9 @@ It is made by copying `.template/` whole and naming the copy in short hyphenated
 - A conversation reveals a sustained personal goal or build
 - The owner asks to track or organize something new
 
-## The Project Files
+---
+
+## 📄 The Project Files
 
 Each project folder holds the five files the template gives it:
 
@@ -89,7 +107,9 @@ Each project folder holds the five files the template gives it:
 
 When a project closes, its `Overview.md` says so and the folder is kept as the record: archiving or removing anything in it takes a yes (the root `README.md`, Ask First).
 
-## Subfolders
+---
+
+## 📁 Subfolders
 
 **The core files always stay at the root of the project folder, without exception.** `Overview.md`, `Log.md`, `Notes.md` and `Resources.md` are never moved into subfolders: they always sit in `Projects/[Project-Name]/`, beside its `README.md`, however the project grows.
 
@@ -117,7 +137,9 @@ A subfolder is always proposed before it is created, and made only after a yes:
 
 These are starting points: a project's subfolders match what it actually contains, so a project with no code gets no `Code/` folder. A file saved for a project goes in the right place: a design mockup, a script or a draft goes into a fitting subfolder, and when none exists, one is proposed rather than everything dropped at the root.
 
-## Projects
+---
+
+## 🗂️ Projects
 
 Each project folder's README, listed by `update-vault.py` from the folders here; the catalog's `BRAIN/Projects/` records list every note inside them, and each project's `Overview.md` says where it stands.
 
@@ -125,15 +147,31 @@ Each project folder's README, listed by `update-vault.py` from the folders here;
 _No subfolders yet._
 <!-- /brain:children -->
 
-## File Log
+---
+
+## 📝 File Log
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                               | Purpose                                                                                                                                                                        |
-| :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`.template/`](.template/README.md) | The blueprint every project folder is copied from, whole: this README becomes the project folder's own, with [Project Name] replaced and its real title, description and type. |
-| [`README.md`](README.md)            | This file.                                                                                                                                                                     |
+| Entry                               | Purpose                                                                                                                                                                                                                                                                     |
+| :---------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`.template/`](.template/README.md) | The blueprint every project folder is copied from, whole: this README becomes the project folder's own, with [Project Name] replaced and its real title, description and type. Read it before starting a project, to see what each project folder holds and how it is kept. |
+| [`README.md`](README.md)            | This file.                                                                                                                                                                                                                                                                  |
 
 <!-- AUTO-INDEX:END -->
 
 🗂️ Machined Indexes redraws this log after every push to the default branch.
+
+---
+
+<div align="center">
+
+**Start on a yes, log each step, keep the core files at the root.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

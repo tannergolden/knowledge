@@ -1,29 +1,59 @@
 <!--
-title: "[Company] - Administration"
-description: "The blueprint for a venture's Administration folder, copied whole with the venture: this README becomes the folder's own, with [Company] replaced."
-type: "template"
+title: '🗄️ ADMINISTRATION'
+description: 'The blueprint for a venture''s Administration folder, copied whole with the venture: this README becomes the folder''s own, with [Company] replaced. Read it before filing or looking for a venture''s strategy, decision record or operating cadence.'
+type: 'template'
 keywords: ["executive office", "strategy", "decision record", "operating cadence", "governance", "department folder", "template"]
 -->
 
 <!-- On copying: this README comes with the venture's folder. Replace [Company] with the venture's name, set type to "index", and give the copy its real title and description (Ventures/README.md, Rules). -->
 
-# 🗄️ [Company] - Administration
+<div align="center">
+
+# 🗄️ ADMINISTRATION
+
+<a name="top"></a>
+
+**Where [Company] sets its strategy, records its decisions and keeps its rhythm.**
+
+_Every [Company] decision on the record, never rewritten._
+
+</div>
+
+---
+
+## 📂 What Goes Here
 
 The executive office of [Company]: its strategy, its decision record and its operating rhythm. The `administration` skill's company work lands here: the founding, the strategy, the decisions that cross departments, and the reviews of the operating cadence. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
-
-## What Goes Here
 
 - `Strategy.md`: the company's thesis, the single source the `Goals.md` OKRs ladder up to; read it before any planning, prioritization or go-to-market work.
 - `Decisions.md`: the governance record of every consequential decision, its decider and its one accountable owner, with the memos behind them; read it before reopening a settled question.
 - `Cadence.md`: the operating rhythm, the weekly, monthly, quarterly and annual loops that keep `Goals.md`, `Business Intelligence (BI)/Metrics.md` and `Log.md` current.
 
-## Rules
+---
+
+## ↪️ What Goes Elsewhere
+
+- Current priorities and OKRs live in the venture's `Goals.md`, and the company profile in its `Overview.md`, which the same skill keeps current.
+- The owner's own decisions, dates and commitments, outside any venture, go to `Memory/`.
+
+---
+
+## 📏 Rules
 
 - The `administration` skill is the sole writer of these files, behind the write-gate (`Ventures/README.md`, Structure).
 - A decision is recorded in `Decisions.md`, with a one-line entry in the venture's `Log.md`; one that must outlive the record is promoted into `Overview.md` or `Strategy.md`.
 - A decision that no longer holds is marked superseded or reversed, never rewritten, and the minority view is recorded by name.
 
-## What Goes Elsewhere
+---
 
-- Current priorities and OKRs live in the venture's `Goals.md`, and the company profile in its `Overview.md`, which the same skill keeps current.
-- The owner's own decisions, dates and commitments, outside any venture, go to `Memory/`.
+<div align="center">
+
+**One thesis, one record, one rhythm for [Company].**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>
