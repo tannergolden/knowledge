@@ -49,7 +49,10 @@ class Vault:
         stem = path.parent.name if path.name == 'README.md' and path.parent.name else path.stem
         values: dict[str, object] = {'title': stem, 'description': f'The note at {rel}.', 'type': 'index'}
         values.update(fields)
-        return self.write(rel, block('<!--', '-->', values) + '\n\n' + (body or f'# {stem}\n'))
+        text = body or f'# {stem}\n'
+        if path.name == 'README.md' and '<a name="top"></a>' not in text:
+            text = page(text)
+        return self.write(rel, block('<!--', '-->', values) + '\n\n' + text)
 
     def run(self, script: str, *args: str, stdin: str | None = None,
             scripts: pathlib.Path | None = None) -> subprocess.CompletedProcess[str]:
@@ -66,6 +69,16 @@ class Vault:
         self.git('config', 'user.name', 'Test')
         self.git('add', '-A')
         self.git('commit', '-q', '-m', 'test: seed', '--allow-empty')
+
+
+def page(body: str) -> str:
+    """A folder README's body in the page format lint-notes.py holds it to: its H1 inside the centered
+    header with the top anchor, the rest of the body below, then the footer that links back."""
+    lines = body.split('\n')
+    first = next((i for i, line in enumerate(lines) if line.startswith('# ')), None)
+    title, rest = (lines[first], '\n'.join(lines[first + 1:])) if first is not None else ('# Folder', body)
+    return (f'<div align="center">\n\n{title}\n\n<a name="top"></a>\n\n**The folder.**\n\n_A tagline._\n\n</div>\n\n'
+            f'---\n\n{rest.strip()}\n\n---\n\n<div align="center">\n\n**A closing.**\n\n[↑ Back to Top](#top)\n\n</div>\n')
 
 
 def block(opener: str, closer: str, values: dict[str, object]) -> str:

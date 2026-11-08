@@ -108,6 +108,14 @@ class TestLintNotes(unittest.TestCase):
         self.assert_flags('no frontmatter block')
         self.assert_flags('no frontmatter block', 'Memory/README.md')
 
+    def test_a_readme_without_the_page_format_is_flagged(self) -> None:
+        # A folder's README.md is a page (Note-Schema.md): its centered header and its footer are required.
+        self.vault.write('Library/README.md', '<!--\ntitle: "x"\ndescription: "y"\ntype: "index"\n-->\n\n# Library\n')
+        self.assert_flags("a folder's README.md is a page")
+        self.vault.note('Library/README.md')
+        self.vault.note('Library/Holding.md', body='# Holding\n', type='reference', keywords=['freshness/timeless'])
+        self.assertEqual(self.lint().returncode, 0, 'a note that is not a README carries no page format')
+
     def test_only_a_record_or_a_template_adds_fields(self) -> None:
         self.vault.note('Library/README.md', lens='wide')
         self.assert_flags("'lens' is not one of a note's fields")

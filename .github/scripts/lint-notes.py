@@ -13,7 +13,9 @@ hidden ones, plus the .template/ scaffolds, with each folder's README.md,
 which is that folder's note. Given files, it checks only those. A file
 outside the walk, such as one under .github/ or the README.md at the vault
 root, is not a note and is skipped. A folder explains itself in its
-README.md alone, so a note named after its folder is flagged.
+README.md alone, so a note named after its folder is flagged, and that
+README.md is a page as well, so one without the page format's centered
+header and footer is flagged too (Note-Schema.md).
 
 Run it:
 
@@ -42,6 +44,10 @@ FRESHNESS = ('freshness/timeless', 'freshness/enduring', 'freshness/current')
 # GitHub's five alerts, the only callouts a note uses (the root README.md, Conventions), each marker alone on its line.
 ALERTS = ('NOTE', 'TIP', 'IMPORTANT', 'WARNING', 'CAUTION')
 CALLOUT = re.compile(r'^[ \t]*(?:>[ \t]*)+\[!([^\]\n]*)\]([^\n]*)$', re.M)
+# A folder's README.md is a page as well as its folder's note (Note-Schema.md), so it carries the
+# account's page format: the centered header, its H1 and the top anchor, and the footer that links back.
+MASTHEAD = re.compile(r'<div align="center">\s*\n\s*\n# [^\n]+\n\s*\n<a name="top"></a>')
+BACK_TO_TOP = '[↑ Back to Top](#top)'
 
 
 def check_fields(fields: dict[str, object], template: bool, problems: list[str]) -> None:
@@ -102,6 +108,10 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> list[str]:
                             f"{', '.join(ALERTS)}, alone on its line, with any title as a bold first line")
     if template and '[[' in text:
         problems.append('a scaffold carries no wikilinks (Link-Topology.md)')
+    if path.name == vault.README and text.strip() and (not MASTHEAD.search(text) or BACK_TO_TOP not in text):
+        problems.append("a folder's README.md is a page: it opens with the centered header (its H1 and "
+                        '<a name="top"></a> in a <div align="center">) and closes with the footer that links '
+                        'back to it (Note-Schema.md)')
     fields = vault.parse_frontmatter(text)
     if fields is None:
         if text.strip():

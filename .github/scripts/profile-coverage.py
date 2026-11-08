@@ -52,6 +52,10 @@ H2 = re.compile(r'^\s*##\s+(.+?)\s*$')
 # for, which holds no fact about the owner, so it is never scored or asked about.
 EMOJI = re.compile(r'^[^\w\s(\[]+\s*')
 ABOUT = frozenset({'What This Folder Is For'})
+# The page's own chrome, its centered header and footer and the rules between sections, never holds a fact.
+CENTER_OPEN = re.compile(r'^\s*<div align="center">\s*$')
+CENTER_CLOSE = re.compile(r'^\s*</div>\s*$')
+RULE = re.compile(r'^\s*---\s*$')
 COMMENT = re.compile(r'<!--[^>]*-->')
 UNCONFIRMED = re.compile(r'<!--[^>]*\bunconfirmed\b[^>]*-->')
 FIELD_STUB = re.compile(r'^\s*[-*]\s+\*\*[^:]+:\*\*\s*$')
@@ -212,8 +216,16 @@ def score(path: pathlib.Path, scaffold: frozenset[int]) -> dict[str, object] | N
     substantive = unconfirmed = 0
     sections: list[dict[str, object]] = []
     section: dict[str, object] | None = None
-    in_block = about = False
+    in_block = about = centered = False
     for raw in body(text).splitlines():
+        if CENTER_OPEN.match(raw):
+            centered = True
+            continue
+        if centered:
+            centered = not CENTER_CLOSE.match(raw)
+            continue
+        if RULE.match(raw):
+            continue
         if BLOCK_START.search(raw):
             in_block = True
             continue

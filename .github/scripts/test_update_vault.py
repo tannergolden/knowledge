@@ -134,7 +134,8 @@ class TestBlocks(Base):
         self.vault.note('Ventures/.template/README.md', body=text, type='template')
         self.vault.note('Ventures/.template/Sales/README.md', type='template')
         self.update()
-        self.assertIn(text, self.vault.read('Ventures/.template/README.md'))
+        # The block is left exactly as it was: a scaffold's README is never drawn.
+        self.assertIn(block('children'), self.vault.read('Ventures/.template/README.md'))
 
     def test_a_registered_note_without_its_block_is_an_error(self) -> None:
         self.vault.note('Memory/Events/README.md', body='# Events\n')
