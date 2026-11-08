@@ -1,26 +1,27 @@
 <!--
-title: "Inbox - Folder Information"
-description: "The staging area: drop any unsorted file here, and it is enriched and filed where it belongs, each move proposed and confirmed first. The held sub-homes (Reports, Visuals, Ideas and Backups) live here but are never sorted."
-type: "index"
+title: '📥 INBOX'
+description: 'The staging area: drop any unsorted file here, and it is enriched and filed where it belongs, each move proposed and confirmed first, while the held sub-homes (Reports, Visuals, Ideas and Backups) live here but are never sorted. Read it before sorting the Inbox or changing anything in it.'
+type: 'index'
 keywords: ["staging area", "drop files", "unsorted", "sorting protocol", "pdf cleanup", "file triage", "where to put files", "hold folder"]
 -->
 
-# 📥 Inbox/
+<div align="center">
+
+# 📥 INBOX
+
+<a name="top"></a>
+
+**The staging area where every unsorted file waits to be enriched and filed.**
+
+_Proposed first, enriched always, moved only on a yes._
+
+</div>
+
+---
+
+## 💡 What `Inbox/` Is (a meta-zone, not just an inbox)
 
 Anything waiting to be filed lands here: a document, a PDF, a photo, an export, a note written in a hurry. Each loose file is given a home and a clean name, enriched, and moved only once the owner confirms the move. Read this README before changing anything in this folder; its rules add to the root `README.md` and never loosen it.
-
-## Rules
-
-- **The Inbox is checked at the start of every session**, even when nothing is likely to wait there, and what waits is sorted before other work.
-- **Nothing leaves unenriched.** A note gets its frontmatter, and any file a clean name, before it moves. No exceptions.
-- **Nothing moves without a yes.** Each file's destination and clean name are proposed first, and the owner confirms them.
-- **No file here is deleted without confirmation.** Leaving a file at the `Inbox/` root is the safe default.
-- **The held sub-homes are never sorted**: `Reports/`, `Visuals/`, `Ideas/` and `Backups/`.
-- **A new folder only to fit a file.** During a sort, when no folder fits, a new folder three or more levels down may be proposed; one directly inside a top folder needs the owner's explicit direction, and a top folder is never created.
-- **Outside PDFs are offered cleanup first**, and their originals are copied into `Inbox/Backups/` before anything changes.
-- The sort follows the protocol below, step by step.
-
-## What `Inbox/` Is (a meta-zone, not just an inbox)
 
 `Inbox/` is a small **meta-zone**, not a single pure inbox. It holds things kept deliberately distinct, the pattern Johnny.Decimal uses for its `00-09` area, where an inbox and an archive coexist as siblings:
 
@@ -32,7 +33,22 @@ Anything waiting to be filed lands here: a document, a PDF, a photo, an export, 
 
 The three libraries stay inside the vault's checks like any other content: their notes are linted and cataloged, and a saved visual, which is not a note, is found through its index. `Backups/` holds raw copies, which the checks and the catalog never walk. All four are **held lists that live at the inbox path, not contents of the inbox.** "Process the inbox to empty", and any "is the inbox empty?" check, apply only to the loose files at the root; they never count a held sub-home. This is a deliberate, documented exception to the inbox-is-transient rule.
 
-## What Belongs In The Inbox
+---
+
+## 📜 Rules
+
+- **The Inbox is checked at the start of every session**, even when nothing is likely to wait there, and what waits is sorted before other work.
+- **Nothing leaves unenriched.** A note gets its frontmatter, and any file a clean name, before it moves. No exceptions.
+- **Nothing moves without a yes.** Each file's destination and clean name are proposed first, and the owner confirms them.
+- **No file here is deleted without confirmation.** Leaving a file at the `Inbox/` root is the safe default.
+- **The held sub-homes are never sorted**: `Reports/`, `Visuals/`, `Ideas/` and `Backups/`.
+- **A new folder only to fit a file.** During a sort, when no folder fits, a new folder three or more levels down may be proposed; one directly inside a top folder needs the owner's explicit direction, and a top folder is never created.
+- **Outside PDFs are offered cleanup first**, and their originals are copied into `Inbox/Backups/` before anything changes.
+- The sort follows the protocol below, step by step.
+
+---
+
+## ⚖️ What Belongs In The Inbox
 
 The Inbox is for things that already have a place in the BRAIN but need to be filed:
 
@@ -41,7 +57,9 @@ The Inbox is for things that already have a place in the BRAIN but need to be fi
 - Project files, drafts and exports
 - Anything that would otherwise have to be categorized by hand
 
-## What Doesn't Belong
+---
+
+## 🚫 What Doesn't Belong
 
 Some files are better deleted or kept somewhere else entirely:
 
@@ -51,7 +69,9 @@ Some files are better deleted or kept somewhere else entirely:
 
 When one of these is dropped and no good home exists, the owner is asked whether to delete it or move it to a location of their choice (step 7). System junk (`.DS_Store`, `.cache` and the like) is ignored by the sort, and `.DS_Store` is never deleted, moved or counted (the root `README.md`, Gotchas).
 
-## The Sorting Protocol (Canonical)
+---
+
+## 🗃️ The Sorting Protocol (Canonical)
 
 This is the complete sorting protocol; the Rules above are its always-on essentials. In short: at the next session start, each loose file is detected; a PDF from outside is offered cleanup; each file is analyzed for where it belongs in the BRAIN; its destination and, where needed, a clean name are proposed together and confirmed; and only then is it enriched and moved. **Nothing is moved without the owner's approval.**
 
@@ -176,17 +196,33 @@ Some Inbox items are not personal content but material for working in the vault:
 
 The standard protocol applies: the move is confirmed, the item leaves `Inbox/` completely so no duplicate is left behind, its name has no underscores (the root `README.md`, Conventions), and a `.md` file takes the standard frontmatter.
 
-## File Log
+---
+
+## 📝 File Log
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                           | Purpose                                                                                                                                                                                                                                                                                                                                                         |
-| :------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Ideas/`](Ideas/README.md)     | The held idea pool: the living library of idea records that discovery work produces. Ideas persist here by lifecycle status (raw, shortlisted, developed, promoted, parked, killed), held and never sorted, so each new idea is checked against the whole pool, killed ideas included, and its lineage traced. The ideation counterpart to the Reports library. |
-| [`Reports/`](Reports/README.md) | The held library for finished research and discovery reports: they are held, not sorted into the BRAIN, and every report is good for up to three months before it must be re-verified.                                                                                                                                                                          |
-| [`Visuals/`](Visuals/README.md) | The held library for finished standalone visuals: charts, diagrams, dashboards and illustrations, held, not sorted into the BRAIN, and kept as archival artifacts that carry the date of their underlying data.                                                                                                                                                 |
-| [`README.md`](README.md)        | This file.                                                                                                                                                                                                                                                                                                                                                      |
+| Entry                           | Purpose                                                                                                                                                                                                                                                                                                                                                       |
+| :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`Ideas/`](Ideas/README.md)     | The held idea pool: the living library of idea records that discovery work produces, kept by lifecycle status (raw, shortlisted, developed, promoted, parked, killed) and never sorted, the ideation counterpart to the Reports library. Read it to file an idea, or to check a new one against the whole pool, killed ideas included, and trace its lineage. |
+| [`Reports/`](Reports/README.md) | The held library for finished research and discovery reports: they are held, not sorted into the BRAIN, and every report is good for up to three months before it must be re-verified. Read it to file, refresh or find a report.                                                                                                                             |
+| [`Visuals/`](Visuals/README.md) | The held library for finished standalone visuals: charts, diagrams, dashboards and illustrations, held, not sorted into the BRAIN, and kept as archival artifacts that carry the date of their underlying data. Read it to file, regenerate or find a visual.                                                                                                 |
+| [`README.md`](README.md)        | This file.                                                                                                                                                                                                                                                                                                                                                    |
 
 <!-- AUTO-INDEX:END -->
 
 🗂️ Machined Indexes redraws this log after every push to the default branch.
+
+---
+
+<div align="center">
+
+**Sorted to empty, one confirmed move at a time.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

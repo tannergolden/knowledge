@@ -1,24 +1,27 @@
 <!--
-title: "Memory - Folder Information"
-description: "The continuity layer, organized by kind of memory: working (Log), context (session summaries and events), semantic (Entities), reflective (Decisions and Insights), and prospective (Dates). It records what happened and the owner's outside world, with capture-time importance, recency-importance-relevance retrieval, reflection, and bitemporal provenance. Who the owner IS lives in Profile, never here."
-type: "index"
+title: '🧠 MEMORY'
+description: 'The continuity layer, organized by kind of memory: working (Log), context (session summaries and events), semantic (Entities), reflective (Decisions and Insights) and prospective (Dates), recording what happened and the owner''s outside world, never who the owner is, which lives in Profile. Read it before writing or recalling a memory, for capture-time importance, recency-importance-relevance retrieval, reflection and bitemporal provenance.'
+type: 'index'
 keywords: ["continuity layer", "memory types", "context semantic", "importance salience", "recency relevance retrieval", "reflection cadence", "bitemporal provenance", "supersede not rewrite"]
 -->
 
-# 🧠 Memory/
+<div align="center">
+
+# 🧠 MEMORY
+
+<a name="top"></a>
+
+**The continuity layer: what happened, who is around the owner, and what is due.**
+
+_Superseded, never rewritten; consolidated, never deleted._
+
+</div>
+
+---
+
+## 💡 What Belongs Here, And What Goes Elsewhere
 
 What happened, who is around the owner, what they decided and what is due, organized by kind of memory: `Log.md` for what just happened and what is still open, `Dates.md` for what is due, `Context/` for session summaries that age from Current to Recent to Archive, and `Events/`, `Entities/`, `Decisions/` and `Insights/` for what lasts. Who the owner is lives in `Profile/`, never here. Read this README before changing anything in this folder; its rules add to the root `README.md` and never loosen it.
-
-## Rules
-
-- **Only what `Profile/` cannot hold.** `Memory/` records what happened, who is around the owner, what they decided and what is due. Who the owner is (traits, values, habits, preferences, goals) belongs to `Profile/`: it is proposed there (`Profile/README.md`, Rules), never stored here.
-- **`Log.md` is read at the start of every session**, and a premise is checked against Memory before it is acted on: when Memory disagrees, the conflict is named rather than either version adopted (the root `README.md`, Gotchas).
-- **Nothing is deleted.** A fact that changes is superseded rather than overwritten, and summaries cascade into the archive. Removing an entry is a confirmed `git rm`.
-- **A checkpoint at every task boundary.** After each finished task the running session summary is updated, and one is written before the context runs short (Session Summaries, below).
-- **Each entry is written in its destination's format**, and a generated block is never edited by hand: `update-vault.py` redraws them.
-- **No wikilinks in an entry.** An entry cross-references with a plain-path `Related:` line.
-
-## What Belongs Here, And What Goes Elsewhere
 
 `Memory/` is the continuity layer: the vault's persistent memory of what has happened, who and what is in the owner's world, what was decided, and what is due. Without it every session starts cold; with it, context accumulates.
 
@@ -40,7 +43,20 @@ Memory records the *events that evidence* a trait; Profile states the trait once
 
 Any work that learns what happened, who is around the owner, what they decided or what is due records it here, by the rules on this page, whichever skill does it: the decisions, dates and commitments the `administration` skill helps the owner make in their own life, the open loops and dates of a complaint or a return (`customer-experience`) or a dispute (`legal-and-compliance`), and the people, events, dates and decisions a profile interview learns.
 
-## The Kinds Of Memory
+---
+
+## 📜 Rules
+
+- **Only what `Profile/` cannot hold.** `Memory/` records what happened, who is around the owner, what they decided and what is due. Who the owner is (traits, values, habits, preferences, goals) belongs to `Profile/`: it is proposed there (`Profile/README.md`, Rules), never stored here.
+- **`Log.md` is read at the start of every session**, and a premise is checked against Memory before it is acted on: when Memory disagrees, the conflict is named rather than either version adopted (the root `README.md`, Gotchas).
+- **Nothing is deleted.** A fact that changes is superseded rather than overwritten, and summaries cascade into the archive. Removing an entry is a confirmed `git rm`.
+- **A checkpoint at every task boundary.** After each finished task the running session summary is updated, and one is written before the context runs short (Session Summaries, below).
+- **Each entry is written in its destination's format**, and a generated block is never edited by hand: `update-vault.py` redraws them.
+- **No wikilinks in an entry.** An entry cross-references with a plain-path `Related:` line.
+
+---
+
+## 🗂️ The Kinds Of Memory
 
 | Memory type | Where | Holds | How it ages |
 |-------------|-------|-------|-------------|
@@ -54,7 +70,9 @@ Memory is organized the way long-term memory is organized in both cognitive scie
 
 Memory that grows without bound is split into **collections**: a lean, always-scannable index (the folder's `README.md`, whose list `update-vault.py` draws) plus one entry file per item, loaded only when relevant. This is parent-document retrieval, small to find and large to read, so a whole-collection scan never drags in years of irrelevant history. The per-entry collections are People, Organizations, Places, Events, Decisions, and Insights; the streaming or small files (`Log.md`, `Dates.md`) stay flat.
 
-## Writing An Entry
+---
+
+## ✍️ Writing An Entry
 
 Each entry is written in its destination's format:
 
@@ -80,7 +98,9 @@ Recorded: 2026-06-18  # when the BRAIN learned it (transaction-time)
 
 **Supersession.** When a fact changes, it is **superseded, never silently rewritten**: the old entry is marked (a Decision's or an Insight's Status set to `Superseded`, or the file's `status: deprecated`), a plain-path pointer to its replacement is added, and the old `As of` is closed. The old record stays, demoted in retrieval and never deleted. A memory that preserves *when* facts changed cannot quietly contradict itself; one that rewrites in place can.
 
-## Operations
+---
+
+## 🔄 Operations
 
 The five operations of this memory, each with the rule that governs it:
 
@@ -102,7 +122,9 @@ score = recency + importance + relevance
 
 The newest, most important, most on-point memories surface first; superseded or deprecated entries remain searchable but sort last. An entry may also carry an explicit `Salience:` note when its importance is not obvious from age alone.
 
-## Session Summaries
+---
+
+## 📋 Session Summaries
 
 A session summary is written to `Context/Current/`, named `YYYYMMDD-HHMMSS.md` (the time of filing), from `.template/Session Summary.md`: it is updated after each finished task and written before the context runs short, and then `python3 .github/scripts/update-vault.py` enforces the tier caps. It is a **delta update**, separating:
 
@@ -112,7 +134,9 @@ A session summary is written to `Context/Current/`, named `YYYYMMDD-HHMMSS.md` (
 
 What must be recalled is captured first, and only then is the rest pruned: compaction loss is permanent, so a load-bearing detail is kept word for word rather than paraphrased. The exact section list and the summary's frontmatter live in `.template/Session Summary.md`, and a summary that overrides an earlier one marks the earlier one `status: deprecated` (`Context/Current/README.md`).
 
-## Growth Protocol
+---
+
+## 🌱 Growth Protocol
 
 An entry loads whole whenever it is relevant, so it has to stay small enough to read beside the task. When a permanent entry (a person, organization, place, decision or insight) passes about 300 lines, or sessions keep loading it for a small part of it, it is split the way the collections are split: the entry stays lean, and what only accumulates moves out. The split is proposed first, as a table of what moves where, and made only with a yes.
 
@@ -122,22 +146,38 @@ An entry loads whole whenever it is relevant, so it has to stay small enough to 
 - **The flat files stay flat.** `Log.md` shrinks by consolidation; `Dates.md`, past the same size, moves its one-time dates that have passed into `Memory/Events/`.
 - **Finished mechanically:** `lint-notes.py` on every file written, then `update-vault.py` and `check-vault.py`, then a commit.
 
-## File Log
+---
+
+## 📝 File Log
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                               | Purpose                                                                                                                                                                                                                |
-| :---------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`.template/`](.template/README.md) | The entry scaffolds, one per kind of memory: a person, an organization, a place, a decision, an event, an insight, a session summary, and a new collection's README. Each is copied on its own, never edited in place. |
-| [`Context/`](Context/README.md)     | Session context: the tiered cascade of session summaries (Current to Recent to Archive) that carries what happened across working sessions. The gist grain of context memory; recall is importance-aware.              |
-| [`Decisions/`](Decisions/README.md) | Reflective record of significant decisions, one file per decision, with context, alternatives, outcomes, and lessons.                                                                                                  |
-| [`Entities/`](Entities/README.md)   | Semantic memory: durable facts about the people, organizations, and places in the owner's personal world, kept as per-entry collections.                                                                               |
-| [`Events/`](Events/README.md)       | The atomic grain of context memory: discrete, dated events and experiences worth remembering on their own, distinct from session context, decisions, and future dates.                                                 |
-| [`Insights/`](Insights/README.md)   | Reflective synthesis of higher-order observations about the owner's outside world, distilled from context and entity memory.                                                                                           |
-| [`Dates.md`](Dates.md)              | Prospective memory: important dates, deadlines, anniversaries, and recurring events. Future-facing reference, one table row per date.                                                                                  |
-| [`Log.md`](Log.md)                  | Working memory: the chronological capture stream where observations, events, and open threads land first, before they promote to a collection or age out. Newest first; read at session start.                         |
-| [`README.md`](README.md)            | This file.                                                                                                                                                                                                             |
+| Entry                               | Purpose                                                                                                                                                                                                                                                                                           |
+| :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`.template/`](.template/README.md) | The entry scaffolds, one per kind of memory: a person, an organization, a place, a decision, an event, an insight, a session summary, and a new collection's README, each copied on its own and never edited in place. Read it before making a Memory entry from one of them.                     |
+| [`Context/`](Context/README.md)     | Session context: the tiered cascade of session summaries (Current to Recent to Archive) that carries what happened across working sessions, the gist grain of context memory, with importance-aware recall. Read it to see how a summary ages through the tiers and how an older one is recalled. |
+| [`Decisions/`](Decisions/README.md) | Reflective record of significant decisions, one file per decision, with context, alternatives, outcomes, and lessons. Read it before recording a decision in the owner's own life, or to see what was already decided.                                                                            |
+| [`Entities/`](Entities/README.md)   | Semantic memory: durable facts about the people, organizations, and places in the owner's personal world, kept as per-entry collections. Read it to decide whether a name earns an entry, and in which collection.                                                                                |
+| [`Events/`](Events/README.md)       | The atomic grain of context memory: discrete, dated events and experiences worth remembering on their own, distinct from session context, decisions, and future dates. Read it before recording an event, or to recall a specific moment.                                                         |
+| [`Insights/`](Insights/README.md)   | Reflective synthesis of higher-order observations about the owner's outside world, distilled from context and entity memory. Read it before recording an insight on a reflection pass, or to tell one apart from a claim about the owner.                                                         |
+| [`Dates.md`](Dates.md)              | Prospective memory: important dates, deadlines, anniversaries, and recurring events. Future-facing reference, one table row per date.                                                                                                                                                             |
+| [`Log.md`](Log.md)                  | Working memory: the chronological capture stream where observations, events, and open threads land first, before they promote to a collection or age out. Newest first; read at session start.                                                                                                    |
+| [`README.md`](README.md)            | This file.                                                                                                                                                                                                                                                                                        |
 
 <!-- AUTO-INDEX:END -->
 
 🗂️ Machined Indexes redraws this log after every push to the default branch.
+
+---
+
+<div align="center">
+
+**Every session starts warm.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

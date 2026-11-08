@@ -1,17 +1,31 @@
 <!--
-title: "Technology & Applied Science - Folder Information"
-description: "Knowledge applied to practical ends: the making of working things and the running of operations."
-type: "index"
+title: '⚙️ TECHNOLOGY & APPLIED SCIENCE'
+description: 'Knowledge applied to practical ends: the making of working things and the running of operations, from engineering and medicine to software, farming and transport. Read it to file a holding in this class or to choose among its divisions.'
+type: 'index'
 keywords: ["engineering", "medicine", "applied computing", "agriculture", "energy", "manufacturing"]
 -->
 
-# ⚙️ Library / Technology & Applied Science /
+<div align="center">
 
-## Purpose
+# ⚙️ TECHNOLOGY & APPLIED SCIENCE
+
+<a name="top"></a>
+
+**The Library class for knowledge applied to making things and running operations.**
+
+_Knowledge by what it makes, mends or runs._
+
+</div>
+
+---
+
+## 💡 Purpose
 
 Knowledge applied to practical ends: the making of working things and the running of operations, from engineering, energy, materials and manufacturing to medicine, agriculture, software, transport and the built environment.
 
-## Divisions
+---
+
+## 🗂️ Divisions
 
 | Division (Layer 3) | Scope |
 |--------------------|-------|
@@ -37,7 +51,9 @@ Knowledge applied to practical ends: the making of working things and the runnin
 - [[Library/Technology & Applied Science/Transportation/README|Transportation]]
 <!-- /brain:children -->
 
-## Class here / not here
+---
+
+## ⚖️ Class here / not here
 
 - Class here: Engineering and the building of working artifacts
 - Class here: Medicine and the health sciences
@@ -47,16 +63,36 @@ Knowledge applied to practical ends: the making of working things and the runnin
 - Not here: Economic or organizational theory - goes to Society & Social Sciences / Economics or Commerce & Organizations
 - Not here: Everyday health, cooking, and home how-to - goes to Life & Practice
 
-## See also
+---
+
+## 🔗 See also
 
 - `Library/Science & Mathematics/README.md` - the formal and natural sciences
 - `Library/Information & Computing/README.md` - information, computing, and reference
 - `Library/Society & Social Sciences/README.md` - how societies work
 
-## Library cross-walk
+---
+
+## 🧭 Library cross-walk
 
 Dewey 600, UDC 6, LCC R, S and T. Reference only.
 
-## Conventions
+---
+
+## 📏 Conventions
 
 Every holding here follows `Library/README.md`: its freshness tiers, classification rules, boundary rulings and worked examples, facets and controlled keywords, catalog record, and weeding. This README adds no rules of its own.
+
+---
+
+<div align="center">
+
+**What works, and how to make it work.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

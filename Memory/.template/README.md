@@ -1,15 +1,31 @@
 <!--
-title: "Memory Templates"
-description: "The entry scaffolds, one per kind of memory: a person, an organization, a place, a decision, an event, an insight, a session summary, and a new collection's README. Each is copied on its own, never edited in place."
-type: "index"
+title: '🧩 MEMORY TEMPLATES'
+description: 'The entry scaffolds, one per kind of memory: a person, an organization, a place, a decision, an event, an insight, a session summary, and a new collection''s README, each copied on its own and never edited in place. Read it before making a Memory entry from one of them.'
+type: 'index'
 keywords: ["entry templates", "memory scaffolds", "person", "decision", "event", "session summary", "copy to file"]
 -->
 
-# 🧩 Memory Templates
+<div align="center">
+
+# 🧩 MEMORY TEMPLATES
+
+<a name="top"></a>
+
+**One scaffold per kind of memory, each copied to make one new entry.**
+
+_Copy one, fill in what is known, leave the rest blank._
+
+</div>
+
+---
+
+## 💡 What This Folder Is For
 
 The scaffolds every Memory entry is made from, one per kind of memory. Each is copied on its own, to make one new entry, by the instantiation note at its top (the comment that says where the copy goes and what it needs), and is never edited in place. This README explains them and is never copied.
 
-## The Templates
+---
+
+## 🗂️ The Templates
 
 | Template | Makes | Copied to | The copy's type |
 | -------- | ----- | --------- | --------------- |
@@ -22,7 +38,9 @@ The scaffolds every Memory entry is made from, one per kind of memory. Each is c
 | `Session Summary.md` | The delta-update summary of one session | `Memory/Context/Current/<YYYYMMDD-HHMMSS>.md` | `record` |
 | `Collection-Index.md` | The README of a new per-entry collection | The new collection's folder, as `README.md` | `index` |
 
-## How A Copy Is Made
+---
+
+## ✍️ How A Copy Is Made
 
 - **One file at a time.** A template is copied, never moved or edited in place, and this folder is never copied whole.
 - **Every placeholder is replaced.** The copy gets its real `title`, `description` and `type`, never `template`, which `lint-notes.py` refuses outside a `.template/` folder, and its keywords lose `template`. Only what is known is filled in: a field nobody knows stays blank rather than guessed.
@@ -32,3 +50,17 @@ The scaffolds every Memory entry is made from, one per kind of memory. Each is c
 - **The lists draw themselves.** After an entry is written, `python3 .github/scripts/update-vault.py` lists it in its collection's README and moves session summaries down their tiers; a generated list is never edited by hand.
 - **A new collection is registered.** A new collection's folder is created only with the owner's yes (the root `README.md`, Ask First), and its list is drawn only once the folder is added to `COLLECTIONS` in `.github/scripts/vault.py`.
 - A scaffold neither carries nor receives a wikilink, and the catalog leaves this folder out.
+
+---
+
+<div align="center">
+
+**Copy the scaffold, never the folder.**
+
+[↑ Back to Top](#top)
+
+<br />
+
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
+
+</div>

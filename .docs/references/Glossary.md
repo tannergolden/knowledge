@@ -66,7 +66,7 @@ Conventional Commits, are in the standards'
 - **Root README**: the `README.md` at the vault root, the vault's guide for anyone who works in it:
   the top folders, how a session goes, the commands, what done means, where each kind of work goes,
   and the conventions every folder shares. A page, read first.
-- **Rules**: the section a top folder's README opens with. A folder's rules add to the root
+- **Rules**: the section of a top folder's README that follows its purpose. A folder's rules add to the root
   `README.md` and never loosen it (the root `README.md`, How A Session Goes).
 - **Scaffold**: a file in a `.template/` folder, typed `template`, copied to make a new note and never
   edited in place. A scaffold carries no wikilinks, receives none, and is left out of the catalog. A
