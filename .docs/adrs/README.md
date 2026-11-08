@@ -10,7 +10,7 @@ type: index
 
 <a name="top"></a>
 
-**Every significant decision this project has made, and why, one record each.**
+**Every significant decision about the vault itself, and why, one record each.**
 
 _One decision per record. One row per decision._
 
@@ -20,25 +20,30 @@ _One decision per record. One row per decision._
 
 ## 💡 What This Folder Is For
 
-An architecture decision record (ADR) captures one significant decision: the
-context it was made in, the options weighed, and the consequences accepted.
+An architecture decision record (ADR) captures one significant decision about
+the vault itself, such as a change to its layout, its rules or its machinery:
+the context it was made in, the options weighed, and the consequences accepted.
 Every record lives in this folder, one file per decision, and the log below is
 their index.
+
+A decision in the owner's own life is not an ADR: it is recorded in
+`Memory/Decisions/`, and a venture's in its `Administration/Decisions.md`, each
+by its folder's README.
 
 The folder is a living record, not a fill-in form, and its records are **yours
 from the first commit**: nothing upstream ever writes, moves or removes one. In
 a vault it arrives with no decisions in it, since the records here are this
 template's own and initialisation deletes them, and it gains a row each time a
-record is written. Only this README is ever updated from the template - when you
-run 🔄 Template Sync - merged with the rows your records add.
+record is written. Only this README is ever updated from the template, when you
+run 🔄 Template Sync, merged with the rows your records add.
 
 ---
 
 ## 🎯 Why Decisions Are Recorded
 
-The _why_ matters as much as the _what_. An auditable record of how the system
-evolved lets every later contributor, human or AI, see the constraints and
-trade-offs that shaped it before changing it.
+The _why_ matters as much as the _what_. An auditable record of how the vault
+evolved lets whoever changes it later, a person or any AI, see the constraints
+and trade-offs that shaped it first.
 
 - **Traceability**: every major architectural pivot is documented and numbered.
 - **Context**: each decision is recorded with the situation it was made in.
@@ -58,6 +63,7 @@ trade-offs that shaped it before changing it.
 | [`ADR-0004-The-Skills-Live-In-The-Home-Kit.md`](ADR-0004-The-Skills-Live-In-The-Home-Kit.md)                                           | Accepted   | 2026-11-07 | N/A      | The vault holds no skills or agents: every skill and its team live in tannergolden/intelligence and arrive through the home kit, and AGENTS.md gives the universal skills the vault's layout.                                                                                                        |
 | [`ADR-0005-Each-Folder-Explains-Itself-In-A-README.md`](ADR-0005-Each-Folder-Explains-Itself-In-A-README.md)                           | Accepted   | 2026-11-07 | N/A      | Every folder explains itself in a README.md at its root, written for anyone, which is also its note, and the root README.md says how to work in the vault; the vault holds no AI instructions, so AGENTS.md and the Intelligence Sync stub are gone.                                                 |
 | [`ADR-0006-AGENTS-Returns-With-The-Rules-For-Personal-Knowledge.md`](ADR-0006-AGENTS-Returns-With-The-Rules-For-Personal-Knowledge.md) | Accepted   | 2026-11-07 | N/A      | AGENTS.md returns at the vault root, with the universal rules kept current by Intelligence Sync and then the rules every AI follows in a personal knowledge vault, so every vault generated from the template starts with them; each folder still explains itself in its README, written for anyone. |
+| [`ADR-0007-The-Vault-Keeps-Only-The-Templates-It-Uses.md`](ADR-0007-The-Vault-Keeps-Only-The-Templates-It-Uses.md)                     | Accepted   | 2026-11-08 | N/A      | The template drops the golden path's fill-in standards for a software repository and its Project README seed, takes .docs/templates/ out of its derivation from tannergolden/path, and keeps the eight work-product forms as its own, rewritten for a one-owner vault.                               |
 | [`README.md`](README.md)                                                                                                               | -          | -          | -        | This file.                                                                                                                                                                                                                                                                                           |
 
 <!-- AUTO-INDEX:END -->
@@ -75,8 +81,8 @@ it, or reads N/A.
 
 - [ ] Copy the [ADR template](../templates/ADR.md) into this folder as
       `ADR-NNNN-Short-Slug.md`, taking the next number.
-- [ ] Set `type: record`, `status`, `date`, and `evidence` in its frontmatter, and write every
-      section.
+- [ ] Give it its own title and description, set `type: record`, `status`, `date` and
+      `evidence` in its frontmatter, and write every section.
 - [ ] Propose it in a pull request. Once merged, it is **Accepted**.
 
 A later decision supersedes an earlier one rather than rewriting it: mark the
@@ -86,7 +92,7 @@ old record **Superseded** and link the new one.
 
 ## 🔗 See also
 
-- [Documentation index](../README.md) - every document this project keeps
+- [Documentation index](../README.md) - every document the vault keeps in `.docs/`
 - [Standards Index](https://github.com/tannergolden/standards/blob/Development/docs/README.md) - the canonical engineering standards
 
 ---

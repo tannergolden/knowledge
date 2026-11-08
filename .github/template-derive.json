@@ -13,6 +13,7 @@
     "README.md",
     "benchmarks",
     "docs/adrs/ADR-0001-Record-Architecture-Decisions.md",
+    "docs/templates",
     "examples",
     "packages",
     "src",
@@ -21,5 +22,12 @@
   "relocate": {
     "assets": ".assets",
     "docs": ".docs"
-  }
+  },
+  "replace": [
+    {
+      "under": ".github/template-sync.md",
+      "from": "docs/Prompts.md",
+      "to": ".docs/Prompts.md"
+    }
+  ]
 }

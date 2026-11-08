@@ -71,13 +71,13 @@ README, and every vault generated from the template starts with them.
 The same few kinds of file recur across the folders. The [Glossary](../references/Glossary.md)
 defines each term.
 
-| Shape             | What it is                                                                                                                         | Example                          |
-| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------- | :------------------------------- |
-| **Folder README** | The `README.md` at a folder's root, which is the folder's note: its purpose and rules, and the only kind of note that may wikilink | `Memory/README.md`               |
-| **Root README**   | The vault's guide, read first by everyone: a page, not a note                                                                      | `README.md`                      |
-| **Scaffold**      | A file in a `.template/` folder, copied to make a new note and never edited in place                                               | `Projects/.template/Overview.md` |
-| **Collection**    | A folder of one file per entry, whose README lists the entries                                                                     | `Memory/Entities/People/`        |
-| **Held sub-home** | A folder of `Inbox/` that is kept, never sorted                                                                                    | `Inbox/Reports/`                 |
+| Shape             | What it is                                                                                                                                                                       | Example                          |
+| :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------- |
+| **Folder README** | The `README.md` at a folder's root, which is the folder's note: its purpose and rules, the only kind of note that may wikilink, and a page in the full format, header and footer | `Memory/README.md`               |
+| **Root README**   | The vault's guide, read before any folder's README: a page, not a note                                                                                                           | `README.md`                      |
+| **Scaffold**      | A file in a `.template/` folder, copied to make a new note and never edited in place                                                                                             | `Projects/.template/Overview.md` |
+| **Collection**    | A folder of one file per entry, whose README lists the entries                                                                                                                   | `Memory/Entities/People/`        |
+| **Held sub-home** | A folder of `Inbox/` that is kept, never sorted                                                                                                                                  | `Inbox/Reports/`                 |
 
 A `.template/` folder has a README too. Where its scaffolds are copied one at a time, as in
 `Memory/.template/`, the README explains them and is never copied. Where the folder is copied whole,
@@ -134,11 +134,12 @@ covers both a company the owner runs and the owner's own life. They live in
 the home kit installs them, with the universal rules, into each AI app on every machine and in every
 Claude Code cloud session.
 
-The skills are universal: they hardcode no vault path. The root `README.md`, under Where Each Kind Of
-Work Goes, gives this vault's layout to whoever writes here: for each skill, where a company's records
-go in its venture folder and where its work in the owner's own life goes, where reports, ideas and
-visuals are held, how the Profile is filled, and which checks run after a write. Each of those
-folders' own README says which skill's work lands there and by what rules.
+The skills are universal: they hardcode no vault path, and each reads a repository's `AGENTS.md`
+before it writes anything there. `AGENTS.md` sends it to the root `README.md`, whose Where Each Kind
+Of Work Goes gives this vault's layout to whoever writes here: for each skill, where a company's
+records go in its venture folder and where its work in the owner's own life goes, where reports,
+ideas and visuals are held, how the Profile is filled, and which checks run after a write. Each of
+those folders' own README says which skill's work lands there and by what rules.
 
 ---
 
@@ -161,11 +162,17 @@ one fails.
 
 ## 🌿 What Keeps It Current
 
-Two automations keep it current, each as a pull request the owner merges, and neither pushes to a
-branch: 🔄 Template Sync, when the owner runs it, carries the template's released fixes; 🗂️ Machined
-Indexes, after each push to the default branch, redraws the folder logs. A sync never touches a note
-the template does not ship, nor a file the list leaves to the owner, such as `Memory/Log.md` and
-`Profile/Working Style.md`. The universal rules for AI assistants change with the home kit, outside
+Three automations keep it current, each as a pull request the owner merges, and none pushes to a
+branch:
+
+- **🔄 Template Sync**, when the owner runs it, carries the template's released fixes, from the
+  latest release of the major its stub follows: `v2` for a vault generated now.
+- **🔁 Intelligence Sync**, every Monday, brings the universal rules of each new
+  tannergolden/intelligence release into the block at the top of `AGENTS.md`.
+- **🗂️ Machined Indexes**, after each push to the default branch, redraws the folder logs.
+
+A sync never touches a note the template does not ship, nor a file the list leaves to the owner,
+such as `Memory/Log.md` and `Profile/Working Style.md`. The skills change with the home kit, outside
 the repository.
 [How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md) follows a change from
 its first commit to a vault.

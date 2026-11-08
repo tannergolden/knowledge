@@ -1,6 +1,6 @@
 <!--
 title: '🛠️ TECHNICAL'
-description: 'How this project is built: its architecture, stack and source, one document for each part that needs one, and the designs, plans and research behind them.'
+description: 'How the vault is built: how its scripts fit together, the reference pages behind its rules, and the designs, plans and research behind a change to the vault itself. Read it before you change a script, a rule or the layout.'
 type: index
 -->
 
@@ -10,9 +10,9 @@ type: index
 
 <a name="top"></a>
 
-**How this project is built.**
+**How the vault is built, and the thinking behind each change to it.**
 
-_Written down where the code cannot say it._
+_Written down where the scripts cannot say it._
 
 </div>
 
@@ -20,33 +20,28 @@ _Written down where the code cannot say it._
 
 ## 💡 What This Folder Is For
 
-How this project is built: its architecture and how its parts fit, the stack it
-runs on and where its source lives, and one document for each part that needs
-one.
+How the vault is built, written down where its scripts and its folders cannot
+say it themselves.
 
-- **The architecture**: the system as it stands, its actors, building blocks,
-  interfaces and trust boundaries, from the
-  [Architecture Overview](../templates/technical/Architecture-Overview.md) seed.
-- **The stack and the source**: what the project is built with, and where each
-  part of it lives.
-- **One folder per area**: `backend/`, `benchmarks/`, `database/`,
-  `infrastructure/`, `interface/` and `testing/`, as the fill-in standards lay
-  them out.
-- **Designs, plans and research**: `designs/`, `plans/` and `research/`, from
-  the Technical Design, Implementation Plan and Research Log templates.
-- **The vault's machinery**: how its scripts fit together, in
-  [Vault Scripts](Vault-Scripts.md), and the reference pages behind its rules,
-  in [`vault/`](vault/README.md).
+- **The machinery**: how the scripts in `.github/scripts/` fit together, what
+  each check fails on, and what to do when one fails, in
+  [Vault Scripts](Vault-Scripts.md).
+- **The reference pages behind the rules**: the note schema, the keywords, the
+  link topology, how context is assembled and how a session runs, in
+  [`vault/`](vault/README.md).
+- **Designs, plans and research** behind a change to the vault itself, such as
+  a new folder, rule or script: one document each in `designs/`, `plans/` and
+  `research/`, copied from the [Technical Design](../templates/Technical-Design.md),
+  [Implementation Plan](../templates/Implementation-Plan.md) and
+  [Research Log](../templates/Research-Log.md) templates. Each of those folders
+  is made, with its own `README.md`, when its first document arrives. Research
+  for the owner's own life or a venture is a held report in `Inbox/Reports/`,
+  never a page here.
 
-The fill-in standards in [`templates/technical/`](../templates/technical/README.md)
-copy out to the same path here, without `templates/`:
-`.docs/templates/technical/backend/API-Design-Standards.md` becomes
-`.docs/technical/backend/API-Design-Standards.md`.
-
-Its documents are **yours from the first commit**: nothing upstream ever
-writes, moves or removes one, but for the pages about the vault this template
-ships, which a vault's 🔄 Template Sync keeps current like this README. Its log
-is redrawn from the files the folder holds.
+Vault Scripts and the pages in `vault/`, like this README, are the template's,
+and 🔄 Template Sync keeps them current in a vault. A document you add here is
+**yours from the first commit**: nothing upstream ever writes, moves or removes
+it. The log below is redrawn from the files the folder holds.
 
 ---
 
@@ -69,7 +64,7 @@ from each document's own frontmatter.
 
 ## 🔗 See also
 
-- [Documentation index](../README.md) - every document this project keeps
+- [Documentation index](../README.md) - every document the vault keeps in `.docs/`
 - [Template catalogue](../templates/README.md) - every seed, and where each one is copied to
 
 ---

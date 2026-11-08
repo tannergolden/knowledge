@@ -1,74 +1,101 @@
 <!--
-title: '📋 PROJECT TEMPLATES'
-description: 'Index of the reusable document templates and when to use each one.'
+title: '📋 DOCUMENT TEMPLATES'
+description: 'The forms for the documents a vault keeps about itself in .docs/: a decision record, a design, a plan, a research log, a runbook and a post-mortem, with a user story and the formats for notes that go into issues. Read it before writing one, to see what each form is for and where its copy goes.'
 type: index
+keywords: [work-product forms, decision record, design, plan, research log, runbook, post-mortem, user story]
 -->
 
 <div align="center">
 
-# 📋 PROJECT TEMPLATES
+# 📋 DOCUMENT TEMPLATES
 
 <a name="top"></a>
 
-**The index of copy-source templates - what each one is for and where its copies live.**
+**The forms for the documents a vault keeps about itself, and where each copy goes.**
 
-_Structured excellence. Rapid documentation. Unified standards._
+_A form for each kind of document, and only those._
 
 </div>
 
 ---
 
-> [!TIP]
-> Use these standardized templates to bootstrap your technical work. They are designed to meet the repository's professional standards.
+## 💡 What This Folder Is For
 
-> [!NOTE]
-> **These are seeds for the repository's own documents, not the vault's notes.** A note is made from the scaffold in its folder's `.template/`, as that folder's README says, never from here. No rule of the vault makes a template here binding: each is a starting point, used at the moment it helps - research before direction, design before build, a post-mortem after a failure.
+The forms here are for the documents a vault keeps about itself, in `.docs/`: a decision about its
+layout, its rules, its scripts or its automation; the design and the plan for a change to them; the
+research behind one; the steps for a routine task or a known failure; and what was learned when
+something went wrong. Each such copy is a page, so its form carries the page format with
+placeholders, and the copy keeps it ([Note Schema](../technical/vault/Note-Schema.md)).
 
----
-
-## 📋 Available Templates
-
-| Template                                                | Purpose                                                | Copy to                                                       |
-| :------------------------------------------------------ | :----------------------------------------------------- | :------------------------------------------------------------ |
-| [&#x1F4D0; Technical Design](Technical-Design.md)       | High-level system architecture and trade-offs.         | `.docs/technical/designs/<slug>.md`                           |
-| [&#x1F4DC; Implementation Plan](Implementation-Plan.md) | Concrete changes, sequencing, and verification.        | `.docs/technical/plans/<slug>.md`                             |
-| [&#x1F464; User Story](User-Story.md)                   | Requirements from the user's perspective.              | `.docs/<area>/stories/<slug>.md` (or your tracker)            |
-| [&#x1F50E; Research Log](Research-Log.md)               | Discovery evidence and recommendations.                | `.docs/technical/research/<topic>.md`                         |
-| [&#x1F4C9; Post-Mortem](Post-Mortem.md)                 | Blameless incident and outcome analysis.               | `.docs/operations/post-mortems/YYYY-MM-DD-<slug>.md`          |
-| [&#x1F4D2; Runbook](Runbook.md)                         | The steps for one routine task or one known failure.   | `.docs/operations/runbooks/<slug>.md`                         |
-| [&#x1F4C4; ADR](ADR.md)                                 | One architecture decision, recorded durably.           | `.docs/adrs/ADR-NNNN-Short-Slug.md` (next number)             |
-| [&#x1F4AC; Communication](Communication.md)             | Meeting notes, status heartbeats, stakeholder updates. | reuse in issues, discussions, and reviews                     |
-| [&#x1F4D8; Project README](Project-README.md)           | The front page of a project's own repository.          | nowhere in a vault: its root `README.md` is the vault's guide |
-| [&#x1F9ED; ADR index](../adrs/README.md)                | The folder log every ADR is listed in.                 | already in place; each record's row is generated              |
+They are not for the vault's notes. A note is made from the scaffold in its folder's `.template/`,
+as that folder's README says: a decision in the owner's own life is a record in `Memory/Decisions/`,
+made from `Memory/.template/Decision.md`, a venture's decision goes in its
+`Administration/Decisions.md`, and research for the owner's life or a venture is a report held in
+`Inbox/Reports/`. No rule makes a form here binding: each is used when it helps, research before
+direction, a design before the build, a post-mortem after a failure.
 
 ---
 
-## 🧩 Fill-In Standards
+## 📋 The Templates
 
-The fill-in standards live in a folder named for the `.docs/` area their copies fill: [`introduction/`](introduction/README.md), [`technical/`](technical/README.md) with one folder per technical area, [`operations/`](operations/README.md), [`distribution/`](distribution/README.md) and [`references/`](references/README.md). Each folder logs its own files.
+| Template                                         | What it is for                                                                   | Its copy goes to                                                | The copy's type              |
+| :----------------------------------------------- | :------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :--------------------------- |
+| [🧭 ADR](ADR.md)                                 | One decision about the vault itself: its layout, rules, scripts or automation    | `.docs/adrs/ADR-[NNNN]-[Short-Slug].md`, taking the next number | `record`                     |
+| [📐 Technical Design](Technical-Design.md)       | A change to the vault's machinery, designed before it is built                   | `.docs/technical/designs/[Short-Slug].md`                       | `record`                     |
+| [📜 Implementation Plan](Implementation-Plan.md) | The steps that carry a change out, their order and the checks that prove them    | `.docs/technical/plans/[Short-Slug].md`                         | `record`                     |
+| [🔎 Research Log](Research-Log.md)               | The sourced research behind a change to the vault                                | `.docs/technical/research/[Topic].md`                           | `record`                     |
+| [📒 Runbook](Runbook.md)                         | The steps for one routine task or one known failure in the vault's machinery     | `.docs/operations/runbooks/[Short-Slug].md`                     | `guide`                      |
+| [📉 Post-Mortem](Post-Mortem.md)                 | What went wrong, such as a leak or a lost change, and what changes because of it | `.docs/operations/post-mortems/[YYYY-MM-DD]-[Short-Slug].md`    | `record`                     |
+| [👤 User Story](User-Story.md)                   | A need a change to the vault must meet, with the criteria that show it is met    | An issue opened from ✨ Feature Request                         | None: the issue is the story |
+| [💬 Communication](Communication.md)             | Meeting notes and status updates                                                 | Pasted into an issue, a discussion or a pull request            | None: never a file           |
 
-Every document here other than the `README.md` logs is one you complete: either a **fill-in standard** whose decisions are marked by `[square brackets]` - a bare `[REPLACE_ME]`, a choice list like `[REST | GraphQL | gRPC]`, or a prompt like `[why]` - or a **work-product form** whose blank sections you write under (an ADR, a post-mortem, a runbook, a user story). Each folder also carries a `README.md` that logs the files in it and links one level down; those logs are generated, are navigation rather than seeds, and are never copied out. This catalogue stays the one place that says when to reach for each template, so adding or renaming one means updating its row here; the folder logs redraw themselves. A fill-in standard's destination **mirrors its path minus `templates/`**: `.docs/templates/technical/backend/API-Design-Standards.md` instantiates as `.docs/technical/backend/API-Design-Standards.md`. **Living inside `.docs/templates/` is what marks them all as seed content**, with no in-file directive needed. Everything in this folder **arrives with the repository and can take later fixes**: whenever you run 🔄 Template Sync, it proposes each improvement to a seed as a pull request, merged with anything you changed in it, and never touches the copies you make from them. Put a `#` in front of a seed's line in `.github/template-sync` to keep that seed exactly as it is; editing a file here has no upstream consequence.
-
-| Area               | Templates                                                                                                                                                                                                                                                                                |
-| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Introduction**   | [&#x1F680; Getting Started](introduction/Getting-Started.md), [&#x1F5FA;&#xFE0F; Roadmap](introduction/Roadmap.md)                                                                                                                                                                       |
-| **Stack & Source** | [&#x1F3DB;&#xFE0F; Architecture Overview](technical/Architecture-Overview.md), [&#x1F527; Technology Stack & Tooling](technical/Technology-Stack-&-Tooling.md), [&#x1F4BB; Source Code](technical/Source-Code.md), [&#x1F4E6; Packages & Workspaces](technical/Packages-&-Workspaces.md) |
-| **Interface**      | [&#x1F4D0; Formatting & Standards](technical/interface/Formatting-&-Standards.md), [&#x1F58C;&#xFE0F; Styling & Theming](technical/interface/Styling-&-Theming.md), [&#x1F6E0;&#xFE0F; UI Setup & Environment](technical/interface/UI-Setup-&-Environment.md)                            |
-| **Backend**        | [&#x1F4E1; API Design Standards](technical/backend/API-Design-Standards.md), [&#x1F512; Authentication & Security](technical/backend/Authentication-&-Security.md), [&#x1F4CB; Schema & Validation](technical/backend/Schema-&-Validation.md)                                            |
-| **Database**       | [&#x1F5C4;&#xFE0F; Data Models & Entities](technical/database/Data-Models-&-Entities.md), [&#x1F504; Migration Policies](technical/database/Migration-Policies.md)                                                                                                                       |
-| **Infrastructure** | [&#x2601;&#xFE0F; Environment Configuration](technical/infrastructure/Environment-Configuration.md), [&#x1F504; CI CD Pipelines](technical/infrastructure/CI-CD-Pipelines.md), [&#x1F680; Deployment Protocols](technical/infrastructure/Deployment-Protocols.md)                        |
-| **Testing**        | [&#x1F9E9; Unit Test Standards](technical/testing/Unit-Test-Standards.md), [&#x1F3AD; E2E Testing](technical/testing/E2E-Testing.md), [&#x26A1; Performance Benchmarks](technical/benchmarks/Performance-Benchmarks.md)                                                                  |
-| **Operations**     | [&#x1F4E6; Dependency Policy](operations/Dependency-Policy.md), [&#x1F6A8; Incident Response](operations/Incident-Response.md), [&#x1F575;&#xFE0F; Threat Model](operations/Threat-Model.md)                                                                                             |
-| **Distribution**   | [&#x1F6A2; Release Process](distribution/Release-Process.md), [&#x1F50F; Release Verification](distribution/Release-Verification.md)                                                                                                                                                     |
-| **References**     | [&#x1F4D8; Glossary](references/Glossary.md)                                                                                                                                                                                                                                             |
+Each form opens with a note, which starts "On copying", saying where its copy goes and what the copy
+needs. Every decision record is listed in the [ADR index](../adrs/README.md), which draws each row
+from the record's own frontmatter.
 
 ---
 
-## 🚀 How To Use
+## 🚫 What Is Not Here
 
-1. **Copy** the template to its destination above - never fill in the template file itself; your `.docs/templates/` copies stay pristine as long as you copy rather than edit them, and running 🔄 Template Sync brings them to the template's newest form, so every copy you make after it starts from there.
-2. **Replace** every bracketed placeholder, and change the copy's `type` from `template` to its own: `guide` for a page someone follows step by step (Getting Started, Release Verification), `reference` for one they look things up in (the Glossary), `standard` for any other fill-in standard, `record` for everything else; delete sections that genuinely don't apply.
-3. **Link** the document from the pull request (or issue) it supports, so decisions stay traceable.
+The golden path template, tannergolden/path, ships more under its `docs/templates/`: fill-in
+standards for a software repository, covering its architecture, stack and source, its API, data
+model and interface, its tests, pipelines and deployment, its incidents, threats and dependencies,
+its releases and its glossary, and a seed for a project's front page. A vault is a personal
+knowledge base, not a software project, so none of them can apply to it, and a vault's front page
+is its own.
+
+The template every vault is made from, tannergolden/knowledge, keeps none of them, and takes
+nothing from the golden path's `docs/templates/`: the forms here are its own, written for a vault,
+and no sync brings the others back
+([ADR-0007](https://github.com/tannergolden/knowledge/blob/Development/.docs/adrs/ADR-0007-The-Vault-Keeps-Only-The-Templates-It-Uses.md),
+kept in the template). A software repository the owner builds is generated from tannergolden/path,
+which ships them.
+
+---
+
+## ✍️ How A Copy Is Made
+
+1. **Copy** the form to the place its row names, and never fill in the form itself. The note at its
+   top says what the copy needs, and is deleted from the copy.
+2. **Replace every `[bracketed]` placeholder**: the title and the H1 alike, with the form's emoji
+   and the copy's own title, fully capped; the one-line description, the tagline and the closing
+   phrase, each the copy's own; and a description and keywords of the copy's own, without
+   `template`. The `type` becomes the one its row names, and a choice such as `[a / b / c]` becomes
+   the one that holds.
+3. **Delete a section that does not apply**, rather than leave it empty.
+4. **Link the copy from the pull request** that carries the change it records, so the reasoning
+   stays traceable. A folder under `.docs/` that does not exist yet, such as `runbooks/`, is made
+   with its own `README.md` when its first document arrives.
+
+---
+
+## 🔄 Kept Current
+
+These forms are written for a vault by the template every vault is made from,
+tannergolden/knowledge, which no longer takes them from the golden path. Every vault keeps them,
+and this README, current from it through 🔄 Template Sync, merged with anything its owner changed;
+a `#` in front of a form's line in `.github/template-sync` keeps that form as its owner's. A copy
+made from a form is its owner's from the moment it is made, and no sync ever touches it.
 
 ---
 
@@ -76,23 +103,17 @@ Every document here other than the `README.md` logs is one you complete: either 
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                                              | Purpose                                                                                                                                                                                                                                                                                                          |
-| :------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`distribution/`](distribution/README.md)          | Fill-in standards for releasing: how this project cuts, checks and publishes a release, and how the people who download one verify it.                                                                                                                                                                           |
-| [`introduction/`](introduction/README.md)          | Fill-in documents for the pages a newcomer reads first: how to build the project and set up to change it, and where the project is going.                                                                                                                                                                        |
-| [`operations/`](operations/README.md)              | Fill-in standards for keeping the project safe once it runs: how an incident is declared, run and closed, and a threat model of what the project protects and how.                                                                                                                                               |
-| [`references/`](references/README.md)              | Fill-in reference pages, the ones a reader consults rather than reads through, starting with the glossary of the words this project uses its own way.                                                                                                                                                            |
-| [`technical/`](technical/README.md)                | Fill-in technical standards: the architecture, the stack, source and package layout, and one folder per technical area.                                                                                                                                                                                          |
-| [`ADR.md`](ADR.md)                                 | The standard template for recording an architecture decision.                                                                                                                                                                                                                                                    |
-| [`Communication.md`](Communication.md)             | Channels, expectations, and etiquette for communicating across issues, discussions, and reviews.                                                                                                                                                                                                                 |
-| [`Implementation-Plan.md`](Implementation-Plan.md) | Reusable template for planning an implementation in small, reviewable slices.                                                                                                                                                                                                                                    |
-| [`Post-Mortem.md`](Post-Mortem.md)                 | Blameless post-mortem template for capturing incidents and their lessons.                                                                                                                                                                                                                                        |
-| [`Project-README.md`](Project-README.md)           | The front page for a project's own repository: what it is, how to install and use it, and where to get help, report a vulnerability or contribute. Copy it to the README at the root of that repository, never over this vault's root README, which is the vault's guide, and keep it current with each release. |
-| [`README.md`](README.md)                           | This file.                                                                                                                                                                                                                                                                                                       |
-| [`Research-Log.md`](Research-Log.md)               | The format for a filed research report: a dated, sourced, claim-by-claim investigation kept current by its verification window.                                                                                                                                                                                  |
-| [`Runbook.md`](Runbook.md)                         | The steps for one routine task or one known failure, written to be followed under pressure. Copy it once for each task or alert that needs a written procedure.                                                                                                                                                  |
-| [`Technical-Design.md`](Technical-Design.md)       | Template for proposing and reviewing a technical design.                                                                                                                                                                                                                                                         |
-| [`User-Story.md`](User-Story.md)                   | Template for writing user stories with clear acceptance criteria.                                                                                                                                                                                                                                                |
+| Entry                                              | Purpose                                                                                                                                                         |
+| :------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`ADR.md`](ADR.md)                                 | The standard template for recording an architecture decision.                                                                                                   |
+| [`Communication.md`](Communication.md)             | Channels, expectations, and etiquette for communicating across issues, discussions, and reviews.                                                                |
+| [`Implementation-Plan.md`](Implementation-Plan.md) | Reusable template for planning an implementation in small, reviewable slices.                                                                                   |
+| [`Post-Mortem.md`](Post-Mortem.md)                 | Blameless post-mortem template for capturing incidents and their lessons.                                                                                       |
+| [`README.md`](README.md)                           | This file.                                                                                                                                                      |
+| [`Research-Log.md`](Research-Log.md)               | The format for a filed research report: a dated, sourced, claim-by-claim investigation kept current by its verification window.                                 |
+| [`Runbook.md`](Runbook.md)                         | The steps for one routine task or one known failure, written to be followed under pressure. Copy it once for each task or alert that needs a written procedure. |
+| [`Technical-Design.md`](Technical-Design.md)       | Template for proposing and reviewing a technical design.                                                                                                        |
+| [`User-Story.md`](User-Story.md)                   | Template for writing user stories with clear acceptance criteria.                                                                                               |
 
 <!-- AUTO-INDEX:END -->
 
@@ -108,7 +129,7 @@ from each template's own frontmatter.
 
 <div align="center">
 
-**Reproducible formats. Professional velocity.**
+**The forms a vault can fill in, and no others.**
 
 [↑ Back to Top](#top)
 

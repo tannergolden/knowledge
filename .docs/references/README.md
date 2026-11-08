@@ -1,6 +1,6 @@
 <!--
 title: '📚 REFERENCES'
-description: 'Things to look up: the glossary, catalogues, settings and formats, the pages this project consults rather than reads through.'
+description: 'Things to look up about the vault: its glossary, and any catalogue or format its owner adds, the pages consulted rather than read through.'
 type: index
 -->
 
@@ -10,7 +10,7 @@ type: index
 
 <a name="top"></a>
 
-**Things to look up.**
+**Things to look up about the vault, one entry at a time.**
 
 _Consulted, not read through._
 
@@ -20,20 +20,24 @@ _Consulted, not read through._
 
 ## 💡 What This Folder Is For
 
-Pages to consult rather than read through: what a term means here, what each
-option does, and what a file or a field holds.
+Pages to consult rather than read through: what a term means in the vault,
+what each option does, and what a file or a field holds.
 
-- **A glossary**: the terms this project uses, and what each one means here,
-  from the [Glossary](../templates/references/Glossary.md) seed.
-- **Catalogues**: every option, setting, command or item the project offers,
-  one row each.
-- **Formats**: the keys of a configuration, the shape of a file, the fields of
-  an interface.
+- **The glossary**: every word the vault uses in a sense of its own, each with
+  the file that sets it, in the [Glossary](Glossary.md).
+- **Catalogues**: every option, setting, command or item of your own, one row
+  each.
+- **Formats**: the keys of a configuration, or the shape of a file or a record
+  of your own.
 
-Its documents are **yours from the first commit**: nothing upstream ever
-writes, moves or removes one, but for the pages about the vault this template
-ships, which a vault's 🔄 Template Sync keeps current like this README. Its log
-is redrawn from the files the folder holds.
+The note schema, the keywords and the link topology are reference pages too,
+but they sit beside the rules they explain, in
+[`technical/vault/`](../technical/vault/README.md).
+
+The Glossary, like this README, is the template's, and 🔄 Template Sync keeps
+it current in a vault. A page you add here is **yours from the first commit**:
+nothing upstream ever writes, moves or removes it. The log below is redrawn
+from the files the folder holds.
 
 ---
 
@@ -55,7 +59,7 @@ from each document's own frontmatter.
 
 ## 🔗 See also
 
-- [Documentation index](../README.md) - every document this project keeps
+- [Documentation index](../README.md) - every document the vault keeps in `.docs/`
 - [References](https://github.com/tannergolden/standards/blob/Development/docs/references/README.md) - the shared glossary and label registry
 
 ---

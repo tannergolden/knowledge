@@ -1,6 +1,6 @@
 <!--
 title: '🧭 INTRODUCTION'
-description: 'Where to start: what this project is and how its parts fit together, the principles it holds to, how to get ready to work on it, and where it is going.'
+description: 'Where to start: how the vault works, how to set one up, and how to change it without breaking what it promises. Read it before any other page in .docs/.'
 type: index
 -->
 
@@ -10,7 +10,7 @@ type: index
 
 <a name="top"></a>
 
-**Where to start.**
+**Where to start: how the vault works, how to set one up, and how to change it.**
 
 _Read these first._
 
@@ -20,21 +20,21 @@ _Read these first._
 
 ## 💡 What This Folder Is For
 
-The pages a newcomer reads before any other, human or AI: what this project is
-for, how its parts fit together, and what to have in place before changing it.
+The pages to read before any other in `.docs/`, by a person or any AI: what the
+vault is, how its parts fit together, how to make one and how to change it.
 
-- **An overview**: what the project does, for whom, and how its parts fit
-  together.
-- **Principles**: the few rules every change here is held to, and why.
-- **Getting set up**: what a machine needs to build, test and run the project,
-  from the [Getting Started](../templates/introduction/Getting-Started.md) seed.
-- **A roadmap**: where the project is going, and what comes next, from the
-  [Roadmap](../templates/introduction/Roadmap.md) seed.
+- **How the vault works**: where its rules live and which wins, the shapes its
+  notes take, how information moves between folders, and the machinery that
+  checks it all, in [How The Vault Works](How-The-Vault-Works.md).
+- **Setting one up**: from generating a private vault to a first session that
+  knows its owner, in [Setting Up A Vault](Setting-Up-A-Vault.md).
+- **Changing it**: the rules a change is held to, and what to run before a
+  push, in [Working In The Vault](Working-In-The-Vault.md).
 
-Its documents are **yours from the first commit**: nothing upstream ever
-writes, moves or removes one, but for the pages about the vault this template
-ships, which a vault's 🔄 Template Sync keeps current like this README. Its log
-is redrawn from the files the folder holds.
+These three pages are the template's, and 🔄 Template Sync keeps them current
+in a vault, like this README. A page you add here, such as how you use your own
+vault, is **yours from the first commit**: nothing upstream ever writes, moves
+or removes it. The log below is redrawn from the files the folder holds.
 
 ---
 
@@ -58,7 +58,7 @@ from each document's own frontmatter.
 
 ## 🔗 See also
 
-- [Documentation index](../README.md) - every document this project keeps
+- [Documentation index](../README.md) - every document the vault keeps in `.docs/`
 - [Introduction](https://github.com/tannergolden/standards/blob/Development/docs/introduction/README.md) - the principles and environment every repository on the standards shares
 
 ---

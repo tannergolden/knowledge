@@ -101,57 +101,11 @@
 /.docs/operations/README.md
 /.docs/references/README.md
 /.docs/technical/README.md
-/.docs/templates/ADR.md
-/.docs/templates/Communication.md
-/.docs/templates/Implementation-Plan.md
-/.docs/templates/Post-Mortem.md
-/.docs/templates/Project-README.md
-/.docs/templates/README.md
-/.docs/templates/Research-Log.md
-/.docs/templates/Runbook.md
-/.docs/templates/Technical-Design.md
-/.docs/templates/User-Story.md
-/.docs/templates/distribution/README.md
-/.docs/templates/distribution/Release-Process.md
-/.docs/templates/distribution/Release-Verification.md
-/.docs/templates/introduction/Getting-Started.md
-/.docs/templates/introduction/README.md
-/.docs/templates/introduction/Roadmap.md
-/.docs/templates/operations/Dependency-Policy.md
-/.docs/templates/operations/Incident-Response.md
-/.docs/templates/operations/README.md
-/.docs/templates/operations/Threat-Model.md
-/.docs/templates/references/Glossary.md
-/.docs/templates/references/README.md
-/.docs/templates/technical/Architecture-Overview.md
-/.docs/templates/technical/Packages-&-Workspaces.md
-/.docs/templates/technical/README.md
-/.docs/templates/technical/Source-Code.md
-/.docs/templates/technical/Technology-Stack-&-Tooling.md
-/.docs/templates/technical/backend/API-Design-Standards.md
-/.docs/templates/technical/backend/Authentication-&-Security.md
-/.docs/templates/technical/backend/README.md
-/.docs/templates/technical/backend/Schema-&-Validation.md
-/.docs/templates/technical/benchmarks/Performance-Benchmarks.md
-/.docs/templates/technical/benchmarks/README.md
-/.docs/templates/technical/database/Data-Models-&-Entities.md
-/.docs/templates/technical/database/Migration-Policies.md
-/.docs/templates/technical/database/README.md
-/.docs/templates/technical/infrastructure/CI-CD-Pipelines.md
-/.docs/templates/technical/infrastructure/Deployment-Protocols.md
-/.docs/templates/technical/infrastructure/Environment-Configuration.md
-/.docs/templates/technical/infrastructure/README.md
-/.docs/templates/technical/interface/Formatting-&-Standards.md
-/.docs/templates/technical/interface/README.md
-/.docs/templates/technical/interface/Styling-&-Theming.md
-/.docs/templates/technical/interface/UI-Setup-&-Environment.md
-/.docs/templates/technical/testing/E2E-Testing.md
-/.docs/templates/technical/testing/README.md
-/.docs/templates/technical/testing/Unit-Test-Standards.md
 
 # --- The vault: kept current --------------------------------------------------
 # This template's own files. Every vault generated from it keeps them current:
-# the scripts, the root README.md, each folder's README.md and the scaffolds.
+# the scripts, the root README.md, each folder's README.md, the scaffolds and
+# the document templates.
 /.docs/distribution/How-A-Change-Reaches-A-Vault.md
 /.docs/introduction/How-The-Vault-Works.md
 /.docs/introduction/Setting-Up-A-Vault.md
@@ -160,6 +114,15 @@
 /.docs/references/Glossary.md
 /.docs/technical/Vault-Scripts.md
 /.docs/technical/vault/**
+/.docs/templates/ADR.md
+/.docs/templates/Communication.md
+/.docs/templates/Implementation-Plan.md
+/.docs/templates/Post-Mortem.md
+/.docs/templates/README.md
+/.docs/templates/Research-Log.md
+/.docs/templates/Runbook.md
+/.docs/templates/Technical-Design.md
+/.docs/templates/User-Story.md
 /.github/README.md
 /.github/actions/**
 /.github/scripts/check-links.py
@@ -250,6 +213,7 @@
 #/.docs/adrs/ADR-0004-The-Skills-Live-In-The-Home-Kit.md
 #/.docs/adrs/ADR-0005-Each-Folder-Explains-Itself-In-A-README.md
 #/.docs/adrs/ADR-0006-AGENTS-Returns-With-The-Rules-For-Personal-Knowledge.md
+#/.docs/adrs/ADR-0007-The-Vault-Keeps-Only-The-Templates-It-Uses.md
 #/.github/TEMPLATE_INIT
 #/.github/template-derive.json
 #/.github/template-derive.lock

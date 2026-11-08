@@ -1,6 +1,6 @@
 <!--
 title: '🌿 DISTRIBUTION & WORKFLOW'
-description: 'From a branch to a release: how a change moves through this project and how a release reaches its users, wherever this project adds to the shared workflow.'
+description: 'From a commit to a vault: how a change moves through the template and its releases into each vault, and any step a vault adds to the shared workflow. Read it before you cut a release or merge a sync pull request.'
 type: index
 -->
 
@@ -10,9 +10,9 @@ type: index
 
 <a name="top"></a>
 
-**From a branch to a release.**
+**From a commit to a release, and from a release to each vault.**
 
-_What this project adds. The rest is in the standards._
+_What the vault adds. The rest is in the standards._
 
 </div>
 
@@ -20,28 +20,27 @@ _What this project adds. The rest is in the standards._
 
 ## 💡 What This Folder Is For
 
-How a change moves through this project, from its first commit to its release,
-and how a release reaches the people who use it. Branching, commits, reviews,
-pipelines, testing and versioning are written down once, in the standards'
+How a change moves from its first commit to a release, and from a release into
+each vault. Branching, commits, reviews, pipelines and versioning are written
+down once, in the standards'
 [Distribution & Workflow](https://github.com/tannergolden/standards/blob/Development/docs/distribution/README.md),
-and followed here by link. This folder holds what this project adds to them, or
+and followed here by link. This folder holds what the vault adds to them, or
 does its own way.
 
-- **Releasing**: how a release is cut, checked and published here, from the
-  [Release Process](../templates/distribution/Release-Process.md) seed.
-- **Delivery**: where a release goes, how its users get it, and how they check
-  it is genuine, from the
-  [Release Verification](../templates/distribution/Release-Verification.md) seed.
-- **Workflow**: a step this project asks of every change that the standards do
-  not ask everywhere.
+- **How a change reaches a vault**: from the golden path template, through this
+  template's releases, to each vault whose owner runs 🔄 Template Sync; which
+  major a vault follows and how it takes a new one; and what a sync leaves
+  alone, in [How A Change Reaches A Vault](How-A-Change-Reaches-A-Vault.md).
+- **A step of your own**: anything you ask of every change to your vault that
+  the standards do not ask everywhere.
 
-How the pipelines and the tests are built is technical, and lives in
-[`technical/`](../technical/README.md).
+How the checks are built, and where CI runs them, is technical, and lives in
+[Vault Scripts](../technical/Vault-Scripts.md).
 
-Its documents are **yours from the first commit**: nothing upstream ever
-writes, moves or removes one, but for the pages about the vault this template
-ships, which a vault's 🔄 Template Sync keeps current like this README. Its log
-is redrawn from the files the folder holds.
+How A Change Reaches A Vault, like this README, is the template's, and
+🔄 Template Sync keeps it current in a vault. A document you add here is
+**yours from the first commit**: nothing upstream ever writes, moves or removes
+it. The log below is redrawn from the files the folder holds.
 
 ---
 
@@ -63,7 +62,7 @@ from each document's own frontmatter.
 
 ## 🔗 See also
 
-- [Documentation index](../README.md) - every document this project keeps
+- [Documentation index](../README.md) - every document the vault keeps in `.docs/`
 - [Distribution & Workflow](https://github.com/tannergolden/standards/blob/Development/docs/distribution/README.md) - the shared workflow, from a branch to a release
 
 ---
