@@ -38,11 +38,11 @@ comment, are not links.
 
 The graph mirrors the file tree, and only a folder's `README.md`, its note, carries edges:
 
-| From                                   | May wikilink                                                                                            |
-| :------------------------------------- | :------------------------------------------------------------------------------------------------------ |
-| A folder's README (`Memory/README.md`) | The files in its own folder, and the `README.md` of each immediate subfolder, one level down            |
-| Any other note                         | **Nothing.** Every reference is a plain code-style path; its hub's link already leads to it             |
-| A file at the vault root               | Nothing. The root holds no notes: its `README.md` is a page, naming the top folders with Markdown links |
+| From                                   | May wikilink                                                                                                                 |
+| :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| A folder's README (`Memory/README.md`) | The files in its own folder, and the `README.md` of each immediate subfolder, one level down                                 |
+| Any other note                         | **Nothing.** Every reference is a plain code-style path; its hub's link already leads to it                                  |
+| A file at the vault root               | Nothing. The root holds no notes: its `README.md` and `AGENTS.md` are pages, which name files by Markdown link or plain path |
 
 - **Links cascade, never reciprocate.** Links run from the top folders down to their files, from
   the general to the specific. A note never links back to a note that links to it: the
@@ -75,7 +75,7 @@ The graph mirrors the file tree, and only a folder's `README.md`, its note, carr
   matches every folder's README, and the checker warns that it needs a path.
 - **Give a common name its folder:** `[[Memory/Log|Log]]` or `[[Ventures/Company/Log|Company Log]]`
   for names such as `Log.md` and `Overview.md` that many folders share.
-- **Alias for reading:** `the [[Profile/Working Style|user's preferences]]`.
+- **Alias for reading:** `the [[Profile/Working Style|owner's preferences]]`.
 
 Examples inside code spans, like these, are text: they create no edge, and the checker skips them.
 

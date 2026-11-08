@@ -44,8 +44,12 @@ _Read the rules, keep the schema, commit the standard way._
 - **Never delete a file without confirmation.** An approved deletion is a `git rm`, recoverable
   from history.
 - **Never restructure the top folders.** They and the root are the owner's to change.
-- **Keep personal data private.** In this public template every note about a person stays a blank
-  scaffold, and [Personal Data & Secrets](../operations/Personal-Data-&-Secrets.md) says why.
+- **Change a rule on purpose.** A change to the rules of the root `README.md`, `AGENTS.md` or a
+  folder's README is proposed on its own, never made as a side effect of other work (the root
+  `README.md`, Ask First).
+- **Keep personal data private.** A vault stays a private repository, and in the public template
+  every note about a person stays a blank scaffold;
+  [Personal Data & Secrets](../operations/Personal-Data-&-Secrets.md) says why.
 
 ---
 
@@ -79,6 +83,8 @@ python3 .github/scripts/check-vault.py   # notes, links, personal data, generate
 ```
 
 - [ ] Redraw anything it reports as stale with `python3 .github/scripts/update-vault.py`.
+- [ ] If you changed a script, run the scripts' tests too, as 🧠 Vault does on every pull request:
+      `python3 -m unittest discover -s .github/scripts -p 'test_*.py'`.
 - [ ] Push. CI runs the same checks, the secret scan and the commit check. A reviewed false
       positive in the personal-number scan is kept by putting `pii-allow` in a comment on its line;
       use it sparingly.

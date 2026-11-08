@@ -103,13 +103,14 @@ python3 .github/scripts/session.py stop
 - **Where.** Copy `Memory/.template/Session Summary.md` into `Memory/Context/Current/` as
   `YYYYMMDD-HHMMSS.md`, the time of filing, so the names sort by time. Give the copy `type: record`,
   its own title and description, and an H1 with an emoji and the date. It carries no wikilinks.
-- **What.** A delta update: what still stands, what changed, and what it overrides, each override
-  saying in so many words that it supersedes any earlier statement; then the decisions, the open
-  questions, the next steps and anything that must be kept word for word. The scaffold has the
-  sections.
-- **How long.** Short: the two newest summaries are read in full at every start. Keep the active
-  changes and the next steps at the top or the bottom, as [Context Assembly](Context-Assembly.md)
-  asks.
+- **What.** A delta update, in the scaffold's order: its metadata, with who wrote it and the
+  session's importance; the current state, as the active changes this session made; what it
+  overrides, each override saying in so many words that it supersedes any earlier statement; the
+  foundations that still stand; the decisions; the open questions; anything that must be kept word
+  for word; and the next steps, last. The scaffold has the sections.
+- **How long.** Short: the two newest summaries are read in full at every start. The order keeps the
+  active changes near the top and the next steps at the bottom, where
+  [Context Assembly](Context-Assembly.md) asks for them.
 - **Then** run `python3 .github/scripts/update-vault.py`, which lists the summary in its tier and
   moves the oldest on when the tier is full.
 

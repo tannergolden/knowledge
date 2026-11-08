@@ -143,12 +143,17 @@ Ask me which of this repository's community health files to remove, and wait for
 > [!TIP]
 > **This repository's own prompts**: prompts that only make sense in it, such as
 > ones for using it, changing it or understanding how it works. The golden path
-> template never writes here. The prompts below are tannergolden/knowledge's, for
-> using and keeping a vault, and a vault made from it keeps them current with
-> 🔄 Template Sync. Add your own after them, under `##` sections of your own:
-> give each a `###` heading, a **Use when** line, a **Fill in** line if it has
-> placeholders, and the prompt in one `text` block. Prompts that work in any
-> repository, and how to write a good one, are in the
+> template never writes here. The prompts below are tannergolden/knowledge's,
+> for using and keeping a vault, and a vault made from it keeps them current
+> with 🔄 Template Sync. The Golden Path prompts above are tannergolden/path's,
+> written for a software project: a path they name under `docs/` is under
+> `.docs/` in a vault, and a seed they name, such as
+> `docs/technical/Source-Code.md`, does not ship in a vault, whose
+> `.docs/templates/` holds only its own document templates. Add your own prompts
+> after the vault's, under `##` sections of your own: give each a `###` heading,
+> a **Use when** line, a **Fill in** line if it has placeholders, and the prompt
+> in one `text` block. Prompts that work in any repository, and how to write a
+> good one, are in the
 > [universal prompts](https://github.com/tannergolden/intelligence/blob/Development/docs/Prompts.md).
 
 **Find a prompt.** Each runs as it is, except those marked ✏️, which ask for your details.
@@ -253,7 +258,7 @@ What happened, most important first. Then the open threads, each with how long i
 
 ```text
 <context>
-I want a plan for the next seven days that serves what I am working toward. Profile/Focus.md holds my current priorities, Profile/Goals/ my standing goals and Profile/Working Style.md how I like to work. Memory/Dates.md and the open entries in Memory/Log.md hold what is due or waiting, and each project's Overview.md its status and next steps.
+I want a plan for the next seven days that serves what I am working toward. Profile/Focus.md holds my current priorities, Profile/Goals/ my standing goals and Profile/Working Style.md how I like to work. Memory/Dates.md and the open entries in Memory/Log.md hold what is due or waiting, and each project's Overview.md its status, and the newest entry in its Log.md its next steps.
 </context>
 
 <task>
@@ -372,7 +377,7 @@ Search Memory for the earlier decisions and entries this one touches, then draft
 - Ask me only for what the record needs that my words and the vault do not give, and leave its actual outcome and lessons for later.
 - If it replaces an earlier decision, propose superseding that one, and change nothing in it before my yes.
 - If I give a date to look back on the outcome, add it to Memory/Dates.md.
-- Add a principle to the list in Memory/Decisions/README.md only where two or more records show it.
+- Propose a principle for Profile/, with the records it was drawn from, only where two or more records show it, as Memory/Decisions/README.md says.
 - If .github/TEMPLATE_INIT exists, stop before writing and tell me to run this in my private vault.
 - If any detail above is still a placeholder in double braces, ask me for it before you start.
 </constraints>
@@ -400,6 +405,7 @@ Run the loop over the Log entries not yet promoted, and the people, decisions an
 - Delete nothing and rewrite nothing: supersede, propose each removal, and make an approved one a git rm.
 - Propose each fact about me as a Profile change marked unconfirmed, never as a Memory entry.
 - If the table runs past forty rows, propose it in batches, oldest first.
+- If .github/TEMPLATE_INIT exists, stop before writing and tell me to run this in my private vault.
 </constraints>
 
 <done_when>
@@ -414,7 +420,7 @@ Run the loop over the Log entries not yet promoted, and the people, decisions an
 
 ```text
 <context>
-The vault reflects on what it has recorded to find patterns in my world, as Memory/README.md describes under Reflect: a pass is due once the summed importance of what was captured since the last one crosses about 25. Memory/Insights/README.md says what an insight holds and the boundary it keeps: an observation about me is a Profile proposal, never an insight.
+The vault reflects on what it has recorded to find patterns in my world, as Memory/README.md describes under Operations (Reflect): a pass is due once the summed importance of what was captured since the last one crosses about 25. Memory/Insights/README.md says what an insight holds and the boundary it keeps: an observation about me is a Profile proposal, never an insight.
 </context>
 
 <task>
@@ -441,7 +447,7 @@ Take the newest insight's Recorded date as the last reflection, or the start of 
 
 ```text
 <context>
-Each record in Memory/Decisions/ holds the outcome I expected, and leaves the actual outcome and the lessons to be written once they are known. Memory/Decisions/README.md also keeps a list of the principles that recur across my decisions.
+Each record in Memory/Decisions/ holds the outcome I expected, and leaves the actual outcome and the lessons to be written once they are known. A principle that recurs across my decisions is proposed for Profile/, never kept in Memory, as Memory/Decisions/README.md says.
 </context>
 
 <task>
@@ -451,13 +457,14 @@ Find the active decisions whose actual outcome is still blank and that were made
 <constraints>
 - Ask about one decision at a time, oldest first, showing what Memory recorded since, and skip any I want to leave.
 - Write only my answers and what the vault shows, and mark what you infer.
-- Mark a decision Reversed or Superseded only on my yes.
-- Add a principle to the list only where two or more records show it.
+- Mark a decision Reversed or Superseded only on my yes, as Memory/Decisions/README.md says.
+- Propose a principle for Profile/, with the records it was drawn from, only where two or more records show it.
+- If .github/TEMPLATE_INIT exists, stop before writing and tell me to run this in my private vault.
 </constraints>
 
 <done_when>
 - Each decision I answered for has its actual outcome and lessons, lint-notes.py passes on each, and update-vault.py has nothing left to redraw.
-- You list the decisions updated, the ones skipped, and each principle added.
+- You list the decisions updated, the ones skipped, and each principle proposed for Profile/.
 </done_when>
 ```
 
@@ -585,7 +592,7 @@ Projects/README.md sets the rules: a project is a personal initiative, work for 
 </context>
 
 <task>
-Gather what the vault already says about it: Log entries, session summaries, an idea record and notes in other folders. Propose the project: its short hyphenated name, its goal and scope, and what it will draw on. Once I approve, create it and fill its four files from what you gathered.
+Gather what the vault already says about it: Log entries, session summaries, an idea record and notes in other folders. Propose the project: its short hyphenated name, its goal and scope, and what it will draw on. Once I approve, create it by copying Projects/.template/ whole, as Projects/README.md says, and fill its five files from what you gathered.
 </task>
 
 <constraints>
@@ -598,7 +605,7 @@ Gather what the vault already says about it: Log entries, session summaries, an 
 </constraints>
 
 <done_when>
-- The folder exists with its four files, lint-notes.py passes on each, and update-vault.py has nothing left to redraw.
+- The folder exists with its five files, lint-notes.py passes on each, and update-vault.py has nothing left to redraw.
 - You list what you created and changed, and the open questions you left in its Overview.md.
 </done_when>
 ```
@@ -613,7 +620,7 @@ The project is Projects/{{PROJECT}}/. Its Overview.md holds its current state, o
 </context>
 
 <task>
-Read the project's files, and what Memory and the session summaries say about it since its Overview.md last changed. Then propose an updated status, phase, progress summary and blockers, its next three steps, and what to prune from Notes.md.
+Read the project's files, and what Memory and the session summaries say about it since its Overview.md last changed. Then propose an updated status, phase, progress summary and blockers for Overview.md, a Log.md entry with its next three steps, and what to prune from Notes.md.
 </task>
 
 <constraints>
@@ -637,7 +644,7 @@ Read the project's files, and what Memory and the session summaries say about it
 ```text
 <context>
 The project is Projects/{{PROJECT}}/, and it ended: {{HOW_IT_ENDED}}
-The project template says a closed project's folder is kept whole as its record, never deleted. What outlives the project belongs in its own home: decisions and events in Memory/, reference knowledge in Library/, and anything about me in Profile/, as a proposal.
+Projects/README.md says a closed project's folder is kept as its record, and archiving or removing anything in it takes a yes. What outlives the project belongs in its own home: decisions and events in Memory/, reference knowledge in Library/, and anything about me in Profile/, as a proposal.
 </context>
 
 <task>
@@ -755,12 +762,13 @@ Inbox/Reports/ holds finished reports, each good until its review_by date, and I
 </context>
 
 <task>
-List the reports past their review_by date and the visuals whose data has moved on. Then find the findings worth keeping for good, and propose a home for each: a Library holding, a folder's README and its rules, or the root README.md.
+List the reports past their review_by date and the visuals whose data has moved on. Then find the findings worth keeping for good, and propose a home for each from those Inbox/Reports/README.md names: a Library holding, a venture's or a project's own files, or a folder's README or the root README.md, as a change proposed on its own.
 </task>
 
 <constraints>
 - Change nothing before my yes: propose each clearing, refresh and promotion.
 - Re-verify a stale report only if I ask, through the research-and-development skill, and move its review_by date only once it is verified.
+- Regenerate a stale visual only if I ask, through the business-intelligence skill: a visual is redrawn from its new data, never re-verified.
 - Keep each index in step with its folder, in the same edit.
 - Make each promotion by its destination's rules, such as Library/README.md's for a holding.
 </constraints>
@@ -843,11 +851,11 @@ Split the export into separate facts, check each against what the vault already 
 
 ```text
 <context>
-.docs/introduction/Setting-Up-A-Vault.md says what a vault needs: a private repository, initialisation run, the settings the automation needs, and a first session. .github/TEMPLATE_INIT exists only until initialisation has run.
+.docs/introduction/Setting-Up-A-Vault.md says what a vault needs: a private repository, initialisation run, the settings the automation needs, and a first session. .github/TEMPLATE_INIT exists only until initialisation has run. A vault follows the major of the template its stub in .github/workflows/template-sync.yml names: v2 for one generated since v2.0.0, while one generated before follows v1 until its owner sets ref: 'v2', as .docs/distribution/How-A-Change-Reaches-A-Vault.md says.
 </context>
 
 <task>
-Check each step on that page against this vault: whether the repository is private, whether initialisation ran and what it changed, the settings the automation needs, the first session's three commands, and how filled in Profile/ is.
+Check each step on that page against this vault: whether the repository is private, whether initialisation ran and what it changed, the settings the automation needs, which major its Template Sync stub follows, the first session's three commands, and how filled in Profile/ is.
 </task>
 
 <constraints>
@@ -857,7 +865,7 @@ Check each step on that page against this vault: whether the repository is priva
 </constraints>
 
 <output>
-A verdict first: ready, or what is missing. Then each step with its state and the evidence, the settings I must check myself and where, and the Profile facets profile-coverage.py says to fill first. End with the fix prompt that System/README.md asks for under Reports On The Vault.
+A verdict first: ready, or what is missing. Then each step with its state and the evidence, the major the vault follows and whether it is the newest, the settings I must check myself and where, and the Profile facets profile-coverage.py says to fill first. End with the fix prompt that System/README.md asks for under Reports On The Vault.
 </output>
 ```
 
@@ -903,6 +911,7 @@ Find every link and path that names it, show me the move with each change it nee
 <constraints>
 - Make no change before my yes.
 - If the new path breaks the naming rules or the link topology, say why and suggest one that does not.
+- If the move renames a folder, give its README.md the new name in its title and H1, fully capped, as .docs/technical/vault/Note-Schema.md asks, in the same commit.
 - In the template, a file every vault keeps also has a line in .github/template-sync, and a rename a vault depends on is breaking, as .docs/distribution/How-A-Change-Reaches-A-Vault.md says: stop and tell me before moving one.
 - If any detail above is still a placeholder in double braces, ask me for it before you start.
 </constraints>
@@ -975,17 +984,17 @@ Choose the file's section, with your reason, add its line, and make the file rea
 ```text
 <context>
 I want this change to the Rules of {{FOLDER}}: {{CHANGE}}
-A folder's rules add to the root README.md and to the rules of every folder above it, and never loosen them. In the template, a folder's README is kept current in every vault, so a change here reaches each vault at its next sync.
+A folder's rules add to the root README.md and to the rules of every folder above it, and never loosen them. A folder's README is a page as well as its note, in the full page format .docs/technical/vault/Note-Schema.md describes. In the template, a folder's README is kept current in every vault, so a change here reaches each vault at its next sync.
 </context>
 
 <task>
-Read the folder's README, the READMEs of the folders above it and the root README.md, and draft the change: the new wording, every rule it touches, and every other note or document that states the same rule. Show me the draft, and make it once I approve.
+Read the folder's README, the READMEs of the folders above it and the root README.md, and draft the change: the new wording, every rule it touches, and every other note or document that states the same rule, AGENTS.md and the root README.md included. Show me the draft, and make it once I approve.
 </task>
 
 <constraints>
 - Change nothing before my yes on the draft.
 - Draft no change that loosens a rule above it or an Invariant: name the rule it would loosen instead.
-- Make the same change everywhere the rule is stated, in one commit.
+- Make the same change everywhere the rule is stated, in one commit, and keep the README in the page format: its centered header and footer, and an emoji at the start of each section heading.
 - If any detail above is still a placeholder in double braces, ask me for it before you start.
 </constraints>
 

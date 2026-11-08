@@ -158,7 +158,7 @@ the rules for writing there.
   and `scan-pii.py` check one part each.
 - `python3 -m unittest discover -s .github/scripts -p 'test_*.py'`: the scripts' own tests.
 - `python3 .github/scripts/profile-coverage.py --json` picks the next profile interview;
-  `knowledge-base.py` turns on, fetches and searches the offline knowledge bases.
+  `knowledge-base.py` turns on, fetches, searches and reads the offline reference works.
 
 Run `lint-notes.py` on each note you write and `update-vault.py` after a change. Each script's
 purpose is in `.github/scripts/README.md`.
@@ -194,17 +194,17 @@ In short:
 
 ## Where things live
 
-| Path                     | Holds                                                                        |
-| :----------------------- | :--------------------------------------------------------------------------- |
-| `Inbox/`                 | Files waiting to be sorted, and the held reports, visuals and ideas          |
-| `Library/`               | Reference knowledge in ten classes, never personal                           |
-| `Memory/`                | What happened, who is around the owner, what they decided, and what is due   |
-| `Profile/`               | Who the owner is; `Working Style.md` says how to work with them              |
-| `Projects/`              | The owner's personal projects, one folder each                               |
-| `Ventures/`              | Each company the owner runs, one folder each, with a folder per department   |
-| `System/`                | The owner's standing settings, the workflows and the generated catalog       |
-| `.github/scripts/`       | The vault's checks and generators                                            |
-| `.docs/technical/vault/` | The note schema, the keywords, the link topology and how to assemble context |
+| Path                     | Holds                                                                                            |
+| :----------------------- | :----------------------------------------------------------------------------------------------- |
+| `Inbox/`                 | Files waiting to be sorted, and the held reports, visuals and ideas                              |
+| `Library/`               | Reference knowledge in ten classes, never personal                                               |
+| `Memory/`                | What happened, who is around the owner, what they decided, and what is due                       |
+| `Profile/`               | Who the owner is; `Working Style.md` says how to work with them                                  |
+| `Projects/`              | The owner's personal projects, one folder each                                                   |
+| `Ventures/`              | Each company the owner runs, one folder each, with a folder per department                       |
+| `System/`                | The owner's standing settings, the workflows and the generated catalog                           |
+| `.github/scripts/`       | The vault's checks and generators                                                                |
+| `.docs/technical/vault/` | The note schema, the keywords, the link topology, how to assemble context and how a session runs |
 
 ## Gotchas
 
@@ -231,8 +231,9 @@ The root `README.md`'s Ask First holds the full list. In short, wait for the own
 - removing anything a retention policy flags;
 - changing the rules of this file, the root `README.md` or a folder's README, proposed on its own,
   never as a side effect;
-- anything the write-gate holds: moving money, a contract, outside communication, a change to
-  equity, or a deletion (`Ventures/README.md`).
+- anything the write-gate holds, which covers every write in a venture: moving money, a contract,
+  outside communication, a change to equity or a deletion, while internal drafts go ahead
+  (`Ventures/README.md`, Structure).
 
 A top folder, or a file at the vault root, is created, renamed, moved or deleted by the owner
 alone.

@@ -37,8 +37,8 @@ recalling something from a low-attention position.
   [Note Schema](Note-Schema.md) to pull only what the task turns on.
 - **Prefer many small reads to one large one.** Read the section you need, not the whole file.
 - **Never assemble a full-vault context**, even for a fresh session. Orientation comes from
-  the root [`README.md`](../../../README.md) and its start-of-session list; everything else loads on
-  demand.
+  [`AGENTS.md`](../../../AGENTS.md), which an AI reads first, and from the root
+  [`README.md`](../../../README.md) and its start-of-session list; everything else loads on demand.
 
 ---
 
@@ -46,8 +46,8 @@ recalling something from a low-attention position.
 
 Place material by attention, not by convenience:
 
-- **Front:** the rules and the task's key files: the root `README.md`, the README of each folder the
-  task touches, `Profile/Working Style.md`, and the notes the task turns on.
+- **Front:** the rules and the task's key files: `AGENTS.md` and the root `README.md`, the README of
+  each folder the task touches, `Profile/Working Style.md`, and the notes the task turns on.
 - **Middle:** bulk reference material, such as `Library/`, whose exact wording is least likely to
   be needed word for word.
 - **End:** the single most important constraint, open loop or next step, restated last so it lands

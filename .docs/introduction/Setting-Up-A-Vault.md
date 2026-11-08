@@ -120,9 +120,11 @@ A session commits what it writes, and pushing stays yours.
 Three automations keep your vault current, each as a pull request you merge:
 
 - **🔄 Template Sync**, when you run it, brings the template's released fixes, each file merged with
-  your changes. Put a `#` before a line in `.github/template-sync` to keep that file as yours.
+  your changes, from the latest release of the major your vault follows: `v2` for a vault generated
+  now. One generated before v2.0.0 follows `v1` until you set `ref: 'v2'` in its stub,
+  `.github/workflows/template-sync.yml`. Put a `#` before a line in `.github/template-sync` to keep
+  that file as yours.
 - **🗂️ Machined Indexes**, after each push to the default branch, proposes the redrawn folder logs.
-
 - **🔁 Intelligence Sync**, every Monday, proposes the universal rules of each new
   tannergolden/intelligence release for the block at the top of `AGENTS.md`, and leaves the rest of
   the file alone.

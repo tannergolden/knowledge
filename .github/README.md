@@ -73,10 +73,10 @@ settings the automation needs.
 
 The vault explains itself, folder by folder, to whoever works in it, and holds no agents: the
 skills come with the home kit from `tannergolden/intelligence`. `AGENTS.md` is the one page written
-for AI alone. Above it, between the `INTELLIGENCE` markers, are the universal rules every AI follows
-in any repository, which the hub renders and 🔁 Intelligence Sync keeps current; below them are the
-rules every AI follows in a personal knowledge vault, which hold it to the root README and each
-folder's README. Every vault generated from this template starts with both.
+for AI alone. At its top, between the `INTELLIGENCE` markers, are the universal rules every AI
+follows in any repository, which the hub renders and 🔁 Intelligence Sync keeps current; below them
+are the rules every AI follows in a personal knowledge vault, which hold it to the root README and
+each folder's README. Every vault generated from this template starts with both.
 
 ---
 
@@ -137,8 +137,8 @@ do when one fails.
 
 The BRAIN was designed and built by **Tanner Golden**: its folder structure, naming conventions,
 documentation and scripts all originate with him, and "the developer" means him. "The owner",
-called "the user" in some notes, means whoever `Profile/` describes: the vault is portable, so its
-owner is whoever adopts it.
+whom the universal rules in `AGENTS.md` and the home kit's skills call the user, means whoever
+`Profile/` describes: the vault is portable, so its owner is whoever adopts it.
 
 <!-- The domain is capitalised on purpose: initialisation rewrites the template owner's
 handle wherever it stands alone, and this address must survive in every vault. -->
@@ -171,6 +171,6 @@ says what to do when you add a file the template ships. The
 
 <br />
 
-Distributed under the terms in [LICENSE](/LICENSE).
+Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
 
 </div>

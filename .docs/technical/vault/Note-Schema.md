@@ -29,9 +29,10 @@ standard,
 in the Document Styling guide, so a note reads the same way as every document in every repository.
 
 A note is any `.md` file in the seven top folders, their `.template/` scaffolds included. Each
-folder's `README.md` is that folder's note, and carries this schema like any other. The `README.md`
-at the vault root and everything under a hidden folder are not notes but pages: they carry the same
-hidden block, as the styling guide asks of every page, and keep the rules they follow as pages.
+folder's `README.md` is that folder's note, and carries this schema like any other. The two pages at
+the vault root, `README.md` and `AGENTS.md`, and everything under a hidden folder other than
+`.template/`, such as `.docs/` and `.github/`, are not notes but pages: they carry the same hidden
+block, as the styling guide asks of every page, and keep the rules they follow as pages.
 
 `.github/scripts/lint-notes.py` checks every note against this page. Run it on a note after
 changing it; CI runs it on every note, beside the account's frontmatter check over every document.
@@ -76,14 +77,14 @@ say, and a field that only repeats them drifts. A note's subject is its path, ne
 
 ### Types
 
-| Type        | Use for                                                                                     |
-| :---------- | :------------------------------------------------------------------------------------------ |
-| `index`     | A folder's own note, its `README.md` (`Memory/README.md`)                                   |
-| `guide`     | An operating manual or a how-to                                                             |
-| `standard`  | Rules a reader must obey                                                                    |
-| `reference` | Material to look up: Library holdings, and the Profile's facts about the owner              |
-| `record`    | A dated account: the Log, session summaries, decisions, entities, events, reports and ideas |
-| `template`  | A scaffold inside a `.template/` folder; the copy takes its own type                        |
+| Type        | Use for                                                                                                                                                                      |
+| :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `index`     | A folder's own note, its `README.md` (`Memory/README.md`)                                                                                                                    |
+| `guide`     | An operating manual or a how-to                                                                                                                                              |
+| `standard`  | Rules a reader must obey                                                                                                                                                     |
+| `reference` | Material to look up: Library holdings, the Profile's facts about the owner, and the living files of a project or a venture, kept current in place, such as its `Overview.md` |
+| `record`    | A dated account: the Log, session summaries, decisions, entities, events, reports and ideas                                                                                  |
+| `template`  | A scaffold inside a `.template/` folder; the copy takes its own type                                                                                                         |
 
 A `.template/` folder's own `README.md` is `index` when it explains a folder of scaffolds and is
 never copied, such as `Memory/.template/README.md`, and `template` when its folder is copied whole,

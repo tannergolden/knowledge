@@ -26,6 +26,11 @@ information about its owner, so it is kept **private**: generate it as a private
 keep it that way. This template itself is public, and every note in it about a person is a blank
 scaffold.
 
+Every AI that works in a vault is held to the same lines by `AGENTS.md`: the owner's context never
+leaves the vault unasked (SEC-003), and a secret is recorded by where it lives, never by its value
+(SEC-001). The [Check Nothing Personal Leaks](../Prompts.md#check-nothing-personal-leaks) prompt
+audits a vault, or the template, against this page.
+
 ---
 
 ## 🗝️ Secrets Are Pointers, Not Values
@@ -39,7 +44,8 @@ pointer to where it lives. The rules and the scans that enforce them are the sta
   default branch.
 
 The vault adds one scan of its own: `python3 .github/scripts/scan-pii.py` checks every tracked text
-file for Social Security and card numbers, and CI runs it through `check-vault.py`.
+file for Social Security and card numbers, and CI runs it through `check-vault.py`. A reviewed false
+positive is kept by putting `pii-allow` in a comment on its line, sparingly.
 
 ---
 

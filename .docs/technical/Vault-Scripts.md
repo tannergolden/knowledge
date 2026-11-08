@@ -113,8 +113,8 @@ call, and the tests run the real script on it with `--root`, as CI does, so a te
 vault in the repository. A few tests read the real vault on purpose: that it passes every check, that
 nothing generated is stale, and that the wiring holds. The 🧠 Vault action must run scripts that
 exist, its workflow must carry no template guard, `check-vault.py` must run every check, and every
-script must open with a one-line purpose and hold no en or em dash. The tests keep their underscores
-because `unittest` imports each one as a module.
+script must open with a one-line purpose and hold no en dash, em dash or horizontal bar. The tests
+keep their underscores because `unittest` imports each one as a module.
 
 ---
 

@@ -48,10 +48,11 @@ Conventional Commits, are in the standards'
   its README, it was a note named after the folder, such as `Memory/Memory.md`; `lint-notes.py` now
   flags one.
 - **Folder README**: the `README.md` at a folder's root, such as `Memory/README.md`, which is the
-  folder's note, typed `index` (a Profile folder facet's is typed `reference`). It says what the folder
-  is for and what belongs in it, holds the folder's rules where it has any, and is the only kind of
-  note that may carry wikilinks, which is why it is also called the folder's hub
-  ([Link Topology](../technical/vault/Link-Topology.md)). No note is named after its folder.
+  folder's note, typed `index` (a Profile folder facet's is typed `reference`), and a page as well, in
+  the account's full page format. It says what the folder is for and what belongs in it, holds the
+  folder's rules where it has any, and is the only kind of note that may carry wikilinks, which is
+  why it is also called the folder's hub ([Link Topology](../technical/vault/Link-Topology.md)). No
+  note is named after its folder.
 - **Held**: kept at the Inbox's path but never sorted. `Reports/`, `Visuals/`, `Ideas/` and
   `Backups/` are the held sub-homes (`Inbox/README.md`). The first three are still linted and
   cataloged; `Backups/`, which keeps the originals copied before a cleanup, is never walked
@@ -61,16 +62,20 @@ Conventional Commits, are in the standards'
   and carries a single H1. Every note but a folder's `README.md` carries no decorative header or
   footer.
 - **Page**: a document that follows the account's styling standard in full, its centered header and
-  footer included: the root `README.md` and `AGENTS.md`, anything in a hidden folder, such as this
-  one, and every folder's `README.md`, which is both a page and its folder's note.
+  footer included: the root `README.md` and `AGENTS.md`, anything in a hidden folder other than a
+  `.template/`, such as this one, and every folder's `README.md`, which is both a page and its
+  folder's note.
 - **Root README**: the `README.md` at the vault root, the vault's guide for anyone who works in it:
   the top folders, how a session goes, the commands, what done means, where each kind of work goes,
-  and the conventions every folder shares. A page, read first.
-- **Rules**: the section of a top folder's README that follows its purpose. A folder's rules add to the root
-  `README.md` and never loosen it (the root `README.md`, How A Session Goes).
+  and the conventions every folder shares. A page, read before any folder's README, and by an AI
+  right after `AGENTS.md`.
+- **Rules**: the section of a folder's README that holds the rules for working there, as each top
+  folder's README does. A folder's rules add to the root `README.md` and to the rules of every folder
+  above it, and never loosen them (the root `README.md`, How A Session Goes).
 - **Scaffold**: a file in a `.template/` folder, typed `template`, copied to make a new note and never
-  edited in place. A scaffold carries no wikilinks, receives none, and is left out of the catalog. A
-  `.template/` folder's own README explains its scaffolds, typed `index` and never copied, or, where
+  edited in place. Each opens with a note, a comment that begins `On copying:`, saying where its copy
+  goes and what to fill, and the note is deleted from the copy. A scaffold carries no wikilinks,
+  receives none, and is left out of the catalog. A `.template/` folder's own README explains its scaffolds, typed `index` and never copied, or, where
   the folder is copied whole, as a venture's or a project's is, is a scaffold itself, written for the
   folder it becomes.
 - **Sort**: moving a drop out of the Inbox to its home, with its destination and clean name proposed
@@ -109,7 +114,8 @@ Conventional Commits, are in the standards'
   and `Memory/Log.md` (`STARTUP` in `.github/scripts/vault.py`), then the two newest summaries, and,
   when files wait at the Inbox, `Inbox/README.md`.
 - **Supersede**: to mark an entry replaced, with a pointer to the entry that replaces it, rather than
-  rewrite it in place (`Memory/README.md`).
+  rewrite it in place. A superseded decision or insight sets its Status line to Superseded and its
+  frontmatter to `status: deprecated`, so recall ranks it lower (`Memory/README.md`).
 - **Tier**: one of Current, Recent and Archive.
 
 ---
@@ -153,8 +159,6 @@ Conventional Commits, are in the standards'
 - **Department**: one of the twelve a venture is organized into, from Administration to Public
   Relations, each with a folder in the venture and a skill named for it, which also covers that part
   of the owner's own life (the root `README.md`, Where Each Kind Of Work Goes).
-- **Founder**: the owner, as a venture's own records name them: the one whose yes money, contracts,
-  outside communication, a change to equity and deletions need.
 - **Home kit**: tannergolden/intelligence's installer, which puts every skill in its `kit/skills/`,
   with the universal rules an AI assistant follows, into each AI app on every machine and in every
   Claude Code cloud session. The vault holds no skill and no agent; its `AGENTS.md` carries the
@@ -165,9 +169,9 @@ Conventional Commits, are in the standards'
 - **Venture**: a company the owner owns or runs, with clients, employees, revenue or a brand, kept in
   a folder of `Ventures/` copied from its scaffold. A personal initiative without them is a
   **project**, in `Projects/` (`Ventures/README.md`).
-- **Write-gate**: the check before a skill writes to a venture's strategic core: internal drafts go
-  ahead, while moving money, contracts, outside communication, a change to equity and deletions
-  need the owner's yes (`Ventures/README.md`).
+- **Write-gate**: the rule every write in a venture goes through, decided by the act, not by the
+  file: internal drafts go ahead; moving money, a contract, outside communication, a change to equity
+  and a deletion need the owner's yes (`Ventures/README.md`, Structure).
 
 ---
 
@@ -188,9 +192,13 @@ Conventional Commits, are in the standards'
 - **Machined index**: a folder log between `AUTO-INDEX` markers, drawn by the standards' indexer.
 - **Only ever in the template**: the files initialisation deletes from every vault.
 - **Session helper**: one of `session.py`'s `start`, `after-edit` and `stop`.
+- **Template Sync**: the workflow `.github/workflows/template-sync.yml`, run by the owner, which
+  proposes the template's latest release, on the major its `ref:` names, as one pull request: `v2`
+  in a vault generated now, while one generated before v2.0.0 follows `v1` until its owner sets
+  `ref: 'v2'` ([How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md)).
 - **The developer** and **the owner**: the developer designed and built the template, and is named
-  on the landing page; the owner, called the user in some notes, is whoever `Profile/` describes,
-  whose vault it is (`.github/README.md`).
+  on the landing page; the owner, whom the universal rules in `AGENTS.md` and the home kit's skills
+  call the user, is whoever `Profile/` describes, whose vault it is (`.github/README.md`).
 - **Yours**: a path `.github/template-sync` switches off with `#`, seeded once and never synced.
 
 ---

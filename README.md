@@ -53,9 +53,9 @@ this page and to each folder's README. The vault holds no agents: the skills com
 | `System/`   | Standing settings, the workflow map and the generated catalog             | [System](System/README.md)     |
 
 Hidden folders are infrastructure: `.github/scripts/` holds the vault's checks and generators,
-`.docs/` its documentation, with the note schema, the keywords, the link topology and how to
-assemble context in `.docs/technical/vault/`, and each `.template/` the scaffolds new notes are
-copied from.
+`.docs/` its documentation, with the note schema, the keywords, the link topology, how to assemble
+context and how a session runs in `.docs/technical/vault/`, and each `.template/` the scaffolds new
+notes are copied from.
 
 ---
 
@@ -119,6 +119,7 @@ After any write, whatever makes it, `lint-notes.py` runs on each note written, t
 - `check-vault.py` passes, and `update-vault.py` has nothing left to redraw.
 - Every note written carries [the note schema](.docs/technical/vault/Note-Schema.md), and
   `lint-notes.py` passes on it.
+- What the task changed about the owner's world is recorded in `Memory/` and the Log.
 - The change is committed, with a message that follows
   [Conventional Commits](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Conventional-Commits.md).
 - The owner knows which files changed and what is not yet committed.
@@ -133,15 +134,15 @@ personal is written.
 
 The skills the home kit installs are twelve, one for each department and named for it, and each
 covers both a company the owner runs and the owner's own life. A company's records go in its venture
-folder, `Ventures/<Venture>/`, each department's in the folder named for it; the owner's own life
+folder, `Ventures/[Company]/`, each department's in the folder named for it; the owner's own life
 goes to the folders of this vault, each by its README's rules:
 
-| Skill                      | A company's records, in `Ventures/<Venture>/`                                                                                                            | The owner's own life, in this vault                                                                                                                          |
+| Skill                      | A company's records, in `Ventures/[Company]/`                                                                                                            | The owner's own life, in this vault                                                                                                                          |
 | :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `administration`           | `Administration/`, with the venture's `Overview.md`, `Goals.md` and `Log.md`: founding, strategy, decisions across departments and the operating cadence | Decisions in `Memory/Decisions/`, dates and commitments in `Memory/Dates.md`, and goals and priorities proposed for `Profile/Goals/` and `Profile/Focus.md`  |
 | `finance-and-accounting`   | `Finance & Accounting (F&A)/`: the books, the financial model, the cap table and company tax                                                             | Budget, debt, taxes, investing, insurance and estate as the picture in `Profile/Finances.md`, and dated bills in `Memory/`                                   |
 | `legal-and-compliance`     | `Legal & Compliance (L&C)/`: formation, contracts, IP, compliance and privacy                                                                            | Leases, contracts and wills by reference only, where each is kept, in `Profile/Finances.md`, and a dispute's dates and open loops in `Memory/`               |
-| `sales-and-marketing`      | `Sales & Marketing (S&M)/`: the pipeline and deals, positioning and demand                                                                               | A job search or a personal brand as a project in `Projects/`, the people met networking in `Memory/`, and what a negotiation settles in `Memory/Decisions/`  |
+| `sales-and-marketing`      | `Sales & Marketing (S&M)/`: the sales plan and the revenue plan, the pipeline and deals, positioning and demand                                          | A job search or a personal brand as a project in `Projects/`, the people met networking in `Memory/`, and what a negotiation settles in `Memory/Decisions/`  |
 | `operations-and-logistics` | `Operations & Logistics (O&L)/`: processes, programs and vendors                                                                                         | A household plan, a trip or a move as a project in `Projects/`, its dates, contractors and events in `Memory/`, and routines proposed for `Profile/Focus.md` |
 | `human-resources`          | `Human Resources (HR)/`: roles, hiring, pay, onboarding and the people records                                                                           | The profile interview, career and skills, health and wellbeing, in `Profile/` by `Profile/README.md`'s rules                                                 |
 | `information-technology`   | `Information Technology (IT)/`: the internal systems and their security                                                                                  | The devices, accounts and tools the owner uses, proposed for `Profile/Preferences.md` and never with a password or key, and a security incident in `Memory/` |
@@ -240,6 +241,9 @@ These need the owner's yes before they happen:
 - **Removing anything a retention policy flags**: the policy says what may go, and the owner decides.
 - **Changing the rules of this page, of `AGENTS.md` or of a folder's README**: the change is proposed
   on its own, never made as a side effect of other work.
+- **Anything the write-gate holds**, which covers every write in a venture: internal drafts go ahead;
+  moving money, a contract, outside communication, a change to equity and a deletion need the
+  owner's yes (`Ventures/README.md`, Structure).
 
 A top folder, or a file at the vault root, is created, renamed, moved or deleted by the owner alone.
 Transient junk (`__pycache__/`, `*.pyc`, `._*` files) needs no yes to clear.

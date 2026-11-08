@@ -30,11 +30,12 @@ _The READMEs for anyone, AGENTS.md for every AI._
 > [ADR index](README.md). This record amends
 > [ADR-0005](ADR-0005-Each-Folder-Explains-Itself-In-A-README.md).
 
-| Attribute     | Specification                                     |
-| :------------ | :------------------------------------------------ |
-| **Deciders**  | The vault's owner                                 |
-| **Consulted** | The AI agent that carried out the change          |
-| **Informed**  | Everyone who generates a vault from this template |
+| Attribute     | Specification                                                                             |
+| :------------ | :---------------------------------------------------------------------------------------- |
+| **Deciders**  | The vault's owner                                                                         |
+| **Consulted** | The AI agent that carried out the change                                                  |
+| **Informed**  | Everyone who generates a vault from this template                                         |
+| **Amends**    | [ADR-0005](ADR-0005-Each-Folder-Explains-Itself-In-A-README.md), for its `AGENTS.md` part |
 
 ---
 

@@ -36,11 +36,12 @@ _One description per folder, where every reader looks first._
 > rules every AI follows in a personal knowledge vault. Each folder still explains itself in its
 > `README.md`, written for anyone. The record below is kept as it was decided.
 
-| Attribute     | Specification                                     |
-| :------------ | :------------------------------------------------ |
-| **Deciders**  | The vault's owner                                 |
-| **Consulted** | The AI agent that carried out the change          |
-| **Informed**  | Everyone who generates a vault from this template |
+| Attribute      | Specification                                                                                          |
+| :------------- | :----------------------------------------------------------------------------------------------------- |
+| **Deciders**   | The vault's owner                                                                                      |
+| **Consulted**  | The AI agent that carried out the change                                                               |
+| **Informed**   | Everyone who generates a vault from this template                                                      |
+| **Amended by** | [ADR-0006](ADR-0006-AGENTS-Returns-With-The-Rules-For-Personal-Knowledge.md), for its `AGENTS.md` part |
 
 ---
 
