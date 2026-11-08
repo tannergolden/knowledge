@@ -1,52 +1,45 @@
 <!--
-title: "Insight"
-description: "Template for a single synthesized insight about the owner's outside world, with evidence and provenance."
+title: "[Insight Title]"
+description: "[The pattern, in a sentence or two, and when it should shape advice.]"
 type: "template"
-keywords: ["synthesis", "pattern", "observation", "evidence", "confidence", "template"]
+keywords: ["[the pattern in other words]", "[who or what it concerns]", "template"]
 -->
 
-<!--
-Instantiation: copy this file into Memory/Insights/ to record an insight.
-- Set type to "record", and give the copy its real title and description.
-- Replace the emoji H1 title with the real insight.
-- Name the file YYYY-MM-slug.md so insights sort chronologically.
-- Boundary reminder: an Insight is about the outside world only. Nothing
-  about the owner themselves - their traits, values, habits, preferences, or
-  goals. That is Profile, and is proposed there (`Profile/README.md`, Rules), never
-  stored here.
-- Supersede, never rewrite.
+<!-- On copying: save this as Memory/Insights/<YYYY-MM-slug>.md, the month it was written and a short hyphenated slug, so insights sort by date. Then:
+- About the owner's outside world only. Anything about who the owner is, a trait, a value, a habit, a preference or a goal, is proposed for Profile/ instead (Profile/README.md, Rules) and never stored here. An insight with no evidence is a guess, and is not written (Memory/Insights/README.md).
+- Set type to "record". Give the copy its real title, the insight in a few words as in the H1, a description of the pattern, and keywords a search would use: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Replace [Insight Title] in the H1, keeping the emoji, and each [bracketed] prompt with what is known, or delete it; nothing is guessed.
+- Dates are ISO 8601: As of is when the pattern holds in the world, YYYY-MM or YYYY-MM-DD, and Recorded is the day it was written down, YYYY-MM-DD.
+- When the pattern no longer holds, the insight is superseded, never rewritten: Status becomes Superseded, with the plain path of the insight that replaces it; the frontmatter takes status: deprecated, so recall ranks it lower; and As of is closed with the date it stopped holding, as in YYYY-MM to YYYY-MM (Memory/README.md, Writing An Entry).
+- Name other files by plain path in Evidence and Related lines; a record carries no wikilinks.
+- Once filed, lint-notes.py checks it, and update-vault.py lists it in Memory/Insights/README.md.
+- Delete this note from the copy.
 -->
 
-# 💡 [Insight]
+# 💡 [Insight Title]
 
 ## Statement
 
-The synthesized observation, about the external world only - a recurring situation, a relationship dynamic, or a pattern in how things tend to go.
+[The observation, about the outside world only: a recurring situation, a relationship dynamic, or a pattern in how things tend to go.]
 
 ## Evidence
 
-Plain-path links to the source memories this insight was distilled from. An insight with no evidence is a guess, not an insight.
-
--
--
+- [The plain path of a source memory it was distilled from]
+- [The plain path of another source memory]
 
 ## Confidence
 
-How strongly this holds, and why - how much evidence backs it, and how consistent that evidence is.
+[low / medium / high]: [why, from how much evidence backs it and how consistent that evidence is]
 
 ## Provenance
 
-- As of:
-- Recorded:
+- As of: [YYYY-MM]
+- Recorded: [YYYY-MM-DD]
 
 ## Status
 
-`Active` / `Superseded`
-
-## Superseded-by
-
-Plain path to the insight that replaced this one, if any.
+[Active / Superseded]. [Once superseded: the plain path of the insight that replaces it.]
 
 ## Related
 
--
+- Related: [the plain path of a related entry]

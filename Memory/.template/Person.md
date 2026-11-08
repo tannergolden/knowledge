@@ -1,18 +1,21 @@
 <!--
-title: "Person"
-description: "Template for a person in the owner's personal orbit - a Biography-depth profile entry."
+title: "[Person Name]"
+description: "[Who this person is to the owner, in a sentence or two, and when to read this entry.]"
 type: "template"
-keywords: ["person template", "people entry", "relationship profile", "contact", "who someone is", "personal orbit", "biography"]
+keywords: ["[other name or nickname]", "[relationship to the owner]", "template"]
 -->
 
-<!--
-INSTANTIATION (copy this file to Memory/Entities/People/<First Last>.md, then):
-- Set type to "record", and give the copy its real title and description.
-- Keep the emoji H1; replace [Person Name] with the person's name.
-- Fill only what is known. Never fabricate - leave a field blank or omit its line rather than guessing.
-- Surface sensitive sections (DOB, contact, family) only when relevant to the work at hand (`Profile/README.md`, Rules).
-- Record provenance: As of (when the facts became true) and Recorded (today).
-- Cross-reference with plain-path Related lines. No wikilinks in entries.
+<!-- On copying: save this as Memory/Entities/People/<First Last>.md, named for the person. Then:
+- Only someone in the owner's personal orbit whose relationship is real or recurring gets an entry: a contact known only through business belongs to their venture, and a name met once stays a line in Memory/Log.md (Memory/Entities/People/README.md).
+- What is written comes from the owner or from what the owner shares. Nobody searches for a person to fill in their entry unless the owner asks.
+- Set type to "record". Give the copy its real title, the person's name as in the H1, a description of who they are to the owner, and keywords a search would use: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Replace [Person Name] in the H1, keeping the emoji, and each [bracketed] prompt with what is known, or delete it. A field nobody knows stays blank, or its line goes; nothing is guessed.
+- The sensitive sections, date of birth, contact and family, are surfaced only when the work needs them (Profile/README.md, Rules).
+- Dates are ISO 8601: YYYY-MM-DD, or YYYY-MM when only the month is known. As of is when the facts became true; Recorded is the day they were written down.
+- When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays beside it, marked superseded with the dates it held, such as a former city (Memory/README.md, Writing An Entry).
+- Name other files by plain path in Related lines; an entry carries no wikilinks.
+- Once filed, lint-notes.py checks it, and update-vault.py lists it in Memory/Entities/People/README.md.
+- Delete this note from the copy.
 -->
 
 # 👤 [Person Name]
@@ -52,36 +55,35 @@ INSTANTIATION (copy this file to Memory/Entities/People/<First Last>.md, then):
 
 ## Family & Connections
 
-<!-- Spouse, children, relatives, mutual friends. Plain-path Related links where an entry exists. -->
+[Spouse or partner, children, relatives and mutual friends, each named by the plain path of their entry where they have one.]
 
 ## Personality & Communication
 
-<!-- Temperament, communication style, how best to interact with them. -->
+[Temperament, communication style, and how best to interact with them.]
 
 ## Interests & Preferences
 
-<!-- Hobbies, tastes, likes and dislikes worth remembering. -->
+[Hobbies, tastes, likes and dislikes worth remembering.]
 
 ## Important Dates
 
 | Date | Occasion | Notes |
 |------|----------|-------|
-|      |          |       |
+| [YYYY-MM-DD] | [birthday / anniversary / other] | [notes] |
 
 ## Key Shared History
 
-<!-- Most recent first. Shared events and milestones worth keeping. -->
+[Shared events and milestones worth keeping, newest first.]
 
 ## Open Threads / Follow-ups
 
-<!-- Outstanding items, things to follow up on with this person. -->
+[Outstanding items, and what to follow up on with them.]
 
 ## Provenance
 
-- **As of:**
-- **Recorded:**
+- As of: [YYYY-MM-DD]
+- Recorded: [YYYY-MM-DD]
 
 ## Related
 
-<!-- Plain paths only, e.g. Memory/Entities/Organizations/Some Org.md -->
-- Related:
+- Related: [the plain path of a related entry]

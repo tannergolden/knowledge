@@ -47,7 +47,7 @@ A check of a project's work, such as the `quality-assurance` skill's, is logged 
 
 - `Projects/` holds the owner's personal initiatives only. Work for an employer, a client or one of their companies goes to `Ventures/`.
 - A project folder is created only with a yes, by copying `Projects/.template/` whole and giving the folder a short hyphenated name (`Personal-Site`). When it is unclear whether something is a project, the owner is asked first.
-- Every copied file gets its real `title`, `description` and `type`, its keywords lose `template`, and `[Project Name]` becomes the project's name: the copied `README.md` becomes the project folder's note, typed `index`, so the template's placeholders never reach the catalog.
+- Every copied file gets its real `title`, `description` and `type`, its keywords lose `template`, and `[Project Name]` becomes the project's name: the copied `README.md` becomes the project folder's note, typed `index`, `Overview.md` and `Resources.md` are typed `reference`, and `Log.md` and `Notes.md` `record`, so the template's placeholders never reach the catalog. The note at the top of each file says what it needs, and is deleted from the copy.
 - A project's four core files, `Overview.md`, `Log.md`, `Notes.md` and `Resources.md`, always stay at its root, beside its `README.md`.
 - A subfolder is proposed first and created only with a yes, never silently.
 - When work happens on a project, its `Overview.md` status is updated and its `Log.md` gains an entry.

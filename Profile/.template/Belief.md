@@ -1,28 +1,31 @@
 <!--
 title: "[Belief]"
-description: "[One-line description of a held belief - religious, political, philosophical.]"
+description: "[The belief, religious, political or philosophical, in a sentence or two, and when it bears on how help is framed.]"
 type: "template"
-keywords: ["worldview", "conviction", "stance", "template"]
+keywords: ["[synonym]", "template"]
+-->
+
+<!-- On copying: this makes one held belief, saved as Profile/Values/<Title>.md, named for the belief. Then:
+- Only with the owner's yes, and only for a belief the owner offers to have kept: Profile/ is read-only unless the owner asks or confirms (Profile/README.md, Rules).
+- Set type to "reference". Give the copy its real title, the belief as in the H1, a description of it and when it bears on help, and keywords a search would use: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Replace [Belief] in the H1 behind a fitting emoji, and each [bracketed] prompt in the owner's own words, or delete it; Origin is optional.
+- Sensitive: the belief is kept in a file of its own so a benign query never surfaces it, written terse and factual, and surfaced only when the task needs it (Profile/README.md, Sensitivity).
+- Write only what the owner said. A stated fact carries no marker. Anything else, such as how firmly the belief seems held, ends its line with the provenance marker Profile/README.md defines (Provenance And Freshness), an HTML comment that reads observed YYYY-MM-DD · confidence: low|medium|high · unconfirmed, and it stays unconfirmed until the owner approves it.
+- Name other files by plain path; an entry carries no wikilinks.
+- Once filed, lint-notes.py checks it, and update-vault.py lists it in Profile/Values/README.md.
+- Delete this note from the copy.
 -->
 
 # 🕊️ [Belief]
 
-<!--
-FILING INSTRUCTIONS (copy this file to Profile/Values/<Title>.md, then) (one held belief, isolated for privacy):
-- Save as Profile/Values/[Belief].md (beliefs live as entries under Values).
-- Frontmatter: set type "reference", and give the copy its real title and description.
-- Give the H1 a fitting emoji.
-- Keep it terse and factual. This is a sensitive entry: it is isolated in its own file so a benign query never surfaces it. NO wikilinks - plain paths only.
--->
-
 ## Position
 
-One line: the belief itself, stated plainly.
+[One line: the belief, stated plainly.]
 
 ## How I Hold It
 
-How strongly, and how open to other views - this shapes how advice that touches it is framed.
+[How strongly, and how open to other views: this shapes how advice that touches it is framed.]
 
 ## Origin
 
-Optional: where it comes from, if that helps to understand it.
+[Where it comes from, if that helps to understand it.]

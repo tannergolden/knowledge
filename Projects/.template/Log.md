@@ -1,8 +1,14 @@
 <!--
 title: "[Project Name] - Log"
-description: "Chronological progress log for this project. Staging-area model - key decisions promote to Overview.md, and the rest is kept with the project folder when the project closes."
+description: "The progress log of [Project Name], newest entry first: what was done, decided and blocked, with key decisions promoted to Overview.md. Read it for the project's recent history."
 type: "template"
-keywords: ["progress log", "chronological record", "project history", "work done", "decisions made", "template", "staging area"]
+keywords: ["[other name for the project]", "[what it is about]", "template"]
+-->
+
+<!-- On copying: this file comes with the project's folder, as Projects/<Project-Name>/Log.md (Projects/README.md, Rules). Then:
+- Set type to "record". Replace [Project Name] with the project's name everywhere, the title included, and give the copy keywords of its own: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Each entry goes at the top of Log Entries, headed with its date, YYYY-MM-DD, and a brief title; write only what the owner says or confirms.
+- Delete this note from the copy.
 -->
 
 # 📓 [Project Name] - Log
@@ -15,12 +21,11 @@ keywords: ["progress log", "chronological record", "project history", "work done
 
 | Entry Type | Retention | Action |
 |------------|-----------|--------|
-| Recent progress notes | Until project closes | Keep while project is active |
-| Resolved blockers | 60 days after resolved | Remove once no longer relevant |
-| Key decisions or pivots | Permanent | Promote to Overview.md → Key Decisions |
-| Everything else | Until project closes | Kept with the project folder when it closes |
+| Progress notes | For the life of the project | Kept, newest first, and kept with the folder when it closes |
+| Resolved blockers | About 60 days after resolved | Flagged for pruning while the project runs |
+| Key decisions or pivots | For the life of the project | Promoted to Overview.md, Key Decisions Made |
 
-**How this file is kept:** This is the running progress log of a single project. Entries are most useful when recent: older entries can be summarized or pruned once the project closes. A decision worth preserving moves to Overview.md. When the project closes, this log is kept with the rest of the project folder.
+**How this file is kept:** This is the running progress log of one project, newest entry first. A decision worth keeping is promoted to Overview.md. While the project runs, older entries may be flagged to be summarized or pruned; when it closes, the log is kept with the rest of the folder, and removing anything from it takes a yes (Projects/README.md). The policy flags; the owner decides.
 
 ---
 
@@ -28,16 +33,7 @@ keywords: ["progress log", "chronological record", "project history", "work done
 
 ---
 
-### [Date] - [Brief Title]
-
-**What Was Done:**
-**Decisions Made:**
-**Blockers Encountered:**
-**Next Steps:**
-
----
-
-### [Date] - [Brief Title]
+### [YYYY-MM-DD] - [Brief Title]
 
 **What Was Done:**
 **Decisions Made:**

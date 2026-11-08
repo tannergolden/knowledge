@@ -1,26 +1,34 @@
 <!--
 title: "[Work Title]"
-description: "[One-line description of the source and why it is held.]"
+description: "[What the work is and why it is held, in a sentence or two, so a reader knows when to reach for it.]"
 type: "template"
-keywords: ["[author]", "[topic]", "[synonym]", "template"]
+keywords: ["freshness/[tier]", "[creator]", "[subject]", "template"]
+-->
+
+<!-- On copying: this makes the catalog card of one outside source, a book, paper, article, report, video or dataset, held in the Library or only referenced from it (Library/README.md, The catalog record). The work is classified first, by Library/README.md: its freshness tier, then its one class and division. Save the card as Library/<Class>/<Division>/<Work Title>.md, beside the held copy of the work when there is one. Then:
+- Set type to "reference". Give the card the work's title, as in the H1, and a description of what the work is and why it is held.
+- Keywords lead with the work's one freshness token, freshness/timeless, freshness/enduring or freshness/current, then its creators, its subject and the words a person would search; form/source and the other facet tokens may follow (Library/README.md, Facets and controlled keywords). Keywords are lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- The card adds no frontmatter field: the bibliography is the Bibliographic Record below. The card is the cataloger's; the work's own authors are its Creators.
+- Replace [Work Title] in the H1 behind a fitting emoji (the root README.md, Conventions), and each [bracketed] value; a field that does not apply goes.
+- Name other files by plain path, never a wikilink.
+- Once filed, lint-notes.py checks it, and update-vault.py adds it to the catalog.
+- Delete this note from the copy.
 -->
 
 # 📇 [Work Title]
 
-> Catalog card for a source document (book, paper, article, report, media) held in or referenced by the Library. The card is authored by the cataloger; the work's own authorship lives in the Bibliographic Record below. This pattern adds **no new frontmatter fields** - the bibliography is body content. On filing: set `type: reference`; lead `keywords` with its freshness token, then its search terms; give the H1 a fitting leading emoji (the root `README.md`, Conventions); file it in one class and division. If a binary (PDF/EPUB) sits beside this card, record its filename under Held Copy. An optional library cross-walk (Dewey / UDC / LCC) may be noted here, never in frontmatter. Delete this note from the copy.
-
 ## Bibliographic Record
 
 - **Work title:** [title]
-- **Creator(s):** [original author or editor]
-- **Date:** [original publication year]
+- **Creator(s):** [the original author or editor]
+- **Date:** [the year of first publication, YYYY]
 - **Publisher / Edition:** [publisher, edition]
-- **Identifier:** [ISBN / DOI / URL]
+- **Identifier:** [ISBN / DOI / URL, with the date a web source was read, YYYY-MM-DD]
 - **Source type:** [book / paper / article / report / video / dataset]
 - **Format:** [PDF / EPUB / web / print]
 - **Language:** [language]
-- **Cross-walk (optional):** [DDC / UDC / LCC notation, if useful]
-- **Held copy:** [filename of the source file beside this card, or "reference only"]
+- **Call numbers (optional):** [the work's own Dewey, UDC or LCC numbers, where its record gives them]
+- **Held copy:** [the file name of the copy beside this card, or "reference only"]
 
 ## Summary
 
@@ -32,4 +40,4 @@ keywords: ["[author]", "[topic]", "[synonym]", "template"]
 
 ## Key Takeaways
 
-- [The points worth retrieving without re-reading the whole source.]
+- [A point worth retrieving without re-reading the whole source]

@@ -2,10 +2,16 @@
 title: '🛠️ [PROJECT NAME]'
 description: 'The blueprint every project folder is copied from, whole: this README becomes the project folder''s own, with [Project Name] replaced and its real title, description and type. Read it before starting a project, to see what each project folder holds and how it is kept.'
 type: 'template'
-keywords: ["project folder", "project overview", "project files", "folder readme", "template"]
+keywords: ["[other name for the project]", "[what it is about]", "template"]
 -->
 
-<!-- On copying: this README comes with the project's folder. Replace [Project Name] with the project's name, and [PROJECT NAME], in the title and the H1, with the project folder's name in capitals; set type to "index", and give the copy its real title and description, as for every file copied with it (Projects/README.md, Rules). -->
+<!-- On copying: this README comes with the project's folder, Projects/<Project-Name>/, made by copying Projects/.template/ whole, only with the owner's yes (Projects/README.md, Rules). Then:
+- Set type to "index". Replace [PROJECT NAME] in the title and the H1 alike with the folder's name in capitals, and [Project Name] everywhere else with the project's name. Give the copy its real description, of what the project is and when to read this README, and keywords a search would use: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Each file copied with it has a note of its own at its top: Overview.md and Resources.md become reference, and Log.md and Notes.md become record.
+- Write only what the owner says or confirms; nothing is guessed.
+- Once filed, lint-notes.py checks each copied file, and update-vault.py lists the project in Projects/README.md.
+- Delete this note from the copy.
+-->
 
 <div align="center">
 

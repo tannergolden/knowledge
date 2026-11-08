@@ -1,18 +1,20 @@
 <!--
-title: "Organization"
-description: "Template for an organization in the owner's personal life that is not one of their ventures."
+title: "[Organization Name]"
+description: "[What this organization is to the owner, in a sentence or two, and when to read this entry.]"
 type: "template"
-keywords: ["organization template", "institution entry", "gym clinic school", "club company", "personal life", "membership", "customer of"]
+keywords: ["[other name or acronym]", "[what it is to the owner]", "template"]
 -->
 
-<!--
-INSTANTIATION (copy this file to Memory/Entities/Organizations/<Name>.md, then):
-- Set type to "record", and give the copy its real title and description.
-- Keep the emoji H1; replace [Organization Name] with the organization's name.
-- Fill only what is known. Never fabricate - leave a field blank or omit its line rather than guessing.
-- Surface sensitive details only when relevant to the work at hand (`Profile/README.md`, Rules).
-- Record provenance: As of (when the facts became true) and Recorded (today).
-- Cross-reference with plain-path Related lines. No wikilinks in entries.
+<!-- On copying: save this as Memory/Entities/Organizations/<Name>.md, named for the organization. Then:
+- Only an organization in the owner's personal life that is not one of their ventures gets an entry, such as a gym, a clinic or a school: one known only through business belongs to its venture, and one named once stays a line in Memory/Log.md (Memory/Entities/Organizations/README.md).
+- Set type to "record". Give the copy its real title, the organization's name as in the H1, a description of what it is to the owner, and keywords a search would use: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Replace [Organization Name] in the H1, keeping the emoji, and each [bracketed] prompt with what is known, or delete it. A field nobody knows stays blank, or its line goes; nothing is guessed.
+- A sensitive detail, such as what a clinic treats, is surfaced only when the work needs it (Profile/README.md, Rules).
+- Dates are ISO 8601: YYYY-MM-DD, or YYYY-MM when only the month is known. As of is when the facts became true; Recorded is the day they were written down.
+- When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays beside it, marked superseded with the dates it held, such as a former role (Memory/README.md, Writing An Entry).
+- Name other files by plain path in Related lines; an entry carries no wikilinks.
+- Once filed, lint-notes.py checks it, and update-vault.py lists it in Memory/Entities/Organizations/README.md.
+- Delete this note from the copy.
 -->
 
 # 🏢 [Organization Name]
@@ -33,22 +35,21 @@ INSTANTIATION (copy this file to Memory/Entities/Organizations/<Name>.md, then):
 
 ## Key People
 
-<!-- People the owner knows here. Plain-path refs to People entries, e.g. Memory/Entities/People/Jane Doe.md -->
+[The people the owner knows here, each named by the plain path of their entry where they have one.]
 
 ## History with the Owner
 
-<!-- Most recent first. How the relationship has developed. -->
+[How the relationship has developed, newest first.]
 
 ## Open Threads
 
-<!-- Outstanding items involving this organization. -->
+[Outstanding items involving this organization.]
 
 ## Provenance
 
-- **As of:**
-- **Recorded:**
+- As of: [YYYY-MM-DD]
+- Recorded: [YYYY-MM-DD]
 
 ## Related
 
-<!-- Plain paths only, e.g. Memory/Entities/People/Jane Doe.md -->
-- Related:
+- Related: [the plain path of a related entry]

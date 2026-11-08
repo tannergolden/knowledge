@@ -51,7 +51,7 @@ An entity earns a file when it has a **real relationship** or **recurs**. A name
 
 ## ✍️ Writing and keeping entries
 
-The right template from `Memory/.template/` (Person, Organization or Place) is copied into the collection's folder as `<Name>.md`, and its instantiation note followed: the real `title`, `description` and `type`. `.github/scripts/update-vault.py` then lists it in the collection's README; an index block is never edited by hand.
+The right template from `Memory/.template/` (Person, Organization or Place) is copied into the collection's folder as `<Name>.md`, and the note at its top followed: the copy's real `title`, `description`, `type` and keywords. `.github/scripts/update-vault.py` then lists it in the collection's README; an index block is never edited by hand.
 
 Facts here change slowly, but they do change. Each fact carries bitemporal provenance in the entry body (`As of:` when it became true, `Recorded:` when the BRAIN learned it), and when a fact changes the entry is **superseded, not silently rewritten** (`Memory/README.md`). A person who moves keeps their old address as superseded history; the new one becomes current.
 

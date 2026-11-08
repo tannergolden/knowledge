@@ -46,18 +46,19 @@ One file per event, named `YYYY-MM-DD-slug.md` so events sort chronologically, a
 - **Importance**: 1 to 5, set at capture; it governs how long the event stays hot in recall.
 - **Who and what**: plain-path `Related:` lines to the People, Organizations, and Places involved.
 - **Why it matters**: the continuity significance for future sessions.
+- **Related**: plain-path `Related:` lines to the decisions, session summaries or other events it ties to.
 
 ---
 
 ## ✍️ Writing an entry
 
-`Memory/.template/Event.md` is copied into this folder and its instantiation note followed. `update-vault.py` lists it below; this index is never edited by hand.
+`Memory/.template/Event.md` is copied into this folder as `YYYY-MM-DD-slug.md`, and the note at its top followed. `update-vault.py` lists it below; this index is never edited by hand.
 
 ---
 
 ## 🕰️ Provenance and superseding
 
-Events are importance-weighted in recall (recency + importance + relevance, `Memory/README.md`): a high-importance event stays a retrieval candidate for the life of the BRAIN and never ages out of reach. A superseded event is marked, never rewritten or deleted (`Memory/README.md`).
+Events are importance-weighted in recall (recency + importance + relevance, `Memory/README.md`): a high-importance event stays a retrieval candidate for the life of the BRAIN and never ages out of reach. A superseded event is marked, never rewritten or deleted: its frontmatter takes `status: deprecated`, and a plain-path `Related:` line points to the entry that replaces it (`Memory/README.md`).
 
 ---
 

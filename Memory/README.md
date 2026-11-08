@@ -77,7 +77,7 @@ Memory that grows without bound is split into **collections**: a lean, always-sc
 Each entry is written in its destination's format:
 
 - **A Log entry** goes at the top of `Log.md`'s Log Entries, in the format `Log.md` shows, with its importance (Operations, below). An open thread carries `**Status:** Open`, changed to `**Status:** Resolved (YYYY-MM-DD)` when it closes.
-- **An entry file** is copied from `Memory/.template/` into its collection, with its instantiation note followed (`Memory/.template/README.md`).
+- **An entry file** is copied from `Memory/.template/` into its collection, and the note at its top followed (`Memory/.template/README.md`).
 - **A date** is a row in `Dates.md`.
 
 `.github/scripts/update-vault.py` then redraws each collection's index, the Open Loops view and the tier lists, and cascades the context tiers. Removing an entry is a confirmed `git rm` that the history keeps (the root `README.md`, Ask First).
@@ -96,7 +96,7 @@ As of: 2026-06        # when this became true in the world (valid-time)
 Recorded: 2026-06-18  # when the BRAIN learned it (transaction-time)
 ```
 
-**Supersession.** When a fact changes, it is **superseded, never silently rewritten**: the old entry is marked (a Decision's or an Insight's Status set to `Superseded`, or the file's `status: deprecated`), a plain-path pointer to its replacement is added, and the old `As of` is closed. The old record stays, demoted in retrieval and never deleted. A memory that preserves *when* facts changed cannot quietly contradict itself; one that rewrites in place can.
+**Supersession.** When a fact changes, it is **superseded, never silently rewritten**: the old entry is marked (a Decision's or an Insight's Status set to `Superseded`, and the file's `status: deprecated`), a plain-path pointer to its replacement is added, and the old `As of` is closed. The old record stays, demoted in retrieval and never deleted. A memory that preserves *when* facts changed cannot quietly contradict itself; one that rewrites in place can.
 
 ---
 
@@ -126,13 +126,13 @@ The newest, most important, most on-point memories surface first; superseded or 
 
 ## 📋 Session Summaries
 
-A session summary is written to `Context/Current/`, named `YYYYMMDD-HHMMSS.md` (the time of filing), from `.template/Session Summary.md`: it is updated after each finished task and written before the context runs short, and then `python3 .github/scripts/update-vault.py` enforces the tier caps. It is a **delta update**, separating:
+A session summary is written to `Context/Current/`, named `YYYYMMDD-HHMMSS.md` (the time of filing), from `.template/Session Summary.md`: it is updated after each finished task and written before the context runs short, and then `python3 .github/scripts/update-vault.py` enforces the tier caps. Its importance is rated once, 1 to 5, as a Log entry's is, so a pivotal session stays within reach after it moves down the tiers (`Context/README.md`). It is a **delta update**, separating:
 
-- **Established foundations**: prior state still valid.
-- **Active changes**: what this session modified, added, or decided.
+- **Active changes**: what this session modified, added, or decided. They lead the summary.
 - **Overrides**: with explicit "this supersedes any earlier statement about X" language, because a model otherwise fails to prefer the newer of two contradictory statements unless the newer one declares itself authoritative.
+- **Established foundations**: prior state still valid.
 
-What must be recalled is captured first, and only then is the rest pruned: compaction loss is permanent, so a load-bearing detail is kept word for word rather than paraphrased. The exact section list and the summary's frontmatter live in `.template/Session Summary.md`, and a summary that overrides an earlier one marks the earlier one `status: deprecated` (`Context/Current/README.md`).
+What must be recalled is captured first, and only then is the rest pruned: compaction loss is permanent, so a load-bearing detail is kept word for word rather than paraphrased. The next steps close the summary, where recall is strongest (`.docs/technical/vault/Context-Assembly.md`). The exact section list and the summary's frontmatter live in `.template/Session Summary.md`, and a summary that overrides an earlier one marks the earlier one `status: deprecated` (`Context/Current/README.md`).
 
 ---
 

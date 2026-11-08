@@ -1,34 +1,29 @@
 <!--
 title: "[Facet Name]"
-description: "[One-line description of what this facet of the self holds.]"
+description: "[What this facet of the owner holds, in a sentence or two, and when to read it.]"
 type: "template"
 keywords: ["[synonym]", "template"]
 -->
 
+<!-- On copying: this makes a flat facet, one file read as a whole, saved as Profile/<Facet>.md, such as Profile/Focus.md. A facet that holds many separate items is a folder instead, and its README.md is made from Folder Facet.md. Then:
+- Only with the owner's yes: Profile/ is read-only unless the owner asks or confirms (Profile/README.md, Rules). A new facet is a structural change, registered in FACETS in .github/scripts/profile-coverage.py, so it is scored, and in the facet table in Profile/README.md.
+- Set type to "reference". Give the copy its real title, the facet's name as in the H1, a description of what it holds and when to read it, and keywords a search would use: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Replace [Facet Name] in the H1 behind a fitting emoji, and each [bracketed] prompt in the owner's own words, or delete it.
+- One H2 for each fact that can be asked about on its own, its subject named in the heading, so each section reads as a complete answer when retrieved alone; discrete facts go in lists and tables. The Snapshot is written last.
+- Write only what the owner said, or what was observed directly. A stated fact carries no marker. An inference ends its line with the provenance marker Profile/README.md defines (Provenance And Freshness), an HTML comment that reads observed YYYY-MM-DD · confidence: low|medium|high · unconfirmed, and it stays unconfirmed until the owner approves it. The most private facts are kept terse (Profile/README.md, Sensitivity).
+- Name other files by plain path; a facet note carries no wikilinks.
+- Once filed, lint-notes.py checks it, and profile-coverage.py scores it.
+- Delete this note from the copy.
+-->
+
 # 🪪 [Facet Name]
 
-<!--
-FILING INSTRUCTIONS (a facet's overview: a flat file, or a facet folder's README.md):
-- Single-doc facet: save as a flat file Profile/[Facet Name].md (like Personality). Entry-bearing facet: save as Profile/[Facet Name]/README.md, the folder's README (like Values), never as a note named after the folder. Use a folder only when multiple entry files are intended.
-- Frontmatter: set type "reference", and give the copy its real title and description.
-- Give the H1 a fitting leading emoji (the root README.md, Conventions) and replace [Facet Name].
-- Saved as a facet folder's README.md, the copy is a page as well (.docs/technical/vault/Note-Schema.md), so it takes the shape Profile/Values/README.md shows: the centered header (the emoji and the facet's name, fully capped, as both the H1 and the title, a one-line description and a tagline of its own), a first section `## 💡 What This Folder Is For`, an emoji before each section heading, rules between sections, and the footer with a closing phrase of its own. Saved as a flat file, it stays a note, with none of these.
-- One H2 per independently-answerable fact; restate the subject in the heading; put discrete facts in tables/lists. NO wikilinks (`.docs/technical/vault/Link-Topology.md`) - reference by plain path.
-- Mark inferred facts with the provenance comment (see Profile/README.md). Keep the most private facts terse.
--->
+[One paragraph: what this facet holds, and where the nearest things live instead, each named by path.]
 
 ## Snapshot
 
-One short paragraph a reader or an AI can lift directly - the part most worth reading at a glance. Fill this last.
+[One short paragraph a reader can lift as it is: the part most worth reading at a glance. Written last.]
 
 ## [Aspect]
 
-[A field or cluster of related facts for this facet. Add one H2 per aspect.]
-
-## Entries
-
-<!-- Only if this facet accretes per-item entries. Link table, one line each. Omit for single-doc facets. -->
-
-| Entry | What it covers |
-|-------|----------------|
-| [plain path] | [one-line gloss] |
+[A field or a cluster of related facts. One H2 for each aspect.]

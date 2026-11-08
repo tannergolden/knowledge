@@ -49,6 +49,7 @@ One file per insight, named `YYYY-MM-slug.md` so insights sort chronologically. 
 - **Confidence**: how strongly it holds, and why.
 - **Provenance**: bitemporal, `As of` (when the pattern holds in the world) and `Recorded` (when it was written down).
 - **Status**: `Active` or `Superseded`.
+- **Related**: plain-path `Related:` lines to the entries it touches beyond its evidence.
 
 Every insight cites the source memories it was derived from, by plain path (`.docs/technical/vault/Link-Topology.md`). An insight with no evidence is not an insight: it is a guess, and does not belong here.
 
@@ -56,13 +57,13 @@ Every insight cites the source memories it was derived from, by plain path (`.do
 
 ## ✍️ Writing an entry
 
-Insights are written by reflection, on the periodic consolidation pass and whenever the summed importance of the memories captured since the last reflection crosses about 25 (`Memory/README.md`, Operations). Each pass poses a few questions over recent context and entity memory and writes the insights that answer them, every one citing the memories it was drawn from. `Memory/.template/Insight.md` is copied into this folder for each and its instantiation note followed; `update-vault.py` lists it below, and this index is never edited by hand.
+Insights are written by reflection, on the periodic consolidation pass and whenever the summed importance of the memories captured since the last reflection crosses about 25 (`Memory/README.md`, Operations). Each pass poses a few questions over recent context and entity memory and writes the insights that answer them, every one citing the memories it was drawn from. `Memory/.template/Insight.md` is copied into this folder for each, as `YYYY-MM-slug.md`, and the note at its top followed; `update-vault.py` lists it below, and this index is never edited by hand.
 
 ---
 
 ## 🕰️ Provenance and superseding
 
-An insight is superseded when it no longer holds, when the pattern breaks or the dynamic changes: its Status becomes `Superseded`, with a plain-path pointer to the insight that replaces it. Insights are not rewritten in place (`Memory/README.md`).
+An insight is superseded when it no longer holds, when the pattern breaks or the dynamic changes: its Status becomes `Superseded`, with a plain-path pointer to the insight that replaces it, and its frontmatter takes `status: deprecated`, so recall ranks it lower. Insights are not rewritten in place (`Memory/README.md`).
 
 ---
 

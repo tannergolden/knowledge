@@ -1,13 +1,19 @@
 <!--
 title: "[Project Name] - Overview"
-description: "Goal, scope, current status, blockers, and key decisions for this project. Update in place - this reflects current state, not history."
+description: "Goal, scope, current status, blockers and key decisions for [Project Name], updated in place: its current state, not its history. Read it first on any work for [Project Name]."
 type: "template"
-keywords: ["goal", "scope", "current status", "blockers", "key decisions", "project summary", "template"]
+keywords: ["[other name for the project]", "[what it is about]", "template"]
+-->
+
+<!-- On copying: this file comes with the project's folder, as Projects/<Project-Name>/Overview.md (Projects/README.md, Rules). Then:
+- Set type to "reference". Replace [Project Name] with the project's name everywhere, the title included, and give the copy keywords of its own: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Fill only what the owner says or confirms, and leave the rest blank. Replace each [bracketed] choice with the one that holds, or delete its line; every date is YYYY-MM-DD.
+- Delete this note from the copy.
 -->
 
 # 🧭 [Project Name] - Overview
 
-<!-- Replace [Project Name] with the actual project name, and fill in what is known. This file is the first one read to understand what this project is and where it stands. -->
+<!-- The first file read to understand what this project is and where it stands. -->
 
 ---
 
@@ -15,13 +21,13 @@ keywords: ["goal", "scope", "current status", "blockers", "key decisions", "proj
 
 | Entry Type | Retention | Action |
 |------------|-----------|--------|
-| Project description, goal, scope | Permanent while project exists | Keep - this is the source of truth for what the project is |
-| Status & progress summary | Permanent while project exists | Update in place - don't accumulate old statuses, just overwrite |
-| Resolved blockers | Remove once resolved | Delete from the table - resolved history belongs in Log.md |
-| Key decisions | Permanent while project exists | Keep - decisions explain why things are the way they are |
-| Entire file | Kept when the project closes | When the project completes or is abandoned, the folder is kept as the record |
+| Project description, goal, scope | For the life of the project | Kept: the source of truth for what the project is |
+| Status and progress summary | Current only | Updated in place: the old status is replaced, never appended |
+| Resolved blockers | Until resolved | Moved to Log.md, which keeps the history |
+| Key decisions | For the life of the project | Kept: they explain why things are the way they are |
+| Entire file | Kept when the project closes | Kept with the folder as the record |
 
-**How this file is kept:** Overview.md is a living document: it reflects the current state of the project, not a history of it. The Status, Phase, Progress Summary, and Blockers sections are updated in place whenever things change, and old statuses are overwritten, never appended. A resolved blocker is removed from this file and noted in Log.md instead. Key decisions are permanent: they explain the "why" behind how the project was built. When the project closes, its status says so and the whole folder is kept, never deleted without a yes.
+**How this file is kept:** Overview.md is a living document: it holds the project's current state, not its history. The Status, Phase, Progress Summary and Blockers sections are updated in place whenever things change: an old status is replaced, never appended, and a resolved blocker moves to Log.md. Key decisions are kept: they explain why the project was built as it was. When the project closes, its status says so and the folder is kept as the record. Anything this policy would remove is flagged first: the policy flags; the owner decides.
 
 ---
 
@@ -36,7 +42,7 @@ keywords: ["goal", "scope", "current status", "blockers", "key decisions", "proj
 
 **What Success Looks Like:**
 **Why This Project Matters:**
-**Who It's For:** <!-- Just me / specific audience / public -->
+**Who It's For:** [just the owner / a specific audience / the public]
 
 ---
 
@@ -54,17 +60,17 @@ keywords: ["goal", "scope", "current status", "blockers", "key decisions", "proj
 
 ## Status
 
-**Current Status:** <!-- Idea / In Progress / On Hold / Complete / Abandoned -->
-**Phase:** <!-- e.g. Planning / Building / Testing / Shipping / Maintaining -->
-**Started:**
-**Target Completion:** <!-- or "Ongoing" if open-ended -->
-**Last Updated:**
+**Current Status:** [Idea / In Progress / On Hold / Complete / Abandoned]
+**Phase:** [Planning / Building / Testing / Shipping / Maintaining]
+**Started:** [YYYY-MM-DD]
+**Target Completion:** [YYYY-MM-DD / ongoing]
+**Last Updated:** [YYYY-MM-DD]
 
 ---
 
 ## Progress Summary
 
-<!-- A few sentences on where things stand right now. Update this whenever the status changes meaningfully. -->
+[A few sentences on where things stand now, updated whenever the status changes meaningfully.]
 
 ---
 
@@ -79,9 +85,6 @@ keywords: ["goal", "scope", "current status", "blockers", "key decisions", "proj
 
 ## Key Decisions Made
 
-<!-- Decisions specific to this project - why certain approaches were chosen -->
-
 | Decision | Why | Date |
 |----------|-----|------|
-|          |     |      |
-|          |     |      |
+| [the decision] | [why this approach was chosen] | [YYYY-MM-DD] |

@@ -41,7 +41,7 @@ One file per organization, named `<Name>.md`, holding what it is to the owner an
 
 ## ✍️ Writing an entry
 
-`Memory/.template/Organization.md` is copied into this folder as `<Name>.md` and its instantiation note followed. `update-vault.py` lists it below; this index is never edited by hand.
+`Memory/.template/Organization.md` is copied into this folder as `<Name>.md`, and the note at its top followed. `update-vault.py` lists it below; this index is never edited by hand.
 
 ---
 

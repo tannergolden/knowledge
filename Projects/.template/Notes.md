@@ -1,8 +1,14 @@
 <!--
 title: "[Project Name] - Notes"
-description: "Freeform capture space for project ideas, brainstorming, research findings, and thoughts. Prune aggressively - acted-on ideas should be removed."
+description: "The capture space of [Project Name]: ideas, brainstorming, research findings and loose thoughts, pruned once acted on. Read it for what is still open in the project's thinking."
 type: "template"
-keywords: ["brainstorming", "freeform capture", "ideas", "research findings", "scratch space", "thoughts", "template"]
+keywords: ["[other name for the project]", "[what it is about]", "template"]
+-->
+
+<!-- On copying: this file comes with the project's folder, as Projects/<Project-Name>/Notes.md (Projects/README.md, Rules). Then:
+- Set type to "record". Replace [Project Name] with the project's name everywhere, the title included, and give the copy keywords of its own: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
+- Write only what the owner says or confirms; dates are YYYY-MM-DD.
+- Delete this note from the copy.
 -->
 
 # 🗒️ [Project Name] - Notes
@@ -15,14 +21,14 @@ keywords: ["brainstorming", "freeform capture", "ideas", "research findings", "s
 
 | Entry Type | Retention | Action |
 |------------|-----------|--------|
-| Ideas that were acted on or rejected | Until project closes | Remove once resolved - they've served their purpose |
-| Ideas still under consideration | Permanent while project is active | Keep |
-| Research findings incorporated into the project | Until project closes | Remove once the learning is reflected in the work |
-| Research findings still relevant | Permanent while project is active | Keep |
-| Random thoughts / scratchpad entries | 30 days | Prune freely - this is a capture space, not a record |
-| Entire file | Kept when the project closes | Kept with the project folder as historical context |
+| Ideas acted on or rejected | Until acted on or rejected | Flagged for removal: they have served their purpose |
+| Ideas still under consideration | While the project runs | Kept |
+| Research findings now reflected in the work | Until the work reflects them | Flagged for removal |
+| Research findings still relevant | While the project runs | Kept |
+| Random thoughts and scratch entries | 30 days | Flagged for pruning: this is a capture space, not a record |
+| Entire file | Kept when the project closes | Kept with the folder as a record of how the project was thought through |
 
-**How this file is kept:** Notes.md is a capture space, meant to be messy and temporary: the first place ideas land, not where they live forever. It is pruned hard: an idea that was acted on is removed, a research finding that made it into the work is removed, and a random thought not referenced in 30 days is removed. What remains are the ideas and findings still open and potentially useful. When the project closes, the file is kept as it is, a useful record of how the project was thought through.
+**How this file is kept:** Notes.md is a capture space, meant to be messy and temporary: the first place ideas land, not where they live. It is pruned hard: an idea that was acted on, a research finding that made it into the work, and a random thought not referenced in 30 days are each flagged for removal. What remains are the ideas and findings still open and potentially useful. When the project closes, the file is kept as it is. The policy flags; the owner decides.
 
 ---
 

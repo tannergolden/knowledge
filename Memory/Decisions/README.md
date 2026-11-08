@@ -46,18 +46,19 @@ One file per decision, named `YYYY-MM-slug.md` so records sort chronologically w
 - **Lessons**: what the decision taught, in hindsight.
 - **Status**: one of `Active`, `Superseded`, or `Reversed`.
 - **Provenance**: `As of:` and `Recorded:` lines (`Memory/README.md`).
+- **Related**: plain-path `Related:` lines to the people, events and other records it touches.
 
 ---
 
 ## ✍️ Writing an entry
 
-`Memory/.template/Decision.md` is copied into this folder as a new dated record and its instantiation note followed. `update-vault.py` lists it below; this index is never edited by hand.
+`Memory/.template/Decision.md` is copied into this folder as `YYYY-MM-slug.md`, a new dated record, and the note at its top followed. `update-vault.py` lists it below; this index is never edited by hand.
 
 ---
 
 ## 🕰️ Provenance and superseding
 
-Decisions are part of the record and are not edited away. When a decision no longer holds, it is superseded: the old record's Status becomes `Superseded` (or `Reversed`), with a plain-path pointer to the record that replaces it. Records are never silently rewritten or deleted (`Memory/README.md`).
+Decisions are part of the record and are not edited away. When a decision no longer holds, it is superseded: the old record's Status becomes `Superseded` (or `Reversed`), with a plain-path pointer to the record that replaces it, and its frontmatter takes `status: deprecated`, so recall ranks it lower. Records are never silently rewritten or deleted (`Memory/README.md`).
 
 ---
 

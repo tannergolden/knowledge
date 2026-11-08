@@ -30,6 +30,7 @@ The registry of people in the owner's **personal orbit**: family, friends, mento
 - **Personal relationships only.** A person known purely through business, such as a client, vendor, or coworker with no personal tie, belongs in their venture in `Ventures/`, not here. Someone who is both gets a personal entry here that names the venture by plain path.
 - **Not the owner.** This registry is about *other people*: who the owner is lives in `Profile/`, and the owner's relational self (family structure, roles, relational style) in `Profile/Relationships.md`.
 - **Earns a file when real or recurring.** A name mentioned once stays a `Memory/Log.md` line; it becomes an entry only when the relationship is real or the person recurs.
+- **From the owner, never searched for.** An entry holds what the owner says or shares about the person: nobody searches for someone to fill in their entry unless the owner asks.
 
 ---
 
@@ -41,7 +42,7 @@ One file per person, named `First Last.md`, holding a Biography-depth profile: t
 
 ## ✍️ Writing an entry
 
-`Memory/.template/Person.md` is copied into this folder as `First Last.md` and its instantiation note followed. `update-vault.py` lists it below; this index is never edited by hand.
+`Memory/.template/Person.md` is copied into this folder as `First Last.md`, and the note at its top followed. `update-vault.py` lists it below; this index is never edited by hand.
 
 ---
 
