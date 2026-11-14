@@ -86,8 +86,10 @@ which ships them.
 4. **Link the copy from the pull request** that carries the change it records, so the reasoning
    stays traceable. A folder under `.docs/` that does not exist yet, such as `runbooks/`, is made
    with its own `README.md` when its first document arrives. In tannergolden/knowledge itself, a copy
-   also takes a line in `.github/template-sync`, a record of the template's own design under "Only
-   ever in the template" ([How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md)).
+   also takes a line in `.github/template-sync`: under "Only ever in the template" for a record of the
+   template's own design, such as an ADR, and under "The vault: kept current" for one every vault
+   needs, such as a runbook for taking a new release
+   ([How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md)).
 
 ---
 

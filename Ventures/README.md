@@ -70,16 +70,17 @@ When the owner runs the AI workforce from `tannergolden/intelligence` (the root 
 | `Goals.md` | The Chief Operating Officer: the objectives, OKRs, rocks and their grades |
 | `Log.md` | Every department, an entry for its meaningful work |
 | `Administration/Strategy.md` and `Decisions.md` | The ⭐ Chief Executive Officer |
-| `Administration/Cadence.md` | The Chief Operating Officer |
-| `Finance & Accounting (F&A)/Financials.md` and `Cap-Table.md` | The ⭐ Director of Finance, with the Financial Analyst's variance to budget in `Financials.md` |
+| `Administration/Cadence.md` | The Chief Operating Officer, with the ⭐ Chief Executive Officer's Board and the Chief of Staff's Commitments |
+| `Finance & Accounting (F&A)/Financials.md` | The ⭐ Director of Finance, with the Financial Analyst's Variance to Budget and Unit Economics, and the Tax Accountant's tax dates in Finance Deadlines |
+| `Finance & Accounting (F&A)/Cap-Table.md` | The ⭐ Director of Finance |
 | `Finance & Accounting (F&A)/Financial-Model.md` | The Financial Analyst |
-| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations register and policies, the Paralegal's contracts and filings, with every notice deadline, a vendor's included, and the business insurance the ⭐ Director of Finance keeps |
-| `Sales & Marketing (S&M)/`, every file | The ⭐ Director of Sales & Marketing, with the Account Executive's deals in `Pipeline.md`, and the style guide Public Relations' Editor keeps with `Brand.md` |
+| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations and policies, the Regulatory Affairs & Licensing Specialist's licenses and permits, the Paralegal's contracts and filings, with every notice deadline, a vendor's included, and the business insurance the ⭐ Director of Finance keeps |
+| `Sales & Marketing (S&M)/`, every file | The ⭐ Director of Sales & Marketing, with the Account Executive's deals in `Pipeline.md`, and in `Brand.md` the visual identity Research & Development's Product & Brand Designer keeps and the style guide Public Relations' Editor keeps |
 | `Operations & Logistics (O&L)/Operations.md` | The ⭐ Director of Operations, with the Process & Systems Analyst's processes and SOPs and the Supply Chain & Procurement Manager's vendor register, whose notice dates `Compliance.md` keeps |
 | `Human Resources (HR)/Hierarchy.md` | The ⭐ Director of Human Resources, with the HR Generalist's roster |
 | `Information Technology (IT)/Stack.md` | The ⭐ Director of Information Technology, with the Security Engineer's incident record |
 | `Research & Development (R&D)/Roadmap.md` | The ⭐ Director of Research & Development |
-| `Business Intelligence (BI)/Metrics.md` | The ⭐ Director of Business Intelligence |
+| `Business Intelligence (BI)/Metrics.md` | The ⭐ Director of Business Intelligence, with the Chief Operating Officer's Scorecard |
 | `Quality Assurance (QA)/Standards.md` | The ⭐ Director of Quality Assurance |
 | `Customer Experience (CX)/Clients.md` | The ⭐ Director of Customer Experience, with the Support Specialist's support record |
 | `Public Relations (PR)/Press.md` | The ⭐ Director of Public Relations, with the Communications Specialist's coverage log |

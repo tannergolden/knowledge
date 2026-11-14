@@ -13,7 +13,7 @@ keywords: ["[other name or nickname]", "[relationship to the owner]", "template"
 - The sensitive sections, date of birth, contact and family, are surfaced only when the work needs them (Profile/README.md, Rules).
 - Dates are ISO 8601: YYYY-MM-DD, or YYYY-MM when only the month is known. As of is when the facts became true; Recorded is the day they were written down.
 - When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays on its own line below it, marked with the dates it held, such as `- **City / region:** Austin (superseded: held 2019-03 to 2026-06)` under the current city. A fact added after the entry was made ends its line with its own dates, (As of: YYYY-MM; Recorded: YYYY-MM-DD) (Memory/README.md, Writing An Entry).
-- Each date in Important Dates is also a row in Memory/Dates.md, the one place every date is kept, under Recurring for a birthday or an anniversary and One-Time for a dated deadline, the table the session start reads.
+- Each date in Important Dates is also a row in Memory/Dates.md, the list the session start reads, under Recurring for a birthday or an anniversary and One-Time for a dated deadline.
 - Name other files by plain path in Related lines; an entry carries no wikilinks.
 - Once filed, lint-notes.py checks it, and update-vault.py lists it in Memory/Entities/People/README.md.
 - Delete this note from the copy.
@@ -58,7 +58,7 @@ keywords: ["[other name or nickname]", "[relationship to the owner]", "template"
 
 [Spouse or partner, children, relatives and mutual friends, and who each is to them.]
 
-- Related: [the plain path of the entry of each who has one]
+- Related: [the plain path of one person's entry, on a Related line of its own for each who has one]
 
 ## Personality & Communication
 

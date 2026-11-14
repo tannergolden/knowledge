@@ -37,7 +37,7 @@ keywords: ["[other name or acronym]", "[what it is to the owner]", "template"]
 
 [The people the owner knows here, and the role of each.]
 
-- Related: [the plain path of the entry of each who has one]
+- Related: [the plain path of one person's entry, on a Related line of its own for each who has one]
 
 ## History with the Owner
 

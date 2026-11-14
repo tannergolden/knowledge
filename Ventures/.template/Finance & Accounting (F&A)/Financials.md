@@ -79,7 +79,7 @@ keywords: ["[the accounting system the company uses]", "template"]
 
 ### Variance to Budget
 
-<!-- Against the operating budget in Financial-Model.md, explained by cause, never only shown. -->
+<!-- One row for each line of the operating budget in Financial-Model.md, its departments, with the month's actual grouped the same way; each variance explained by cause, never only shown. -->
 
 | Line | Budget | Actual | Variance | Cause | One-time or run-rate |
 | ---- | ------ | ------ | -------- | ----- | -------------------- |

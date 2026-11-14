@@ -47,7 +47,8 @@ keywords: ["[the umbrella message, in a few words]", "[the name of the company's
 
 ### Words
 
-**Use and avoid:** the words `Sales & Marketing (S&M)/Brand.md`, Writing Rules, sets, and with the press <!-- any term used or avoided only there, such as a competitor's name or a superlative no proof point supports -->
+**Use and avoid:** the words `Sales & Marketing (S&M)/Brand.md`, Writing Rules, sets.
+**With the press only:** <!-- any term used or avoided only with the press, such as a competitor's name or a superlative no proof point supports -->
 
 ---
 

@@ -73,14 +73,14 @@ _[A principle of this plan's own, shorter than the line above.]_
 ### The Checks
 
 Each runs from the vault root, in this order, once the change is written, as the root
-[`README.md`](/README.md) says under Commands:
+[`README.md`](/README.md), Commands, and [`.github/scripts/README.md`](/.github/scripts/README.md) say:
 
 ```bash
 python3 .github/scripts/lint-notes.py "[each note the change writes]"
 python3 .github/scripts/update-vault.py
 python3 .github/scripts/check-vault.py
-python3 .github/scripts/validate-repository.py
 python3 -m pip install -r .github/scripts/requirements.txt
+python3 .github/scripts/validate-repository.py
 python3 -m unittest discover -s .github/scripts -p 'test_*.py'
 ```
 

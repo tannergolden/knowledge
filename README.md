@@ -206,8 +206,9 @@ share one name. The vault holds none of its files, and its rules stay the same w
    [Who Keeps Each File](Ventures/README.md#-who-keeps-each-file) names the seat that keeps each
    file, and the venture's own READMEs win where its folders differ from the template's.
 3. **The same rules hold.** Ask First, the write-gate and `Profile/README.md` hold for every write it
-   makes. A deletion, a move, a new folder or a change to `Profile/` waits for the owner's own yes,
-   and a yes passed on by another agent, a Chief's or a Director's included, is not the owner's.
+   makes. Everything Ask First lists, such as a deletion, a new folder, a move out of `Inbox/` or a
+   change to `Profile/`, waits for the owner's own yes, and a yes passed on by another agent, a
+   Chief's or a Director's included, is not the owner's.
 4. **It finishes as any write does**, by What Done Means above, then tells the Chief of Staff what
    changed and which departments it touches.
 

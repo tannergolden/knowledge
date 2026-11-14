@@ -1,6 +1,6 @@
 <!--
 title: '[Company] - Cap Table'
-description: '[Company]''s ownership record, from executed documents only: each holder''s instrument, shares, vesting and documents, the share classes, the option pool, the SAFEs and notes with their as-converted view, every round, and the founding clocks. Read it before any question about who owns [Company], a grant, a round or dilution.'
+description: '[Company]''s ownership record, from executed documents only: each holder''s instrument, shares, vesting and documents, the share classes, the option pool, the SAFEs and notes outstanding, every round, and the founding clocks. Read it before any question about who owns [Company], a grant, a round or dilution.'
 type: 'template'
 keywords: ["[the platform the company keeps its equity records in]", "[the latest round, as the company names it]", "template"]
 -->

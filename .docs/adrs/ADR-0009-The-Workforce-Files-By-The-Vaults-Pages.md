@@ -42,16 +42,16 @@ _One writer, filing by the vault's own pages._
 ## 🎯 Context & Problem Statement
 
 Under ADR-0008 the vault named its twelve departments and the work each covers, and nothing did that
-work but whoever worked in the vault. On 2026-11-14 tannergolden/intelligence added an AI workforce
-in `workforce/`, beside its home kit
+work but whoever worked in the vault. A change to tannergolden/intelligence, proposed on 2026-11-14,
+puts an AI workforce in `workforce/`, beside its home kit
 ([ADR-0044](https://github.com/tannergolden/intelligence/blob/Development/docs/adrs/ADR-0044-The-Workforce-Lives-Beside-The-Kit.md)):
 a Chief of Staff who routes every request, a Knowledge Vault Manager that alone writes the owner's
 vault, and a team for each department, in folders named as the venture template's are. Each
 department's charter says where its records land, by the vault's `AGENTS.md` and the README of the
 folder they land in.
 
-The vault said nothing of it. `AGENTS.md` and the root `README.md` said the vault holds no agents,
-no page said that one agent writes for the rest, and no venture page said which seat keeps which
+The vault said nothing of it. The root `README.md`, the landing page and the glossary said the vault
+holds no agents, no page said that one agent writes for the rest, and no venture page said which seat keeps which
 file. The Knowledge Vault Manager reads `AGENTS.md`, the root `README.md` and each folder's README
 before it writes, so those pages are where it has to learn where a record goes.
 
@@ -63,8 +63,8 @@ before it writes, so those pages are where it has to learn where a record goes.
   it, and the workforce's charters follow them.
 - **The writer learns it from the pages it reads first**: `AGENTS.md`, the root `README.md` and the
   README of each folder it writes into.
-- **One home for each fact**: the map of who keeps each venture file is written once, not in every
-  department's README.
+- **One home for each fact**: the map of who keeps each venture file is written once, in
+  `Ventures/README.md`, and each department's README names only its Director.
 - **Nothing changes for a vault without the workforce**: every home, rule and check stands.
 
 ---
@@ -89,29 +89,28 @@ before it writes, so those pages are where it has to learn where a record goes.
 The Knowledge Vault Manager already reads these pages before every write, so naming the workforce
 there puts the homes where it looks, and keeps the vault the authority over its own layout. Option 1
 leaves the one agent that writes the vault to work out its rules from another repository, and lets
-the two drift unseen. Option 3 brings agent files back into a vault that holds none (ADR-0004,
-ADR-0008), and makes a second copy of who owns what to keep in step.
+the two drift unseen. Option 3 brings agent files back into a vault that holds none (ADR-0004), and makes a second copy of who owns what to keep in step.
 
 ### What Changed
 
-| Was                                                                                  | Is now                                                                                                                         |
-| :----------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
-| `AGENTS.md`, Departments: the twelve departments, and no skill for any of them        | The same, and the workforce: only the Knowledge Vault Manager writes, a record names its venture, and every rule binds every agent |
-| The root `README.md` said the vault holds no agents                                   | It says where the workforce lives, and When The Workforce Works Here says how a record reaches the vault                       |
-| No page named who keeps a venture file                                                | `Ventures/README.md`, Who Keeps Each File, names the seat for each file, and each venture README points to it                  |
-| `Inbox/README.md`, `Profile/README.md` and `Library/README.md` named no agent         | Each says what the workforce does there: the sort, the profile interview and the Library's holdings                           |
-| `System/Workflows.md` had no workforce row                                            | It maps the filing of a workforce record                                                                                       |
-| The glossary, How The Vault Works and Setting Up A Vault did not name the workforce   | They define it, its Chief of Staff and its Knowledge Vault Manager, and say how to set it up                                   |
+| Was                                                                                 | Is now                                                                                                                             |
+| :---------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `AGENTS.md`, Departments: the twelve departments, and no skill for any of them      | The same, and the workforce: only the Knowledge Vault Manager writes, a record names its venture, and every rule binds every agent |
+| The root `README.md` said the vault holds no agents                                 | It says where the workforce lives, and When The Workforce Works Here says how a record reaches the vault                           |
+| No page named who keeps a venture file                                              | `Ventures/README.md`, Who Keeps Each File, names the seat for each file, and each venture README points to it                      |
+| `Inbox/README.md`, `Profile/README.md` and `Library/README.md` named no agent       | Each says what the workforce does there: the sort, the profile interview and the Library's holdings                                |
+| `System/Workflows.md` had no workforce row                                          | It maps the filing of a workforce record                                                                                           |
+| The glossary, How The Vault Works and Setting Up A Vault did not name the workforce | They define it, its Chief of Staff and its Knowledge Vault Manager, and say how to set it up                                       |
 
 ---
 
 ## 📈 Consequence Matrix
 
-| Category         | Impact / Consequence                                                                                                                                                                                       |
-| :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Positive (+)** | The Knowledge Vault Manager finds every home in the pages it reads first, and the vault stays the one authority over where its records land                                                                 |
-| **Negative (-)** | Who Keeps Each File names the workforce's seats, so a seat renamed or moved in tannergolden/intelligence needs an edit here; a venture copied before this change lacks the pointer in its own READMEs, and needs none, since `Ventures/README.md` holds the table |
-| **Neutral (~)**  | ADR-0008 stands: the vault relies on no skills and holds no agents; the layout, the checks and the note schema are unchanged                                                                                |
+| Category         | Impact / Consequence                                                                                                                                                                                                                                                                                                                            |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Positive (+)** | The Knowledge Vault Manager finds every home in the pages it reads first, and the vault stays the one authority over where its records land                                                                                                                                                                                                     |
+| **Negative (-)** | Who Keeps Each File names the workforce's seats, so a seat renamed or moved in tannergolden/intelligence needs an edit in `Ventures/README.md`, and a renamed Director one in its department's README too; a venture copied before this change lacks the pointer in its own READMEs, and needs none, since `Ventures/README.md` holds the table |
+| **Neutral (~)**  | ADR-0008 stands: the vault relies on no skills, and it still holds no agent files, as since ADR-0004; the layout, the checks and the note schema are unchanged                                                                                                                                                                                  |
 
 ---
 
