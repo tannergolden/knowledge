@@ -50,6 +50,20 @@ CALLOUT = re.compile(r'^[ \t]*(?:>[ \t]*)+\[!([^\]\n]*)\]([^\n]*)$', re.M)
 # account's page format: the centered header, its H1 and the top anchor, and the footer that links back.
 MASTHEAD = re.compile(r'<div align="center">\s*\n\s*\n# [^\n]+\n\s*\n<a name="top"></a>')
 BACK_TO_TOP = '[↑ Back to Top](#top)'
+# Names the generators read. A tier sorts its session summaries by name and files each one in the
+# archive by the year its name opens with, so a summary named any other way sorts after every
+# digit: it reads as the newest at every start and never moves down (update-vault.py).
+SUMMARY_FOLDERS = frozenset(folder for _name, _cap, folder in vault.TIERS)
+SUMMARY_NAME = re.compile(r'^\d{8}-\d{6}(?:-\d+)?\.md$')
+# The collections whose entries are listed in date order, which is name order: each README sets the form.
+DATED_ENTRIES = {
+    'Memory/Decisions': (re.compile(r'^\d{4}-\d{2}-'), 'YYYY-MM-slug.md'),
+    'Memory/Insights': (re.compile(r'^\d{4}-\d{2}-'), 'YYYY-MM-slug.md'),
+    'Memory/Events': (re.compile(r'^\d{4}-\d{2}-\d{2}-'), 'YYYY-MM-DD-slug.md'),
+}
+# A generated list links each entry by its name, and a wikilink reads # as a heading, | as an
+# alias, ^ as a block and a bracket as its own end.
+UNLINKABLE = re.compile(r'[#|\[\]^]')
 
 
 def check_fields(fields: dict[str, object], template: bool, problems: list[str]) -> None:
@@ -101,6 +115,19 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> list[str]:
                         'restore it from git history or delete it')
     if '_' in path.name:
         problems.append('the file name has an underscore (the root README.md, Conventions); use spaces or hyphens')
+    marks = sorted(set(UNLINKABLE.findall(path.name)))
+    if marks:
+        problems.append(f"the file name holds {' '.join(marks)}, which a wikilink cannot carry, so the list that "
+                        'links this note would break (Link-Topology.md); rename it without')
+    folder = '/'.join(parts[:-1])
+    if path.name != vault.README:
+        if folder in SUMMARY_FOLDERS and not SUMMARY_NAME.match(path.name):
+            problems.append('a session summary is named YYYYMMDD-HHMMSS.md, the time it was filed: the tiers sort '
+                            'by name, so this one would read as the newest at every start and never move down '
+                            '(Memory/README.md, Session Summaries)')
+        if folder in DATED_ENTRIES and not DATED_ENTRIES[folder][0].match(path.name):
+            problems.append(f'an entry here is named {DATED_ENTRIES[folder][1]}, so the entries list in date order '
+                            f'({folder}/README.md)')
     if vault.EM_DASH in text:
         problems.append(f'{text.count(vault.EM_DASH)} em dash(es) (the root README.md, Conventions); '
                         'use a comma, colon, parentheses or a hyphen')

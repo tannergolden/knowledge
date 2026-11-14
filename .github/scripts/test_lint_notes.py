@@ -148,6 +148,47 @@ class TestLintNotes(unittest.TestCase):
         self.assertIn('the file name has an underscore', result.stdout)
         self.assertIn('em dash', result.stdout)
 
+    def test_a_session_summary_is_named_for_the_time_it_was_filed(self) -> None:
+        # update-vault.py sorts a tier by name: any other name sorts after every digit, so it
+        # would be read first at every start and never move down a tier.
+        self.vault.note('Memory/Context/Current/README.md')
+        self.vault.note('Memory/Context/Current/20260101-093000.md', type='record')
+        self.vault.note('Memory/Context/Recent/20251231-180000-1.md', type='record')
+        self.vault.note('Memory/Context/Archive/2025/2025 Digest.md', type='record')
+        self.assertEqual(self.lint().returncode, 0, self.lint().stdout)
+        self.vault.note('Memory/Context/Current/Session 2025-06-01.md', type='record')
+        self.vault.note('Memory/Context/Recent/2026-01-01.md', type='record')
+        result = self.lint()
+        self.assertEqual(result.returncode, 1)
+        for name in ('Memory/Context/Current/Session 2025-06-01.md', 'Memory/Context/Recent/2026-01-01.md'):
+            self.assertIn(f'{name}: a session summary is named YYYYMMDD-HHMMSS.md', result.stdout)
+        self.assertIn('2 problems.', result.stderr)
+
+    def test_a_dated_entry_leads_with_its_date(self) -> None:
+        for rel in ('Memory/Decisions/2026-05-switched-to-llc.md', 'Memory/Insights/2026-05-mornings-go-better.md',
+                    'Memory/Events/2026-05-17-first-met-dana.md', 'Memory/Entities/People/Dana Smith.md',
+                    'Memory/Decisions/README.md'):
+            self.vault.note(rel, type='record' if not rel.endswith('README.md') else 'index')
+        self.assertEqual(self.lint().returncode, 0, self.lint().stdout)
+        self.vault.note('Memory/Decisions/Switched to an LLC.md', type='record')
+        self.vault.note('Memory/Events/2026-05-first-met-dana.md', type='record')
+        result = self.lint()
+        self.assertIn('Memory/Decisions/Switched to an LLC.md: an entry here is named YYYY-MM-slug.md', result.stdout)
+        self.assertIn('Memory/Events/2026-05-first-met-dana.md: an entry here is named YYYY-MM-DD-slug.md', result.stdout)
+        self.assertIn('2 problems.', result.stderr)
+
+    def test_a_name_a_wikilink_cannot_carry(self) -> None:
+        # update-vault.py lists an entry as [[folder/name|name]]: a # would end the link's target there.
+        self.vault.note('Memory/Entities/Organizations/C# User Group.md', type='record')
+        self.vault.note('Projects/Reading/Notes [draft].md', type='record')
+        self.vault.note('Memory/Entities/Organizations/AT&T.md', type='record')
+        result = self.lint()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('Memory/Entities/Organizations/C# User Group.md: the file name holds #, which a wikilink cannot carry',
+                      result.stdout)
+        self.assertIn('Projects/Reading/Notes [draft].md: the file name holds [ ], which a wikilink cannot carry', result.stdout)
+        self.assertNotIn('AT&T', result.stdout)
+
     def test_only_githubs_five_callouts(self) -> None:
         self.vault.note('Memory/Log.md', body='# Log\n\n> [!NOTE]\n> **Kept.**\n> Fine.\n\n'
                         '```markdown\n> [!tip] An example, inside code\n```\n')

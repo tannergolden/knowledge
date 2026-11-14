@@ -82,6 +82,12 @@ A new script follows the same rules, which `System/README.md` sets out under Wri
 | `check-ignored.py`        | A file or folder under the seven top folders that a rule the vault's `.gitignore` inherited for code hides from git: one above its `BRAIN Vault` line, such as `build/`, `test-results/`, `*.zip` or `*.key`. What the vault's own rules hide, what a `.gitignore` in the file's own folder hides, and junk (dot files, `__pycache__/`, `node_modules/`) pass                                                                                                                                                           | Nothing                                                                    | [How The Vault Works](../introduction/How-The-Vault-Works.md)       |
 | `update-vault.py --check` | Anything the generator would change, and anything it cannot draw: a note that has lost its block's markers                                                                                                                                                                                                                                                                                                                                                                                                              | Nothing                                                                    | The table below                                                     |
 
+`lint-notes.py` also holds a note to the names the generators read. A session summary in
+`Memory/Context/Current/` or `Recent/` is named `YYYYMMDD-HHMMSS.md`, since a tier sorts by name and
+any other name would read as the newest at every start. An entry in `Memory/Decisions/` or
+`Memory/Insights/` leads with `YYYY-MM-`, and one in `Memory/Events/` with `YYYY-MM-DD-`. No note's
+name holds `#`, a pipe, a square bracket or `^`, which a wikilink cannot carry.
+
 A loose file waiting at the `Inbox/` root is not a note yet. `lint-notes.py`, `check-links.py` and
 the catalog pass it by until it is sorted, so leaving a file there keeps the checks green. The scan
 for personal numbers and the check for ignored files still read it: a waiting file can hold a
@@ -154,6 +160,9 @@ Each finding names its file and says what to change. The common ones:
 | `link each other`                                              | Keep the link in the note nearer the root, and name the other by plain path                                                                |
 | `carries one freshness token`                                  | Lead the holding's keywords with exactly one `freshness/` token                                                                            |
 | `a note named after its folder repeats the folder's README.md` | Move what it says into the folder's `README.md`, then delete it, with a yes, and repoint any link to it                                    |
+| `a session summary is named YYYYMMDD-HHMMSS.md`                | Rename it for the time it was filed, then run `update-vault.py`, which lists it and moves the oldest down                                  |
+| `an entry here is named`                                       | Rename the entry so it leads with its date, as its collection's `README.md` shows                                                          |
+| `which a wikilink cannot carry`                                | Rename the note without the character named: a generated list links each entry by its name                                                 |
 | `looks like a Social Security number`, `a payment card number` | Replace the value with a pointer to where it lives; a reviewed false positive takes `pii-allow` in a comment on its line                   |
 | `git ignores it`                                               | Rename or move the file so the rule no longer matches it; or, when it is ignored on purpose, name it in a `.gitignore` in its own folder   |
 | `has no <!-- brain:NAME --> block`                             | Put the block's start and end markers back in the note                                                                                     |
