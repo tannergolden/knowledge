@@ -20,9 +20,12 @@
 # The kit is handed MARKDOWN_TOKEN alone, never another secret; without one,
 # it reads the vault with GITHUB_TOKEN.
 #
-# The template seeds this file in every vault generated from it and never
-# runs it itself: each vault draws its own page. No sync changes it after.
-# `@v1` follows the kit's latest release. To stop, delete this file.
+# The template draws its own page with this file, and seeds it in every vault
+# generated from it, where it draws that vault's page. Initialisation deletes
+# the template's lock, .github/markdown.lock.json, so a vault's first run
+# starts its own record, and a sync leaves the blocks each vault drew as they
+# are. No sync changes this file after. `@v1` follows the kit's latest
+# release. To stop, delete this file.
 
 name: '📝 Markdown'
 
@@ -41,9 +44,6 @@ permissions: {}
 
 jobs:
   markdown:
-    # NEVER IN A TEMPLATE: the template ships this stub to every vault, and
-    # each vault draws its own page.
-    if: ${{ !github.event.repository.is_template }}
     permissions:
       contents: write # the images, the README's blocks and the lock
       pull-requests: write # the pull request each change arrives in

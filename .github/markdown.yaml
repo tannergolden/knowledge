@@ -24,6 +24,10 @@ holidays: true
 banners:
   motto: A personal context and memory vault for AI, in plain Markdown.
   closing: Your context, in your files, for any model you choose.
+  # The footer names no licence: a footer links LICENSE rather than naming
+  # it, which a drawing cannot do, so the drawn one leaves it out. The header
+  # still shows the licence GitHub reads from LICENSE.
+  hide: [license]
 
 # The trophy case, over the footer: the vault's eight core trophies, the level
 # and next-up cards above them, and its achievements under them.

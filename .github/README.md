@@ -5,8 +5,9 @@ type: index
 keywords: [knowledge-vault, ai-context, template]
 -->
 
-<!-- The Markdown Kit's blocks: the header here, and the trophy case and the footer at the foot. In
-a vault, 📝 Markdown draws into each; here they hold the typed masthead and footer. -->
+<!-- The Markdown Kit's blocks: the header here, and the trophy case and the footer at the foot.
+📝 Markdown draws into each every night, here and in every vault, and a sync keeps each vault's own
+drawing. Until its first run here they hold the typed masthead and footer. -->
 
 <!-- markdown:header:start -->
 <!-- markdownlint-disable MD041 -->

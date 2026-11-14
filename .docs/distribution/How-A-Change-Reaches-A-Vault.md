@@ -83,7 +83,7 @@ the owner's own rules:
 | The vault: kept current          | Synced                    | The vault itself: its scripts and action, the root `README.md` and `AGENTS.md`, the landing page, each folder's `README.md` and the scaffolds, the Library, and the `.docs/` pages and document templates written for the vault |
 | Yours: seeded once, never synced | Arrives once              | `LICENSE`, `.git-blame-ignore-revs`, `.github/CODEOWNERS`, `.github/FUNDING.yml`, `cut-release.yml` and `.assets/`                                                                                                              |
 | The vault: yours                 | Arrives once              | `Memory/Log.md`, `Memory/Dates.md`, the eight flat Profile facets, the catalog, the Intelligence Sync stub, and the Markdown Kit's stub and settings                                                                            |
-| Only ever in the template        | Deleted at initialisation | The sentinel, the derivation and its lock, and the template's own decision records                                                                                                                                              |
+| Only ever in the template        | Deleted at initialisation | The sentinel, the derivation and its lock, the Markdown Kit's lock, and the template's own decision records                                                                                                                     |
 
 A sync never touches a file the template does not ship, which is every note an owner writes, nor a
 file the list leaves to its owner. A file both changed is merged; where both changed the same lines,
@@ -211,6 +211,24 @@ change, and its files go on naming skills no release installs.
   `Administration/Decisions.md` and `Finance & Accounting (F&A)/Financial-Model.md`, beside
   `Ventures/.template/`, and take the template's wording wherever yours still names a skill.
 - Run `python3 .github/scripts/check-vault.py`, then commit.
+
+---
+
+## 🖼️ Drawing A Vault Made Before The Markdown Kit
+
+The template draws its landing page, `.github/README.md`, with the Markdown Kit every night, and a
+vault generated from it draws its own with the stub and settings it starts with. A vault made before
+the template seeded them has neither, and no sync brings them, since each vault's are its own. Its
+next sync still brings the landing page's blocks, holding the template's drawing, whose images stay
+in the template: the page shows them missing until the vault draws its own.
+
+- **Run 🔄 Template Sync and merge it**, so the landing page has the kit's markers where the
+  template keeps them.
+- **Copy the stub and the settings** from the template, whole:
+  [`.github/workflows/markdown.yml`](https://github.com/tannergolden/knowledge/blob/Development/.github/workflows/markdown.yml)
+  and [`.github/markdown.yaml`](https://github.com/tannergolden/knowledge/blob/Development/.github/markdown.yaml).
+- **Run 📝 Markdown** from the Actions tab and merge its pull request: the vault's own header, trophy
+  case and footer replace the template's, and every sync after keeps them.
 
 ---
 
