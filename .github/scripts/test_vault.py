@@ -126,7 +126,7 @@ class TestLayout(unittest.TestCase):
 
     def test_the_walk_skips_hidden_folders_but_not_scaffolds(self) -> None:
         for rel in ('A.md', 'AGENTS.md', 'README.md', 'Library/B.md', 'Library/README.md', 'Library/.template/C.md',
-                    '.github/D.md', 'System/Backups/E.md', 'Memory/.hidden.md', 'Memory/F.txt'):
+                    '.github/D.md', 'Inbox/Backups/E.md', 'Memory/.hidden.md', 'Memory/F.txt'):
             self.vault.write(rel, 'x')
         notes = [vault.rel(self.vault.root, p) for p in vault.walk_notes(self.vault.root)]
         self.assertEqual(notes, ['A.md', 'Library/B.md', 'Library/README.md', 'Library/.template/C.md'])
@@ -136,6 +136,42 @@ class TestLayout(unittest.TestCase):
         # The root's two pages, README.md and AGENTS.md, are not notes.
         self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('README.md')))
         self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('AGENTS.md')))
+
+    def test_only_the_inboxs_backups_are_set_apart_and_no_folder_named_template(self) -> None:
+        # Inbox/Backups holds raw copies (Inbox/README.md); the same name anywhere else is an ordinary folder.
+        for rel in ('Inbox/Backups/2026-01-01/Raw.md', 'Projects/Server/Backups/Plan.md', 'Projects/Server/Template/Note.md'):
+            self.vault.write(rel, 'x')
+        notes = [vault.rel(self.vault.root, p) for p in vault.walk_notes(self.vault.root)]
+        self.assertEqual(notes, ['Projects/Server/Backups/Plan.md', 'Projects/Server/Template/Note.md'])
+        self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('Inbox/Backups/2026-01-01/Raw.md')))
+        self.assertTrue(vault.in_walk(self.vault.root, self.vault.path('Projects/Server/Backups/Plan.md')))
+        self.assertFalse(vault.is_template(('Projects', 'Server', 'Template', 'Note.md')))
+        self.assertTrue(vault.is_template(('Projects', '.template', 'Note.md')))
+
+    def test_the_walk_leaves_out_what_git_ignores(self) -> None:
+        # CI sees only what git commits, so the walk reads only that: an ignored folder and an ignored file.
+        files = ['Memory/Log.md', 'Memory/scratch.md', 'Projects/Shed/Plan.md', 'Projects/Shed/build/Timeline.md',
+                 'Projects/Shed/build/deep/More.md']
+        for rel in files:
+            self.vault.write(rel, 'x')
+        self.vault.write('.gitignore', 'build/\nscratch.md\n')
+        walked = lambda: [vault.rel(self.vault.root, p) for p in vault.walk_notes(self.vault.root)]  # noqa: E731
+        # Outside a checkout nothing is ignored.
+        self.assertEqual(walked(), files)
+        self.assertEqual(vault.ignored_paths(self.vault.root), frozenset())
+        self.vault.init_git()
+        self.assertEqual(walked(), ['Memory/Log.md', 'Projects/Shed/Plan.md'])
+        self.assertEqual(vault.ignored_paths(self.vault.root), frozenset({'Projects/Shed/build/', 'Memory/scratch.md'}))
+        self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('Projects/Shed/build/Timeline.md')))
+        self.assertFalse(vault.in_walk(self.vault.root, self.vault.path('Memory/scratch.md')))
+        self.assertTrue(vault.in_walk(self.vault.root, self.vault.path('Projects/Shed/Plan.md')))
+        # A folder that holds nothing but ignored files is itself one ignored path: git has nothing to commit there.
+        self.vault.write('Library/Drafts/scratch.md', 'x')
+        self.assertIn('Library/', vault.ignored_paths(self.vault.root))
+        self.assertEqual(walked(), ['Memory/Log.md', 'Projects/Shed/Plan.md'])
+        # A file git already tracks is committed whatever a later rule says, so it stays in the walk.
+        self.vault.write('.gitignore', 'build/\nscratch.md\nPlan.md\n')
+        self.assertEqual(walked(), ['Memory/Log.md', 'Projects/Shed/Plan.md'])
 
     def test_startup_notes_run_stable_before_volatile(self) -> None:
         self.vault.note('Memory/Log.md')

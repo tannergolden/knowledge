@@ -18,7 +18,9 @@ from __future__ import annotations
 
 import json
 import pathlib
+import shutil
 import sys
+import tempfile
 import unittest
 
 sys.dont_write_bytecode = True
@@ -173,6 +175,41 @@ class TestCatalogs(Base):
         self.assertEqual(sorted(library), ['description', 'keywords', 'path', 'status', 'title', 'type'])
         self.assertEqual(library['keywords'], ['books'])
         self.assertEqual(library['type'], 'index')
+
+
+class TestWhatGitIgnores(Base):
+    def test_nothing_git_ignores_is_drawn_and_a_fresh_checkout_agrees(self) -> None:
+        v = self.vault
+        v.write('.gitignore', 'build/\n*.zip\n')
+        v.note('Projects/README.md', body='# Projects\n\n' + block('children'))
+        v.note('Projects/Shed/README.md')
+        v.note('Projects/Shed/build/Plan.md')
+        v.note('Projects/build/README.md')
+        v.path('Projects/Shed/build/empty').mkdir(parents=True)
+        v.write('Ventures/Acme/Miscellaneous/.gitkeep', '')
+        v.write('Ventures/Acme/Miscellaneous/export.zip', 'x')
+        v.init_git()
+        self.update()
+        catalog = v.read('System/Data/catalog.ndjson')
+        self.assertIn('BRAIN/Projects/Shed/README.md', catalog)
+        self.assertNotIn('build', catalog)
+        self.assertIn('[[Projects/Shed/README|Shed]]', v.read('Projects/README.md'))
+        self.assertNotIn('Projects/build', v.read('Projects/README.md'))
+        self.assertFalse(v.path('Projects/Shed/build/empty/.gitkeep').exists())
+        # A folder holding only what git ignores is empty to git, so it keeps its marker.
+        self.assertTrue(v.path('Ventures/Acme/Miscellaneous/.gitkeep').exists())
+        self.assertEqual(self.update('--check').returncode, 0)
+        # The machine that holds the ignored notes and a fresh checkout of the same commit draw the same vault.
+        v.git('add', '-A')
+        v.git('commit', '-q', '-m', 'test: drawn')
+        clone = pathlib.Path(tempfile.mkdtemp(prefix='vault-clone-'))
+        try:
+            fixtures.subprocess.run(['git', 'clone', '-q', str(v.root), str(clone)], check=True, capture_output=True)
+            result = fixtures.subprocess.run([sys.executable, str(fixtures.SCRIPTS / SCRIPT), '--root', str(clone), '--check'],
+                                             capture_output=True, text=True, check=False)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        finally:
+            shutil.rmtree(clone, ignore_errors=True)
 
 
 class TestKeepsAndCheck(Base):

@@ -72,8 +72,11 @@ INBOX = 'Inbox'
 # Inbox sub-homes that are kept, never sorted.
 INBOX_HELD = frozenset({'Backups', 'Reports', 'Visuals', 'Ideas'})
 
-# Folders never walked, and files that are never notes or link targets.
-SKIP_DIRS = frozenset({'Backups', '__pycache__'})
+# Folders never walked: a cache, by its name wherever it sits, and by its path the one Inbox
+# sub-home that holds raw copies (Inbox/README.md). A folder named Backups anywhere else is an
+# ordinary folder. SKIP_FILES are the files that are never notes or link targets.
+SKIP_DIRS = frozenset({'__pycache__'})
+SKIP_PATHS = frozenset({'Inbox/Backups'})
 SKIP_FILES = frozenset({'.DS_Store', '.gitkeep', '.localized', 'LICENSE'})
 # Each folder explains itself in its README.md, which is the folder's note. The
 # two files at the vault root are pages, not notes, so the walk passes over both:
@@ -93,18 +96,41 @@ def _keep_dir(name: str) -> bool:
     return (not name.startswith('.') or name == '.template') and name not in SKIP_DIRS
 
 
+def ignored_paths(root: pathlib.Path) -> frozenset[str]:
+    """What git ignores in the vault, as paths from its root, a wholly ignored folder as one path
+    that ends in a slash. Empty outside a checkout.
+
+    The vault walks what git would commit and nothing else. CI sees only that, so a note in an
+    ignored folder would be linted and cataloged on the machine that holds it and absent on every
+    other, and the catalog one of them draws would be stale on the rest."""
+    return frozenset(git_paths(root, 'ls-files', '--others', '--ignored', '--exclude-standard', '--directory') or ())
+
+
+def walked_dirs(root: pathlib.Path, folder: pathlib.Path, names: list[str], ignored: frozenset[str]) -> list[str]:
+    """The subfolders of one folder that the vault walks, in a stable order: every one but the
+    hidden ones other than .template/, the caches, Inbox/Backups, and what git ignores."""
+    prefix = '' if folder == root else rel(root, folder) + '/'
+    return sorted(name for name in names if _keep_dir(name) and prefix + name not in SKIP_PATHS
+                  and prefix + name + '/' not in ignored)
+
+
 def walk_files(root: pathlib.Path) -> Iterator[pathlib.Path]:
     """Every file in the vault a note could link to, in a stable order: each folder's
-    README.md included, the root's two pages, README.md and AGENTS.md, left out."""
+    README.md included, the root's two pages, README.md and AGENTS.md, and what git
+    ignores left out."""
+    ignored = ignored_paths(root)
     for folder, dirs, files in os.walk(root):
-        dirs[:] = sorted(d for d in dirs if _keep_dir(d))
-        at_root = pathlib.Path(folder) == root
+        here = pathlib.Path(folder)
+        dirs[:] = walked_dirs(root, here, dirs, ignored)
+        at_root = here == root
         for name in sorted(files):
             if name.startswith('.') or name in SKIP_FILES or name.endswith(TRANSIENT_SUFFIXES):
                 continue
             if at_root and name in ROOT_PAGES:
                 continue
-            yield pathlib.Path(folder) / name
+            if ignored and rel(root, here / name) in ignored:
+                continue
+            yield here / name
 
 
 def walk_notes(root: pathlib.Path) -> Iterator[pathlib.Path]:
@@ -115,18 +141,33 @@ def walk_notes(root: pathlib.Path) -> Iterator[pathlib.Path]:
 
 
 def in_walk(root: pathlib.Path, path: pathlib.Path) -> bool:
-    """True when walk_files would visit this path: inside the root, outside hidden
-    folders other than .template/, not one of the root's two pages, and not a dotfile or junk file."""
+    """True when walk_files would visit this path: inside the root, outside hidden folders other
+    than .template/, outside Inbox/Backups, not one of the root's two pages, not a dotfile or junk
+    file, and not ignored by git."""
     try:
         parts = path.resolve().relative_to(root.resolve()).parts
     except (OSError, ValueError):
         return False
     if not parts or not all(_keep_dir(part) for part in parts[:-1]):
         return False
+    if any('/'.join(parts[:depth]) in SKIP_PATHS for depth in range(1, len(parts))):
+        return False
     name = parts[-1]
     if len(parts) == 1 and name in ROOT_PAGES:
         return False
-    return not (name.startswith('.') or name in SKIP_FILES or name.endswith(TRANSIENT_SUFFIXES))
+    if name.startswith('.') or name in SKIP_FILES or name.endswith(TRANSIENT_SUFFIXES):
+        return False
+    return not is_ignored(root, '/'.join(parts))
+
+
+def is_ignored(root: pathlib.Path, name: str) -> bool:
+    """Whether git ignores one path, given from the vault root. False outside a checkout."""
+    try:
+        result = subprocess.run(['git', '-C', str(root), 'check-ignore', '-q', '--', name],
+                                capture_output=True, timeout=60, check=False)
+    except (OSError, subprocess.SubprocessError):
+        return False
+    return result.returncode == 0
 
 
 def namesake_notes(root: pathlib.Path) -> list[pathlib.Path]:
@@ -154,7 +195,7 @@ def read_text(path: pathlib.Path) -> str:
 
 def is_template(parts: tuple[str, ...]) -> bool:
     """A scaffold: anything under a .template/ folder."""
-    return '.template' in parts or 'Template' in parts
+    return '.template' in parts
 
 
 def is_folder_note(path: pathlib.Path) -> bool:

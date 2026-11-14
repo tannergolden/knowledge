@@ -52,6 +52,10 @@ stubs, from tannergolden/path, the golden path template it follows. The
 
 - **It finds the vault itself.** The root is two folders above the script, and `--root` points it at
   another vault, which is how the tests run it. Nothing holds an absolute path.
+- **It reads what git would commit.** Inside a checkout the walk leaves out whatever git ignores, so
+  the machine that holds an ignored folder and a fresh checkout lint, link and catalog the same
+  notes. Of the folders git does keep, it skips the hidden ones other than `.template/`, and
+  `Inbox/Backups/`, by its path: a folder named `Backups` anywhere else is an ordinary folder.
 - **Standard library only, on Python 3.9.** Each opens with `from __future__ import annotations`,
   and a test fails a vault script that does not.
 - **One finding to a line.** `error: <path>:<line>: <message>` or `warning: ...`, then a count; under

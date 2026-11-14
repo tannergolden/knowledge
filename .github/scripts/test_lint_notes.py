@@ -172,6 +172,27 @@ class TestLintNotes(unittest.TestCase):
         self.assertIn('0 notes pass.', result.stdout)
         self.assertEqual(self.lint().returncode, 0)
 
+    def test_what_git_ignores_is_not_a_note(self) -> None:
+        self.vault.write('.gitignore', 'build/\n')
+        self.vault.write('Projects/Shed/build/Bare.md', '# no frontmatter\n')
+        self.vault.note('Projects/Shed/Plan.md')
+        self.vault.init_git()
+        result = self.lint()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn('1 note passes.', result.stdout)
+        # Named outright, it is skipped like any other file outside the walk.
+        self.assertIn('0 notes pass.', self.lint('Projects/Shed/build/Bare.md').stdout)
+
+    def test_a_folder_named_backups_or_template_is_an_ordinary_folder(self) -> None:
+        self.vault.write('Projects/Server/Backups/Bare.md', '# no frontmatter\n')
+        self.vault.write('Inbox/Backups/2026-01-01/Raw.md', '# a raw copy, never walked\n')
+        self.vault.note('Projects/Server/Template/Note.md', type='template')
+        result = self.lint()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('Projects/Server/Backups/Bare.md: no frontmatter block', result.stdout)
+        self.assertIn("Projects/Server/Template/Note.md: type 'template' outside a .template/ folder", result.stdout)
+        self.assertNotIn('Inbox/Backups', result.stdout)
+
     def test_a_missing_file_is_a_usage_error(self) -> None:
         self.assertEqual(self.lint('Nope.md').returncode, 2)
 

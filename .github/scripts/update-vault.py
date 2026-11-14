@@ -141,11 +141,13 @@ def open_loops(text: str) -> str:
     return '\n'.join(loops) if loops else '_No open loops._'
 
 
-def children(root: pathlib.Path, note: pathlib.Path) -> str:
-    """Links to the README.md of each of a folder's immediate subfolders, named by the subfolder."""
+def children(root: pathlib.Path, note: pathlib.Path, ignored: frozenset[str] = frozenset()) -> str:
+    """Links to the README.md of each of a folder's immediate subfolders, named by the subfolder.
+    A subfolder git ignores is left out, as the walk leaves it out: no other machine has it."""
     docs = []
     for sub in sorted(note.parent.iterdir(), key=lambda p: p.name):
-        if sub.is_dir() and not sub.name.startswith('.') and sub.name != 'Template' and vault.folder_note(sub).is_file():
+        if (sub.is_dir() and not sub.name.startswith('.') and vault.rel(root, sub) + '/' not in ignored
+                and vault.folder_note(sub).is_file()):
             docs.append(vault.folder_note(sub))
     if not docs:
         return '_No subfolders yet._'
@@ -176,10 +178,11 @@ def blocks(run: Run) -> None:
     for note, name, body in registered_blocks(root):
         if note.is_file():
             planned.setdefault(note, []).append((name, body))
+    ignored = vault.ignored_paths(root)
     for note in vault.walk_notes(root):
         if vault.is_folder_note(note) and not vault.is_template(note.relative_to(root).parts):
             if vault.has_block(vault.read_text(note), 'children'):
-                planned.setdefault(note, []).append(('children', children(root, note)))
+                planned.setdefault(note, []).append(('children', children(root, note, ignored)))
     for note in sorted(planned):
         text = vault.read_text(note)
         drawn = text
@@ -235,12 +238,16 @@ def catalog_file(run: Run) -> None:
 
 def keeps(run: Run) -> None:
     root = run.root
+    ignored = vault.ignored_paths(root)
     for folder, dirs, files in os.walk(root):
-        dirs[:] = sorted(d for d in dirs if (not d.startswith('.') or d == '.template') and d not in vault.SKIP_DIRS)
         here = pathlib.Path(folder)
+        dirs[:] = vault.walked_dirs(root, here, dirs, ignored)
         if here == root:
             continue
-        others = [name for name in os.listdir(here) if name not in ('.gitkeep', '.DS_Store')]
+        # What git ignores is not there for git: a folder holding nothing else is empty to it.
+        prefix = vault.rel(root, here) + '/'
+        others = [name for name in os.listdir(here) if name not in ('.gitkeep', '.DS_Store')
+                  and prefix + name not in ignored and prefix + name + '/' not in ignored]
         keep = here / '.gitkeep'
         if not others and not keep.exists():
             if run.check:
