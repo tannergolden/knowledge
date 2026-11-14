@@ -23,6 +23,8 @@ _Fetched by the script, read offline, never committed._
 
 Offline reference works, Wikipedia and other Kiwix knowledge bases, stored as read-only ZIM files and searched through `.github/scripts/knowledge-base.py`. This is the Library's store of whole reference works, kept beside the ten classes rather than filed in one, since each work spans them all. The vault's own notes are searched as notes; this folder holds the world's established knowledge, locally and offline.
 
+They are databases for a local AI model. Once the owner has cloned the vault to a machine, they give the AI that runs there more knowledge to draw on, with no browser to connect and no paid tool to scrape the web: a question about the world is answered from the works on the disk.
+
 ---
 
 ## 📦 What lives here
@@ -55,15 +57,15 @@ The 23 sources are defined in [[sources.json]]. `refresh` fetches each from Kiwi
 
 | Source | Knowledge units | Size | Default |
 |--------|-----------------|------|---------|
-| wikipedia-simple | ~250,000 articles | ~940 MB | off (the small one to try first) |
+| wikipedia-simple | ~250,000 articles | ~1 GB | off (the small one to try first) |
 | wikipedia | ~7,000,000 articles | ~49 GB | off |
-| wiktionary | ~7,000,000+ entries | ~8.5 GB | off |
-| wikivoyage | ~35,000 guides | ~220 MB | off |
-| wikiquote | ~52,000 pages | ~310 MB | off |
+| wiktionary | ~7,000,000+ entries | ~14 GB | off |
+| wikivoyage | ~35,000 guides | ~260 MB | off |
+| wikiquote | ~52,000 pages | ~380 MB | off |
 | wikibooks | ~90,000 pages | ~3.3 GB | off |
-| wikisource | ~1,000,000 texts | ~11 GB | off |
+| wikisource | ~1,000,000 texts | ~3.6 GB | off |
 | wikiversity | ~30,000 lessons | ~1.5 GB | off |
-| stackoverflow | ~24,000,000 questions | ~75 GB | off (English, frozen 2023-11) |
+| stackoverflow | ~24,000,000 questions | ~107 GB | off (English, the 2026-07 build) |
 | gutenberg | ~75,000 books | ~206 GB | off (includes media) |
 | medicine | ~35,000 medical articles | ~10 GB | off (mdwiki / WikiProject Medicine) |
 | ifixit | ~90,000 repair guides | ~3.3 GB | off |
@@ -75,9 +77,11 @@ The 23 sources are defined in [[sources.json]]. `refresh` fetches each from Kiwi
 | libretexts-math | ~790 MB | libretexts-geo | ~1.1 GB |
 | libretexts-chem | ~2 GB | libretexts-med | ~1.1 GB |
 | libretexts-phys | ~530 MB | libretexts-socialsci | ~1.9 GB |
-| libretexts-bio | ~2.1 GB | libretexts-human | ~3.5 GB |
+| libretexts-bio | ~2.1 GB | libretexts-human | ~4.1 GB |
 | libretexts-stats | ~210 MB | libretexts-biz | ~800 MB |
 | libretexts-eng | ~650 MB | | |
+
+The sizes are those of the newest builds Kiwix listed in November 2026. A later build is usually larger, and `refresh` always fetches the newest, so check Kiwix's listing for the size before a large download.
 
 ---
 
@@ -87,7 +91,7 @@ All 23 together give the Library roughly **40 million primary entries** (about 7
 
 With the full set, these can be answered offline, from a citable local source: what is / who was / explain (Wikipedia), define and etymology (Wiktionary), how do I code or why this error (Stack Overflow), the actual text of a book, law, or speech (Gutenberg and Wikisource), college-textbook depth in math, science, and engineering (LibreTexts), clinical and medical reference (medicine), how to repair a device (iFixit), plus courses, travel, and quotations. Most factual lookups, definitions, explanations, coding help, academic study, and literary or historical reference become answerable without the internet, which makes the vault a strong offline generalist with deep ends in programming, medicine, academia, and literature.
 
-Honest gaps, so the coverage is not oversold: these are snapshots, not current events (Stack Overflow is frozen at 2023-11); college-textbook depth is covered (LibreTexts) but primary research is not (no journal papers, arXiv, or PubMed, which Kiwix does not publish); English-centric and text-only (the nopic builds drop images); and breadth over niche or proprietary depth. Strong for established reference, technical, academic, and literary knowledge; not a replacement for the live web on current or specialized-research questions.
+Honest gaps, so the coverage is not oversold: these are snapshots, not current events (each is as old as its build: Stack Overflow's newest is from 2026-07, Gutenberg's from 2025-11); college-textbook depth is covered (LibreTexts) but primary research is not (no journal papers, arXiv, or PubMed, which Kiwix does not publish); English-centric and text-only (the nopic builds drop images); and breadth over niche or proprietary depth. Strong for established reference, technical, academic, and literary knowledge; not a replacement for the live web on current or specialized-research questions.
 
 ---
 

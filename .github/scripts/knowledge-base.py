@@ -293,6 +293,23 @@ def fetch(url: str, timeout: int = 60) -> bytes:
         return response.read()
 
 
+def published_checksum(key: str, url: str, build: str) -> str:
+    """The SHA-256 Kiwix publishes beside a build. Only an answer that the file is not there means
+    there is no checksum to check against. A network failure is said as one, and never as leave to
+    install a download unchecked."""
+    try:
+        return fetch(url, timeout=30).decode().split()[0].lower()
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            raise Problem(f'{key}: Kiwix publishes no checksum for {build}; '
+                          'pass --no-verify to install it unchecked') from None
+        raise Problem(f'{key}: the checksum for {build} could not be fetched ({error}); run refresh again') from None
+    except (OSError, urllib.error.URLError) as error:
+        raise Problem(f'{key}: the checksum for {build} could not be fetched ({error}); run refresh again') from None
+    except (IndexError, UnicodeDecodeError):
+        raise Problem(f'{key}: the checksum Kiwix publishes for {build} cannot be read; run refresh again') from None
+
+
 def download(url: str, destination: pathlib.Path, expected: str | None) -> None:
     """Stream a file to destination, resuming a .part when the server allows, and install it
     only once its size and, when one is published, its checksum match."""
@@ -360,13 +377,7 @@ def refresh(root: pathlib.Path, name: str, verify: bool, assume_yes: bool) -> in
             if destination.exists():
                 print(f'{key}: {destination.name} is current')
                 continue
-            expected = None
-            if verify:
-                try:
-                    expected = fetch(base + build + '.sha256', timeout=30).decode().split()[0].lower()
-                except (OSError, urllib.error.URLError, IndexError):
-                    raise Problem(f'{key}: Kiwix publishes no checksum for {build}; '
-                                  'pass --no-verify to install it unchecked') from None
+            expected = published_checksum(key, base + build + '.sha256', build) if verify else None
             print(f"{key}: downloading {build} ({source.get('note', '')})")
             download(base + build, destination, expected)
             print(f'{key}: installed {destination.name} ({size(destination.stat().st_size)})')

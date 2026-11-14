@@ -2,10 +2,10 @@
   "sources": [
     {
       "name": "wikipedia-simple",
-      "prefix": "wikipedia_en_simple_all_nopic",
+      "prefix": "wikipedia_en-simple_all_nopic",
       "base": "https://lb.download.kiwix.org/zim/wikipedia/",
       "enabled": false,
-      "note": "Simple English Wikipedia, full text, no images (~940 MB). Small pipeline-test source."
+      "note": "Simple English Wikipedia, full text, no images (~1 GB). Small pipeline-test source."
     },
     {
       "name": "wikipedia",
@@ -19,21 +19,21 @@
       "prefix": "wiktionary_en_all_nopic",
       "base": "https://lb.download.kiwix.org/zim/wiktionary/",
       "enabled": false,
-      "note": "English Wiktionary dictionary, no images (~8.5 GB)"
+      "note": "English Wiktionary dictionary, no images (~14 GB)"
     },
     {
       "name": "wikivoyage",
       "prefix": "wikivoyage_en_all_nopic",
       "base": "https://lb.download.kiwix.org/zim/wikivoyage/",
       "enabled": false,
-      "note": "Wikivoyage travel guides, English, no images (~220 MB)"
+      "note": "Wikivoyage travel guides, English, no images (~260 MB)"
     },
     {
       "name": "wikiquote",
       "prefix": "wikiquote_en_all_nopic",
       "base": "https://lb.download.kiwix.org/zim/wikiquote/",
       "enabled": false,
-      "note": "Wikiquote sourced quotations, English, no images (~310 MB)"
+      "note": "Wikiquote sourced quotations, English, no images (~380 MB)"
     },
     {
       "name": "wikibooks",
@@ -47,7 +47,7 @@
       "prefix": "wikisource_en_all_nopic",
       "base": "https://lb.download.kiwix.org/zim/wikisource/",
       "enabled": false,
-      "note": "Wikisource primary-source texts, English, no images (~11 GB)"
+      "note": "Wikisource primary-source texts, English, no images (~3.6 GB)"
     },
     {
       "name": "wikiversity",
@@ -61,7 +61,7 @@
       "prefix": "stackoverflow.com_en_all",
       "base": "https://lb.download.kiwix.org/zim/stack_exchange/",
       "enabled": false,
-      "note": "Stack Overflow programming Q&A, English (~75 GB). Frozen at the 2023-11 build, the last Kiwix produced (no newer or multilingual main build exists); durable for established programming, use the web for recent."
+      "note": "Stack Overflow programming Q&A, English (~107 GB at the 2026-07 build, up from ~75 GB at 2023-11). A snapshot as old as its build: durable for established programming, use the web for recent."
     },
     {
       "name": "gutenberg",
@@ -152,7 +152,7 @@
       "prefix": "libretexts.org_en_human",
       "base": "https://lb.download.kiwix.org/zim/libretexts/",
       "enabled": false,
-      "note": "LibreTexts open college humanities textbooks (~3.5 GB)"
+      "note": "LibreTexts open college humanities textbooks (~4.1 GB)"
     },
     {
       "name": "libretexts-biz",

@@ -21,6 +21,7 @@ import json
 import pathlib
 import sys
 import unittest
+import urllib.error
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -38,7 +39,7 @@ class TestKnowledgeBase(unittest.TestCase):
     def setUp(self) -> None:
         self.vault = fixtures.Vault()
         self.vault.write(SOURCES, json.dumps({'sources': [
-            {'name': 'wikipedia-simple', 'prefix': 'wikipedia_en_simple_all_nopic',
+            {'name': 'wikipedia-simple', 'prefix': 'wikipedia_en-simple_all_nopic',
              'base': 'https://download.kiwix.org/zim/wikipedia/', 'enabled': False, 'note': 'small'},
             {'name': 'bad/name', 'prefix': 'x', 'base': 'https://example.org/', 'enabled': False},
         ]}, indent=2) + '\n')
@@ -92,11 +93,45 @@ class TestKnowledgeBase(unittest.TestCase):
         self.assertIn('pip install --user libzim', result.stderr)
 
     def test_the_newest_build_in_a_listing(self) -> None:
-        listing = ('<a href="wikipedia_en_simple_all_nopic_2025-11.zim">x</a>'
-                   '<a href="wikipedia_en_simple_all_nopic_2026-02.zim">x</a>'
-                   '<a href="other_wikipedia_en_simple_all_nopic_2027-01.zim">x</a>')
-        self.assertEqual(kb.newest('wikipedia_en_simple_all_nopic', listing), 'wikipedia_en_simple_all_nopic_2026-02.zim')
+        # Names as Kiwix lists them: the simple English build carries a hyphen, wikipedia_en-simple.
+        listing = ('<a href="wikipedia_en-simple_all_nopic_2025-11.zim">x</a>'
+                   '<a href="wikipedia_en-simple_all_nopic_2026-02.zim">x</a>'
+                   '<a href="wikipedia_en_all_nopic_2026-06.zim">x</a>'
+                   '<a href="other_wikipedia_en-simple_all_nopic_2027-01.zim">x</a>')
+        self.assertEqual(kb.newest('wikipedia_en-simple_all_nopic', listing), 'wikipedia_en-simple_all_nopic_2026-02.zim')
+        self.assertEqual(kb.newest('wikipedia_en_all_nopic', listing), 'wikipedia_en_all_nopic_2026-06.zim')
         self.assertIsNone(kb.newest('wiktionary_en_all', listing))
+        # The name the list carried before, with an underscore, matches nothing Kiwix lists.
+        self.assertIsNone(kb.newest('wikipedia_en_simple_all_nopic', listing))
+
+    def test_only_a_missing_file_means_there_is_no_checksum(self) -> None:
+        # A network failure used to read as "Kiwix publishes no checksum ... pass --no-verify".
+        url, build = 'https://example.org/zim/x_2026-01.zim.sha256', 'x_2026-01.zim'
+        real = kb.fetch
+
+        def answering(error: Exception):
+            def fetch(_url: str, timeout: int = 60) -> bytes:
+                raise error
+            return fetch
+
+        try:
+            kb.fetch = answering(urllib.error.HTTPError(url, 404, 'Not Found', None, None))
+            with self.assertRaises(kb.Problem) as missing:
+                kb.published_checksum('x', url, build)
+            self.assertIn('publishes no checksum', str(missing.exception))
+            self.assertIn('--no-verify', str(missing.exception))
+            for error in (urllib.error.HTTPError(url, 503, 'Service Unavailable', None, None),
+                          urllib.error.URLError('timed out'), TimeoutError('timed out')):
+                kb.fetch = answering(error)
+                with self.assertRaises(kb.Problem) as failed:
+                    kb.published_checksum('x', url, build)
+                self.assertIn('could not be fetched', str(failed.exception))
+                self.assertIn('run refresh again', str(failed.exception))
+                self.assertNotIn('--no-verify', str(failed.exception))
+            kb.fetch = lambda _url, timeout=60: b'ABCDEF0123  x_2026-01.zim\n'
+            self.assertEqual(kb.published_checksum('x', url, build), 'abcdef0123')
+        finally:
+            kb.fetch = real
 
     def test_a_download_installs_only_when_its_checksum_matches(self) -> None:
         source = self.vault.write('source.bin', 'payload')
@@ -111,6 +146,19 @@ class TestKnowledgeBase(unittest.TestCase):
     def test_the_real_source_list_ships_every_source_off(self) -> None:
         data = json.loads((fixtures.SCRIPTS.parents[1] / SOURCES).read_text(encoding='utf-8'))
         self.assertEqual([s['name'] for s in data['sources'] if s.get('enabled')], [])
+
+    def test_the_real_source_list_is_one_refresh_can_use(self) -> None:
+        # Each name and prefix must pass the rule refresh applies before it downloads anything,
+        # and the list must be in the form the script itself writes, so enable changes one line.
+        text = (fixtures.SCRIPTS.parents[1] / SOURCES).read_text(encoding='utf-8')
+        data = json.loads(text)
+        self.assertEqual(json.dumps(data, indent=2, ensure_ascii=False) + '\n', text)
+        for source in data['sources']:
+            self.assertTrue(kb.SAFE_NAME.fullmatch(source['name']), source['name'])
+            self.assertTrue(kb.SAFE_NAME.fullmatch(source['prefix']), source['prefix'])
+            self.assertTrue(source['base'].startswith('https://') and source['base'].endswith('/'), source['base'])
+        simple = next(s for s in data['sources'] if s['name'] == 'wikipedia-simple')
+        self.assertEqual(simple['prefix'], 'wikipedia_en-simple_all_nopic')
 
 
 if __name__ == '__main__':
