@@ -44,7 +44,7 @@ The executive office of [Company]: its strategy, its decision record and its ope
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
-- Only Administration writes these files.
+- These files hold Administration's work alone. When the owner runs the AI workforce, its executive team keeps them, the ⭐ Chief Executive Officer `Strategy.md` and `Decisions.md` and the Chief Operating Officer `Cadence.md`, and the Knowledge Vault Manager writes what they send through the Chief of Staff (`Ventures/README.md`, Who Keeps Each File).
 - A decision is recorded in `Decisions.md`, with a one-line entry in the venture's `Log.md`; one that must outlive the record is promoted into `Overview.md` or `Strategy.md`.
 - A decision that no longer holds is marked superseded or reversed, never rewritten, and the minority view is recorded by role.
 

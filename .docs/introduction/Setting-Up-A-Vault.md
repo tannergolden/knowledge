@@ -33,6 +33,11 @@ _Generated private, claimed once, filled in by interview._
   each machine you work from, if you work with an AI assistant: it installs the universal rules into
   each AI app and every Claude Code cloud session. Neither the kit nor the vault holds a skill: the
   root `README.md` says where each kind of work goes.
+- **The AI workforce**, if you want agents to do the work, from tannergolden/intelligence's
+  `workforce/`, installed by its
+  [The Workforce](https://github.com/tannergolden/intelligence/blob/Development/docs/technical/The-Workforce.md)
+  guide. Its Knowledge Vault Manager is the one agent that writes this vault, so give it this
+  private repository, and the root `README.md`'s When The Workforce Works Here says how it files.
 
 The steps every repository on the standards shares, such as the admin token, 🎯 Apply Standards and
 signed commits, are in the standards'

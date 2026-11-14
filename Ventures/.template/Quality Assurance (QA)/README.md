@@ -41,6 +41,7 @@ Quality at [Company]: the bar each kind of work is judged against, and the recor
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Quality Assurance department keeps this folder, led by its ⭐ Director of Quality Assurance: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - A standard says how it is checked, and a verdict comes from someone who did not make the work, with its date, its evidence and its outcome.
 - A verdict clears the work's quality, never its authority: an act the work enables still waits for the owner's yes.
 - Personal data met in a document or a sample under test is cited by where it lives, never copied into a report.

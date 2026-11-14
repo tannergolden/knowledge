@@ -40,6 +40,7 @@ The legal and compliance records of [Company]: its entity, its intellectual prop
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Legal & Compliance department keeps this folder, led by its ⭐ Director of Legal & Compliance: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - `Compliance.md` is context, not legal advice: each record says when a licensed lawyer must review, and nothing is signed, sent or filed without the owner's yes.
 - No tax ID, registration, license or patent number, and no government ID, is written in a note here: each is recorded as where it is kept, never as the value.
 - Contracts, a counterparty's terms and a dispute's facts are confidential: they never leave [Company]'s private records for a public repository.

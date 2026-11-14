@@ -72,7 +72,8 @@ settings the automation needs.
 | [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                  |
 
 The vault explains itself, folder by folder, to whoever works in it, and holds no agents and no
-skills. `AGENTS.md` is the one page written
+skills: the AI workforce that can work in it lives in `tannergolden/intelligence`, and its one
+writer files by the vault's own pages. `AGENTS.md` is the one page written
 for AI alone. At its top, between the `INTELLIGENCE` markers, are the universal rules every AI
 follows in any repository, which the hub renders and 🔁 Intelligence Sync keeps current; below them
 are the rules every AI follows in a personal knowledge vault, which hold it to the root README and

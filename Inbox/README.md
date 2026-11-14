@@ -45,6 +45,7 @@ The three libraries stay inside the vault's checks like any other content: their
 - **A new folder only to fit a file.** During a sort, when no folder fits, a new folder three or more levels down may be proposed; one directly inside a top folder needs the owner's explicit direction, and a top folder is never created.
 - **Outside PDFs are offered cleanup first**, and their originals are copied into `Inbox/Backups/` before anything changes.
 - The sort follows the protocol below, step by step.
+- **Under the AI workforce, its Knowledge Vault Manager sorts.** When the owner runs the workforce from `tannergolden/intelligence`, the Knowledge Vault Manager sorts the Inbox at the start of each of its sessions, by this protocol, and proposes each move to the owner as any sorter does (the root `README.md`, When The Workforce Works Here).
 
 ---
 

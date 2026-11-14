@@ -40,6 +40,7 @@ The customers of [Company] after the sale: their onboarding, their success and t
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Customer Experience department keeps this folder, led by its ⭐ Director of Customer Experience: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - A customer's personal data stays in the company's own systems, such as its CRM or helpdesk: `Clients.md` names each contact and where their details are kept, never the details.
 - A client known only through the business stays here; someone in the owner's personal life goes to `Memory/Entities/People/`.
 - A feature request is evidence for a product decision, never a promise to the customer.

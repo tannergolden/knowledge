@@ -40,6 +40,7 @@ Analytics for [Company]: the one definition of each metric, the scorecard of cur
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Business Intelligence department keeps this folder, led by its ⭐ Director of Business Intelligence: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - A metric is defined once, in `Metrics.md`; a definition in use changes only as a new version the owner approves.
 - A metric's value carries the date it was true and the source it came from.
 - No row about a person is kept here: analyses and reports show aggregates.

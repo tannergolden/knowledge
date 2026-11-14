@@ -41,6 +41,7 @@ How [Company] runs day to day: its processes and SOPs, the programs that carry a
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Operations & Logistics department keeps this folder, led by its ⭐ Director of Operations: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - A process is recorded as it runs now; a change to it is dated, and an outdated version is superseded rather than silently rewritten.
 - A vendor's bank details, a credential, a door or alarm code, or anyone's personal data is never recorded: only where the document that holds it is kept.
 

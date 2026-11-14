@@ -43,6 +43,7 @@ The money of [Company]: its books and monthly close, its forward model and budge
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Finance & Accounting department keeps this folder, led by its ⭐ Director of Finance: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - `Financial-Model.md` and `Cap-Table.md` belong to the strategic core: Finance & Accounting writes them, or Administration when it convenes the departments. The close, the model and the budget land only once Quality Assurance's independent check has cleared them.
 - The cap table records only executed documents, and changes only on the owner's yes; a round being modeled stays a draft in `Financial-Model.md`.
 - No tax ID number is ever recorded, [Company]'s own included, and no account, card or routing number, password or other credential: only where each is kept.

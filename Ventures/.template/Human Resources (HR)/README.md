@@ -41,6 +41,7 @@ The people of [Company]: how it is organized, the roles it needs and who holds t
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Human Resources department keeps this folder, led by its ⭐ Director of Human Resources: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - A person's record holds their role, reporting line, dates and pointers to the documents [Company]'s HR or payroll system keeps. It never holds a government ID or tax number, a bank account, a health plan member ID, a medical or disability record, immigration documents, a background-check report or a password.
 - One record per person and per position, checked before a new one is made; a discrepancy is flagged with both entries named, never settled quietly.
 - Every decision about a real person, from an offer sent to a pay change, a promotion or an exit, is the owner's.

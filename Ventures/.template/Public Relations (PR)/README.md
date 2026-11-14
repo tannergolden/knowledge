@@ -40,6 +40,7 @@ The public voice of [Company]: what it says, to whom and when, and how it answer
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Public Relations department keeps this folder, led by its ⭐ Director of Public Relations: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - A statement enters the public log only after the owner confirms it went out, and what [Company] says publicly follows the voice in `Sales & Marketing (S&M)/Brand.md` and squares with that log.
 - A statement that names a person or discloses anyone's personal data passes Legal & Compliance's review first.
 - A reporter's contact details stay in [Company]'s own systems: `Press.md` names each reporter and where their details are kept, never the details.

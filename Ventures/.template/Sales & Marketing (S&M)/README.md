@@ -45,6 +45,7 @@ Sales and marketing for [Company]: how it is positioned, what it sells, how it s
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Sales & Marketing department keeps this folder, led by its ⭐ Director of Sales & Marketing: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - Copy written for the company follows `Brand.md`, and only shipped capability is described as present.
 - A prospect's or a contact's personal data stays in the system that holds it, read in place.
 - A forecast below target is recorded below target, with the gap named; it is never rounded up.

@@ -36,7 +36,9 @@ README is the folder's note. This page holds the rules for the whole vault, and 
 adds to them and never loosens them. Every AI that works here also reads [`AGENTS.md`](AGENTS.md)
 first: the universal rules for AI agents, which 🔁 Intelligence Sync keeps current from
 `tannergolden/intelligence`, then the rules for working with personal knowledge, which hold an AI to
-this page and to each folder's README. The vault holds no agents and no skills.
+this page and to each folder's README. The vault holds no agents and no skills: the AI workforce
+that can work in it lives in `tannergolden/intelligence`, and When The Workforce Works Here, below,
+says how its records reach the vault.
 
 ---
 
@@ -181,6 +183,36 @@ each by its README's rules:
 
 The README of each of these folders says what work lands there and by what rules, so
 whoever writes there learns it from that folder.
+
+---
+
+## 👔 When The Workforce Works Here
+
+The owner may run the twelve departments as an AI workforce, defined in
+[`workforce/`](https://github.com/tannergolden/intelligence/tree/Development/workforce) in
+`tannergolden/intelligence`: a Chief of Staff, the owner's point of contact, who routes every
+request between departments; a Knowledge Vault Manager, the vault's one writer; and a team for each
+department. Administration's team is the executive team, the ⭐ Chief Executive Officer and four
+Chiefs, and every other department's is a ⭐ Director and up to four specialists. Its department
+folders carry the names of a venture's, so a department's agents and the folder its records land in
+share one name. The vault holds none of its files, and its rules stay the same while it runs:
+
+1. **A department sends a record.** What must outlive a task goes to the Chief of Staff as a
+   record: what it is, its venture by its folder name under `Ventures/` or that it is personal,
+   where it belongs, its source, its date and how sure it is.
+2. **The Knowledge Vault Manager files it.** It finds the home in the table above, reads that
+   folder's README and every README above it, checks that the record is complete, sourced, dated and
+   has one home, and updates the note it belongs in rather than adding a duplicate. In a venture,
+   [Who Keeps Each File](Ventures/README.md#-who-keeps-each-file) names the seat that keeps each
+   file, and the venture's own READMEs win where its folders differ from the template's.
+3. **The same rules hold.** Ask First, the write-gate and `Profile/README.md` hold for every write it
+   makes. A deletion, a move, a new folder or a change to `Profile/` waits for the owner's own yes,
+   and a yes passed on by another agent, a Chief's or a Director's included, is not the owner's.
+4. **It finishes as any write does**, by What Done Means above, then tells the Chief of Staff what
+   changed and which departments it touches.
+
+Each department's charter in the workforce says where its records land, as the table above does;
+where they ever differ, this page and the folders' READMEs decide.
 
 ---
 

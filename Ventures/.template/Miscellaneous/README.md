@@ -38,6 +38,7 @@ Anything for [Company] that fits no department yet. It starts empty. Read this R
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, no department keeps this folder: the Chief of Staff routes what fits no department, and the Knowledge Vault Manager files it here and proposes a move once a department fits (`Ventures/README.md`, Who Keeps Each File).
 - A file that belongs to a department moves there; once several files here share a subject, a fitting home is proposed for them.
 - Nothing personal and nothing general: personal information goes to `Profile/` or `Memory/`, and general knowledge to `Library/`.
 

@@ -60,6 +60,34 @@ The same departments' work in the owner's own life never lands here: the root `R
 
 ---
 
+## 👔 Who Keeps Each File
+
+When the owner runs the AI workforce from `tannergolden/intelligence` (the root `README.md`, When The Workforce Works Here), each department folder is kept by the department of the same name, and that department's ⭐ Director answers for it. The seat named below decides what its file says and sends it as a record through the Chief of Staff; the Knowledge Vault Manager alone writes it, by the folder's README. Where these pages say a department writes a file, under the workforce that department keeps it and the Knowledge Vault Manager writes it.
+
+| File | Kept by |
+|------|---------|
+| `README.md` and `Overview.md` | The ⭐ Chief Executive Officer |
+| `Goals.md` | The Chief Operating Officer: the objectives, OKRs, rocks and their grades |
+| `Log.md` | Every department, an entry for its meaningful work |
+| `Administration/Strategy.md` and `Decisions.md` | The ⭐ Chief Executive Officer |
+| `Administration/Cadence.md` | The Chief Operating Officer |
+| `Finance & Accounting (F&A)/Financials.md` and `Cap-Table.md` | The ⭐ Director of Finance |
+| `Finance & Accounting (F&A)/Financial-Model.md` | The Financial Analyst |
+| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations register and policies, and the Paralegal's contracts and filings |
+| `Sales & Marketing (S&M)/`, every file | The ⭐ Director of Sales & Marketing, with the Account Executive's deals in `Pipeline.md`, and the style guide Public Relations' Editor keeps with `Brand.md` |
+| `Operations & Logistics (O&L)/Operations.md` | The ⭐ Director of Operations, with the Process & Systems Analyst's processes and SOPs and the Supply Chain & Procurement Manager's vendor register |
+| `Human Resources (HR)/Hierarchy.md` | The ⭐ Director of Human Resources, with the HR Generalist's roster |
+| `Information Technology (IT)/Stack.md` | The ⭐ Director of Information Technology, with the Security Engineer's incident record |
+| `Research & Development (R&D)/Roadmap.md` | The ⭐ Director of Research & Development |
+| `Business Intelligence (BI)/Metrics.md` | The ⭐ Director of Business Intelligence |
+| `Quality Assurance (QA)/Standards.md` | The ⭐ Director of Quality Assurance |
+| `Customer Experience (CX)/Clients.md` | The ⭐ Director of Customer Experience, with the Support Specialist's support record |
+| `Public Relations (PR)/Press.md` | The ⭐ Director of Public Relations, with the Communications Specialist's coverage log |
+| `Miscellaneous/` | No team: the Chief of Staff routes what fits no department, and the Knowledge Vault Manager files it here |
+| A working file in a department folder | The seat that made it, named as that folder's README says |
+
+---
+
 ## 📏 Rules
 
 - Venture work starts by looking in `Ventures/` for the company's folder: whether one exists is checked, never assumed.

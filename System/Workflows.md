@@ -28,6 +28,7 @@ Workflows marked *owned here* are specified in full lower in this file; all othe
 | Inbox sorting protocol | Sortable files present in `Inbox/` | `Inbox/README.md` · the session-start card lists them |
 | Library filing + freshness gate | Filing reference material into `Library/` | `Inbox/README.md` (enrichment) + `Library/README.md` (Rules) |
 | Quick memory capture | A fact or event worth logging | `Memory/README.md` · a new entry at the top of `Memory/Log.md`'s Log Entries |
+| Workforce record filing | An agent of the owner's AI workforce sends a record through the Chief of Staff | The root `README.md`, When The Workforce Works Here · the Knowledge Vault Manager files it, runs the checks and reports what changed |
 
 ### Memory upkeep
 

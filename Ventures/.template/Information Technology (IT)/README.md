@@ -41,6 +41,7 @@ The systems of [Company] and their security: what it runs on, who can reach each
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
+- When the owner runs the AI workforce, its Information Technology department keeps this folder, led by its ⭐ Director of Information Technology: its records reach the folder through the Chief of Staff, and the Knowledge Vault Manager files them here (`Ventures/README.md`, Who Keeps Each File).
 - No credential, key, password or recovery code is ever recorded: only where it is kept and who holds it.
 - Rotating or revoking a credential, granting, changing or removing a person's access, deleting data and turning off a security control each wait for the owner's yes.
 - A security incident is recorded with what happened and what changed, never with the secret involved.

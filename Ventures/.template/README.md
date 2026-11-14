@@ -61,6 +61,7 @@ Every rule in `Ventures/README.md` holds here. These shape all the work inside t
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
 - Only what the owner says or confirms, or what [Company]'s own records show, is written here; nothing is guessed or invented, and [Company]'s context stays apart from every other venture's unless the owner asks to connect them.
 - The strategic core has fixed writers: Administration writes `Administration/`, and Finance & Accounting writes `Financial-Model.md` and `Cap-Table.md`, or Administration when it convenes the departments.
+- When the owner runs the AI workforce, each folder here is kept by the department of the same name, and the Knowledge Vault Manager alone writes it, filing what each department sends through the Chief of Staff (`Ventures/README.md`, Who Keeps Each File).
 - Each fact has one home: a fact another file owns is pointed to, never copied.
 
 ---

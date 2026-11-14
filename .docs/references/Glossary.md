@@ -156,6 +156,9 @@ Conventional Commits, are in the standards'
 
 ## 🏢 Departments & Ventures
 
+- **Chief of Staff**: the workforce's orchestrator and the owner's point of contact, which routes
+  every request between departments and carries each record to the Knowledge Vault Manager (the
+  root `README.md`, When The Workforce Works Here).
 - **Department**: one of the twelve kinds of work a venture is organized into, from Administration
   to Public Relations, each with a folder in the venture, and each also covering that part of the
   owner's own life (the root `README.md`, Where Each Kind Of Work Goes).
@@ -163,12 +166,18 @@ Conventional Commits, are in the standards'
   assistant follows, with a guard that blocks the few tool calls they forbid outright, into each AI
   app on every machine and in every Claude Code cloud session. It installs no skill, and the vault
   holds no skill and no agent; its `AGENTS.md` carries the universal rules for any AI app.
+- **Knowledge Vault Manager**: the workforce's one writer of the vault, which files each record
+  where the root `README.md` and the README of the folder it lands in say, and in a venture by
+  `Ventures/README.md`, Who Keeps Each File.
 - **Skill**: a capability an AI app loads from a folder holding a `SKILL.md`. The vault holds none
   and the home kit installs none: a skill folder dropped in the Inbox waits there for the owner to
   move it out (`Inbox/README.md`, System Assets).
 - **Venture**: a company the owner owns or runs, with clients, employees, revenue or a brand, kept in
   a folder of `Ventures/` copied from its scaffold. A personal initiative without them is a
   **project**, in `Projects/` (`Ventures/README.md`).
+- **Workforce**: the AI agents tannergolden/intelligence defines in `workforce/`, a Chief of Staff,
+  a Knowledge Vault Manager and a team for each department, which the owner may run on the vault.
+  The vault holds none of their files (the root `README.md`, When The Workforce Works Here).
 - **Write-gate**: the rule every write in a venture goes through, decided by the act, not by the
   file: internal drafts go ahead; moving money, a contract, outside communication, a change to equity
   and a deletion need the owner's yes (`Ventures/README.md`, Structure).

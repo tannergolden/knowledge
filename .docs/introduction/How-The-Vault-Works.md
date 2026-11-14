@@ -137,6 +137,12 @@ the owner's own life goes, where reports, ideas and visuals are held, how the Pr
 which checks run after a write. Each of those folders' own README says what work lands there and by
 what rules.
 
+The owner may also run the departments as an AI workforce, defined in tannergolden/intelligence's
+`workforce/`: a Chief of Staff who routes every request, a Knowledge Vault Manager, and a team for
+each department. Its agents read the vault, and only the Knowledge Vault Manager writes it, filing
+each record by the same pages: the root `README.md`'s When The Workforce Works Here, and
+`Ventures/README.md`'s Who Keeps Each File for a venture.
+
 ---
 
 ## ⚙️ The Machinery
