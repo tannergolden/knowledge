@@ -23,7 +23,7 @@ _[Company]'s clients, recorded only as the owner provides them._
 
 ## 📂 What Goes Here
 
-The customers of [Company] after the sale: their onboarding, their success and their support, with each account's health and renewal and what customers tell the company. The `customer-experience` skill's company work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The customers of [Company] after the sale: their onboarding, their success and their support, with each account's health and renewal and what customers tell the company. The company's customer experience work lands here. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Clients.md`: each account's health, renewal and contacts, named with where their details are kept; the onboarding, success and offboarding playbooks; the support record; and the voice of the customer.
 - Working files: account reviews, onboarding plans, knowledge-base drafts and voice-of-the-customer reports, none of them holding a customer's personal data.

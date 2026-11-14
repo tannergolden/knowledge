@@ -48,8 +48,8 @@ a custom agent all read it the same way.
 - [ ] **Open the folder with any AI assistant, or in an editor**, and work in it there. The root
       [`README.md`](../README.md) says how to work in the vault, each folder's own `README.md` how
       to work in that folder, and [`AGENTS.md`](../AGENTS.md) the rules every AI follows here.
-- [ ] **Fill in `Profile/`** with the profile interview of the `human-resources` skill, which the
-      home kit in `tannergolden/intelligence` installs: it interviews you and writes only what you
+- [ ] **Fill in `Profile/`** with the profile interview `Profile/README.md` describes: ask any AI
+      assistant working in the vault to run it, and it interviews you and writes only what you
       confirm.
 - [ ] **Stay current.** Run 🔄 Template Sync when you want this template's improvements. It opens a
       pull request, and changes nothing you have not merged. 🔁 Intelligence Sync keeps the universal
@@ -71,8 +71,8 @@ settings the automation needs.
 | [`.docs/technical/vault/`](../.docs/technical/vault/README.md)        | The note schema, the keywords, the link topology, how to assemble context and how a session runs         |
 | [`tannergolden/standards`](https://github.com/tannergolden/standards) | How the repository itself works: commits, branches, releases, documents                                  |
 
-The vault explains itself, folder by folder, to whoever works in it, and holds no agents: the
-skills come with the home kit from `tannergolden/intelligence`. `AGENTS.md` is the one page written
+The vault explains itself, folder by folder, to whoever works in it, and holds no agents and no
+skills. `AGENTS.md` is the one page written
 for AI alone. At its top, between the `INTELLIGENCE` markers, are the universal rules every AI
 follows in any repository, which the hub renders and 🔁 Intelligence Sync keeps current; below them
 are the rules every AI follows in a personal knowledge vault, which hold it to the root README and
@@ -137,7 +137,7 @@ do when one fails.
 
 The BRAIN was designed and built by **Tanner Golden**: its folder structure, naming conventions,
 documentation and scripts all originate with him, and "the developer" means him. "The owner",
-whom the universal rules in `AGENTS.md` and the home kit's skills call the user, means whoever
+whom the universal rules in `AGENTS.md` call the user, means whoever
 `Profile/` describes: the vault is portable, so its owner is whoever adopts it.
 
 <!-- The domain is capitalised on purpose: initialisation rewrites the template owner's

@@ -38,7 +38,7 @@ graph TD
     SE --> CV
 ```
 
-`profile-coverage.py`, whose `--json` report the `human-resources` skill's profile interview reads,
+`profile-coverage.py`, whose `--json` report the profile interview reads,
 and `knowledge-base.py`, for the offline reference works, stand alone. `validate-repository.py`,
 `verify-stub-ceilings.py` and the git hooks in `hooks/` are not vault scripts: they check the
 repository's own configuration and each commit, and this template takes them, with the workflow

@@ -140,16 +140,15 @@ short, as `Memory/README.md` (Session Summaries) describes.
 - **Accurate over complete.** Less that is true and current beats more that is stale: do not pad a
   note, and do not keep what is no longer true.
 
-## Skills
+## Departments
 
-The skills come from the home kit, `tannergolden/intelligence`, not from this repository: twelve,
-one for each department, each covering a company the owner runs and the owner's own life:
-`administration`, `finance-and-accounting`, `legal-and-compliance`, `sales-and-marketing`,
-`operations-and-logistics`, `human-resources`, `information-technology`,
-`research-and-development`, `business-intelligence`, `quality-assurance`, `customer-experience`
-and `public-relations`. Use the one whose description matches the request. Where each one's work
-lands here is the root `README.md`'s Where Each Kind Of Work Goes, and each folder's README gives
-the rules for writing there.
+The work done here falls into twelve departments, each covering a company the owner runs and the
+owner's own life: Administration, Finance & Accounting, Legal & Compliance, Sales & Marketing,
+Operations & Logistics, Human Resources, Information Technology, Research & Development, Business
+Intelligence, Quality Assurance, Customer Experience and Public Relations. Neither this repository
+nor the home kit supplies a skill for any of them: the root `README.md`'s Where Each Kind Of Work
+Goes says where each department's work lands, and each folder's README gives the rules for writing
+there.
 
 ## Commands
 

@@ -56,8 +56,8 @@ jobs:
       required-files: '.github/template-sync .github/workflows/template-sync.yml'
       check-command: 'python3 .github/scripts/validate-repository.py'
       # Every version stays, page and tag. tannergolden/intelligence no
-      # longer pins a version of this template, since the skills live there
-      # now, but a vault may name a full version in its Template Sync stub's
+      # longer pins a version of this template, but a vault may name a full
+      # version in its Template Sync stub's
       # ref:, and pruning would delete the tag it names. A template made from
       # this one that nothing pins by version can drop it.
       keep-versions: true

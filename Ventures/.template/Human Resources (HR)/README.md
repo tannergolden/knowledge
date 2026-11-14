@@ -23,7 +23,7 @@ _[Company]'s people, recorded only as far as the work needs._
 
 ## 📂 What Goes Here
 
-The people of [Company]: how it is organized, the roles it needs and who holds them, whom each person reports to, and the hires to come. The `human-resources` skill's company work lands here: roles, hiring, pay bands and offers, onboarding, performance and the people records. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The people of [Company]: how it is organized, the roles it needs and who holds them, whom each person reports to, and the hires to come. The company's human resources work lands here: roles, hiring, pay bands and offers, onboarding, performance and the people records. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Hierarchy.md`: the org design, the role charters, the roster with each person's reporting line and dates, the department heads, the advisors, and the next hires and open roles in order.
 - Working files: role cards and job descriptions, interview loops and scorecards, the pay bands by level, the hiring plan, onboarding plans, the review cycle and the wellbeing program, each named for what it covers and its date (`Hiring Plan YYYY-MM-DD.md`). A person's offer, agreement, review or pay stays in [Company]'s HR or payroll system, recorded here only as where it is kept.
@@ -32,7 +32,7 @@ The people of [Company]: how it is organized, the roles it needs and who holds t
 
 ## ↪️ What Goes Elsewhere
 
-- Someone in the owner's personal life goes to `Memory/Entities/People/`, and the owner's own career, skills, health and wellbeing, which the same skill helps with, go to `Profile/`.
+- Someone in the owner's personal life goes to `Memory/Entities/People/`, and the owner's own career, skills, health and wellbeing go to `Profile/`.
 - Employment and contractor agreements are drafted in `Legal & Compliance (L&C)/`, and equity is recorded in `Finance & Accounting (F&A)/Cap-Table.md` alone.
 - A person's accounts and access follow their role in `Information Technology (IT)/Stack.md`, which also lists the communication tools; the meeting cadence lives in `Administration/Cadence.md`.
 

@@ -38,25 +38,25 @@ _Each venture kept apart, and written only as the owner confirms._
 
 ## 📥 What Lands Here
 
-A company's work lands here from the twelve department skills the home kit installs, each named for its department. The `administration` skill (founding, strategy, decisions across departments and the operating cadence) keeps each venture in `Ventures/[Company]/`, copied from `Ventures/.template/`, records each decision in the venture's `Administration/Decisions.md`, logs its work in the venture's `Log.md`, and keeps its `Overview.md` and `Goals.md` current. Every department's records go in that venture's department folder, whose own `README.md` says what belongs there:
+A company's work lands here, department by department. Administration (founding, strategy, decisions across departments and the operating cadence) keeps each venture in `Ventures/[Company]/`, copied from `Ventures/.template/`, records each decision in the venture's `Administration/Decisions.md`, logs its work in the venture's `Log.md`, and keeps its `Overview.md` and `Goals.md` current. Every department's records go in that venture's department folder, whose own `README.md` says what belongs there:
 
-| Department folder | The skill whose work lands there |
-|-------------------|----------------------------------|
-| `Administration/` | `administration`: the founding, the strategy, the decision record and the operating cadence |
-| `Finance & Accounting (F&A)/` | `finance-and-accounting`: the books and each month's close, the financial model and budget, the cap table and company tax |
-| `Legal & Compliance (L&C)/` | `legal-and-compliance`: formation, the entity and its IP, contracts, the filings calendar, policies, privacy, open matters and insurance |
-| `Sales & Marketing (S&M)/` | `sales-and-marketing`: positioning and the brand, the products and services, the sales plan, the pipeline and forecast, and the revenue plan with the demand that feeds it |
-| `Operations & Logistics (O&L)/` | `operations-and-logistics`: processes and SOPs, vendors and their costs, programs, and the operations KPIs |
-| `Human Resources (HR)/` | `human-resources`: org design, roles, hiring, pay, onboarding and the people records |
-| `Information Technology (IT)/` | `information-technology`: the systems register and the security program, with the runbooks and the incident record |
-| `Research & Development (R&D)/` | `research-and-development`: research, ideas, and the building of products, skills and software, with the roadmap |
-| `Business Intelligence (BI)/` | `business-intelligence`: the governed metric definitions and the north star, data, dashboards, and any chart or diagram |
-| `Quality Assurance (QA)/` | `quality-assurance`: independent verification of consequential work, with the definitions of done, test plans, the verification record and the defect log |
-| `Customer Experience (CX)/` | `customer-experience`: onboarding, success and support, with each account's health and renewal and the voice of the customer |
-| `Public Relations (PR)/` | `public-relations`: announcements, press and crises, with the messaging house, the press kit and public log, and the crisis plan |
+| Department folder | The work that lands there |
+|-------------------|---------------------------|
+| `Administration/` | The founding, the strategy, the decision record and the operating cadence |
+| `Finance & Accounting (F&A)/` | The books and each month's close, the financial model and budget, the cap table and company tax |
+| `Legal & Compliance (L&C)/` | Formation, the entity and its IP, contracts, the filings calendar, policies, privacy, open matters and insurance |
+| `Sales & Marketing (S&M)/` | Positioning and the brand, the products and services, the sales plan, the pipeline and forecast, and the revenue plan with the demand that feeds it |
+| `Operations & Logistics (O&L)/` | Processes and SOPs, vendors and their costs, programs, and the operations KPIs |
+| `Human Resources (HR)/` | Org design, roles, hiring, pay, onboarding and the people records |
+| `Information Technology (IT)/` | The systems register and the security program, with the runbooks and the incident record |
+| `Research & Development (R&D)/` | Research, ideas, and the building of products, skills and software, with the roadmap |
+| `Business Intelligence (BI)/` | The governed metric definitions and the north star, data, dashboards, and any chart or diagram |
+| `Quality Assurance (QA)/` | Independent verification of consequential work, with the definitions of done, test plans, the verification record and the defect log |
+| `Customer Experience (CX)/` | Onboarding, success and support, with each account's health and renewal and the voice of the customer |
+| `Public Relations (PR)/` | Announcements, press and crises, with the messaging house, the press kit and public log, and the crisis plan |
 | `Miscellaneous/` | Anything for the venture that fits no department |
 
-The same skills' work in the owner's own life never lands here: the root `README.md`, Where Each Kind Of Work Goes, gives its homes.
+The same departments' work in the owner's own life never lands here: the root `README.md`, Where Each Kind Of Work Goes, gives its homes.
 
 ---
 
@@ -142,7 +142,7 @@ Every department folder also holds its own `README.md`, copied with it, saying w
 
 </details>
 
-The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the decision record; `Cadence.md`, the operating rhythm) and, in Finance & Accounting, the forward `Financial-Model.md` and the `Cap-Table.md`. The `administration` skill writes `Administration/`, and `finance-and-accounting` writes the model and the cap table, or `administration` in a run that convenes the departments; the cap table records only executed documents.
+The template carries a **strategic core**: the `Administration/` executive office (`Strategy.md`, the thesis the OKRs ladder up to; `Decisions.md`, the decision record; `Cadence.md`, the operating rhythm) and, in Finance & Accounting, the forward `Financial-Model.md` and the `Cap-Table.md`. Administration writes `Administration/`, and Finance & Accounting writes the model and the cap table, or Administration when it convenes the departments; the cap table records only executed documents.
 
 The **write-gate** holds every write in a venture, by the act, not by the file: internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
 
@@ -200,7 +200,7 @@ Each venture's `Overview.md` says its stage and its status, and stays current:
 - A venture's stage changes (for example Pre-revenue to Early Revenue): the change is proposed first, with its evidence, and its **Current Stage** is updated only on the owner's yes.
 - A venture goes on hold, closes, or is sold: its **Status**, and once it is closed its **Outcome**, are updated.
 
-The `administration` skill reads the declared stage against the venture's real signals (revenue, headcount, retention, the last round, and whether the sales motion repeats) on every run. The ten stages below fold into three operating stages, which set how it runs the venture: **found** (Idea, Validation, Pre-revenue, and Early Revenue before the motion repeats), **scale** (Early Revenue once it repeats, Growth and Scaling) and **maintain** (Established, Mature, Plateau and Decline). Where the signals and the declared stage disagree, the skill runs at the stage the signals show, names the gap with its evidence, and proposes the change; `Overview.md` changes only on the owner's yes, and the change is logged.
+Administration reads the declared stage against the venture's real signals (revenue, headcount, retention, the last round, and whether the sales motion repeats) whenever it works on the venture. The ten stages below fold into three operating stages, which set how the venture is run: **found** (Idea, Validation, Pre-revenue, and Early Revenue before the motion repeats), **scale** (Early Revenue once it repeats, Growth and Scaling) and **maintain** (Established, Mature, Plateau and Decline). Where the signals and the declared stage disagree, Administration works at the stage the signals show, names the gap with its evidence, and proposes the change; `Overview.md` changes only on the owner's yes, and the change is logged.
 
 **Stage values** (used consistently):
 

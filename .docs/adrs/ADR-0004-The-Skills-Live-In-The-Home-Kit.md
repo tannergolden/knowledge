@@ -3,7 +3,7 @@ title: '🧭 ADR-0004: THE SKILLS LIVE IN THE HOME KIT'
 description: 'The vault holds no skills or agents: every skill and its team live in tannergolden/intelligence and arrive through the home kit, and AGENTS.md gives the universal skills the vault''s layout.'
 type: record
 keywords: [skills, agent teams, home kit, agents-md, universal skills]
-status: 'Accepted'
+status: 'Superseded'
 date: '2026-11-07'
 evidence: 'N/A'
 -->
@@ -29,6 +29,11 @@ _One copy of each skill, universal, and a vault that holds only notes and the sc
 > **Status**, **Date**, and **Evidence** live in the frontmatter above and feed the
 > [ADR index](README.md). This record supersedes
 > [ADR-0003](ADR-0003-The-Skills-Live-Where-The-Apps-Read-Them.md).
+
+> [!IMPORTANT]
+> **Superseded** by [ADR-0008](ADR-0008-The-Vault-Relies-On-No-Skills.md) on 2026-11-14:
+> tannergolden/intelligence ships no skills now, and the vault names its departments instead. The
+> record below is kept as it was decided.
 
 | Attribute     | Specification                                     |
 | :------------ | :------------------------------------------------ |

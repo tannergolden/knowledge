@@ -21,7 +21,7 @@ _Killed ideas stay, so no dead end is walked twice._
 
 ## 💡 What This Folder Is For
 
-The held idea pool. Idea records from discovery work land here, such as the `research-and-development` skill's, one idea per file, by the rules below. It is the ideation counterpart to the Research library (`Inbox/Research/`): Research holds finished research reports, and Ideas holds the living raw material that discovery generates and ranks.
+The held idea pool. Idea records from discovery work land here, one idea per file, by the rules below. It is the ideation counterpart to the Research library (`Inbox/Research/`): Research holds finished research reports, and Ideas holds the living raw material that discovery generates and ranks.
 
 ---
 
@@ -45,7 +45,7 @@ The idea records, the raw material, are filed here. A finished discovery report,
 
 ## 🧾 One idea, one record
 
-Each idea is one Markdown file, typed `record`, whose fields sit in the vault's hidden frontmatter: a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and `serves`, in plain text, for the venture, project, or topic it is for. These are fields of the record's kind (`.docs/technical/vault/Note-Schema.md`). The full schema, the ICE, Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the discovery method's, defined with the `research-and-development` skill in tannergolden/intelligence rather than in this vault. This folder is the home where the records live; the method is how they are made and scored.
+Each idea is one Markdown file, typed `record`, whose fields sit in the vault's hidden frontmatter: a stable `id`, a short `title`, a one-line `statement`, its `lifecycle`, the `ice` and `elo` scores, the generative `lens` that produced it, `parents` for lineage, and `serves`, in plain text, for the venture, project, or topic it is for. These are fields of the record's kind (`.docs/technical/vault/Note-Schema.md`). The full schema, the ICE, Elo and RICE scoring, the lifecycle gates, and the dedup-and-lineage rules are the discovery method's, not this vault's: the method last shipped in tannergolden/intelligence's `research-and-development` skill, kept as it was at the hub's `v0.9.0` tag, and no later release carries it. This folder is the home where the records live; the method is how they are made and scored.
 
 ---
 

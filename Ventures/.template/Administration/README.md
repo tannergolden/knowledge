@@ -23,7 +23,7 @@ _Every [Company] decision on the record, never rewritten._
 
 ## 📂 What Goes Here
 
-The executive office of [Company]: its strategy, its decision record and its operating rhythm. The `administration` skill's company work lands here: the founding, the strategy, the decisions that cross departments, and the reviews of the operating cadence. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The executive office of [Company]: its strategy, its decision record and its operating rhythm. The company's administration work lands here: the founding, the strategy, the decisions that cross departments, and the reviews of the operating cadence. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Strategy.md`: the thesis the `Goals.md` OKRs ladder up to, with the diagnosis behind it, the growth bets, the year's direction and, when the owner asks, the allocation across ventures; read it before any planning, prioritization or go-to-market work.
 - `Decisions.md`: one entry for each consequential decision, with its decider, its one accountable owner and the memo behind it, and a line pointing to each accepted legal risk and each system choice; read it before reopening a settled question.
@@ -34,7 +34,7 @@ The executive office of [Company]: its strategy, its decision record and its ope
 
 ## ↪️ What Goes Elsewhere
 
-- Current priorities and OKRs live in the venture's `Goals.md`, and the company profile in its `Overview.md`, which the same skill keeps current.
+- Current priorities and OKRs live in the venture's `Goals.md`, and the company profile in its `Overview.md`, both of which Administration keeps current.
 - Each metric's definition lives in `Business Intelligence (BI)/Metrics.md`; the strategy and the reviews name metrics from it.
 - An accepted legal risk is recorded in `Legal & Compliance (L&C)/Compliance.md`, and a choice of system in `Information Technology (IT)/Stack.md`; `Decisions.md` points to each.
 - The owner's own decisions, dates and commitments, outside any venture, go to `Memory/`.
@@ -44,7 +44,7 @@ The executive office of [Company]: its strategy, its decision record and its ope
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
-- The `administration` skill is the sole writer of these files.
+- Only Administration writes these files.
 - A decision is recorded in `Decisions.md`, with a one-line entry in the venture's `Log.md`; one that must outlive the record is promoted into `Overview.md` or `Strategy.md`.
 - A decision that no longer holds is marked superseded or reversed, never rewritten, and the minority view is recorded by role.
 

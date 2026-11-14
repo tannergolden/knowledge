@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the subject of a key decision]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Administration/Decisions.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "record"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The administration skill adds an entry after each decide run; the index row and the entry under Decisions are the shapes each new decision follows. An entry is never rewritten: a decision that changes is marked superseded or reversed, and the new entry names the one it replaces. Write only what the owner says or confirms, or what [Company]'s own records show (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Administration/Decisions.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "record"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Administration adds an entry after each decision; the index row and the entry under Decisions are the shapes each new decision follows. An entry is never rewritten: a decision that changes is marked superseded or reversed, and the new entry names the one it replaces. Write only what the owner says or confirms, or what [Company]'s own records show (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # ⚖️ [Company] - Decisions
 
@@ -15,9 +15,9 @@ keywords: ["[the subject of a key decision]", "template"]
 
 ## How This Record Is Kept
 
-- The `administration` skill records each decision from a decide run here, checked against the earlier entries, and adds a one-line entry to `Log.md`.
+- Administration records each decision here, checked against the earlier entries, and adds a one-line entry to `Log.md`.
 - One decision, one entry: the call, the rationale, the departments heard, the decider, the one accountable owner, the success measure, the reversibility, and the minority view by role.
-- The decider is the `administration` skill's Chief Executive Officer for a reversible call within its mandate, and the owner for an irreversible or major one.
+- The decider is the Chief Executive Officer for a reversible call within their mandate, and the owner for an irreversible or major one.
 - A product decision (what to build, for whom and when) and the pricing policy are decided and recorded here; the roadmap a product decision sets goes to `Research & Development (R&D)/Roadmap.md`.
 - An accepted legal risk lives in `Legal & Compliance (L&C)/Compliance.md`, and a choice of system in `Information Technology (IT)/Stack.md`: each has a one-line entry here that points to it.
 - A decision that must outlive this record, such as a standing policy or a committed direction, is also promoted into `Overview.md` or `Administration/Strategy.md`.

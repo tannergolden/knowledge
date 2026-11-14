@@ -543,7 +543,7 @@ Compare each Profile facet, Focus first, with what Memory, the projects and the 
 - Change nothing before my yes: propose each change with its evidence by path and the line it would replace.
 - Mark each change you inferred as Profile/README.md describes, and write my own words unmarked.
 - Open Health, Finances, Values and Relationships only if I ask.
-- Where a facet is thin rather than out of date, say so and suggest the human-resources skill's profile interview, rather than interview me here.
+- Where a facet is thin rather than out of date, say so and suggest the profile interview Profile/README.md describes, rather than interview me here.
 - If .github/TEMPLATE_INIT exists, stop and tell me to run this in my private vault.
 </constraints>
 
@@ -767,8 +767,8 @@ List the reports past their review_by date and the visuals whose data has moved 
 
 <constraints>
 - Change nothing before my yes: propose each clearing, refresh and promotion.
-- Re-verify a stale report only if I ask, through the research-and-development skill, and move its review_by date only once it is verified.
-- Regenerate a stale visual only if I ask, through the business-intelligence skill: a visual is redrawn from its new data, never re-verified.
+- Re-verify a stale report only if I ask, as Inbox/Research/README.md describes, and move its review_by date only once it is verified.
+- Regenerate a stale visual only if I ask: a visual is redrawn from its new data, never re-verified.
 - Keep each index in step with its folder, in the same edit.
 - Make each promotion by its destination's rules, such as Library/README.md's for a holding.
 </constraints>

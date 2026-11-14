@@ -29,7 +29,7 @@ The folder of [Company], a company the owner runs: its company-wide context at t
 2. `Goals.md`: current priorities, OKRs and strategic initiatives.
 3. `Log.md`: what happened with the venture over time, for recent context.
 
-Then the department files the task needs. Each department's `README.md` says what its folder holds and which skill's work lands there, and `Ventures/README.md`, What Lands Here, maps every department to its skill.
+Then the department files the task needs. Each department's `README.md` says what its folder holds and what work lands there, and `Ventures/README.md`, What Lands Here, maps every department to its work.
 
 ---
 
@@ -60,7 +60,7 @@ Every rule in `Ventures/README.md` holds here. These shape all the work inside t
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
 - Only what the owner says or confirms, or what [Company]'s own records show, is written here; nothing is guessed or invented, and [Company]'s context stays apart from every other venture's unless the owner asks to connect them.
-- The strategic core has fixed writers: the `administration` skill writes `Administration/`, and `finance-and-accounting` writes `Financial-Model.md` and `Cap-Table.md`, or `administration` in a run that convenes the departments.
+- The strategic core has fixed writers: Administration writes `Administration/`, and Finance & Accounting writes `Financial-Model.md` and `Cap-Table.md`, or Administration when it convenes the departments.
 - Each fact has one home: a fact another file owns is pointed to, never copied.
 
 ---

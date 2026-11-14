@@ -216,6 +216,7 @@
 #/.docs/adrs/ADR-0005-Each-Folder-Explains-Itself-In-A-README.md
 #/.docs/adrs/ADR-0006-AGENTS-Returns-With-The-Rules-For-Personal-Knowledge.md
 #/.docs/adrs/ADR-0007-The-Vault-Keeps-Only-The-Templates-It-Uses.md
+#/.docs/adrs/ADR-0008-The-Vault-Relies-On-No-Skills.md
 #/.github/TEMPLATE_INIT
 #/.github/template-derive.json
 #/.github/template-derive.lock

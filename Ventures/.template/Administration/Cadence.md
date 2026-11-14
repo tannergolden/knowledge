@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the name the company uses for its review meeting]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Administration/Cadence.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The administration skill runs the loops in its review mode and records each run here; a commitment with no owner or date goes back to where it came from. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Administration/Cadence.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Administration runs the loops at each review and records each run here; a commitment with no owner or date goes back to where it came from. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🗓️ [Company] - Cadence
 
@@ -32,7 +32,7 @@ keywords: ["[the name the company uses for its review meeting]", "template"]
 
 **Frequency:** [monthly / quarterly] <!-- monthly when founding, moving toward quarterly through scale, quarterly once established; the members are named in Overview.md -->
 **Standing agenda:** financials and runway, progress against the year's objectives, the material decisions and risks since the last meeting, the asks, and governance. A written pre-read goes out ahead, is read in silence at the start, and is filed in `Administration/`.
-**Committees:** Audit, Compensation, Nominating and Governance, and Risk, convened through the `administration` skill as needed.
+**Committees:** Audit, Compensation, Nominating and Governance, and Risk, convened by Administration as needed.
 
 ---
 

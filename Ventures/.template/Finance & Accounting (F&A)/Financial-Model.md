@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the round or plan the model serves]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Finance & Accounting (F&A)/Financial-Model.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The finance-and-accounting skill builds it on the closed actuals in Financials.md, its Chief Financial Officer approves it, and it lands only once the quality-assurance skill's check clears it; it is rolled forward each quarter. Every number traces to a source or a marked assumption, and none is backsolved. Scale it to the stage: at found, a monthly cash projection through the next raise plus a buffer; at scale, the three statements tied and the unit economics; at maintain, free cash flow and the rule of 40. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Finance & Accounting (F&A)/Financial-Model.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Finance & Accounting builds it on the closed actuals in Financials.md, the Chief Financial Officer approves it, and it lands only once Quality Assurance's check clears it; it is rolled forward each quarter. Every number traces to a source or a marked assumption, and none is backsolved. Scale it to the stage: at found, a monthly cash projection through the next raise plus a buffer; at scale, the three statements tied and the unit economics; at maintain, free cash flow and the rule of 40. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🧮 [Company] - Financial Model
 
@@ -117,7 +117,7 @@ keywords: ["[the round or plan the model serves]", "template"]
 
 ## Review
 
-**Approved by:** the `finance-and-accounting` skill's Chief Financial Officer, on [YYYY-MM-DD]
+**Approved by:** the Chief Financial Officer, on [YYYY-MM-DD]
 **Independent check:** [SHIP / REVISE / HOLD], on [YYYY-MM-DD], with its findings applied
 **Next reforecast:** [YYYY-MM-DD]
 

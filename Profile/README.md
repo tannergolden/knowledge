@@ -78,11 +78,11 @@ Each independently-answerable fact is its own `## H2`, so it chunks cleanly for 
 
 ## 📥 What Lands Here
 
-Every write here follows the Rules above, whichever skill makes it:
+Every write here follows the Rules above, whatever work makes it:
 
-- **The `human-resources` skill's work for the owner's own life**: the profile interview (Filling These Files, below), their career and skills (`Biography.md`, `Skills/`, `Goals/`) and their health and wellbeing (`Health/`, `Lifestyle.md`).
-- **The `finance-and-accounting` skill's money facts** about the owner, in `Finances.md` alone: the picture and pointers, never a secret number.
-- **What any other skill learns about who the owner is**, proposed first: a goal or priority the `administration` skill helps set (`Goals/`, `Focus.md`), where a will or a lease the `legal-and-compliance` skill handles is kept (`Finances.md`, Legal & Estate), the routines `operations-and-logistics` plans (`Focus.md`), and the devices, accounts and tools `information-technology` sets up (`Preferences.md`), never a password or a key.
+- **Human resources work for the owner's own life**: the profile interview (Filling These Files, below), their career and skills (`Biography.md`, `Skills/`, `Goals/`) and their health and wellbeing (`Health/`, `Lifestyle.md`).
+- **The owner's money facts**, from finance and accounting work, in `Finances.md` alone: the picture and pointers, never a secret number.
+- **What any other work learns about who the owner is**, proposed first: a goal or priority set in administration work (`Goals/`, `Focus.md`), where a will or a lease handled in legal and compliance work is kept (`Finances.md`, Legal & Estate), the routines planned in operations and logistics work (`Focus.md`), and the devices, accounts and tools set up in information technology work (`Preferences.md`), never a password or a key.
 
 ---
 
@@ -119,7 +119,7 @@ The whole `Profile/` tree is **sensitive by default**, by its path (`.docs/techn
 
 ## 🎙️ Filling These Files: The Profile Interview
 
-The recommended way to fill or deepen these files is a structured interview rather than hand-editing, such as the profile interview the `human-resources` skill runs (installed with the home kit from tannergolden/intelligence, not kept in this vault). `python3 .github/scripts/profile-coverage.py --json` scores each facet and names the next one to ask about, starting with `Working Style.md` while it is still blank. The interview reads what each file holds, targets what is thin or unconfirmed, and asks structured questions drawn from validated frameworks: **Big Five** for Personality, **Schwartz's basic values** for Values, the **McAdams life-story** method for Biography, mixing direct questions for facts with indirect ones that surface traits the owner would not think to state. Sensitive facets (Health, Finances, Values, Relationships) open only on the owner's opt-in. What it writes follows the rules on this page: an inference is **marked, evidence-cited, confidence-rated and left unconfirmed until approved**, sensitive topics come with skip options, and each file's last state is committed before it is written. Hand-editing is fine for a quick correction, but misses the inference layer and those safeguards.
+The recommended way to fill or deepen these files is a structured interview rather than hand-editing: the profile interview this section describes, which any AI assistant working here runs when the owner asks. `python3 .github/scripts/profile-coverage.py --json` scores each facet and names the next one to ask about, starting with `Working Style.md` while it is still blank. The interview reads what each file holds, targets what is thin or unconfirmed, and asks structured questions drawn from validated frameworks: **Big Five** for Personality, **Schwartz's basic values** for Values, the **McAdams life-story** method for Biography, mixing direct questions for facts with indirect ones that surface traits the owner would not think to state. Sensitive facets (Health, Finances, Values, Relationships) open only on the owner's opt-in. What it writes follows the rules on this page: an inference is **marked, evidence-cited, confidence-rated and left unconfirmed until approved**, sensitive topics come with skip options, and each file's last state is committed before it is written. Hand-editing is fine for a quick correction, but misses the inference layer and those safeguards.
 
 ---
 

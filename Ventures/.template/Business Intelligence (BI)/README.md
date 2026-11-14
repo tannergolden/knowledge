@@ -23,7 +23,7 @@ _Every [Company] number dated and sourced._
 
 ## 📂 What Goes Here
 
-Analytics for [Company]: the one definition of each metric, the scorecard of current values, and the data sources and dashboards behind them. The `business-intelligence` skill's company work lands here: metrics, data, dashboards, and any chart or diagram made for [Company]. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Analytics for [Company]: the one definition of each metric, the scorecard of current values, and the data sources and dashboards behind them. The company's business intelligence work lands here: metrics, data, dashboards, and any chart or diagram made for [Company]. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Metrics.md`: the governed definition of each metric, the north star and the one metric that matters now, the scorecard of current values, and the data sources and dashboards behind them.
 - Working files: dashboard specifications, reports and analyses, and the charts and diagrams kept for [Company] as `.svg` or self-contained `.html` files, each named for what it shows and the date of its data.

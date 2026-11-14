@@ -23,7 +23,7 @@ _[Company]'s processes as they run now, every change dated._
 
 ## 📂 What Goes Here
 
-How [Company] runs day to day: its processes and SOPs, the programs that carry a change to done, its vendors and what each one costs, and its recurring tasks. The `operations-and-logistics` skill's company work lands here: processes, programs and vendors. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+How [Company] runs day to day: its processes and SOPs, the programs that carry a change to done, its vendors and what each one costs, and its recurring tasks. The company's operations and logistics work lands here: processes, programs and vendors. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Operations.md`: the operating model and its constraint, the processes and their SOPs, the program plans, the vendor register with each vendor's cost, renewal, fallback and scorecard, tools included, the recurring tasks, the operations KPIs and the known bottlenecks.
 - Working files: SOPs and runbooks, program plans, vendor decisions and scorecards, and drafts of an RFP, a scope of work or a purchase order, each named for what it covers and its date (`Program Plan YYYY-MM-DD.md`).

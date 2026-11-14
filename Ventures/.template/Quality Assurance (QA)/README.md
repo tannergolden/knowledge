@@ -23,7 +23,7 @@ _Every [Company] standard says how it is checked._
 
 ## 📂 What Goes Here
 
-Quality at [Company]: the bar each kind of work is judged against, and the record of every check made against it. The `quality-assurance` skill's company work lands here: the independent verification of consequential work before it goes out. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Quality at [Company]: the bar each kind of work is judged against, and the record of every check made against it. The company's quality assurance work lands here: the independent verification of consequential work before it goes out. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Standards.md`: the definitions of done, the review process, the test plans, the verification record, the defect log with each root cause, the quality metrics, and the audits and certifications.
 - Working files: test plans, test results, verification reports, defect reports and audit reports, each named for what it covers and its date (`Verification Report YYYY-MM-DD.md`).

@@ -23,7 +23,7 @@ _Who holds each [Company] key and where, never the key._
 
 ## 📂 What Goes Here
 
-The systems of [Company] and their security: what it runs on, who can reach each system, how each one is backed up and restored, and every change, access review and incident. The `information-technology` skill's company work lands here: the internal systems and their security. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The systems of [Company] and their security: what it runs on, who can reach each system, how each one is backed up and restored, and every change, access review and incident. The company's information technology work lands here: the internal systems and their security. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Stack.md`: the systems register, the architecture, the security program, the runbooks, the change reviews, the access reviews, the incidents, each system choice and why it was made, and the domains.
 - Working files: change reviews, incident records, runbooks, the access policy and architecture diagrams, one file each, named for what it covers and its date (`Access Review YYYY-MM-DD.md`).

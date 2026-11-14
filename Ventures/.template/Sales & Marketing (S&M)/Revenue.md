@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the revenue model]", "[a key channel]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/Revenue.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The sales-and-marketing skill keeps it at each planning cycle; the finance-and-accounting skill takes the plan into the revenue line of Finance & Accounting (F&A)/Financial-Model.md and owns how revenue is recognized. Every metric is named from Business Intelligence (BI)/Metrics.md, never redefined, and every spend, send and contact-list upload in a program waits for the owner's yes. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/Revenue.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Sales & Marketing keeps it at each planning cycle; Finance & Accounting takes the plan into the revenue line of Finance & Accounting (F&A)/Financial-Model.md and owns how revenue is recognized. Every metric is named from Business Intelligence (BI)/Metrics.md, never redefined, and every spend, send and contact-list upload in a program waits for the owner's yes. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 💵 [Company] - Revenue
 
@@ -27,7 +27,7 @@ keywords: ["[the revenue model]", "[a key channel]", "template"]
 | The revenue number | | | | |
 
 **The binding stage:** <!-- the stage with the weakest evidence-backed rate, which binds the number, and its evidence -->
-**Bookings to revenue:** <!-- the timing assumptions the finance-and-accounting skill applies its recognition rules to -->
+**Bookings to revenue:** <!-- the timing assumptions Finance & Accounting applies its recognition rules to -->
 **Gap to target:** <!-- named stage by stage, never rounded up -->
 
 ---

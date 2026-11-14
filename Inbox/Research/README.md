@@ -21,7 +21,7 @@ _Trusted for three months, verified after that._
 
 ## 💡 What This Folder Is For
 
-The held library for finished research. Every research or discovery report about anything but this vault itself lands here, such as the `research-and-development` skill's: research about the world, the owner's own questions, a company the owner runs or a project, all kept here by the rules below. Reports are deliverables, held for reference.
+The held library for finished research. Every research or discovery report about anything but this vault itself lands here: research about the world, the owner's own questions, a company the owner runs or a project, all kept here by the rules below. Reports are deliverables, held for reference.
 
 > [!IMPORTANT]
 > **Research about changing this vault itself is not held here.** The research behind a change to the vault's own machinery, its scripts, note schema, templates, rules or layout, is a Research Log in `.docs/technical/research/`, copied from `.docs/templates/Research-Log.md`. Everything else that is researched ends in a report here.

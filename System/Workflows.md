@@ -53,7 +53,7 @@ Workflows marked *owned here* are specified in full lower in this file; all othe
 |----------|--------------|--------------------------|
 | New project | A personal initiative begins (ask first) | `Projects/README.md` · copy `Projects/.template/` |
 | New venture | A company the owner owns or operates | `Ventures/README.md` · copy `Ventures/.template/` |
-| Profile interview | Filling or deepening the `Profile/` files | `Profile/README.md` · a profile interview, such as the one the `human-resources` skill runs |
+| Profile interview | Filling or deepening the `Profile/` files | `Profile/README.md` · the profile interview its Filling These Files section describes |
 
 ### Reporting
 

@@ -23,10 +23,10 @@ _[Company]'s legal context, never its legal advice._
 
 ## 📂 What Goes Here
 
-The legal and compliance records of [Company]: its entity, its intellectual property, its contracts, its licenses and filings, its policies and privacy duties, its open matters, its insurance and the legal risks the owner has accepted. The `legal-and-compliance` skill's company work lands here: formation, contracts, IP, compliance and privacy. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The legal and compliance records of [Company]: its entity, its intellectual property, its contracts, its licenses and filings, its policies and privacy duties, its open matters, its insurance and the legal risks the owner has accepted. The company's legal and compliance work lands here: formation, contracts, IP, compliance and privacy. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Compliance.md`: the entity and its formation documents, the IP chain and the marks, the contracts with their notice deadlines and obligations, the obligations and filings calendar, the policies, the privacy record, the matters, the accepted risks, counsel and insurance.
-- Working files: signed agreements, filings and certificates, named plainly (`Operating Agreement YYYY-MM.pdf`), and the contract reviews, redlines, privacy assessments and dispute triages the skill drafts.
+- Working files: signed agreements, filings and certificates, named plainly (`Operating Agreement YYYY-MM.pdf`), and the contract reviews, redlines, privacy assessments and dispute triages Legal & Compliance drafts.
 
 ---
 
@@ -40,7 +40,7 @@ The legal and compliance records of [Company]: its entity, its intellectual prop
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
-- `Compliance.md` is context, not legal advice: each record says when a licensed lawyer must review, and the skill never signs, sends or files anything.
+- `Compliance.md` is context, not legal advice: each record says when a licensed lawyer must review, and nothing is signed, sent or filed without the owner's yes.
 - No tax ID, registration, license or patent number, and no government ID, is written in a note here: each is recorded as where it is kept, never as the value.
 - Contracts, a counterparty's terms and a dispute's facts are confidential: they never leave [Company]'s private records for a public repository.
 

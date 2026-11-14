@@ -1,8 +1,8 @@
 <!--
 title: '📖 GLOSSARY'
-description: 'The vault''s own terms, from folder README and scaffold to held, skill and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account''s shared engineering terms are in the standards'' glossary.'
+description: 'The vault''s own terms, from folder README and scaffold to held, department and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account''s shared engineering terms are in the standards'' glossary.'
 type: reference
-keywords: [terms, definitions, vocabulary, held, scaffold, skill, venture, folder readme]
+keywords: [terms, definitions, vocabulary, held, scaffold, department, venture, folder readme]
 -->
 
 <div align="center">
@@ -154,18 +154,18 @@ Conventional Commits, are in the standards'
 
 ---
 
-## 🤖 Skills
+## 🏢 Departments & Ventures
 
-- **Department**: one of the twelve a venture is organized into, from Administration to Public
-  Relations, each with a folder in the venture and a skill named for it, which also covers that part
-  of the owner's own life (the root `README.md`, Where Each Kind Of Work Goes).
-- **Home kit**: tannergolden/intelligence's installer, which puts every skill in its `kit/skills/`,
-  with the universal rules an AI assistant follows, into each AI app on every machine and in every
-  Claude Code cloud session. The vault holds no skill and no agent; its `AGENTS.md` carries the
-  universal rules for any AI app.
-- **Skill**: a capability with a `SKILL.md`, kept in tannergolden/intelligence and installed by the
-  home kit. The root `README.md`, under Where Each Kind Of Work Goes, gives this vault's layout to
-  whoever writes here, a skill included.
+- **Department**: one of the twelve kinds of work a venture is organized into, from Administration
+  to Public Relations, each with a folder in the venture, and each also covering that part of the
+  owner's own life (the root `README.md`, Where Each Kind Of Work Goes).
+- **Home kit**: tannergolden/intelligence's installer, which puts the universal rules an AI
+  assistant follows, with a guard that blocks the few tool calls they forbid outright, into each AI
+  app on every machine and in every Claude Code cloud session. It installs no skill, and the vault
+  holds no skill and no agent; its `AGENTS.md` carries the universal rules for any AI app.
+- **Skill**: a capability an AI app loads from a folder holding a `SKILL.md`. The vault holds none
+  and the home kit installs none: a skill folder dropped in the Inbox waits there for the owner to
+  move it out (`Inbox/README.md`, System Assets).
 - **Venture**: a company the owner owns or runs, with clients, employees, revenue or a brand, kept in
   a folder of `Ventures/` copied from its scaffold. A personal initiative without them is a
   **project**, in `Projects/` (`Ventures/README.md`).
@@ -197,8 +197,8 @@ Conventional Commits, are in the standards'
   in a vault generated now, while one generated before v2.0.0 follows `v1` until its owner sets
   `ref: 'v2'` ([How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md)).
 - **The developer** and **the owner**: the developer designed and built the template, and is named
-  on the landing page; the owner, whom the universal rules in `AGENTS.md` and the home kit's skills
-  call the user, is whoever `Profile/` describes, whose vault it is (`.github/README.md`).
+  on the landing page; the owner, whom the universal rules in `AGENTS.md` call the user, is whoever
+  `Profile/` describes, whose vault it is (`.github/README.md`).
 - **Yours**: a path `.github/template-sync` switches off with `#`, seeded once and never synced.
 
 ---

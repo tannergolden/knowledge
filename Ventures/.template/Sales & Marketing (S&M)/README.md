@@ -23,7 +23,7 @@ _Every word for [Company] in its brand voice, sent on a yes._
 
 ## 📂 What Goes Here
 
-Sales and marketing for [Company]: how it is positioned, what it sells, how it sells, and the number it all adds up to. The `sales-and-marketing` skill's company work lands here: the pipeline and deals, positioning and demand. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Sales and marketing for [Company]: how it is positioned, what it sells, how it sells, and the number it all adds up to. The company's sales and marketing work lands here: the pipeline and deals, positioning and demand. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Brand.md`: the positioning, voice and tone, messaging and visual identity; read it before writing anything on the company's behalf.
 - `Products.md`: the product catalog, with each product's shipped capability, pricing and go-to-market.

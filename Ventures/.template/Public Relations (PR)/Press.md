@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the umbrella message, in a few words]", "[the name of the company's press page or newsroom]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Public Relations (PR)/Press.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The public-relations skill keeps it. Drafting is never gated and releasing always is: a statement enters the public log only after the owner confirms it went out, and a change to the messaging house is made deliberately and logged in the venture's Log.md. A reporter's contact details stay in [Company]'s own systems, so this file names each reporter and where their details are kept, never an email address or a phone number, and nobody is searched for to fill in an entry. Scale it to the stage: before launch, the messaging house, the boilerplate and a plan for each announcement; the press kit, the crisis plan and the media relationships join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Public Relations (PR)/Press.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Public Relations keeps it. Drafting is never gated and releasing always is: a statement enters the public log only after the owner confirms it went out, and a change to the messaging house is made deliberately and logged in the venture's Log.md. A reporter's contact details stay in [Company]'s own systems, so this file names each reporter and where their details are kept, never an email address or a phone number, and nobody is searched for to fill in an entry. Scale it to the stage: before launch, the messaging house, the boilerplate and a plan for each announcement; the press kit, the crisis plan and the media relationships join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 📰 [Company] - Press & PR
 
@@ -102,7 +102,7 @@ keywords: ["[the umbrella message, in a few words]", "[the name of the company's
 
 ### Holding Statements
 
-<!-- Cleared in advance for the likely scenarios, each by the legal-and-compliance skill. -->
+<!-- Cleared in advance for the likely scenarios, each by Legal & Compliance. -->
 
 | Scenario | The statement | Cleared on |
 | -------- | ------------- | ---------- |

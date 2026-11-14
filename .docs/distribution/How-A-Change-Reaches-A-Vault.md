@@ -46,8 +46,8 @@ only here: initialisation deletes them from every vault, so a vault syncs from t
 🏷️ Cut Release, dispatched with a version `vX.Y.Z`, publishes the release and moves its major, such as
 `v2`, to it, after checking that `.github/template-sync` and the Template Sync stub exist and that
 `validate-repository.py` passes. Every earlier version stays, page and tag, so a vault that names
-one in full in its stub's `ref:` still finds it; tannergolden/intelligence no longer pins one, since
-the skills live there now. A vault follows the major its stub's `ref:` names: `v2` for a vault
+one in full in its stub's `ref:` still finds it; tannergolden/intelligence no longer pins one. A vault
+follows the major its stub's `ref:` names: `v2` for a vault
 generated since v2.0.0, `v1` for one generated before. When its owner runs 🔄 Template Sync, every
 file the template changed that the vault's list keeps current arrives as one pull request on
 `chore/template-sync`, merged with the owner's own changes. A vault never follows a new major until
@@ -124,17 +124,18 @@ A vault made before the skills moved to tannergolden/intelligence kept them and 
 `.agents/skills/` with a copy in `.claude/skills/` and archives in `System/Skills/`, the venture
 workforce in `Ventures/Agent Resources (AR)/`, the Librarian in `Library/`, and
 `System/Data/agent-catalog.json`; one older still kept them in `System/Skills/.unpackaged/` and
-`Inbox/Faculties/`. The template ships none of them now: every skill and its team live in
-tannergolden/intelligence under `kit/skills/`, and the home kit installs them.
+`Inbox/Faculties/`. The template ships none of them now, and nothing replaces them: the skills moved
+to tannergolden/intelligence, which has shipped none since its
+[ADR-0041](https://github.com/tannergolden/intelligence/blob/Development/docs/adrs/ADR-0041-The-Kit-Carries-No-Skills.md),
+and its home kit installs the universal rules and their guard, and no skill.
 
-- **Install the home kit** on each machine you work from, so the skills keep reaching the vault.
 - **Run 🔄 Template Sync.** It removes each of those files you had not changed, and keeps one you had
   changed as yours.
-- **On the sync pull request's branch**, carry any change you made to a skill or an agent into your
-  own copy of tannergolden/intelligence, or your AI app's own skills folder, then `git rm` what the
-  sync kept, empty folders included. Delete `System/Data/agent-catalog.json` too: it was yours, so the
-  sync leaves it. Remove the lines under Your rules in `.github/template-sync` that name a skill path,
-  such as `!/.agents/skills/<skill>/**`, since they now name nothing.
+- **On the sync pull request's branch**, carry any skill or agent you want to keep into your AI
+  app's own skills folder, then `git rm` what the sync kept, empty folders included. Delete
+  `System/Data/agent-catalog.json` too: it was yours, so the sync leaves it. Remove the lines under
+  Your rules in `.github/template-sync` that name a skill path, such as `!/.agents/skills/<skill>/**`,
+  since they now name nothing.
 - Run `python3 .github/scripts/update-vault.py` and commit the catalog it redraws, then merge once
   `python3 .github/scripts/check-vault.py` passes.
 
@@ -152,10 +153,10 @@ ships in a new major, v2.0.0: a vault made before it takes it when its owner set
 `with:` in `.github/workflows/template-sync.yml`, then runs 🔄 Template Sync.
 
 The same major release carries two more changes. The venture template's `Client Experience (CX)/`
-becomes `Customer Experience (CX)/`. And the skills are named as the home kit now names them, twelve
-department skills from `administration` to `public-relations`, each covering both a company and the
-owner's own life: the root `README.md`, under Where Each Kind Of Work Goes, and each folder's README
-give the new names in place of the old ones, such as `board`, `research`, `discover` and `identify`.
+becomes `Customer Experience (CX)/`. And the old skill names, such as `board`, `research`, `discover`
+and `identify`, give way to the twelve departments, from Administration to Public Relations, each
+covering both a company and the owner's own life: the root `README.md`, under Where Each Kind Of
+Work Goes, and each folder's README name them.
 
 - **Run 🔄 Template Sync.** Each folder note the template ships moves to its `README.md`, your
   changes with it, and each top folder's note and README arrive as one `README.md`. A note you had
@@ -181,9 +182,23 @@ give the new names in place of the old ones, such as `board`, `research`, `disco
   give that folder's `README.md` the new name in its title and heading, and update the row in its
   `Human Resources (HR)/Hierarchy.md` and every other mention in your own notes. The files copied
   into a venture are yours too, so the sync leaves the old skill names in them: compare its READMEs,
-  its `Administration/` files and its `Cap-Table.md` with the template's, and take the new names.
+  its `Administration/` files and its `Cap-Table.md` with the template's, and take its wording.
 - Run `python3 .github/scripts/update-vault.py` and commit what it redraws, then merge once
   `python3 .github/scripts/check-vault.py` passes.
+
+---
+
+## 🏢 Updating A Venture Copied Before The Skills Left
+
+The venture template now names the department that keeps each file, where it once named that
+department's skill, such as the `administration` skill or the `finance-and-accounting` skill's Chief
+Financial Officer. A venture is copied whole and is yours, so no sync rewrites one made before the
+change, and its files go on naming skills no release installs.
+
+- **Compare each venture with the template.** Set its READMEs and the notes it copied, such as
+  `Administration/Decisions.md` and `Finance & Accounting (F&A)/Financial-Model.md`, beside
+  `Ventures/.template/`, and take the template's wording wherever yours still names a skill.
+- Run `python3 .github/scripts/check-vault.py`, then commit.
 
 ---
 

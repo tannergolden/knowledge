@@ -21,7 +21,7 @@ _A snapshot of its data, regenerated rather than re-verified._
 
 ## 💡 What This Folder Is For
 
-The held library for finished visuals. Standalone visuals land here, such as the `business-intelligence` skill's, by the rules below: charts, diagrams, dashboards, interactive widgets, and explanatory illustration. Visuals are deliverables, rendered and kept here for reference, the visual counterpart to the Research library (`Inbox/Research/`).
+The held library for finished visuals. Standalone visuals land here, by the rules below: charts, diagrams, dashboards, interactive widgets, and explanatory illustration. Visuals are deliverables, rendered and kept here for reference, the visual counterpart to the Research library (`Inbox/Research/`).
 
 ---
 

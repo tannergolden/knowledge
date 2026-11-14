@@ -23,15 +23,15 @@ _Never an employer's work, and never a folder without a yes._
 
 `Projects/` tracks personal initiatives: what the owner builds, makes, learns or explores on their own, such as side projects, creative work, passion builds and learning initiatives. Each project is a folder copied from `.template/`, with an `Overview.md` for its goal and status, a `Log.md` of progress, `Notes.md` and `Resources.md`. It is not for work tasks or organizational projects: work for an employer, a client or one of the owner's companies belongs in `Ventures/`. Read this README before changing anything in this folder; its rules add to the root `README.md` and never loosen it.
 
-Any skill's work in the owner's own life lands here once it is an initiative of its own, each project created only with a yes (Rules, below):
+Any kind of work in the owner's own life lands here once it is an initiative of its own, each project created only with a yes (Rules, below):
 
-- a side project or a learning plan, from the `research-and-development` skill;
-- a household plan, a trip or a move, from `operations-and-logistics`;
-- a job search or a personal brand, from `sales-and-marketing`;
-- a body of the owner's own writing, from `public-relations`;
-- a habit or a metric the owner tracks, from `business-intelligence`.
+- a side project or a learning plan, from research and development;
+- a household plan, a trip or a move, from operations and logistics;
+- a job search or a personal brand, from sales and marketing;
+- a body of the owner's own writing, from public relations;
+- a habit or a metric the owner tracks, from business intelligence.
 
-A check of a project's work, such as the `quality-assurance` skill's, is logged in that project's `Log.md`.
+A check of a project's work, such as a quality assurance review, is logged in that project's `Log.md`.
 
 | Content Type | Belongs In |
 |-------------|-----------|

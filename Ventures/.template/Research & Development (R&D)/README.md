@@ -23,7 +23,7 @@ _Promoted ideas become [Company]'s products here._
 
 ## 📂 What Goes Here
 
-Product work at [Company]: what is being built and why, what comes next, and the evidence behind it. The `research-and-development` skill's company work lands here: research, ideas, and the building of products, skills and software. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+Product work at [Company]: what is being built and why, what comes next, and the evidence behind it. The company's research and development work lands here: research, ideas, and the building of products, skills and software. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Roadmap.md`: the product vision, the MVP definition, the bets by horizon, the roadmap items each tied to the product decision behind it, the requirements with their acceptance criteria, the release plan, the experiment log, and the research under way.
 - Working files: specs, prototypes and design notes, and the research reports and idea records promoted for [Company] from `Inbox/`, each named for what it covers and its date (`Spec YYYY-MM-DD.md`).

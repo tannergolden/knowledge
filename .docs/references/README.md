@@ -45,10 +45,10 @@ from the files the folder holds.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                        | Purpose                                                                                                                                                                                                                                                                  |
-| :--------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Glossary.md`](Glossary.md) | The vault's own terms, from folder README and scaffold to held, skill and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account's shared engineering terms are in the standards' glossary. |
-| [`README.md`](README.md)     | This file.                                                                                                                                                                                                                                                               |
+| Entry                        | Purpose                                                                                                                                                                                                                                                                       |
+| :--------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Glossary.md`](Glossary.md) | The vault's own terms, from folder README and scaffold to held, department and venture, each defined briefly, with the file that sets it. Look a term up here when a note, a rule or a script uses it; the account's shared engineering terms are in the standards' glossary. |
+| [`README.md`](README.md)     | This file.                                                                                                                                                                                                                                                                    |
 
 <!-- AUTO-INDEX:END -->
 

@@ -41,7 +41,7 @@ What happened, who is around the owner, what they decided and what is due, organ
 
 Memory records the *events that evidence* a trait; Profile states the trait once and cites the event. The entities here are the owner's *personal* orbit: a contact known only through a venture lives in that venture.
 
-Any work that learns what happened, who is around the owner, what they decided or what is due records it here, by the rules on this page, whichever skill does it: the decisions, dates and commitments the `administration` skill helps the owner make in their own life, the open loops and dates of a complaint or a return (`customer-experience`) or a dispute (`legal-and-compliance`), and the people, events, dates and decisions a profile interview learns.
+Any work that learns what happened, who is around the owner, what they decided or what is due records it here, by the rules on this page, whoever does it: the decisions, dates and commitments the owner makes in their own life, the open loops and dates of a complaint, a return or a dispute, and the people, events, dates and decisions a profile interview learns.
 
 ---
 

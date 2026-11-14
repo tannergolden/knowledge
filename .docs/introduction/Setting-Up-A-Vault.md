@@ -30,9 +30,9 @@ _Generated private, claimed once, filled in by interview._
   vault, each folder's `README.md` how to work in that folder, and `AGENTS.md` the rules every AI
   follows here, which most AI apps load by themselves.
 - **The home kit** from [tannergolden/intelligence](https://github.com/tannergolden/intelligence) on
-  each machine you work from, if you work with an AI assistant. The vault holds no skills: the kit
-  installs them into each AI app and every Claude Code cloud session, and the root `README.md` says
-  where each kind of work goes.
+  each machine you work from, if you work with an AI assistant: it installs the universal rules into
+  each AI app and every Claude Code cloud session. Neither the kit nor the vault holds a skill: the
+  root `README.md` says where each kind of work goes.
 
 The steps every repository on the standards shares, such as the admin token, 🎯 Apply Standards and
 signed commits, are in the standards'
@@ -102,11 +102,11 @@ python3 .github/scripts/profile-coverage.py
 - **`check-vault.py`** runs every vault check, so your machine sees what 🧠 Vault sees.
 - **`profile-coverage.py`** scores each of the twelve Profile facets and names the one to ask about
   next. Every facet starts as a blank scaffold.
-- **Fill `Profile/` with the `human-resources` skill.** Its profile interview reads that report,
-  interviews you about one facet at a time, and writes only the proposals you approve; it opens
-  Health, Finances, Values and Relationships only when you choose to. It starts with
-  `Profile/Working Style.md`, which the report names first while it is blank, and which says how
-  you want to be helped.
+- **Fill `Profile/` with the profile interview.** Ask an AI assistant to run the interview
+  `Profile/README.md` describes: it reads that report, interviews you about one facet at a time,
+  and writes only the proposals you approve; it opens Health, Finances, Values and Relationships
+  only when you choose to. It starts with `Profile/Working Style.md`, which the report names first
+  while it is blank, and which says how you want to be helped.
 - **Drop files into `Inbox/`** to have them sorted into the vault, with your yes for each move.
 - **Turn on an offline reference work** if you want one:
   `Library/Reference & Encyclopedia/README.md` lists the sources, every one off at first.

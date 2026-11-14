@@ -23,7 +23,7 @@ _Nothing leaves [Company] for the press without a yes._
 
 ## 📂 What Goes Here
 
-The public voice of [Company]: what it says, to whom and when, and how it answers in a crisis. The `public-relations` skill's company work lands here: announcements, press and crises. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
+The public voice of [Company]: what it says, to whom and when, and how it answers in a crisis. The company's public relations work lands here: announcements, press and crises. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Press.md`: the messaging house and the spokesperson lines, the press kit, the public log of every statement released, the communications plans, the crisis plan, the media relationships and the coverage.
 - Working files: press releases and other drafts marked DRAFT, NOT FOR RELEASE, communications plans, live crisis responses with their update logs, interview briefings, and the press kit's assets, each named for what it covers and its date (`Press Release YYYY-MM-DD.md`).
@@ -32,7 +32,7 @@ The public voice of [Company]: what it says, to whom and when, and how it answer
 
 ## ↪️ What Goes Elsewhere
 
-- Positioning and the brand voice live in `Sales & Marketing (S&M)/Brand.md`, and the campaign around a launch is the `sales-and-marketing` skill's; customer communication belongs to `Customer Experience (CX)/`.
+- Positioning and the brand voice live in `Sales & Marketing (S&M)/Brand.md`, and the campaign around a launch is Sales & Marketing's; customer communication belongs to `Customer Experience (CX)/`.
 - Whether [Company] speaks at all on a company-level matter is decided in `Administration/Decisions.md`, and an agency's cost and contract are in the vendor register in `Operations & Logistics (O&L)/Operations.md`.
 
 ---
@@ -41,7 +41,7 @@ The public voice of [Company]: what it says, to whom and when, and how it answer
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
 - A statement enters the public log only after the owner confirms it went out, and what [Company] says publicly follows the voice in `Sales & Marketing (S&M)/Brand.md` and squares with that log.
-- A statement that names a person or discloses anyone's personal data passes the `legal-and-compliance` skill's review first.
+- A statement that names a person or discloses anyone's personal data passes Legal & Compliance's review first.
 - A reporter's contact details stay in [Company]'s own systems: `Press.md` names each reporter and where their details are kept, never the details.
 
 ---

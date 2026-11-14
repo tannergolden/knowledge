@@ -97,9 +97,9 @@ such as a venture's or a project's, whose copy becomes that folder's `index`. A 
 ### Fields Of A Kind
 
 A record or a template may add the fields its own kind needs, defined once in its template and
-documented where that kind is defined: an idea record's lineage `id`, `lifecycle` and scores, or a
-research report's `review_by` date, both the `research-and-development` skill's. Such a field lives
-only on its kind and is never added to this page.
+documented where that kind is defined: an idea record's lineage `id`, `lifecycle` and scores
+(`Inbox/Ideas/README.md`), or a research report's `review_by` date (`Inbox/Research/README.md`).
+Such a field lives only on its kind and is never added to this page.
 
 ### No Per-File Versions
 

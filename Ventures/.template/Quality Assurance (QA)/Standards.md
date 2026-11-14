@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the tool the company tracks defects in]", "[the main kind of work the company checks]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Quality Assurance (QA)/Standards.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "standard"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". The quality-assurance skill keeps it. Every clause of a definition of done is a check a stranger could run, agreed with the department that makes the work, and one the whole company holds itself to is accepted by the owner. A verdict comes from someone who did not make the work, and personal data met in a check is cited by where it lives, never copied. Scale it to the stage: at found, a check of what is load-bearing or goes outside; the definitions of done, the test plans and the defect log join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Quality Assurance (QA)/Standards.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "standard"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Quality Assurance keeps it. Every clause of a definition of done is a check a stranger could run, agreed with the department that makes the work, and one the whole company holds itself to is accepted by the owner. A verdict comes from someone who did not make the work, and personal data met in a check is cited by where it lives, never copied. Scale it to the stage: at found, a check of what is load-bearing or goes outside; the definitions of done, the test plans and the defect log join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # ✅ [Company] - QA Standards
 
@@ -61,7 +61,7 @@ keywords: ["[the tool the company tracks defects in]", "[the main kind of work t
 | Integration | | | |
 | End to end | | | |
 | Performance | | | |
-| Security | | | [reviewed by the `information-technology` skill] |
+| Security | | | [reviewed by Information Technology] |
 
 ---
 
