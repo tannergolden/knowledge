@@ -108,6 +108,9 @@
 # the document templates. Once a sync has written any of them, it redraws the
 # catalog and every generated block from the vault's own notes with:
 # redraw: python3 .github/scripts/update-vault.py
+# The rows of those blocks, between brain: markers, are the vault's own, so no
+# sync merges them:
+# drawn blocks: brain
 /.docs/distribution/How-A-Change-Reaches-A-Vault.md
 /.docs/introduction/How-The-Vault-Works.md
 /.docs/introduction/Setting-Up-A-Vault.md

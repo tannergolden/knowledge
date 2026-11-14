@@ -53,7 +53,10 @@ file the template changed that the vault's list keeps current arrives as one pul
 `chore/template-sync`, merged with the owner's own changes. Before it opens, the sync redraws the
 catalog and every generated block with `update-vault.py`, which the list names in its
 `# redraw:` note, since a synced README changes what they show: the pull request arrives with the
-vault's generated parts current, so its checks pass. A vault never follows a new major until
+vault's generated parts current, so its checks pass. The rows inside those blocks are the vault's
+own, drawn from its notes, and the list's `# drawn blocks: brain` note keeps the sync from merging
+them: a release that rewords a line in or beside a block never conflicts with a vault that has
+entries in it. A vault never follows a new major until
 its owner changes `ref:` in its stub. This template's own stub names `v1` for itself, the major of
 tannergolden/path it derives from.
 
