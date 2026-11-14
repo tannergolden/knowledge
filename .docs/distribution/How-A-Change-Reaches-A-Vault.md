@@ -50,7 +50,10 @@ one in full in its stub's `ref:` still finds it; tannergolden/intelligence no lo
 follows the major its stub's `ref:` names: `v2` for a vault
 generated since v2.0.0, `v1` for one generated before. When its owner runs 🔄 Template Sync, every
 file the template changed that the vault's list keeps current arrives as one pull request on
-`chore/template-sync`, merged with the owner's own changes. A vault never follows a new major until
+`chore/template-sync`, merged with the owner's own changes. Before it opens, the sync redraws the
+catalog and every generated block with `update-vault.py`, which the list names in its
+`# redraw:` note, since a synced README changes what they show: the pull request arrives with the
+vault's generated parts current, so its checks pass. A vault never follows a new major until
 its owner changes `ref:` in its stub. This template's own stub names `v1` for itself, the major of
 tannergolden/path it derives from.
 
@@ -59,8 +62,10 @@ tannergolden/path it derives from.
 🔁 Intelligence Sync, and every vault's, proposes the hub's latest release as a pull request on
 `chore/intelligence`, and leaves the rest of the file alone. Everything below the block, the rules
 every AI follows in a personal knowledge vault, reaches a vault by the second hop, like any file its
-list keeps current, merged with what its owner added. The block arrives by both roads, and a pull
-request that brings a block the vault already has changes nothing in it.
+list keeps current, merged with what its owner added. The sections tannergolden/path keeps in
+`AGENTS.md`, between `TEMPLATE-SYNC` markers, come with them: the list names the file
+`# kept whole:`, so a vault takes every rule in it, never those sections alone. The block arrives by
+both roads, and a pull request that brings a block the vault already has changes nothing in it.
 
 ---
 

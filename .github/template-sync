@@ -105,7 +105,9 @@
 # --- The vault: kept current --------------------------------------------------
 # This template's own files. Every vault generated from it keeps them current:
 # the scripts, the root README.md, each folder's README.md, the scaffolds and
-# the document templates.
+# the document templates. Once a sync has written any of them, it redraws the
+# catalog and every generated block from the vault's own notes with:
+# redraw: python3 .github/scripts/update-vault.py
 /.docs/distribution/How-A-Change-Reaches-A-Vault.md
 /.docs/introduction/How-The-Vault-Works.md
 /.docs/introduction/Setting-Up-A-Vault.md
@@ -148,6 +150,9 @@
 /.github/scripts/vault.py
 /.github/workflows/vault.yml
 /.typos.toml
+# AGENTS.md is this template's whole, the sections tannergolden/path keeps in
+# it included, so a vault takes every rule in it, not those sections alone:
+# kept whole: /AGENTS.md
 /AGENTS.md
 /Inbox/Ideas/README.md
 /Inbox/README.md
