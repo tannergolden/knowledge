@@ -61,6 +61,11 @@ DATED_ENTRIES = {
     'Memory/Insights': (re.compile(r'^\d{4}-\d{2}-'), 'YYYY-MM-slug.md'),
     'Memory/Events': (re.compile(r'^\d{4}-\d{2}-\d{2}-'), 'YYYY-MM-DD-slug.md'),
 }
+# The Log's entries, the one body a generator reads (update-vault.py draws the Open Loops view from
+# them): an entry's heading, its importance, and a line that reads as an open thread.
+LOG_HEADING = re.compile(r'^### \d{4}-\d{2}-\d{2} - \S')
+IMPORTANCE = re.compile(r'^\s*(?:[-*+]\s+)?(?:\*\*)?Importance:(?:\*\*)?\s*(.*?)\s*$')
+STATUS_LIKE = re.compile(r'(?i)^\s*(?:[-*+]\s+)?[*_]{0,2}Status[*_]{0,2}\s*:\s*[*_]{0,2}\s*Open\b')
 # A generated list links each entry by its name, and a wikilink reads # as a heading, | as an
 # alias, ^ as a block and a bracket as its own end.
 UNLINKABLE = re.compile(r'[#|\[\]^]')
@@ -99,6 +104,25 @@ def check_fields(fields: dict[str, object], template: bool, problems: list[str])
                     problems.append(f"keyword '{word}' is not lowercase")
             if len(set(words)) != len(words):
                 problems.append('a keyword appears twice')
+
+
+def check_log(text: str) -> list[str]:
+    """The problems with the Log's entries. update-vault.py lists an open thread only where it can
+    read one, so a heading or a status line that is nearly right would drop a thread without a word."""
+    problems = []
+    for number, entry in vault.log_entries(text):
+        if not LOG_HEADING.match(entry[0]):
+            problems.append(f'line {number}: a Log entry is headed `### YYYY-MM-DD - Title`, the form the Open Loops '
+                            f'view reads its date from (Memory/Log.md); this one reads `{entry[0].strip()}`')
+        for offset, line in enumerate(entry[1:], 1):
+            rated = IMPORTANCE.match(line)
+            if rated and not re.fullmatch(r'[1-5]', rated.group(1)):
+                problems.append(f'line {number + offset}: importance is one number from 1 to 5 (Memory/README.md, '
+                                f'Operations); this line reads `{line.strip()}`')
+            if STATUS_LIKE.match(line) and not vault.STATUS_OPEN.match(line):
+                problems.append(f'line {number + offset}: an open thread is marked `**Status:** Open`, the one form '
+                                f'the Open Loops view reads, so this one would be left out; it reads `{line.strip()}`')
+    return problems
 
 
 def check_note(root: pathlib.Path, path: pathlib.Path) -> list[str]:
@@ -141,6 +165,8 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> list[str]:
         problems.append("a folder's README.md is a page: it opens with the centered header (its H1 and "
                         '<a name="top"></a> in a <div align="center">) and closes with the footer that links '
                         'back to it (Note-Schema.md)')
+    if '/'.join(parts) == vault.LOG:
+        problems.extend(check_log(text))
     fields = vault.parse_frontmatter(text)
     if fields is None:
         if text.strip():

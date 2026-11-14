@@ -564,6 +564,29 @@ def inbox_drops(root: pathlib.Path) -> list[pathlib.Path]:
     return out
 
 
+# ── The Log ──
+#
+# Memory/Log.md is the one note whose entries a generator reads: update-vault.py draws the Open
+# Loops view from them. The forms live here, so the generator and the linter that holds the Log
+# to them cannot disagree about what an entry is.
+
+LOG_ENTRIES = '## Log Entries'
+# The line that keeps a thread open, as Memory/Log.md shows it, with or without a list marker.
+STATUS_OPEN = re.compile(r'(?im)^\s*(?:[-*+]\s+)?\*\*Status:\*\*\s*Open\b')
+
+
+def log_entries(text: str) -> list[tuple[int, list[str]]]:
+    """Each entry under the Log's Log Entries heading: the number of the line its ### heading sits
+    on, and its lines, the heading first. A level-two heading ends the section."""
+    lines = text.split('\n')
+    head = next((i for i, line in enumerate(lines) if line.strip() == LOG_ENTRIES), None)
+    if head is None:
+        return []
+    end = next((i for i in range(head + 1, len(lines)) if lines[i].startswith('## ')), len(lines))
+    starts = [i for i in range(head + 1, end) if lines[i].startswith('### ')]
+    return [(start + 1, lines[start:stop]) for start, stop in zip(starts, starts[1:] + [end])]
+
+
 # ── git ──
 
 def git_paths(root: pathlib.Path, *args: str) -> list[str] | None:

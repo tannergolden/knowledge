@@ -38,7 +38,6 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import vault  # noqa: E402  (vault.py sits beside this file)
 
 CATALOG_FIELDS = ('path', 'title', 'type', 'keywords', 'description', 'status')
-STATUS_OPEN = re.compile(r'(?im)^\s*\*\*Status:\*\*\s*Open\b')
 LOG_HEADING = re.compile(r'###\s+(\S+)\s+-\s+(.+)')
 
 
@@ -120,24 +119,12 @@ def link_list(folder: str, entries: list[pathlib.Path], empty: str) -> str:
 
 def open_loops(text: str) -> str:
     """The Open Loops view: every Log entry still marked **Status:** Open."""
-    lines = text.split('\n')
-    head = next((i for i, line in enumerate(lines) if line.strip() == '## Log Entries'), None)
     loops = []
-    if head is not None:
-        end = next((i for i in range(head + 1, len(lines)) if lines[i].startswith('## ')), len(lines))
-        j = head + 1
-        while j < end:
-            if not lines[j].startswith('### '):
-                j += 1
-                continue
-            k = j + 1
-            while k < end and not lines[k].startswith('### '):
-                k += 1
-            if STATUS_OPEN.search('\n'.join(lines[j:k])):
-                match = LOG_HEADING.match(lines[j])
-                title, date = (match.group(2).strip(), match.group(1)) if match else (lines[j][4:].strip(), '')
-                loops.append(f'- {title}  (opened {date})')
-            j = k
+    for _line, entry in vault.log_entries(text):
+        if vault.STATUS_OPEN.search('\n'.join(entry)):
+            match = LOG_HEADING.match(entry[0])
+            title, date = (match.group(2).strip(), match.group(1)) if match else (entry[0][4:].strip(), '')
+            loops.append(f'- {title}  (opened {date})')
     return '\n'.join(loops) if loops else '_No open loops._'
 
 

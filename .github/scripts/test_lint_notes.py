@@ -189,6 +189,51 @@ class TestLintNotes(unittest.TestCase):
         self.assertIn('Projects/Reading/Notes [draft].md: the file name holds [ ], which a wikilink cannot carry', result.stdout)
         self.assertNotIn('AT&T', result.stdout)
 
+    LOG = ('# Log\n\n## Log Entries\n\n{entries}\n## Open Loops\n\n### Not an entry, outside the section\n\n'
+           'Status: Open\n')
+
+    def log(self, entries: str):
+        self.vault.note('Memory/Log.md', body=self.LOG.format(entries=entries), type='record')
+        return self.lint()
+
+    def test_a_log_entry_the_open_loops_view_can_read_passes(self) -> None:
+        result = self.log('### 2026-01-03 - Renew the passport\n\nThe status of the open house came up too.\n'
+                          'Importance: 3\n**Status:** Open\n\n'
+                          '### 2026-01-02 - Call the bank\n\n- Importance: 5\n- **Status:** Open\n\n'
+                          '### 2026-01-01 - Done thing\n\n**Importance:** 1\n**Status:** Resolved (2026-01-03)\n')
+        self.assertEqual(result.returncode, 0, result.stdout)
+
+    def test_a_log_heading_without_its_date_is_flagged(self) -> None:
+        result = self.log('### November 8 - A free-form date\n\n### 2026-01-02 Call the bank\n\n### 2026-01-01 - Fine\n')
+        self.assertEqual(result.returncode, 1)
+        # Lines are counted in the file as written, its frontmatter included.
+        self.assertIn('Memory/Log.md: line 11: a Log entry is headed `### YYYY-MM-DD - Title`', result.stdout)
+        self.assertIn('this one reads `### 2026-01-02 Call the bank`', result.stdout)
+        self.assertIn('2 problems.', result.stderr)
+
+    def test_importance_is_one_number_from_one_to_five(self) -> None:
+        result = self.log('### 2026-01-03 - One\n\nImportance: 11\n\n### 2026-01-02 - Two\n\n- Importance: high\n\n'
+                          '### 2026-01-01 - Three\n\nImportance: 0\n')
+        self.assertEqual(result.returncode, 1)
+        for line, value in ((13, 'Importance: 11'), (17, '- Importance: high'), (21, 'Importance: 0')):
+            self.assertIn(f'Memory/Log.md: line {line}: importance is one number from 1 to 5', result.stdout)
+            self.assertIn(f'this line reads `{value}`', result.stdout)
+        self.assertIn('3 problems.', result.stderr)
+
+    def test_a_status_line_the_open_loops_view_would_miss_is_flagged(self) -> None:
+        # Each of these reads as an open thread to a person and as nothing to update-vault.py.
+        result = self.log('### 2026-01-03 - One\n\n**Status**: Open\n\n### 2026-01-02 - Two\n\nStatus: Open\n\n'
+                          '### 2026-01-01 - Three\n\n- *Status:* open, waiting on the bank\n')
+        self.assertEqual(result.returncode, 1)
+        for line in (13, 17, 21):
+            self.assertIn(f'Memory/Log.md: line {line}: an open thread is marked `**Status:** Open`', result.stdout)
+        self.assertIn('3 problems.', result.stderr)
+
+    def test_only_the_memory_log_is_held_to_the_form(self) -> None:
+        self.vault.note('Projects/Site/Log.md', body='# Log\n\n## Log Entries\n\n### Sometime - Free\n\nStatus: Open\n',
+                        type='record')
+        self.assertEqual(self.lint().returncode, 0, self.lint().stdout)
+
     def test_only_githubs_five_callouts(self) -> None:
         self.vault.note('Memory/Log.md', body='# Log\n\n> [!NOTE]\n> **Kept.**\n> Fine.\n\n'
                         '```markdown\n> [!tip] An example, inside code\n```\n')

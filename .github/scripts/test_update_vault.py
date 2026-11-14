@@ -119,6 +119,17 @@ class TestBlocks(Base):
         self.update()
         self.assertIn(drawn('open-loops', '- Call the bank  (opened 2026-01-02)'), self.vault.read('Memory/Log.md'))
 
+    def test_an_open_thread_written_as_a_list_item_stays_open(self) -> None:
+        # The other scaffolds write their fields as list items, so a status line arrives that way too.
+        log = self.vault.read('Memory/Log.md') + (
+            '### 2026-01-03 - Renew the passport\n\n- Importance: 3\n- **Status:** Open\n\n'
+            '### 2026-01-02 - Call the bank\n\n* **Status:** Open\n\n'
+            '### 2026-01-01 - Done thing\n\n- **Status:** Resolved (2026-01-03)\n')
+        self.vault.write('Memory/Log.md', log)
+        self.update()
+        self.assertIn(drawn('open-loops', '- Renew the passport  (opened 2026-01-03)\n- Call the bank  (opened 2026-01-02)'),
+                      self.vault.read('Memory/Log.md'))
+
     def test_children_only_where_a_folders_readme_asks(self) -> None:
         self.vault.note('Library/Arts/README.md', body='# Arts\n\n' + block('children'))
         self.vault.note('Library/Arts/Painting/README.md')

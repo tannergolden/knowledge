@@ -88,6 +88,12 @@ any other name would read as the newest at every start. An entry in `Memory/Deci
 `Memory/Insights/` leads with `YYYY-MM-`, and one in `Memory/Events/` with `YYYY-MM-DD-`. No note's
 name holds `#`, a pipe, a square bracket or `^`, which a wikilink cannot carry.
 
+It holds `Memory/Log.md` to the form the Open Loops view reads, the one body a generator draws
+from: each entry headed `### YYYY-MM-DD - Title`, an `Importance:` line holding one number from 1 to
+5, and an open thread marked `**Status:** Open`, on a line of its own or as a list item. A status
+line that is nearly right, such as `Status: Open`, is an error, where it used to be a thread left
+out of the view without a word.
+
 A loose file waiting at the `Inbox/` root is not a note yet. `lint-notes.py`, `check-links.py` and
 the catalog pass it by until it is sorted, so leaving a file there keeps the checks green. The scan
 for personal numbers and the check for ignored files still read it: a waiting file can hold a
@@ -163,6 +169,9 @@ Each finding names its file and says what to change. The common ones:
 | `a session summary is named YYYYMMDD-HHMMSS.md`                | Rename it for the time it was filed, then run `update-vault.py`, which lists it and moves the oldest down                                  |
 | `an entry here is named`                                       | Rename the entry so it leads with its date, as its collection's `README.md` shows                                                          |
 | `which a wikilink cannot carry`                                | Rename the note without the character named: a generated list links each entry by its name                                                 |
+| `a Log entry is headed`                                        | Write the entry's heading as `### YYYY-MM-DD - Title`                                                                                      |
+| `an open thread is marked`                                     | Write the line as `**Status:** Open`, then run `update-vault.py`, which lists the thread under Open Loops                                  |
+| `importance is one number from 1 to 5`                         | Write `Importance: N`, with 1 for routine, 3 for significant and 5 for pivotal                                                             |
 | `looks like a Social Security number`, `a payment card number` | Replace the value with a pointer to where it lives; a reviewed false positive takes `pii-allow` in a comment on its line                   |
 | `git ignores it`                                               | Rename or move the file so the rule no longer matches it; or, when it is ignored on purpose, name it in a `.gitignore` in its own folder   |
 | `has no <!-- brain:NAME --> block`                             | Put the block's start and end markers back in the note                                                                                     |
