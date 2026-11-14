@@ -105,6 +105,19 @@ def reader():
     return Archive, Query, Searcher, SuggestionSearcher
 
 
+def hits(found, limit: int) -> list[str]:
+    """The paths of a search's first results, by whichever name this libzim gives the call."""
+    # libzim 4 renamed getResults to get_results, and hands back each full-text result as an object
+    # carrying its path, where libzim 3 handed back the path itself.
+    fetch = getattr(found, 'get_results', None) or getattr(found, 'getResults', None)
+    if fetch is None:
+        # Read as an empty result, this would say that every search finds nothing.
+        raise Problem(f'this libzim answers a search in a way knowledge-base.py does not know ({type(found).__name__} has '
+                      'neither get_results nor getResults), so nothing was searched; install libzim 3 or 4: '
+                      'python3 -m pip install --user "libzim>=3,<5"')
+    return [str(getattr(hit, 'path', hit)) for hit in fetch(0, limit)]
+
+
 def plain_text(archive, path: str) -> str:
     """An article's text: styles and scripts dropped, block ends kept as line breaks, entities decoded."""
     try:
@@ -156,7 +169,7 @@ def search(root: pathlib.Path, query: str, limit: int = RESULTS) -> int:
         # Titles first, so the article named like the query leads its relatives.
         if SuggestionSearcher is not None:
             try:
-                for path in SuggestionSearcher(archive).suggest(query).getResults(0, limit):
+                for path in hits(SuggestionSearcher(archive).suggest(query), limit):
                     try:
                         title = str(archive.get_entry_by_path(path).title)
                     except Exception:  # noqa: BLE001
@@ -168,13 +181,17 @@ def search(root: pathlib.Path, query: str, limit: int = RESULTS) -> int:
                         continue
                     seen.add(path)
                     results.append((label(zim), path, archive))
+            except Problem:
+                raise
             except Exception:  # noqa: BLE001
                 pass
         try:
-            for path in Searcher(archive).search(Query().set_query(query)).getResults(0, limit):
+            for path in hits(Searcher(archive).search(Query().set_query(query)), limit):
                 if path not in seen:
                     seen.add(path)
                     results.append((label(zim), path, archive))
+        except Problem:
+            raise
         except Exception:  # noqa: BLE001
             continue
     if not results:
@@ -214,8 +231,10 @@ def read(root: pathlib.Path, article: str, chars: int) -> int:
         except Exception:  # noqa: BLE001
             if SuggestionSearcher is not None:
                 try:
-                    hits = list(SuggestionSearcher(archive).suggest(article).getResults(0, 1))
-                    path = hits[0] if hits else None
+                    found = hits(SuggestionSearcher(archive).suggest(article), 1)
+                    path = found[0] if found else None
+                except Problem:
+                    raise
                 except Exception:  # noqa: BLE001
                     path = None
         if not path:

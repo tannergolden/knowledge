@@ -6,7 +6,10 @@ source list, so the parts that decide what it downloads and installs must be
 right without anyone watching: which build is newest, whether a download
 matches its checksum, which names are safe to turn into files, and that a
 broken source list stops it instead of being replaced. These run without the
-network and without libzim, which CI has neither of.
+network and without libzim, which CI has neither of. Search and read are run
+against stand-ins for libzim, under both generations of its calls, since
+nothing else runs them where libzim is absent: when libzim 4 renamed those
+calls, every search found nothing and no test said so.
 
 Run it:
 
@@ -15,8 +18,10 @@ Run it:
 
 from __future__ import annotations
 
+import contextlib
 import hashlib
 import importlib.util
+import io
 import json
 import pathlib
 import sys
@@ -159,6 +164,113 @@ class TestKnowledgeBase(unittest.TestCase):
             self.assertTrue(source['base'].startswith('https://') and source['base'].endswith('/'), source['base'])
         simple = next(s for s in data['sources'] if s['name'] == 'wikipedia-simple')
         self.assertEqual(simple['prefix'], 'wikipedia_en-simple_all_nopic')
+
+
+ARTICLES = {'Lisbon': '<p>Trams climb the hills of Lisbon.</p>', 'Porto': '<p>Port wine ages in cellars by the river.</p>'}
+
+
+def stand_ins(generation: int):
+    """libzim's classes as one generation names their calls: 3 says getResults and hands back paths, 4 says
+    get_results and hands back each full-text result as an object carrying its path."""
+
+    class Entry:
+        def __init__(self, path: str) -> None:
+            self.title, self.content = path, ARTICLES[path].encode()
+
+        def get_item(self) -> Entry:
+            return self
+
+    class Archive:
+        def __init__(self, path: str) -> None:
+            self.path = path
+
+        def get_entry_by_path(self, path: str) -> Entry:
+            return Entry(path)
+
+    class Hit:
+        def __init__(self, path: str) -> None:
+            self.path = path
+
+    class Found:
+        def __init__(self, paths: list[str], whole: bool) -> None:
+            self.paths, self.whole = paths, whole
+
+    def fetch(self: Found, start: int, count: int) -> list:
+        paths = self.paths[start:start + count]
+        return [Hit(path) for path in paths] if self.whole and generation >= 4 else paths
+
+    # A generation nobody has met yet is played by a call under a third name.
+    setattr(Found, {3: 'getResults', 4: 'get_results'}.get(generation, 'results'), fetch)
+
+    class Query:
+        def set_query(self, text: str) -> Query:
+            self.text = text
+            return self
+
+    class Searcher:
+        def __init__(self, archive: Archive) -> None:
+            self.archive = archive
+
+        def search(self, query: Query) -> Found:
+            return Found([path for path, body in ARTICLES.items() if query.text.lower() in body.lower()], whole=True)
+
+    class SuggestionSearcher:
+        def __init__(self, archive: Archive) -> None:
+            self.archive = archive
+
+        def suggest(self, text: str) -> Found:
+            return Found([path for path in ARTICLES if path.lower().startswith(text.lower())], whole=False)
+
+    return Archive, Query, Searcher, SuggestionSearcher
+
+
+class TestSearchAndRead(unittest.TestCase):
+    def setUp(self) -> None:
+        self.vault = fixtures.Vault()
+        self.vault.write('Library/Reference & Encyclopedia/wikivoyage_2026-09.zim', 'not really')
+        self.reader = kb.reader
+
+    def tearDown(self) -> None:
+        kb.reader = self.reader
+        self.vault.cleanup()
+
+    def run_with(self, generation: int, call, *args) -> tuple[int, str, str]:
+        kb.reader = lambda: stand_ins(generation)
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = call(*args)
+        return code, out.getvalue(), err.getvalue()
+
+    def test_search_finds_articles_under_either_libzim(self) -> None:
+        for generation in (3, 4):
+            # By the start of a title, then by a word only the text holds.
+            code, out, _ = self.run_with(generation, kb.search, self.vault.root, 'lisb')
+            self.assertEqual(code, 0, generation)
+            self.assertIn('- Lisbon  [wikivoyage]', out, generation)
+            code, out, _ = self.run_with(generation, kb.search, self.vault.root, 'cellars')
+            self.assertEqual(code, 0, generation)
+            self.assertIn('- Porto  [wikivoyage]', out, generation)
+            self.assertIn('Port wine ages in cellars by the river.', out, generation)
+
+    def test_read_follows_a_title_that_is_not_exact(self) -> None:
+        for generation in (3, 4):
+            code, out, _ = self.run_with(generation, kb.read, self.vault.root, 'lisb', 6000)
+            self.assertEqual(code, 0, generation)
+            self.assertIn('Trams climb the hills of Lisbon.', out, generation)
+            self.assertIn('Cite as: wikivoyage, article "Lisbon"', out, generation)
+
+    def test_a_search_that_matches_nothing_says_so(self) -> None:
+        code, out, _ = self.run_with(4, kb.search, self.vault.root, 'glacier')
+        self.assertEqual(code, 0)
+        self.assertIn('No matches for: glacier', out)
+
+    def test_a_libzim_that_answers_another_way_is_a_problem_not_an_empty_result(self) -> None:
+        for command in (['search', 'lisb'], ['read', 'lisb']):
+            code, out, err = self.run_with(5, kb.main, ['--root', str(self.vault.root), *command])
+            self.assertEqual(code, 1, command)
+            self.assertIn('has neither get_results nor getResults', err, command)
+            self.assertNotIn('No matches', out, command)
+            self.assertNotIn('No article matching', err, command)
 
 
 if __name__ == '__main__':
