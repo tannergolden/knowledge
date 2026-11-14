@@ -74,6 +74,27 @@ third_party/**  linguist-vendored=true
 # Documentation should not be counted as the project's language.
 docs/**  linguist-documentation=true
 
+# --- BRAIN Vault: what waits at the Inbox ------------------------------------
+#
+# A file dropped at the Inbox waits there exactly as it arrived until it is
+# sorted (Inbox/README.md): an export in another encoding, a note with no
+# frontmatter yet, a line that ends in spaces. Git keeps it byte for byte, and
+# the repository validator, which reads only what git treats as text, leaves
+# it alone; .typos.toml leaves it out of the spell check the same way. The
+# Inbox's own README.md and the folders it keeps are vault content like any
+# other, so they take the default back, and what is left is exactly what
+# .github/scripts/vault.py calls a drop. This sits above the binary rules on
+# purpose: a PDF or an image in a kept folder stays binary.
+/Inbox/**            -text
+/Inbox/README.md     text=auto
+/Inbox/Backups/**    text=auto
+/Inbox/Ideas/**      text=auto
+/Inbox/Reports/**    text=auto
+/Inbox/Research/**   text=auto
+/Inbox/Visuals/**    text=auto
+/Inbox/**/.*         text=auto
+/Inbox/.*/**         text=auto
+
 # --- Binary ------------------------------------------------------------------
 #
 # Marked explicitly so Git never attempts a text diff or a line-ending

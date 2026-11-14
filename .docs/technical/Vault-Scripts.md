@@ -105,6 +105,11 @@ the catalog pass it by until it is sorted, so leaving a file there keeps the che
 for personal numbers and the check for ignored files still read it: a waiting file can hold a
 number, or be hidden from git, like any other.
 
+The checks CI inherits leave it alone the same way. `.gitattributes` marks a waiting file `-text`,
+so git keeps it byte for byte and `validate-repository.py` does not read it as text, and
+`.typos.toml` leaves it out of the spell check. The standards' frontmatter check does not read that
+mark yet, so a waiting `.md` file with no frontmatter still fails it once it is pushed.
+
 ---
 
 ## 📦 What update-vault.py Draws

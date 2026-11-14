@@ -17,14 +17,17 @@ Run it:
 from __future__ import annotations
 
 import ast
+import importlib.util
 import pathlib
 import re
+import shutil
 import sys
 import unittest
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import fixtures  # noqa: E402
+import vault  # noqa: E402
 
 SCRIPT = 'check-vault.py'
 ROOT = fixtures.SCRIPTS.parents[1]
@@ -78,6 +81,92 @@ class TestCheckVault(unittest.TestCase):
         result = fixtures.subprocess.run([sys.executable, str(fixtures.SCRIPTS / SCRIPT)],
                                          capture_output=True, text=True, check=False)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+
+# One of each kind of file the audit found turning CI red while it waited at the Inbox: a note with no
+# frontmatter, a PDF, an export in Latin-1, JSON lines saved under .json, a line ending in a space, and
+# a file inside a folder dropped there whole.
+DROPS = {
+    'Inbox/call notes.md': b'# Notes from the call\n\nTeh quote is due Friday.\n',
+    'Inbox/receipt.pdf': b'%PDF-1.4\n%\xe2\xe3\xcf\xd3\n1 0 obj\n<<>>\nendobj\ntrailer\n<<>>\n%%EOF\n',
+    'Inbox/export.csv': 'date,payee,amount\n2026-11-02,Caf\xe9 Luz,4.50\n'.encode('latin-1'),
+    'Inbox/activity.json': b'{"when": "2026-11-10", "what": "regatta"}\n{"when": "2026-11-12", "what": "call"}\n',
+    'Inbox/todo.txt': b'buy tile samples \ncall teh plumber\n',
+    'Inbox/scans/page 1.txt': b'scanned \n',
+}
+
+
+class TestTheInheritedChecksLeaveTheInboxAlone(unittest.TestCase):
+    """CI runs checks the vault inherits, which know nothing of the Inbox. .gitattributes and
+    .typos.toml tell them which files wait there, and must name exactly the files vault.py does."""
+
+    def setUp(self) -> None:
+        self.vault = fixtures.Vault()
+        shutil.copy(ROOT / '.gitattributes', self.vault.path('.gitattributes'))
+        shutil.copy(ROOT / '.typos.toml', self.vault.path('.typos.toml'))
+        for rel, data in DROPS.items():
+            self.vault.path(rel).parent.mkdir(parents=True, exist_ok=True)
+            self.vault.path(rel).write_bytes(data)
+        self.vault.note('Inbox/README.md')
+
+    def tearDown(self) -> None:
+        self.vault.cleanup()
+
+    def test_git_keeps_exactly_the_drops_byte_for_byte(self) -> None:
+        kept = ['Inbox/README.md', 'Inbox/.keep', 'Inbox/.cache/state.txt']
+        for held in sorted(vault.INBOX_HELD):
+            kept += [f'Inbox/{held}/Kitchen Costs.md', f'Inbox/{held}/Floor Plan.pdf']
+        for rel in kept[1:]:
+            self.vault.write(rel, 'x\n')
+        self.vault.init_git()
+        drops = {p.relative_to(self.vault.root).as_posix() for p in vault.inbox_drops(self.vault.root)}
+        self.assertEqual(drops, set(DROPS))
+        listing = fixtures.subprocess.run(['git', '-C', str(self.vault.root), 'check-attr', '-z', '--stdin', 'text'],
+                                          input='\0'.join([*DROPS, *kept]) + '\0', capture_output=True,
+                                          text=True, check=True).stdout.split('\0')
+        text = {listing[i]: listing[i + 2] for i in range(0, len(listing) - 2, 3)}
+        for rel in DROPS:
+            self.assertEqual(text[rel], 'unset', f'{rel} waits at the Inbox, so git keeps it as it arrived')
+        for rel in kept:
+            # A kept folder's note takes the default back; its PDF stays binary, as anywhere else.
+            want = 'unset' if rel.endswith('.pdf') else 'auto'
+            self.assertEqual(text[rel], want, f'{rel} is not a drop')
+
+    @unittest.skipUnless(importlib.util.find_spec('yaml'), 'the repository validator needs PyYAML')
+    def test_the_repository_validator_passes_the_drops_and_still_reads_the_kept_folders(self) -> None:
+        # The validator checks the repository it sits in, so a copy of it checks this one.
+        validator = self.vault.path('.github/scripts/validate-repository.py')
+        validator.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(fixtures.SCRIPTS / 'validate-repository.py', validator)
+        # A kept note with a fault the validator catches in any file, so it shows the note is still read.
+        self.vault.write('Inbox/Research/Kitchen Costs.md', '# Kitchen Costs')
+        self.vault.init_git()
+        result = fixtures.subprocess.run([sys.executable, str(validator)], cwd=self.vault.root,
+                                         capture_output=True, text=True, check=False)
+        output = result.stdout + result.stderr
+        self.assertEqual(result.returncode, 1, output)
+        self.assertIn('Inbox/Research/Kitchen Costs.md', output)
+        self.assertIn('1 problem', output)
+        for rel in DROPS:
+            self.assertNotIn(rel, output)
+
+    def test_the_spell_check_leaves_out_exactly_the_drops(self) -> None:
+        listed = re.search(r'(?ms)^extend-exclude = \[(.*?)^\]', (ROOT / '.typos.toml').read_text(encoding='utf-8'))
+        self.assertIsNotNone(listed, '.typos.toml has no extend-exclude list')
+        patterns = re.findall(r'"([^"]+)"', listed.group(1))
+        self.assertEqual(patterns[0], '/Inbox/*')
+        self.assertEqual(set(patterns[1:]), {'!/Inbox/README.md'} | {f'!/Inbox/{held}/' for held in vault.INBOX_HELD})
+        typos = shutil.which('typos')
+        if typos is None:
+            return
+        # Where the spell checker is installed, run it: a drop is left as it is, a kept note is read.
+        self.vault.write('Inbox/Research/Kitchen Costs.md', '# Kitchen Costs\n\nTeh tiles cost more.\n')
+        self.vault.init_git()
+        result = fixtures.subprocess.run([typos, '--format', 'brief', '.'], cwd=self.vault.root,
+                                         capture_output=True, text=True, check=False)
+        self.assertIn('Inbox/Research/Kitchen Costs.md', result.stdout, result.stdout + result.stderr)
+        for rel in DROPS:
+            self.assertNotIn(rel, result.stdout)
 
 
 class TestWiring(unittest.TestCase):

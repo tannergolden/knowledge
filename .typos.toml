@@ -10,3 +10,19 @@
 
 [default.extend-words]
 Extraversion = "Extraversion" # the Big Five domain, Profile/Personality.md
+
+# A file waiting at the Inbox is spelt as it arrived: it is sorted, never
+# corrected (Inbox/README.md). The Inbox's own README.md and the folders it
+# keeps are checked like any other note, so what is left out is exactly what
+# .github/scripts/vault.py calls a drop, as in .gitattributes. A `!` line puts
+# a path back.
+[files]
+extend-exclude = [
+  "/Inbox/*",
+  "!/Inbox/README.md",
+  "!/Inbox/Backups/",
+  "!/Inbox/Ideas/",
+  "!/Inbox/Reports/",
+  "!/Inbox/Research/",
+  "!/Inbox/Visuals/",
+]
