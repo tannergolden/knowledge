@@ -49,11 +49,11 @@ Customer onboarding and offboarding are kept in `Customer Experience (CX)/Client
 
 ## Vendor Register
 
-<!-- Every supplier, carrier, service provider and tool [Company] pays for. A tool's access and security are in Information Technology (IT)/Stack.md, and a vendor's contract terms in Legal & Compliance (L&C)/Compliance.md. -->
+<!-- Every supplier, carrier, service provider and tool [Company] pays for, with when its spend renews. A tool's access and security are in Information Technology (IT)/Stack.md, and a vendor's contract terms, its notice deadline included, in Legal & Compliance (L&C)/Compliance.md, Contracts, where a vendor on terms accepted online gets a row too. -->
 
-| Vendor | Provides | Kind | Owner | Cost | Budget line | Renews, and notice by | Single source, and its fallback | Terms kept in |
-| ------ | -------- | ---- | ----- | ---- | ----------- | --------------------- | ------------------------------- | ------------- |
-| | | [tool / supplier / carrier / service / other] | | [per month or per year] | [the line in Financial-Model.md, or none yet: spend unapproved] | [YYYY-MM-DD], notice by [YYYY-MM-DD] | [no / yes, and the second source or exit plan] | |
+| Vendor | Provides | Kind | Owner | Cost | Budget line | Renews | Single source, and its fallback | Terms kept in |
+| ------ | -------- | ---- | ----- | ---- | ----------- | ------ | ------------------------------- | ------------- |
+| | | [tool / supplier / carrier / service / other] | | [per month or per year] | [the line in Financial-Model.md, or none yet: spend unapproved] | [YYYY-MM-DD] | [no / yes, and the second source or exit plan] | |
 
 **Tool costs:** [the total for the tools above, per month and per year], as of [YYYY-MM-DD]
 

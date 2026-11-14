@@ -62,6 +62,8 @@ Who owns [Company], with the documents behind each holding, is recorded in `Fina
 
 ## Contracts
 
+<!-- Every agreement [Company] is party to, a vendor's included, even on terms accepted online: this table is the one home of each notice deadline, and the vendor register in Operations & Logistics (O&L)/Operations.md points here. -->
+
 | Agreement | Counterparty | Signed | Term and renewal | Notice deadline | Key obligations | Lawyer review | Kept in |
 | --------- | ------------ | ------ | ---------------- | --------------- | --------------- | ------------- | ------- |
 | | | [YYYY-MM-DD] | | [YYYY-MM-DD] | | [when a licensed lawyer must review it, or none needed, and why] | |

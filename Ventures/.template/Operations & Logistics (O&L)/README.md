@@ -33,7 +33,7 @@ How [Company] runs day to day: its processes and SOPs, the programs that carry a
 ## ↪️ What Goes Elsewhere
 
 - Customer onboarding and offboarding are kept in `Customer Experience (CX)/Clients.md`.
-- A vendor's contract terms are in `Legal & Compliance (L&C)/`, the tools themselves in `Information Technology (IT)/Stack.md`, and quality checks in `Quality Assurance (QA)/`.
+- A vendor's contract terms, its notice deadline included, are in `Legal & Compliance (L&C)/Compliance.md`, the tools themselves in `Information Technology (IT)/Stack.md`, and quality checks in `Quality Assurance (QA)/`.
 - Each KPI's definition is in `Business Intelligence (BI)/Metrics.md`, and the budget line a purchase draws on in `Finance & Accounting (F&A)/Financial-Model.md`.
 
 ---

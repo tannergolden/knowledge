@@ -73,9 +73,9 @@ When the owner runs the AI workforce from `tannergolden/intelligence` (the root 
 | `Administration/Cadence.md` | The Chief Operating Officer |
 | `Finance & Accounting (F&A)/Financials.md` and `Cap-Table.md` | The ⭐ Director of Finance, with the Financial Analyst's variance to budget in `Financials.md` |
 | `Finance & Accounting (F&A)/Financial-Model.md` | The Financial Analyst |
-| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations register and policies, the Paralegal's contracts and filings, and the business insurance the ⭐ Director of Finance keeps |
+| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations register and policies, the Paralegal's contracts and filings, with every notice deadline, a vendor's included, and the business insurance the ⭐ Director of Finance keeps |
 | `Sales & Marketing (S&M)/`, every file | The ⭐ Director of Sales & Marketing, with the Account Executive's deals in `Pipeline.md`, and the style guide Public Relations' Editor keeps with `Brand.md` |
-| `Operations & Logistics (O&L)/Operations.md` | The ⭐ Director of Operations, with the Process & Systems Analyst's processes and SOPs and the Supply Chain & Procurement Manager's vendor register |
+| `Operations & Logistics (O&L)/Operations.md` | The ⭐ Director of Operations, with the Process & Systems Analyst's processes and SOPs and the Supply Chain & Procurement Manager's vendor register, whose notice dates `Compliance.md` keeps |
 | `Human Resources (HR)/Hierarchy.md` | The ⭐ Director of Human Resources, with the HR Generalist's roster |
 | `Information Technology (IT)/Stack.md` | The ⭐ Director of Information Technology, with the Security Engineer's incident record |
 | `Research & Development (R&D)/Roadmap.md` | The ⭐ Director of Research & Development |
