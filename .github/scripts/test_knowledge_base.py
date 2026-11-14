@@ -254,6 +254,38 @@ class TestCheck(unittest.TestCase):
         self.assertIn('a name and prefix hold only letters', err)
         self.assertEqual(self.read, [])
 
+
+class TestTheWeeklyCheck(unittest.TestCase):
+    """📚 Offline Sources runs check every week with nobody watching, so its wiring is held here."""
+
+    ROOT = fixtures.SCRIPTS.parents[1]
+
+    def setUp(self) -> None:
+        self.workflow = (self.ROOT / '.github/workflows/offline-sources.yml').read_text(encoding='utf-8')
+        self.run_lines = [line.strip() for line in self.workflow.splitlines()
+                          if 'knowledge-base.py' in line and not line.strip().startswith('#')]
+
+    def test_it_runs_weekly_on_the_hour_and_by_hand(self) -> None:
+        self.assertRegex(self.workflow, r"(?m)^    - cron: '0 \d{1,2} \* \* [0-6]'")
+        self.assertIn('workflow_dispatch:', self.workflow)
+        self.assertNotRegex(self.workflow, r'(?m)^  (push|pull_request):')
+
+    def test_it_reads_the_listings_and_never_downloads(self) -> None:
+        self.assertTrue(any('knowledge-base.py check' in line for line in self.run_lines), self.run_lines)
+        self.assertFalse(any('refresh' in line for line in self.run_lines), self.run_lines)
+
+    def test_the_template_checks_every_source_and_a_vault_its_own(self) -> None:
+        # Only the template holds the sentinel, so only there does the run take --all.
+        self.assertIn('if [ -f .github/TEMPLATE_INIT ]; then', self.workflow)
+        self.assertIn('scope=(--all)', self.workflow)
+
+    def test_a_run_that_breaks_is_watched_and_every_vault_gets_it(self) -> None:
+        name = next(line.split(':', 1)[1].strip() for line in self.workflow.splitlines() if line.startswith('name:'))
+        alerts = (self.ROOT / '.github/workflows/ci-failure-alert.yml').read_text(encoding='utf-8')
+        self.assertIn(f'      - {name}\n', alerts)
+        listed = (self.ROOT / '.github/template-sync').read_text(encoding='utf-8').splitlines()
+        self.assertIn('/.github/workflows/offline-sources.yml', listed)
+
 ARTICLES = {'Lisbon': '<p>Trams climb the hills of Lisbon.</p>', 'Porto': '<p>Port wine ages in cellars by the river.</p>'}
 
 

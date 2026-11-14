@@ -48,6 +48,10 @@ on:
       # The weekly proposal of the universal rules in AGENTS.md. It runs on a
       # schedule and blocks nothing, so a failure is silent unless watched.
       - '🔁 Intelligence Sync'
+      # The weekly check that each offline source still names a Kiwix build.
+      # It files its own issue for a prefix that names none; this catches a
+      # run that could not read the listings at all.
+      - '📚 Offline Sources'
       # Add any workflow whose silent failure would cost something.
       #
       # ⚠️ NEVER ADD THIS WORKFLOW TO ITS OWN LIST. It cannot escalate its

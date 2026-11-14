@@ -151,6 +151,7 @@
 /.github/scripts/test_vault.py
 /.github/scripts/update-vault.py
 /.github/scripts/vault.py
+/.github/workflows/offline-sources.yml
 /.github/workflows/vault.yml
 /.typos.toml
 # AGENTS.md is this template's whole, the sections tannergolden/path keeps in

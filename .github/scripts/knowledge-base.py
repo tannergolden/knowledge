@@ -16,7 +16,8 @@ before installing it. Reading needs the optional libzim package
 
 Kiwix renames a work now and then, and `refresh` then finds nothing to fetch.
 `check` reads each listing and downloads nothing: it says whether each
-source's prefix still names a build.
+source's prefix still names a build, and 📚 Offline Sources runs it every
+Monday.
 
 Run it:
 

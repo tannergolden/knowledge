@@ -25,12 +25,13 @@ So almost every file here is a **stub**: it names the events it answers and the
 permissions it allows, then calls a reusable workflow in
 [`tannergolden/standards`](https://github.com/tannergolden/standards/blob/Development/.github/workflows/README.md)
 pinned to `@v1`. The logic lives there, so a fix published once arrives here
-without a pull request. Three files run steps of their own instead:
+without a pull request. Four files run steps of their own instead:
 `verify-stubs.yml`, which checks the stubs against the standards,
 `scorecard.yml`, whose score is only accepted from a workflow that keeps to
-OpenSSF Scorecard's rules about its own steps, and `vault.yml`, which runs the
+OpenSSF Scorecard's rules about its own steps, `vault.yml`, which runs the
 vault's own checks through the action in
-[`../actions/vault/`](../actions/vault/README.md).
+[`../actions/vault/`](../actions/vault/README.md), and `offline-sources.yml`,
+which reads each offline reference work's Kiwix listing every Monday.
 
 The stubs are **grouped by concern** - every read-only gate in `checks.yml`,
 everything that reacts to people in `governance.yml` - so one push produces one
@@ -63,6 +64,7 @@ means it can also be run by hand from the Actions tab.
 | [`lifecycle.yml`](lifecycle.yml)                       | &#x1F3AF; Standards Lifecycle          | `push` (`Development`), `schedule` (`0 7 * * 1`), `workflow_dispatch`                                                                                                                          | This repository's relationship with the standards, in one file: claimed for its new owner at generation, and told - once - when a new major of the standards exists.                                                                                                                                    |
 | [`maintenance.yml`](maintenance.yml)                   | &#x1F9F9; Maintenance                  | `schedule` (`0 6 * * 1`), `workflow_dispatch`                                                                                                                                                  | Scheduled housekeeping, in one file: the weekly prune of stale deployments, and the draft-release cleanup.                                                                                                                                                                                              |
 | [`markdown.yml`](markdown.yml)                         | &#x1F4DD; Markdown                     | `schedule` (`0 0 * * *`), `workflow_dispatch`                                                                                                                                                  | Draws this vault's front page with the Markdown Kit: a header at the top of .github/README.md, the trophy case over its footer and a footer at its foot, in the brain theme, with each holiday's set taking the page over around its day.                                                               |
+| [`offline-sources.yml`](offline-sources.yml)           | &#x1F4DA; Offline Sources              | `schedule` (`0 10 * * 1`), `workflow_dispatch`                                                                                                                                                 | Whether each offline reference work in Library/Reference & Encyclopedia/ still names a build Kiwix publishes, every Monday.                                                                                                                                                                             |
 | [`preview-deploy.yml`](preview-deploy.yml)             | &#x1F680; Preview Deploy               | `push` (`Preview`), `workflow_dispatch`                                                                                                                                                        | Builds a branch and publishes it somewhere reviewable before it is promoted.                                                                                                                                                                                                                            |
 | [`prune-runs.yml`](prune-runs.yml)                     | &#x1F9F9; Prune Run History            | `schedule` (`30 6 * * 1`), `workflow_dispatch`                                                                                                                                                 | Keeps the Actions tab readable.                                                                                                                                                                                                                                                                         |
 | [`README.md`](README.md)                               | -                                      | -                                                                                                                                                                                              | This file.                                                                                                                                                                                                                                                                                              |
@@ -125,8 +127,8 @@ called workflow declares the secrets it reads under `secrets:` in its
 - **The checks run everywhere; most jobs that act on a repository do not run
   in the golden path template.** Everything in `checks.yml`, the `pr` check
   in `semantic-pr.yml`, `verify-stubs.yml`, `scorecard.yml`, `prune-runs.yml`
-  and `auto-index.yml` run in the template as they do here, and so does this
-  template's own `vault.yml`. A job whose guard
+  and `auto-index.yml` run in the template as they do here, and so do this
+  template's own `vault.yml` and `offline-sources.yml`. A job whose guard
   names the golden path template alongside `is_template` does nothing there
   and comes alive in every other repository, a template derived from it
   included. Initialisation and `release.yml` stay silent in every template: a

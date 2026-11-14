@@ -1,0 +1,123 @@
+# Whether each offline reference work in Library/Reference & Encyclopedia/
+# still names a build Kiwix publishes, every Monday. Kiwix renames a work now
+# and then, as wikipedia_en_simple became wikipedia_en-simple, and `refresh`
+# then finds nothing to fetch, with nothing to say so until someone runs it.
+# This reads each source's listing with `knowledge-base.py check`, downloads
+# nothing, and keeps one issue open that names every prefix matching no
+# build, closing it once each one names a build again.
+#
+# It blocks nothing: it runs on a schedule and by hand, never on a pull
+# request. In the template it checks every source, since the list kept there
+# is the one each vault takes through 🔄 Template Sync. In a vault it checks
+# only the sources its owner turned on, so a vault with none on reads
+# nothing and opens nothing.
+
+name: '📚 Offline Sources'
+
+on:
+  schedule:
+    - cron: '0 10 * * 1' # Mondays at 10:00 UTC, an hour no other schedule here takes
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  sources:
+    name: '📚 Offline Source Builds'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read # read sources.json
+      issues: write # keep the one issue that names a prefix matching no build
+    steps:
+      - name: '🛡️ Harden Runner'
+        uses: tannergolden/standards/.github/actions/harden@v1
+        with:
+          egress-policy: audit
+          notice: '📚 Checking that each offline source still names a build Kiwix publishes.'
+
+      - name: '📂 Checkout'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # check exits 0 when every source names a build, 1 when one names none,
+      # and 2 when a listing could not be read, which says nothing about the
+      # source. A listing that cannot be read is tried twice more; a run that
+      # still cannot read it fails, so 🚨 CI Failure Alerts reports a broken
+      # run, and the issue below only ever names a prefix that matches no
+      # build.
+      - name: '📚 Read each listing'
+        id: check
+        run: |
+          scope=()
+          # Only the template holds the sentinel, as the repository validator reads it.
+          if [ -f .github/TEMPLATE_INIT ]; then
+            scope=(--all)
+          fi
+          for attempt in 1 2 3; do
+            status=0
+            python3 .github/scripts/knowledge-base.py check "${scope[@]}" >"$RUNNER_TEMP/found.txt" 2>"$RUNNER_TEMP/missing.txt" || status=$?
+            if [ "$status" -ne 2 ] || [ "$attempt" -eq 3 ]; then
+              break
+            fi
+            sleep 60
+          done
+          cat "$RUNNER_TEMP/found.txt" "$RUNNER_TEMP/missing.txt"
+          if [ "$status" -eq 2 ]; then
+            echo "::error title=Offline sources::A Kiwix listing could not be read in three tries, so the sources were not checked."
+            exit 1
+          fi
+          echo "status=$status" >>"$GITHUB_OUTPUT"
+
+      # One issue, found by its exact title, as 🚨 CI Failure Alerts finds its
+      # own: opened when a prefix matches no build, kept current while one
+      # does, and closed on the first run that finds a build for each. Where
+      # issues are turned off, the finding goes in the run's summary instead.
+      - name: '📝 Open, update or close the issue'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          STATUS: ${{ steps.check.outputs.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title='📚 An offline source names no build Kiwix publishes'
+          # Only an explicit false means issues are off; a lookup that fails says nothing.
+          has_issues=$(gh api 'repos/{owner}/{repo}' --jq '.has_issues' 2>/dev/null) || has_issues=unknown
+          existing=''
+          if [ "$has_issues" != false ]; then
+            existing=$(TITLE="$title" gh issue list --state open --limit 500 --json number,title \
+              --jq '.[] | select(.title == env.TITLE) | .number')
+            existing="${existing%%$'\n'*}"
+          fi
+          if [ "$STATUS" -eq 0 ]; then
+            if [ -n "$existing" ]; then
+              gh issue close "$existing" --comment "Every source names a build again: $RUN_URL"
+            fi
+            exit 0
+          fi
+          {
+            echo "Each source below, in \`Library/Reference & Encyclopedia/sources.json\`, has a prefix that names no build in the Kiwix listing it points to, so \`refresh\` has nothing to fetch for it:"
+            echo ''
+            echo '```text'
+            cat "$RUNNER_TEMP/missing.txt"
+            echo '```'
+            echo ''
+            echo "Find the work in its listing, correct its \`prefix\` in \`sources.json\`, and run \`python3 .github/scripts/knowledge-base.py check --all\`. This issue closes on the first run that finds a build for every source."
+            echo ''
+            echo "Run: $RUN_URL"
+          } >"$RUNNER_TEMP/body.md"
+          if [ "$has_issues" = false ]; then
+            echo '::warning title=Offline sources::A source names no build Kiwix publishes, and issues are turned off here, so no issue tracks it.'
+            cat "$RUNNER_TEMP/body.md" >>"$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body-file "$RUNNER_TEMP/body.md"
+          else
+            gh issue create --title "$title" --body-file "$RUNNER_TEMP/body.md"
+          fi
