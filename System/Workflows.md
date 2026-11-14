@@ -45,7 +45,7 @@ Workflows marked *owned here* are specified in full lower in this file; all othe
 | Integrity pass | After any major session or change set, and before a commit | `System/README.md` · `check-vault.py` (notes, links, personal data, ignored files, generated parts) |
 | Change record | Every change | [Conventional Commits](https://github.com/tannergolden/standards/blob/Development/docs/distribution/Conventional-Commits.md) · the release notes are the history |
 | Deletion | Removing anything (after the owner's approval) | The root `README.md`, Ask First · `git rm`, recoverable from history |
-| Backlink-safe rename | Renaming any file | `.docs/technical/vault/Link-Topology.md` · update every wikilink to it, then `check-links.py` |
+| Backlink-safe rename | Renaming any file | `.docs/technical/vault/Link-Topology.md` · update every wikilink and plain path to it, then `check-links.py` |
 
 ### Creation & scaffolding
 
