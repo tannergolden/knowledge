@@ -51,36 +51,38 @@ request is not the first place you hear about them.
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                                                          | Purpose                                                                                                        |
-| :------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
-| [`hooks/`](hooks/README.md)                                    | The git hooks this repository ships, what each catches before a commit is recorded, and how to switch them on. |
-| [`check-links.py`](check-links.py)                             | Check the wikilink graph: every link resolves, and links follow the hub topology.                              |
-| [`check-vault.py`](check-vault.py)                             | Run every vault check, as CI does: notes, links, personal data and generated parts.                            |
-| [`fixtures.py`](fixtures.py)                                   | Throwaway vaults for the vault scripts' tests, built in a temporary folder.                                    |
-| [`knowledge-base.py`](knowledge-base.py)                       | Search and read offline reference works, such as Wikipedia, kept as ZIM files beside the vault's notes.        |
-| [`lint-notes.py`](lint-notes.py)                               | Check each note's frontmatter and naming against the vault's schema.                                           |
-| [`profile-coverage.py`](profile-coverage.py)                   | Score how filled in each Profile facet is, and name the one the profile interview should ask about next.       |
-| [`README.md`](README.md)                                       | This file.                                                                                                     |
-| [`requirements.txt`](requirements.txt)                         | The Python packages the scripts beside this file need, and nothing else.                                       |
-| [`scan-pii.py`](scan-pii.py)                                   | Find US Social Security numbers and payment card numbers in the files git tracks.                              |
-| [`session.py`](session.py)                                     | The vault's session helpers: orient a session, check a note after an edit, and tidy up when a turn ends.       |
-| [`test_check_links.py`](test_check_links.py)                   | Tests for check-links.py, the wikilink graph check.                                                            |
-| [`test_check_vault.py`](test_check_vault.py)                   | Tests for check-vault.py, and for the wiring that runs the vault scripts.                                      |
-| [`test_gitignore.py`](test_gitignore.py)                       | Tests for this repository's .gitignore.                                                                        |
-| [`test_hooks.py`](test_hooks.py)                               | Tests for the git hooks in .github/scripts/hooks/.                                                             |
-| [`test_knowledge_base.py`](test_knowledge_base.py)             | Tests for knowledge-base.py, the offline reference works.                                                      |
-| [`test_lint_notes.py`](test_lint_notes.py)                     | Tests for lint-notes.py, the note schema check.                                                                |
-| [`test_profile_coverage.py`](test_profile_coverage.py)         | Tests for profile-coverage.py, the report the profile interview reads.                                         |
-| [`test_scan_pii.py`](test_scan_pii.py)                         | Tests for scan-pii.py, the personal number scan.                                                               |
-| [`test_session.py`](test_session.py)                           | Tests for session.py, the vault's three session helpers.                                                       |
-| [`test_update_vault.py`](test_update_vault.py)                 | Tests for update-vault.py, which draws every generated part of the vault.                                      |
-| [`test_validate_repository.py`](test_validate_repository.py)   | Tests for the repository validator.                                                                            |
-| [`test_vault.py`](test_vault.py)                               | Tests for vault.py, the library every vault script shares.                                                     |
-| [`test_verify_stub_ceilings.py`](test_verify_stub_ceilings.py) | Tests for the stub ceiling checker.                                                                            |
-| [`update-vault.py`](update-vault.py)                           | Bring every generated part of the vault up to date, or report what is stale.                                   |
-| [`validate-repository.py`](validate-repository.py)             | Validate this repository's own configuration.                                                                  |
-| [`vault.py`](vault.py)                                         | The vault's layout, notes and schema, shared by every vault script.                                            |
-| [`verify-stub-ceilings.py`](verify-stub-ceilings.py)           | Check every stub's permission ceiling against the workflow it calls.                                           |
+| Entry                                                          | Purpose                                                                                                               |
+| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| [`hooks/`](hooks/README.md)                                    | The git hooks this repository ships, what each catches before a commit is recorded, and how to switch them on.        |
+| [`check-ignored.py`](check-ignored.py)                         | Find the vault files a rule written for code keeps out of git, where nothing commits or backs them up.                |
+| [`check-links.py`](check-links.py)                             | Check every reference between notes: a wikilink resolves and follows the hub topology, and a plain path names a file. |
+| [`check-vault.py`](check-vault.py)                             | Run every vault check, as CI does: notes, links, personal data, ignored files and generated parts.                    |
+| [`fixtures.py`](fixtures.py)                                   | Throwaway vaults for the vault scripts' tests, built in a temporary folder.                                           |
+| [`knowledge-base.py`](knowledge-base.py)                       | Search and read offline reference works, such as Wikipedia, kept as ZIM files beside the vault's notes.               |
+| [`lint-notes.py`](lint-notes.py)                               | Check each note's frontmatter and naming against the vault's schema.                                                  |
+| [`profile-coverage.py`](profile-coverage.py)                   | Score how filled in each Profile facet is, and name the one the profile interview should ask about next.              |
+| [`README.md`](README.md)                                       | This file.                                                                                                            |
+| [`requirements.txt`](requirements.txt)                         | The Python packages the scripts beside this file need, and nothing else.                                              |
+| [`scan-pii.py`](scan-pii.py)                                   | Find US Social Security numbers and payment card numbers in the files git would commit.                               |
+| [`session.py`](session.py)                                     | The vault's session helpers: orient a session, check a note after an edit, and tidy up when a turn ends.              |
+| [`test_check_ignored.py`](test_check_ignored.py)               | Tests for check-ignored.py, the check for vault files a rule written for code keeps out of git.                       |
+| [`test_check_links.py`](test_check_links.py)                   | Tests for check-links.py, the wikilink graph check.                                                                   |
+| [`test_check_vault.py`](test_check_vault.py)                   | Tests for check-vault.py, and for the wiring that runs the vault scripts.                                             |
+| [`test_gitignore.py`](test_gitignore.py)                       | Tests for this repository's .gitignore.                                                                               |
+| [`test_hooks.py`](test_hooks.py)                               | Tests for the git hooks in .github/scripts/hooks/.                                                                    |
+| [`test_knowledge_base.py`](test_knowledge_base.py)             | Tests for knowledge-base.py, the offline reference works.                                                             |
+| [`test_lint_notes.py`](test_lint_notes.py)                     | Tests for lint-notes.py, the note schema check.                                                                       |
+| [`test_profile_coverage.py`](test_profile_coverage.py)         | Tests for profile-coverage.py, the report the profile interview reads.                                                |
+| [`test_scan_pii.py`](test_scan_pii.py)                         | Tests for scan-pii.py, the personal number scan.                                                                      |
+| [`test_session.py`](test_session.py)                           | Tests for session.py, the vault's three session helpers.                                                              |
+| [`test_update_vault.py`](test_update_vault.py)                 | Tests for update-vault.py, which draws every generated part of the vault.                                             |
+| [`test_validate_repository.py`](test_validate_repository.py)   | Tests for the repository validator.                                                                                   |
+| [`test_vault.py`](test_vault.py)                               | Tests for vault.py, the library every vault script shares.                                                            |
+| [`test_verify_stub_ceilings.py`](test_verify_stub_ceilings.py) | Tests for the stub ceiling checker.                                                                                   |
+| [`update-vault.py`](update-vault.py)                           | Bring every generated part of the vault up to date, or report what is stale.                                          |
+| [`validate-repository.py`](validate-repository.py)             | Validate this repository's own configuration.                                                                         |
+| [`vault.py`](vault.py)                                         | The vault's layout, notes and schema, shared by every vault script.                                                   |
+| [`verify-stub-ceilings.py`](verify-stub-ceilings.py)           | Check every stub's permission ceiling against the workflow it calls.                                                  |
 
 <!-- AUTO-INDEX:END -->
 

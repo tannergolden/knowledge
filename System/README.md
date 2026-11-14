@@ -117,7 +117,7 @@ The prompt's sections (the opening line, each numbered fix and the closing rules
 | :----------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`Data/`](Data/README.md)      | The generated catalog of every note, drawn by update-vault.py and committed: machine-written, never hand-edited. Read it to learn what the catalog holds and how it stays current, never for rules. |
 | [`README.md`](README.md)       | This file.                                                                                                                                                                                          |
-| [`Workflows.md`](Workflows.md) | The map of the vault's recurring workflows: the strategy, capture and consolidation loops, and where every other recurring procedure is defined.                                                    |
+| [`Workflows.md`](Workflows.md) | The map of the vault's recurring workflows: the memory consolidation loop, defined here in full, and where every other recurring procedure is defined.                                              |
 
 <!-- AUTO-INDEX:END -->
 
