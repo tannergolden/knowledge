@@ -33,6 +33,36 @@
       "under": "docs/Prompts.md",
       "from": "# keep mine: /docs/Prompts.md",
       "to": "# keep mine: /.docs/Prompts.md"
+    },
+    {
+      "under": "AGENTS.md",
+      "from": "`docs/technical/research/",
+      "to": "`.docs/technical/research/"
+    },
+    {
+      "under": "AGENTS.md",
+      "from": "`docs/templates/Research-Log.md`",
+      "to": "`.docs/templates/Research-Log.md`"
+    },
+    {
+      "under": "AGENTS.md",
+      "from": "[`docs/Synced-Files.md`](docs/Synced-Files.md)",
+      "to": "[`.docs/Synced-Files.md`](.docs/Synced-Files.md)"
+    },
+    {
+      "under": "docs/Prompts.md",
+      "from": " docs/technical/research/",
+      "to": " .docs/technical/research/"
+    },
+    {
+      "under": "docs/Prompts.md",
+      "from": " docs/templates/Research-Log.md",
+      "to": " .docs/templates/Research-Log.md"
+    },
+    {
+      "under": "docs/Prompts.md",
+      "from": "`docs/technical/research/",
+      "to": "`.docs/technical/research/"
     }
   ]
 }
