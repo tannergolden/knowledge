@@ -1,11 +1,11 @@
 <!--
 title: '[Company] - Pipeline'
-description: '[Company]''s open deals and forecast: each deal with its stage, value, owner, next step and close date, each forecast call with its accuracy, and the pricing exceptions decided. Read it before a pipeline review, a forecast or any price outside the policy.'
+description: '[Company]''s open deals and forecast: each deal with its stage, value, owner, next step and close date, each forecast call with its accuracy, the pricing exceptions decided, and the deals closed. Read it before a pipeline review, a forecast or any price outside the policy.'
 type: 'template'
 keywords: ["[a key prospect]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/Pipeline.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Sales & Marketing keeps it from the system of record Sales-Plan.md names: each deal is counted once, at a stage Sales-Plan.md defines, and a forecast below target is recorded below target. A prospect's contact details stay in that system, and an offer, a quote or a discount reaches a prospect only on the owner's yes. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/Pipeline.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left. Sales & Marketing keeps it from the system of record Sales-Plan.md names: each deal is counted once, at a stage Sales-Plan.md defines, and a forecast below target is recorded below target. A prospect's contact details stay in that system, and an offer, a quote or a discount reaches a prospect only on the owner's yes. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 📈 [Company] - Pipeline
 
@@ -72,4 +72,4 @@ keywords: ["[a key prospect]", "template"]
 
 ## Notes
 
-<!-- What qualifies a lead at [Company], and anything else that decides how a deal is counted. -->
+<!-- Anything else that decides how a deal is counted; what makes a contact a lead is defined in Sales-Plan.md, Stages. -->

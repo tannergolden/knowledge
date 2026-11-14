@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the core process, as the company names it]", "[the main supplier]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Operations & Logistics (O&L)/Operations.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Operations & Logistics keeps it. A process is recorded as it runs now, and a change to it is dated, with the outdated version superseded rather than silently rewritten. A vendor's bank details, a credential or anyone's personal data is never written here, only where the document that holds it is kept. Scale it to the stage: at found, the one process that keeps breaking and the inputs that matter; the SOP library, the KPIs and the scorecards join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Operations & Logistics (O&L)/Operations.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Operations & Logistics keeps it. A process is recorded as it runs now, and a change to it is dated, with the outdated version superseded rather than silently rewritten. A vendor's bank details, a credential or anyone's personal data is never written here, only where the document that holds it is kept. Scale it to the stage: at found, the one process that keeps breaking and the inputs that matter; the SOP library, the KPIs and the scorecards join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 📦 [Company] - Operations
 
@@ -79,11 +79,11 @@ Customer onboarding and offboarding are kept in `Customer Experience (CX)/Client
 
 <!-- Each KPI takes its definition from Business Intelligence (BI)/Metrics.md; one with no definition there is flagged to Business Intelligence (BI), never coined here. -->
 
-| KPI | Definition | Target band | Current | As of | Source | Owner |
-| --- | ---------- | ----------- | ------- | ----- | ------ | ----- |
-| [cycle time] | [as Metrics.md defines it] | | | [YYYY-MM-DD] | | |
-| [throughput] | | | | | | |
-| [on-time attainment] | | | | | | |
+| KPI | Target band | Current | As of | Source | Owner |
+| --- | ----------- | ------- | ----- | ------ | ----- |
+| [cycle time] | | | [YYYY-MM-DD] | | |
+| [throughput] | | | | | |
+| [on-time attainment] | | | | | |
 
 **What the numbers point at:** <!-- the constraint the KPIs show, in a line -->
 

@@ -1,11 +1,11 @@
 <!--
 title: '[Company] - Financial Model'
-description: '[Company]''s forward model: the drivers, the projection, the scenarios and the runway each one gives, the unit economics it assumes, the operating budget, the variance, and a round''s math when one is in play. Read it before a plan, a raise, a major spend or hire, or any question about how long [Company]''s money lasts.'
+description: '[Company]''s forward model: the drivers, the projection, the scenarios and the runway each one gives, the unit economics it assumes, the operating budget, the change from the last model, and a round''s math when one is in play. Read it before a plan, a raise, a major spend or hire, or any question about how long [Company]''s money lasts.'
 type: 'template'
 keywords: ["[the round or plan the model serves]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Finance & Accounting (F&A)/Financial-Model.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Finance & Accounting builds it on the closed actuals in Financials.md, the Chief Financial Officer approves it, and it lands only once Quality Assurance's check clears it; it is rolled forward each quarter. Every number traces to a source or a marked assumption, and none is backsolved. Scale it to the stage: at found, a monthly cash projection through the next raise plus a buffer; at scale, the three statements tied and the unit economics; at maintain, free cash flow and the rule of 40. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Finance & Accounting (F&A)/Financial-Model.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left. Finance & Accounting builds it on the closed actuals in Financials.md, the Chief Financial Officer approves it, or the owner where [Company] has none, and it lands only once Quality Assurance's check clears it; it is rolled forward each quarter. Every number traces to a source or a marked assumption, and none is backsolved. Scale it to the stage: at found, a monthly cash projection through the next raise plus a buffer; at scale, the three statements tied and the unit economics; at maintain, free cash flow and the rule of 40. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🧮 [Company] - Financial Model
 
@@ -19,7 +19,7 @@ keywords: ["[the round or plan the model serves]", "template"]
 **Basis and periods:** [cash / accrual]; monthly for the first [12 to 24] months, then by year
 **Actuals base:** the close of [YYYY-MM], from `Financials.md`
 **Horizon:** through [YYYY-MM], at least the next raise plus a buffer
-**Stage:** [found / scale / maintain], as `Overview.md` records it
+**Operating stage when built:** [found / scale / maintain], from `Overview.md` on [YYYY-MM-DD]
 
 ---
 
@@ -27,7 +27,7 @@ keywords: ["[the round or plan the model serves]", "template"]
 
 **Runway, base case:** [months], cash-zero on [YYYY-MM-DD]
 **Runway, downside:** [months], cash-zero on [YYYY-MM-DD]
-**When to raise:** [YYYY-MM] <!-- the month the downside runway reaches about twelve months -->
+**When to raise:** [YYYY-MM] <!-- the month the downside case's cash reaches the runway floor in Financials.md, Basis; with no floor set, the month its runway reaches about twelve months -->
 **The driver that moves it most:** <!-- the driver, and how far the runway moves for a stated change in it -->
 
 ---
@@ -38,11 +38,11 @@ keywords: ["[the round or plan the model serves]", "template"]
 
 | Driver | Value | Source or assumption | Owner | Sensitivity |
 | ------ | ----- | -------------------- | ----- | ----------- |
-| New bookings per month | | [the forecast in Sales & Marketing (S&M)/Pipeline.md and the revenue plan in Revenue.md, as of [YYYY-MM-DD], or a marked assumption] | Sales & Marketing (S&M) | [high / medium / low] |
+| New bookings per month | | [the forecast in Sales & Marketing (S&M)/Pipeline.md and the revenue plan in Sales & Marketing (S&M)/Revenue.md, as of [YYYY-MM-DD], or a marked assumption] | Sales & Marketing (S&M) | [high / medium / low] |
 | Price and billing terms | | | | |
 | Churn | | | | |
 | Gross margin | | | | |
-| Headcount, by role and start month, fully loaded | | [the hiring plan in Human Resources (HR)/, as of [YYYY-MM-DD], or a marked assumption] | Human Resources (HR) | |
+| Headcount, by role and start month, fully loaded | | [the hiring plan Human Resources (HR)/Hierarchy.md points to, as of [YYYY-MM-DD], or a marked assumption] | Human Resources (HR) | |
 | Other spending, by driver or contract | | | | |
 
 ---
@@ -90,17 +90,21 @@ keywords: ["[the round or plan the model serves]", "template"]
 | ---------- | --------- | --------- | --------- | ---- | ----- |
 | [each department that spends] | | | | | |
 
+<!-- Open and planned roles only: a filled role is counted in its department's line above, so no row shows one person's pay. -->
+
 | Role | Department | Starts | Fully loaded cost |
 | ---- | ---------- | ------ | ----------------- |
 | | | [YYYY-MM] | |
 
 ---
 
-## Variance to the Last Model or Budget
+## Change From the Last Model
 
-| Line | Plan | Actual | Variance | Cause | One-time or run-rate |
-| ---- | ---- | ------ | -------- | ----- | -------------------- |
-| | | | | [volume / price / timing / mix] | [one-time / run-rate] |
+<!-- How this model differs from the one before it, line by line. Each close's variance against the budget is in Financials.md, The Last Close in Detail. -->
+
+| Line | Last model | This model | Change | Cause |
+| ---- | ---------- | ---------- | ------ | ----- |
+| | | | | [volume / price / timing / mix / a new assumption] |
 
 ---
 
@@ -110,15 +114,15 @@ keywords: ["[the round or plan the model serves]", "template"]
 
 **Size and milestone:** <!-- the months of runway it buys at the model's burn, the buffer, and the milestone it reaches -->
 **Valuation:** [pre-money / post-money / price per share]
-**Pool and instruments:** <!-- the option pool's top-up and whom it dilutes; each SAFE and note converted by its own terms -->
+**Pool and instruments:** <!-- the option pool's top-up and whom it dilutes; each SAFE and note converted by its own terms, stacked caps converting together, with the price or valuation each converts at stated as an assumption -->
 **Dilution:** <!-- each holder's percentage before and after, as a pro forma cap table -->
 
 ---
 
 ## Review
 
-**Approved by:** the Chief Financial Officer, on [YYYY-MM-DD]
-**Independent check:** [SHIP / REVISE / HOLD], on [YYYY-MM-DD], with its findings applied
+**Approved by:** [the Chief Financial Officer / the owner], on [YYYY-MM-DD]
+**Independent check:** [PASS / PASS WITH NOTED DEFECTS / FAIL / ESCALATE], on [YYYY-MM-DD], recorded in `Quality Assurance (QA)/Standards.md`, Verification Record, with its findings applied
 **Next reforecast:** [YYYY-MM-DD]
 
 ---

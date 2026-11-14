@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the platform the company keeps its equity records in]", "[the latest round, as the company names it]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Finance & Accounting (F&A)/Cap-Table.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "record"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Finance & Accounting keeps it. It records only what executed documents show, and it changes only on the owner's yes, once the documents behind the change are signed; each change is logged in the venture's Log.md with the owner's yes noted, and a round still being modeled stays in Financial-Model.md. A holder appears by name or by role, as the owner prefers, and never with a personal identifier. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Finance & Accounting (F&A)/Cap-Table.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "record"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Finance & Accounting keeps it. It records only what executed documents show, and it changes only on the owner's yes, once the documents behind the change are signed; each change is logged in the venture's Log.md with the owner's yes noted, and a round still being modeled stays in Financial-Model.md. A holder appears by name or by role, as the owner prefers, and never with a personal identifier. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🥧 [Company] - Cap Table
 
@@ -55,15 +55,7 @@ keywords: ["[the platform the company keeps its equity records in]", "[the lates
 | ------ | ---------- | ------ | --- | -------- | ------------------ | --------------------- | ----------------- |
 | | [SAFE / note] | | | | [pre / post] | [a note's rate, and its maturity on [YYYY-MM-DD]] | [the document, [YYYY-MM-DD], kept in [where]] |
 
-### As Converted
-
-<!-- Each SAFE and note converted by its own terms, stacked caps converting together, on the assumptions stated here. -->
-
-**Assumptions:** <!-- the price or valuation each converts at, and any pool top-up assumed -->
-
-| Holder | Converts to | Fully diluted % after |
-| ------ | ----------- | --------------------- |
-| | [shares, and their class] | |
+<!-- How each converts, on stated assumptions, is modeled in Financial-Model.md, A Round, When One Is in Play: this file records only what executed documents show. -->
 
 ---
 

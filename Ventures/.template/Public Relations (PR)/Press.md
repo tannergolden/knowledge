@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the umbrella message, in a few words]", "[the name of the company's press page or newsroom]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Public Relations (PR)/Press.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Public Relations keeps it. Drafting is never gated and releasing always is: a statement enters the public log only after the owner confirms it went out, and a change to the messaging house is made deliberately and logged in the venture's Log.md. A reporter's contact details stay in [Company]'s own systems, so this file names each reporter and where their details are kept, never an email address or a phone number, and nobody is searched for to fill in an entry. Scale it to the stage: before launch, the messaging house, the boilerplate and a plan for each announcement; the press kit, the crisis plan and the media relationships join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Public Relations (PR)/Press.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Public Relations keeps it. Drafting is never gated and releasing always is: a statement enters the public log only after the owner confirms it went out, and a change to the messaging house is made deliberately and logged in the venture's Log.md. A reporter's contact details stay in [Company]'s own systems, so this file names each reporter and where their details are kept, never an email address or a phone number, and nobody is searched for to fill in an entry. Scale it to the stage: before launch, the messaging house, the boilerplate and a plan for each announcement; the press kit, the crisis plan and the media relationships join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 📰 [Company] - Press & PR
 
@@ -21,11 +21,11 @@ keywords: ["[the umbrella message, in a few words]", "[the name of the company's
 
 ### Pillars
 
-<!-- Three at most; each proof point is a confirmed fact with its source. -->
+<!-- The pillars are the Messaging Pillars in Sales & Marketing (S&M)/Brand.md, named here and never redefined; this table adds the proof points the press needs, each a confirmed fact with its source. -->
 
-| Pillar | What it claims | Proof points, each with its source |
-| ------ | -------------- | ---------------------------------- |
-| | | |
+| Pillar, from Brand.md | Proof points, each with its source |
+| --------------------- | ---------------------------------- |
+| | |
 
 ### Audiences
 
@@ -47,8 +47,7 @@ keywords: ["[the umbrella message, in a few words]", "[the name of the company's
 
 ### Words
 
-**Use:** <!-- [Company]'s own terms, used the same way every time -->
-**Avoid:** <!-- jargon, superlatives no proof point supports, a competitor's name -->
+**Use and avoid:** the words `Sales & Marketing (S&M)/Brand.md`, Writing Rules, sets, and with the press <!-- any term used or avoided only there, such as a competitor's name or a superlative no proof point supports -->
 
 ---
 
@@ -140,7 +139,7 @@ keywords: ["[the umbrella message, in a few words]", "[the name of the company's
 
 ## Agencies and Freelancers
 
-<!-- Their cost and contract are in the vendor register in Operations & Logistics (O&L)/Operations.md. -->
+<!-- Their cost is in the vendor register in Operations & Logistics (O&L)/Operations.md, and their contract in Legal & Compliance (L&C)/Compliance.md. -->
 
 | Agency or freelancer | Scope | Since |
 | -------------------- | ----- | ----- |

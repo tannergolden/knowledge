@@ -71,9 +71,9 @@ When the owner runs the AI workforce from `tannergolden/intelligence` (the root 
 | `Log.md` | Every department, an entry for its meaningful work |
 | `Administration/Strategy.md` and `Decisions.md` | The ⭐ Chief Executive Officer |
 | `Administration/Cadence.md` | The Chief Operating Officer |
-| `Finance & Accounting (F&A)/Financials.md` and `Cap-Table.md` | The ⭐ Director of Finance |
+| `Finance & Accounting (F&A)/Financials.md` and `Cap-Table.md` | The ⭐ Director of Finance, with the Financial Analyst's variance to budget in `Financials.md` |
 | `Finance & Accounting (F&A)/Financial-Model.md` | The Financial Analyst |
-| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations register and policies, and the Paralegal's contracts and filings |
+| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations register and policies, the Paralegal's contracts and filings, and the business insurance the ⭐ Director of Finance keeps |
 | `Sales & Marketing (S&M)/`, every file | The ⭐ Director of Sales & Marketing, with the Account Executive's deals in `Pipeline.md`, and the style guide Public Relations' Editor keeps with `Brand.md` |
 | `Operations & Logistics (O&L)/Operations.md` | The ⭐ Director of Operations, with the Process & Systems Analyst's processes and SOPs and the Supply Chain & Procurement Manager's vendor register |
 | `Human Resources (HR)/Hierarchy.md` | The ⭐ Director of Human Resources, with the HR Generalist's roster |
@@ -92,7 +92,7 @@ When the owner runs the AI workforce from `tannergolden/intelligence` (the root 
 
 - Venture work starts by looking in `Ventures/` for the company's folder: whether one exists is checked, never assumed.
 - A venture folder is created only with a yes, by copying `Ventures/.template/` whole and giving the copy a short hyphenated name (`Example-Company`). A business with clients, employees, revenue or a brand is a venture; one without them is a project.
-- Every copied file is filled as the note at its top says, and that note is then deleted: `[Company]` becomes the venture's name, its keyword placeholders become real keywords without `template`, and it takes its real `title`, `description` and `type`, so no placeholder reaches the catalog. Each copied `README.md` becomes its folder's note, typed `index`; `Log.md`, `Decisions.md`, `Financials.md` and `Cap-Table.md` are typed `record`, `Brand.md` and `Standards.md` `standard`, `Sales-Plan.md` `guide`, and every other file `reference`.
+- Every copied file is filled as the note at its top says, and that note is then deleted: `[Company]` becomes the venture's name, its keyword placeholders become real keywords, or go when nothing true fills them, without `template`, and it takes its real `title`, `description` and `type`, so no placeholder reaches the catalog. Each copied `README.md` becomes its folder's note, typed `index`; `Log.md`, `Decisions.md`, `Financials.md` and `Cap-Table.md` are typed `record`, `Brand.md` and `Standards.md` `standard`, `Sales-Plan.md` `guide`, and every other file `reference`.
 - Facts about a venture come only from the owner or the venture's own records: a fact noticed in passing is proposed, and written after a yes. Nothing is guessed or invented.
 - Ventures stay apart: two ventures' context is never merged or cross-referenced unless the owner asks.
 - Personal information goes to `Profile/` or `Memory/`, and general business knowledge to `Library/`, never here.
@@ -213,7 +213,7 @@ Only what the owner provides is filled in. Everything else stays blank: nothing 
 
 > _"[Company]'s target customer is X: add that to `Ventures/[Company]/Overview.md`?"_
 
-- **`Overview.md`** builds from the company's mission, what it does, its stage and status, target customers, business model, revenue, key hires, strategic priorities, competitive landscape, and founding story.
+- **`Overview.md`** builds from the company's mission, what it does, its stage and status, target customers, business model, revenue, key hires, competitive landscape, and founding story; its strategic priorities point to `Goals.md`.
 - **`Sales & Marketing (S&M)/Brand.md`** builds from marketing, copywriting, messaging, visual identity, tone of voice, target audience, what the brand stands for, and any work that writes on behalf of the company.
 - **`Goals.md`** builds from strategic priorities, OKRs, targets, milestones, north star metrics, and any discussion of what the company is trying to accomplish this quarter or year.
 - **`Log.md`** gains an entry at the end of any session where meaningful work was done on the venture: decisions made, milestones hit, pivots, hires, launches. Entries stay concise: a date and 2 to 5 bullet points. A gated act the owner confirmed is logged with the confirmation noted. Routine questions and answers are not logged.

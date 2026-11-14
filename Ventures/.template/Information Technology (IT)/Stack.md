@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the main platform the company builds on]", "[the password manager the company uses]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Information Technology (IT)/Stack.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Information Technology keeps it: a change updates its system's row, and each change review, access review and incident adds a row. A secret is never written here, only where it is kept and who holds it; what a system costs is in the vendor register in Operations & Logistics (O&L)/Operations.md. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Information Technology (IT)/Stack.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Information Technology keeps it: a change updates its system's row, and each change review, access review and incident adds a row. A secret is never written here, only where it is kept and who holds it; what a system costs is in the vendor register in Operations & Logistics (O&L)/Operations.md. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🧱 [Company] - Tech Stack
 
@@ -15,7 +15,7 @@ keywords: ["[the main platform the company builds on]", "[the password manager t
 
 ## Systems Register
 
-<!-- One row per tool or platform, the communication tools (chat, email, video calls) included; a change updates its row. A system's vendor, cost, contract and renewal are in the vendor register in Operations & Logistics (O&L)/Operations.md. -->
+<!-- One row per tool or platform, the communication tools (chat, email, video calls) included; a change updates its row. A system's vendor, cost and renewal are in the vendor register in Operations & Logistics (O&L)/Operations.md, and its contract in Legal & Compliance (L&C)/Compliance.md. -->
 
 **As of:** [YYYY-MM-DD]
 

@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the reporting tool the company uses]", "template"]
 -->
 
-<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Business Intelligence (BI)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Business Intelligence (BI)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 

@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the name of the company's press page or newsroom]", "template"]
 -->
 
-<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Public Relations (PR)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Public Relations (PR)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -33,7 +33,7 @@ The public voice of [Company]: what it says, to whom and when, and how it answer
 ## ↪️ What Goes Elsewhere
 
 - Positioning and the brand voice live in `Sales & Marketing (S&M)/Brand.md`, and the campaign around a launch is Sales & Marketing's; customer communication belongs to `Customer Experience (CX)/`.
-- Whether [Company] speaks at all on a company-level matter is decided in `Administration/Decisions.md`, and an agency's cost and contract are in the vendor register in `Operations & Logistics (O&L)/Operations.md`.
+- Whether [Company] speaks at all on a company-level matter is decided in `Administration/Decisions.md`, an agency's cost is in the vendor register in `Operations & Logistics (O&L)/Operations.md`, and its contract in `Legal & Compliance (L&C)/Compliance.md`.
 
 ---
 

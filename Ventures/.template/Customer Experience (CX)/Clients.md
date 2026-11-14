@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[a key account]", "[the customer segment]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Customer Experience (CX)/Clients.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Customer Experience keeps it. A contact's details stay in the company's own systems, such as its CRM or helpdesk: this file names each contact and where their details are kept, never an email address, a phone number, or a card or account number. A client known only through the business stays here, and someone in the owner's personal life goes to Memory/Entities/People/; nobody is searched for to fill in an entry. Copy the client block for each new account. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Customer Experience (CX)/Clients.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Customer Experience keeps it. A contact's details stay in the company's own systems, such as its CRM or helpdesk: this file names each contact and where their details are kept, never an email address, a phone number, or a card or account number. A client known only through the business stays here, and someone in the owner's personal life goes to Memory/Entities/People/; nobody is searched for to fill in an entry. Copy the client block for each new account. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🤝 [Company] - Clients
 
@@ -22,8 +22,7 @@ keywords: ["[a key account]", "[the customer segment]", "template"]
 **Account since:** [YYYY-MM-DD]
 **What was sold, promised and proven:** <!-- the handoff from Sales & Marketing (S&M)/Pipeline.md -->
 **Contract:** <!-- the value and the term; the agreement itself is recorded in Legal & Compliance (L&C)/Compliance.md -->
-**Renewal date:** [YYYY-MM-DD]
-**Risk window opens:** [YYYY-MM-DD]
+**Renewal:** <!-- the date and its risk window are in Renewals and At-Risk Accounts, below -->
 **The customer's goal and first-value milestone:**
 
 **Key contacts:**

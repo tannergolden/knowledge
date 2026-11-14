@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the identity provider the company signs in with]", "template"]
 -->
 
-<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Information Technology (IT)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Information Technology (IT)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -32,7 +32,7 @@ The systems of [Company] and their security: what it runs on, who can reach each
 
 ## ↪️ What Goes Elsewhere
 
-- A tool's vendor, contract, cost and renewal are in the vendor register in `Operations & Logistics (O&L)/Operations.md`, and domain ownership as intellectual property in `Legal & Compliance (L&C)/`.
+- A tool's vendor, cost and renewal are in the vendor register in `Operations & Logistics (O&L)/Operations.md`, and its contract in `Legal & Compliance (L&C)/Compliance.md`, where a domain that protects a mark is noted beside the mark.
 - The product and its roadmap belong to `Research & Development (R&D)/`, and a build itself to its own repository.
 - What the law requires of the data, and any duty to notify after an incident, is for `Legal & Compliance (L&C)/`; a message about an incident is drafted in `Public Relations (PR)/`.
 

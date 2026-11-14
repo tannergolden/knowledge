@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the sales motion, such as led by the owner or by a sales team]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/Sales-Plan.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "guide"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Sales & Marketing keeps it. At the found stage only the stages are kept here, the default below standing, marked as the default, until the owner sets [Company]'s own; the rest is written once the venture has a motion someone other than the owner can repeat. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/Sales-Plan.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "guide"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left. Sales & Marketing keeps it. At the found stage only the stages are kept here, the default below standing, marked as the default, until the owner sets [Company]'s own; the rest is written once the venture has a motion someone other than the owner can repeat. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 📋 [Company] - Sales Plan
 
@@ -15,7 +15,7 @@ keywords: ["[the sales motion, such as led by the owner or by a sales team]", "t
 
 ## Stages
 
-<!-- One set of stages for the whole funnel, from the first touch to the renewal, defined once, before anything is counted, each marked by something the buyer can verify. Until the owner sets [Company]'s own, this default stands, marked as the default. -->
+<!-- One set of stages for the whole funnel, from the first touch to the close, defined once (a renewal is tracked in Customer Experience (CX)/Clients.md), before anything is counted, each marked by something the buyer can verify. Until the owner sets [Company]'s own, this default stands, marked as the default. -->
 
 **Stages set by:** [the default / the owner]
 **Set on:** [YYYY-MM-DD]

@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the name the company uses for its leadership team]", "template"]
 -->
 
-<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Administration/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Administration/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -28,7 +28,7 @@ The executive office of [Company]: its strategy, its decision record and its ope
 - `Strategy.md`: the thesis the `Goals.md` OKRs ladder up to, with the diagnosis behind it, the growth bets, the year's direction and, when the owner asks, the allocation across ventures; read it before any planning, prioritization or go-to-market work.
 - `Decisions.md`: one entry for each consequential decision, with its decider, its one accountable owner and the memo behind it, and a line pointing to each accepted legal risk and each system choice; read it before reopening a settled question.
 - `Cadence.md`: the four review loops and the board, the commitments each decision creates, the execution plans, and the record of each loop run.
-- Working files: the board and quarterly pre-reads, the monthly reporting package, the venture scorecard and the founding checklist, each named for what it is and its date (`Board Pre-Read YYYY-MM-DD.md`).
+- Working files: the board and quarterly pre-reads, the monthly reporting package and the founding checklist, each named for what it is and its date (`Board Pre-Read YYYY-MM-DD.md`).
 
 ---
 

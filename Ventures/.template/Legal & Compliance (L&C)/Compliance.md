@@ -5,11 +5,11 @@ type: 'template'
 keywords: ["[the company's legal name, where it differs]", "[the firm the company uses as outside counsel]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Legal & Compliance (L&C)/Compliance.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Legal & Compliance keeps it. It is context, never legal advice, and it holds pointers, not values: a tax ID, a registration, license, patent or policy number, a government ID or a document's full text is never written here, only where the document is kept. Who owns [Company] is recorded in Finance & Accounting (F&A)/Cap-Table.md alone. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Legal & Compliance (L&C)/Compliance.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Legal & Compliance keeps it. It is context, never legal advice, and it holds pointers, not values: a tax ID, a registration, license, patent or policy number, a government ID or a document's full text is never written here, only where the document is kept. Who owns [Company] is recorded in Finance & Accounting (F&A)/Cap-Table.md alone. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 📜 [Company] - Legal & Compliance
 
-> [Company]'s legal standing and obligations, as context for any legal question, contract or filing. It is never legal advice: each matter says when a licensed lawyer must review, and nothing is signed, sent or filed without the owner.
+> [Company]'s legal standing and obligations, as context for any legal question, contract or filing. It is never legal advice: each contract, matter and accepted risk says when a licensed lawyer must review, and nothing is signed, sent or filed without the owner.
 
 ---
 
@@ -62,9 +62,9 @@ Who owns [Company], with the documents behind each holding, is recorded in `Fina
 
 ## Contracts
 
-| Agreement | Counterparty | Signed | Term and renewal | Notice deadline | Key obligations | Kept in |
-| --------- | ------------ | ------ | ---------------- | --------------- | --------------- | ------- |
-| | | [YYYY-MM-DD] | | [YYYY-MM-DD] | | |
+| Agreement | Counterparty | Signed | Term and renewal | Notice deadline | Key obligations | Lawyer review | Kept in |
+| --------- | ------------ | ------ | ---------------- | --------------- | --------------- | ------------- | ------- |
+| | | [YYYY-MM-DD] | | [YYYY-MM-DD] | | [when a licensed lawyer must review it, or none needed, and why] | |
 
 ---
 
@@ -96,9 +96,9 @@ Who owns [Company], with the documents behind each holding, is recorded in `Fina
 
 ## Matters
 
-| Matter | Opened | Deadline | Status | Outside counsel | Preservation in place |
-| ------ | ------ | -------- | ------ | --------------- | --------------------- |
-| | [YYYY-MM-DD] | [YYYY-MM-DD] | | | [yes / no] |
+| Matter | Opened | Deadline | Status | Outside counsel | Lawyer review | Preservation in place |
+| ------ | ------ | -------- | ------ | --------------- | ------------- | --------------------- |
+| | [YYYY-MM-DD] | [YYYY-MM-DD] | | | [when a licensed lawyer must review it] | [yes / no] |
 
 ---
 
@@ -106,9 +106,9 @@ Who owns [Company], with the documents behind each holding, is recorded in `Fina
 
 <!-- Each legal risk the owner chose to carry, one row each; Administration/Decisions.md points here. -->
 
-| Accepted on | The risk | Why the owner accepted it | Watched by | Reopen if |
-| ----------- | -------- | ------------------------- | ---------- | --------- |
-| [YYYY-MM-DD] | | | | |
+| Accepted on | The risk | Why the owner accepted it | Watched by | Reopen if | Lawyer review |
+| ----------- | -------- | ------------------------- | ---------- | --------- | ------------- |
+| [YYYY-MM-DD] | | | | | [when a licensed lawyer must review it, or none needed, and why] |
 
 ---
 
@@ -123,8 +123,8 @@ Who owns [Company], with the documents behind each holding, is recorded in `Fina
 
 ## Insurance
 
-| Risk covered | Policy | Insurer | Limit | Renews | Policy kept in |
-| ------------ | ------ | ------- | ----- | ------ | -------------- |
+| Risk covered | Policy, by its kind, never its number | Insurer | Limit | Renews | Policy kept in |
+| ------------ | ------------------------------------- | ------- | ----- | ------ | -------------- |
 | [general liability / professional liability / directors and officers / cyber / workers' compensation / key person / property / other] | | | | [YYYY-MM-DD] | |
 
 **Gaps:** <!-- each risk with no cover, or less than a contract or the law requires, and what is recommended -->

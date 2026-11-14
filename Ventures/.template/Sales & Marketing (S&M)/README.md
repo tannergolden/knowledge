@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the name of the sales or marketing team]", "template"]
 -->
 
-<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Sales & Marketing (S&M)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -29,7 +29,7 @@ Sales and marketing for [Company]: how it is positioned, what it sells, how it s
 - `Products.md`: the product catalog, with each product's shipped capability, pricing and go-to-market.
 - `Services.md`: the services catalog, with scope, pricing, delivery and capacity.
 - `Sales-Plan.md`: how [Company] sells: the stages and their exit criteria, the close motion, territory and quota, and revenue operations.
-- `Pipeline.md`: the open deals, each forecast call with its accuracy, and the pricing exceptions.
+- `Pipeline.md`: the open deals, each forecast call with its accuracy, the pricing exceptions, and the closed deals with their reasons.
 - `Revenue.md`: the revenue plan, reconciled across demand, the close and renewal, and the demand plan with its programs and email sequences.
 - Working files: decks, campaign assets, proposals and copy, each marked as a draft until the owner says it may go out.
 

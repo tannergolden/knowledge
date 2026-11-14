@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the accounting system the company keeps its books in]", "template"]
 -->
 
-<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Finance & Accounting (F&A)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight) and drop "template" (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this README is copied with the venture's folder to Ventures/[Company]/Finance & Accounting (F&A)/README.md and becomes that folder's note. In the copy, replace [Company] with the venture's name everywhere, the description included; set type to "index"; replace the keyword placeholder with a word a person would type to find this folder that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 <div align="center">
 
@@ -25,8 +25,8 @@ _[Company]'s money only, and never a number that unlocks it._
 
 The money of [Company]: its books and monthly close, its forward model and budget, and its cap table. The company's finance and accounting work lands here: the books, the model, the cap table and company tax; the owner's personal finances never do, since they live in `Profile/Finances.md`. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
-- `Financials.md`: what the books show, close by close: the record of every monthly close, the last close in detail, unit economics, debt, and the finance deadlines and open loops.
-- `Financial-Model.md`: the forward model built on the closed actuals, with its drivers, scenarios and runway, the operating budget each close is measured against, the variance, and a round's math when one is in play.
+- `Financials.md`: what the books show, close by close: the record of every monthly close, the last close in detail with its variance to budget, unit economics, debt, and the finance deadlines and open loops.
+- `Financial-Model.md`: the forward model built on the closed actuals, with its drivers, scenarios and runway, the operating budget each close is measured against, the change from the last model, and a round's math when one is in play, the as-converted view of each SAFE and note included.
 - `Cap-Table.md`: who owns [Company], holder by holder, with the option pool, every SAFE and note outstanding, every round and the founding clocks, recorded only from executed documents.
 - Working files: the monthly close packages, the operating budget and the model workbooks Finance & Accounting builds, each named for what it covers and its period (`Close Package YYYY-MM.pdf`). A bank statement, a tax return or a payroll register stays in the accounting system or [Company]'s document store, recorded here only as where it is kept.
 

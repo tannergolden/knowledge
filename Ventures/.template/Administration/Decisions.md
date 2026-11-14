@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the subject of a key decision]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Administration/Decisions.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "record"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Administration adds an entry after each decision; the index row and the entry under Decisions are the shapes each new decision follows. An entry is never rewritten: a decision that changes is marked superseded or reversed, and the new entry names the one it replaces. Write only what the owner says or confirms, or what [Company]'s own records show (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Administration/Decisions.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "record"; replace the keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), or delete it when nothing true fills it, drop "template", and delete the keywords line if none is left. Administration adds an index row and an entry after each decision, in the shapes the comments under Decision Index and Decisions show. An entry is never rewritten: a decision that changes is marked superseded or reversed, and the new entry names the one it replaces. Write only what the owner says or confirms, or what [Company]'s own records show (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # ⚖️ [Company] - Decisions
 
@@ -26,9 +26,11 @@ keywords: ["[the subject of a key decision]", "template"]
 
 ## Decision Index
 
+<!-- One row per decision, newest first: the date, YYYY-MM-DD; the decision, in a few words; the decider, the Chief Executive Officer or the owner; the owner; reversible or irreversible; decided, escalated, revisit, superseded or reversed; and where it is kept: its entry below, Compliance.md, Accepted Risks, or Stack.md, System Choices. -->
+
 | Date | Decision | Decider | Owner | Reversibility | Status | Where it is kept |
 | ---- | -------- | ------- | ----- | ------------- | ------ | ---------------- |
-| [YYYY-MM-DD] | [the decision, in a few words] | [Chief Executive Officer / the owner] | | [reversible / irreversible] | [decided / escalated / revisit / superseded / reversed] | [its entry below / Compliance.md, Accepted Risks / Stack.md, System Choices] |
+| | | | | | | |
 
 ---
 
@@ -36,7 +38,8 @@ keywords: ["[the subject of a key decision]", "template"]
 
 <!-- One entry per decision, newest first. A decision that carried a full deliberation keeps its memo under its entry: the recommendation first, the situation and what changed, the question and the criteria, the options scored, each department's view, the risks and the pre-mortem, the decision and its owner, the next steps, and the minority view. -->
 
-### [YYYY-MM-DD] - [The Decision, In A Few Words]
+<!-- Each entry:
+### YYYY-MM-DD - [The Decision, In A Few Words]
 
 - **Call:**
 - **Rationale:**
@@ -52,4 +55,5 @@ keywords: ["[the subject of a key decision]", "template"]
 
 #### Memo
 
-<!-- The full memo, when the decision carried one. -->
+[The full memo, when the decision carried one.]
+-->

@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the theme of the year]", "[the north star metric]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Goals.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Administration writes the objectives and the OKRs when it sets the strategy and at each quarter's planning, and grades them at the quarter's review; every metric named here is defined in Business Intelligence (BI)/Metrics.md and never redefined here. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Goals.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Administration writes the objectives and the OKRs when it sets the strategy and at each quarter's planning, and grades them at the quarter's review; every metric named here is defined in Business Intelligence (BI)/Metrics.md and never redefined here. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🎯 [Company] - Goals
 
@@ -17,10 +17,10 @@ keywords: ["[the theme of the year]", "[the north star metric]", "template"]
 
 **Year:** [YYYY]
 **Quarter:** [YYYY-MM] to [YYYY-MM]
-**Stage:** [found / scale / maintain] <!-- as Overview.md states it -->
+**Operating stage:** as `Overview.md`, Stage & Status, records it
 **Thesis It Serves:** <!-- one line from Administration/Strategy.md -->
 **North Star:** [the metric's name] <!-- defined in Business Intelligence (BI)/Metrics.md, with its current value there -->
-**One Metric That Matters Now:** [the metric's name]
+**One Metric That Matters Now:** [the metric's name] <!-- chosen in Business Intelligence (BI)/Metrics.md -->
 **Set By:** <!-- the owner and the departments that own the key results, and how the targets were agreed -->
 
 ---
@@ -34,38 +34,38 @@ keywords: ["[the theme of the year]", "[the north star metric]", "template"]
 - **Why this year:**
 - **Annual measure:** [the metric, its target and its date]
 - **Owner:**
-- **Horizon:** [1 / 2 / 3]
+- **Horizon:** [1 / 2 / 3] <!-- as Administration/Strategy.md, Growth Bets, defines them -->
 
 ### [Objective B]
 
 - **Why this year:**
 - **Annual measure:** [the metric, its target and its date]
 - **Owner:**
-- **Horizon:** [1 / 2 / 3]
+- **Horizon:** [1 / 2 / 3] <!-- as Administration/Strategy.md, Growth Bets, defines them -->
 
 ### [Objective C]
 
 - **Why this year:**
 - **Annual measure:** [the metric, its target and its date]
 - **Owner:**
-- **Horizon:** [1 / 2 / 3]
+- **Horizon:** [1 / 2 / 3] <!-- as Administration/Strategy.md, Growth Bets, defines them -->
 
 ---
 
 ## The Quarter's OKRs
 
-<!-- About three objectives, two to four key results each, set by agreement between the owner and the department that owns each result. Each key result has a start, a target and a date, one owner, and a tag: committed, expected to grade 1.0, or aspirational, expected to grade about 0.7. The grade stays blank until the quarter's review: (final - start) / (target - start), held between 0.0 and 1.0. -->
+<!-- About three objectives, two to four key results each, set by agreement between the owner and the department that owns each result. Each key result has a start, a target and a date, one owner, and a tag: committed, expected to grade 1.0, or aspirational, expected to grade about 0.7. Current, as of, takes each key result's latest value at the monthly review (Administration/Cadence.md). The grade stays blank until the quarter's review: (final - start) / (target - start), held between 0.0 and 1.0. -->
 
 ### Objective 1: [The Quarterly Outcome]
 
 - **Ladders up to:** [Objective A / B / C]
 - **Owner:**
 
-| #   | Key result | Owner | Tag | Start | Target | By | Grade |
-| --- | ---------- | ----- | --- | ----- | ------ | -- | ----- |
-| KR1 | | | [committed / aspirational] | | | [YYYY-MM-DD] | |
-| KR2 | | | [committed / aspirational] | | | [YYYY-MM-DD] | |
-| KR3 | | | [committed / aspirational] | | | [YYYY-MM-DD] | |
+| #   | Key result | Owner | Tag | Start | Target | By | Current, as of | Grade |
+| --- | ---------- | ----- | --- | ----- | ------ | -- | -------------- | ----- |
+| KR1 | | | [committed / aspirational] | | | [YYYY-MM-DD] | [value], [YYYY-MM-DD] | |
+| KR2 | | | [committed / aspirational] | | | [YYYY-MM-DD] | [value], [YYYY-MM-DD] | |
+| KR3 | | | [committed / aspirational] | | | [YYYY-MM-DD] | [value], [YYYY-MM-DD] | |
 
 - **Objective grade:**
 - **Why:** <!-- at the review: hit, missed or de-scoped, and the reason, in one line -->
@@ -75,10 +75,10 @@ keywords: ["[the theme of the year]", "[the north star metric]", "template"]
 - **Ladders up to:** [Objective A / B / C]
 - **Owner:**
 
-| #   | Key result | Owner | Tag | Start | Target | By | Grade |
-| --- | ---------- | ----- | --- | ----- | ------ | -- | ----- |
-| KR1 | | | [committed / aspirational] | | | [YYYY-MM-DD] | |
-| KR2 | | | [committed / aspirational] | | | [YYYY-MM-DD] | |
+| #   | Key result | Owner | Tag | Start | Target | By | Current, as of | Grade |
+| --- | ---------- | ----- | --- | ----- | ------ | -- | -------------- | ----- |
+| KR1 | | | [committed / aspirational] | | | [YYYY-MM-DD] | [value], [YYYY-MM-DD] | |
+| KR2 | | | [committed / aspirational] | | | [YYYY-MM-DD] | [value], [YYYY-MM-DD] | |
 
 - **Objective grade:**
 - **Why:**
@@ -88,10 +88,10 @@ keywords: ["[the theme of the year]", "[the north star metric]", "template"]
 - **Ladders up to:** [Objective A / B / C]
 - **Owner:**
 
-| #   | Key result | Owner | Tag | Start | Target | By | Grade |
-| --- | ---------- | ----- | --- | ----- | ------ | -- | ----- |
-| KR1 | | | [committed / aspirational] | | | [YYYY-MM-DD] | |
-| KR2 | | | [committed / aspirational] | | | [YYYY-MM-DD] | |
+| #   | Key result | Owner | Tag | Start | Target | By | Current, as of | Grade |
+| --- | ---------- | ----- | --- | ----- | ------ | -- | -------------- | ----- |
+| KR1 | | | [committed / aspirational] | | | [YYYY-MM-DD] | [value], [YYYY-MM-DD] | |
+| KR2 | | | [committed / aspirational] | | | [YYYY-MM-DD] | [value], [YYYY-MM-DD] | |
 
 - **Objective grade:**
 - **Why:**

@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the product's name]", "[the current release, as the company names it]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Research & Development (R&D)/Roadmap.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Research & Development keeps it, on the product decisions recorded in Administration/Decisions.md: each item names the decision behind it, and an item with none waits for one. Each requirement carries acceptance criteria a verifier can check, and an invalidated assumption is recorded as such, never quietly dropped. Scale it to the stage: at found, the MVP definition and the experiment log; the roadmap, the requirements and the release plan join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Research & Development (R&D)/Roadmap.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Research & Development keeps it, on the product decisions recorded in Administration/Decisions.md: each item names the decision behind it, and an item with none waits for one. Each requirement carries acceptance criteria a verifier can check, and an invalidated assumption is recorded as such, never quietly dropped. Scale it to the stage: at found, the MVP definition and the experiment log; the roadmap, the requirements and the release plan join at scale. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🗺️ [Company] - Roadmap
 
@@ -30,13 +30,13 @@ keywords: ["[the product's name]", "[the current release, as the company names i
 
 ## Horizons
 
-<!-- At found, nearly all effort goes to the first horizon; from scale on, a share is kept for the second and third. -->
+<!-- The horizons, and the split of effort across them, are set in Administration/Strategy.md, Growth Bets; this table holds the product bet in each. At found, nearly all effort goes to the first horizon; from scale on, a share is kept for the second and third. -->
 
-| Horizon | The bet | Share of effort | Decision | Status |
-| ------- | ------- | --------------- | -------- | ------ |
-| 1, the core | | | [YYYY-MM-DD] | |
-| 2, the next adjacency | | | | |
-| 3, the long bet | | | | |
+| Horizon | The bet | Decision | Status |
+| ------- | ------- | -------- | ------ |
+| 1, the core | | [YYYY-MM-DD] | |
+| 2, the emerging bet | | | |
+| 3, the option on the future | | | |
 
 ---
 

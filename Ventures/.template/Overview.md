@@ -5,7 +5,7 @@ type: 'template'
 keywords: ["[the industry]", "[what the company sells]", "[a trading or former name]", "template"]
 -->
 
-<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Overview.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight) and drop "template". Administration keeps it current: a change of stage or status is proposed with its evidence and written only on the owner's yes, and the rest is written as the owner tells it. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
+<!-- On copying: this file is copied with the venture's folder to Ventures/[Company]/Overview.md. In the copy, replace [Company] with the venture's name everywhere, the title and description included; set type to "reference"; replace each keyword placeholder with a word a person would type to find this note that its title does not say (lowercase, at most eight), delete one that nothing true fills, drop "template", and delete the keywords line if none is left. Administration keeps it current: a change of stage or status is proposed with its evidence and written only on the owner's yes, and the rest is written as the owner tells it. Write only what the owner says or confirms, or what [Company]'s own records show, and leave the rest blank; replace each [bracketed] prompt as it is filled, or delete its line once it does not apply (Ventures/README.md, Rules). Delete this note from the copy. -->
 
 # 🧭 [Company] - Overview
 
@@ -66,6 +66,8 @@ keywords: ["[the industry]", "[what the company sells]", "[a trading or former n
 **Geography:**
 **Their Main Pain Points:**
 
+<!-- The ideal customer in full, and the job they hire [Company] for, is in Administration/Strategy.md, Where We Play; this is its summary. -->
+
 ---
 
 ## Business Model
@@ -112,11 +114,7 @@ keywords: ["[the industry]", "[what the company sells]", "[a trading or former n
 
 ## Current Strategic Priorities
 
-<!-- The three to five things [Company] is focused on this quarter, as Goals.md sets them. -->
-
-1.
-2.
-3.
+The quarter's priorities are the OKRs and rocks in `Goals.md`, and the thesis they serve is in `Administration/Strategy.md`.
 
 ---
 
