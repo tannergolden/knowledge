@@ -62,6 +62,16 @@ class TestCheckIgnored(unittest.TestCase):
         self.assertIn('error: Projects/Kitchen/build/: git ignores it (.gitignore:1: build/)', result.stdout)
         self.assertIn('4 problems.', result.stderr)
 
+    def test_a_file_ignored_alone_in_its_folder_is_still_found(self) -> None:
+        # git reports a folder that holds nothing but ignored files as one ignored path, which no rule names:
+        # the check has to look inside it, however deep the only file sits.
+        result = self.check({'Projects/Taxes/2025/returns.zip': 'x', 'Ventures/Acme/Decks/Pitch-Deck.key': 'x',
+                             'Ventures/Acme/Decks/notes/.DS_Store': 'x'})
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('error: Projects/Taxes/2025/returns.zip: git ignores it (.gitignore:4: *.zip)', result.stdout)
+        self.assertIn('error: Ventures/Acme/Decks/Pitch-Deck.key: git ignores it (.gitignore:5: *.key)', result.stdout)
+        self.assertIn('2 problems.', result.stderr)
+
     def test_what_the_vaults_own_rules_hide_is_meant(self) -> None:
         result = self.check({'Library/Reference & Encyclopedia/wikipedia_2026-01.zim': 'x', 'System/Backups/old.md': 'x'})
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
