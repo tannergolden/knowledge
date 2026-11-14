@@ -154,8 +154,12 @@ folders, and kept its rules in `AGENTS.md`, below the universal rules. Now every
 itself in its `README.md`, written for anyone, the root `README.md` says how to work in the vault, and
 `AGENTS.md` keeps the universal rules with the rules every AI follows in a personal knowledge vault,
 rewritten to hold an AI to those READMEs. The change renames files every vault keeps current, so it
-ships in a new major, v2.0.0: a vault made before it takes it when its owner sets `ref: 'v2'` under
-`with:` in `.github/workflows/template-sync.yml`, then runs 🔄 Template Sync.
+ships in a new major, v2.0.0: a vault made before it takes it when its owner replaces
+`.github/workflows/template-sync.yml` with
+[the template's own at v2](https://github.com/tannergolden/knowledge/blob/v2/.github/workflows/template-sync.yml),
+which follows `v2`, then runs 🔄 Template Sync. Copy the whole file rather than adding `ref: 'v2'` by
+hand: v2.0.0 rewrote those very lines of the stub, so a hand edit meets the template's as a conflict
+on every sync, while a copy matches it.
 
 The same major release carries two more changes. The venture template's `Client Experience (CX)/`
 becomes `Customer Experience (CX)/`. And the old skill names, such as `board`, `research`, `discover`
