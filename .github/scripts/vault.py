@@ -68,6 +68,8 @@ COLLECTIONS = (
 )
 PROFILE_COLLECTIONS = ('Profile/Values', 'Profile/Goals', 'Profile/Skills', 'Profile/Health')
 LOG = 'Memory/Log.md'
+DATES = 'Memory/Dates.md'
+REPORTS = 'Inbox/Reports'
 INBOX = 'Inbox'
 # Inbox sub-homes that are kept, never sorted.
 INBOX_HELD = frozenset({'Backups', 'Reports', 'Visuals', 'Ideas'})
@@ -598,6 +600,11 @@ def log_entries(text: str) -> list[tuple[int, list[str]]]:
     end = next((i for i in range(head + 1, len(lines)) if lines[i].startswith('## ')), len(lines))
     starts = [i for i in range(head + 1, end) if lines[i].startswith('### ')]
     return [(start + 1, lines[start:stop]) for start, stop in zip(starts, starts[1:] + [end])]
+
+
+def open_entries(text: str) -> list[list[str]]:
+    """The Log's entries that still hold an open thread, each as its lines, the heading first."""
+    return [entry for _line, entry in log_entries(text) if STATUS_OPEN.search('\n'.join(entry))]
 
 
 # ── git ──

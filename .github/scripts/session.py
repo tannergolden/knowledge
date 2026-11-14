@@ -9,7 +9,11 @@ by hand, and any app's own hook settings may call one:
   first (the root README.md, Profile/Working Style.md and Memory/Log.md), the
   two newest session summaries, and, when files wait at the Inbox, the
   Inbox's README.md and each waiting file, as paths to read rather than whole
-  files, so the card stays short.
+  files, so the card stays short. It then says what is due, since nothing
+  else in the vault raises a date by itself: each one-time date in
+  Memory/Dates.md that has passed or falls within two weeks, each held report
+  past its review_by date, and how many threads the Log holds open. Those
+  lines carry a date and a path, never what the date is for.
 - after-edit: given a hook's JSON on stdin naming the file just written,
   checks it with lint-notes.py and reports any problem, so a mistake is
   fixed in the same turn.
@@ -23,12 +27,14 @@ exits 0 whatever happens.
 Run them:
 
     python3 .github/scripts/session.py start
+    python3 .github/scripts/session.py start --today 2026-11-14
     echo '{"tool_input": {"file_path": "Memory/Log.md"}}' | python3 .github/scripts/session.py after-edit
     python3 .github/scripts/session.py stop
 """
 
 from __future__ import annotations
 
+import datetime
 import json
 import pathlib
 import subprocess
@@ -39,9 +45,66 @@ import vault  # noqa: E402  (vault.py sits beside this file)
 
 HERE = pathlib.Path(__file__).resolve().parent
 CURRENT = 'Memory/Context/Current'
+# How far ahead the card looks for a date in Memory/Dates.md.
+AHEAD = datetime.timedelta(days=14)
+ONE_TIME = '## One-Time'
 
 
-def start(root: pathlib.Path) -> None:
+def day(text: object) -> datetime.date | None:
+    """A date written YYYY-MM-DD, or None for anything else."""
+    text = str(text or '').strip().strip('`*')
+    if not vault.DATE_RE.match(text):
+        return None
+    try:
+        return datetime.date.fromisoformat(text)
+    except ValueError:
+        return None
+
+
+def one_time_dates(text: str) -> list[datetime.date]:
+    """The dates that open the rows of the One-Time table in Memory/Dates.md, in the order written.
+    A row whose first cell is not a date written YYYY-MM-DD is passed by."""
+    lines = text.split('\n')
+    head = next((i for i, line in enumerate(lines) if line.strip() == ONE_TIME), None)
+    if head is None:
+        return []
+    found = []
+    for line in lines[head + 1:]:
+        if line.startswith('## '):
+            break
+        if line.lstrip().startswith('|'):
+            when = day(line.strip().strip('|').split('|')[0])
+            if when is not None:
+                found.append(when)
+    return found
+
+
+def due(root: pathlib.Path, today: datetime.date) -> list[str]:
+    """What is due, a line each, a date and a path and never what it is for: the one-time dates
+    that have passed or fall within two weeks, the held reports past their review date, and how
+    many threads the Log holds open."""
+    lines = []
+    dates = root / vault.DATES
+    if dates.is_file():
+        for when in sorted(one_time_dates(vault.read_text(dates))):
+            if when < today:
+                lines.append(f'OVERDUE {when.isoformat()}  {vault.DATES}')
+            elif when <= today + AHEAD:
+                lines.append(f'DUE {when.isoformat()}  {vault.DATES}')
+    for report in vault.entry_files(root / vault.REPORTS):
+        fields = vault.note_fields(report)
+        review_by = day(fields.get('review_by'))
+        if review_by is not None and review_by < today and not vault.is_stale(fields):
+            lines.append(f'REVIEW {vault.rel(root, report)}  (review_by {review_by.isoformat()})')
+    log = root / vault.LOG
+    if log.is_file():
+        loops = len(vault.open_entries(vault.read_text(log)))
+        noun = 'open loop' if loops == 1 else 'open loops'
+        lines.append(f"{loops if loops else 'No'} {noun} in {vault.LOG}.")
+    return lines
+
+
+def start(root: pathlib.Path, today: datetime.date) -> None:
     print('Vault startup (README.md, How A Session Goes). The startup set is listed, not inlined:')
     print('Read every file on a READ line before substantive work.')
     for path in vault.startup_notes(root):
@@ -62,6 +125,8 @@ def start(root: pathlib.Path) -> None:
         print(f'{len(drops)} {noun} at the Inbox; sort them per {vault.rel(root, protocol)} before other work.')
     else:
         print('Inbox clear.')
+    for line in due(root, today):
+        print(line)
     print("Before changing anything in a folder, read its README.md and the README.md of each folder above it.")
 
 
@@ -140,11 +205,12 @@ def stop(root: pathlib.Path) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = vault.arguments((__doc__ or '').split('\n', 1)[0])
     parser.add_argument('helper', choices=('start', 'after-edit', 'stop'), help='which helper to run')
+    parser.add_argument('--today', help='the day the start card counts from, as YYYY-MM-DD (default: today)')
     args = parser.parse_args(argv)
     root = args.root.resolve()
     try:
         if args.helper == 'start':
-            start(root)
+            start(root, day(args.today) or datetime.date.today())
         elif args.helper == 'after-edit':
             after_edit(root, sys.stdin.read())
         else:

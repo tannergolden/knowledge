@@ -60,6 +60,7 @@ READ Profile/Working Style.md
 READ Memory/Log.md
 No session summaries in Memory/Context/Current yet.
 Inbox clear.
+No open loops in Memory/Log.md.
 Before changing anything in a folder, read its README.md and the README.md of each folder above it.
 ```
 
@@ -70,6 +71,12 @@ Before changing anything in a folder, read its README.md and the README.md of ea
   is listed too.
 - **`INBOX` lines** name each loose file outside the held sub-homes (`Reports/`, `Visuals/`, `Ideas/`
   and `Backups/`), then say how many wait and that they are sorted before other work.
+- **`OVERDUE` and `DUE` lines** name each date in the One-Time table of `Memory/Dates.md` that has
+  passed or falls within the next 14 days, read from a first cell written `YYYY-MM-DD`. **`REVIEW`
+  lines** name each report in `Inbox/Reports/` whose `review_by` date has passed, and one line counts
+  the threads `Memory/Log.md` holds open. Nothing else in the vault raises a date by itself, so the
+  card does. Each line carries a date and a path, never what the date is for: the card is read by
+  hooks and kept in logs. `--today 2026-11-14` counts from another day.
 - **The last line** says to read the `README.md` of each folder a change touches, and of each folder
   above it, before changing anything there.
 
@@ -84,7 +91,7 @@ session.
 
 | Helper       | Reads                                                                                                          | Does                                                                                                                    | Prints                                                                                                                                                         |
 | :----------- | :------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `start`      | The vault                                                                                                      | Lists the startup set and the Inbox                                                                                     | The card above                                                                                                                                                 |
+| `start`      | The vault                                                                                                      | Lists the startup set, the Inbox, what is due and how many loops are open                                               | The card above                                                                                                                                                 |
 | `after-edit` | JSON on standard input naming the file just written at `tool_input.file_path`, from the vault root or absolute | Runs `lint-notes.py` on a Markdown file; skips a path outside the vault and input that is not JSON                      | Nothing when the file passes; otherwise `{"hookSpecificOutput": {"hookEventName": "PostToolUse", "additionalContext": "..."}}`, holding each script's findings |
 | `stop`       | `git status`                                                                                                   | Only when the working tree has changes, or git cannot tell: runs `update-vault.py`, which writes, then `check-vault.py` | Nothing when all is well; otherwise `{"systemMessage": "..."}`, naming up to five redrawn parts and the first problems                                         |
 

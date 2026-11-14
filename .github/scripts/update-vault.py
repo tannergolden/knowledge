@@ -120,11 +120,10 @@ def link_list(folder: str, entries: list[pathlib.Path], empty: str) -> str:
 def open_loops(text: str) -> str:
     """The Open Loops view: every Log entry still marked **Status:** Open."""
     loops = []
-    for _line, entry in vault.log_entries(text):
-        if vault.STATUS_OPEN.search('\n'.join(entry)):
-            match = LOG_HEADING.match(entry[0])
-            title, date = (match.group(2).strip(), match.group(1)) if match else (entry[0][4:].strip(), '')
-            loops.append(f'- {title}  (opened {date})')
+    for entry in vault.open_entries(text):
+        match = LOG_HEADING.match(entry[0])
+        title, date = (match.group(2).strip(), match.group(1)) if match else (entry[0][4:].strip(), '')
+        loops.append(f'- {title}  (opened {date})')
     return '\n'.join(loops) if loops else '_No open loops._'
 
 

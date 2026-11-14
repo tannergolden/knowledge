@@ -69,6 +69,51 @@ class TestStart(unittest.TestCase):
         self.assertNotIn('kept.md', result.stdout)
         self.assertIn('read its README.md and the README.md of each folder above it', result.stdout)
 
+    DATES = ('# Dates\n\n## Recurring\n\n| When | Event | Notes |\n|---|---|---|\n| 2026-11-10 | A birthday, not read | |\n\n'
+             '## One-Time\n\n| Date | Event | Notes |\n|------|-------|-------|\n| 2026-11-01 | Renew the passport | |\n'
+             '| 2026-11-14 | Call the clinic | today |\n| `2026-11-28` | File the form | the last day in reach |\n'
+             '| 2026-11-29 | Too far ahead | |\n| March 3 | No year, so not read | |\n| 2026-13-40 | Not a date | |\n| | | |\n\n'
+             '## Milestones\n\n| Date | Milestone | Notes |\n|---|---|---|\n| 2026-11-12 | A marker, not a deadline | |\n')
+
+    def test_the_card_says_what_is_due(self) -> None:
+        # Nothing else in the vault raises a date by itself, so the card does: a date and a path,
+        # never what the date is for.
+        self.vault.note('Memory/Dates.md', body=self.DATES, type='record')
+        self.vault.note('Inbox/Reports/README.md')
+        self.vault.note('Inbox/Reports/Heat Pumps.md', type='record', review_by='2026-08-01')
+        self.vault.note('Inbox/Reports/Solar.md', type='record', review_by='2027-01-01')
+        self.vault.note('Inbox/Reports/Old Roof.md', type='record', review_by='2025-01-01', status='deprecated')
+        self.vault.note('Inbox/Reports/Undated.md', type='record')
+        self.vault.note('Memory/Log.md', type='record', body='# Log\n\n## Log Entries\n\n'
+                        '### 2026-11-13 - Call the bank\n\n**Status:** Open\n\n### 2026-11-12 - Book the flight\n\n'
+                        '- **Status:** Open\n\n### 2026-11-11 - Done\n\n**Status:** Resolved (2026-11-12)\n')
+        result = self.vault.run(SCRIPT, 'start', '--today', '2026-11-14')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        lines = result.stdout.splitlines()
+        due = [line for line in lines if line.startswith(('OVERDUE', 'DUE', 'REVIEW'))]
+        self.assertEqual(due, ['OVERDUE 2026-11-01  Memory/Dates.md', 'DUE 2026-11-14  Memory/Dates.md',
+                               'DUE 2026-11-28  Memory/Dates.md',
+                               'REVIEW Inbox/Reports/Heat Pumps.md  (review_by 2026-08-01)'])
+        self.assertIn('2 open loops in Memory/Log.md.', lines)
+        # What each date is for stays in the note: the card is read by hooks and kept in logs.
+        for private in ('passport', 'clinic', 'bank', 'flight'):
+            self.assertNotIn(private, result.stdout)
+        self.assertLess(lines.index('Inbox clear.'), lines.index(due[0]))
+        self.assertEqual(lines[-1], 'Before changing anything in a folder, read its README.md and the README.md of '
+                                    'each folder above it.')
+
+    def test_the_card_counts_one_loop_and_none(self) -> None:
+        self.vault.note('Memory/Log.md', type='record', body='# Log\n\n## Log Entries\n\n### 2026-11-13 - One\n\n**Status:** Open\n')
+        self.assertIn('1 open loop in Memory/Log.md.', self.vault.run(SCRIPT, 'start').stdout.splitlines())
+        self.vault.note('Memory/Log.md', type='record', body='# Log\n\n## Log Entries\n')
+        self.assertIn('No open loops in Memory/Log.md.', self.vault.run(SCRIPT, 'start').stdout.splitlines())
+
+    def test_a_day_the_card_cannot_read_falls_back_to_today(self) -> None:
+        self.vault.note('Memory/Dates.md', body=self.DATES, type='record')
+        result = self.vault.run(SCRIPT, 'start', '--today', 'next tuesday')
+        self.assertEqual(result.returncode, 0)
+        self.assertIn('Inbox clear.', result.stdout)
+
     def test_an_empty_vault_still_gets_a_card(self) -> None:
         result = self.vault.run(SCRIPT, 'start')
         self.assertEqual(result.returncode, 0)

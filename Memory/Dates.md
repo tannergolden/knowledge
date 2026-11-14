@@ -23,7 +23,7 @@ Prospective memory: the future-facing reference for dates that matter. Add an en
 
 ## One-Time
 
-<!-- Dated deadlines and appointments. One row each, in date order. -->
+<!-- Dated deadlines and appointments. One row each, in date order, the date written YYYY-MM-DD: the session start card names one that has passed or falls within two weeks. -->
 
 | Date | Event | Notes |
 |------|-------|-------|
