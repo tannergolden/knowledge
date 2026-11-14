@@ -15,6 +15,8 @@ Run it:
 from __future__ import annotations
 
 import pathlib
+import re
+import shutil
 import sys
 import unittest
 
@@ -23,6 +25,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import fixtures  # noqa: E402
 
 SCRIPT = 'lint-notes.py'
+ROOT = fixtures.SCRIPTS.parents[1]
 
 
 class TestLintNotes(unittest.TestCase):
@@ -188,6 +191,65 @@ class TestLintNotes(unittest.TestCase):
                       result.stdout)
         self.assertIn('Projects/Reading/Notes [draft].md: the file name holds [ ], which a wikilink cannot carry', result.stdout)
         self.assertNotIn('AT&T', result.stdout)
+
+    def test_a_copy_that_was_never_filled_in(self) -> None:
+        # A scaffold copied and left as it came: its copy note, its bracketed prompts and its
+        # scaffold keyword would each reach the catalog as if they were content.
+        self.vault.note('Memory/Entities/People/Jane Doe.md', type='record',
+                        body='<!-- On copying: save this as Memory/Entities/People/<First Last>.md. -->\n\n# Jane Doe\n')
+        self.vault.note('Ventures/Acme/Overview.md', title='[Company] - Overview', type='reference',
+                        description='The profile of [Company], and [when to read it].',
+                        keywords=['[other name for the company]', 'template', 'acme'])
+        result = self.lint()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("Memory/Entities/People/Jane Doe.md: the scaffold's `On copying:` note is still here", result.stdout)
+        self.assertIn("Ventures/Acme/Overview.md: the title still holds a scaffold's prompt, [Company]", result.stdout)
+        self.assertIn("the description still holds a scaffold's prompt, [Company] [when to read it]", result.stdout)
+        self.assertIn("keyword '[other name for the company]' is a scaffold's prompt", result.stdout)
+        self.assertIn("the keyword 'template' marks a scaffold; drop it from the copy", result.stdout)
+        self.assertIn('5 problems.', result.stderr)
+
+    def test_a_scaffold_keeps_its_prompts(self) -> None:
+        self.vault.note('Memory/.template/Person.md', title='[Person Name]', type='template',
+                        description='[Who this person is to the owner.]', keywords=['[nickname]', 'template'],
+                        body='<!-- On copying: save this as Memory/Entities/People/<First Last>.md. -->\n\n# [Person Name]\n')
+        self.assertEqual(self.lint().returncode, 0, self.lint().stdout)
+
+    def test_a_venture_copied_with_only_its_type_changed_fails(self) -> None:
+        # The real scaffold, copied whole and given a type that passes: every other step skipped.
+        copy = self.vault.path('Ventures/Example-Company')
+        shutil.copytree(ROOT / 'Ventures' / '.template', copy)
+        notes = sorted(copy.rglob('*.md'))
+        for note in notes:
+            note.write_text(re.sub(r"(?m)^type: ['\"]template['\"]$", "type: 'reference'", note.read_text(encoding='utf-8')),
+                            encoding='utf-8')
+        result = self.lint()
+        self.assertEqual(result.returncode, 1)
+        for note in notes:
+            name = note.relative_to(self.vault.root).as_posix()
+            self.assertIn(f"{name}: the scaffold's `On copying:` note is still here", result.stdout)
+        self.assertIn("Ventures/Example-Company/Overview.md: the title still holds a scaffold's prompt, [Company]", result.stdout)
+        self.assertIn("the keyword 'template' marks a scaffold", result.stdout)
+
+    def test_a_field_one_slip_away_from_a_real_one(self) -> None:
+        # A record may add fields of its own, so a slip would pass as one, and vault.is_stale would
+        # never see the status that was meant: the start card would keep listing an overridden summary.
+        self.vault.note('Memory/Context/Current/20260101-093000.md', type='record', stauts='deprecated')
+        self.vault.note('Memory/Decisions/2026-05-switched-to-llc.md', type='record', keyword=['llc'], tittle='Switched')
+        self.vault.note('Library/Other.md', descripton='A slip in a note that may add no field at all.')
+        result = self.lint()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("'stauts' reads as a slip for 'status'", result.stdout)
+        self.assertIn("'keyword' reads as a slip for 'keywords'", result.stdout)
+        self.assertIn("'tittle' reads as a slip for 'title'", result.stdout)
+        self.assertIn("'descripton' reads as a slip for 'description'", result.stdout)
+        self.assertIn('4 problems.', result.stderr)
+
+    def test_a_records_own_fields_still_pass(self) -> None:
+        self.vault.note('Inbox/Reports/Heat Pumps.md', type='record', review_by='2026-02-14')
+        self.vault.note('Inbox/Ideas/Solar Shed.md', type='record', id='idea-0001', statement='A shed that powers itself.',
+                        lifecycle='raw', ice='6', elo='1500', lens='inversion', parents='idea-0000', serves='the workshop')
+        self.assertEqual(self.lint().returncode, 0, self.lint().stdout)
 
     LOG = ('# Log\n\n## Log Entries\n\n{entries}\n## Open Loops\n\n### Not an entry, outside the section\n\n'
            'Status: Open\n')

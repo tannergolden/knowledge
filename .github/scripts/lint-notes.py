@@ -61,6 +61,11 @@ DATED_ENTRIES = {
     'Memory/Insights': (re.compile(r'^\d{4}-\d{2}-'), 'YYYY-MM-slug.md'),
     'Memory/Events': (re.compile(r'^\d{4}-\d{2}-\d{2}-'), 'YYYY-MM-DD-slug.md'),
 }
+# What a scaffold leaves in a copy that was never finished (each .template/ README.md, How A Copy
+# Is Made): the note that says how to copy it, a bracketed prompt where its own words belong, and
+# the keyword that marks a scaffold. Left in, each one reaches the catalog as if it were content.
+COPY_NOTE = re.compile(r'<!--\s*On copying:')
+PLACEHOLDER = re.compile(r'\[[^\[\]\n]+\]')
 # The Log's entries, the one body a generator reads (update-vault.py draws the Open Loops view from
 # them): an entry's heading, its importance, and a line that reads as an open thread.
 LOG_HEADING = re.compile(r'^### \d{4}-\d{2}-\d{2} - \S')
@@ -69,6 +74,19 @@ STATUS_LIKE = re.compile(r'(?i)^\s*(?:[-*+]\s+)?[*_]{0,2}Status[*_]{0,2}\s*:\s*[
 # A generated list links each entry by its name, and a wikilink reads # as a heading, | as an
 # alias, ^ as a block and a bracket as its own end.
 UNLINKABLE = re.compile(r'[#|\[\]^]')
+
+
+def one_edit_apart(a: str, b: str) -> bool:
+    """True when one slip of the hand turns a into b: a letter dropped, added or changed, or two
+    neighbours swapped."""
+    if a == b or abs(len(a) - len(b)) > 1:
+        return False
+    if len(a) == len(b):
+        differ = [i for i in range(len(a)) if a[i] != b[i]]
+        return len(differ) == 1 or (len(differ) == 2 and differ[1] == differ[0] + 1
+                                    and a[differ[0]] == b[differ[1]] and a[differ[1]] == b[differ[0]])
+    short, long = sorted((a, b), key=len)
+    return any(long[:i] + long[i + 1:] == short for i in range(len(long)))
 
 
 def check_fields(fields: dict[str, object], template: bool, problems: list[str]) -> None:
@@ -81,7 +99,12 @@ def check_fields(fields: dict[str, object], template: bool, problems: list[str])
     if kind == 'template' and not template:
         problems.append("type 'template' outside a .template/ folder; give the copy its real type")
     for key in fields:
-        if key in RETIRED or (key in RETIRED_UNLESS_OWN and kind not in vault.OWN_FIELDS):
+        meant = next((field for field in vault.FIELDS if one_edit_apart(key, field)), None)
+        if meant and key not in vault.FIELDS:
+            # A record may add fields of its own, so a slip here would pass as one: the note would
+            # keep a status no script reads, or keywords the catalog never sees.
+            problems.append(f"'{key}' reads as a slip for '{meant}', the field the scripts look for; correct the name")
+        elif key in RETIRED or (key in RETIRED_UNLESS_OWN and kind not in vault.OWN_FIELDS):
             problems.append(f"'{key}' is retired (Note-Schema.md); remove the line")
         elif key not in vault.FIELDS and kind not in vault.OWN_FIELDS:
             problems.append(f"'{key}' is not one of a note's fields ({', '.join(vault.FIELDS)}); only "
@@ -104,6 +127,17 @@ def check_fields(fields: dict[str, object], template: bool, problems: list[str])
                     problems.append(f"keyword '{word}' is not lowercase")
             if len(set(words)) != len(words):
                 problems.append('a keyword appears twice')
+    if not template:
+        for field in ('title', 'description'):
+            left = PLACEHOLDER.findall(str(fields.get(field, '') or ''))
+            if left:
+                problems.append(f"the {field} still holds a scaffold's prompt, {' '.join(left)}; give the copy its "
+                                'own words (the .template/ README.md, How A Copy Is Made)')
+        for word in vault.as_list(fields.get('keywords')):
+            if PLACEHOLDER.search(word):
+                problems.append(f"keyword '{word}' is a scaffold's prompt; replace it or drop it")
+            elif word == 'template':
+                problems.append("the keyword 'template' marks a scaffold; drop it from the copy")
 
 
 def check_log(text: str) -> list[str]:
@@ -167,6 +201,9 @@ def check_note(root: pathlib.Path, path: pathlib.Path) -> list[str]:
                         'back to it (Note-Schema.md)')
     if '/'.join(parts) == vault.LOG:
         problems.extend(check_log(text))
+    if not template and COPY_NOTE.search(text):
+        problems.append("the scaffold's `On copying:` note is still here; a copy follows that note and then "
+                        'deletes it, so this one was never finished (the .template/ README.md, How A Copy Is Made)')
     fields = vault.parse_frontmatter(text)
     if fields is None:
         if text.strip():

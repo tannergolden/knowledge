@@ -94,6 +94,12 @@ from: each entry headed `### YYYY-MM-DD - Title`, an `Importance:` line holding 
 line that is nearly right, such as `Status: Open`, is an error, where it used to be a thread left
 out of the view without a word.
 
+Outside a `.template/` folder it fails on what a scaffold leaves in a copy that was never finished:
+the `On copying:` note, a bracketed prompt in the `title`, the `description` or a keyword, and the
+keyword `template`, each of which would reach the catalog as if it were content. On any note it
+fails on a field one slip away from a real one, such as `stauts`, which a record would otherwise
+carry as a field of its own while no script read it.
+
 A loose file waiting at the `Inbox/` root is not a note yet. `lint-notes.py`, `check-links.py` and
 the catalog pass it by until it is sorted, so leaving a file there keeps the checks green. The scan
 for personal numbers and the check for ignored files still read it: a waiting file can hold a
@@ -172,6 +178,9 @@ Each finding names its file and says what to change. The common ones:
 | `a Log entry is headed`                                        | Write the entry's heading as `### YYYY-MM-DD - Title`                                                                                      |
 | `an open thread is marked`                                     | Write the line as `**Status:** Open`, then run `update-vault.py`, which lists the thread under Open Loops                                  |
 | `importance is one number from 1 to 5`                         | Write `Importance: N`, with 1 for routine, 3 for significant and 5 for pivotal                                                             |
+| `On copying: note is still here`                               | Do what the note says, line by line, then delete it from the copy                                                                          |
+| `still holds a scaffold's prompt`                              | Replace each bracketed prompt with the copy's own words, or delete it, and drop the keyword `template`                                     |
+| `reads as a slip for`                                          | Correct the field's name: the scripts read `status` and `keywords` by those names alone                                                    |
 | `looks like a Social Security number`, `a payment card number` | Replace the value with a pointer to where it lives; a reviewed false positive takes `pii-allow` in a comment on its line                   |
 | `git ignores it`                                               | Rename or move the file so the rule no longer matches it; or, when it is ignored on purpose, name it in a `.gitignore` in its own folder   |
 | `has no <!-- brain:NAME --> block`                             | Put the block's start and end markers back in the note                                                                                     |
