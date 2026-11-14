@@ -80,7 +80,7 @@ The vault's checks and generators are scripts in `.github/scripts/`, run from th
 | `update-vault.py` | Draws everything generated: the memory cascade, every `brain:` block, the catalog and the `.gitkeep` markers. `--check` writes nothing and fails when anything is stale. |
 | `session.py` | The session helpers, run by hand: the session-start card, the check after a note is written, and the end-of-turn redraw. |
 | `profile-coverage.py` | How filled in each Profile facet is; its `--json` names the facet to ask about next. |
-| `knowledge-base.py` | Offline reference works (Wikipedia and more) in `Library/Reference & Encyclopedia/`: `list`, `enable`, `disable`, `refresh`, `search`, `read`. Every source ships off. |
+| `knowledge-base.py` | Offline reference works (Wikipedia and more) in `Library/Reference & Encyclopedia/`: `list`, `enable`, `disable`, `refresh`, `check`, `search`, `read`. Every source ships off. |
 
 Each script is tested by the `test_*.py` file beside it, and `.github/scripts/README.md` lists them all. A memory entry, a session summary or a new note is written directly, in the format its folder's README documents (the root `README.md`, How A Session Goes).
 

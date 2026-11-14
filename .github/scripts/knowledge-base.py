@@ -14,11 +14,16 @@ before installing it. Reading needs the optional libzim package
 (python3 -m pip install --user libzim); without it, `list` still works and
 `search` says how to add it.
 
+Kiwix renames a work now and then, and `refresh` then finds nothing to fetch.
+`check` reads each listing and downloads nothing: it says whether each
+source's prefix still names a build.
+
 Run it:
 
     python3 .github/scripts/knowledge-base.py list
     python3 .github/scripts/knowledge-base.py enable wikipedia-simple
     python3 .github/scripts/knowledge-base.py refresh
+    python3 .github/scripts/knowledge-base.py check --all
     python3 .github/scripts/knowledge-base.py search "photosynthesis"
     python3 .github/scripts/knowledge-base.py read "Photosynthesis"
 """
@@ -299,6 +304,21 @@ def newest(prefix: str, listing: str) -> str | None:
     return f'{prefix}_{dates[-1]}.zim' if dates else None
 
 
+def latest(source: dict[str, object]) -> tuple[str, str, str]:
+    """A source's name, the folder its builds are listed in, and the newest build that listing names.
+    A name, prefix or folder that cannot be trusted, or a listing that names no build of the prefix,
+    is a Problem; a listing that cannot be read raises the error as it came."""
+    prefix, base, key = str(source.get('prefix', '')), str(source.get('base', '')), str(source.get('name', ''))
+    if not (SAFE_NAME.fullmatch(prefix) and SAFE_NAME.fullmatch(key)) or '..' in prefix + key:
+        raise Problem(f'{key!r}: a name and prefix hold only letters, digits, dot, dash and underscore')
+    if not base.startswith('https://') or not base.endswith('/'):
+        raise Problem(f'{key}: the base must be an https:// folder address ending in /')
+    build = newest(prefix, fetch(base).decode('utf-8', 'ignore'))
+    if build is None:
+        raise Problem(f'{key}: the listing at {base} names no {prefix}_YYYY-MM.zim build')
+    return key, base, build
+
+
 def sha256_of(path: pathlib.Path) -> str:
     digest = hashlib.sha256()
     with open(path, 'rb') as handle:
@@ -382,15 +402,9 @@ def refresh(root: pathlib.Path, name: str, verify: bool, assume_yes: bool) -> in
     folder(root).mkdir(parents=True, exist_ok=True)
     failed = 0
     for source in sources:
-        prefix, base, key = str(source.get('prefix', '')), str(source.get('base', '')), str(source.get('name', ''))
+        key = str(source.get('name', ''))
         try:
-            if not (SAFE_NAME.fullmatch(prefix) and SAFE_NAME.fullmatch(key)) or '..' in prefix + key:
-                raise Problem(f'{key!r}: a name and prefix hold only letters, digits, dot, dash and underscore')
-            if not base.startswith('https://') or not base.endswith('/'):
-                raise Problem(f'{key}: the base must be an https:// folder address ending in /')
-            build = newest(prefix, fetch(base).decode('utf-8', 'ignore'))
-            if build is None:
-                raise Problem(f'{key}: the listing at {base} names no {prefix}_YYYY-MM.zim build')
+            key, base, build = latest(source)
             date = re.search(r'_(\d{4}-\d{2})\.zim$', build).group(1)  # type: ignore[union-attr]
             destination = folder(root) / f'{key}_{date}.zim'
             if destination.exists():
@@ -418,6 +432,35 @@ def refresh(root: pathlib.Path, name: str, verify: bool, assume_yes: bool) -> in
     return 1 if failed else 0
 
 
+def check(root: pathlib.Path, name: str, every: bool) -> int:
+    """Whether each source still names a build Kiwix lists, read from its listing, with nothing downloaded:
+    the sources that are on, the one named, or every one. 0 when each does; 1 when one names no build, or
+    cannot be trusted, which sources.json has to fix; 2 when a listing could not be read, which says
+    nothing about the source."""
+    data = load_sources(root)
+    sources = [s for s in data['sources']  # type: ignore[union-attr]
+               if (s.get('name') == name) or (not name and (every or s.get('enabled')))]
+    if not sources:
+        if name:
+            print(f'no source named {name}', file=sys.stderr)
+            return 1
+        print('No source is on, so there is nothing to check; pass --all to check every source.')
+        return 0
+    missing = unread = 0
+    for source in sources:
+        key = str(source.get('name', ''))
+        try:
+            key, _base, build = latest(source)
+            print(f'{key}: {build}')
+        except Problem as problem:
+            print(str(problem), file=sys.stderr)
+            missing += 1
+        except (OSError, urllib.error.URLError) as error:
+            print(f"{key}: the listing at {source.get('base', '')} could not be read ({error})", file=sys.stderr)
+            unread += 1
+    return 1 if missing else 2 if unread else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = vault.arguments((__doc__ or '').split('\n', 1)[0])
     commands = parser.add_subparsers(dest='command')
@@ -433,6 +476,10 @@ def main(argv: list[str] | None = None) -> int:
     refreshing.add_argument('name', nargs='?', default='', help='just this source, on or off')
     refreshing.add_argument('--no-verify', action='store_true', help='install without the published checksum')
     refreshing.add_argument('--yes', action='store_true', help='remove older builds without asking')
+    checking = commands.add_parser('check', help='say whether each source still names a build Kiwix lists; '
+                                                 'download nothing')
+    checking.add_argument('name', nargs='?', default='', help='just this source, on or off')
+    checking.add_argument('--all', action='store_true', help='every source, on or off')
     args = parser.parse_args(argv)
     root = args.root.resolve()
     try:
@@ -444,6 +491,8 @@ def main(argv: list[str] | None = None) -> int:
             return read(root, ' '.join(args.article), max(args.chars, 1))
         if args.command in ('enable', 'disable'):
             return toggle(root, args.name, args.command == 'enable')
+        if args.command == 'check':
+            return check(root, args.name, args.all)
         return refresh(root, args.name, not args.no_verify, args.yes)
     except Problem as problem:
         print(str(problem), file=sys.stderr)

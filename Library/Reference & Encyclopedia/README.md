@@ -46,6 +46,7 @@ Everything runs through one script, `python3 .github/scripts/knowledge-base.py`:
 | `list` | show the installed works and every known source, on or off; it runs when no command is given |
 | `enable` / `disable <name>` | turn a source on or off in `sources.json` |
 | `refresh [name]` | download the newest build of each source that is on, or of the one named, checked against the checksum Kiwix publishes (`--no-verify` to skip the check, `--yes` to remove older builds without asking) |
+| `check [name]` | say whether each source that is on, or the one named, still names a build Kiwix lists, reading each listing and downloading nothing (`--all` for every source) |
 
 `libzim`, the vault's one optional dependency (the root `README.md`, Commands), is installed once by hand: `python3 -m pip install --user libzim` (or into a venv). Only `knowledge-base.py` uses it, and without it `list` still works. Full English Wikipedia (~49 GB) is added with `enable wikipedia`, then `refresh wikipedia`.
 

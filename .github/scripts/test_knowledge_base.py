@@ -166,6 +166,94 @@ class TestKnowledgeBase(unittest.TestCase):
         self.assertEqual(simple['prefix'], 'wikipedia_en-simple_all_nopic')
 
 
+
+class TestCheck(unittest.TestCase):
+    """check reads each listing and downloads nothing, so it can run every week with nobody watching."""
+
+    WIKI = 'https://download.kiwix.org/zim/wikipedia/'
+    WIKTIONARY = 'https://download.kiwix.org/zim/wiktionary/'
+
+    def setUp(self) -> None:
+        self.vault = fixtures.Vault()
+        self.vault.write(SOURCES, json.dumps({'sources': [
+            {'name': 'wikipedia-simple', 'prefix': 'wikipedia_en-simple_all_nopic', 'base': self.WIKI, 'enabled': False},
+            {'name': 'wiktionary', 'prefix': 'wiktionary_en_all_nopic', 'base': self.WIKTIONARY, 'enabled': True},
+            {'name': 'renamed', 'prefix': 'wikipedia_en_simple_all_nopic', 'base': self.WIKI, 'enabled': False},
+        ]}, indent=2) + '\n')
+        self.listings = {
+            self.WIKI: b'<a href="wikipedia_en-simple_all_nopic_2026-09.zim">x</a>',
+            self.WIKTIONARY: b'<a href="wiktionary_en_all_nopic_2026-10.zim">x</a>',
+        }
+        self.read: list[str] = []
+        self.real = kb.fetch
+
+        def fetch(url: str, timeout: int = 60) -> bytes:
+            self.read.append(url)
+            if url not in self.listings:
+                raise urllib.error.URLError('no route to host')
+            return self.listings[url]
+
+        kb.fetch = fetch
+
+    def tearDown(self) -> None:
+        kb.fetch = self.real
+        self.vault.cleanup()
+
+    def check(self, *args: str) -> tuple[int, str, str]:
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = kb.main(['--root', str(self.vault.root), 'check', *args])
+        return code, out.getvalue(), err.getvalue()
+
+    def test_the_sources_that_are_on_are_read_and_nothing_is_downloaded(self) -> None:
+        before = sorted(p.name for p in self.vault.path(SOURCES).parent.iterdir())
+        code, out, err = self.check()
+        self.assertEqual(code, 0, err)
+        self.assertEqual(out, 'wiktionary: wiktionary_en_all_nopic_2026-10.zim\n')
+        # One listing read, no build and no checksum fetched, and nothing written beside the sources.
+        self.assertEqual(self.read, [self.WIKTIONARY])
+        self.assertEqual(sorted(p.name for p in self.vault.path(SOURCES).parent.iterdir()), before)
+
+    def test_a_prefix_that_names_no_build_is_named_and_fails(self) -> None:
+        code, out, err = self.check('--all')
+        self.assertEqual(code, 1)
+        self.assertIn('wikipedia-simple: wikipedia_en-simple_all_nopic_2026-09.zim', out)
+        self.assertIn(f'renamed: the listing at {self.WIKI} names no wikipedia_en_simple_all_nopic_YYYY-MM.zim build',
+                      err)
+
+    def test_a_listing_that_cannot_be_read_is_not_a_missing_build(self) -> None:
+        del self.listings[self.WIKTIONARY]
+        code, _out, err = self.check()
+        self.assertEqual(code, 2)
+        self.assertIn(f'wiktionary: the listing at {self.WIKTIONARY} could not be read', err)
+        # A source that names no build outranks a listing that could not be read.
+        self.assertEqual(self.check('--all')[0], 1)
+
+    def test_with_no_source_on_nothing_is_read(self) -> None:
+        data = json.loads(self.vault.read(SOURCES))
+        for source in data['sources']:
+            source['enabled'] = False
+        self.vault.write(SOURCES, json.dumps(data, indent=2) + '\n')
+        code, out, _err = self.check()
+        self.assertEqual(code, 0)
+        self.assertIn('No source is on', out)
+        self.assertEqual(self.read, [])
+
+    def test_a_named_source_is_read_on_or_off(self) -> None:
+        code, out, _err = self.check('wikipedia-simple')
+        self.assertEqual(code, 0)
+        self.assertEqual(self.read, [self.WIKI])
+        self.assertEqual(self.check('nowhere')[0], 1)
+
+    def test_a_name_that_cannot_be_trusted_is_refused_before_its_listing_is_read(self) -> None:
+        data = json.loads(self.vault.read(SOURCES))
+        data['sources'] = [{'name': 'bad/name', 'prefix': 'x', 'base': 'https://example.org/', 'enabled': True}]
+        self.vault.write(SOURCES, json.dumps(data, indent=2) + '\n')
+        code, _out, err = self.check()
+        self.assertEqual(code, 1)
+        self.assertIn('a name and prefix hold only letters', err)
+        self.assertEqual(self.read, [])
+
 ARTICLES = {'Lisbon': '<p>Trams climb the hills of Lisbon.</p>', 'Porto': '<p>Port wine ages in cellars by the river.</p>'}
 
 
