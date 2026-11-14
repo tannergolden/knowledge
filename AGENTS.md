@@ -151,7 +151,7 @@ the rules for writing there.
 - `python3 .github/scripts/session.py start`, `after-edit` and `stop`: orient a session, check a
   note after an edit, and tidy up when a turn ends.
 - `python3 .github/scripts/check-vault.py`: every check CI runs: notes, links, personal data,
-  generated parts.
+  ignored files, generated parts.
 - `python3 .github/scripts/update-vault.py`: redraws everything generated: memory tiers, generated
   blocks, the catalog, `.gitkeep` markers.
 - `python3 .github/scripts/lint-notes.py "<note>"`: one note against the schema. `check-links.py`

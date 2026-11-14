@@ -153,8 +153,9 @@ Some text in the vault is drawn by a machine and never edited by hand: change it
 | The folder logs between `AUTO-INDEX` markers                                                                   | 🗂️ Machined Indexes                       | After each push to the default branch, as a pull request |
 
 `python3 .github/scripts/check-vault.py` runs every vault check: the notes, the links, the scan for
-personal numbers and the generated parts. 🧠 Vault runs it, with the scripts' own
-tests, on every pull request and every push to the default branch, in the template as in every vault.
+personal numbers, the files git ignores and the generated parts. 🧠 Vault runs it, with the scripts'
+own tests, on every pull request and every push to the default branch, in the template as in every
+vault.
 [Vault Scripts](../technical/Vault-Scripts.md) says how the scripts fit together and what to do when
 one fails.
 

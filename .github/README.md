@@ -110,7 +110,7 @@ works wherever it is placed, and [`vault.yml`](workflows/vault.yml) runs every c
 scripts' own tests, on every pull request and every push to the default branch.
 
 ```bash
-python3 .github/scripts/check-vault.py    # every check: notes, links, personal data, generated parts
+python3 .github/scripts/check-vault.py    # every check: notes, links, personal data, ignored files, generated parts
 python3 .github/scripts/update-vault.py   # redraw everything generated: memory tiers, lists, the catalog
 python3 .github/scripts/lint-notes.py X   # one note against the schema
 ```

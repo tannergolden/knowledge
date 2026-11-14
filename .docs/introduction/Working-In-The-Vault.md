@@ -79,7 +79,7 @@ The [code of conduct](../../.github/CODE_OF_CONDUCT.md), the
 - [ ] Run every vault check and make sure it is green:
 
 ```bash
-python3 .github/scripts/check-vault.py   # notes, links, personal data, generated parts
+python3 .github/scripts/check-vault.py   # notes, links, personal data, ignored files, generated parts
 ```
 
 - [ ] Redraw anything it reports as stale with `python3 .github/scripts/update-vault.py`.

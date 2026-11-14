@@ -100,7 +100,7 @@ the optional `libzim`, which only `knowledge-base.py` needs to search and read:
 
 | Command                                                          | Does                                                                                                           |
 | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
-| `python3 .github/scripts/check-vault.py`                         | Every check CI runs: notes, links, personal data and generated parts                                           |
+| `python3 .github/scripts/check-vault.py`                         | Every check CI runs: notes, links, personal data, ignored files and generated parts                            |
 | `python3 .github/scripts/update-vault.py`                        | Redraws everything generated: the memory tiers, the generated lists, the catalog and the `.gitkeep` markers    |
 | `python3 .github/scripts/lint-notes.py "<note>"`                 | One note against the schema; `check-links.py` and `scan-pii.py` check one part each                            |
 | `python3 .github/scripts/session.py start`                       | Lists what a session reads first; `after-edit` checks a note once it is written, and `stop` redraws and checks |

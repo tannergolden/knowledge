@@ -5,8 +5,8 @@
 name: 'Vault Checks'
 description: >-
   Checks every note, wikilink and generated part of the vault, scans the
-  files git would commit for personal numbers, and tests the scripts that
-  do it.
+  files git would commit for personal numbers, finds the files git
+  ignores, and tests the scripts that do it.
 author: 'Tanner Golden'
 branding:
   icon: 'check-circle'

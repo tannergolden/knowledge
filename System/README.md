@@ -76,6 +76,7 @@ The vault's checks and generators are scripts in `.github/scripts/`, run from th
 | `lint-notes.py` | Every note's frontmatter and naming against the schema (`.docs/technical/vault/Note-Schema.md`) and its keywords (`.docs/technical/vault/Keywords.md`). |
 | `check-links.py` | The wikilink graph: every link resolves and follows the hub topology (`.docs/technical/vault/Link-Topology.md`). |
 | `scan-pii.py` | Social Security and card numbers in the files git tracks or would commit. Keys and tokens are the gitleaks scan's job in `checks.yml`. |
+| `check-ignored.py` | Files under the top folders that a rule inherited for code keeps out of git, where nothing commits or backs them up. |
 | `update-vault.py` | Draws everything generated: the memory cascade, every `brain:` block, the catalog and the `.gitkeep` markers. `--check` writes nothing and fails when anything is stale. |
 | `session.py` | The session helpers, run by hand: the session-start card, the check after a note is written, and the end-of-turn redraw. |
 | `profile-coverage.py` | How filled in each Profile facet is; its `--json` names the facet to ask about next. |
