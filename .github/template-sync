@@ -125,6 +125,7 @@
 /.docs/templates/User-Story.md
 /.github/README.md
 /.github/actions/**
+/.github/scripts/check-ignored.py
 /.github/scripts/check-links.py
 /.github/scripts/check-vault.py
 /.github/scripts/fixtures.py
@@ -133,6 +134,7 @@
 /.github/scripts/profile-coverage.py
 /.github/scripts/scan-pii.py
 /.github/scripts/session.py
+/.github/scripts/test_check_ignored.py
 /.github/scripts/test_check_links.py
 /.github/scripts/test_check_vault.py
 /.github/scripts/test_knowledge_base.py

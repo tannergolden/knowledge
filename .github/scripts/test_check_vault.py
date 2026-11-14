@@ -96,6 +96,19 @@ class TestWiring(unittest.TestCase):
         for name in ('lint-notes.py', 'check-links.py', 'scan-pii.py', 'check-ignored.py', 'update-vault.py'):
             self.assertIn(f"'{name}'", source)
 
+    def test_the_template_delivers_every_vault_script(self) -> None:
+        # check-vault.py is kept current in every vault made from the template, so each script it runs has to
+        # travel with it: a script the sync list does not name never reaches a vault that already exists.
+        sync_list = ROOT / '.github' / 'template-sync'
+        if not sync_list.is_file():
+            self.skipTest('this vault keeps no template sync list')
+        # A path is named whether the list keeps it current or, behind a `#`, leaves it to the owner.
+        named = {line.lstrip('#') for line in sync_list.read_text(encoding='utf-8').splitlines()}
+        for script in VAULT_SCRIPTS:
+            test = 'test_' + script.replace('-', '_')
+            for name in (script, test) if (fixtures.SCRIPTS / test).is_file() else (script,):
+                self.assertTrue(f'/.github/scripts/{name}' in named, f'{name} is not named in .github/template-sync')
+
     def test_every_script_reads_well_in_the_file_log(self) -> None:
         for name in VAULT_SCRIPTS + tuple(p.name for p in fixtures.SCRIPTS.glob('test_*.py')):
             text = (fixtures.SCRIPTS / name).read_text(encoding='utf-8')
