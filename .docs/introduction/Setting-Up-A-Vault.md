@@ -98,7 +98,9 @@ python3 .github/scripts/profile-coverage.py
 
 - **`session.py start`** lists what to read first: the root `README.md`, `Profile/Working Style.md`,
   `Memory/Log.md`, the two newest session summaries (none yet) and, when files wait at the Inbox,
-  `Inbox/README.md` and each waiting file.
+  `Inbox/README.md` and each waiting file. It also names what is due: a one-time date in
+  `Memory/Dates.md` that has passed or falls within two weeks, held research past its review date,
+  and the count of open loops in `Memory/Log.md`.
 - **`check-vault.py`** runs every vault check, so your machine sees what 🧠 Vault sees.
 - **`profile-coverage.py`** scores each of the twelve Profile facets and names the one to ask about
   next. Every facet starts as a blank scaffold.

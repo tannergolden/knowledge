@@ -74,7 +74,9 @@ At the start of every session, before other work:
 
 `python3 .github/scripts/session.py start` lists what to read: this page, `Profile/Working Style.md`,
 `Memory/Log.md` and the two newest summaries, then, when files wait, `Inbox/README.md` and each
-waiting file. An AI reads `AGENTS.md` before any of it, and most AI apps load that file by
+waiting file. It also names what is due: a one-time date in `Memory/Dates.md` that has passed or
+falls within two weeks, held research past its review date, and the count of open loops in
+`Memory/Log.md`. An AI reads `AGENTS.md` before any of it, and most AI apps load that file by
 themselves: it holds these steps too, with the rules every AI follows here.
 
 - **Retrieval order.** A fact is grounded in the closest source that holds it: the vault (its notes
