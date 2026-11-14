@@ -8,7 +8,7 @@ focus: '[One line: the question this log answers]'
 decision: '[The ADR it fed, as a markdown link, or N/A while it stands as background]'
 -->
 
-<!-- On copying: copy this file to .docs/technical/research/[Topic].md, named for its topic in Capitalized-Kebab, for the research behind a change to the vault itself. Research about anything else, such as the owner's own life, a venture or the world, is a report held in Inbox/Research/, never a log here. Set type to 'record', verified to the date of the newest log entry, focus to the one question it answers and decision to the ADR it fed, or N/A. Replace every [bracketed] placeholder: the title and the H1 alike, with the question or the topic fully capped, the description with one of the log's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a prompt once it is answered, and mark a section N/A only when it does not apply. If .docs/technical/research/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says. Delete this note from the copy. -->
+<!-- On copying: copy this file to .docs/technical/research/[Topic].md, named for its topic in Capitalized-Kebab, for the research behind a change to the vault itself. Research about anything else, such as the owner's own life, a venture or the world, is a report held in Inbox/Research/, never a log here. Set type to 'record', verified to the date of the newest log entry, focus to the one question it answers and decision to the ADR it fed, or N/A. Replace every [bracketed] placeholder outside the reverification shape under Keeping It Current, which the copy keeps as it is: the title and the H1 alike, with the question or the topic fully capped, the description with one of the log's own, saying what it holds and when to read it, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a prompt once it is answered, and a section that does not apply. If .docs/technical/research/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says, its folder log drawing each log's verified, focus and decision as columns, the way .docs/adrs/README.md draws each record's status, date and evidence, so each log's age shows in the index. In tannergolden/knowledge itself, the copy takes a line under "Only ever in the template" in .github/template-sync. Delete this note from the copy. -->
 
 <div align="center">
 
@@ -33,17 +33,19 @@ _[A principle of this research's own, shorter than the line above.]_
 
 ---
 
-## 📋 Report Meta
+## 📋 Log Meta
 
-| Attribute               | Detail                                                                    |
-| :---------------------- | :------------------------------------------------------------------------ |
-| **Question**            | [The one question this log answers]                                       |
-| **Decision it informs** | [The choice this evidence feeds, or background with no decision pending]  |
-| **Verified**            | [YYYY-MM-DD], the date of the newest log entry below                      |
-| **Confidence**          | [High / Medium / Low], because [one clause on why]                        |
-| **Sources**             | [N read directly, of M in all], listed under Sources & Provenance         |
-| **Supersedes**          | [The log it replaces, or N/A]                                             |
-| **Graduated to**        | [The ADR that carries the lasting decision, or N/A until one is recorded] |
+> [!NOTE]
+> **`verified`**, **`focus`** and **`decision`** live in the frontmatter above and feed the
+> research folder's log, so they are recorded once: the date of the newest log entry, the one
+> question this log answers, and the ADR that carries its lasting decision.
+
+| Attribute               | Detail                                                                   |
+| :---------------------- | :----------------------------------------------------------------------- |
+| **Decision it informs** | [The choice this evidence feeds, or background with no decision pending] |
+| **Confidence**          | [High / Medium / Low], because [one clause on why]                       |
+| **Sources**             | [N read directly, of M in all], listed under Sources & Provenance        |
+| **Supersedes**          | [The log it replaces, or N/A]                                            |
 
 ---
 
@@ -85,9 +87,9 @@ rests on, and how sure it is._
 A source that could not be read directly is weaker than one that was, so each one is tagged, and a
 finding shows the footing it stands on.
 
-| Source                 | Read                                         | Backs                                                  |
-| :--------------------- | :------------------------------------------- | :----------------------------------------------------- |
-| [A link or a citation] | [✅ directly / 🟡 corroborated / ❌ blocked] | [The claims it supports, and why it could not be read] |
+| Source                 | Read                                                                 | Backs                                                  |
+| :--------------------- | :------------------------------------------------------------------- | :----------------------------------------------------- |
+| [A link or a citation] | [✅ read directly / 🟡 corroborated, not read / ❌ could not verify] | [The claims it supports, and why it could not be read] |
 
 ### ⚖️ Alternatives Considered
 
@@ -104,8 +106,7 @@ finding shows the footing it stands on.
 
 [The recommendation the evidence supports, tied to the objective and the alternatives.] If it
 settles a choice about the vault's design, record the decision as an ADR made from the
-[ADR form](/.docs/templates/ADR.md), cite this log as its evidence, and name the ADR in the meta
-table.
+[ADR form](/.docs/templates/ADR.md), cite this log as its evidence, and set `decision` in the frontmatter above to the ADR.
 
 ### ✅ Confidence & Caveats
 
@@ -121,8 +122,8 @@ table.
 > [!NOTE]
 > **The `verified` date is the log's age**, and it equals the date of the newest log entry. Nothing
 > checks that the two agree, so each reverification moves both. A log is trusted for three months;
-> after that it is reverified before it is used again, and past six months the policy flags it for
-> reverifying or removing, and the owner decides.
+> after that it is reverified before it is used again, and past six months it is due for reverifying
+> or removing, though nothing flags it, and the owner decides.
 
 To reverify, check each claim against its source and against the vault as it stands, add a dated
 entry below the last one, never editing a past one, and move `verified` to its date. When the

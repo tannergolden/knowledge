@@ -5,7 +5,7 @@ type: 'template'
 keywords: ['[a search term not in the title]', '[another name for the change]', 'template']
 -->
 
-<!-- On copying: copy this file to .docs/technical/plans/[Short-Slug].md, naming it in Capitalized-Kebab, to plan a change to the vault's own machinery in small, reviewable steps, after its design in .docs/technical/designs/ where it has one. Set type to 'record'. Replace every [bracketed] placeholder: the title and the H1 alike, with the change fully capped, the description with one of the plan's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a section that does not apply. If .docs/technical/plans/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says. Delete this note from the copy. -->
+<!-- On copying: copy this file to .docs/technical/plans/[Short-Slug].md, naming it in Capitalized-Kebab, to plan a change to the vault's own machinery in small, reviewable steps, after its design in .docs/technical/designs/ where it has one. A plan for anything but the vault itself, such as a trip, a move or a venture's launch, is not a plan here: it is a project in Projects/, or goes in the venture's own files. Set type to 'record'. Replace every [bracketed] placeholder: the title and the H1 alike, with the change fully capped, the description with one of the plan's own, saying what it holds and when to read it, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a section that does not apply. If .docs/technical/plans/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says. In tannergolden/knowledge itself, the copy takes a line under "Only ever in the template" in .github/template-sync. Delete this note from the copy. -->
 
 <div align="center">
 
@@ -79,6 +79,8 @@ Each runs from the vault root, in this order, once the change is written, as the
 python3 .github/scripts/lint-notes.py "[each note the change writes]"
 python3 .github/scripts/update-vault.py
 python3 .github/scripts/check-vault.py
+python3 .github/scripts/validate-repository.py
+python3 -m pip install -r .github/scripts/requirements.txt
 python3 -m unittest discover -s .github/scripts -p 'test_*.py'
 ```
 

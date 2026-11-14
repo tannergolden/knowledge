@@ -5,7 +5,7 @@ type: 'template'
 keywords: ['[a search term not in the title]', '[the words of the error or the symptom]', 'template']
 -->
 
-<!-- On copying: copy this file to .docs/operations/runbooks/[Short-Slug].md, named in Capitalized-Kebab, one runbook for each routine task or known failure in the vault's machinery, such as restoring a note from git, renewing an expired token or taking a new major release of the template. Set type to 'guide'. Replace every [bracketed] placeholder: the title and the H1 alike, with the task or the failure fully capped, the description with one of the runbook's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, such as the words of the error, without 'template'. Write each step as the exact command or action and the result it should give, for someone doing it for the first time, and name a secret by where it is kept, never by its value. Its changes are kept in git history, not in the runbook. If .docs/operations/runbooks/ does not exist yet, make it with its own README.md. Delete this note from the copy. -->
+<!-- On copying: copy this file to .docs/operations/runbooks/[Short-Slug].md, named in Capitalized-Kebab, one runbook for each routine task or known failure in the vault's machinery, such as restoring a note from git, renewing an expired token or taking a new major release of the template. Set type to 'guide'. Replace every [bracketed] placeholder: the title and the H1 alike, with the task or the failure fully capped, the description with one of the runbook's own, saying what it holds and when to read it, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, such as the words of the error, without 'template'. Write each step as the exact command or action and the result it should give, for someone doing it for the first time, and name a secret by where it is kept, never by its value. Its changes are kept in git history, not in the runbook. If .docs/operations/runbooks/ does not exist yet, make it with its own README.md. Delete this note from the copy. -->
 
 <div align="center">
 
@@ -120,11 +120,11 @@ To undo the steps that changed something, newest first:
 
 ## 📣 Who To Tell
 
-| When                                                   | Who                              | How                                                                                               |
-| :----------------------------------------------------- | :------------------------------- | :------------------------------------------------------------------------------------------------ |
-| A step fails, or its result does not match             | [The owner]                      | [In person / In the issue for this work]                                                          |
-| A secret or personal data may be exposed               | [The owner]                      | Privately, never in a public issue, as [SECURITY.md](/.github/SECURITY.md) says                   |
-| The fault is in what the vault takes from its template | [Whoever maintains the template] | Privately or in an issue on `tannergolden/knowledge`, as [SECURITY.md](/.github/SECURITY.md) says |
+| When                                                   | Who                              | How                                                                                                                                                                                                               |
+| :----------------------------------------------------- | :------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A step fails, or its result does not match             | [The owner]                      | [In person / In the issue for this work]                                                                                                                                                                          |
+| A secret or personal data may be exposed               | [The owner]                      | Privately, never in a public issue, as [Personal Data & Secrets](/.docs/operations/Personal-Data-&-Secrets.md) says                                                                                               |
+| The fault is in what the vault takes from its template | [Whoever maintains the template] | A security fault privately, with the Report a vulnerability button of `tannergolden/knowledge`, as [SECURITY.md](/.github/SECURITY.md) says; any other fault in an issue there, with nothing from the vault in it |
 
 ---
 

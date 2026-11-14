@@ -79,13 +79,15 @@ which ships them.
    top says what the copy needs, and is deleted from the copy.
 2. **Replace every `[bracketed]` placeholder**: the title and the H1 alike, with the form's emoji
    and the copy's own title, fully capped; the one-line description, the tagline and the closing
-   phrase, each the copy's own; and a description and keywords of the copy's own, without
-   `template`. The `type` becomes the one its row names, and a choice such as `[a / b / c]` becomes
-   the one that holds.
-3. **Delete a section that does not apply**, rather than leave it empty.
+   phrase, each the copy's own; a description of the copy's own, saying what it holds and when to
+   read it; and keywords of its own, without `template`. The `type` becomes the one its row names,
+   and a choice such as `[a / b / c]` becomes the one that holds.
+3. **Delete a section that does not apply**, rather than leave it empty or mark it N/A.
 4. **Link the copy from the pull request** that carries the change it records, so the reasoning
    stays traceable. A folder under `.docs/` that does not exist yet, such as `runbooks/`, is made
-   with its own `README.md` when its first document arrives.
+   with its own `README.md` when its first document arrives. In tannergolden/knowledge itself, a copy
+   also takes a line in `.github/template-sync`, a record of the template's own design under "Only
+   ever in the template" ([How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md)).
 
 ---
 

@@ -8,7 +8,7 @@ date: '[YYYY-MM-DD]'
 evidence: '[A commit-pinned permalink to each research log behind it, as a markdown link, or N/A]'
 -->
 
-<!-- On copying: copy this file to .docs/adrs/ADR-[NNNN]-[Short-Slug].md, taking the next number and naming it in Capitalized-Kebab, to record one decision about the vault itself: its layout, its rules, its scripts or its automation. A decision in the owner's own life is a record in Memory/Decisions/, made from Memory/.template/Decision.md, and a venture's goes in its Administration/Decisions.md. Set type to 'record', status to the one that holds, date to the day it was decided, and evidence to a commit-pinned permalink to each research log behind it, or N/A; evidence never links a report in Inbox/Research/, which only that folder's index links. Replace every [bracketed] placeholder: the title and the H1 alike, with the number and the decision fully capped, the description with one of the record's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a section or a row that does not apply. A later decision supersedes this one rather than rewriting it: this record is marked Superseded and links the one that replaces it. Delete this note from the copy. -->
+<!-- On copying: copy this file to .docs/adrs/ADR-[NNNN]-[Short-Slug].md, taking the next number and naming it in Capitalized-Kebab, to record one decision about the vault itself: its layout, its rules, its scripts or its automation. A decision in the owner's own life is a record in Memory/Decisions/, made from Memory/.template/Decision.md, and a venture's goes in its Administration/Decisions.md. Set type to 'record', status to the one that holds, date to the day it was decided, and evidence to a commit-pinned permalink to each research log behind it, or N/A; evidence never links a report in Inbox/Research/, which only that folder's index links. Replace every [bracketed] placeholder: the title and the H1 alike, with the number and the decision fully capped, the description with one of the record's own, saying what it holds and when to read it, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a section or a row that does not apply. In tannergolden/knowledge itself, the copy takes a line under "Only ever in the template" in .github/template-sync (.docs/distribution/How-A-Change-Reaches-A-Vault.md). A later decision supersedes this one rather than rewriting it: this record is marked Superseded and links the one that replaces it. Delete this note from the copy. -->
 
 <div align="center">
 
@@ -56,15 +56,15 @@ within, in a few short paragraphs.]
 
 ## 🏗️ Considered Options
 
-1. **[Option A]**: [The first option, in one sentence]
-2. **[Option B]**: [The second option]
-3. **[Option C]**: [The third option]
+1. **[The first option's name]**: [The option, in one sentence]
+2. **[The second option's name]**: [The option]
+3. **[The third option's name]**: [The option]
 
 ---
 
 ## ✅ Decision Outcome
 
-**Chosen Option**: [The option's name]
+**Chosen Option**: Option [N], [its name]
 
 ### Rationale for Selection
 
@@ -92,12 +92,9 @@ within, in a few short paragraphs.]
 
 ## ⚖️ Trade-off Comparative
 
-### Option A: [Name]
+<!-- One section for each option not chosen. -->
 
-- ✅ [What it does well]
-- ❌ [What it costs]
-
-### Option B: [Name]
+### Option [N]: [The Name of an Option Not Chosen]
 
 - ✅ [What it does well]
 - ❌ [What it costs]

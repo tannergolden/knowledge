@@ -5,7 +5,7 @@ type: 'template'
 keywords: ['[a search term not in the title]', '[another name for the change]', 'template']
 -->
 
-<!-- On copying: copy this file to .docs/technical/designs/[Short-Slug].md, naming it in Capitalized-Kebab, to design a change to the vault's own machinery, such as a new folder, rule, script or workflow, before it is built. Research about anything but the vault itself, such as the owner's own life, a venture or the world, is a report held in Inbox/Research/, never a design here. Set type to 'record'. Replace every [bracketed] placeholder: the title and the H1 alike, with the design's name fully capped, the description with one of the design's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a section that does not apply. Keep the design current as it changes, and record each decision that changes the vault's design as an ADR in .docs/adrs/, linked here. If .docs/technical/designs/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says. Delete this note from the copy. -->
+<!-- On copying: copy this file to .docs/technical/designs/[Short-Slug].md, naming it in Capitalized-Kebab, to design a change to the vault's own machinery, such as a new folder, rule, script or workflow, before it is built. A design for anything but the vault itself is not a design here: a venture's product is designed in its Research & Development (R&D)/ folder, and a personal project in its own folder in Projects/. Set type to 'record'. Replace every [bracketed] placeholder: the title and the H1 alike, with the design's name fully capped, the description with one of the design's own, saying what it holds and when to read it, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a section that does not apply. Keep the design current as it changes, and record each decision that changes the vault's design as an ADR in .docs/adrs/, linked here. If .docs/technical/designs/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says. In tannergolden/knowledge itself, the copy takes a line under "Only ever in the template" in .github/template-sync. Delete this note from the copy. -->
 
 <div align="center">
 
@@ -24,6 +24,9 @@ _[A principle of this design's own, shorter than the line above.]_
 ## 📝 Abstract
 
 [What the change is and why it is needed, in two or three sentences.]
+
+- **Decisions**: [Each ADR in `.docs/adrs/` this design led to, as a link, or N/A]
+- **Research**: [The research log behind it, in `.docs/technical/research/`, as a link, or N/A]
 
 ---
 
@@ -93,6 +96,9 @@ graph LR
 - **Notes already written**: [How they take the change, in the same commit]
 - **Vaults made from the template**: [How each takes the change through 🔄 Template Sync, and
   whether it breaks one and needs a new major release; delete this line in a vault of its own]
+- **The template's file list**: [The line each new file takes in `.github/template-sync`, as
+  [How A Change Reaches A Vault](/.docs/distribution/How-A-Change-Reaches-A-Vault.md) says; delete
+  this line in a vault of its own]
 - **Undo**: [How to reverse it: revert the pull request, or restore the files from git]
 
 ### 🔗 See also

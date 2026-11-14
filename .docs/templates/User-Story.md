@@ -5,7 +5,7 @@ type: 'template'
 keywords: ['requirement', 'acceptance criteria', 'feature request', 'issue', 'template']
 -->
 
-<!-- On copying: open an issue from the ✨ Feature Request form and carry this story into its fields: the story line into Summary, whoever it serves into Who is affected, the need into Problem / motivation, the acceptance criteria into Acceptance criteria, what it leaves out into Scope / out of scope, what it waits on into Dependencies / risks, and what it touches into Additional context / links. There is no stories folder: the issue is the story, and the pull request that meets it closes it. Replace every [bracketed] placeholder, and keep the owner's personal context out of an issue on a public repository. Delete this note from the copy. -->
+<!-- On copying: open an issue from the ✨ Feature Request form and carry this story into its fields: the story line into Summary, whoever it serves into Who is affected, the need into Problem / motivation, the acceptance criteria into Acceptance criteria, what it leaves out into Scope / out of scope, what it waits on into Dependencies / risks, and what it touches into Additional context / links. The form also requires Approximate scope, how many vaults the change reaches, and Proposed solution, the change in mind or "None yet: a Technical Design will settle it"; the Definition Of Done joins the acceptance criteria. There is no stories folder: the issue is the story, and the pull request that meets it closes it. Replace every [bracketed] placeholder, and keep the owner's personal context out of an issue on a public repository. Delete this note from the copy. -->
 
 <div align="center">
 
@@ -65,7 +65,7 @@ Each is an outcome that can be checked, never a detail of how it is built:
 - [ ] Every acceptance criterion holds, checked by a test where one can be written
 - [ ] `python3 .github/scripts/check-vault.py` passes, and `update-vault.py` has nothing left to
       redraw
-- [ ] The README of each folder it changes says what changed
+- [ ] The README of each folder it changes describes the folder as it now is
 - [ ] Merged through a pull request that closes the issue
 
 ### 🔗 See also

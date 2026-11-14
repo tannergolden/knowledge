@@ -74,8 +74,8 @@ and trade-offs that shaped it first.
 Indexes redraws it after every push to the default branch, from each record's
 own frontmatter.
 **Status** is Proposed, Accepted, Superseded, or Deprecated; **Date** is when
-the decision was made; **Evidence** links the research report(s) that informed
-it, or reads N/A.
+the decision was made; **Evidence** links each research log behind
+it, in `.docs/technical/research/`, or reads N/A.
 
 ---
 
@@ -84,7 +84,7 @@ it, or reads N/A.
 - [ ] Copy the [ADR template](../templates/ADR.md) into this folder as
       `ADR-NNNN-Short-Slug.md`, taking the next number.
 - [ ] Give it its own title and description, set `type: record`, `status`, `date` and
-      `evidence` in its frontmatter, and write every section.
+      `evidence` in its frontmatter, and write every section that applies, deleting the rest.
 - [ ] Propose it in a pull request. Once merged, it is **Accepted**.
 
 A later decision supersedes an earlier one rather than rewriting it: mark the
