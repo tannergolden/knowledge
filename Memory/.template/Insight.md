@@ -11,7 +11,7 @@ keywords: ["[the pattern in other words]", "[who or what it concerns]", "templat
 - Replace [Insight Title] in the H1, keeping the emoji, and each [bracketed] prompt with what is known, or delete it; nothing is guessed.
 - Dates are ISO 8601: As of is when the pattern holds in the world, YYYY-MM or YYYY-MM-DD, and Recorded is the day it was written down, YYYY-MM-DD.
 - When the pattern no longer holds, the insight is superseded, never rewritten: Status becomes Superseded, with the plain path of the insight that replaces it; the frontmatter takes status: deprecated, so recall ranks it lower; and As of is closed with the date it stopped holding, as in YYYY-MM to YYYY-MM (Memory/README.md, Writing An Entry).
-- Name other files by plain path in Evidence and Related lines; a record carries no wikilinks.
+- Name other files by plain path, in backticks on the Evidence lines and on Related lines elsewhere, so check-links.py checks each; a record carries no wikilinks.
 - Once filed, lint-notes.py checks it, and update-vault.py lists it in Memory/Insights/README.md.
 - Delete this note from the copy.
 -->
@@ -24,8 +24,8 @@ keywords: ["[the pattern in other words]", "[who or what it concerns]", "templat
 
 ## Evidence
 
-- [The plain path of a source memory it was distilled from]
-- [The plain path of another source memory]
+- `[the plain path of a source memory it was distilled from]`
+- `[the plain path of another source memory]`
 
 ## Confidence
 
@@ -38,7 +38,9 @@ keywords: ["[the pattern in other words]", "[who or what it concerns]", "templat
 
 ## Status
 
-[Active / Superseded]. [Once superseded: the plain path of the insight that replaces it.]
+[Active / Superseded]
+
+- Related: [once superseded, the plain path of the insight that replaces it; deleted while it is Active]
 
 ## Related
 

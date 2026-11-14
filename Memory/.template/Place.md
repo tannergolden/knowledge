@@ -11,7 +11,7 @@ keywords: ["[other name for the place]", "[what it is to the owner]", "template"
 - Replace [Place Name] in the H1, keeping the emoji, and each [bracketed] prompt with what is known, or delete it. A field nobody knows stays blank, or its line goes; nothing is guessed.
 - A precise address is surfaced only when the work needs it (Profile/README.md, Rules).
 - Dates are ISO 8601: YYYY-MM-DD, or YYYY-MM when only the month is known. As of is when the facts became true; Recorded is the day they were written down.
-- When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays beside it, marked superseded with the dates it held, such as a former use of the place (Memory/README.md, Writing An Entry).
+- When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays on its own line below it, marked with the dates it held, as a former use of the place ends (superseded: held 2019-03 to 2026-06) under the current use. A fact added after the entry was made ends its line with its own dates, (As of: YYYY-MM; Recorded: YYYY-MM-DD) (Memory/README.md, Writing An Entry).
 - Name other files by plain path in Related lines; an entry carries no wikilinks.
 - Once filed, lint-notes.py checks it, and update-vault.py lists it in Memory/Entities/Places/README.md.
 - Delete this note from the copy.

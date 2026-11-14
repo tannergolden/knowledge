@@ -5,7 +5,7 @@ type: "template"
 keywords: ["[synonym]", "template"]
 -->
 
-<!-- On copying: this makes one entry in a facet that is a folder, saved as Profile/<Facet>/<Title>.md, for an item no other scaffold here fits: a belief, a goal, a skill and a health condition each have their own. Then:
+<!-- On copying: this makes one entry in a facet that is a folder, saved as Profile/<Facet>/<Title>.md, for an item no other scaffold here fits: a belief, a goal, a skill, a health condition and a life chapter each have their own. Then:
 - Only with the owner's yes: Profile/ is read-only unless the owner asks or confirms (Profile/README.md, Rules).
 - Set type to "reference". Give the copy its real title, as in the H1, a description of what it holds and when to read it, and keywords a search would use: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
 - Replace [Entry Title] in the H1 behind a fitting emoji, and each [bracketed] prompt in the owner's own words, or delete it.
@@ -28,4 +28,4 @@ keywords: ["[synonym]", "template"]
 
 ## Related
 
-- [The plain path of a related facet or entry]
+- Related: [the plain path of a related facet or entry]

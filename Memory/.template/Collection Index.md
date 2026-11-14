@@ -9,7 +9,7 @@ keywords: ["[what the entries are]", "[another name for them]", "template"]
 - Set type to "index". Replace [emoji] and [COLLECTION] in the title and the H1 alike with a fitting emoji and the collection's name, fully capped, and give the copy its real description and keywords: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
 - Replace every [bracketed] placeholder with what has been decided, nothing invented: the one-line description and the tagline under the H1, each section, and the closing phrase, each the collection's own, as the README of Memory/Entities/People/ shows.
 - Its entries need a scaffold of their own in Memory/.template/, proposed first like any new file and listed in Memory/.template/README.md.
-- The folder is added to COLLECTIONS in .github/scripts/vault.py, so update-vault.py draws the Entries block, which is never edited by hand. The README of the folder above names the new collection.
+- The folder is added to COLLECTIONS in .github/scripts/vault.py, so update-vault.py draws the Entries block, which is never edited by hand; a collection whose entries are named by date is also added to DATED_ENTRIES in .github/scripts/lint-notes.py. The README of the folder above names the new collection.
 - Once filed, lint-notes.py checks it.
 - Delete this note from the copy.
 -->

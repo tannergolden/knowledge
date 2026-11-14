@@ -36,4 +36,4 @@ keywords: ["[synonym]", "template"]
 
 ## Related
 
-- [The plain path of a related skill or goal]
+- Related: [the plain path of a related skill or goal]

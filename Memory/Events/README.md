@@ -39,7 +39,7 @@ A specific, dated occurrence with continuity value earns an event: a milestone, 
 
 ## 🧾 Each entry
 
-One file per event, named `YYYY-MM-DD-slug.md` so events sort chronologically, and atomic: one happening per file. Each carries:
+One file per event, named `YYYY-MM-DD-slug.md` so events sort chronologically (`YYYY-MM-00-slug.md` for one known only to its month), and atomic: one happening per file. Each carries:
 
 - **What happened**: the occurrence, stated factually.
 - **When**: `As of:` the event date, `Recorded:` when it was logged (bitemporal).

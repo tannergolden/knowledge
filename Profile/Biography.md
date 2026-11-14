@@ -108,4 +108,4 @@ Anything biographically important that the sections above do not capture.
 
 ## Chapters
 
-<!-- Optional life-chapter entries when the narrative grows. Reference by plain path, e.g. Profile/Biography/Founding the Company.md -->
+<!-- Life-chapter entries wait until Biography becomes a folder facet (Profile/README.md, How The Facets Are Built); until then the story stays in this file. -->

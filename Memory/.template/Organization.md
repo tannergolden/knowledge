@@ -11,7 +11,7 @@ keywords: ["[other name or acronym]", "[what it is to the owner]", "template"]
 - Replace [Organization Name] in the H1, keeping the emoji, and each [bracketed] prompt with what is known, or delete it. A field nobody knows stays blank, or its line goes; nothing is guessed.
 - A sensitive detail, such as what a clinic treats, is surfaced only when the work needs it (Profile/README.md, Rules).
 - Dates are ISO 8601: YYYY-MM-DD, or YYYY-MM when only the month is known. As of is when the facts became true; Recorded is the day they were written down.
-- When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays beside it, marked superseded with the dates it held, such as a former role (Memory/README.md, Writing An Entry).
+- When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays on its own line below it, marked with the dates it held, such as `- **Owner's role:** Member (superseded: held 2019-03 to 2026-06)` under the current role. A fact added after the entry was made ends its line with its own dates, (As of: YYYY-MM; Recorded: YYYY-MM-DD) (Memory/README.md, Writing An Entry).
 - Name other files by plain path in Related lines; an entry carries no wikilinks.
 - Once filed, lint-notes.py checks it, and update-vault.py lists it in Memory/Entities/Organizations/README.md.
 - Delete this note from the copy.
@@ -35,7 +35,9 @@ keywords: ["[other name or acronym]", "[what it is to the owner]", "template"]
 
 ## Key People
 
-[The people the owner knows here, each named by the plain path of their entry where they have one.]
+[The people the owner knows here, and the role of each.]
+
+- Related: [the plain path of the entry of each who has one]
 
 ## History with the Owner
 

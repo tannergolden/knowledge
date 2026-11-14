@@ -31,11 +31,11 @@ keywords: ["[other name for the project]", "[what it is about]", "template"]
 
 ## Log Entries
 
----
-
-### [YYYY-MM-DD] - [Brief Title]
+<!-- Each entry, newest first:
+### YYYY-MM-DD - [Brief Title]
 
 **What Was Done:**
 **Decisions Made:**
 **Blockers Encountered:**
 **Next Steps:**
+-->

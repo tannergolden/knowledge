@@ -23,7 +23,7 @@ keywords: ["[other name for the project]", "[what it is about]", "template"]
 |------------|-----------|--------|
 | Project description, goal, scope | For the life of the project | Kept: the source of truth for what the project is |
 | Status and progress summary | Current only | Updated in place: the old status is replaced, never appended |
-| Resolved blockers | Until resolved | Moved to Log.md, which keeps the history |
+| Resolved blockers | Until resolved | Moved to Log.md |
 | Key decisions | For the life of the project | Kept: they explain why things are the way they are |
 | Entire file | Kept when the project closes | Kept with the folder as the record |
 
@@ -64,7 +64,6 @@ keywords: ["[other name for the project]", "[what it is about]", "template"]
 **Phase:** [Planning / Building / Testing / Shipping / Maintaining]
 **Started:** [YYYY-MM-DD]
 **Target Completion:** [YYYY-MM-DD / ongoing]
-**Last Updated:** [YYYY-MM-DD]
 
 ---
 

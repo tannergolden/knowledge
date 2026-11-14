@@ -6,7 +6,7 @@ keywords: ["[synonym]", "template"]
 -->
 
 <!-- On copying: this makes a flat facet, one file read as a whole, saved as Profile/<Facet>.md, such as Profile/Focus.md. A facet that holds many separate items is a folder instead, and its README.md is made from Folder Facet.md. Then:
-- Only with the owner's yes: Profile/ is read-only unless the owner asks or confirms (Profile/README.md, Rules). A new facet is a structural change, registered in FACETS in .github/scripts/profile-coverage.py, so it is scored, and in the facet table in Profile/README.md.
+- Only with the owner's yes: Profile/ is read-only unless the owner asks or confirms (Profile/README.md, Rules). A new facet is a structural change, registered in FACETS in .github/scripts/profile-coverage.py, so it is scored, and in the facet table in Profile/README.md. It also changes the count of twelve in Profile/README.md's description and tagline and in .github/scripts/test_profile_coverage.py, which CI runs.
 - Set type to "reference". Give the copy its real title, the facet's name as in the H1, a description of what it holds and when to read it, and keywords a search would use: lowercase, at most eight, each distinct, none already in the title, with "template" dropped.
 - Replace [Facet Name] in the H1 behind a fitting emoji, and each [bracketed] prompt in the owner's own words, or delete it.
 - One H2 for each fact that can be asked about on its own, its subject named in the heading, so each section reads as a complete answer when retrieved alone; discrete facts go in lists and tables. The Snapshot is written last.

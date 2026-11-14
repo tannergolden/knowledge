@@ -12,7 +12,8 @@ keywords: ["[other name or nickname]", "[relationship to the owner]", "template"
 - Replace [Person Name] in the H1, keeping the emoji, and each [bracketed] prompt with what is known, or delete it. A field nobody knows stays blank, or its line goes; nothing is guessed.
 - The sensitive sections, date of birth, contact and family, are surfaced only when the work needs them (Profile/README.md, Rules).
 - Dates are ISO 8601: YYYY-MM-DD, or YYYY-MM when only the month is known. As of is when the facts became true; Recorded is the day they were written down.
-- When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays beside it, marked superseded with the dates it held, such as a former city (Memory/README.md, Writing An Entry).
+- When a fact changes, it is superseded, never overwritten: the new value becomes current, and the old one stays on its own line below it, marked with the dates it held, such as `- **City / region:** Austin (superseded: held 2019-03 to 2026-06)` under the current city. A fact added after the entry was made ends its line with its own dates, (As of: YYYY-MM; Recorded: YYYY-MM-DD) (Memory/README.md, Writing An Entry).
+- Each date in Important Dates is also a row in Memory/Dates.md, the one place every date is kept, under Recurring for a birthday or an anniversary and One-Time for a dated deadline, the table the session start reads.
 - Name other files by plain path in Related lines; an entry carries no wikilinks.
 - Once filed, lint-notes.py checks it, and update-vault.py lists it in Memory/Entities/People/README.md.
 - Delete this note from the copy.
@@ -32,7 +33,7 @@ keywords: ["[other name or nickname]", "[relationship to the owner]", "template"
 
 - **Full name:**
 - **Preferred name:**
-- **Date of birth / age:**
+- **Date of birth, or birth year:**
 - **Pronouns:**
 - **Languages:**
 
@@ -55,7 +56,9 @@ keywords: ["[other name or nickname]", "[relationship to the owner]", "template"
 
 ## Family & Connections
 
-[Spouse or partner, children, relatives and mutual friends, each named by the plain path of their entry where they have one.]
+[Spouse or partner, children, relatives and mutual friends, and who each is to them.]
+
+- Related: [the plain path of the entry of each who has one]
 
 ## Personality & Communication
 

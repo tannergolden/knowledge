@@ -24,7 +24,7 @@ keywords: ["[synonym]", "template"]
 
 ## Why It Matters
 
-[The value or motivation behind it, with the plain path of the Profile/Values/ entry it serves, where there is one.]
+[The value or motivation behind it, naming the value it serves from Profile/Values/README.md, Core Values, where there is one.]
 
 ## Horizon
 
