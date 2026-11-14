@@ -1,0 +1,54 @@
+# Installed from tannergolden/markdown. Edit freely: this file is YOURS.
+#
+# Draws this vault's front page with the Markdown Kit: a header at the top of
+# .github/README.md, the trophy case over its footer and a footer at its
+# foot, in the brain theme, with each holiday's set taking the page over
+# around its day. .github/markdown.yaml holds those choices, and
+# tannergolden/markdown's docs/references/Settings.md has every key.
+#
+# Once a day, at midnight UTC. Every run measures everything again, so a run
+# GitHub delays or drops loses nothing: the next one catches up. A day on
+# which nothing the page shows has moved changes nothing. One run draws at a
+# time, and one started meanwhile waits for it.
+#
+# It proposes, never pushes. The default branch takes every change through a
+# pull request, the kit's included, so a run that changes the page opens or
+# updates one pull request on `chore/markdown`, and merging stays yours. The
+# kit opens it with this repository's own GITHUB_TOKEN, so Settings > Actions
+# > General must allow GitHub Actions to create pull requests, and GitHub
+# holds the checks of a pull request that token opens until you approve them.
+# The kit is handed MARKDOWN_TOKEN alone, never another secret; without one,
+# it reads the vault with GITHUB_TOKEN.
+#
+# The template seeds this file in every vault generated from it and never
+# runs it itself: each vault draws its own page. No sync changes it after.
+# `@v1` follows the kit's latest release. To stop, delete this file.
+
+name: '📝 Markdown'
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # every night at midnight UTC
+  workflow_dispatch:
+
+concurrency: # one drawing at a time; the next waits its turn
+  group: markdown-${{ github.ref }}
+  cancel-in-progress: false
+
+# ⚠️ THE `permissions:` BELOW IS A CEILING, NOT A GRANT. The called workflow
+# asks for exactly these two; grant less and it fails before any job starts.
+permissions: {}
+
+jobs:
+  markdown:
+    # NEVER IN A TEMPLATE: the template ships this stub to every vault, and
+    # each vault draws its own page.
+    if: ${{ !github.event.repository.is_template }}
+    permissions:
+      contents: write # the images, the README's blocks and the lock
+      pull-requests: write # the pull request each change arrives in
+    uses: tannergolden/markdown/.github/workflows/markdown.yml@v1 # zizmor: ignore[unpinned-uses] - first-party workflow on its moving major, the way every stub calls it.
+    with:
+      commit: pr
+    secrets:
+      MARKDOWN_TOKEN: ${{ secrets.MARKDOWN_TOKEN }} # the one secret the kit reads

@@ -75,11 +75,11 @@ and `.github/template-derive.lock`.
 
 ## ⚙️ Settings The Automation Needs
 
-| Setting                                                                                                                                | Lets                                                                                                                    | Without it                                                                                                     |
-| :------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
-| **Settings → Actions → General: allow GitHub Actions to create and approve pull requests**                                             | 🔄 Template Sync, 🗂️ Machined Indexes and 🔁 Intelligence Sync open their pull requests with the repository's own token | Unless a `BOT_ACCESS_TOKEN` opens them, none can open its pull request                                         |
-| **A `BOT_ACCESS_TOKEN` secret**: the `repo` and `workflow` scopes, or fine-grained Contents, Pull requests, Issues and Workflows write | 🔄 Template Sync writes the stubs under `.github/workflows/`, and the checks run on its pull requests                   | Workflow files wait, named in an issue, and the checks on a pull request the default token opened wait for you |
-| **🎯 Apply Standards**, dispatched after initialisation                                                                                | The shared labels and, with an `ADMIN_TOKEN`, the repository settings and the branch and tag rulesets                   | Labels and protection stay unset                                                                               |
+| Setting                                                                                                                                | Lets                                                                                                                                 | Without it                                                                                                     |
+| :------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| **Settings → Actions → General: allow GitHub Actions to create and approve pull requests**                                             | 🔄 Template Sync, 🗂️ Machined Indexes, 🔁 Intelligence Sync and 📝 Markdown open their pull requests with the repository's own token | Unless a `BOT_ACCESS_TOKEN` opens them, none can open its pull request, and 📝 Markdown never uses one         |
+| **A `BOT_ACCESS_TOKEN` secret**: the `repo` and `workflow` scopes, or fine-grained Contents, Pull requests, Issues and Workflows write | 🔄 Template Sync writes the stubs under `.github/workflows/`, and the checks run on its pull requests                                | Workflow files wait, named in an issue, and the checks on a pull request the default token opened wait for you |
+| **🎯 Apply Standards**, dispatched after initialisation                                                                                | The shared labels and, with an `ADMIN_TOKEN`, the repository settings and the branch and tag rulesets                                | Labels and protection stay unset                                                                               |
 
 🧠 Vault runs every vault check and the scripts' tests, and 🚦 Checks the repository validator, so
 a vault's CI checks something real from its first commit.
@@ -117,7 +117,7 @@ A session commits what it writes, and pushing stays yours.
 
 ## 🌿 Staying Current
 
-Three automations keep your vault current, each as a pull request you merge:
+Four automations keep your vault current, each as a pull request you merge:
 
 - **🔄 Template Sync**, when you run it, brings the template's released fixes, each file merged with
   your changes, from the latest release of the major your vault follows: `v2` for a vault generated
@@ -128,9 +128,13 @@ Three automations keep your vault current, each as a pull request you merge:
 - **🔁 Intelligence Sync**, every Monday, proposes the universal rules of each new
   tannergolden/intelligence release for the block at the top of `AGENTS.md`, and leaves the rest of
   the file alone.
+- **📝 Markdown**, every night, proposes your vault's front page as the Markdown Kit draws it: a
+  header, a trophy case and a footer in the brain theme, with each holiday's set around its day.
+  `.github/markdown.yaml` holds those choices.
 
 No sync touches the notes you write, nor the files the list leaves to you: `Memory/Log.md`,
-`Memory/Dates.md`, the eight flat Profile facets, the catalog and the Intelligence Sync stub.
+`Memory/Dates.md`, the eight flat Profile facets, the catalog, the Intelligence Sync stub, and the
+Markdown Kit's stub and settings.
 [Template Sync](../../.github/template-sync.md) explains every outcome a sync pull request reports,
 and [How A Change Reaches A Vault](../distribution/How-A-Change-Reaches-A-Vault.md) follows a change
 from the template to your vault.

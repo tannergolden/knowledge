@@ -1,0 +1,31 @@
+# The Markdown Kit's settings for this vault's front page, which 📝 Markdown
+# draws every night. Edit freely: this file is YOURS. The template seeds it in
+# every vault generated from it, and no sync changes it after. What is not
+# written here is read from GitHub and git, and tannergolden/markdown's
+# docs/references/Settings.md has every key.
+
+# The front page: GitHub shows .github/README.md ahead of the root README.md,
+# which is the vault's guide.
+readme: .github/README.md
+# Every drawing goes under .assets/, beside the vault's branding, a folder for
+# each part: a top folder is its owner's alone to make.
+out: .assets
+
+# The page's one theme, all year: a living brain kept in a jar in a
+# laboratory, at work by day and lighting the dark by night.
+theme: brain
+# Around each holiday its set takes over the page, then hands it back.
+holidays: true
+
+# The drawn header and footer take the place of the front page's typed ones,
+# so they keep its words: the line under the title, and the page's closing.
+# The title and the description are the vault's own name and description on
+# GitHub.
+banners:
+  motto: A personal context and memory vault for AI, in plain Markdown.
+  closing: Your context, in your files, for any model you choose.
+
+# The trophy case, over the footer: the vault's eight core trophies, the level
+# and next-up cards above them, and its achievements under them.
+trophies:
+  style: trophy

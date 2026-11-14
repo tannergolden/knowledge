@@ -197,9 +197,12 @@
 
 # --- The vault: yours ---------------------------------------------------------
 # Each vault's own: what its owner writes about themselves, the logs they keep,
-# the catalog drawn from their notes, and the stub that keeps the universal
-# rules in AGENTS.md current.
+# the catalog drawn from their notes, the stub that keeps the universal rules
+# in AGENTS.md current, and the Markdown Kit's stub and settings, which draw
+# the vault's front page.
+#/.github/markdown.yaml
 #/.github/workflows/intelligence-sync.yml
+#/.github/workflows/markdown.yml
 #/Memory/Dates.md
 #/Memory/Log.md
 #/Profile/Biography.md

@@ -5,6 +5,10 @@ type: index
 keywords: [knowledge-vault, ai-context, template]
 -->
 
+<!-- The Markdown Kit's blocks: the header here, and the trophy case and the footer at the foot. In
+a vault, 📝 Markdown draws into each; here they hold the typed masthead and footer. -->
+
+<!-- markdown:header:start -->
 <!-- markdownlint-disable MD041 -->
 <div align="center">
 
@@ -17,6 +21,7 @@ keywords: [knowledge-vault, ai-context, template]
 _Generate your own, keep it private, and let the AI keep it current._
 
 </div>
+<!-- markdown:header:end -->
 
 ---
 
@@ -163,6 +168,10 @@ says what to do when you add a file the template ships. The
 
 ---
 
+<!-- markdown:trophies:start -->
+<!-- markdown:trophies:end -->
+
+<!-- markdown:footer:start -->
 <div align="center">
 
 **Your context, in your files, for any model you choose.**
@@ -174,3 +183,4 @@ says what to do when you add a file the template ships. The
 Built with ❤️ by the Engineering Team. Distributed under the terms in [LICENSE](/LICENSE).
 
 </div>
+<!-- markdown:footer:end -->
