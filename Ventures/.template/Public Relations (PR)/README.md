@@ -26,7 +26,7 @@ _Nothing leaves [Company] for the press without a yes._
 The public voice of [Company]: what it says, to whom and when, and how it answers in a crisis. The company's public relations work lands here: announcements, press and crises. Read this README before changing anything in this folder; its rules add to `Ventures/[Company]/README.md`, `Ventures/README.md` and the root `README.md`, and never loosen them.
 
 - `Press.md`: the messaging house and the spokesperson lines, the press kit, the public log of every statement released, the communications plans, the crisis plan, the media relationships and the coverage.
-- Working files: press releases and other drafts marked DRAFT, NOT FOR RELEASE, communications plans, live crisis responses with their update logs, interview briefings, and the press kit's assets, each named for what it covers and its date (`Press Release YYYY-MM-DD.md`).
+- Working files: press releases and other drafts marked DRAFT, NOT FOR RELEASE, communications plans, live crisis responses with their update logs, interview briefings, and the press kit's assets, each named for what it covers and its date (`Press Release YYYY-MM-DD.md`); and the media library, each video, audio file and photo with its source and where its license or signed release is kept.
 
 ---
 

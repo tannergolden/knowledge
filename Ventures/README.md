@@ -74,8 +74,8 @@ When the owner runs the AI workforce from `tannergolden/intelligence` (the root 
 | `Finance & Accounting (F&A)/Financials.md` | The ⭐ Director of Finance, with the Financial Analyst's Variance to Budget and Unit Economics, and the Tax Accountant's tax dates in Finance Deadlines |
 | `Finance & Accounting (F&A)/Cap-Table.md` | The ⭐ Director of Finance |
 | `Finance & Accounting (F&A)/Financial-Model.md` | The Financial Analyst |
-| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations and policies, the Regulatory Affairs & Licensing Specialist's licenses and permits, the Paralegal's contracts and filings, with every notice deadline, a vendor's included, and the business insurance the ⭐ Director of Finance keeps |
-| `Sales & Marketing (S&M)/`, every file | The ⭐ Director of Sales & Marketing, with the Account Executive's deals in `Pipeline.md`, and in `Brand.md` the visual identity Research & Development's Product & Brand Designer keeps and the style guide Public Relations' Editor keeps |
+| `Legal & Compliance (L&C)/Compliance.md` | The ⭐ Director of Legal & Compliance, with the Risk & Compliance Manager's obligations and policies, the Regulatory Affairs & Licensing Specialist's licenses and permits, the Paralegal Specialist's contracts and filings, with every notice deadline, a vendor's included, and the business insurance the ⭐ Director of Finance keeps |
+| `Sales & Marketing (S&M)/`, every file | The ⭐ Director of Sales & Marketing, with the Account Executive's deals in `Pipeline.md`, and in `Brand.md` the visual identity Research & Development's Product & Brand Designer keeps and the style guide Public Relations' Managing Editor keeps |
 | `Operations & Logistics (O&L)/Operations.md` | The ⭐ Director of Operations, with the Process & Systems Analyst's processes and SOPs and the Supply Chain & Procurement Manager's vendor register, whose notice dates `Compliance.md` keeps |
 | `Human Resources (HR)/Hierarchy.md` | The ⭐ Director of Human Resources, with the HR Generalist's roster |
 | `Information Technology (IT)/Stack.md` | The ⭐ Director of Information Technology, with the Security Engineer's incident record |
@@ -84,6 +84,7 @@ When the owner runs the AI workforce from `tannergolden/intelligence` (the root 
 | `Quality Assurance (QA)/Standards.md` | The ⭐ Director of Quality Assurance |
 | `Customer Experience (CX)/Clients.md` | The ⭐ Director of Customer Experience, with the Support Specialist's support record |
 | `Public Relations (PR)/Press.md` | The ⭐ Director of Public Relations, with the Communications Specialist's coverage log |
+| The media library in `Public Relations (PR)/` | The Content Producer: each video, audio file and photo, with its source and where its license or signed release is kept |
 | `Miscellaneous/` | No team: the Chief of Staff routes what fits no department, and the Knowledge Vault Manager files it here |
 | A working file in a department folder | The seat that made it, named as that folder's README says |
 
