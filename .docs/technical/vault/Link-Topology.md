@@ -28,9 +28,15 @@ plain code-style path where it does not. The links make the vault a knowledge gr
 Obsidian and `check-links.py` can walk.
 
 `.github/scripts/check-links.py` enforces the topology: it fails on a link to nothing, a link the
-topology does not allow, a link into a scaffold and two notes that link each other, and warns on a
-link that matches several files and on longer cycles. Links inside code, or inside a `%%`
-comment, are not links.
+topology does not allow and a link into a scaffold, and warns on a link that matches several files.
+Links inside code, or inside a `%%` comment, are not links. The topology leaves no room for two
+notes to link each other, or for a longer loop, so there is nothing to check there.
+
+It checks the plain paths too, since most of the vault's references are written that way and a
+rename breaks one without a word. A path on a `Related:` line, or one in backticks that runs from a
+top folder and ends in `.md` or a slash, must name a file or a folder that is there. A path holding
+a placeholder, such as `[Company]` or `<year>`, is a pattern and is passed by, and so is an example
+inside a fenced block.
 
 ---
 

@@ -480,6 +480,19 @@ def strip_code(text: str) -> str:
     return '\n'.join(out)
 
 
+def strip_fences(text: str) -> str:
+    """The text with every fenced code block blanked, line for line, so what is left keeps its
+    line numbers. Inline code stays: a plain path is written in it."""
+    out, fenced = [], False
+    for line in text.split('\n'):
+        if re.match(r'^\s*(```|~~~)', line):
+            fenced = not fenced
+            out.append('')
+        else:
+            out.append('' if fenced else line)
+    return '\n'.join(out)
+
+
 def wikilinks(text: str) -> list[str]:
     """Each wikilink's target, without its alias, heading or block. Links inside
     code, or inside a %% comment, are not links, so they are left out."""

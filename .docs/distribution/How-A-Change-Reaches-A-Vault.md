@@ -166,9 +166,10 @@ give the new names in place of the old ones, such as `board`, `research`, `disco
   your own, such as a Library division you added: `git mv` it to that folder's `README.md`.
 - **Repoint the links.** A wikilink to an old folder note now resolves to nothing, and
   `check-links.py` names each one: `[[Library/Arts & Recreation/Arts & Recreation|Arts]]` becomes
-  `[[Library/Arts & Recreation/README|Arts]]`. A plain path in a file of your own, such as
-  `Profile/Profile.md` in `Profile/Biography.md`, is not checked: search for each old name and
-  update it.
+  `[[Library/Arts & Recreation/README|Arts]]`. It names a plain path to an old folder note too,
+  such as `Profile/Profile.md` in `Profile/Biography.md`, where the path is in backticks or on a
+  `Related:` line. A name written any other way is not checked: search for each old name and update
+  it.
 - **Take the new `AGENTS.md`.** The sync merges the template's with yours: the rules below the
   universal block are rewritten, and what you added under a section of your own stays. Where both
   changed the same lines, such as the block, which your 🔁 Intelligence Sync may have moved to a newer

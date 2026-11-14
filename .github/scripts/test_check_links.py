@@ -109,6 +109,57 @@ class TestCheckLinks(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout)
         self.assertIn('All 0 wikilinks resolve', result.stdout)
 
+    def test_plain_paths_that_name_what_is_there_pass(self) -> None:
+        self.vault.write('Memory/Events/Party.md', '# Party\n\nSee `Memory/Log.md` and `Memory/Events/`.\n\n'
+                         '- Related: Memory/Log.md\n- Related: `Memory/Events/README.md` (its folder)\n')
+        result = self.check()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn('all 4 plain paths name a file or a folder.', result.stdout)
+
+    def test_a_related_line_to_a_file_that_is_not_there_fails(self) -> None:
+        self.vault.write('Memory/Events/Party.md', '# Party\n\n- Related: Memory/Entities/People/Dana Smith.md\n')
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('error: Memory/Events/Party.md:3: `Memory/Entities/People/Dana Smith.md` names no file', result.stdout)
+
+    def test_a_rename_leaves_no_plain_path_behind(self) -> None:
+        # A wikilink follows a rename in an editor that knows them; a plain path never does.
+        self.vault.write('Memory/Entities/People/Dana Smith.md', '# Dana\n')
+        self.vault.write('Memory/Events/Party.md', '# Party\n\nRelated: Memory/Entities/People/Dana Smith.md\n')
+        self.assertEqual(self.check().returncode, 0)
+        self.vault.path('Memory/Entities/People/Dana Smith.md').rename(self.vault.path('Memory/Entities/People/Dana Jones.md'))
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('Memory/Events/Party.md:3: `Memory/Entities/People/Dana Smith.md` names no file', result.stdout)
+
+    def test_a_path_in_backticks_from_a_top_folder_is_checked(self) -> None:
+        self.vault.write('Memory/Log.md', '# Log\n\nSee `Memory/Gone.md`, `Memory/Nowhere/` and `Memory/log.md`.\n')
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('Memory/Log.md:3: `Memory/Gone.md` names no file', result.stdout)
+        self.assertIn('Memory/Log.md:3: `Memory/Nowhere/` names no folder', result.stdout)
+        # The case is read as written, so a path that only a case-folding disk would find fails everywhere.
+        self.assertIn('Memory/Log.md:3: `Memory/log.md` names no file', result.stdout)
+        self.assertIn('3 problems.', result.stderr)
+
+    def test_what_is_not_a_reference_is_passed_by(self) -> None:
+        # A pattern to fill in, an example in a fenced block, a path from the note's own folder or from a
+        # hidden one, a word in code, and the two folders the vault makes when it first needs them.
+        self.vault.write('Memory/Log.md', '# Log\n\n`Ventures/[Company]/Overview.md` `Memory/Entities/People/<First Last>.md` '
+                         '`Memory/Decisions/YYYY-MM-slug.md` `Library/*.md`\n\n```txt\nRelated: Memory/Decisions/2026-05-gone.md\n```\n\n'
+                         '`Gone.md` `Events/` `.docs/Gone.md` `Memory/Gone` `update-vault.py`\n\n'
+                         '`Inbox/Backups/` `Memory/Context/Archive/2026/`\n\n- Related: [the plain path of a related entry]\n')
+        result = self.check()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn('all 2 plain paths name a file or a folder.', result.stdout)
+        # A file in the archive is a reference like any other: only the year's folder is made on demand.
+        self.vault.write('Memory/Log.md', '# Log\n\n`Memory/Context/Archive/2026/20260101-090000.md`\n')
+        self.assertEqual(self.check().returncode, 1)
+
+    def test_a_scaffold_is_not_read_for_plain_paths(self) -> None:
+        self.vault.write('Memory/.template/Event.md', '# [Event]\n\n- Related: Memory/Entities/People/Gone.md\n')
+        self.assertEqual(self.check().returncode, 0)
+
     def test_an_ambiguous_link_warns(self) -> None:
         self.vault.write('Memory/Party.md', '# another party\n')
         self.vault.write('Memory/README.md', '[[party]]\n')
