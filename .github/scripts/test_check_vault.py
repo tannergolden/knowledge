@@ -54,6 +54,18 @@ class TestCheckVault(unittest.TestCase):
         # A note with no catalog drawn yet also leaves the generated parts stale.
         self.assertIn('3 of 5 vault checks fail: notes, links, generated parts.', result.stderr)
 
+    def test_a_plain_note_left_at_the_inbox_keeps_every_check_green(self) -> None:
+        # The capture path: drop a note, sort it later. Done means check-vault.py passes, so a
+        # waiting file must not turn it red, and the start card must still say it waits.
+        self.vault.note('Inbox/README.md')
+        self.vault.write('Inbox/call notes.md', '# Notes from the call\n\nQuote due Friday.\n')
+        self.vault.init_git()
+        self.assertEqual(self.vault.run('update-vault.py').returncode, 0)
+        result = self.vault.run(SCRIPT)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertNotIn('call notes', self.vault.read('System/Data/catalog.ndjson'))
+        self.assertIn('INBOX Inbox/call notes.md', self.vault.run('session.py', 'start').stdout)
+
     def test_a_file_git_ignores_fails_the_run(self) -> None:
         self.vault.write('.gitignore', '*.zip\n')
         self.vault.write('Inbox/statements.zip', 'x')

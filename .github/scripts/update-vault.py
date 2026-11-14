@@ -179,7 +179,7 @@ def blocks(run: Run) -> None:
         if note.is_file():
             planned.setdefault(note, []).append((name, body))
     ignored = vault.ignored_paths(root)
-    for note in vault.walk_notes(root):
+    for note in vault.filed_notes(root):
         if vault.is_folder_note(note) and not vault.is_template(note.relative_to(root).parts):
             if vault.has_block(vault.read_text(note), 'children'):
                 planned.setdefault(note, []).append(('children', children(root, note, ignored)))
@@ -202,7 +202,8 @@ def blocks(run: Run) -> None:
 
 def catalog(root: pathlib.Path) -> str:
     records = []
-    for note in vault.walk_notes(root):
+    # One record per note: a loose file waiting at the Inbox is not one until it is sorted.
+    for note in vault.filed_notes(root):
         if vault.is_template(note.relative_to(root).parts):
             continue
         fields = vault.note_fields(note)
@@ -229,7 +230,7 @@ def catalog_file(run: Run) -> None:
     drawn = catalog(root)
     current = path.read_text(encoding='utf-8') if path.is_file() else None
     # A vault with no notes needs no catalog file, so a fresh one stays clean.
-    needed = any(True for _ in vault.walk_notes(root))
+    needed = any(True for _ in vault.filed_notes(root))
     if current != drawn and (needed or current is not None):
         run.write(path, drawn, 'the catalog is out of date')
 

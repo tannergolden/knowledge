@@ -82,6 +82,11 @@ A new script follows the same rules, which `System/README.md` sets out under Wri
 | `check-ignored.py`        | A file or folder under the seven top folders that a rule the vault's `.gitignore` inherited for code hides from git: one above its `BRAIN Vault` line, such as `build/`, `test-results/`, `*.zip` or `*.key`. What the vault's own rules hide, what a `.gitignore` in the file's own folder hides, and junk (dot files, `__pycache__/`, `node_modules/`) pass                                                                                                                                                           | Nothing                                                                    | [How The Vault Works](../introduction/How-The-Vault-Works.md)       |
 | `update-vault.py --check` | Anything the generator would change, and anything it cannot draw: a note that has lost its block's markers                                                                                                                                                                                                                                                                                                                                                                                                              | Nothing                                                                    | The table below                                                     |
 
+A loose file waiting at the `Inbox/` root is not a note yet. `lint-notes.py`, `check-links.py` and
+the catalog pass it by until it is sorted, so leaving a file there keeps the checks green. The scan
+for personal numbers and the check for ignored files still read it: a waiting file can hold a
+number, or be hidden from git, like any other.
+
 ---
 
 ## 📦 What update-vault.py Draws

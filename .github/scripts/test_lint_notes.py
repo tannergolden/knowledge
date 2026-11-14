@@ -172,6 +172,21 @@ class TestLintNotes(unittest.TestCase):
         self.assertIn('0 notes pass.', result.stdout)
         self.assertEqual(self.lint().returncode, 0)
 
+    def test_a_file_waiting_at_the_inbox_is_not_yet_a_note(self) -> None:
+        # Leaving a file at the Inbox root is the safe default (Inbox/README.md): it takes its
+        # frontmatter and its clean name when it is sorted, so until then nothing here is held against it.
+        self.vault.note('Inbox/README.md')
+        self.vault.write('Inbox/call_notes.md', '# Raw \u2014 no frontmatter, and [[Somewhere]]\n')
+        self.vault.write('Inbox/Scans/Scans.md', '# A dropped folder, with a file named after it\n')
+        result = self.lint()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn('1 note passes.', result.stdout)
+        # Named outright it is passed by too, as a file outside the walk is.
+        self.assertIn('0 notes pass.', self.lint('Inbox/call_notes.md').stdout)
+        # The held libraries are not the waiting room: a report is a note like any other.
+        self.vault.write('Inbox/Reports/Bare.md', '# no frontmatter\n')
+        self.assert_flags('Inbox/Reports/Bare.md: no frontmatter block')
+
     def test_what_git_ignores_is_not_a_note(self) -> None:
         self.vault.write('.gitignore', 'build/\n')
         self.vault.write('Projects/Shed/build/Bare.md', '# no frontmatter\n')

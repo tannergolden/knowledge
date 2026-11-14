@@ -81,7 +81,8 @@ def main(argv: list[str] | None = None) -> int:
             by_name.setdefault(key, []).append(name)
     edges: set[tuple[str, str]] = set()
     total = 0
-    for path in vault.walk_notes(root):
+    # A loose file waiting at the Inbox is not a note yet, so what it links is not checked.
+    for path in vault.filed_notes(root):
         if vault.is_template(path.relative_to(root).parts):
             continue
         source = vault.rel(root, path)

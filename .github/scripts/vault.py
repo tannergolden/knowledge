@@ -140,6 +140,16 @@ def walk_notes(root: pathlib.Path) -> Iterator[pathlib.Path]:
             yield path
 
 
+def filed_notes(root: pathlib.Path) -> Iterator[pathlib.Path]:
+    """Every note the vault holds, in the walk's order: every Markdown file it walks but the loose
+    ones waiting at the Inbox. A file dropped there is not a note until it is sorted, which is when
+    it gets its frontmatter and its name (Inbox/README.md), so the checks and the catalog pass it by."""
+    waiting = set(inbox_drops(root))
+    for path in walk_notes(root):
+        if path not in waiting:
+            yield path
+
+
 def in_walk(root: pathlib.Path, path: pathlib.Path) -> bool:
     """True when walk_files would visit this path: inside the root, outside hidden folders other
     than .template/, outside Inbox/Backups, not one of the root's two pages, not a dotfile or junk
@@ -177,7 +187,7 @@ def namesake_notes(root: pathlib.Path) -> list[pathlib.Path]:
     is a second, drifting copy of what the README already says: the old place
     of a folder's note, or a scaffold for one copied under the wrong name.
     """
-    return [path for path in walk_notes(root) if path.parent != root and is_namesake(path)]
+    return [path for path in filed_notes(root) if path.parent != root and is_namesake(path)]
 
 
 def rel(root: pathlib.Path, path: pathlib.Path) -> str:

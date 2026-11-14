@@ -101,6 +101,14 @@ class TestCheckLinks(unittest.TestCase):
         self.vault.write('Memory/README.md', '[[Memory/.template/README|Templates]]\n')
         self.assertIn('links a scaffold', self.check().stdout)
 
+    def test_a_file_waiting_at_the_inbox_links_whatever_it_likes(self) -> None:
+        # An export from another app arrives full of wikilinks; it is not a note until it is sorted.
+        self.vault.write('Inbox/README.md', '# Inbox\n')
+        self.vault.write('Inbox/export.md', 'See [[Nowhere]] and [[Memory/Log|the log]].\n')
+        result = self.check()
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn('All 0 wikilinks resolve', result.stdout)
+
     def test_an_ambiguous_link_warns(self) -> None:
         self.vault.write('Memory/Party.md', '# another party\n')
         self.vault.write('Memory/README.md', '[[party]]\n')

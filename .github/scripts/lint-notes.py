@@ -12,7 +12,9 @@ With no arguments it checks every note the vault walks: every folder but
 hidden ones, plus the .template/ scaffolds, with each folder's README.md,
 which is that folder's note. Given files, it checks only those. A file
 outside the walk, such as one under .github/ or the README.md at the vault
-root, is not a note and is skipped. A folder explains itself in its
+root, is not a note and is skipped. So is a loose file waiting at the Inbox:
+it becomes a note when it is sorted, with the frontmatter and the name it is
+given then (Inbox/README.md). A folder explains itself in its
 README.md alone, so a note named after its folder is flagged, and that
 README.md is a page as well, so one without the page format's centered
 header and footer is flagged too (Note-Schema.md).
@@ -139,17 +141,18 @@ def main(argv: list[str] | None = None) -> int:
     report = vault.Report(root)
     if args.files:
         targets = []
+        waiting = set(vault.inbox_drops(root))
         for name in args.files:
             path = (name if name.is_absolute() else root / name).resolve()
             if not path.is_file():
                 print(f'{name}: no such file', file=sys.stderr)
                 return 2
-            if path.suffix == '.md' and vault.in_walk(root, path):
+            if path.suffix == '.md' and vault.in_walk(root, path) and path not in waiting:
                 targets.append(path)
         given = {(n if n.is_absolute() else root / n).resolve() for n in args.files}
         strays = [path for path in vault.namesake_notes(root) if path.resolve() in given]
     else:
-        targets = list(vault.walk_notes(root))
+        targets = list(vault.filed_notes(root))
         strays = vault.namesake_notes(root)
     for path in strays:
         report.error(path, "a note named after its folder repeats the folder's README.md, which is the "

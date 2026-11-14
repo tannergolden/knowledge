@@ -29,10 +29,13 @@ standard,
 in the Document Styling guide, so a note reads the same way as every document in every repository.
 
 A note is any `.md` file in the seven top folders, their `.template/` scaffolds included. Each
-folder's `README.md` is that folder's note, and carries this schema like any other. The two pages at
-the vault root, `README.md` and `AGENTS.md`, and everything under a hidden folder other than
-`.template/`, such as `.docs/` and `.github/`, are not notes but pages: they carry the same hidden
-block, as the styling guide asks of every page, and keep the rules they follow as pages.
+folder's `README.md` is that folder's note, and carries this schema like any other. A loose file
+waiting at the `Inbox/` root is the one exception: it becomes a note when it is sorted, which is
+when it gets this frontmatter and its name (`Inbox/README.md`), and until then the linter, the link
+check and the catalog pass it by. The two pages at the vault root, `README.md` and `AGENTS.md`, and
+everything under a hidden folder other than `.template/`, such as `.docs/` and `.github/`, are not
+notes but pages: they carry the same hidden block, as the styling guide asks of every page, and keep
+the rules they follow as pages.
 
 `.github/scripts/lint-notes.py` checks every note against this page. Run it on a note after
 changing it; CI runs it on every note, beside the account's frontmatter check over every document.
