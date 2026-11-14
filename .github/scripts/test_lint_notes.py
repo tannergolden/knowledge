@@ -246,7 +246,7 @@ class TestLintNotes(unittest.TestCase):
         self.assertIn('4 problems.', result.stderr)
 
     def test_a_records_own_fields_still_pass(self) -> None:
-        self.vault.note('Inbox/Reports/Heat Pumps.md', type='record', review_by='2026-02-14')
+        self.vault.note('Inbox/Research/Heat Pumps.md', type='record', review_by='2026-02-14')
         self.vault.note('Inbox/Ideas/Solar Shed.md', type='record', id='idea-0001', statement='A shed that powers itself.',
                         lifecycle='raw', ice='6', elo='1500', lens='inversion', parents='idea-0000', serves='the workshop')
         self.assertEqual(self.lint().returncode, 0, self.lint().stdout)
@@ -332,8 +332,8 @@ class TestLintNotes(unittest.TestCase):
         # Named outright it is passed by too, as a file outside the walk is.
         self.assertIn('0 notes pass.', self.lint('Inbox/call_notes.md').stdout)
         # The held libraries are not the waiting room: a report is a note like any other.
-        self.vault.write('Inbox/Reports/Bare.md', '# no frontmatter\n')
-        self.assert_flags('Inbox/Reports/Bare.md: no frontmatter block')
+        self.vault.write('Inbox/Research/Bare.md', '# no frontmatter\n')
+        self.assert_flags('Inbox/Research/Bare.md: no frontmatter block')
 
     def test_what_git_ignores_is_not_a_note(self) -> None:
         self.vault.write('.gitignore', 'build/\n')

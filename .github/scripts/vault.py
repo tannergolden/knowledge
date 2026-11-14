@@ -69,10 +69,11 @@ COLLECTIONS = (
 PROFILE_COLLECTIONS = ('Profile/Values', 'Profile/Goals', 'Profile/Skills', 'Profile/Health')
 LOG = 'Memory/Log.md'
 DATES = 'Memory/Dates.md'
-REPORTS = 'Inbox/Reports'
+REPORTS = 'Inbox/Research'
 INBOX = 'Inbox'
-# Inbox sub-homes that are kept, never sorted.
-INBOX_HELD = frozenset({'Backups', 'Reports', 'Visuals', 'Ideas'})
+# Inbox sub-homes that are kept, never sorted. `Reports` is the name `Research` had before, held
+# still so a vault's older reports are never proposed for sorting before its owner moves them.
+INBOX_HELD = frozenset({'Backups', 'Research', 'Reports', 'Visuals', 'Ideas'})
 
 # Folders never walked: a cache, by its name wherever it sits, and by its path the one Inbox
 # sub-home that holds raw copies (Inbox/README.md). A folder named Backups anywhere else is an

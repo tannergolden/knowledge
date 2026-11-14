@@ -69,11 +69,11 @@ Before changing anything in a folder, read its README.md and the README.md of ea
   summaries from `Memory/Context/Current/`, newest first by file name, skipping any marked
   `deprecated` or `archived`. When files wait at the Inbox, `Inbox/README.md`, the sorting protocol,
   is listed too.
-- **`INBOX` lines** name each loose file outside the held sub-homes (`Reports/`, `Visuals/`, `Ideas/`
+- **`INBOX` lines** name each loose file outside the held sub-homes (`Research/`, `Visuals/`, `Ideas/`
   and `Backups/`), then say how many wait and that they are sorted before other work.
 - **`OVERDUE` and `DUE` lines** name each date in the One-Time table of `Memory/Dates.md` that has
   passed or falls within the next 14 days, read from a first cell written `YYYY-MM-DD`. **`REVIEW`
-  lines** name each report in `Inbox/Reports/` whose `review_by` date has passed, and one line counts
+  lines** name each report in `Inbox/Research/` whose `review_by` date has passed, and one line counts
   the threads `Memory/Log.md` holds open. Nothing else in the vault raises a date by itself, so the
   card does. Each line carries a date and a path, never what the date is for: the card is read by
   hooks and kept in logs. `--today 2026-11-14` counts from another day.

@@ -191,13 +191,13 @@ class TestCatalogs(Base):
 class TestTheInboxWaits(Base):
     def test_a_file_waiting_at_the_inbox_is_not_cataloged(self) -> None:
         self.vault.note('Inbox/README.md')
-        self.vault.note('Inbox/Reports/Heat Pumps.md', type='record')
+        self.vault.note('Inbox/Research/Heat Pumps.md', type='record')
         self.vault.write('Inbox/call notes.md', '# Raw, with no frontmatter\n')
         self.vault.write('Inbox/Scans/page.md', '# A file in a dropped folder\n')
         self.update()
         paths = [json.loads(line)['path'] for line in self.vault.read('System/Data/catalog.ndjson').splitlines()]
         self.assertIn('BRAIN/Inbox/README.md', paths)
-        self.assertIn('BRAIN/Inbox/Reports/Heat Pumps.md', paths)
+        self.assertIn('BRAIN/Inbox/Research/Heat Pumps.md', paths)
         self.assertNotIn('BRAIN/Inbox/call notes.md', paths)
         self.assertNotIn('BRAIN/Inbox/Scans/page.md', paths)
         self.assertEqual(self.update('--check').returncode, 0)

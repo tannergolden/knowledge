@@ -132,6 +132,11 @@ short, as `Memory/README.md` (Session Summaries) describes.
   them, what they decided and what is due, in `Memory/`; reference knowledge, never personal, in
   `Library/`; work in `Projects/` and `Ventures/`. Check that nothing already serves a purpose
   before creating a file, and link to an existing note rather than copy it.
+- **Research has two homes.** Research behind a change to this repository itself, its scripts,
+  note schema, templates, rules or layout, is a Research Log in `.docs/technical/research/`, from
+  `.docs/templates/Research-Log.md`. Every other research request, about the world, the owner's
+  life, a venture or a project, ends in a report held in `Inbox/Research/`, by its README. Where a
+  section of this file that the template keeps sends all research to one place, this rule decides.
 - **Accurate over complete.** Less that is true and current beats more that is stale: do not pad a
   note, and do not keep what is no longer true.
 
@@ -194,17 +199,19 @@ In short:
 
 ## Where things live
 
-| Path                     | Holds                                                                                            |
-| :----------------------- | :----------------------------------------------------------------------------------------------- |
-| `Inbox/`                 | Files waiting to be sorted, and the held reports, visuals and ideas                              |
-| `Library/`               | Reference knowledge in ten classes, never personal                                               |
-| `Memory/`                | What happened, who is around the owner, what they decided, and what is due                       |
-| `Profile/`               | Who the owner is; `Working Style.md` says how to work with them                                  |
-| `Projects/`              | The owner's personal projects, one folder each                                                   |
-| `Ventures/`              | Each company the owner runs, one folder each, with a folder per department                       |
-| `System/`                | The owner's standing settings, the workflows and the generated catalog                           |
-| `.github/scripts/`       | The vault's checks and generators                                                                |
-| `.docs/technical/vault/` | The note schema, the keywords, the link topology, how to assemble context and how a session runs |
+| Path                        | Holds                                                                                            |
+| :-------------------------- | :----------------------------------------------------------------------------------------------- |
+| `Inbox/`                    | Files waiting to be sorted, and the held research, visuals and ideas                             |
+| `Inbox/Research/`           | Research about anything but this vault: the world, the owner's life, a venture, a project        |
+| `Library/`                  | Reference knowledge in ten classes, never personal                                               |
+| `Memory/`                   | What happened, who is around the owner, what they decided, and what is due                       |
+| `Profile/`                  | Who the owner is; `Working Style.md` says how to work with them                                  |
+| `Projects/`                 | The owner's personal projects, one folder each                                                   |
+| `Ventures/`                 | Each company the owner runs, one folder each, with a folder per department                       |
+| `System/`                   | The owner's standing settings, the workflows and the generated catalog                           |
+| `.github/scripts/`          | The vault's checks and generators                                                                |
+| `.docs/technical/vault/`    | The note schema, the keywords, the link topology, how to assemble context and how a session runs |
+| `.docs/technical/research/` | Research behind a change to this vault itself, from `.docs/templates/Research-Log.md`            |
 
 ## Gotchas
 

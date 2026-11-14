@@ -21,13 +21,13 @@ _A snapshot of its data, regenerated rather than re-verified._
 
 ## 💡 What This Folder Is For
 
-The held library for finished visuals. Standalone visuals land here, such as the `business-intelligence` skill's, by the rules below: charts, diagrams, dashboards, interactive widgets, and explanatory illustration. Visuals are deliverables, rendered and kept here for reference, the visual counterpart to the Reports library (`Inbox/Reports/`).
+The held library for finished visuals. Standalone visuals land here, such as the `business-intelligence` skill's, by the rules below: charts, diagrams, dashboards, interactive widgets, and explanatory illustration. Visuals are deliverables, rendered and kept here for reference, the visual counterpart to the Research library (`Inbox/Research/`).
 
 ---
 
 ## 📌 Held, not sorted
 
-Visuals live here and stay here. They are not sorted into the BRAIN's permanent layers: a saved visual is a rendered artifact, produced, held, used, and eventually cleared or superseded, not durable reference knowledge. The session-start sort skips this folder, as it skips the Reports library and the idea pool (`Inbox/README.md`), so a visual is never proposed for re-sorting.
+Visuals live here and stay here. They are not sorted into the BRAIN's permanent layers: a saved visual is a rendered artifact, produced, held, used, and eventually cleared or superseded, not durable reference knowledge. The session-start sort skips this folder, as it skips the Research library and the idea pool (`Inbox/README.md`), so a visual is never proposed for re-sorting.
 
 ---
 

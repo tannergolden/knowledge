@@ -77,7 +77,7 @@ defines each term.
 | **Root README**   | The vault's guide, read before any folder's README: a page, not a note                                                                                                           | `README.md`                      |
 | **Scaffold**      | A file in a `.template/` folder, copied to make a new note and never edited in place                                                                                             | `Projects/.template/Overview.md` |
 | **Collection**    | A folder of one file per entry, whose README lists the entries                                                                                                                   | `Memory/Entities/People/`        |
-| **Held sub-home** | A folder of `Inbox/` that is kept, never sorted                                                                                                                                  | `Inbox/Reports/`                 |
+| **Held sub-home** | A folder of `Inbox/` that is kept, never sorted                                                                                                                                  | `Inbox/Research/`                |
 
 A `.template/` folder has a README too. Where its scaffolds are copied one at a time, as in
 `Memory/.template/`, the README explains them and is never copied. Where the folder is copied whole,

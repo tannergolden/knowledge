@@ -1,6 +1,6 @@
 <!--
 title: '📥 INBOX'
-description: 'The staging area: drop any unsorted file here, and it is enriched and filed where it belongs, each move proposed and confirmed first, while the held sub-homes (Reports, Visuals, Ideas and Backups) live here but are never sorted. Read it before sorting the Inbox or changing anything in it.'
+description: 'The staging area: drop any unsorted file here, and it is enriched and filed where it belongs, each move proposed and confirmed first, while the held sub-homes (Research, Visuals, Ideas and Backups) live here but are never sorted. Read it before sorting the Inbox or changing anything in it.'
 type: 'index'
 keywords: ["staging area", "drop files", "unsorted", "sorting protocol", "pdf cleanup", "file triage", "where to put files", "hold folder"]
 -->
@@ -26,7 +26,7 @@ Anything waiting to be filed lands here: a document, a PDF, a photo, an export, 
 `Inbox/` is a small **meta-zone**, not a single pure inbox. It holds things kept deliberately distinct, the pattern Johnny.Decimal uses for its `00-09` area, where an inbox and an archive coexist as siblings:
 
 1. **The inbox proper**: loose files dropped at the `Inbox/` root, and the sorting protocol below. This is the only transient part: it is processed to empty.
-2. **[[Inbox/Reports/README|Reports]]**: the held library of finished research and discovery reports, such as the `research-and-development` skill's. Each report is good for up to three months, then verified before it is used again, and that README is the one index that links every report.
+2. **[[Inbox/Research/README|Research]]**: the held library of finished research and discovery reports about anything but this vault itself, such as the `research-and-development` skill's. Each report is good for up to three months, then verified before it is used again, and that README is the one index that links every report. Research behind a change to the vault itself is a Research Log in `.docs/technical/research/` instead.
 3. **[[Inbox/Visuals/README|Visuals]]**: the held library of finished standalone visuals (charts, diagrams, dashboards, interactive widgets and explanatory illustration), such as the `business-intelligence` skill's. Each is an archival snapshot that carries the date of its underlying data and is kept until superseded, and that README is the one index that links every visual. Most visuals are shown once and never saved; only one the owner asks to keep is filed there or in a named home.
 4. **[[Inbox/Ideas/README|Ideas]]**: the held idea pool, one idea record to a file, such as the `research-and-development` skill's. Ideas are held by lifecycle status (raw, shortlisted, developed, promoted, parked, killed), with killed and parked ideas kept so a dead end is never re-trodden; a record links to nothing, and the pool is found by search and by status, not by an index of links.
 5. **`Backups/`**: the originals of outside PDFs, copied into a timestamped subfolder before a cleanup changes them (step 2 below). It appears once the first cleanup runs.
@@ -41,7 +41,7 @@ The three libraries stay inside the vault's checks like any other content: their
 - **Nothing leaves unenriched.** A note gets its frontmatter, and any file a clean name, before it moves. No exceptions.
 - **Nothing moves without a yes.** Each file's destination and clean name are proposed first, and the owner confirms them.
 - **No file here is deleted without confirmation.** Leaving a file at the `Inbox/` root is the safe default.
-- **The held sub-homes are never sorted**: `Reports/`, `Visuals/`, `Ideas/` and `Backups/`.
+- **The held sub-homes are never sorted**: `Research/`, `Visuals/`, `Ideas/` and `Backups/`.
 - **A new folder only to fit a file.** During a sort, when no folder fits, a new folder three or more levels down may be proposed; one directly inside a top folder needs the owner's explicit direction, and a top folder is never created.
 - **Outside PDFs are offered cleanup first**, and their originals are copied into `Inbox/Backups/` before anything changes.
 - The sort follows the protocol below, step by step.
@@ -83,7 +83,7 @@ At the start of every session, `Inbox/` is checked for sortable files: `python3 
 
 - This README (a permanent fixture, never sorted)
 - Hidden files and folders (any name starting with `.`, including `.DS_Store`, `.gitkeep` and `.localized`)
-- The held sub-homes, `Reports/`, `Visuals/`, `Ideas/` and `Backups/`, and everything inside them: their contents are never scanned, surfaced or proposed for routing at session start
+- The held sub-homes, `Research/`, `Visuals/`, `Ideas/` and `Backups/`, and everything inside them: their contents are never scanned, surfaced or proposed for routing at session start
 
 A file modified within the last 30 seconds may still be syncing or copying, so it is checked again after a short wait before it is sorted. If no sortable file remains, the Inbox counts as empty and the session goes on.
 
@@ -202,12 +202,12 @@ The standard protocol applies: the move is confirmed, the item leaves `Inbox/` c
 
 <!-- AUTO-INDEX:BEGIN dir=. style=log -->
 
-| Entry                           | Purpose                                                                                                                                                                                                                                                                                                                                                       |
-| :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`Ideas/`](Ideas/README.md)     | The held idea pool: the living library of idea records that discovery work produces, kept by lifecycle status (raw, shortlisted, developed, promoted, parked, killed) and never sorted, the ideation counterpart to the Reports library. Read it to file an idea, or to check a new one against the whole pool, killed ideas included, and trace its lineage. |
-| [`Reports/`](Reports/README.md) | The held library for finished research and discovery reports: they are held, not sorted into the BRAIN, and every report is good for up to three months before it must be re-verified. Read it to file, refresh or find a report.                                                                                                                             |
-| [`Visuals/`](Visuals/README.md) | The held library for finished standalone visuals: charts, diagrams, dashboards and illustrations, held, not sorted into the BRAIN, and kept as archival artifacts that carry the date of their underlying data. Read it to file, regenerate or find a visual.                                                                                                 |
-| [`README.md`](README.md)        | This file.                                                                                                                                                                                                                                                                                                                                                    |
+| Entry                             | Purpose                                                                                                                                                                                                                                                                                                                                                        |
+| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Ideas/`](Ideas/README.md)       | The held idea pool: the living library of idea records that discovery work produces, kept by lifecycle status (raw, shortlisted, developed, promoted, parked, killed) and never sorted, the ideation counterpart to the Research library. Read it to file an idea, or to check a new one against the whole pool, killed ideas included, and trace its lineage. |
+| [`Research/`](Research/README.md) | The held library for finished research about anything but this vault itself: the world, the owner's life, a venture or a project. Reports are held, not sorted into the BRAIN, and each is good for up to three months before it must be re-verified. Read it to file, refresh or find a report.                                                               |
+| [`Visuals/`](Visuals/README.md)   | The held library for finished standalone visuals: charts, diagrams, dashboards and illustrations, held, not sorted into the BRAIN, and kept as archival artifacts that carry the date of their underlying data. Read it to file, regenerate or find a visual.                                                                                                  |
+| [`README.md`](README.md)          | This file.                                                                                                                                                                                                                                                                                                                                                     |
 
 <!-- AUTO-INDEX:END -->
 

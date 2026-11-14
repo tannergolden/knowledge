@@ -53,7 +53,7 @@ Conventional Commits, are in the standards'
   folder's rules where it has any, and is the only kind of note that may carry wikilinks, which is
   why it is also called the folder's hub ([Link Topology](../technical/vault/Link-Topology.md)). No
   note is named after its folder.
-- **Held**: kept at the Inbox's path but never sorted. `Reports/`, `Visuals/`, `Ideas/` and
+- **Held**: kept at the Inbox's path but never sorted. `Research/`, `Visuals/`, `Ideas/` and
   `Backups/` are the held sub-homes (`Inbox/README.md`). The first three are still linted and
   cataloged; `Backups/`, which keeps the originals copied before a cleanup, is never walked
   (`SKIP_DIRS` in `.github/scripts/vault.py`).

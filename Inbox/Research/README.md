@@ -1,17 +1,17 @@
 <!--
-title: '📑 REPORTS'
-description: 'The held library for finished research and discovery reports: they are held, not sorted into the BRAIN, and every report is good for up to three months before it must be re-verified. Read it to file, refresh or find a report.'
+title: '🔎 RESEARCH'
+description: 'The held library for finished research about anything but this vault itself: the world, the owner''s life, a venture or a project. Reports are held, not sorted into the BRAIN, and each is good for up to three months before it must be re-verified. Read it to file, refresh or find a report.'
 type: 'index'
-keywords: ["report library", "research reports", "discovery reports", "report freshness", "three months", "verify before reuse", "held reports"]
+keywords: ["research library", "research reports", "discovery reports", "report freshness", "three months", "verify before reuse", "held research"]
 -->
 
 <div align="center">
 
-# 📑 REPORTS
+# 🔎 RESEARCH
 
 <a name="top"></a>
 
-**The held library of finished reports, each good for three months.**
+**The held library of finished research, each report good for three months.**
 
 _Trusted for three months, verified after that._
 
@@ -21,13 +21,16 @@ _Trusted for three months, verified after that._
 
 ## 💡 What This Folder Is For
 
-The held library for finished reports. Research and discovery reports land here, such as the `research-and-development` skill's, whether for a company the owner runs or for the owner's own questions, and both kinds are kept here by the rules below. Reports are deliverables, held for reference.
+The held library for finished research. Every research or discovery report about anything but this vault itself lands here, such as the `research-and-development` skill's: research about the world, the owner's own questions, a company the owner runs or a project, all kept here by the rules below. Reports are deliverables, held for reference.
+
+> [!IMPORTANT]
+> **Research about changing this vault itself is not held here.** The research behind a change to the vault's own machinery, its scripts, note schema, templates, rules or layout, is a Research Log in `.docs/technical/research/`, copied from `.docs/templates/Research-Log.md`. Everything else that is researched ends in a report here.
 
 ---
 
 ## 📌 Held, not sorted
 
-Reports live here and stay here. They are not sorted into the BRAIN's permanent layers (the Library, a venture, a project): a report is a working artifact, produced, held, used, and eventually cleared, not durable reference knowledge. The session-start sort skips this folder, as it skips the Visuals and Ideas libraries (`Inbox/README.md`), so a report is never proposed for re-sorting, yet it stays fully linted and cataloged like any other vault file.
+Research reports live here and stay here. They are not sorted into the BRAIN's permanent layers (the Library, a venture, a project): a report is a working artifact, produced, held, used, and eventually cleared, not durable reference knowledge. The session-start sort skips this folder, as it skips the Visuals and Ideas libraries (`Inbox/README.md`), so a report is never proposed for re-sorting, yet it stays fully linted and cataloged like any other vault file.
 
 ---
 

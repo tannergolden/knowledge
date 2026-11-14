@@ -49,7 +49,7 @@ class TestStart(unittest.TestCase):
         self.vault.note('Memory/Context/Current/README.md')
         self.vault.note('Inbox/README.md')
         self.vault.write('Inbox/scan.pdf', 'pdf')
-        self.vault.write('Inbox/Reports/kept.md', 'kept')
+        self.vault.write('Inbox/Research/kept.md', 'kept')
         result = self.vault.run(SCRIPT, 'start')
         self.assertEqual(result.returncode, 0)
         lines = result.stdout.splitlines()
@@ -79,11 +79,11 @@ class TestStart(unittest.TestCase):
         # Nothing else in the vault raises a date by itself, so the card does: a date and a path,
         # never what the date is for.
         self.vault.note('Memory/Dates.md', body=self.DATES, type='record')
-        self.vault.note('Inbox/Reports/README.md')
-        self.vault.note('Inbox/Reports/Heat Pumps.md', type='record', review_by='2026-08-01')
-        self.vault.note('Inbox/Reports/Solar.md', type='record', review_by='2027-01-01')
-        self.vault.note('Inbox/Reports/Old Roof.md', type='record', review_by='2025-01-01', status='deprecated')
-        self.vault.note('Inbox/Reports/Undated.md', type='record')
+        self.vault.note('Inbox/Research/README.md')
+        self.vault.note('Inbox/Research/Heat Pumps.md', type='record', review_by='2026-08-01')
+        self.vault.note('Inbox/Research/Solar.md', type='record', review_by='2027-01-01')
+        self.vault.note('Inbox/Research/Old Roof.md', type='record', review_by='2025-01-01', status='deprecated')
+        self.vault.note('Inbox/Research/Undated.md', type='record')
         self.vault.note('Memory/Log.md', type='record', body='# Log\n\n## Log Entries\n\n'
                         '### 2026-11-13 - Call the bank\n\n**Status:** Open\n\n### 2026-11-12 - Book the flight\n\n'
                         '- **Status:** Open\n\n### 2026-11-11 - Done\n\n**Status:** Resolved (2026-11-12)\n')
@@ -93,7 +93,7 @@ class TestStart(unittest.TestCase):
         due = [line for line in lines if line.startswith(('OVERDUE', 'DUE', 'REVIEW'))]
         self.assertEqual(due, ['OVERDUE 2026-11-01  Memory/Dates.md', 'DUE 2026-11-14  Memory/Dates.md',
                                'DUE 2026-11-28  Memory/Dates.md',
-                               'REVIEW Inbox/Reports/Heat Pumps.md  (review_by 2026-08-01)'])
+                               'REVIEW Inbox/Research/Heat Pumps.md  (review_by 2026-08-01)'])
         self.assertIn('2 open loops in Memory/Log.md.', lines)
         # What each date is for stays in the note: the card is read by hooks and kept in logs.
         for private in ('passport', 'clinic', 'bank', 'flight'):

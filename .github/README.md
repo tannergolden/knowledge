@@ -86,7 +86,7 @@ each folder's README. Every vault generated from this template starts with both.
 .
 ├── AGENTS.md    # The rules every AI follows here: the universal ones, then the vault's
 ├── README.md    # How to work in the vault: read it first
-├── Inbox/       # Staging for unsorted files, plus the held reports, visuals and ideas
+├── Inbox/       # Staging for unsorted files, plus the held research, visuals and ideas
 ├── Library/     # Reference knowledge in ten classes, never personal
 ├── Memory/      # What happened, who is around you, what you decided, what is due
 ├── Profile/     # Who you are: values, goals, skills, working style

@@ -1,6 +1,6 @@
 <!--
 title: '🔎 [THE QUESTION OR TOPIC, FULLY CAPPED]'
-description: 'The form for the research behind a change to the vault itself: a dated, sourced, claim-by-claim investigation, kept honest by its verification window. Copy it to .docs/technical/research/; research for the owner''s life or a venture is a report in Inbox/Reports/ instead.'
+description: 'The form for the research behind a change to the vault itself: a dated, sourced, claim-by-claim investigation, kept honest by its verification window. Copy it to .docs/technical/research/; research about anything else, such as the owner''s life, a venture or the world, is held in Inbox/Research/ instead.'
 type: 'template'
 keywords: ['[a search term not in the title]', '[another name for the topic]', 'template']
 verified: '[YYYY-MM-DD]'
@@ -8,7 +8,7 @@ focus: '[One line: the question this log answers]'
 decision: '[The ADR it fed, as a markdown link, or N/A while it stands as background]'
 -->
 
-<!-- On copying: copy this file to .docs/technical/research/[Topic].md, named for its topic in Capitalized-Kebab, for the research behind a change to the vault itself. Research for the owner's own life or a venture is a report held in Inbox/Reports/, never a log here. Set type to 'record', verified to the date of the newest log entry, focus to the one question it answers and decision to the ADR it fed, or N/A. Replace every [bracketed] placeholder: the title and the H1 alike, with the question or the topic fully capped, the description with one of the log's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a prompt once it is answered, and mark a section N/A only when it does not apply. If .docs/technical/research/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says. Delete this note from the copy. -->
+<!-- On copying: copy this file to .docs/technical/research/[Topic].md, named for its topic in Capitalized-Kebab, for the research behind a change to the vault itself. Research about anything else, such as the owner's own life, a venture or the world, is a report held in Inbox/Research/, never a log here. Set type to 'record', verified to the date of the newest log entry, focus to the one question it answers and decision to the ADR it fed, or N/A. Replace every [bracketed] placeholder: the title and the H1 alike, with the question or the topic fully capped, the description with one of the log's own, the one-line summary, the tagline and the closing phrase; give it up to eight lowercase keywords not already in the title, without 'template'. Delete a prompt once it is answered, and mark a section N/A only when it does not apply. If .docs/technical/research/ does not exist yet, make it with its own README.md, as .docs/technical/README.md says. Delete this note from the copy. -->
 
 <div align="center">
 

@@ -48,7 +48,7 @@ Reference knowledge about the world, in ten classes, never personal. Read this R
 ## 📥 What Lands Here
 
 - **A source filed from `Inbox/`**: checked for freshness, classified, cataloged and shelved in one class and division, by the Inbox's sorting protocol (`Inbox/README.md`) and the rules on this page. An outside source gets a catalog card (The catalog record, below).
-- **A finding promoted from a held report** (`Inbox/Reports/`) when it must outlive the report: it becomes a holding here, written from `Library/.template/Reference Note.md`.
+- **A finding promoted from a held report** (`Inbox/Research/`) when it must outlive the report: it becomes a holding here, written from `Library/.template/Reference Note.md`.
 - **What is learned about the world**, such as what the `research-and-development` skill learns for the owner, written as a holding from `Library/.template/Reference Note.md`. The owner's own progress and competence are not holdings: a learning plan goes to `Projects/`, and what the owner can do to `Profile/Skills/`.
 - **An offline reference work**, such as Wikipedia, kept in `Library/Reference & Encyclopedia/` and managed with `python3 .github/scripts/knowledge-base.py`; every source ships turned off (`Library/Reference & Encyclopedia/README.md`).
 
@@ -75,7 +75,7 @@ The ten classes, in reading order: **Information & Computing · Philosophy & Min
 
 The Library has no keeper of its own: whoever works in the vault, a person or any AI, keeps it by the rules on this page. Cataloging, curation and reference are one job, done in one pass, to one overriding standard: **every holding earns its place**. Each holding is acquired, classified, cataloged, curated, weeded, preserved and served to that standard; the collection is judged by what it leaves out as much as by what it serves, and findability is what curation is for. On request, a class gets deeper work: a subject review, a link and authority-control pass (`.github/scripts/check-vault.py`), and a Conspectus-style assessment of its depth. A genuinely contested class, weed or tier goes to the owner.
 
-- **The `research-and-development` skill** grounds a question about the world here before the web, files its reports in `Inbox/Reports/`, and adds to the Library only holdings: a finding promoted from a report, or what it learns about the world for the owner. A class found thin is a question for it to research.
+- **The `research-and-development` skill** grounds a question about the world here before the web, files its reports in `Inbox/Research/`, and adds to the Library only holdings: a finding promoted from a report, or what it learns about the world for the owner. A class found thin is a question for it to research.
 - **The Inbox sort** files a source here by this page's rules: the source's freshness is assessed, and it is classified and cataloged, before it moves (`Inbox/README.md`, Pre-Sorting Enrichment).
 
 ---

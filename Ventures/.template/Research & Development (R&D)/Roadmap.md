@@ -124,7 +124,7 @@ keywords: ["[the product's name]", "[the current release, as the company names i
 
 | Topic | The question it answers | Owner | Status | Report |
 | ----- | ----------------------- | ----- | ------ | ------ |
-| | | | | [the report promoted from Inbox/Reports/, or none yet] |
+| | | | | [the report promoted from Inbox/Research/, or none yet] |
 
 ---
 

@@ -210,8 +210,8 @@ class TestLayout(unittest.TestCase):
 
     def test_inbox_drops_leave_the_kept_homes_alone(self) -> None:
         # The Inbox's README.md is the folder, and so is a leftover Inbox.md, which lint-notes.py flags.
-        for rel in ('Inbox/Inbox.md', 'Inbox/README.md', 'Inbox/drop.pdf', 'Inbox/Reports/r.md', 'Inbox/Visuals/v.md',
-                    'Inbox/sub/x.md'):
+        for rel in ('Inbox/Inbox.md', 'Inbox/README.md', 'Inbox/drop.pdf', 'Inbox/Research/r.md',
+                    'Inbox/Reports/old.md', 'Inbox/Visuals/v.md', 'Inbox/sub/x.md'):
             self.vault.write(rel, 'x')
         drops = [vault.rel(self.vault.root, p) for p in vault.inbox_drops(self.vault.root)]
         self.assertEqual(drops, ['Inbox/drop.pdf', 'Inbox/sub/x.md'])

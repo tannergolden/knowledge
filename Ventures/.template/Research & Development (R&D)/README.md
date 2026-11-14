@@ -41,7 +41,7 @@ Product work at [Company]: what is being built and why, what comes next, and the
 ## 📏 Rules
 
 - Work here goes through the write-gate (`Ventures/README.md`, Structure): internal drafts go ahead; moving money, a contract, outside communication, a change to equity and a deletion need the owner's yes.
-- A finished research report stays held in `Inbox/Reports/`, and an idea in `Inbox/Ideas/`, until it is promoted; work on a promoted idea for this venture lands here.
+- A finished research report stays held in `Inbox/Research/`, and an idea in `Inbox/Ideas/`, until it is promoted; work on a promoted idea for this venture lands here.
 - Each roadmap item names the product decision behind it, and each requirement carries acceptance criteria a verifier can check.
 - Research with customers keeps what a participant said apart from what was inferred, and a participant's contact details stay in [Company]'s own systems, never here; no password, key or other secret goes into a spec or a design note.
 

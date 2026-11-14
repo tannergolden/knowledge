@@ -44,7 +44,7 @@ this page and to each folder's README. The vault holds no agents: the skills com
 
 | Folder      | Holds                                                                     | Its README                     |
 | :---------- | :------------------------------------------------------------------------ | :----------------------------- |
-| `Inbox/`    | Files waiting to be sorted, and the held reports, visuals and ideas       | [Inbox](Inbox/README.md)       |
+| `Inbox/`    | Files waiting to be sorted, and the held research, visuals and ideas      | [Inbox](Inbox/README.md)       |
 | `Library/`  | Reference knowledge about the world, in ten classes, never personal       | [Library](Library/README.md)   |
 | `Memory/`   | What happened, who is around the owner, what they decided and what is due | [Memory](Memory/README.md)     |
 | `Profile/`  | Who the owner is; `Working Style.md` says how they want to be helped      | [Profile](Profile/README.md)   |
@@ -147,7 +147,7 @@ goes to the folders of this vault, each by its README's rules:
 | `operations-and-logistics` | `Operations & Logistics (O&L)/`: processes, programs and vendors                                                                                         | A household plan, a trip or a move as a project in `Projects/`, its dates, contractors and events in `Memory/`, and routines proposed for `Profile/Focus.md` |
 | `human-resources`          | `Human Resources (HR)/`: roles, hiring, pay, onboarding and the people records                                                                           | The profile interview, career and skills, health and wellbeing, in `Profile/` by `Profile/README.md`'s rules                                                 |
 | `information-technology`   | `Information Technology (IT)/`: the internal systems and their security                                                                                  | The devices, accounts and tools the owner uses, proposed for `Profile/Preferences.md` and never with a password or key, and a security incident in `Memory/` |
-| `research-and-development` | `Research & Development (R&D)/`: research, ideas, and the building of products, skills and software                                                      | Reports in `Inbox/Reports/`, ideas in `Inbox/Ideas/`, learning in `Library/`, and side projects in `Projects/`                                               |
+| `research-and-development` | `Research & Development (R&D)/`: research, ideas, and the building of products, skills and software                                                      | Research in `Inbox/Research/`, ideas in `Inbox/Ideas/`, learning in `Library/`, and side projects in `Projects/`                                             |
 | `business-intelligence`    | `Business Intelligence (BI)/`: metrics, data, dashboards, and any chart or diagram                                                                       | Visuals in `Inbox/Visuals/`, and a habit or metric the owner tracks as a project in `Projects/`                                                              |
 | `quality-assurance`        | `Quality Assurance (QA)/`: the independent verification of consequential work                                                                            | A check of an important document or plan, logged with what it checked, such as in its project's `Log.md`                                                     |
 | `customer-experience`      | `Customer Experience (CX)/`: onboarding, success and support                                                                                             | A complaint, a return or a warranty as an open loop in `Memory/Log.md` and a date in `Memory/Dates.md`, and the company in `Memory/Entities/Organizations/`  |
@@ -157,10 +157,13 @@ goes to the folders of this vault, each by its README's rules:
   `Ventures/README.md` says. The `administration` skill keeps its strategy in
   `Administration/Strategy.md`, records each of its decisions in `Administration/Decisions.md`, and
   logs its work in the venture's `Log.md`.
-- **Reports** are held in `Inbox/Reports/` and **ideas** in `Inbox/Ideas/`, a company's as well as
+- **Research** is held in `Inbox/Research/` and **ideas** in `Inbox/Ideas/`, a company's as well as
   the owner's, until what must outlive them is promoted, such as into a venture's
   `Research & Development (R&D)/`, and a standalone **visual** is held in `Inbox/Visuals/`, each by
   that folder's README.
+- **Research behind a change to the vault itself**, its scripts, note schema, templates, rules or
+  layout, is a Research Log in `.docs/technical/research/`, from `.docs/templates/Research-Log.md`,
+  never a report in `Inbox/Research/`.
 - **The owner's profile** is written in `Profile/` from `Profile/.template/`, by
   `Profile/README.md`'s rules, and is read-only until the owner asks or confirms. The profile
   interview, such as the `human-resources` skill's, picks the next facet with

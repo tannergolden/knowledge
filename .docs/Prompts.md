@@ -162,7 +162,7 @@ Ask me which of this repository's community health files to remove, and wait for
 - **Memory:** [Record A Decision](#record-a-decision) ✏️, [Consolidate My Memory](#consolidate-my-memory), [Find Patterns In What Happened](#find-patterns-in-what-happened), [Look Back On My Decisions](#look-back-on-my-decisions), [Write A Digest Of A Year](#write-a-digest-of-a-year) ✏️, [Split An Entry That Grew Too Long](#split-an-entry-that-grew-too-long) ✏️
 - **Profile:** [Review My Profile For What Has Changed](#review-my-profile-for-what-has-changed), [Check My Goals Against What I'm Doing](#check-my-goals-against-what-im-doing)
 - **Projects:** [Start A Project](#start-a-project) ✏️, [Review A Project](#review-a-project) ✏️, [Close A Project](#close-a-project) ✏️
-- **Library and held work:** [File Reference Material In The Library](#file-reference-material-in-the-library) ✏️, [Review The Library Collection](#review-the-library-collection), [Turn On An Offline Reference Work](#turn-on-an-offline-reference-work) ✏️, [Review My Held Reports And Visuals](#review-my-held-reports-and-visuals)
+- **Library and held work:** [File Reference Material In The Library](#file-reference-material-in-the-library) ✏️, [Review The Library Collection](#review-the-library-collection), [Turn On An Offline Reference Work](#turn-on-an-offline-reference-work) ✏️, [Review My Held Research And Visuals](#review-my-held-research-and-visuals)
 - **Bringing things in:** [Bring In Notes From Another App](#bring-in-notes-from-another-app) ✏️, [Bring In What Another AI Knew About Me](#bring-in-what-another-ai-knew-about-me) ✏️
 - **Setting up and upkeep:** [Check This Vault Is Set Up](#check-this-vault-is-set-up), [Set Up An AI App To Use This Vault](#set-up-an-ai-app-to-use-this-vault) ✏️, [Rename Or Move A Note Safely](#rename-or-move-a-note-safely) ✏️, [Check Nothing Personal Leaks](#check-nothing-personal-leaks)
 - **The template:** [Add A File To The Template](#add-a-file-to-the-template) ✏️, [Change A Folder's Rules](#change-a-folders-rules) ✏️, [Change The Note Schema](#change-the-note-schema) ✏️, [Add Or Change A Vault Script](#add-or-change-a-vault-script) ✏️, [Check The Template Still Works Once Initialised](#check-the-template-still-works-once-initialised)
@@ -752,17 +752,17 @@ Check that the source exists, its size against the free disk space here, and whe
 </done_when>
 ```
 
-### Review My Held Reports And Visuals
+### Review My Held Research And Visuals
 
 **Use when** reports from research and discovery, or saved charts and diagrams, have piled up in the Inbox, and you want the stale ones dealt with and the lasting findings kept.
 
 ```text
 <context>
-Inbox/Reports/ holds finished reports, each good until its review_by date, and Inbox/Visuals/ holds saved visuals, each kept until the data under it changes. Inbox/Reports/README.md and Inbox/Visuals/README.md set the rules, keep each folder's only index, and say how a finding that must outlive its report is promoted into a lasting home.
+Inbox/Research/ holds finished reports, each good until its review_by date, and Inbox/Visuals/ holds saved visuals, each kept until the data under it changes. Inbox/Research/README.md and Inbox/Visuals/README.md set the rules, keep each folder's only index, and say how a finding that must outlive its report is promoted into a lasting home.
 </context>
 
 <task>
-List the reports past their review_by date and the visuals whose data has moved on. Then find the findings worth keeping for good, and propose a home for each from those Inbox/Reports/README.md names: a Library holding, a venture's or a project's own files, or a folder's README or the root README.md, as a change proposed on its own.
+List the reports past their review_by date and the visuals whose data has moved on. Then find the findings worth keeping for good, and propose a home for each from those Inbox/Research/README.md names: a Library holding, a venture's or a project's own files, or a folder's README or the root README.md, as a change proposed on its own.
 </task>
 
 <constraints>

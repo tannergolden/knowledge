@@ -35,8 +35,8 @@ say it themselves.
   [Implementation Plan](../templates/Implementation-Plan.md) and
   [Research Log](../templates/Research-Log.md) templates. Each of those folders
   is made, with its own `README.md`, when its first document arrives. Research
-  for the owner's own life or a venture is a held report in `Inbox/Reports/`,
-  never a page here.
+  about anything else, such as the owner's own life, a venture or the world, is
+  held in `Inbox/Research/`, never a page here.
 
 Vault Scripts and the pages in `vault/`, like this README, are the template's,
 and 🔄 Template Sync keeps them current in a vault. A document you add here is
