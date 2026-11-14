@@ -49,6 +49,8 @@ STARTUP = ('README.md', 'Profile/Working Style.md', 'Memory/Log.md')
 
 # ── Where things live ──
 
+# The seven top folders, which hold everything the vault keeps. The hidden folders beside them are its machinery.
+TOP_FOLDERS = ('Inbox', 'Library', 'Memory', 'Profile', 'Projects', 'Ventures', 'System')
 CATALOG = 'System/Data/catalog.ndjson'
 
 # The session-summary tiers, newest first, each with its cap; Recent's
@@ -513,10 +515,11 @@ def inbox_drops(root: pathlib.Path) -> list[pathlib.Path]:
 
 # ── git ──
 
-def _git_paths(root: pathlib.Path, *args: str) -> list[str] | None:
+def git_paths(root: pathlib.Path, *args: str) -> list[str] | None:
     """The paths one git command lists for the vault, from the vault root, or None outside a checkout."""
     try:
-        result = subprocess.run(['git', '-C', str(root), *args, '-z'],
+        # -z right after the subcommand: past a `--` it would read as one more path.
+        result = subprocess.run(['git', '-C', str(root), args[0], '-z', *args[1:]],
                                 capture_output=True, timeout=60, check=False)
     except (OSError, subprocess.SubprocessError):
         return None
@@ -527,14 +530,14 @@ def _git_paths(root: pathlib.Path, *args: str) -> list[str] | None:
 
 def tracked_files(root: pathlib.Path) -> list[str] | None:
     """The files git tracks, or None outside a checkout."""
-    return _git_paths(root, 'ls-files')
+    return git_paths(root, 'ls-files')
 
 
 def committable_files(root: pathlib.Path) -> list[str] | None:
     """The files git would commit: those it tracks, and the new ones it does not ignore.
     None outside a checkout. A note is new until it is staged, so a check that reads only
     the tracked files never sees it before the commit that carries it."""
-    return _git_paths(root, 'ls-files', '--cached', '--others', '--exclude-standard')
+    return git_paths(root, 'ls-files', '--cached', '--others', '--exclude-standard')
 
 
 # ── Reporting ──

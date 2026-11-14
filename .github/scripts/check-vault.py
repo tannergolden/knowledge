@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run every vault check, as CI does: notes, links, personal data and generated parts.
+"""Run every vault check, as CI does: notes, links, personal data, ignored files and generated parts.
 
 WHY THIS EXISTS. Each check is its own script so it can run alone, the way
 lint-notes.py checks one note after an edit. Before a commit, and in CI, all
@@ -26,6 +26,7 @@ CHECKS = (
     ('notes', 'lint-notes.py', ()),
     ('links', 'check-links.py', ()),
     ('personal data', 'scan-pii.py', ()),
+    ('ignored files', 'check-ignored.py', ()),
     ('generated parts', 'update-vault.py', ('--check',)),
 )
 
