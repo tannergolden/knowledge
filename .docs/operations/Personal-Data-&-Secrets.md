@@ -43,8 +43,10 @@ pointer to where it lives. The rules and the scans that enforce them are the sta
   which include the gitleaks scan `checks.yml` runs on every pull request and every push to the
   default branch.
 
-The vault adds one scan of its own: `python3 .github/scripts/scan-pii.py` checks every tracked text
-file for Social Security and card numbers, and CI runs it through `check-vault.py`. A reviewed false
+The vault adds one scan of its own: `python3 .github/scripts/scan-pii.py` checks every text file git
+tracks or would commit, so a new note is scanned before its first commit, for US Social Security
+numbers and for card numbers, unbroken or in groups. It knows no other identifier: a passport, bank or
+tax number is kept out by the rule above alone. CI runs it through `check-vault.py`. A reviewed false
 positive is kept by putting `pii-allow` in a comment on its line, sparingly.
 
 ---

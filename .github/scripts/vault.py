@@ -513,16 +513,28 @@ def inbox_drops(root: pathlib.Path) -> list[pathlib.Path]:
 
 # ── git ──
 
-def tracked_files(root: pathlib.Path) -> list[str] | None:
-    """The files git tracks, or None outside a checkout."""
+def _git_paths(root: pathlib.Path, *args: str) -> list[str] | None:
+    """The paths one git command lists for the vault, from the vault root, or None outside a checkout."""
     try:
-        result = subprocess.run(['git', '-C', str(root), 'ls-files', '-z'],
+        result = subprocess.run(['git', '-C', str(root), *args, '-z'],
                                 capture_output=True, timeout=60, check=False)
     except (OSError, subprocess.SubprocessError):
         return None
     if result.returncode != 0:
         return None
     return [name for name in result.stdout.decode('utf-8', 'replace').split('\0') if name]
+
+
+def tracked_files(root: pathlib.Path) -> list[str] | None:
+    """The files git tracks, or None outside a checkout."""
+    return _git_paths(root, 'ls-files')
+
+
+def committable_files(root: pathlib.Path) -> list[str] | None:
+    """The files git would commit: those it tracks, and the new ones it does not ignore.
+    None outside a checkout. A note is new until it is staged, so a check that reads only
+    the tracked files never sees it before the commit that carries it."""
+    return _git_paths(root, 'ls-files', '--cached', '--others', '--exclude-standard')
 
 
 # ── Reporting ──
