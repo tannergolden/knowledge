@@ -1,13 +1,13 @@
 <!--
 title: "System Workflows"
-description: "The map of the vault's recurring workflows: the strategy, capture and consolidation loops, and where every other recurring procedure is defined."
+description: "The map of the vault's recurring workflows: the memory consolidation loop, defined here in full, and where every other recurring procedure is defined."
 type: "guide"
-keywords: ["procedures", "strategy loop", "capture loop", "consolidation loop", "recurring behaviors", "operating procedures", "workflow map"]
+keywords: ["procedures", "consolidation loop", "recurring behaviors", "operating procedures", "workflow map"]
 -->
 
 # 🔄 System Workflows
 
-This document is the BRAIN's complete workflow map. It plays two roles: it **owns** (defines in full) the strategy, capture, and consolidation loops that have no other home, and it **indexes** every other recurring procedure with a pointer to its canonical definition and how it runs. Procedures defined elsewhere are not re-specified here (the root `README.md`, Conventions: one home for each thing); this file stays the one place to see the whole operating-procedure map. For the situation-to-script table, see the root `README.md`, Commands.
+This document is the BRAIN's complete workflow map. It plays two roles: it **owns** (defines in full) the memory consolidation loop, which has no other home, and it **indexes** every other recurring procedure with a pointer to its canonical definition and how it runs. Procedures defined elsewhere are not re-specified here (the root `README.md`, Conventions: one home for each thing); this file stays the one place to see the whole operating-procedure map. For the situation-to-script table, see the root `README.md`, Commands.
 
 ## The Complete Workflow Map
 
@@ -34,7 +34,7 @@ Workflows marked *owned here* are specified in full lower in this file; all othe
 | Workflow | When it runs | Canonical home · how it runs |
 |----------|--------------|--------------------------|
 | Memory consolidation loop | ~10+ unpromoted Log entries / monthly / on request | *owned here* |
-| Log → permanent promotion | A Log entry qualifies for People/Decisions/Dates (facts about the owner go to Profile) | *owned here* (consolidation) + `Memory/README.md`, Writing An Entry |
+| Log → permanent promotion | A Log entry qualifies for one of the six collections or for Dates (facts about the owner go to Profile) | *owned here* (consolidation) + `Memory/README.md`, Writing An Entry |
 | Memory entry growth (lifetime) | A permanent Memory entry file grows too long to load whole | `Memory/README.md` "Growth Protocol" · the entry keeps its present, and its history moves into `Memory/Events/` |
 
 ### Integrity & maintenance
@@ -75,10 +75,10 @@ Memory quality decays through accumulation, not deletion: duplicates pile up, fa
 
 **When to run:** Periodically, at natural low-stakes moments. Triggers: `Memory/Log.md` accumulating more than ~10 unpromoted entries, a month since the last consolidation, or the owner asking to "clean up memory."
 
-**The pass, across the memory layer (`Log.md`, the People and Decisions collections, and `Dates.md`):**
+**The pass, across the memory layer (`Log.md`, the six collections, which are People, Organizations, Places, Events, Decisions and Insights, and `Dates.md`):**
 
 1. **Classify each entry** against the rest of the memory layer using four operations. Write each change in the destination's own format (the collection's note shows it); `update-vault.py` redraws the collection's index, so never hand-edit an index block. If an entry is really about *who the owner is* (a trait, fact, belief, preference, goal), it does not belong in Memory at all: propose it into `Profile/` (`Profile/README.md`, Rules):
-   - **ADD** - genuinely new; promote Log entries into their collection (a new entry file for a person, decision, event or insight, a row in `Dates.md`).
+   - **ADD** - genuinely new; promote Log entries into their collection (a new entry file for a person, an organization, a place, an event, a decision or an insight, a row in `Dates.md`).
    - **UPDATE** - complements or refines an existing entry; merge into it.
    - **SUPERSEDE** - contradicts an existing entry; the old entry is not silently rewritten. Mark it superseded (its Status line becomes Superseded, with a pointer to the new entry), then record the new version. Preserving the dated old version is deliberate: it lets any future session see *when* a fact changed instead of inheriting a silent edit.
    - **NOOP** - duplicate or trivial; flag per retention policy.

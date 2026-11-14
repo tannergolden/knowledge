@@ -96,17 +96,18 @@ themselves: it holds these steps too, with the rules every AI follows here.
 ## ⚙️ Commands
 
 Each runs from the vault root, on Python 3.9 or later, with nothing beyond the standard library but
-the optional `libzim`, which only `knowledge-base.py` needs to search and read:
+the optional `libzim`, which only `knowledge-base.py` needs to search and read, and PyYAML, which
+only the tests need:
 
 | Command                                                          | Does                                                                                                           |
 | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
-| `python3 .github/scripts/check-vault.py`                         | Every check CI runs: notes, links, personal data, ignored files and generated parts                            |
+| `python3 .github/scripts/check-vault.py`                         | Every vault check: notes, links, personal data, ignored files and generated parts                              |
 | `python3 .github/scripts/update-vault.py`                        | Redraws everything generated: the memory tiers, the generated lists, the catalog and the `.gitkeep` markers    |
 | `python3 .github/scripts/lint-notes.py "<note>"`                 | One note against the schema; `check-links.py` and `scan-pii.py` check one part each                            |
 | `python3 .github/scripts/session.py start`                       | Lists what a session reads first; `after-edit` checks a note once it is written, and `stop` redraws and checks |
 | `python3 .github/scripts/profile-coverage.py --json`             | Scores each Profile facet and names the one to ask about next                                                  |
 | `python3 .github/scripts/knowledge-base.py`                      | Turns on, fetches, searches and reads the offline reference works                                              |
-| `python3 -m unittest discover -s .github/scripts -p 'test_*.py'` | The scripts' own tests                                                                                         |
+| `python3 -m unittest discover -s .github/scripts -p 'test_*.py'` | The scripts' own tests; first `python3 -m pip install -r .github/scripts/requirements.txt`                     |
 
 After any write, whatever makes it, `lint-notes.py` runs on each note written, then
 `update-vault.py`, then `check-vault.py`. Each script's purpose is in

@@ -28,7 +28,7 @@ The vault's control panel: standing settings the owner adds, the map of recurrin
 | Path | Purpose |
 |------|---------|
 | `README.md` | This file. |
-| [[System/Workflows\|Workflows.md]] | The map of recurring workflows: strategy, capture and consolidation loops. |
+| [[System/Workflows\|Workflows.md]] | The map of recurring workflows, with the memory consolidation loop defined in full. |
 | `Context.md` · `Integrations.md` | Optional settings files *(created as needed)*. |
 | [[System/Data/README\|Data/]] | Generated files, never hand-edited: `catalog.ndjson`, one JSON record per note (`.template/` scaffolds excluded) with its path, title, type, keywords, description and status. `update-vault.py` draws it, and CI fails when it is out of date. |
 

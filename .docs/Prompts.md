@@ -59,7 +59,7 @@ before it edits files, pushes or opens a pull request.
 > `tannergolden/path`, so a new prompt, or a fix to one, arrives with the next
 > sync you run. Add your own prompts under **✍️ This Repository's Prompts**,
 > never here. To keep a change you make here, or a prompt you delete, add
-> `# keep mine: /docs/Prompts.md` under **Your rules** in
+> `# keep mine: /.docs/Prompts.md` under **Your rules** in
 > `.github/template-sync`. Where you and the template then change the same
 > lines, yours stand and the sync pull request shows the template's change;
 > every other change still arrives.

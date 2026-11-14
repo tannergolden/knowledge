@@ -28,6 +28,11 @@
       "under": ".github/template-sync.md",
       "from": "docs/Prompts.md",
       "to": ".docs/Prompts.md"
+    },
+    {
+      "under": "docs/Prompts.md",
+      "from": "# keep mine: /docs/Prompts.md",
+      "to": "# keep mine: /.docs/Prompts.md"
     }
   ]
 }

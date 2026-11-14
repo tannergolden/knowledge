@@ -5,9 +5,9 @@ type: "record"
 keywords: ["working memory", "memory buffer", "staging buffer", "capture stream", "open loops", "session start", "recent events", "quick capture"]
 -->
 
-# 📓 Log
+# 📓 Memory Log
 
-Working memory: the first place new context lands. Observations, events, and open threads are captured here, then either **promote** to a permanent collection (Entities, Decisions, Insights, Dates, or a session summary in Context) or **age out**. Read this file at the start of every session.
+Working memory: the first place new context lands. Observations, events, and open threads are captured here, then either **promote** to a permanent collection (Entities, Events, Decisions, Insights, Dates, or a session summary in Context) or **age out**. Read this file at the start of every session.
 
 **How to write here.** Add each entry at the top of Log Entries, just below the `brain:log-entries` marker, as `### YYYY-MM-DD - Title`, then the detail and an `Importance: N` line (1 routine to 5 pivotal). An open thread also carries `**Status:** Open`; when it closes, change that line to `**Status:** Resolved (YYYY-MM-DD)`, never delete the entry. Never edit the Open Loops block: `.github/scripts/update-vault.py` redraws it from the entries marked Open. A routing rationale from Inbox sorting is a row in the Sort Routing Notes table.
 

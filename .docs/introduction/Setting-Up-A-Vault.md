@@ -99,7 +99,7 @@ python3 .github/scripts/profile-coverage.py
 - **`session.py start`** lists what to read first: the root `README.md`, `Profile/Working Style.md`,
   `Memory/Log.md`, the two newest session summaries (none yet) and, when files wait at the Inbox,
   `Inbox/README.md` and each waiting file.
-- **`check-vault.py`** runs every check CI runs, so your machine sees what 🧠 Vault sees.
+- **`check-vault.py`** runs every vault check, so your machine sees what 🧠 Vault sees.
 - **`profile-coverage.py`** scores each of the twelve Profile facets and names the one to ask about
   next. Every facet starts as a blank scaffold.
 - **Fill `Profile/` with the `human-resources` skill.** Its profile interview reads that report,
